@@ -1,0 +1,161 @@
+#twitter-widget-0,.g-plusone {
+	margin: 0px !important;
+}
+
+.embedd {
+	width: 100% !important;
+	height: 200px !important;
+}
+
+#gen {
+	color: black;
+}
+
+.plotdesc {
+	
+}
+
+#mce-EMAIL {
+	width: 200px !important;
+}
+
+#mce-success-response {
+	color: #336;
+	font-size: 12px;
+}
+
+.bigger {
+	font-size: 16px;
+}
+
+.tut_title {
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	color: #336 !important;
+	margin-bottom: 10px !important;
+	margin-top: 20px !important;
+}
+
+.methodref {
+	font-weight: bold;
+}
+
+span.named {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.part1 {
+	color: #335;
+}
+
+.part2 {
+	color: #533;
+}
+
+.part3 {
+	color: #353;
+}
+
+.eg_code,.eg_output {
+	padding: 5px !important;
+	background: #FFF !important;
+	border-style: dashed !important;
+	border-color: #CCC !important;
+}
+
+.eg_text {
+	padding: 5px !important;
+	border-style: dashed !important;
+	border-width: 1px !important;
+	border-color: #AAA !important;
+	margin-bottom: 20px;
+}
+
+.eg_text2 {
+	padding: 5px !important;
+	border-style: dashed !important;
+	border-width: 1px !important;
+	border-color: #AAA !important;
+	margin-bottom: 20px;
+	background-color: #FCC;
+}
+
+.eg_title {
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	background: #DDE !important;
+	font-size: 13px !important;
+	color: #333 !important;
+}
+
+#main_title {
+	margin-bottom: 15px;
+}
+
+#main_subtitle {
+	margin-bottom: 25px;
+}
+
+#tut_subtitle {
+	margin-bottom: 5px;
+}
+
+.tut_num {
+	font-size: 12px;
+}
+
+.row-separated {
+	margin-top: 25px;
+}
+
+.readtut {
+	background: #585;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.rapidoid {
+	font-weight: bold;
+}
+
+.subtle {
+	color: #555;
+	font-size: 14px;
+}
+
+.good {
+	color: green;
+}
+
+.mid {
+	color: #664;
+}
+
+.bad {
+	color: red;
+}
+
+span._code_kw {
+	color: blue;
+}
+
+span._code_cls {
+	color: #400;
+}
+
+span._code_tag {
+	color: #377;
+}
+
+span._code_str {
+	color: #070;
+}
+
+.app-example-title {
+	margin-bottom: 10px;
+}
