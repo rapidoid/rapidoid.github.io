@@ -6,46 +6,85 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Example 2</title>
-
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="../rapidoid.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="../rapidoid.css" rel="stylesheet">
+<title>Error: page not found!</title>
 
+<style type="text/css">
+html,body,.container {
+	height: 100%;
+}
+
+.container {
+	display: table;
+	width: 100%;
+	margin-top: -50px;
+	padding-top: 50px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+nav {
+	background: green;
+	height: 50px;
+	margin-bottom: 0px !important;
+}
+
+.row {
+	height: 100%;
+	display: table-row;
+}
+
+.col-md-3.no-float,.col-md-6.no-float,.col-md-9.no-float,.col-md-12.no-float {
+	float: none;
+}
+
+.col-md-3 {
+	display: table-cell;
+	width: 25%;
+}
+
+.col-md-6 {
+	display: table-cell;
+	width: 50%;
+}
+
+.col-md-9 {
+	display: table-cell;
+	width: 75%;
+}
+
+.col-md-12 {
+	display: table-cell;
+	width: 100%;
+}
+</style>
 
 </head>
 
 <body>
-  <nav role="navigation" class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">Example 2</a>
-      </div>
-      <div id="collapsable" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-left">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="foo.html">Foo</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container-fluid">
-No content available!
-  </div>
-</body>
 
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Error: page not found!</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 no-float"><h1>The requested page cannot be found!</h1></div>
+		</div>
+	</div>
+
+</body>
 </html>

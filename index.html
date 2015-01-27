@@ -115,7 +115,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-all&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;1.0.1&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;2.0.4&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 <div class="eg_title">Add the App class:</div>
@@ -130,7 +130,7 @@
 
 		<div class="col-md-8">
 			<div class="app-example-title">Your application looks like this:</div>		
-			<div class="embed-responsive embedd">
+			<div class="embed-responsive first-embedd">
 				<iframe class="embed-responsive-item" src="examples/1/index.html"></iframe>
 			</div>
 		</div>
@@ -141,7 +141,7 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<h3>An application consists of screens </h3>
+		<h3 class="caption">An application consists of screens </h3>
 	</div>
 </div>
 
@@ -150,8 +150,15 @@
 	<div class="col-md-4">
 		<div class="eg_title">Add some screens:</div>
 		<pre class="eg_code">
+<span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Apps</span>;
+
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 2"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
 }
 
 <span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
@@ -179,7 +186,7 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<h3>Let's write some HTML in Java!</h3>
+		<h3 class="caption">Let's write some HTML in Java!</h3>
 	</div>
 </div>
 
@@ -188,16 +195,22 @@
 	<div class="col-md-4">
 		<div class="eg_title">Use method chaining to construct HTML tags:</div>
 		<pre class="eg_code">
-<span class="_code_kw">import</span> <span class="_code_kw">static</span> org.rapidoid.app.<span class="_code_cls">AppGUI</span>.*;
+<span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Apps</span>;
+<span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Screen</span>;
 
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 3"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
 }
 
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> content() {
         <span class="_code_cls">Object</span> link = a(<span class="_code_str">"Foo"</span>).href(<span class="_code_str">"foo.html"</span>);
-        <span class="_code_kw">return</span> h2(<span class="_code_str">"Welcome! Visit "</span>, link);
+        <span class="_code_kw">return</span> h3(<span class="_code_str">"Welcome! Visit "</span>, link);
     }
 }
 
@@ -211,6 +224,46 @@
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/3/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 4 -->
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Rapidoid has built-in themes!</h3>
+	</div>
+</div>
+
+<div class="row row-separated">
+
+	<div class="col-md-4">
+		<div class="eg_title">Let's use the built-in theme 1:</div>
+		<pre class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> theme = <span class="_code_str">"1"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 1"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> content = <span class="_code_str">"Nice theme!"</span>;
+
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> {
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">BarScreen</span> {
+}
+</pre>
+	</div>
+
+	<div class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/4/index.html"></iframe>
 		</div>
 	</div>
 

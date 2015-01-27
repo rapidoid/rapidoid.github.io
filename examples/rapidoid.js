@@ -5,8 +5,8 @@ try {
 } catch (e) {
 }
 if (theme && theme != 'default') {
-	document.write('<link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/'
-			+ theme + '/bootstrap.min.css" rel="stylesheet">');
+	document.write('<link href="../theme-' + theme
+			+ '.css" rel="stylesheet">');
 }
 
 function goAt(url) {
@@ -16,9 +16,7 @@ function goAt(url) {
 function _emit(event) {
 
 	var x = document.querySelectorAll("input,textarea");
-
 	var inputs = {};
-
 	for (var i = 0; i < x.length; i++) {
 		var t = $(x[i]);
 		var _h = t.attr('_h');
@@ -56,7 +54,24 @@ function _emit(event) {
 			return;
 		}
 		for ( var sel in data) {
-			$(sel).html(data[sel]);
+			if (sel == "!errors") {
+				$('.field-error').html('');
+				errors = data[sel];
+				for ( var h in errors) {
+					var err = errors[h];
+
+					var x = document.querySelectorAll("input,textarea,option");
+					for (var i = 0; i < x.length; i++) {
+						var t = $(x[i]);
+						var _h = t.attr('_h');
+						if (_h == h) {
+							$(t).next('.field-error').html(err);
+						}
+					}
+				}
+			} else {
+				$(sel).html(data[sel]);
+			}
 		}
 	}).fail(function(data) {
 		alert("Error!");

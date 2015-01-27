@@ -1,10 +1,24 @@
+h3.caption {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #799;
+	border: 1px dotted;
+	border-color: #AAA;
+	color: white;
+}
+
 #twitter-widget-0,.g-plusone {
 	margin: 0px !important;
 }
 
-.embedd {
+.first-embedd {
 	width: 100% !important;
 	height: 200px !important;
+}
+
+.embedd {
+	width: 100% !important;
+	height: 400px !important;
 }
 
 #gen {
