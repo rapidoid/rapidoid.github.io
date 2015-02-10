@@ -245,11 +245,12 @@
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
-
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 4"</span>;
-
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> content = <span class="_code_str">"Fancy theme!"</span>;
 
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
 }
 
 <span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> {
@@ -264,6 +265,208 @@
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/4/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 5 -->
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Ordering the screens</h3>
+	</div>
+</div>
+
+<div class="row row-separated">
+
+	<div class="col-md-4">
+		<div class="eg_title">Foo is second, Bar is first:</div>
+		<pre class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Custom screen order"</span>;
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> theme = <span class="_code_str">"1"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+
+@<span class="_code_cls">Order</span>(2)
+<span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+}
+
+@<span class="_code_cls">Order</span>(1)
+<span class="_code_kw">class</span> <span class="_code_cls">BarScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+}
+</pre>
+	</div>
+
+	<div class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/5/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 6 -->
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Hide the navigation bar extras</h3>
+	</div>
+</div>
+
+<div class="row row-separated">
+
+	<div class="col-md-4">
+		<div class="eg_title">No search or login extras in navigation</div>
+		<pre class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
+    <span class="_code_cls">String</span> title = <span class="_code_str">"No extras here"</span>;
+    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
+
+    <span class="_code_kw">boolean</span> full = false;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+</pre>
+	</div>
+
+	<div class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/6/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 7 -->
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Customize login options in the login menu</h3>
+	</div>
+</div>
+
+<div class="row row-separated">
+
+	<div class="col-md-4">
+		<div class="eg_title">Show Facebook and Google login menu items</div>
+		<pre class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
+    <span class="_code_cls">String</span> title = <span class="_code_str">"Facebook or Google"</span>;
+    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
+
+    <span class="_code_kw">boolean</span> full = false;
+    <span class="_code_kw">boolean</span> facebookLogin = true;
+    <span class="_code_kw">boolean</span> googleLogin = true;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+</pre>
+	</div>
+
+	<div class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/7/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 8 -->
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Display search in navigation</h3>
+	</div>
+</div>
+
+<div class="row row-separated">
+
+	<div class="col-md-4">
+		<div class="eg_title">Show the "search" box in the navigation</div>
+		<pre class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
+    <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
+    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
+
+    <span class="_code_kw">boolean</span> full = false;
+    <span class="_code_kw">boolean</span> search = true;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+</pre>
+	</div>
+
+	<div class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/8/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 9 -->
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Configure screens to be displayed</h3>
+	</div>
+</div>
+
+<div class="row row-separated">
+
+	<div class="col-md-4">
+		<div class="eg_title">Show only the Ab and Cd screens</div>
+		<pre class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+
+    <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
+    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> theme = <span class="_code_str">"5"</span>;
+
+    <span class="_code_cls">Object</span>[] screens = { <span class="_code_str">"ab"</span>, <span class="_code_cls">CdScreen</span>.<span class="_code_kw">class</span> };
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">CdScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">BarScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">AbScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+}
+</pre>
+	</div>
+
+	<div class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/9/index.html"></iframe>
 		</div>
 	</div>
 
