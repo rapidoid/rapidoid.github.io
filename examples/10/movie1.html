@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grid Widget</title>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="/img/favicon.png" rel="shortcut icon">
+
+<link href="../rapidoid.css" rel="stylesheet">
+<script src="../rapidoid.js"></script>
+
+<link rel="stylesheet" href="../theme-4.css">
+</head>
+
+<body>
+  <nav role="navigation" class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Grid Widget</a>
+      </div>
+      <div id="collapsable" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="movies.html">Movies</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
+            <ul role="menu" class="dropdown-menu">
+              <li>
+                <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;scope=email&amp;redirect_uri=http%3A%2F%2Fa.b%2F_googleOauthCallback&amp;state=OK&amp;client_id=NO-CLIENT-ID"><span class="fa fa-google"></span>&nbsp;Sign in with Google</a>
+              </li>
+              <li>
+                <a href="https://graph.facebook.com/oauth/authorize?response_type=code&amp;scope=email&amp;redirect_uri=http%3A%2F%2Fa.b%2F_facebookOauthCallback&amp;state=OK&amp;client_id=NO-CLIENT-ID"><span class="fa fa-facebook"></span>&nbsp;Sign in with Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&amp;scope=r_emailaddress&amp;redirect_uri=http%3A%2F%2Fa.b%2F_linkedinOauthCallback&amp;state=OK&amp;client_id=NO-CLIENT-ID"><span class="fa fa-linkedin"></span>&nbsp;Sign in with LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://github.com/login/oauth/authorize?response_type=code&amp;scope=user%3Aemail&amp;redirect_uri=http%3A%2F%2Fa.b%2F_githubOauthCallback&amp;state=OK&amp;client_id=NO-CLIENT-ID"><span class="fa fa-github"></span>&nbsp;Sign in with GitHub</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form action="search.html" class="navbar-form navbar-right" method="GET">
+          <div class="form-group">
+            <input id="navbar-q" placeholder="Search" name="q" class="form-control" type="text">
+          </div>
+          <button class="btn btn-default" type="submit">
+            <span class="fa fa-search"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h2 style="margin-bottom:15px;">Movie Details</h2>
+        <form class="" role="form">
+          <div class="form-group">
+            <label>Title: </label>
+            <span class="display-wrap">Rambo</span>
+            <span class="field-error"></span>
+          </div>
+          <div class="form-group">
+            <label>Year: </label>
+            <span class="display-wrap">1985</span>
+            <span class="field-error"></span>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="button" onclick="_emit('280598851')">Edit</button>
+            <button class="btn btn-default" type="button" onclick="_emit('869928651')">Back</button>
+            <button class="btn btn-danger" type="button" onclick="_emit('574089644')">Delete</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</body>
+
+</html>
