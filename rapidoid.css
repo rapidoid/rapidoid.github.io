@@ -1,7 +1,7 @@
 h3.caption {
 	margin-top: 15px;
-	padding: 8px;
-	background-color: #799;
+	padding: 7px;
+	background-color: #888;
 	border: 1px dotted;
 	border-color: #AAA;
 	color: white;
@@ -9,11 +9,6 @@ h3.caption {
 
 #twitter-widget-0,.g-plusone {
 	margin: 0px !important;
-}
-
-.first-embedd {
-	width: 100% !important;
-	height: 200px !important;
 }
 
 .embedd {
