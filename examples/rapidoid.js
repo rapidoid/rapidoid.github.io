@@ -13,7 +13,17 @@ function goAt(url) {
 	window.location.href = url;
 }
 
-function _emit(event) {
+function _stop(ev) {
+	if (typeof ev.stopPropagation != "undefined") {
+		ev.stopPropagation();
+	} else {
+		ev.cancelBubble = true;
+	}
+}
+
+function _emit(ev, eventId) {
+
+	_stop(ev);
 
 	var x = document.querySelectorAll("input,textarea");
 	var inputs = {};
@@ -46,7 +56,7 @@ function _emit(event) {
 	}
 
 	$.post(window.location.href, {
-		event : event,
+		event : eventId,
 		inputs : JSON.stringify(inputs)
 	}).done(function(data) {
 		if (data._redirect_) {
@@ -77,4 +87,28 @@ function _emit(event) {
 		alert("Error!");
 		console.log(data);
 	});
+}
+
+function _popup(popupUrl, onClosed) {
+	var ww = 800;
+	var hh = 600;
+
+	var left = (screen.width / 2) - (ww / 2);
+	var top = (screen.height / 2) - (hh / 2);
+
+	var win = window.open(popupUrl, "windowname1", 'width=' + ww + ', height='
+			+ hh + ', top=' + top + ', left=' + left);
+
+	if (win.focus) {
+		win.focus();
+	}
+
+	var winTimer = setInterval(function() {
+		if (win.closed) {
+			clearInterval(winTimer);
+			if (onClosed) {
+				onClosed(popupUrl);
+			}
+		}
+	}, 100);
 }
