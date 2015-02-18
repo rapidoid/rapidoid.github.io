@@ -1,3 +1,7 @@
+div.sep-example {
+	padding-top: 3px !important;
+}
+
 h3.caption {
 	margin-top: 15px;
 	padding: 7px;
@@ -10,6 +14,7 @@ h3.caption {
 #twitter-widget-0,.g-plusone {
 	margin: 0px !important;
 }
+
 
 .embedd {
 	width: 100% !important;
@@ -26,6 +31,7 @@ h3.caption {
 
 #mce-EMAIL {
 	width: 200px !important;
+	display: inline !important;
 }
 
 #mce-success-response {
