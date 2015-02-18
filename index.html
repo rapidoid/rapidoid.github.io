@@ -129,15 +129,15 @@
 </pre>
 <div id="example1-codedesc" class="eg_title">Add the App class:</div>
 <pre id="example1-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+<span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {</span>
 
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 1"</span>;
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> content = <span class="_code_str">"Hello, world!"</span>;
+    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 1"</span>;</span>
+    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_cls">String</span> content = <span class="_code_str">"Hello, world!"</span>;</span>
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_cls">Apps</span>.run(args);
     }    
-}
+<span class="important-code">}</span>
 </pre>
 
 		</div>
@@ -166,10 +166,7 @@
 	<div id="example2-left" class="col-md-4">
 		<div id="example2-codedesc" class="eg_title">Add some screens:</div>
 		<pre id="example2-code" class="eg_code">
-<span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Apps</span>;
-
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
     <span class="_code_cls">String</span> title = <span class="_code_str">"Example 2"</span>;
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
@@ -177,14 +174,14 @@
     }
 }
 
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
-    <span class="_code_cls">String</span> content() {
-        <span class="_code_kw">return</span> <span class="_code_str">"At the Home screen!"</span>;
+<span class="important-code"><span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {</span>
+    <span class="important-code"><span class="_code_cls">Object</span> content() {</span>
+        <span class="important-code"><span class="_code_kw">return</span> <span class="_code_str">"At the Home screen!"</span>;</span>
     }
 }
 
-<span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> {
-    <span class="_code_cls">String</span> content = <span class="_code_str">"At the Foo screen!"</span>;
+<span class="important-code"><span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> {</span>
+    <span class="important-code"><span class="_code_cls">Object</span> content = <span class="_code_str">"At the Foo screen!"</span>;</span>
 }
 </pre>
 	</div>
@@ -213,11 +210,7 @@
 	<div id="example3-left" class="col-md-4">
 		<div id="example3-codedesc" class="eg_title">Use method chaining to construct HTML tags:</div>
 		<pre id="example3-code" class="eg_code">
-<span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Apps</span>;
-<span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Screen</span>;
-
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
     <span class="_code_cls">String</span> title = <span class="_code_str">"Example 3"</span>;
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
@@ -227,8 +220,8 @@
 
 <span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
     <span class="_code_cls">Object</span> content() {
-        <span class="_code_cls">Object</span> link = a(<span class="_code_str">"Foo"</span>).href(<span class="_code_str">"foo.html"</span>);
-        <span class="_code_kw">return</span> h3(<span class="_code_str">"Welcome! Visit "</span>, link);
+        <span class="important-code"><span class="_code_cls">Object</span> link = a(<span class="_code_str">"Foo"</span>).href(<span class="_code_str">"foo.html"</span>);</span>
+        <span class="important-code"><span class="_code_kw">return</span> h3(<span class="_code_str">"Welcome! Visit "</span>, link);</span>
     }
 }
 
@@ -263,10 +256,9 @@
 		<div id="example4-codedesc" class="eg_title">Let's use the built-in theme 2:</div>
 		<pre id="example4-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
     <span class="_code_cls">String</span> title = <span class="_code_str">"Example 4"</span>;
     <span class="_code_cls">String</span> content = <span class="_code_str">"Fancy theme!"</span>;
+    <span class="important-code"><span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;</span>
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_cls">Apps</span>.run(args);
@@ -304,7 +296,6 @@
 		<div id="example5-codedesc" class="eg_title">Foo is second, Bar is first:</div>
 		<pre id="example5-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
     <span class="_code_cls">String</span> title = <span class="_code_str">"Custom screen order"</span>;
     <span class="_code_cls">String</span> theme = <span class="_code_str">"1"</span>;
 
@@ -313,10 +304,10 @@
     }
 }
 
-@<span class="_code_cls">Order</span>(2)
+<span class="important-code">@<span class="_code_cls">Order</span>(2)</span>
 <span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {}
 
-@<span class="_code_cls">Order</span>(1)
+<span class="important-code">@<span class="_code_cls">Order</span>(1)</span>
 <span class="_code_kw">class</span> <span class="_code_cls">BarScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {}
 </pre>
 	</div>
@@ -346,12 +337,11 @@
 		<div id="example6-codedesc" class="eg_title">No search or login extras in navigation</div>
 		<pre id="example6-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
     <span class="_code_cls">String</span> title = <span class="_code_str">"No extras here"</span>;
     <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
     <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
 
-    <span class="_code_kw">boolean</span> full = false;
+    <span class="important-code"><span class="_code_kw">boolean</span> full = false;</span>
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_cls">Apps</span>.run(args);
@@ -385,14 +375,13 @@
 		<div id="example7-codedesc" class="eg_title">Show Facebook and Google login menu items</div>
 		<pre id="example7-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
     <span class="_code_cls">String</span> title = <span class="_code_str">"Facebook or Google"</span>;
     <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
     <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
 
-    <span class="_code_kw">boolean</span> full = false;
-    <span class="_code_kw">boolean</span> facebookLogin = true;
-    <span class="_code_kw">boolean</span> googleLogin = true;
+    <span class="important-code"><span class="_code_kw">boolean</span> full = false;</span>
+    <span class="important-code"><span class="_code_kw">boolean</span> facebookLogin = true;</span>
+    <span class="important-code"><span class="_code_kw">boolean</span> googleLogin = true;</span>
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_cls">Apps</span>.run(args);
@@ -426,13 +415,12 @@
 		<div id="example8-codedesc" class="eg_title">Show the "search" box in the navigation</div>
 		<pre id="example8-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
     <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
     <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
     <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
 
-    <span class="_code_kw">boolean</span> full = false;
-    <span class="_code_kw">boolean</span> search = true;
+    <span class="important-code"><span class="_code_kw">boolean</span> full = false;</span>
+    <span class="important-code"><span class="_code_kw">boolean</span> search = true;</span>
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_cls">Apps</span>.run(args);
@@ -466,12 +454,11 @@
 		<div id="example9-codedesc" class="eg_title">Show only the Ab and Cd screens</div>
 		<pre id="example9-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-
     <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
     <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
     <span class="_code_cls">String</span> theme = <span class="_code_str">"5"</span>;
 
-    <span class="_code_cls">Object</span>[] screens = { <span class="_code_str">"ab"</span>, <span class="_code_cls">CdScreen</span>.<span class="_code_kw">class</span> };
+    <span class="important-code"><span class="_code_cls">Object</span>[] screens = { <span class="_code_str">"ab"</span>, <span class="_code_cls">CdScreen</span>.<span class="_code_kw">class</span> };</span>
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_cls">Apps</span>.run(args);
@@ -515,33 +502,24 @@
     <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_kw">if</span> (<span class="_code_cls">DB</span>.size() == 0) {
-            <span class="_code_cls">DB</span>.insert(<span class="_code_kw">new</span> <span class="_code_cls">Movie</span>(<span class="_code_str">"Rambo"</span>, 1985));
-            <span class="_code_cls">DB</span>.insert(<span class="_code_kw">new</span> <span class="_code_cls">Movie</span>(<span class="_code_str">"Her"</span>, 2013));
-            <span class="_code_cls">DB</span>.insert(<span class="_code_kw">new</span> <span class="_code_cls">Movie</span>(<span class="_code_str">"Batman"</span>, 1989));
-        }
         <span class="_code_cls">Apps</span>.run(args);
     }
-}
 
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
+        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
+        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Her, year=2013"</span>);</span>
+        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Batman, year=1989"</span>);</span>
+    }
+
     <span class="_code_cls">Object</span> content() {
-        <span class="_code_kw">return</span> grid(<span class="_code_cls">Movie</span>.<span class="_code_kw">class</span>, <span class="_code_str">"year"</span>, 3);
+        <span class="important-code"><span class="_code_kw">return</span> grid(<span class="_code_cls">Movie</span>.<span class="_code_kw">class</span>).orderBy(<span class="_code_str">"year"</span>);</span>
     }
 }
 
 @<span class="_code_cls">Scaffold</span>
-<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    <span class="_code_kw">long</span> id;
+<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
     <span class="_code_cls">String</span> title;
     <span class="_code_kw">int</span> year;
-
-    <span class="_code_kw">public</span> <span class="_code_cls">Movie</span>() {}
-
-    <span class="_code_kw">public</span> <span class="_code_cls">Movie</span>(<span class="_code_cls">String</span> title, <span class="_code_kw">int</span> year) {
-        <span class="_code_kw">this</span>.title = title;
-        <span class="_code_kw">this</span>.year = year;
-    }
 }
 </pre>
 	</div>
