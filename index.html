@@ -101,15 +101,15 @@
 
 <!-- EXAMPLE 1 -->
 
-<div class="row">
+<div id="example1-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Quick start</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example1-body" class="row row-separated">
 
-		<div class="col-md-4">
+		<div id="example1-left" class="col-md-4">
 <div class="eg_title">Add Rapidoid as Maven dependency to your project:</div>
 <pre class="eg_code">
 &lt;<span class="_code_tag">dependency</span>&gt;
@@ -118,8 +118,8 @@
     &lt;<span class="_code_tag">version</span>&gt;2.1.1&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
-<div class="eg_title">Add the App class:</div>
-<pre class="eg_code">
+<div id="example1-codedesc" class="eg_title">Add the App class:</div>
+<pre id="example1-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 1"</span>;
@@ -133,7 +133,7 @@
 
 		</div>
 
-		<div class="col-md-8">
+		<div id="example1-right" class="col-md-8">
 			<div class="app-example-title">Your application looks like this:</div>		
 			<div class="embed-responsive embedd">
 				<iframe class="embed-responsive-item" src="examples/1/index.html"></iframe>
@@ -144,17 +144,17 @@
 
 <!-- EXAMPLE 2 -->
 
-<div class="row">
+<div id="example2-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">An application consists of screens </h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example2-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Add some screens:</div>
-		<pre class="eg_code">
+	<div id="example2-left" class="col-md-4">
+		<div id="example2-codedesc" class="eg_title">Add some screens:</div>
+		<pre id="example2-code" class="eg_code">
 <span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Apps</span>;
 
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
@@ -178,7 +178,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example2-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/2/index.html"></iframe>
@@ -189,17 +189,17 @@
 
 <!-- EXAMPLE 3 -->
 
-<div class="row">
+<div id="example3-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Let's write some HTML in Java!</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example3-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Use method chaining to construct HTML tags:</div>
-		<pre class="eg_code">
+	<div id="example3-left" class="col-md-4">
+		<div id="example3-codedesc" class="eg_title">Use method chaining to construct HTML tags:</div>
+		<pre id="example3-code" class="eg_code">
 <span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Apps</span>;
 <span class="_code_kw">import</span> org.rapidoid.app.<span class="_code_cls">Screen</span>;
 
@@ -225,7 +225,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example3-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/3/index.html"></iframe>
@@ -236,17 +236,17 @@
 
 <!-- EXAMPLE 4 -->
 
-<div class="row">
+<div id="example4-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Rapidoid has built-in themes!</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example4-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Let's use the built-in theme 2:</div>
-		<pre class="eg_code">
+	<div id="example4-left" class="col-md-4">
+		<div id="example4-codedesc" class="eg_title">Let's use the built-in theme 2:</div>
+		<pre id="example4-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
@@ -264,7 +264,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example4-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/4/index.html"></iframe>
@@ -275,17 +275,17 @@
 
 <!-- EXAMPLE 5 -->
 
-<div class="row">
+<div id="example5-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Ordering the screens</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example5-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Foo is second, Bar is first:</div>
-		<pre class="eg_code">
+	<div id="example5-left" class="col-md-4">
+		<div id="example5-codedesc" class="eg_title">Foo is second, Bar is first:</div>
+		<pre id="example5-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_cls">String</span> title = <span class="_code_str">"Custom screen order"</span>;
@@ -304,7 +304,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example5-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/5/index.html"></iframe>
@@ -315,17 +315,17 @@
 
 <!-- EXAMPLE 6 -->
 
-<div class="row">
+<div id="example6-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Hide the navigation bar extras</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example6-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">No search or login extras in navigation</div>
-		<pre class="eg_code">
+	<div id="example6-left" class="col-md-4">
+		<div id="example6-codedesc" class="eg_title">No search or login extras in navigation</div>
+		<pre id="example6-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_cls">String</span> title = <span class="_code_str">"No extras here"</span>;
@@ -341,7 +341,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example6-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/6/index.html"></iframe>
@@ -352,17 +352,17 @@
 
 <!-- EXAMPLE 7 -->
 
-<div class="row">
+<div id="example7-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Customize login options in the login menu</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example7-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Show Facebook and Google login menu items</div>
-		<pre class="eg_code">
+	<div id="example7-left" class="col-md-4">
+		<div id="example7-codedesc" class="eg_title">Show Facebook and Google login menu items</div>
+		<pre id="example7-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_cls">String</span> title = <span class="_code_str">"Facebook or Google"</span>;
@@ -380,7 +380,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example7-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/7/index.html"></iframe>
@@ -391,17 +391,17 @@
 
 <!-- EXAMPLE 8 -->
 
-<div class="row">
+<div id="example8-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Display search in navigation</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example8-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Show the "search" box in the navigation</div>
-		<pre class="eg_code">
+	<div id="example8-left" class="col-md-4">
+		<div id="example8-codedesc" class="eg_title">Show the "search" box in the navigation</div>
+		<pre id="example8-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
@@ -418,7 +418,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example8-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/8/index.html"></iframe>
@@ -429,17 +429,17 @@
 
 <!-- EXAMPLE 9 -->
 
-<div class="row">
+<div id="example9-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Configure screens to be displayed</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example9-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Show only the Ab and Cd screens</div>
-		<pre class="eg_code">
+	<div id="example9-left" class="col-md-4">
+		<div id="example9-codedesc" class="eg_title">Show only the Ab and Cd screens</div>
+		<pre id="example9-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
 
     <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
@@ -461,7 +461,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example9-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/9/index.html"></iframe>
@@ -472,17 +472,17 @@
 
 <!-- EXAMPLE 10 -->
 
-<div class="row">
+<div id="example10-title" class="row">
 	<div class="col-md-12">
 		<h3 class="caption">Using the grid widget</h3>
 	</div>
 </div>
 
-<div class="row row-separated">
+<div id="example10-body" class="row row-separated">
 
-	<div class="col-md-4">
-		<div class="eg_title">Grid widget automatically loading data from DB</div>
-		<pre class="eg_code">
+	<div id="example10-left" class="col-md-4">
+		<div id="example10-codedesc" class="eg_title">Grid widget automatically loading data from DB</div>
+		<pre id="example10-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
     <span class="_code_cls">String</span> title = <span class="_code_str">"Grid Widget"</span>;
     <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
@@ -519,7 +519,7 @@
 </pre>
 	</div>
 
-	<div class="col-md-8">
+	<div id="example10-right" class="col-md-8">
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/10/index.html"></iframe>
