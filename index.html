@@ -379,6 +379,254 @@
 
 </div>
 
+<!-- EXAMPLE 006 -->
+
+<div class="sep-example"></div>
+
+<div id="example006-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Using the form widget ("create" mode)<span class="pull-right">[FULL APPLICATION, only 28 lines of code]</span></h3>
+	</div>
+</div>
+
+<div id="example006-body" class="row row-separated">
+
+	<div id="example006-left" class="col-md-4">
+		<div id="example006-codedesc" class="eg_title">Creating form for new entity</div>
+		<pre id="example006-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"New movie demo"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"1"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
+    @<span class="_code_cls">Session</span>
+    <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+
+    <span class="_code_cls">Object</span> content() {
+        <span class="important-code"><span class="_code_cls">FormWidget</span> f = create(movie);</span>
+        <span class="important-code">f = f.buttons(<span class="_code_cls">SAVE</span>, <span class="_code_cls">CANCEL</span>);</span>
+        <span class="_code_kw">return</span> f;
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onSave() {
+        <span class="_code_cls">DB</span>.insert(movie);
+        movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onCancel() {
+        movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+    }
+}
+
+@<span class="_code_cls">Scaffold</span>
+<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
+    <span class="_code_cls">String</span> title;
+    <span class="_code_kw">int</span> year;
+}
+</pre>
+	</div>
+
+	<div id="example006-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/006/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 007 -->
+
+<div class="sep-example"></div>
+
+<div id="example007-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Using the form widget ("edit" mode)<span class="pull-right">[FULL APPLICATION, only 31 lines of code]</span></h3>
+	</div>
+</div>
+
+<div id="example007-body" class="row row-separated">
+
+	<div id="example007-left" class="col-md-4">
+		<div id="example007-codedesc" class="eg_title">Creating form for editing entity</div>
+		<pre id="example007-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"Edit movie demo"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
+        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
+    @<span class="_code_cls">Session</span>
+    <span class="_code_cls">Movie</span> movie;
+
+    <span class="_code_cls">Object</span> content() {
+        <span class="important-code">movie = <span class="_code_cls">DB</span>.get(1);</span>
+        <span class="important-code"><span class="_code_cls">FormWidget</span> f = edit(movie);</span>
+        <span class="important-code">f = f.buttons(<span class="_code_cls">SAVE</span>, <span class="_code_cls">CANCEL</span>);</span>
+        <span class="_code_kw">return</span> f;
+    }
+
+    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> onSave() {</span>
+        <span class="_code_cls">DB</span>.update(movie);
+    }
+
+    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> onCancel() {</span>
+        movie = <span class="_code_cls">DB</span>.get(1);
+    }
+}
+
+@<span class="_code_cls">Scaffold</span>
+<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
+    <span class="_code_cls">String</span> title;
+    <span class="_code_kw">int</span> year;
+}
+</pre>
+	</div>
+
+	<div id="example007-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/007/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 008 -->
+
+<div class="sep-example"></div>
+
+<div id="example008-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Using the form widget ("view" mode)<span class="pull-right">[FULL APPLICATION, only 25 lines of code]</span></h3>
+	</div>
+</div>
+
+<div id="example008-body" class="row row-separated">
+
+	<div id="example008-left" class="col-md-4">
+		<div id="example008-codedesc" class="eg_title">Creating form for displaying entity</div>
+		<pre id="example008-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"Show movie demo"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
+        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
+    @<span class="_code_cls">Session</span>
+    <span class="_code_cls">Movie</span> movie;
+
+    <span class="_code_cls">Object</span> content() {
+        <span class="important-code">movie = <span class="_code_cls">DB</span>.get(1);</span>
+        <span class="important-code"><span class="_code_cls">FormWidget</span> f = show(movie);</span>
+        <span class="important-code">f = f.buttons(<span class="_code_cls">BACK</span>);</span>
+        <span class="_code_kw">return</span> f;
+    }
+}
+
+@<span class="_code_cls">Scaffold</span>
+<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
+    <span class="_code_cls">String</span> title;
+    <span class="_code_kw">int</span> year;
+}
+</pre>
+	</div>
+
+	<div id="example008-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/008/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 009 -->
+
+<div class="sep-example"></div>
+
+<div id="example009-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Customizing form fields and buttons<span class="pull-right">[FULL APPLICATION, only 31 lines of code]</span></h3>
+	</div>
+</div>
+
+<div id="example009-body" class="row row-separated">
+
+	<div id="example009-left" class="col-md-4">
+		<div id="example009-codedesc" class="eg_title">Customizing a form</div>
+		<pre id="example009-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"Custom form"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"5"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
+        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
+
+    @<span class="_code_cls">Session</span>
+    <span class="_code_cls">Movie</span> movie;
+
+    <span class="_code_cls">Object</span> content() {
+        movie = <span class="_code_cls">DB</span>.get(1);
+        <span class="important-code"><span class="_code_cls">FormWidget</span> f = create(movie, <span class="_code_str">"year"</span>);</span>
+        <span class="important-code"><span class="_code_cls">ButtonTag</span> ab = btn(<span class="_code_str">"Ab"</span>);</span>
+        <span class="important-code"><span class="_code_cls">ButtonTag</span> cd = btnPrimary(<span class="_code_str">"Change year"</span>).cmd(<span class="_code_str">"ch"</span>);</span>
+        <span class="important-code"><span class="_code_cls">ButtonTag</span> efg = btnDanger(<span class="_code_str">"!Efg"</span>);</span>
+        <span class="important-code">f = f.buttons(ab, cd, efg);</span>
+        <span class="_code_kw">return</span> f;
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onCh() {
+        <span class="_code_cls">DB</span>.update(movie);
+    }
+}
+
+@<span class="_code_cls">Scaffold</span>
+<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
+    <span class="_code_cls">String</span> title;
+    <span class="_code_kw">int</span> year;
+}
+</pre>
+	</div>
+
+	<div id="example009-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/009/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
 <!-- EXAMPLE 900 -->
 
 <div class="sep-example"></div>
