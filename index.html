@@ -57,7 +57,6 @@
 					class="twitter-share-button navbar-btn" data-url="http://rapidoid.io"
 					data-text="Instantly develop web apps on-line with #Rapidoid and #Java8 #cloud!" data-size="small">Tweet</a>
 </div>
-
       </div>
     </div>
   </nav>
@@ -635,6 +634,62 @@
 
 </div>
 
+<!-- EXAMPLE 020 -->
+
+<div class="sep-example"></div>
+
+<div id="example020-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Constructing GUI and handling events<span class="pull-right">[FULL APPLICATION, only 25 lines of code]</span></h3>
+	</div>
+</div>
+
+<div id="example020-body" class="row row-separated">
+
+	<div id="example020-left" class="col-md-4">
+		<div id="example020-codedesc" class="eg_title">Constructing buttons, handling clicks</div>
+		<pre id="example020-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"Numbers"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+
+    @<span class="_code_cls">Session</span>
+    <span class="_code_cls">String</span> op = <span class="_code_str">""</span>;
+
+    <span class="_code_cls">Object</span> content() {
+        <span class="_code_cls">Tag</span> btns = div();
+        <span class="_code_cls">Tag</span> row = div();
+        <span class="_code_kw">for</span> (<span class="_code_kw">int</span> i = 1; i <= 9; i++) {
+            <span class="important-code"><span class="_code_cls">ButtonTag</span> b = cmd(<span class="_code_str">""</span> + i);</span>
+            <span class="important-code">row = row.append(b);</span>
+            <span class="_code_kw">if</span> (i % 3 == 0) {
+                <span class="important-code">btns = btns.append(row);</span>
+                row = div();
+            }
+        }
+        <span class="_code_kw">return</span> row(btns, h4(<span class="_code_str">"You pressed: "</span>, op));
+    }
+
+    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> on(<span class="_code_cls">String</span> cmd, <span class="_code_cls">Object</span>... args) {</span>
+        op += cmd;
+    }
+}
+</pre>
+	</div>
+
+	<div id="example020-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/020/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
 <!-- EXAMPLE 900 -->
 
 <div class="sep-example"></div>
@@ -836,6 +891,8 @@
 	</div>
 
 </div>
+
+
 
 </div>
 	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>	
