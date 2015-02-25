@@ -212,7 +212,7 @@
 
 <div id="example002-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">An application consists of screens<span class="pull-right">[FULL APPLICATION, only 14 lines of code]</span></h3>
+		<h3 class="caption">An application consists of screens</h3>
 	</div>
 </div>
 
@@ -256,7 +256,7 @@
 
 <div id="example003-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Let's write some HTML in Java!<span class="pull-right">[FULL APPLICATION, only 15 lines of code]</span></h3>
+		<h3 class="caption">Let's write some HTML in Java!</h3>
 	</div>
 </div>
 
@@ -301,7 +301,7 @@
 
 <div id="example004-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Rapidoid has built-in themes!<span class="pull-right">[FULL APPLICATION, only 10 lines of code]</span></h3>
+		<h3 class="caption">Rapidoid has built-in themes!</h3>
 	</div>
 </div>
 
@@ -341,7 +341,7 @@
 
 <div id="example005-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Using the grid widget<span class="pull-right">[FULL APPLICATION, only 20 lines of code]</span></h3>
+		<h3 class="caption">Using the grid widget</h3>
 	</div>
 </div>
 
@@ -392,7 +392,7 @@
 
 <div id="example006-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Using the form widget ("create" mode)<span class="pull-right">[FULL APPLICATION, only 28 lines of code]</span></h3>
+		<h3 class="caption">Using the form widget ("create" mode)</h3>
 	</div>
 </div>
 
@@ -453,7 +453,7 @@
 
 <div id="example007-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Using the form widget ("edit" mode)<span class="pull-right">[FULL APPLICATION, only 31 lines of code]</span></h3>
+		<h3 class="caption">Using the form widget ("edit" mode)</h3>
 	</div>
 </div>
 
@@ -518,7 +518,7 @@
 
 <div id="example008-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Using the form widget ("view" mode)<span class="pull-right">[FULL APPLICATION, only 25 lines of code]</span></h3>
+		<h3 class="caption">Using the form widget ("view" mode)</h3>
 	</div>
 </div>
 
@@ -575,7 +575,7 @@
 
 <div id="example009-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Customizing form fields and buttons<span class="pull-right">[FULL APPLICATION, only 31 lines of code]</span></h3>
+		<h3 class="caption">Customizing form fields and buttons</h3>
 	</div>
 </div>
 
@@ -640,7 +640,7 @@
 
 <div id="example020-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Constructing GUI and handling events<span class="pull-right">[FULL APPLICATION, only 25 lines of code]</span></h3>
+		<h3 class="caption">Constructing GUI and handling events</h3>
 	</div>
 </div>
 
@@ -690,13 +690,73 @@
 
 </div>
 
+<!-- EXAMPLE 021 -->
+
+<div class="sep-example"></div>
+
+<div id="example021-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Dependency injection of singletons</h3>
+	</div>
+</div>
+
+<div id="example021-body" class="row row-separated">
+
+	<div id="example021-left" class="col-md-4">
+		<div id="example021-codedesc" class="eg_title">Injecting a singleton</div>
+		<pre id="example021-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"Singleton counter"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
+    <span class="important-code">@<span class="_code_cls">Inject</span></span>
+    <span class="important-code"><span class="_code_cls">Counter</span> c;</span>
+
+    <span class="_code_cls">Object</span> content() {
+        <span class="_code_kw">return</span> c.get();
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">OtherScreen</span> {
+    <span class="important-code">@<span class="_code_cls">Inject</span></span>
+    <span class="important-code"><span class="_code_cls">Counter</span> c;</span>
+
+    <span class="_code_cls">Object</span> content() {
+        <span class="_code_kw">return</span> c.get();
+    }
+}
+
+<span class="important-code"><span class="_code_kw">class</span> <span class="_code_cls">Counter</span> {</span>
+    <span class="_code_kw">private</span> <span class="_code_kw">int</span> n = 0;
+
+    <span class="_code_kw">synchronized</span> <span class="_code_kw">int</span> get() {
+        <span class="_code_kw">return</span> ++n;
+    }
+}
+</pre>
+	</div>
+
+	<div id="example021-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/021/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
 <!-- EXAMPLE 900 -->
 
 <div class="sep-example"></div>
 
 <div id="example900-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Ordering the screens<span class="pull-right">[FULL APPLICATION, only 11 lines of code]</span></h3>
+		<h3 class="caption">Ordering the screens</h3>
 	</div>
 </div>
 
@@ -737,7 +797,7 @@
 
 <div id="example901-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Hide the navigation bar extras<span class="pull-right">[FULL APPLICATION, only 9 lines of code]</span></h3>
+		<h3 class="caption">Hide the navigation bar extras</h3>
 	</div>
 </div>
 
@@ -775,7 +835,7 @@
 
 <div id="example902-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Customize login options in the login menu<span class="pull-right">[FULL APPLICATION, only 11 lines of code]</span></h3>
+		<h3 class="caption">Customize login options in the login menu</h3>
 	</div>
 </div>
 
@@ -815,7 +875,7 @@
 
 <div id="example903-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Display search in navigation<span class="pull-right">[FULL APPLICATION, only 10 lines of code]</span></h3>
+		<h3 class="caption">Display search in navigation</h3>
 	</div>
 </div>
 
@@ -854,7 +914,7 @@
 
 <div id="example904-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Configure screens to be displayed<span class="pull-right">[FULL APPLICATION, only 12 lines of code]</span></h3>
+		<h3 class="caption">Configure screens to be displayed</h3>
 	</div>
 </div>
 
