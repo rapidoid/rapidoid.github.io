@@ -707,6 +707,7 @@
 		<pre id="example021-code" class="eg_code">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
     <span class="_code_cls">String</span> title = <span class="_code_str">"Singleton counter"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_cls">Apps</span>.run(args);
@@ -745,6 +746,111 @@
 		<div class="app-example-title">Your application looks like this:</div>
 		<div class="embed-responsive embedd">
 			<iframe class="embed-responsive-item" src="examples/021/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 022 -->
+
+<div class="sep-example"></div>
+
+<div id="example022-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Basic event handling and session storage</h3>
+	</div>
+</div>
+
+<div id="example022-body" class="row row-separated">
+
+	<div id="example022-left" class="col-md-4">
+		<div id="example022-codedesc" class="eg_title">Increase n when the "+" button is clicked:</div>
+		<pre id="example022-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"Clicky"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+    <span class="important-code">@<span class="_code_cls">Session</span></span>
+    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">int</span> n = 0;</span>
+
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> content() {
+        <span class="_code_cls">Tag</span> caption = h3(n, <span class="_code_str">" clicks"</span>);
+        <span class="important-code"><span class="_code_cls">ButtonTag</span> hi = btn(<span class="_code_str">"+"</span>).cmd(<span class="_code_str">"Inc"</span>);</span>
+        <span class="_code_kw">return</span> row(caption, hi);
+    }
+
+    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> onInc() {</span>
+        n++;
+    }
+}
+</pre>
+	</div>
+
+	<div id="example022-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/022/index.html"></iframe>
+		</div>
+	</div>
+
+</div>
+
+<!-- EXAMPLE 023 -->
+
+<div class="sep-example"></div>
+
+<div id="example023-title" class="row">
+	<div class="col-md-12">
+		<h3 class="caption">Basic database CRUD operations</h3>
+	</div>
+</div>
+
+<div id="example023-body" class="row row-separated">
+
+	<div id="example023-left" class="col-md-4">
+		<div id="example023-codedesc" class="eg_title">Database CRUD is easy with the DB API:</div>
+		<pre id="example023-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
+    <span class="_code_cls">String</span> title = <span class="_code_str">"DB API"</span>;
+    <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_cls">Apps</span>.run(args);
+    }
+}
+
+<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
+    <span class="_code_cls">Object</span>[] content = { 
+        grid(<span class="_code_cls">Todo</span>.<span class="_code_kw">class</span>), cmd(<span class="_code_str">"Add"</span>)
+    };
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onAdd() {
+        <span class="_code_cls">Todo</span> todo = <span class="_code_kw">new</span> <span class="_code_cls">Todo</span>();
+        todo.content = <span class="_code_str">"Learn Rapidoid!"</span>;
+        <span class="important-code"><span class="_code_kw">long</span> id = <span class="_code_cls">DB</span>.insert(todo);</span>
+        <span class="important-code"><span class="_code_cls">Todo</span> todo2 = <span class="_code_cls">DB</span>.get(id);</span>
+        todo2.content += <span class="_code_str">" :)"</span>;
+        <span class="important-code"><span class="_code_cls">DB</span>.update(todo2);</span>
+    }
+}
+
+@<span class="_code_cls">Scaffold</span>
+<span class="_code_kw">class</span> <span class="_code_cls">Todo</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
+    <span class="_code_cls">String</span> content;
+}
+</pre>
+	</div>
+
+	<div id="example023-right" class="col-md-8">
+		<div class="app-example-title">Your application looks like this:</div>
+		<div class="embed-responsive embedd">
+			<iframe class="embed-responsive-item" src="examples/023/index.html"></iframe>
 		</div>
 	</div>
 
