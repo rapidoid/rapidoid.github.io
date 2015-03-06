@@ -10,6 +10,8 @@
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="../ng-infinite-scroll-1.0.min.js"></script>
 
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -22,7 +24,7 @@
 <link rel="stylesheet" href="../theme-4.css">
 </head>
 
-<body>
+<body ng-controller="Main" ng-app="rapidoid-app">
   <nav role="navigation" class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -93,7 +95,7 @@
           </div>
           <div class="form-group">
             <label>Created on: </label>
-            <span class="display-wrap">24/02/2015</span>
+            <span class="display-wrap">06/03/2015</span>
             <span class="field-error"></span>
           </div>
           <div class="form-group">
@@ -103,7 +105,7 @@
           </div>
           <div class="form-group">
             <label>Last updated on: </label>
-            <span class="display-wrap">24/02/2015</span>
+            <span class="display-wrap">06/03/2015</span>
             <span class="field-error"></span>
           </div>
           <div class="form-group">
@@ -117,9 +119,9 @@
             <span class="field-error"></span>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary" type="button" onclick="_emit(event, '919009398')">Edit</button>
-            <button class="btn btn-default" type="button" onclick="_emit(event, '1451152840')">Back</button>
-            <button class="btn btn-danger" type="button" onclick="_emit(event, '74459281')">Delete</button>
+            <button class="btn btn-primary" type="button" onclick="alert('This is not a live demo, so this button does NOT work!');">Edit</button>
+            <button class="btn btn-default" type="button" onclick="alert('This is not a live demo, so this button does NOT work!');">Back</button>
+            <button class="btn btn-danger" type="button" onclick="alert('This is not a live demo, so this button does NOT work!');">Delete</button>
           </div>
         </form>
       </div>

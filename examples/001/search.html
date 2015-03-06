@@ -10,6 +10,8 @@
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="../ng-infinite-scroll-1.0.min.js"></script>
 
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -22,7 +24,7 @@
 
 </head>
 
-<body>
+<body ng-controller="Main" ng-app="rapidoid-app">
   <nav role="navigation" class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -99,39 +101,7 @@
             </thead>
             <tbody></tbody>
           </table>
-          <div class="pull-right">
-            <nav>
-              <ul class="pagination">
-                <li class="disabled">
-                  <a href="javascript:void(0);">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">First</span>
-                  </a>
-                </li>
-                <li class="disabled">
-                  <a href="javascript:void(0);">
-                    <span aria-hidden="true">&lt;</span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0);">Page 0 of 0</a>
-                </li>
-                <li class="disabled">
-                  <a href="javascript:void(0);">
-                    <span aria-hidden="true">&gt;</span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-                <li class="disabled">
-                  <a href="javascript:void(0);">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Last</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <div></div>
         </div>
       </div>
     </div>

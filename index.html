@@ -179,7 +179,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-all&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;2.2.0&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;2.3.0&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 <div id="example1-codedesc" class="eg_title">Add the App class:</div>
@@ -369,6 +369,7 @@
     }
 }
 
+@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
 @<span class="_code_cls">Scaffold</span>
 <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
     <span class="_code_cls">String</span> title;
@@ -430,6 +431,7 @@
     }
 }
 
+@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
 @<span class="_code_cls">Scaffold</span>
 <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
     <span class="_code_cls">String</span> title;
@@ -495,6 +497,7 @@
     }
 }
 
+@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
 @<span class="_code_cls">Scaffold</span>
 <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
     <span class="_code_cls">String</span> title;
@@ -552,6 +555,7 @@
     }
 }
 
+@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
 @<span class="_code_cls">Scaffold</span>
 <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
     <span class="_code_cls">String</span> title;
@@ -605,9 +609,9 @@
     <span class="_code_cls">Object</span> content() {
         movie = <span class="_code_cls">DB</span>.get(1);
         <span class="important-code"><span class="_code_cls">FormWidget</span> f = create(movie, <span class="_code_str">"year"</span>);</span>
-        <span class="important-code"><span class="_code_cls">ButtonTag</span> ab = btn(<span class="_code_str">"Ab"</span>);</span>
-        <span class="important-code"><span class="_code_cls">ButtonTag</span> cd = btnPrimary(<span class="_code_str">"Change year"</span>).cmd(<span class="_code_str">"ch"</span>);</span>
-        <span class="important-code"><span class="_code_cls">ButtonTag</span> efg = btnDanger(<span class="_code_str">"!Efg"</span>);</span>
+        <span class="important-code"><span class="_code_cls">ButtonWidget</span> ab = btn(<span class="_code_str">"Ab"</span>);</span>
+        <span class="important-code"><span class="_code_cls">ButtonWidget</span> cd = btn(<span class="_code_str">"Change year"</span>).command(<span class="_code_str">"ch"</span>).primary();</span>
+        <span class="important-code"><span class="_code_cls">ButtonWidget</span> efg = btn(<span class="_code_str">"!Efg"</span>).danger();</span>
         <span class="important-code">f = f.buttons(ab, cd, efg);</span>
         <span class="_code_kw">return</span> f;
     }
@@ -617,6 +621,7 @@
     }
 }
 
+@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
 @<span class="_code_cls">Scaffold</span>
 <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
     <span class="_code_cls">String</span> title;
@@ -663,8 +668,8 @@
     <span class="_code_cls">Object</span> content() {
         <span class="_code_cls">Tag</span> btns = div();
         <span class="_code_cls">Tag</span> row = div();
-        <span class="_code_kw">for</span> (<span class="_code_kw">int</span> i = 1; i <= 9; i++) {
-            <span class="important-code"><span class="_code_cls">ButtonTag</span> b = cmd(<span class="_code_str">""</span> + i);</span>
+        <span class="_code_kw">for</span> (<span class="_code_kw">int</span> i = 1; i &amp;lt;= 9; i++) {
+            <span class="important-code"><span class="_code_cls">ButtonWidget</span> b = cmd(<span class="_code_str">""</span> + i);</span>
             <span class="important-code">row = row.append(b);</span>
             <span class="_code_kw">if</span> (i % 3 == 0) {
                 <span class="important-code">btns = btns.append(row);</span>
@@ -781,7 +786,7 @@
 
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> content() {
         <span class="_code_cls">Tag</span> caption = h3(n, <span class="_code_str">" clicks"</span>);
-        <span class="important-code"><span class="_code_cls">ButtonTag</span> hi = btn(<span class="_code_str">"+"</span>).cmd(<span class="_code_str">"Inc"</span>);</span>
+        <span class="important-code"><span class="_code_cls">ButtonWidget</span> hi = btn(<span class="_code_str">"+"</span>).command(<span class="_code_str">"Inc"</span>);</span>
         <span class="_code_kw">return</span> row(caption, hi);
     }
 
@@ -840,6 +845,7 @@
     }
 }
 
+@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
 @<span class="_code_cls">Scaffold</span>
 <span class="_code_kw">class</span> <span class="_code_cls">Todo</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
     <span class="_code_cls">String</span> content;
