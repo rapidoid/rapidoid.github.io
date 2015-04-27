@@ -1,186 +1,73 @@
-.example-code {
-	font-weight: bold;
-	background-color: #FFD;
-	border: 1px dashed;
-	border-color: #AAA;
-	padding: 5px;
-}
-
-.feature-point {
-	margin-right: 5px !important;
+.pointer {
+	cursor: pointer;
 }
 
 .idea-label {
 	font-weight: bold;
 }
 
-.idea-title {
+.display-wrap {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-width: 1px;
+	border-radius: 3px;
+	border-style: dotted;
+	border-color: #CCC;
+}
+
+.value-line {
+	margin: 0px;
+	margin-bottom: 7px;
+}
+
+div.title-box {
+	margin: 0px;
+	margin-bottom: 10px;
+	padding: 3px;
+	font-size: 20px;
 	font-weight: bold;
-	margin-bottom: 25px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-radius: 15px;
+	border-style: dashed;
+	border-color: #CCC;
+	background-color: #F5F5F5;
+	text-align: center;
 }
 
-.important-code {
-	border: 1px dashed;
-	border-color: #900;
-	padding: 1px;
+span.highlight {
+	margin: 0px;
+	padding: 0px;
+	background-color: #FEE;
+	border-width: 1px;
+	border-radius: 0px;
+	border-style: solid;
+	border-color: #A55;
 }
 
-div.sep-example {
-	padding-top: 3px !important;
+.table-hover tbody tr:hover td {
+	background-color: #FFB !important;
 }
 
-h3.caption {
+#navbar-q {
+	width: 100px;
+}
+
+.field-error {
+	font-weight: bold;
+	color: #700;
+}
+
+.nothing {
+	color: #BBB;
+}
+
+div.row-separated>div {
 	margin-top: 15px;
-	padding: 7px;
-	background-color: #888;
-	border: 1px dotted;
-	border-color: #AAA;
-	color: white;
-}
-
-#twitter-widget-0,.g-plusone {
-	margin: 0px !important;
-}
-
-
-.embedd {
-	width: 100% !important;
-	height: 500px !important;
-}
-
-#gen {
-	color: black;
-}
-
-.plotdesc {
-	
-}
-
-#mce-EMAIL {
-	width: 200px !important;
-	display: inline !important;
-}
-
-#mce-success-response {
-	color: #336;
-	font-size: 12px;
-}
-
-.bigger {
-	font-size: 16px;
-}
-
-.tut_title {
-	padding-bottom: 5px !important;
-	padding-top: 5px !important;
-	padding-left: 10px !important;
-	padding-right: 10px !important;
-	color: #336 !important;
-	margin-bottom: 10px !important;
-	margin-top: 20px !important;
-}
-
-.methodref {
-	font-weight: bold;
-}
-
-span.named {
-	font-weight: bold;
-	font-style: italic;
-}
-
-.part1 {
-	color: #335;
-}
-
-.part2 {
-	color: #533;
-}
-
-.part3 {
-	color: #353;
-}
-
-.eg_code,.eg_output {
-	padding: 5px !important;
-	background: #FFF !important;
-	border-style: dashed !important;
-	border-color: #CCC !important;
-}
-
-.eg_text {
-	padding: 5px !important;
-	border-style: dashed !important;
-	border-width: 1px !important;
-	border-color: #AAA !important;
-	margin-bottom: 20px;
-}
-
-.eg_text2 {
-	padding: 5px !important;
-	border-style: dashed !important;
-	border-width: 1px !important;
-	border-color: #AAA !important;
-	margin-bottom: 20px;
-	background-color: #FCC;
-}
-
-.eg_title {
-	padding-bottom: 5px !important;
-	padding-top: 5px !important;
-	padding-left: 10px !important;
-	padding-right: 10px !important;
-	background: #DDE !important;
-	font-size: 13px !important;
-	color: #333 !important;
-}
-
-#main_title {
-	margin-bottom: 15px;
-}
-
-#main_subtitle {
-	margin-bottom: 25px;
-}
-
-#tut_subtitle {
-	margin-bottom: 5px;
-}
-
-.tut_num {
-	font-size: 12px;
-}
-
-.row-separated {
-	margin-top: 25px;
-}
-
-.readtut {
-	background: #585;
-	font-size: 14px;
-	cursor: pointer;
-}
-
-.rapidoid {
-	font-weight: bold;
-	margin-right: 20px;
-}
-
-.subtle {
-	color: #555;
-	font-size: 14px;
-}
-
-.good {
-	color: green;
-}
-
-.mid {
-	color: #664;
-}
-
-.bad {
-	color: red;
 }
 
 span._code_kw {
@@ -199,6 +86,28 @@ span._code_str {
 	color: #070;
 }
 
-.app-example-title {
-	margin-bottom: 10px;
+pre.example-code, pre.example-output {
+	padding: 5px !important;
+	background: #FFF !important;
+	border-style: dashed !important;
+	border-color: #CCC !important;
+}
+
+/**** CARDS *****/
+div.rapidoid-card {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #CCC;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+div.rapidoid-card:hover {
+	border-color: #DDC;
+}
+
+div.rapidoid-card h6.rapidoid-card-caption {
+	margin: 0px;
+}
+
 }
