@@ -1,14 +1,37 @@
+.not-found {
+	color: #777;
+	font-weight: bold;
+}
+
 div.sep-example {
 	padding-top: 3px !important;
 }
 
-h3.caption {
+body {
+	background-color: #FFF !important;
+}
+
+div.caption {
 	margin-top: 15px;
 	padding: 7px;
-	background-color: #888;
-	border: 1px dotted;
+	border-top: 1px dashed;
+	border-bottom: 1px dashed;
+	border-left: 0px;
+	border-right: 0px;
 	border-color: #AAA;
-	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	color: #555;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.badge-eg-num {
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: middle;
+	background-color: #967;
+	color: #FFF;
 }
 
 .embedd {
@@ -28,11 +51,6 @@ h3.caption {
 	margin-bottom: 25px;
 }
 
-.rapidoid {
-	font-weight: bold;
-	margin-right: 20px;
-}
-
 .subtle {
 	color: #555;
 	font-size: 14px;
@@ -40,4 +58,41 @@ h3.caption {
 
 .app-example-title {
 	margin-bottom: 10px;
+}
+
+.eg-verb {
+	color: white;
+	font-weight: bold;
+}
+
+.eg-GET {
+	background-color: #457;
+}
+
+.eg-POST {
+	background-color: #744;
+}
+
+.eg-uri {
+	background-color: #77A;
+	color: white;
+	font-weight: normal;
+	font-size:13px;
+}
+
+.eg-result {
+	background-color: #FFF;
+	border: 1px dotted;
+	border-color: #BBB;
+	margin-top: 5px;
+	margin-bottom: 25px;
+	padding: 2px;
+}
+
+pre {
+	font-size: 13px;
+}
+
+.eg_code {
+	margin-bottom: 25px;
 }

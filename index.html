@@ -8,20 +8,28 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="rapidoid.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="rapidoid.css" type="text/css" rel="stylesheet" />
+
 <link href="docs.css" type="text/css" rel="stylesheet" />
+<link href="rapidoid.min.css" type="text/css" rel="stylesheet" />
+<link href="theme-default.css" type="text/css" rel="stylesheet" />
 
 <title>Rapidoid - Cool Full-stack Web Framework for Java!</title>
 
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
 </head>
 
-<body>
-<div id="fb-root"></div>
+<body class="rapidoid">
 
   <nav role="navigation" class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
       <div class="navbar-header">
         <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
           <span class="sr-only">Toggle navigation</span>
@@ -37,68 +45,51 @@
 	  <li><a href="community.html">Community &amp; Support</a></li>
 	  <li><a href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
         </ul>
-        <div class="navbar-brand navbar-right">
-                <span class="g-plusone" data-size="medium"></span>
-        </div>
-        <div class="navbar-brand navbar-right">
-                <script type="IN/Share" data-url="http://rapidoid.io/" data-counter="right"></script>
-        </div>
-        <div class="navbar-brand navbar-right">
-                <a href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://rapidoid.io" data-text="Instantly develop web apps on-line with #Rapidoid and #Java8 #cloud!" data-size="small">Tweet</a>
-        </div>
-        <div class="navbar-brand navbar-right">
-                <div class="fb-like" data-href="http://www.rapidoid.org/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>        
-        </div>
-        <div class="navbar-brand navbar-right">
+
+<div class="navbar-brand navbar-right">
+				<a data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
 				<a data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
-        </div>
-        <div class="navbar-brand navbar-right">
-                <a data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
-        </div>
+
+				<script type="IN/Share" data-url="http://rapidoid.org/" data-counter="right"></script>
+				
+				<span class="g-plusone" data-size="medium"></span>
+				
+				<a href="https://twitter.com/share" rel="nofollow"
+					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
+					data-text="#Rapidoid == New and Cool #Java web app #framework!" data-size="small">Tweet</a>
+</div>
       </div>
     </div>
   </nav>
 
-	<div class="container-fluid">
+	<div class="container">
 
 		<div class="row">
 			<div class="col-md-7 col-sm-12">
 				<h4 id="main_subtitle">
 					<span class="rapidoid">Rapidoid - Cool Full-stack Web Framework for Java!</span>
-					<a class="button btn btn-warning" href="http://rapidoid.io">Try it on-line!</a>
 				</h4>
 			</div>
 
 			<div class="col-md-5 col-sm-12">
-				<!-- Begin MailChimp Signup Form -->
-				<div id="mc_embed_signup">
-					<form
-						action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699"
-						method="post" id="mc-embedded-subscribe-form"
-						name="mc-embedded-subscribe-form" class="validate form-inline"
-						target="_blank" novalidate>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+    <form action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
 
-						<div class="mc-field-group">
-							<input type="email" value="" name="EMAIL"
-								class="required email form-control input-sm" id="mce-EMAIL"
-								placeholder="Your e-mail address"> <input type="submit"
-								value="Subscribe to newsletter" name="subscribe"
-								id="mc-embedded-subscribe" class="button btn btn-primary btn-sm">
-						</div>
-						<div id="mce-responses" class="clear">
-							<div class="response" id="mce-error-response"
-								style="display: none"></div>
-							<div class="response" id="mce-success-response"
-								style="display: none"></div>
-						</div>
-						<div style="position: absolute; left: -5000px;">
-							<input type="text" name="b_c2c27aa25fdef31d9513d6124_08cd6ec699"
-								value="">
-						</div>
-						<div class="clear"></div>
-					</form>
-				</div>
-				<!--End mc_embed_signup-->
+        <div class="mc-field-group">
+            <input type="email" value="" name="EMAIL" class="required email form-control input-sm" id="mce-EMAIL" placeholder="Your e-mail address"> <input type="submit" value="Subscribe to newsletter" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary btn-sm">
+        </div>
+        <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display: none"></div>
+            <div class="response" id="mce-success-response" style="display: none"></div>
+        </div>
+        <div style="position: absolute; left: -5000px;">
+            <input type="text" name="b_c2c27aa25fdef31d9513d6124_08cd6ec699" value="">
+        </div>
+        <div class="clear"></div>
+    </form>
+</div>
+<!--End mc_embed_signup-->
 
 			</div>
 		</div>
@@ -106,503 +97,180 @@
 <!-- FEATURES -->
 
 <div class="row">
-  <div class="col-md-12">
+  
+  <div class="col-md-6">
     <div id="features">
-    	<h2>Features:</h2>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-3">
-<p><span class="feature-point fa fa-check-square-o"></span><b>CRUD and GUI Scaffolding</b></p>
-<p><span class="feature-point fa fa-check-square-o"></span><b>OAuth login</b> with Facebook, Google, Tweeter, LinkedIn </p> 
-<p><span class="feature-point fa fa-check-square-o"></span>MVC-like page-based <b>responsive GUI framework based on Bootstrap</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>DOM/DSL of HTML5 tags</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>customizable GUI widgets (grids, forms, etc.)</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span>simple <b>dependency injection</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>role-based security</b>, configurable through annotations </p> 
-  </div>
-
-  <div class="col-md-3">
-<p><span class="feature-point fa fa-check-square-o"></span><b>embedded in-memory persisted DB with ACID transactions</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>automatic and transparrent transaction management</b> per request </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>automatic read-only transactions for GET requests</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>Optimistic Concurency Control</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>ORM-like two-way relations</b> exposed as Java collections </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>security-aware DB opearations</b> (read what you can read, write what you can write) </p> 
-  </div>
-  
-  <div class="col-md-3">
-<p><span class="feature-point fa fa-check-square-o"></span><b>built-in Bootstrap themes</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span>basic <b>input validation</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span>auto-detection of <b>dev/prod mode</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>smart diagnostics</b> depending on dev/prod mode </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>dev-only components</b> (useful for debugging, auto-off in prod mode) </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>full-text search</b> with match highlighting </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>security-aware GUI rendering</b> (show what you can see/edit) </p> 
-  </div>
-  
-  <div class="col-md-3">
-<p><span class="feature-point fa fa-check-square-o"></span><b>POJO-based REST services</b> with automatic JSON serialization </p> 
-<p><span class="feature-point fa fa-check-square-o"></span><b>debugging tools</b> (login as, view user...) </p> 
- <p><span class="feature-point fa fa-check-square-o"></span><b>embedded HTTP server</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span>auto-expanding <b>off-heap buffers</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span>high-performance <b>async TCP/IP client framework</b> </p> 
-<p><span class="feature-point fa fa-check-square-o"></span>high-performance <b>async TCP/IP server framework</b> (10M req/s)...    
-  </div>
-</div>
-
-<!-- 
-    <div id="showcase" class="thumbnail">
-      <a href="#quickstart"><img src="showcase.gif" alt="Rapidoid Showcase"></a>
-    </div>
- -->
-
-<div class="row row-separated">
-	<div class="col-md-12">
-		<h3 class="caption"><a id="showcase"></a>Showcase snippets (expressions)</h3>
-	</div>
-</div>
-
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">btn(<span class="_code_str">"abc"</span>)</pre>
-          <div>
-            <button type="button" class="btn btn-default">abc</button>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">btn(<span class="_code_str">"abc"</span>).primary()</pre>
-          <div>
-            <button type="button" class="btn btn-primary">abc</button>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">btn(<span class="_code_str">"great"</span>).success()</pre>
-          <div>
-            <button type="button" class="btn btn-success">great</button>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">btn(<span class="_code_str">"information"</span>).info()</pre>
-          <div>
-            <button type="button" class="btn btn-info">information</button>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">btn(<span class="_code_str">"careful"</span>).warning()</pre>
-          <div>
-            <button type="button" class="btn btn-warning">careful</button>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">btn(<span class="_code_str">"Delete!"</span>).danger()</pre>
-          <div>
-            <button type="button" class="btn btn-danger">Delete!</button>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">create(<span class="_code_kw">new</span> <span class="_code_cls">DemoMovie</span>())</pre>
-          <div>
-            <form class="" role="form">
-              <div class="form-group">
-                <label>Title: </label>
-                <input _h="786129766" name="title" type="text" class="form-control" value="">
-                <span class="field-error"></span>
-              </div>
-              <div class="form-group">
-                <label>Year: </label>
-                <input _h="1436540754" name="year" type="text" class="form-control" value="0">
-                <span class="field-error"></span>
-              </div>
-              <div class="form-group"></div>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">show(<span class="_code_kw">new</span> <span class="_code_cls">DemoMovie</span>(<span class="_code_str">"The Matrix"</span>, 1999))</pre>
-          <div>
-            <form class="" role="form">
-              <div class="form-group">
-                <label>Title: </label>
-                <span class="display-wrap">The Matrix</span>
-                <span class="field-error"></span>
-              </div>
-              <div class="form-group">
-                <label>Year: </label>
-                <span class="display-wrap">1999</span>
-                <span class="field-error"></span>
-              </div>
-              <div class="form-group"></div>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">edit(<span class="_code_kw">new</span> <span class="_code_cls">DemoMovie</span>(<span class="_code_str">"The Imitation Game"</span>, 2014))</pre>
-          <div>
-            <form class="" role="form">
-              <div class="form-group">
-                <label>Title: </label>
-                <input _h="566754064" name="title" type="text" class="form-control" value="The Imitation Game">
-                <span class="field-error"></span>
-              </div>
-              <div class="form-group">
-                <label>Year: </label>
-                <input _h="1685233543" name="year" type="text" class="form-control" value="2014">
-                <span class="field-error"></span>
-              </div>
-              <div class="form-group"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">grid(U.orderedMap(<span class="_code_str">"Name"</span>, <span class="_code_str">"John Doe"</span>, <span class="_code_str">"Age"</span>, 99, <span class="_code_str">"Address"</span>, <span class="_code_cls">N_A</span>))</pre>
-          <div>
-            <table class="table table-striped table-hover">
-              <tr>
-                <th>Key</th>
-                <th>Value</th>
-              </tr>
-              <tr>
-                <td>Name</td>
-                <td>John Doe</td>
-              </tr>
-              <tr>
-                <td>Age</td>
-                <td>99</td>
-              </tr>
-              <tr>
-                <td>Address</td>
-                <td>
-                  <span class="nothing"><span class="fa fa-ban"></span> N/A</span>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">highlight(<span class="_code_str">"abcde"</span>)</pre>
-          <div>
-            <span class="highlight">abcde</span>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">highlight(<span class="_code_str">"abc123-gh7xyz"</span>, <span class="_code_str">"d+"</span>)</pre>
-          <div>
-            <span>abc<span class="highlight">123</span>-gh<span class="highlight">7</span>xyz</span>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">txt(<span class="_code_str">"name"</span>, <span class="_code_str">"Joe"</span>)</pre>
-          <div>
-            <input _h="953056898" type="text" class="form-control" value="Joe">
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">password(<span class="_code_str">"pass"</span>)</pre>
-          <div>
-            <input _h="148761277" type="password" class="form-control" value="">
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">txtbig(<span class="_code_str">"desc"</span>, <span class="_code_str">"Some text"</span>)</pre>
-          <div>
-            <textarea _h="1134421208" class="form-control">Some text</textarea>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">email(<span class="_code_str">"em"</span>)</pre>
-          <div>
-            <input _h="151457851" type="email" class="form-control" value="">
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">checkbox(<span class="_code_str">"ch"</span>, true)</pre>
-          <div>
-            <input _h="360375317" type="checkbox" checked>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">dropdown(U.list(<span class="_code_str">"A"</span>, <span class="_code_str">"B"</span>), <span class="_code_str">"v0"</span>, <span class="_code_str">"B"</span>)</pre>
-          <div>
-            <select class="form-control">
-              <option _h="1765140024" value="false">A</option>
-              <option _h="161423558" value="true" selected>B</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">multiSelect(U.list(<span class="_code_str">"A"</span>, <span class="_code_str">"B"</span>, <span class="_code_str">"C"</span>), <span class="_code_str">"v1"</span>, U.list(<span class="_code_str">"A"</span>, <span class="_code_str">"C"</span>))</pre>
-          <div>
-            <select class="form-control" multiple>
-              <option _h="108471142" value="true" selected>A</option>
-              <option _h="179578259" value="false">B</option>
-              <option _h="346652618" value="true" selected>C</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">radios(U.list(<span class="_code_str">"A"</span>, <span class="_code_str">"B"</span>), <span class="_code_str">"v2"</span>, <span class="_code_str">"A"</span>)</pre>
-          <div>
-            <label class="radio-inline"><input _h="1458026855" name="AULKHSLXBXGRKLTGHKFJRTZJYLLKVA" type="radio" value="true" checked>A</label>
-            <label class="radio-inline"><input _h="1065493852" name="AULKHSLXBXGRKLTGHKFJRTZJYLLKVA" type="radio" value="false">B</label>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">checkboxes(U.list(<span class="_code_str">"A"</span>, <span class="_code_str">"B"</span>, <span class="_code_str">"C"</span>), <span class="_code_str">"v3"</span>, U.list(<span class="_code_str">"A"</span>, <span class="_code_str">"C"</span>))</pre>
-          <div>
-            <label class="radio-checkbox"><input _h="1125108598" name="VGSRFHWACXSTHLJXEZKFJXUAYBYPDP" type="checkbox" value="true" checked>A</label>
-            <label class="radio-checkbox"><input _h="834052183" name="VGSRFHWACXSTHLJXEZKFJXUAYBYPDP" type="checkbox" value="false">B</label>
-            <label class="radio-checkbox"><input _h="345058562" name="VGSRFHWACXSTHLJXEZKFJXUAYBYPDP" type="checkbox" value="true" checked>C</label>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">display(U.list(<span class="_code_str">"a"</span>, <span class="_code_str">"b"</span>, <span class="_code_str">"c"</span>))</pre>
-          <div>
-            <div>
-              <div class="value-line"><span class="fa fa-circle-o"></span> a</div>
-              <div class="value-line"><span class="fa fa-circle-o"></span> b</div>
-              <div class="value-line"><span class="fa fa-circle-o"></span> c</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">inline(<span class="_code_str">"abc"</span>, checkbox(session(<span class="_code_str">"c"</span>, true)), <span class="_code_cls">OK</span>)</pre>
-          <div>
-            <form class="form-inline">
-              <div class="form-group">abc&nbsp;<input _h="553577566" type="checkbox" checked>&nbsp;<button type="button" class="btn btn-primary" ng-click="_emit('1464895883')">OK</button></div>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">panel(<span class="_code_str">"abc"</span>)</pre>
-          <div>
-            <div class="panel panel-default">
-              <div class="panel-body">abc</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">jumbotron(<span class="_code_str">"abc"</span>)</pre>
-          <div>
-            <div class="jumbotron">abc</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">well(<span class="_code_str">"abc"</span>)</pre>
-          <div>
-            <div class="well">abc</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">titleBox(<span class="_code_str">"abc"</span>)</pre>
-          <div>
-            <div class="title-box">abc</div>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code"><span class="_code_cls">FA</span>.<span class="_code_cls">COG</span></pre>
-          <div>
-            <span class="fa fa-cog"></span>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code"><span class="_code_cls">FA</span>.<span class="_code_cls">FLAG</span></pre>
-          <div>
-            <span class="fa fa-flag"></span>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">right(<span class="_code_str">"abc"</span>)</pre>
-          <div>
-            <span class="pull-right">abc</span>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">row(<span class="_code_str">"abc"</span>)</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-12">abc</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">row(col2(<span class="_code_str">"a"</span>), col10(<span class="_code_str">"b"</span>))</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-2">a</div>
-              <div class="col-md-10">b</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">row(col4(<span class="_code_str">"c"</span>), col4(<span class="_code_str">"d"</span>), col4(<span class="_code_str">"e"</span>))</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-4">c</div>
-              <div class="col-md-4">d</div>
-              <div class="col-md-4">e</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">row(col1(<span class="_code_str">"g"</span>), col7(<span class="_code_str">"g"</span>), col4(<span class="_code_str">"e"</span>))</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-1">g</div>
-              <div class="col-md-7">g</div>
-              <div class="col-md-4">e</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">mid2(<span class="_code_str">"ab"</span>)</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-5"></div>
-              <div class="col-md-2">ab</div>
-              <div class="col-md-5"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">mid4(<span class="_code_str">"de"</span>, right(<span class="_code_str">"f"</span>))</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-4"></div>
-              <div class="col-md-4">de<span class="pull-right">f</span></div>
-              <div class="col-md-4"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code">mid6(<span class="_code_str">"e"</span>, right(<span class="_code_str">"f"</span>))</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-6">e<span class="pull-right">f</span></div>
-              <div class="col-md-3"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code">mid8(<span class="_code_str">"g"</span>, right(<span class="_code_str">"h"</span>))</pre>
-          <div>
-            <div class="row">
-              <div class="col-md-2"></div>
-              <div class="col-md-8">g<span class="pull-right">h</span></div>
-              <div class="col-md-2"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code"><span class="_code_cls">NOTHING</span></pre>
-          <div>
-            <span class="nothing"><span class="fa fa-ban"></span> N/A</span>
-          </div>
-        </div>
-      </div>
-      <div class="row row-separated row-separated-cut">
-        <div class="col-md-4">
-<pre class="example-code"><span class="_code_cls">SAVE</span></pre>
-          <div>
-            <button type="button" class="btn btn-primary" ng-click="_emit('28740537')">Save</button>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code"><span class="_code_cls">ADD</span></pre>
-          <div>
-            <button type="button" class="btn btn-primary" ng-click="_emit('2073101401')">Add</button>
-          </div>
-        </div>
-        <div class="col-md-4">
-<pre class="example-code"><span class="_code_cls">DEBUG</span></pre>
-          <div>
-            <div class="panel panel-default">
-              <div class="panel-heading">Session</div>
-              <div class="panel-body">
-                <table class="table table-striped table-hover">
-                  <tr>
-                    <th>Key</th>
-                    <th>Value</th>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-<!-- EXAMPLE 1 -->
-
-<div class="sep-example"></div>
-
-<div id="example1-title" class="row row-separated-mini">
-	<div class="col-md-12">
-		<h3 class="caption"><a id="quickstart"></a>Quick start</h3>
-	</div>
-</div>
-
-<div id="example1-body" class="row row-separated-mini">
-
-		<div id="example1-left" class="col-md-4">
-<div class="eg_title">Add Rapidoid as Maven dependency to your project:</div>
+        <div class="eg_title">Add Rapidoid as Maven dependency to your project:</div>
 <pre class="eg_code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-quick&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;3.0.0&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-main&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;4.1.0&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
-<div id="example1-codedesc" class="eg_title">Add the App class:</div>
-<pre id="example1-code" class="eg_code">
-<span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {</span>
 
-    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Example 1"</span>;</span>
-    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_cls">String</span> content = <span class="_code_str">"Hello, world!"</span>;</span>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+  </div>
+  
+</div>
+
+<!-- EXAMPLE 001 -->
+
+<div class="sep-example"></div>
+
+<div id="example001-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">1</span> Hello, web pages!</div>
+	</div>
+</div>
+
+<div id="example001-body" class="row">
+
+	<div id="example001-left" class="col-md-6">
+		<div id="example001-codedesc" class="eg_title">Let's start Rapidoid and implement some web pages:</div>
+		<pre id="example001-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }    
-<span class="important-code">}</span>
+        <span class="_code_cls">Rapidoid</span>.run(args);
+    }
+
+    @<span class="_code_cls">Page</span>(<span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
+    }
+
+    @<span class="_code_cls">Page</span>(title = <span class="_code_str">"Saying 'hi'"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hi(<span class="_code_cls">String</span> name) {
+        <span class="_code_kw">return</span> U.format(<span class="_code_str">"Hi, %s!"</span>, name);
+    }
+
+    @<span class="_code_cls">Page</span>(raw = true)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> simple() {
+        <span class="_code_kw">return</span> <span class="_code_str">"&lt;p&gt;&lt;b&gt;RAW&lt;/b&gt; HTML!&lt;p&gt;"</span>;
+    }
+
+}
 </pre>
+	</div>
 
-		</div>
+    <div id="example001-right" class="col-md-6">
+        <div id="example001-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+                </div>
+                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+    <div class="container">
 
-		<div id="example1-right" class="col-md-8">
-			<div class="app-example-title">Your application looks like this:</div>		
-			<div class="embed-responsive embedd">
-				<iframe class="embed-responsive-item" src="examples/001/index.html"></iframe>
-			</div>
-		</div>
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Untitled</a>
+        </div>
 
-</div> <!--row-->
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
+    <ul role="menu" class="dropdown-menu">
+    </ul>
+</li>
+
+            </ul>
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+Hello, world!
+</div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi/Rapidoid</span>
+                </div>
+                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Saying &#39;hi&#39;</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
+    <ul role="menu" class="dropdown-menu">
+    </ul>
+</li>
+
+            </ul>
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+Hi, Rapidoid!
+</div>
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hi/there</span>
+                </div>
+                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Saying &#39;hi&#39;</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
+    <ul role="menu" class="dropdown-menu">
+    </ul>
+</li>
+
+            </ul>
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+Hi, there!
+</div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/simple</span>
+                </div>
+                <div class="eg-result"><p><b>RAW</b> HTML!<p></div>
+        </div>
+    </div>
+
+</div>
+
 
 <!-- EXAMPLE 002 -->
 
@@ -610,43 +278,56 @@
 
 <div id="example002-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">An application consists of screens</h3>
+		<div class="caption"><span class="badge badge-eg-num">2</span> Hello, RESTful services!</div>
 	</div>
 </div>
 
-<div id="example002-body" class="row row-separated-mini">
+<div id="example002-body" class="row">
 
-	<div id="example002-left" class="col-md-4">
-		<div id="example002-codedesc" class="eg_title">Add some screens:</div>
+	<div id="example002-left" class="col-md-6">
+		<div id="example002-codedesc" class="eg_title">Let's start Rapidoid and implement a RESTful service:</div>
 		<pre id="example002-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Example 2"</span>;
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
+        <span class="_code_cls">Rapidoid</span>.run(args);
     }
-}
 
-<span class="important-code"><span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {</span>
-    <span class="important-code"><span class="_code_cls">Object</span> content() {</span>
-        <span class="important-code"><span class="_code_kw">return</span> <span class="_code_str">"At the Home screen!"</span>;</span>
+    @<span class="_code_cls">GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, ?&gt; upper(<span class="_code_cls">String</span> s) {
+        <span class="_code_cls">String</span> up = s.toUpperCase();
+        <span class="_code_kw">int</span> len = s.length();
+        <span class="_code_kw">return</span> U.map(<span class="_code_str">"src"</span>, s, <span class="_code_str">"upper"</span>, up, <span class="_code_str">"length"</span>, len);
     }
-}
 
-<span class="important-code"><span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> {</span>
-    <span class="important-code"><span class="_code_cls">Object</span> content = <span class="_code_str">"At the Foo screen!"</span>;</span>
 }
 </pre>
 	</div>
 
-	<div id="example002-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/002/index.html"></iframe>
-		</div>
-	</div>
+    <div id="example002-right" class="col-md-6">
+        <div id="example002-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+                </div>
+                <div class="eg-result"><span class="not-found">404 Not found!</span></div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/abc</span>
+                </div>
+                <div class="eg-result">{"src":"abc","upper":"ABC","length":3}</div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/XyZaBc</span>
+                </div>
+                <div class="eg-result">{"src":"XyZaBc","upper":"XYZABC","length":6}</div>
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/upper/XyZaBc</span>
+                </div>
+                <div class="eg-result"><span class="not-found">404 Not found!</span></div>
+        </div>
+    </div>
 
 </div>
+
 
 <!-- EXAMPLE 003 -->
 
@@ -654,832 +335,85 @@
 
 <div id="example003-title" class="row">
 	<div class="col-md-12">
-		<h3 class="caption">Let's write some HTML in Java!</h3>
+		<div class="caption"><span class="badge badge-eg-num">3</span> RESTful services</div>
 	</div>
 </div>
 
-<div id="example003-body" class="row row-separated-mini">
+<div id="example003-body" class="row">
 
-	<div id="example003-left" class="col-md-4">
-		<div id="example003-codedesc" class="eg_title">Use method chaining to construct HTML tags:</div>
+	<div id="example003-left" class="col-md-6">
+		<div id="example003-codedesc" class="eg_title">It is very easy to create RESTful services</div>
 		<pre id="example003-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Example 3"</span>;
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
+        <span class="_code_cls">Rapidoid</span>.run(args);
     }
-}
 
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
-    <span class="_code_cls">Object</span> content() {
-        <span class="important-code"><span class="_code_cls">Object</span> link = a(<span class="_code_str">"Foo"</span>).href(<span class="_code_str">"foo.html"</span>);</span>
-        <span class="important-code"><span class="_code_kw">return</span> h3(<span class="_code_str">"Welcome! Visit "</span>, link);</span>
+    @<span class="_code_cls">GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {
+        <span class="_code_kw">return</span> U.format(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
     }
-}
 
-<span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> {
-    <span class="_code_cls">String</span> content = <span class="_code_str">"At the Foo screen!"</span>;
+    @<span class="_code_cls">GET</span>(<span class="_code_str">"/hello"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hey<span class="_code_num">2</span>(@<span class="_code_cls">Param</span>(<span class="_code_str">"name"</span>) <span class="_code_cls">String</span> s, @<span class="_code_cls">Param</span>(<span class="_code_str">"age"</span>) <span class="_code_kw">int</span> years) {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hey "</span> + s + <span class="_code_str">" ("</span> + years + <span class="_code_str">")"</span>;
+    }
+
+    @<span class="_code_cls">POST</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; foo(<span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; params) {
+        <span class="_code_kw">return</span> params;
+    }
+
+    @<span class="_code_cls">GET</span>(<span class="_code_str">"/barbar"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; bar(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; params) {
+        <span class="_code_kw">return</span> params;
+    }
+
 }
 </pre>
 	</div>
 
-	<div id="example003-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/003/index.html"></iframe>
-		</div>
-	</div>
+    <div id="example003-right" class="col-md-6">
+        <div id="example003-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+                </div>
+                <div class="eg-result"><span class="not-found">404 Not found!</span></div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/Joe/50</span>
+                </div>
+                <div class="eg-result">Hey Joe (50)</div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hello?name=Highlander&amp;age=900</span>
+                </div>
+                <div class="eg-result">Hey Highlander (900)</div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/x/y</span>
+                </div>
+                <div class="eg-result"><span class="not-found">404 Not found!</span></div>
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/foo/aaa/123/bc</span>
+                </div>
+                <div class="eg-result">["aaa","123","bc"]</div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/barbar?x=1&amp;y=23</span>
+                </div>
+                <div class="eg-result">{"x":"1","y":"23"}</div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/barbar?name=Abc&amp;year=2015</span>
+                </div>
+                <div class="eg-result">{"name":"Abc","year":"2015"}</div>
+        </div>
+    </div>
 
 </div>
 
-<!-- EXAMPLE 004 -->
 
-<div class="sep-example"></div>
-
-<div id="example004-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Rapidoid has built-in themes!</h3>
-	</div>
-</div>
-
-<div id="example004-body" class="row row-separated-mini">
-
-	<div id="example004-left" class="col-md-4">
-		<div id="example004-codedesc" class="eg_title">Let's use the built-in theme 2:</div>
-		<pre id="example004-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Example 4"</span>;
-    <span class="_code_cls">String</span> content = <span class="_code_str">"Fancy theme!"</span>;
-    <span class="important-code"><span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;</span>
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> {}
-
-<span class="_code_kw">class</span> <span class="_code_cls">BarScreen</span> {}
-</pre>
-	</div>
-
-	<div id="example004-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/004/index.html"></iframe>
-		</div>
-	</div>
 
 </div>
-
-<!-- EXAMPLE 005 -->
-
-<div class="sep-example"></div>
-
-<div id="example005-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Using the grid widget</h3>
-	</div>
-</div>
-
-<div id="example005-body" class="row row-separated-mini">
-
-	<div id="example005-left" class="col-md-4">
-		<div id="example005-codedesc" class="eg_title">Grid widget automatically loading data from DB</div>
-		<pre id="example005-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Grid Widget"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
-        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
-        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Her, year=2013"</span>);</span>
-        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Batman, year=1989"</span>);</span>
-    }
-
-    <span class="_code_cls">Object</span> content() {
-        <span class="important-code"><span class="_code_kw">return</span> grid(<span class="_code_cls">Movie</span>.<span class="_code_kw">class</span>).orderBy(<span class="_code_str">"year"</span>);</span>
-    }
-}
-
-@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
-@<span class="_code_cls">Scaffold</span>
-<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
-    <span class="_code_cls">String</span> title;
-    <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-	<div id="example005-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/005/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 006 -->
-
-<div class="sep-example"></div>
-
-<div id="example006-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Using the form widget ("create" mode)</h3>
-	</div>
-</div>
-
-<div id="example006-body" class="row row-separated-mini">
-
-	<div id="example006-left" class="col-md-4">
-		<div id="example006-codedesc" class="eg_title">Creating form for new entity</div>
-		<pre id="example006-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"New movie demo"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"1"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
-    @<span class="_code_cls">Session</span>
-    <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-
-    <span class="_code_cls">Object</span> content() {
-        <span class="important-code"><span class="_code_cls">FormWidget</span> f = create(movie);</span>
-        <span class="important-code">f = f.buttons(<span class="_code_cls">SAVE</span>, <span class="_code_cls">CANCEL</span>);</span>
-        <span class="_code_kw">return</span> f;
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onSave() {
-        <span class="_code_cls">DB</span>.insert(movie);
-        movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onCancel() {
-        movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-    }
-}
-
-@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
-@<span class="_code_cls">Scaffold</span>
-<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
-    <span class="_code_cls">String</span> title;
-    <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-	<div id="example006-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/006/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 007 -->
-
-<div class="sep-example"></div>
-
-<div id="example007-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Using the form widget ("edit" mode)</h3>
-	</div>
-</div>
-
-<div id="example007-body" class="row row-separated-mini">
-
-	<div id="example007-left" class="col-md-4">
-		<div id="example007-codedesc" class="eg_title">Creating form for editing entity</div>
-		<pre id="example007-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Edit movie demo"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
-        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
-    @<span class="_code_cls">Session</span>
-    <span class="_code_cls">Movie</span> movie;
-
-    <span class="_code_cls">Object</span> content() {
-        <span class="important-code">movie = <span class="_code_cls">DB</span>.get(1);</span>
-        <span class="important-code"><span class="_code_cls">FormWidget</span> f = edit(movie);</span>
-        <span class="important-code">f = f.buttons(<span class="_code_cls">SAVE</span>, <span class="_code_cls">CANCEL</span>);</span>
-        <span class="_code_kw">return</span> f;
-    }
-
-    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> onSave() {</span>
-        <span class="_code_cls">DB</span>.update(movie);
-    }
-
-    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> onCancel() {</span>
-        movie = <span class="_code_cls">DB</span>.get(1);
-    }
-}
-
-@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
-@<span class="_code_cls">Scaffold</span>
-<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
-    <span class="_code_cls">String</span> title;
-    <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-	<div id="example007-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/007/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 008 -->
-
-<div class="sep-example"></div>
-
-<div id="example008-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Using the form widget ("view" mode)</h3>
-	</div>
-</div>
-
-<div id="example008-body" class="row row-separated-mini">
-
-	<div id="example008-left" class="col-md-4">
-		<div id="example008-codedesc" class="eg_title">Creating form for displaying entity</div>
-		<pre id="example008-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Show movie demo"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
-        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
-    @<span class="_code_cls">Session</span>
-    <span class="_code_cls">Movie</span> movie;
-
-    <span class="_code_cls">Object</span> content() {
-        <span class="important-code">movie = <span class="_code_cls">DB</span>.get(1);</span>
-        <span class="important-code"><span class="_code_cls">FormWidget</span> f = show(movie);</span>
-        <span class="important-code">f = f.buttons(<span class="_code_cls">BACK</span>);</span>
-        <span class="_code_kw">return</span> f;
-    }
-}
-
-@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
-@<span class="_code_cls">Scaffold</span>
-<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
-    <span class="_code_cls">String</span> title;
-    <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-	<div id="example008-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/008/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 009 -->
-
-<div class="sep-example"></div>
-
-<div id="example009-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Customizing form fields and buttons</h3>
-	</div>
-</div>
-
-<div id="example009-body" class="row row-separated-mini">
-
-	<div id="example009-left" class="col-md-4">
-		<div id="example009-codedesc" class="eg_title">Customizing a form</div>
-		<pre id="example009-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Custom form"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"5"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> init() {
-        <span class="important-code"><span class="_code_cls">DB</span>.init(<span class="_code_str">"movie title=Rambo, year=1985"</span>);</span>
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
-
-    @<span class="_code_cls">Session</span>
-    <span class="_code_cls">Movie</span> movie;
-
-    <span class="_code_cls">Object</span> content() {
-        movie = <span class="_code_cls">DB</span>.get(1);
-        <span class="important-code"><span class="_code_cls">FormWidget</span> f = create(movie, <span class="_code_str">"year"</span>);</span>
-        <span class="important-code"><span class="_code_cls">ButtonWidget</span> ab = btn(<span class="_code_str">"Ab"</span>);</span>
-        <span class="important-code"><span class="_code_cls">ButtonWidget</span> cd = btn(<span class="_code_str">"Change year"</span>).command(<span class="_code_str">"ch"</span>).primary();</span>
-        <span class="important-code"><span class="_code_cls">ButtonWidget</span> efg = btn(<span class="_code_str">"!Efg"</span>).danger();</span>
-        <span class="important-code">f = f.buttons(ab, cd, efg);</span>
-        <span class="_code_kw">return</span> f;
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onCh() {
-        <span class="_code_cls">DB</span>.update(movie);
-    }
-}
-
-@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
-@<span class="_code_cls">Scaffold</span>
-<span class="_code_kw">class</span> <span class="_code_cls">Movie</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
-    <span class="_code_cls">String</span> title;
-    <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-	<div id="example009-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/009/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 020 -->
-
-<div class="sep-example"></div>
-
-<div id="example020-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Constructing GUI and handling events</h3>
-	</div>
-</div>
-
-<div id="example020-body" class="row row-separated-mini">
-
-	<div id="example020-left" class="col-md-4">
-		<div id="example020-codedesc" class="eg_title">Constructing buttons, handling clicks</div>
-		<pre id="example020-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Numbers"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-
-    @<span class="_code_cls">Session</span>
-    <span class="_code_cls">String</span> op = <span class="_code_str">""</span>;
-
-    <span class="_code_cls">Object</span> content() {
-        <span class="_code_cls">Tag</span> btns = div();
-        <span class="_code_cls">Tag</span> row = div();
-        <span class="_code_kw">for</span> (<span class="_code_kw">int</span> i = 1; i &amp;lt;= 9; i++) {
-            <span class="important-code"><span class="_code_cls">ButtonWidget</span> b = cmd(<span class="_code_str">""</span> + i);</span>
-            <span class="important-code">row = row.append(b);</span>
-            <span class="_code_kw">if</span> (i % 3 == 0) {
-                <span class="important-code">btns = btns.append(row);</span>
-                row = div();
-            }
-        }
-        <span class="_code_kw">return</span> row(btns, h4(<span class="_code_str">"You pressed: "</span>, op));
-    }
-
-    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> on(<span class="_code_cls">String</span> cmd, <span class="_code_cls">Object</span>... args) {</span>
-        op += cmd;
-    }
-}
-</pre>
-	</div>
-
-	<div id="example020-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/020/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 021 -->
-
-<div class="sep-example"></div>
-
-<div id="example021-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Dependency injection of singletons</h3>
-	</div>
-</div>
-
-<div id="example021-body" class="row row-separated-mini">
-
-	<div id="example021-left" class="col-md-4">
-		<div id="example021-codedesc" class="eg_title">Injecting a singleton</div>
-		<pre id="example021-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Singleton counter"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> {
-    <span class="important-code">@<span class="_code_cls">Inject</span></span>
-    <span class="important-code"><span class="_code_cls">Counter</span> c;</span>
-
-    <span class="_code_cls">Object</span> content() {
-        <span class="_code_kw">return</span> c.get();
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">OtherScreen</span> {
-    <span class="important-code">@<span class="_code_cls">Inject</span></span>
-    <span class="important-code"><span class="_code_cls">Counter</span> c;</span>
-
-    <span class="_code_cls">Object</span> content() {
-        <span class="_code_kw">return</span> c.get();
-    }
-}
-
-<span class="important-code"><span class="_code_kw">class</span> <span class="_code_cls">Counter</span> {</span>
-    <span class="_code_kw">private</span> <span class="_code_kw">int</span> n = 0;
-
-    <span class="_code_kw">synchronized</span> <span class="_code_kw">int</span> get() {
-        <span class="_code_kw">return</span> ++n;
-    }
-}
-</pre>
-	</div>
-
-	<div id="example021-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/021/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 022 -->
-
-<div class="sep-example"></div>
-
-<div id="example022-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Basic event handling and session storage</h3>
-	</div>
-</div>
-
-<div id="example022-body" class="row row-separated-mini">
-
-	<div id="example022-left" class="col-md-4">
-		<div id="example022-codedesc" class="eg_title">Increase n when the "+" button is clicked:</div>
-		<pre id="example022-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Clicky"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
-    <span class="important-code">@<span class="_code_cls">Session</span></span>
-    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">int</span> n = 0;</span>
-
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> content() {
-        <span class="_code_cls">Tag</span> caption = h3(n, <span class="_code_str">" clicks"</span>);
-        <span class="important-code"><span class="_code_cls">ButtonWidget</span> hi = btn(<span class="_code_str">"+"</span>).command(<span class="_code_str">"Inc"</span>);</span>
-        <span class="_code_kw">return</span> row(caption, hi);
-    }
-
-    <span class="important-code"><span class="_code_kw">public</span> <span class="_code_kw">void</span> onInc() {</span>
-        n++;
-    }
-}
-</pre>
-	</div>
-
-	<div id="example022-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/022/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 023 -->
-
-<div class="sep-example"></div>
-
-<div id="example023-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Basic database CRUD operations</h3>
-	</div>
-</div>
-
-<div id="example023-body" class="row row-separated-mini">
-
-	<div id="example023-left" class="col-md-4">
-		<div id="example023-codedesc" class="eg_title">Database CRUD is easy with the DB API:</div>
-		<pre id="example023-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"DB API"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">HomeScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {
-    <span class="_code_cls">Object</span>[] content = { 
-        grid(<span class="_code_cls">Todo</span>.<span class="_code_kw">class</span>), cmd(<span class="_code_str">"Add"</span>)
-    };
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onAdd() {
-        <span class="_code_cls">Todo</span> todo = <span class="_code_kw">new</span> <span class="_code_cls">Todo</span>();
-        todo.content = <span class="_code_str">"Learn Rapidoid!"</span>;
-        <span class="important-code"><span class="_code_kw">long</span> id = <span class="_code_cls">DB</span>.insert(todo);</span>
-        <span class="important-code"><span class="_code_cls">Todo</span> todo2 = <span class="_code_cls">DB</span>.get(id);</span>
-        todo2.content += <span class="_code_str">" :)"</span>;
-        <span class="important-code"><span class="_code_cls">DB</span>.update(todo2);</span>
-    }
-}
-
-@<span class="_code_cls">SuppressWarnings</span>(<span class="_code_str">"serial"</span>)
-@<span class="_code_cls">Scaffold</span>
-<span class="_code_kw">class</span> <span class="_code_cls">Todo</span> <span class="_code_kw">extends</span> <span class="_code_cls">Entity</span> {
-    <span class="_code_cls">String</span> content;
-}
-</pre>
-	</div>
-
-	<div id="example023-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/023/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 900 -->
-
-<div class="sep-example"></div>
-
-<div id="example900-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Ordering the screens</h3>
-	</div>
-</div>
-
-<div id="example900-body" class="row row-separated-mini">
-
-	<div id="example900-left" class="col-md-4">
-		<div id="example900-codedesc" class="eg_title">Foo is second, Bar is first:</div>
-		<pre id="example900-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Custom screen order"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"1"</span>;
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-
-<span class="important-code">@<span class="_code_cls">Order</span>(2)</span>
-<span class="_code_kw">class</span> <span class="_code_cls">FooScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {}
-
-<span class="important-code">@<span class="_code_cls">Order</span>(1)</span>
-<span class="_code_kw">class</span> <span class="_code_cls">BarScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {}
-</pre>
-	</div>
-
-	<div id="example900-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/900/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 901 -->
-
-<div class="sep-example"></div>
-
-<div id="example901-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Hide the navigation bar extras</h3>
-	</div>
-</div>
-
-<div id="example901-body" class="row row-separated-mini">
-
-	<div id="example901-left" class="col-md-4">
-		<div id="example901-codedesc" class="eg_title">No search or login extras in navigation</div>
-		<pre id="example901-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"No extras here"</span>;
-    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"4"</span>;
-
-    <span class="important-code"><span class="_code_kw">boolean</span> full = false;</span>
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-</pre>
-	</div>
-
-	<div id="example901-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/901/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 902 -->
-
-<div class="sep-example"></div>
-
-<div id="example902-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Customize login options in the login menu</h3>
-	</div>
-</div>
-
-<div id="example902-body" class="row row-separated-mini">
-
-	<div id="example902-left" class="col-md-4">
-		<div id="example902-codedesc" class="eg_title">Show Facebook and Google login menu items</div>
-		<pre id="example902-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"Facebook or Google"</span>;
-    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"3"</span>;
-
-    <span class="important-code"><span class="_code_kw">boolean</span> full = false;</span>
-    <span class="important-code"><span class="_code_kw">boolean</span> facebookLogin = true;</span>
-    <span class="important-code"><span class="_code_kw">boolean</span> googleLogin = true;</span>
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-</pre>
-	</div>
-
-	<div id="example902-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/902/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 903 -->
-
-<div class="sep-example"></div>
-
-<div id="example903-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Display search in navigation</h3>
-	</div>
-</div>
-
-<div id="example903-body" class="row row-separated-mini">
-
-	<div id="example903-left" class="col-md-4">
-		<div id="example903-codedesc" class="eg_title">Show the "search" box in the navigation</div>
-		<pre id="example903-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
-    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"2"</span>;
-
-    <span class="important-code"><span class="_code_kw">boolean</span> full = false;</span>
-    <span class="important-code"><span class="_code_kw">boolean</span> search = true;</span>
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-</pre>
-	</div>
-
-	<div id="example903-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/903/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-<!-- EXAMPLE 904 -->
-
-<div class="sep-example"></div>
-
-<div id="example904-title" class="row">
-	<div class="col-md-12">
-		<h3 class="caption">Configure screens to be displayed</h3>
-	</div>
-</div>
-
-<div id="example904-body" class="row row-separated-mini">
-
-	<div id="example904-left" class="col-md-4">
-		<div id="example904-codedesc" class="eg_title">Show only the Ab and Cd screens</div>
-		<pre id="example904-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">App</span> {
-    <span class="_code_cls">String</span> title = <span class="_code_str">"My app"</span>;
-    <span class="_code_cls">Object</span> content = <span class="_code_str">"Hello!"</span>;
-    <span class="_code_cls">String</span> theme = <span class="_code_str">"5"</span>;
-
-    <span class="important-code"><span class="_code_cls">Object</span>[] screens = { <span class="_code_str">"ab"</span>, <span class="_code_cls">CdScreen</span>.<span class="_code_kw">class</span> };</span>
-
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Apps</span>.run(args);
-    }
-}
-
-<span class="_code_kw">class</span> <span class="_code_cls">CdScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {}
-
-<span class="important-code"><span class="_code_kw">class</span> <span class="_code_cls">BarScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {}</span>
-
-<span class="_code_kw">class</span> <span class="_code_cls">AbScreen</span> <span class="_code_kw">extends</span> <span class="_code_cls">Screen</span> {}
-</pre>
-	</div>
-
-	<div id="example904-right" class="col-md-8">
-		<div class="app-example-title">Your application looks like this:</div>
-		<div class="embed-responsive embedd">
-			<iframe class="embed-responsive-item" src="examples/904/index.html"></iframe>
-		</div>
-	</div>
-
-</div>
-
-</div>
-
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="rapidoid.js"></script>
-<script async src="social-utils.js"></script>
-<script async type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script async src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script>                    
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>	
-
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=360854157416876";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>	
 
 </body>
 </html>
