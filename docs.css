@@ -1,3 +1,14 @@
+#rapidoid-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.docker-code {
+	color: #777;
+	font-size: 16px;
+	margin-left: 10px;
+}
+
 .not-found {
 	color: #777;
 	font-weight: bold;
@@ -34,6 +45,14 @@ div.caption {
 	color: #FFF;
 }
 
+.badge-docker {
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: middle;
+	background-color: #679;
+	color: #FFF;
+}
+
 .embedd {
 	width: 100% !important;
 	height: 500px !important;
@@ -66,7 +85,7 @@ div.caption {
 }
 
 .eg-GET {
-	background-color: #457;
+	background-color: #475;
 }
 
 .eg-POST {
