@@ -67,7 +67,7 @@
 		<div class="row">
 			<div class="col-md-7 col-sm-12">
 				<h4 id="main_subtitle">
-					<div id="rapidoid-title">No-bullshit Web Framework for Java!</div>
+					<div id="rapidoid-title">The No-bullshit Web Framework for Java!</div>
 				</h4>
 			</div>
 
@@ -124,7 +124,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-main&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;4.1.0&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;4.2.0&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -174,8 +174,24 @@
         <div id="examplehellorest-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hello</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hellorest HTML STARTS HERE -->
+"Hello, world!"
+<!-- EXAMPLE#hellorest HTML END HERE -->
                 </div>
-                <div class="eg-result">Hello, world!</div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hello</span>
+            </div>
+
+
+                <div class="eg-error">
+<!-- EXAMPLE#hellorest ERROR STARTS HERE -->
+<span class="not-found">404 Not found!</span>
+<!-- EXAMPLE#hellorest ERROR END HERE -->
+                </div>
         </div>
     </div>
 
@@ -188,7 +204,7 @@
 
 <div id="examplerestparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">2</span> URL parts as Parameters</div>
+		<div class="caption"><span class="badge badge-eg-num">2</span> URL parts as Method Parameters</div>
 	</div>
 </div>
 
@@ -218,16 +234,34 @@
         <div id="examplerestparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/Joe/50</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restparams HTML STARTS HERE -->
+"Hey Joe (50)"
+<!-- EXAMPLE#restparams HTML END HERE -->
                 </div>
-                <div class="eg-result">Hey Joe (50)</div>
+
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/You!/123</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restparams HTML STARTS HERE -->
+"Hey You! (123)"
+<!-- EXAMPLE#restparams HTML END HERE -->
                 </div>
-                <div class="eg-result">Hey You! (123)</div>
+
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/size/abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restparams HTML STARTS HERE -->
+3
+<!-- EXAMPLE#restparams HTML END HERE -->
                 </div>
-                <div class="eg-result">3</div>
+
         </div>
     </div>
 
@@ -240,7 +274,7 @@
 
 <div id="examplerestjson-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">3</span> Automatic JSON serialization</div>
+		<div class="caption"><span class="badge badge-eg-num">3</span> Automatic JSON Serialization of Data Structures</div>
 	</div>
 </div>
 
@@ -271,12 +305,96 @@
         <div id="examplerestjson-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restjson HTML STARTS HERE -->
+{"normal":"abc","big":"ABC"}
+<!-- EXAMPLE#restjson HTML END HERE -->
                 </div>
-                <div class="eg-result">{"normal":"abc","big":"ABC"}</div>
+
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/parts/just-some-words</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restjson HTML STARTS HERE -->
+["just","some","words"]
+<!-- EXAMPLE#restjson HTML END HERE -->
                 </div>
-                <div class="eg-result">["just","some","words"]</div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE beanjson -->
+
+<div class="sep-example"></div>
+
+<div id="examplebeanjson-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">4</span> Automatic Construction and Serialization of JavaBeans</div>
+	</div>
+</div>
+
+<div id="examplebeanjson-body" class="row">
+
+	<div id="examplebeanjson-left" class="col-md-6">
+		<div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
+		<pre id="examplebeanjson-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {
+
+    @<span class="_code_cls">GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {
+        <span class="_code_kw">return</span> book;
+    }
+
+}
+</pre>
+		<div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
+		<pre id="examplebeanjson-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Untitled"</span>;
+
+    <span class="_code_kw">private</span> <span class="_code_kw">int</span> year;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> getYear() {
+        <span class="_code_kw">return</span> year;
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> setYear(<span class="_code_kw">int</span> year) {
+        <span class="_code_kw">this</span>.year = year;
+    }
+}
+</pre>
+	</div>
+
+    <div id="examplebeanjson-right" class="col-md-6">
+        <div id="examplebeanjson-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2012&amp;title=Abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#beanjson HTML STARTS HERE -->
+{"title":"Abc","year":2012}
+<!-- EXAMPLE#beanjson HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2015</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#beanjson HTML STARTS HERE -->
+{"title":"Untitled","year":2015}
+<!-- EXAMPLE#beanjson HTML END HERE -->
+                </div>
+
         </div>
     </div>
 
@@ -289,7 +407,7 @@
 
 <div id="examplerestnamedparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">4</span> Named URL Parameters</div>
+		<div class="caption"><span class="badge badge-eg-num">5</span> Named URL Parameters</div>
 	</div>
 </div>
 
@@ -314,12 +432,24 @@
         <div id="examplerestnamedparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?x=1&amp;y=2</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restnamedparams HTML STARTS HERE -->
+3
+<!-- EXAMPLE#restnamedparams HTML END HERE -->
                 </div>
-                <div class="eg-result">3</div>
+
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?y=10&amp;x=5&amp;z=12345</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restnamedparams HTML STARTS HERE -->
+15
+<!-- EXAMPLE#restnamedparams HTML END HERE -->
                 </div>
-                <div class="eg-result">15</div>
+
         </div>
     </div>
 
@@ -332,7 +462,7 @@
 
 <div id="examplerestlistparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">5</span> URL Parameters as List</div>
+		<div class="caption"><span class="badge badge-eg-num">6</span> URL Parameters as List</div>
 	</div>
 </div>
 
@@ -357,12 +487,24 @@
         <div id="examplerestlistparams-results" class="results">
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/2015/Mart/20</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restlistparams HTML STARTS HERE -->
+["2015","Mart","20"]
+<!-- EXAMPLE#restlistparams HTML END HERE -->
                 </div>
-                <div class="eg-result">["2015","Mart","20"]</div>
+
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/foo/bar/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restlistparams HTML STARTS HERE -->
+["foo","bar"]
+<!-- EXAMPLE#restlistparams HTML END HERE -->
                 </div>
-                <div class="eg-result">["foo","bar"]</div>
+
         </div>
     </div>
 
@@ -375,7 +517,7 @@
 
 <div id="examplerestmapparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">6</span> URL Parameters as Map</div>
+		<div class="caption"><span class="badge badge-eg-num">7</span> URL Parameters as Map</div>
 	</div>
 </div>
 
@@ -400,12 +542,24 @@
         <div id="examplerestmapparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?x=1&amp;y=23</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restmapparams HTML STARTS HERE -->
+{"x":"1","y":"23"}
+<!-- EXAMPLE#restmapparams HTML END HERE -->
                 </div>
-                <div class="eg-result">{"x":"1","y":"23"}</div>
+
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?name=Abc&amp;year=2015</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restmapparams HTML STARTS HERE -->
+{"name":"Abc","year":"2015"}
+<!-- EXAMPLE#restmapparams HTML END HERE -->
                 </div>
-                <div class="eg-result">{"name":"Abc","year":"2015"}</div>
+
         </div>
     </div>
 
@@ -418,7 +572,7 @@
 
 <div id="examplehello-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> Hello, web pages!</div>
+		<div class="caption"><span class="badge badge-eg-num">8</span> Hello, web pages!</div>
 	</div>
 </div>
 
@@ -430,7 +584,7 @@
 @<span class="_code_cls">Web</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Hello</span> {
 
-    @<span class="_code_cls">Page</span>(<span class="_code_str">"/"</span>)
+    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
         <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
     }
@@ -443,38 +597,28 @@
         <div id="examplehello-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-                </div>
-                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+            </div>
 
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Untitled</a>
-        </div>
-
-        <div id="collapsable" class="collapse navbar-collapse">
-
-
-            <ul class="nav navbar-nav navbar-right">
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
-    <ul role="menu" class="dropdown-menu">
-    </ul>
-</li>
-
-            </ul>
-
-
-
-
-        </div>
-
-
-    </div>
-</nav>
+                <div class="eg-result">
+<!-- EXAMPLE#hello HTML STARTS HERE -->
+<!--state::null-->
 Hello, world!
-</div>
+
+<!-- EXAMPLE#hello HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hello HTML STARTS HERE -->
+<!--state::null-->
+Hello, world!
+
+<!-- EXAMPLE#hello HTML END HERE -->
+                </div>
+
         </div>
     </div>
 
@@ -487,7 +631,7 @@ Hello, world!
 
 <div id="examplehi-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">8</span> Building HTML pages with Java</div>
+		<div class="caption"><span class="badge badge-eg-num">9</span> Building HTML pages with Java</div>
 	</div>
 </div>
 
@@ -512,8 +656,12 @@ Hello, world!
         <div id="examplehi-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi/Rapidoid</span>
-                </div>
-                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hi HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
     <div class="container">
 
         <div class="navbar-header">
@@ -543,11 +691,18 @@ Hello, world!
     </div>
 </nav>
 <h3>Hi, <i>Rapidoid</i>!</h3>
-</div>
+
+<!-- EXAMPLE#hi HTML END HERE -->
+                </div>
+
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hi/there</span>
-                </div>
-                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hi HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
     <div class="container">
 
         <div class="navbar-header">
@@ -577,7 +732,10 @@ Hello, world!
     </div>
 </nav>
 <h3>Hi, <i>there</i>!</h3>
-</div>
+
+<!-- EXAMPLE#hi HTML END HERE -->
+                </div>
+
         </div>
     </div>
 
@@ -590,7 +748,7 @@ Hello, world!
 
 <div id="exampleraw-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">9</span> Raw HTML pages</div>
+		<div class="caption"><span class="badge badge-eg-num">10</span> Raw HTML pages</div>
 	</div>
 </div>
 
@@ -615,8 +773,14 @@ Hello, world!
         <div id="exampleraw-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/simple</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#raw HTML STARTS HERE -->
+<p><b>RAW</b> HTML!<p>
+<!-- EXAMPLE#raw HTML END HERE -->
                 </div>
-                <div class="eg-result"><p><b>RAW</b> HTML!<p></div>
+
         </div>
     </div>
 
@@ -629,7 +793,7 @@ Hello, world!
 
 <div id="exampleshowmovie-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">10</span> Display bean properties</div>
+		<div class="caption"><span class="badge badge-eg-num">11</span> Display bean properties</div>
 	</div>
 </div>
 
@@ -648,7 +812,7 @@ Hello, world!
 @<span class="_code_cls">Web</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
 
-    @<span class="_code_cls">Page</span>(value = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)
+    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
         <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
         movie.title = <span class="_code_str">"Chappie"</span>;
@@ -665,8 +829,11 @@ Hello, world!
         <div id="exampleshowmovie-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-                </div>
-                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#showmovie HTML STARTS HERE -->
+<nav role="navigation" class="navbar navbar-default">
     <div class="container">
 
         <div class="navbar-header">
@@ -707,10 +874,12 @@ Hello, world!
     <span class="field-error"></span>
   </div>
   <div class="form-group">
-    <button type="button" class="btn btn-default">OK</button>
+    <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
   </div>
 </form>
-</div>
+<!-- EXAMPLE#showmovie HTML END HERE -->
+                </div>
+
         </div>
     </div>
 
@@ -723,7 +892,7 @@ Hello, world!
 
 <div id="exampleeditmovie-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">11</span> Edit bean properties</div>
+		<div class="caption"><span class="badge badge-eg-num">12</span> Edit bean properties</div>
 	</div>
 </div>
 
@@ -742,7 +911,7 @@ Hello, world!
 @<span class="_code_cls">Web</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
 
-    @<span class="_code_cls">Page</span>(value = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)
+    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
         <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
         movie.title = <span class="_code_str">"Chappie"</span>;
@@ -760,8 +929,11 @@ Hello, world!
         <div id="exampleeditmovie-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-                </div>
-                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#editmovie HTML STARTS HERE -->
+<nav role="navigation" class="navbar navbar-default">
     <div class="container">
 
         <div class="navbar-header">
@@ -802,10 +974,12 @@ Hello, world!
     <span class="field-error"></span>
   </div>
   <div class="form-group">
-    <button type="button" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-primary" ng-click="_emit('Save', [])">Save</button>
   </div>
 </form>
-</div>
+<!-- EXAMPLE#editmovie HTML END HERE -->
+                </div>
+
         </div>
     </div>
 
@@ -818,7 +992,7 @@ Hello, world!
 
 <div id="exampleparamgrid-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">12</span> Create key-value data grid from a Map</div>
+		<div class="caption"><span class="badge badge-eg-num">13</span> Create key-value data grid from a Map</div>
 	</div>
 </div>
 
@@ -843,8 +1017,12 @@ Hello, world!
         <div id="exampleparamgrid-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/table?name=Highlander&amp;age=700&amp;weapon=sword</span>
-                </div>
-                <div class="eg-result"><nav role="navigation" class="navbar navbar-default">
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#paramgrid HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
     <div class="container">
 
         <div class="navbar-header">
@@ -891,7 +1069,734 @@ Hello, world!
     <td>sword</td>
   </tr>
 </table>
+
+<!-- EXAMPLE#paramgrid HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
 </div>
+
+
+<!-- EXAMPLE clickcounter -->
+
+<div class="sep-example"></div>
+
+<div id="exampleclickcounter-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">14</span> Counting the clicks</div>
+	</div>
+</div>
+
+<div id="exampleclickcounter-body" class="row">
+
+	<div id="exampleclickcounter-left" class="col-md-6">
+		<div id="exampleclickcounter-codedesc" class="eg_title">ClickCounter.java</div>
+		<pre id="exampleclickcounter-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ClickCounter</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    <span class="_code_kw">int</span> n = <span class="_code_num">0</span>;
+
+    @<span class="_code_cls">Page</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> counter() {
+        <span class="_code_cls">ButtonWidget</span> inc = btn(<span class="_code_str">"+"</span>).onClick(<span class="_code_kw">new</span> <span class="_code_cls">Runnable</span>() {
+            @<span class="_code_cls">Override</span>
+            <span class="_code_kw">public</span> <span class="_code_kw">void</span> run() {
+                n++;
+            }
+        });
+
+        <span class="_code_cls">Tag</span> info = span(<span class="_code_str">"You clicked "</span>, n, <span class="_code_str">" times!"</span>);
+
+        <span class="_code_kw">return</span> row(info, inc);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="exampleclickcounter-right" class="col-md-6">
+        <div id="exampleclickcounter-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/counter</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#clickcounter HTML STARTS HERE -->
+<!--state::null-->
+<div class="row">
+  <div class="col-md-12">
+    <span>You clicked 0 times!</span>
+    <button type="button" class="btn btn-default" ng-click="_emit('+', [])">+</button>
+  </div>
+</div>
+
+<!-- EXAMPLE#clickcounter HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/counter</span>
+            </div>
+            <div class="post-data">
+                <span class="label label-default eg-data">{&quot;_event&quot;:&quot;+&quot;,&quot;_args&quot;:[],&quot;_inputs&quot;:{}}</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#clickcounter HTML STARTS HERE -->
+<!--state::null-->
+<div class="row">
+  <div class="col-md-12">
+    <span>You clicked 1 times!</span>
+    <button type="button" class="btn btn-default" ng-click="_emit('+', [])">+</button>
+  </div>
+</div>
+
+<!-- EXAMPLE#clickcounter HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE beanform -->
+
+<div class="sep-example"></div>
+
+<div id="examplebeanform-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">15</span> Creating forms from JavaBeans</div>
+	</div>
+</div>
+
+<div id="examplebeanform-body" class="row">
+
+	<div id="examplebeanform-left" class="col-md-6">
+		<div id="examplebeanform-codedesc" class="eg_title">MovieForm.java</div>
+		<pre id="examplebeanform-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">MovieForm</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    @<span class="_code_cls">Page</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movies() {
+        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+        movie.id = <span class="_code_num">12345</span>L;
+
+        <span class="_code_cls">FormWidget</span> f<span class="_code_num">1</span> = edit(movie);
+        f<span class="_code_num">1</span> = f<span class="_code_num">1</span>.buttons(btn(<span class="_code_str">"OK"</span>));
+
+        <span class="_code_cls">FormWidget</span> f<span class="_code_num">2</span> = show(movie);
+
+        <span class="_code_kw">return</span> columns(f<span class="_code_num">1</span>, f<span class="_code_num">2</span>);
+    }
+
+}
+</pre>
+		<div id="examplebeanform-codedesc" class="eg_title">Movie.java</div>
+		<pre id="examplebeanform-code" class="eg_code">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
+    <span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
+}
+</pre>
+	</div>
+
+    <div id="examplebeanform-right" class="col-md-6">
+        <div id="examplebeanform-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/movies</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#beanform HTML STARTS HERE -->
+<div class="row">
+  <div class="col-md-6">
+    <form class="" role="form">
+      <div class="form-group">
+        <label>Title: </label>
+        <input _h="title" type="text" class="form-control" value="" name="title">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <label>Year: </label>
+        <input _h="year" type="text" class="form-control" value="0" name="year">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <form class="" role="form">
+      <div class="form-group">
+        <label>ID: </label>
+        <span class="display-wrap">12345</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <label>Title: </label>
+        <span class="display-wrap"></span>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <label>Year: </label>
+        <span class="display-wrap">0</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group"></div>
+    </form>
+  </div>
+</div>
+<!-- EXAMPLE#beanform HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/movies</span>
+            </div>
+            <div class="post-data">
+                <span class="label label-default eg-data">{&quot;_event&quot;:&quot;Save&quot;,&quot;_args&quot;:[],&quot;_inputs&quot;:{&quot;title&quot;:&quot;Chappie&quot;,&quot;year&quot;:2015}}</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#beanform HTML STARTS HERE -->
+<div class="row">
+  <div class="col-md-6">
+    <form class="" role="form">
+      <div class="form-group">
+        <label>Title: </label>
+        <input _h="title" type="text" class="form-control" value="Chappie" name="title">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <label>Year: </label>
+        <input _h="year" type="text" class="form-control" value="2015" name="year">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <form class="" role="form">
+      <div class="form-group">
+        <label>ID: </label>
+        <span class="display-wrap">12345</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <label>Title: </label>
+        <span class="display-wrap">Chappie</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <label>Year: </label>
+        <span class="display-wrap">2015</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-group"></div>
+    </form>
+  </div>
+</div>
+<!-- EXAMPLE#beanform HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE savetodb -->
+
+<div class="sep-example"></div>
+
+<div id="examplesavetodb-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">16</span> Save entity to DB</div>
+	</div>
+</div>
+
+<div id="examplesavetodb-body" class="row">
+
+	<div id="examplesavetodb-left" class="col-md-6">
+		<div id="examplesavetodb-codedesc" class="eg_title">SaveMovie.java</div>
+		<pre id="examplesavetodb-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SaveMovie</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movieForm() {
+        <span class="_code_kw">final</span> <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+        <span class="_code_cls">FormWidget</span> f = edit(movie);
+
+        <span class="_code_cls">ButtonWidget</span> save = btn(<span class="_code_str">"Save"</span>).onClick(<span class="_code_kw">new</span> <span class="_code_cls">Runnable</span>() {
+            @<span class="_code_cls">Override</span>
+            <span class="_code_kw">public</span> <span class="_code_kw">void</span> run() {
+                <span class="_code_cls">DB</span>.insert(movie);
+            }
+        });
+
+        f = f.buttons(save);
+
+        <span class="_code_kw">return</span> f;
+    }
+
+}
+</pre>
+		<div id="examplesavetodb-codedesc" class="eg_title">Movie.java</div>
+		<pre id="examplesavetodb-code" class="eg_code">
+@<span class="_code_cls">Entity</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
+    @<span class="_code_cls">Id</span>
+    @<span class="_code_cls">GeneratedValue</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;
+
+    <span class="_code_cls">String</span> title;
+    <span class="_code_kw">int</span> year;
+}
+</pre>
+	</div>
+
+    <div id="examplesavetodb-right" class="col-md-6">
+        <div id="examplesavetodb-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#savetodb HTML STARTS HERE -->
+<form class="" role="form">
+  <div class="form-group">
+    <label>Title: </label>
+    <input _h="title" type="text" class="form-control" value="" name="title">
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <label>Year: </label>
+    <input _h="year" type="text" class="form-control" value="0" name="year">
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-default" ng-click="_emit('Save', [])">Save</button>
+  </div>
+</form>
+<!-- EXAMPLE#savetodb HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE customform -->
+
+<div class="sep-example"></div>
+
+<div id="examplecustomform-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">17</span> Customizing form fields</div>
+	</div>
+</div>
+
+<div id="examplecustomform-body" class="row">
+
+	<div id="examplecustomform-left" class="col-md-6">
+		<div id="examplecustomform-codedesc" class="eg_title">CustomForm.java</div>
+		<pre id="examplecustomform-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">CustomForm</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> content() {
+        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+        <span class="_code_cls">FormWidget</span> f = create(movie, <span class="_code_str">"year"</span>);
+        <span class="_code_cls">ButtonWidget</span> changeYear = btn(<span class="_code_str">"Change year"</span>).command(<span class="_code_str">"NewYear"</span>).primary();
+        f = f.buttons(btn(<span class="_code_str">"Ab"</span>), changeYear, btn(<span class="_code_str">"!Efg"</span>).danger());
+        <span class="_code_kw">return</span> f;
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onNewYear() {
+        // <span class="_code_cls">DB</span>.update(movie);
+    }
+}
+</pre>
+		<div id="examplecustomform-codedesc" class="eg_title">Movie.java</div>
+		<pre id="examplecustomform-code" class="eg_code">
+@<span class="_code_cls">Entity</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
+    @<span class="_code_cls">Id</span>
+    @<span class="_code_cls">GeneratedValue</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;
+
+    <span class="_code_cls">String</span> title;
+    <span class="_code_kw">int</span> year;
+}
+</pre>
+	</div>
+
+    <div id="examplecustomform-right" class="col-md-6">
+        <div id="examplecustomform-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#customform HTML STARTS HERE -->
+<form class="" role="form">
+  <div class="form-group">
+    <label>Year: </label>
+    <input _h="year" type="text" class="form-control" value="0" name="year">
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-default" ng-click="_emit('Ab', [])">Ab</button>
+    <button type="button" class="btn btn-primary" ng-click="_emit('NewYear', [])">Change year</button>
+    <button type="button" class="btn btn-danger" ng-click="_emit('!Efg', [])">!Efg</button>
+  </div>
+</form>
+<!-- EXAMPLE#customform HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE injection -->
+
+<div class="sep-example"></div>
+
+<div id="exampleinjection-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">18</span> Dependency injection of singletons</div>
+	</div>
+</div>
+
+<div id="exampleinjection-body" class="row">
+
+	<div id="exampleinjection-left" class="col-md-6">
+		<div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
+		<pre id="exampleinjection-code" class="eg_code">
+@<span class="_code_cls">Web</span>(url = <span class="_code_str">"/bar"</span>)
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {
+
+    @<span class="_code_cls">Inject</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;
+
+    @<span class="_code_cls">GET</span>(url = <span class="_code_str">"/hi"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
+        <span class="_code_kw">return</span> foo.msg();
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Bar!"</span>;
+    }
+
+}
+</pre>
+		<div id="exampleinjection-codedesc" class="eg_title">Foo.java</div>
+		<pre id="exampleinjection-code" class="eg_code">
+@<span class="_code_cls">Web</span>(url = <span class="_code_str">"/foo"</span>)
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {
+
+    @<span class="_code_cls">Inject</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;
+
+    <span class="_code_kw">private</span> <span class="_code_kw">int</span> count;
+
+    @<span class="_code_cls">GET</span>(url = <span class="_code_str">"/hi"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
+        <span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Foo!"</span>;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="exampleinjection-right" class="col-md-6">
+        <div id="exampleinjection-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#injection HTML STARTS HERE -->
+"1: Hello from Bar!"
+<!-- EXAMPLE#injection HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#injection HTML STARTS HERE -->
+"Hello from Foo!"
+<!-- EXAMPLE#injection HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#injection HTML STARTS HERE -->
+"2: Hello from Bar!"
+<!-- EXAMPLE#injection HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE layout -->
+
+<div class="sep-example"></div>
+
+<div id="examplelayout-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">19</span> Bootstrap-based GUI layout</div>
+	</div>
+</div>
+
+<div id="examplelayout-body" class="row">
+
+	<div id="examplelayout-left" class="col-md-6">
+		<div id="examplelayout-codedesc" class="eg_title">BootstrapLayout.java</div>
+		<pre id="examplelayout-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">BootstrapLayout</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> layout() {
+        <span class="_code_cls">Tag</span> r<span class="_code_num">1</span> = row(col<span class="_code_num">4</span>(<span class="_code_str">"A"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"B"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"C"</span>));
+        <span class="_code_cls">Tag</span> r<span class="_code_num">2</span> = row(col<span class="_code_num">1</span>(<span class="_code_str">"2/12"</span>), col<span class="_code_num">7</span>(<span class="_code_str">"7/12"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"3/12"</span>));
+        <span class="_code_cls">Tag</span> r<span class="_code_num">3</span> = mid<span class="_code_num">4</span>(<span class="_code_str">"4/12 in the middle"</span>);
+        <span class="_code_kw">return</span> multi(r<span class="_code_num">1</span>, r<span class="_code_num">2</span>, r<span class="_code_num">3</span>);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplelayout-right" class="col-md-6">
+        <div id="examplelayout-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#layout HTML STARTS HERE -->
+<!--state::null-->
+
+  <div class="row">
+    <div class="col-md-4">A</div>
+    <div class="col-md-4">B</div>
+    <div class="col-md-4">C</div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">2/12</div>
+    <div class="col-md-7">7/12</div>
+    <div class="col-md-4">3/12</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">4/12 in the middle</div>
+    <div class="col-md-4"></div>
+  </div>
+
+<!-- EXAMPLE#layout HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE highlighting -->
+
+<div class="sep-example"></div>
+
+<div id="examplehighlighting-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">20</span> Highlighting Text by Regular Expression Match</div>
+	</div>
+</div>
+
+<div id="examplehighlighting-body" class="row">
+
+	<div id="examplehighlighting-left" class="col-md-6">
+		<div id="examplehighlighting-codedesc" class="eg_title">Highlighting.java</div>
+		<pre id="examplehighlighting-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Highlighting</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {
+        <span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\w+"</span>);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplehighlighting-right" class="col-md-6">
+        <div id="examplehighlighting-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#highlighting HTML STARTS HERE -->
+<!--state::null-->
+<span><span class="highlight">ab</span>-<span class="highlight">cd</span>-<span class="highlight">efg</span></span>
+
+<!-- EXAMPLE#highlighting HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- EXAMPLE calculator -->
+
+<div class="sep-example"></div>
+
+<div id="examplecalculator-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">21</span> Constructing GUI and handling events</div>
+	</div>
+</div>
+
+<div id="examplecalculator-body" class="row">
+
+	<div id="examplecalculator-left" class="col-md-6">
+		<div id="examplecalculator-codedesc" class="eg_title">Calculator.java</div>
+		<pre id="examplecalculator-code" class="eg_code">
+@<span class="_code_cls">Web</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Calculator</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    @<span class="_code_cls">Page</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> calc() {
+        <span class="_code_cls">Tag</span> btns = div();
+        <span class="_code_cls">Tag</span> row = div();
+
+        <span class="_code_kw">final</span> <span class="_code_cls">Val</span>&lt;<span class="_code_cls">String</span>&gt; pressed = <span class="_code_kw">new</span> <span class="_code_cls">Val</span>&lt;<span class="_code_cls">String</span>&gt;(<span class="_code_str">"?"</span>);
+
+        <span class="_code_kw">for</span> (<span class="_code_kw">int</span> i = <span class="_code_num">1</span>; i &lt;= <span class="_code_num">9</span>; i++) {
+            <span class="_code_kw">final</span> <span class="_code_cls">String</span> digit = <span class="_code_str">""</span> + i;
+
+            <span class="_code_cls">ButtonWidget</span> b = btn(digit).command(<span class="_code_str">"num"</span>, i);
+
+            b.onClick(<span class="_code_kw">new</span> <span class="_code_cls">Runnable</span>() {
+                @<span class="_code_cls">Override</span>
+                <span class="_code_kw">public</span> <span class="_code_kw">void</span> run() {
+                    pressed.set(digit);
+                }
+            });
+
+            row = row.append(b);
+            <span class="_code_kw">if</span> (i % <span class="_code_num">3</span> == <span class="_code_num">0</span>) {
+                btns = btns.append(row);
+                row = div();
+            }
+        }
+
+        <span class="_code_kw">return</span> row(btns, h<span class="_code_num">4</span>(<span class="_code_str">"You pressed: "</span>, pressed));
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplecalculator-right" class="col-md-6">
+        <div id="examplecalculator-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/calc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#calculator HTML STARTS HERE -->
+<!--state::null-->
+<div class="row">
+  <div class="col-md-12">
+    <div>
+      <div>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [1])">1</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [2])">2</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [3])">3</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [4])">4</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [5])">5</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [6])">6</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [7])">7</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [8])">8</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [9])">9</button>
+      </div>
+    </div>
+    <h4>You pressed: ?</h4>
+  </div>
+</div>
+
+<!-- EXAMPLE#calculator HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/calc</span>
+            </div>
+            <div class="post-data">
+                <span class="label label-default eg-data">{&quot;_event&quot;:&quot;num&quot;,&quot;_args&quot;:[4]}</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#calculator HTML STARTS HERE -->
+<!--state::null-->
+<div class="row">
+  <div class="col-md-12">
+    <div>
+      <div>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [1])">1</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [2])">2</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [3])">3</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [4])">4</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [5])">5</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [6])">6</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [7])">7</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [8])">8</button>
+        <button type="button" class="btn btn-default" ng-click="_emit('num', [9])">9</button>
+      </div>
+    </div>
+    <h4>You pressed: 4</h4>
+  </div>
+</div>
+
+<!-- EXAMPLE#calculator HTML END HERE -->
+                </div>
+
         </div>
     </div>
 

@@ -96,16 +96,28 @@ div.caption {
 	background-color: #77A;
 	color: white;
 	font-weight: normal;
-	font-size:13px;
+	font-size: 13px;
 }
 
 .eg-result {
 	background-color: #FFF;
 	border: 1px dotted;
 	border-color: #BBB;
-	margin-top: 5px;
+	margin-top: 10px;
 	margin-bottom: 25px;
 	padding: 2px;
+}
+
+.eg-error {
+	background-color: #FFF;
+	border: none;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	padding: 2px;
+}
+
+.post-data {
+	margin-top: 3px;
 }
 
 pre {
