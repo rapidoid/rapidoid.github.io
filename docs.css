@@ -127,3 +127,19 @@ pre {
 .eg_code {
 	margin-bottom: 25px;
 }
+
+.low-level-desc {
+	padding: 5px;
+	font-size: 14px;		
+	border: 1px dashed;
+	border-color: #BBB;
+}
+
+.option-x {
+	padding: 4px;
+	font-size: 18px;		
+	border: 1px solid;
+	border-color: #733;
+	color: #733;
+	margin-right: 15px;
+}
