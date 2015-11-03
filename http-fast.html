@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="rapidoid.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="docs.css" type="text/css" rel="stylesheet" />
+<link href="rapidoid.min.css" type="text/css" rel="stylesheet" />
+<link href="theme-default.css" type="text/css" rel="stylesheet" />
+
+<title>Rapidoid Http-fast - High-performance HTTP Server</title>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+<body class="rapidoid">
+
+  <nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Rapidoid</a>
+      </div>
+      <div id="collapsable" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+	  <li class="active"><a href="/">Getting started</a></li>
+	  <li><a href="community.html">Community &amp; Support</a></li>
+	  <li><a href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+        </ul>
+
+<div class="navbar-brand navbar-right">
+				<a data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+				<a data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+				<script type="IN/Share" data-url="http://rapidoid.org/" data-counter="right"></script>
+				
+				<span class="g-plusone" data-size="medium"></span>
+				
+				<a href="https://twitter.com/share" rel="nofollow"
+					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
+					data-text="#Rapidoid - New and Cool #Java web app #framework!" data-size="small">Tweet</a>
+</div>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+
+		<div class="row">
+			<div class="col-md-7 col-sm-12">
+				<h4 id="main_subtitle">
+					<div id="rapidoid-title">Rapidoid - The No-bullshit Web Framework(s) for Java!</div>
+				</h4>
+			</div>
+
+			<div class="col-md-5 col-sm-12">
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup" class="pull-right">
+    <form action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+
+        <div class="mc-field-group">
+            <input type="email" value="" name="EMAIL" class="required email form-control input-sm" id="mce-EMAIL" placeholder="Your e-mail address"> <input type="submit" value="Subscribe to newsletter" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary btn-sm">
+        </div>
+        <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display: none"></div>
+            <div class="response" id="mce-success-response" style="display: none"></div>
+        </div>
+        <div style="position: absolute; left: -5000px;">
+            <input type="text" name="b_c2c27aa25fdef31d9513d6124_08cd6ec699" value="">
+        </div>
+        <div class="clear"></div>
+    </form>
+</div>
+<!--End mc_embed_signup-->
+
+			</div>
+		</div>
+
+<!-- MODULE rapidoid-http-fast -->
+
+<div class="row row-separated-nano">
+  <div class="col-md-8">
+
+<div class="module-header">
+<span class="module-name badge badge-module">rapidoid-http-fast</span> High-performance HTTP Server</div>  
+
+<div class="module-desc">
+The low-level HTTP API provides access to the <a href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">extremely fast</a> Rapidoid HTTP server implemented from scratch on top of Java NIO. 
+
+<h4>This is <a href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">one of the fastest</a> web servers in the world! (based on the transparent Techempower benchmarks)</h4>
+</div>
+
+<br><br>
+
+  </div>
+  
+  <div class="col-md-4">
+        <div class="eg_title">Add <b>rapidoid-http-fast</b> as Maven dependency:</div>
+<pre class="maven-code">
+&lt;<span class="_code_tag">dependency</span>&gt;
+    &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-http-fast&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.0&lt;/<span class="_code_tag">version</span>&gt;
+&lt;/<span class="_code_tag">dependency</span>&gt;
+</pre>
+
+  </div>
+  
+</div>
+
+<div class="row">
+  
+<div class="col-md-10">
+<!-- EXAMPLE lowsimple -->
+
+<div id="examplelowsimple-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">1</span> &quot;Hello world&quot; web server</div>
+	</div>
+</div>
+
+<div id="examplelowsimple-body" class="row">
+
+	<div id="examplelowsimple-left" class="col-md-7">
+
+		<pre id="examplelowsimple-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Let's create a simple web page with 1 line of code:</span>
+<span class="_code_cls">On</span>.page(<span class="_code_str">"/"</span>).gui(<span class="_code_str">"Hello world!"</span>);
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Let's create a simple REST service with 1 line of code:</span>
+<span class="_code_cls">On</span>.get(<span class="_code_str">"/size"</span>).json(<span class="_code_str">"msg"</span>, msg -&gt; msg.length());
+</pre>
+	</div>
+
+    <div id="examplelowsimple-right" class="col-md-5">
+        <div id="examplelowsimple-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#lowsimple HTML STARTS HERE -->
+Hello world!
+<!-- EXAMPLE#lowsimple HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?msg=abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#lowsimple HTML STARTS HERE -->
+3
+<!-- EXAMPLE#lowsimple HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/other</span>
+            </div>
+
+
+                <div class="eg-error">
+<!-- EXAMPLE#lowsimple ERROR STARTS HERE -->
+<span class="not-found">404 Not found!</span>
+<!-- EXAMPLE#lowsimple ERROR END HERE -->
+                </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="col-md-2">
+<div class="modules-right">
+<h3 class="module-title">Rapidoid Modules:</h3>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="/">rapidoid-main</a></h4>
+ <div class="module-box">Aggregates the web modules and extras</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <div class="module-box">Elegant manipulation of collections and streams</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
+ <div class="module-box">High-performance HTTP Server</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
+ <div class="module-box">Full-stack Web Framework</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
+ <div class="module-box">Simple &amp; Sweet Utils</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>	
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>   
+
+</body>
+</html>

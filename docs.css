@@ -23,18 +23,33 @@ body {
 }
 
 div.caption {
-	margin-top: 15px;
+	margin-bottom: 10px;
+	margin-top: 5px;
 	padding: 7px;
-	border-top: 1px dashed;
-	border-bottom: 1px dashed;
+	border-top: 0px;
+	border-bottom: 1px solid;
 	border-left: 0px;
 	border-right: 0px;
-	border-color: #AAA;
+	border-color: #CCC;
 	font-size: 20px;
 	font-weight: bold;
 	color: #555;
-	margin-bottom: 10px;
-	margin-top: 20px;
+}
+
+.module-header {
+	font-size: 18px;
+	font-weight: bold;
+	color: #555;
+}
+
+.module-desc {
+	margin: 18px 0px;
+	font-size: 16px;
+	color: #333;
+	border-left: 3px solid #AAA;
+	padding-left: 10px;
+	padding-bottom: 7px;
+	padding-top: 7px;
 }
 
 .badge-eg-num {
@@ -50,6 +65,14 @@ div.caption {
 	font-weight: bold;
 	vertical-align: middle;
 	background-color: #679;
+	color: #FFF;
+}
+
+.badge-module {
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: middle;
+	background-color: #967;
 	color: #FFF;
 }
 
@@ -128,18 +151,108 @@ pre {
 	margin-bottom: 25px;
 }
 
+.code-clean {
+	border: none;
+	margin-bottom: 25px;
+	background: none;
+}
+
 .low-level-desc {
 	padding: 5px;
-	font-size: 14px;		
-	border: 1px dashed;
+	font-size: 14px;
 	border-color: #BBB;
 }
 
 .option-x {
 	padding: 4px;
-	font-size: 18px;		
+	font-size: 18px;
 	border: 1px solid;
 	border-color: #733;
 	color: #733;
 	margin-right: 15px;
+}
+
+.modules-right {
+	padding: 0px 5px;
+	border: solid #ddd 1px;
+	border-radius: 15px;
+	text-align: center;
+}
+
+.module-title {
+	font-size: 16px;
+}
+
+.module-box {
+	font-size: 13px;
+}
+
+.module-wrap {
+	border-top: #ccc dotted 1px;
+	padding: 7px 0px;
+}
+
+#mc_embed_signup {
+	margin-top: 8px;
+}
+
+#mce-EMAIL {
+	width: 190px;
+}
+
+._code_comment {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+._code_api {
+	color: #467;
+	font-weight: bold;
+}
+
+._code_comment_icon {
+	color: #444;
+}
+
+.stats-field {
+	margin-right: 20px;
+}
+
+.module-stats {
+	margin-top: 15px;
+}
+
+.stats-value {
+	font-weight: bold;
+}
+
+.object-details {
+	font-size: 11px;
+	padding: 2px 3px;
+	border: #aaa solid 1px;
+	font-weight: bold;
+	border-radius: 5px;
+	color: #777;
+	line-height: 26px;
+}
+
+.object-value {
+	padding: 2px 3px;
+}
+
+.object-class {
+	padding: 2px 3px;
+	border-left: #999 solid 1px;
+	color: #888;
+}
+
+.show-code {
+	margin-top: -4px;
+}
+
+.maven-code {
+	font-size: 12px;
+	border: #eee solid 1px !important;
+	border-radius: 0px;
+	background: none;
 }

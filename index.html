@@ -13,13 +13,13 @@
 <script src="rapidoid.min.js"></script>
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
 <link href="docs.css" type="text/css" rel="stylesheet" />
 <link href="rapidoid.min.css" type="text/css" rel="stylesheet" />
 <link href="theme-default.css" type="text/css" rel="stylesheet" />
 
-<title>Rapidoid - The No-bullshit Web Framework for Java!</title>
+<title>Rapidoid - The No-bullshit Web Framework(s) for Java!</title>
 
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -56,7 +56,7 @@
 				
 				<a href="https://twitter.com/share" rel="nofollow"
 					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
-					data-text="#Rapidoid == New and Cool #Java web app #framework!" data-size="small">Tweet</a>
+					data-text="#Rapidoid - New and Cool #Java web app #framework!" data-size="small">Tweet</a>
 </div>
       </div>
     </div>
@@ -67,13 +67,13 @@
 		<div class="row">
 			<div class="col-md-7 col-sm-12">
 				<h4 id="main_subtitle">
-					<div id="rapidoid-title">The No-bullshit Web Framework for Java!</div>
+					<div id="rapidoid-title">Rapidoid - The No-bullshit Web Framework(s) for Java!</div>
 				</h4>
 			</div>
 
 			<div class="col-md-5 col-sm-12">
 <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup">
+<div id="mc_embed_signup" class="pull-right">
     <form action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
 
         <div class="mc-field-group">
@@ -94,87 +94,59 @@
 			</div>
 		</div>
 
-<!-- GETTING STARTED WITH DOCKER -->
+<!-- MODULE rapidoid-main -->
 
-<!-- 
-<div class="sep-example"></div>
+<div class="row row-separated-nano">
+  <div class="col-md-8">
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="caption"><span class="option-x">OPTION A</span>Using Rapidoid with Docker</div>
-        <div><span class="docker-code">docker run -d -p 8080:8080 rapidoid/rapidoid</span></div>
-    </div>
-</div>
- -->
 
-<!-- GETTING STARTED WITH JAVA LOW-LEVEL -->
-
-<div class="sep-example"></div>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="caption"><span class="option-x">OPTION A</span>Using Rapidoid's Low-level API</div>
-    </div>
+<div class="module-desc">
+Rapidoid consists of several de-coupled modules/frameworks which can be used separately or together.
 </div>
 
-<div class="row">
+<br><br>
+
+  </div>
   
-  <div class="col-md-6">
-        <div class="eg_title">Add <b>rapidoid-http</b> as Maven dependency to your project:</div>
-<pre class="eg_code">
+  <div class="col-md-4">
+        <div class="eg_title">Add <b>rapidoid-main</b> as Maven dependency:</div>
+<pre class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-http&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;4.3.0&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-main&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.0&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
   </div>
-
-  <div class="col-md-6">
-<div class="low-level-desc">
-<p><b>Low-level vs. high-level API</b></p>
-<p>The low-level HTTP API provides access to the extremely fast Rapidoid HTTP server implemented from scratch on top of Java NIO.</p> 
-<p>The high-level API is built on top of Rapidoid HTTP server, provides many advanced features for building modern POJO-based web applications.</p> 
-</div>
-  </div>
   
 </div>
 
+<div class="row">
+  
+<div class="col-md-10">
 <!-- EXAMPLE lowsimple -->
-
-<div class="sep-example"></div>
 
 <div id="examplelowsimple-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">1</span> &quot;Hello world&quot; web server</div>
+		<div class="caption"><span class="badge badge-eg-num">1</span> Web page and RESTful service one-liners (http-fast module)</div>
 	</div>
 </div>
 
 <div id="examplelowsimple-body" class="row">
 
-	<div id="examplelowsimple-left" class="col-md-6">
-		<div id="examplelowsimple-codedesc" class="eg_title">Main.java</div>
-		<pre id="examplelowsimple-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">On</span>.get(<span class="_code_str">"/"</span>).html(<span class="_code_str">"Hello world!"</span>);
+	<div id="examplelowsimple-left" class="col-md-7">
 
-        <span class="_code_cls">On</span>.post(<span class="_code_str">"/upper"</span>).json(<span class="_code_kw">new</span> <span class="_code_cls">ParamHandler</span>() {
-            @<span class="_code_cls">Override</span>
-            <span class="_code_kw">public</span> <span class="_code_cls">Object</span> handle(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; params) {
-                <span class="_code_cls">String</span> s = <span class="_code_cls">String</span>.valueOf(params.get(<span class="_code_str">"s"</span>));
-                <span class="_code_kw">return</span> U.map(<span class="_code_str">"src"</span>, s, <span class="_code_str">"upper"</span>, s.toUpperCase());
-            }
-        });
+		<pre id="examplelowsimple-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Let's create a simple web page with 1 line of code:</span>
+<span class="_code_cls">On</span>.page(<span class="_code_str">"/"</span>).gui(<span class="_code_str">"Hello world!"</span>);
 
-        <span class="_code_cls">On</span>.listen(<span class="_code_num">8080</span>);
-    }
-}
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Let's create a simple REST service with 1 line of code:</span>
+<span class="_code_cls">On</span>.get(<span class="_code_str">"/size"</span>).json(<span class="_code_str">"msg"</span>, msg -&gt; msg.length());
 </pre>
 	</div>
 
-    <div id="examplelowsimple-right" class="col-md-6">
+    <div id="examplelowsimple-right" class="col-md-5">
         <div id="examplelowsimple-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -187,12 +159,12 @@ Hello world!
                 </div>
 
             <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/upper?s=abc</span>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?msg=abc</span>
             </div>
 
                 <div class="eg-result">
 <!-- EXAMPLE#lowsimple HTML STARTS HERE -->
-{"src":"abc","upper":"ABC"}
+3
 <!-- EXAMPLE#lowsimple HTML END HERE -->
                 </div>
 
@@ -208,67 +180,60 @@ Hello world!
                 </div>
         </div>
     </div>
-
 </div>
 
 
+<!-- EXAMPLE fluent.findmini -->
 
-<!-- GETTING STARTED WITH JAVA HIGH-LEVEL -->
-
-<div class="sep-example"></div>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="caption"><span class="option-x">OPTION B</span>Using Rapidoid's High-level API</div>
-    </div>
+<div id="examplefluent.findmini-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">2</span> Searching through collections (http-fluent module)</div>
+	</div>
 </div>
 
-<div class="row">
-  
-  <div class="col-md-6">
-        <div class="eg_title">Add <b>rapidoid-main</b> as Maven dependency to your project:</div>
-<pre class="eg_code">
-&lt;<span class="_code_tag">dependency</span>&gt;
-    &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-main&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;4.3.0&lt;/<span class="_code_tag">version</span>&gt;
-&lt;/<span class="_code_tag">dependency</span>&gt;
+<div id="examplefluent.findmini-body" class="row">
+
+	<div id="examplefluent.findmini-left" class="col-md-12">
+
+		<pre id="examplefluent.findmini-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Searching through lists or sets:</span>
+
+<span class="pull-left left-code">List&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">U</span>.list(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Find</span>.firstOf(items).where(s -&gt; s.length() &lt; <span class="_code_num">3</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"a"</span><span class="object-class">Optional&lt;String&gt;</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Find</span>.allOf(items).where(s -&gt; s.length() &gt; <span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Searching through maps:</span>
+
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Find</span>.lastOf(nums).where((k, v) -&gt; v.length() &gt; <span class="_code_num">4</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"3":"three"}</span><span class="object-class">Optional&lt;Entry&gt;</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k &gt; <span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two","3":"three"}</span><span class="object-class">HashMap</span></span></span>
 </pre>
+	</div>
 
-  </div>
-
-  <div class="col-md-6">
-<div class="eg_title">Add Main.java as entry point:</div>
-<pre class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_cls">Rapidoid</span>.run(args);
-    }
-}
-</pre>
-  </div>
-  
 </div>
+
 
 <!-- EXAMPLE hellorest -->
 
-<div class="sep-example"></div>
-
 <div id="examplehellorest-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">1</span> &quot;Hello world&quot; RESTful service</div>
+		<div class="caption"><span class="badge badge-eg-num">3</span> &quot;Hello world&quot; RESTful service from POJO</div>
 	</div>
 </div>
 
 <div id="examplehellorest-body" class="row">
 
-	<div id="examplehellorest-left" class="col-md-6">
+	<div id="examplehellorest-left" class="col-md-7">
 		<div id="examplehellorest-codedesc" class="eg_title">NoBullshit.java</div>
-		<pre id="examplehellorest-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplehellorest-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NoBullshit</span> {
 
-    @<span class="_code_cls">GET</span>
+    <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
         <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
     }
@@ -277,7 +242,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplehellorest-right" class="col-md-6">
+    <div id="examplehellorest-right" class="col-md-5">
         <div id="examplehellorest-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hello</span>
@@ -301,34 +266,31 @@ Hello world!
                 </div>
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE restparams -->
 
-<div class="sep-example"></div>
-
 <div id="examplerestparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">2</span> URL parts as Method Parameters</div>
+		<div class="caption"><span class="badge badge-eg-num">4</span> URL parts as Method Parameters</div>
 	</div>
 </div>
 
 <div id="examplerestparams-body" class="row">
 
-	<div id="examplerestparams-left" class="col-md-6">
+	<div id="examplerestparams-left" class="col-md-7">
 		<div id="examplerestparams-codedesc" class="eg_title">SubUrlParams.java</div>
-		<pre id="examplerestparams-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplerestparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {
 
-    @<span class="_code_cls">GET</span>
+    <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {
-        <span class="_code_kw">return</span> U.format(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
+        <span class="_code_kw">return</span> <span class="_code_api">U</span>.frmt(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
     }
 
-    @<span class="_code_cls">POST</span>
+    <span class="_code_ann">@POST</span>
     <span class="_code_kw">public</span> <span class="_code_kw">int</span> size(<span class="_code_cls">String</span> s) {
         <span class="_code_kw">return</span> s.length();
     }
@@ -337,7 +299,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplerestparams-right" class="col-md-6">
+    <div id="examplerestparams-right" class="col-md-5">
         <div id="examplerestparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/Joe/50</span>
@@ -371,35 +333,32 @@ Hello world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE restjson -->
 
-<div class="sep-example"></div>
-
 <div id="examplerestjson-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">3</span> Automatic JSON Serialization of Data Structures</div>
+		<div class="caption"><span class="badge badge-eg-num">5</span> Automatic JSON Serialization of Data Structures</div>
 	</div>
 </div>
 
 <div id="examplerestjson-body" class="row">
 
-	<div id="examplerestjson-left" class="col-md-6">
+	<div id="examplerestjson-left" class="col-md-7">
 		<div id="examplerestjson-codedesc" class="eg_title">TextTools.java</div>
-		<pre id="examplerestjson-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplerestjson-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">TextTools</span> {
 
-    @<span class="_code_cls">GET</span>
+    <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {
         <span class="_code_cls">String</span> big = s.toUpperCase();
-        <span class="_code_kw">return</span> U.map(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
+        <span class="_code_kw">return</span> <span class="_code_api">U</span>.map(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
     }
 
-    @<span class="_code_cls">POST</span>
+    <span class="_code_ann">@POST</span>
     <span class="_code_kw">public</span> <span class="_code_cls">String</span>[] parts(<span class="_code_cls">String</span> text) {
         <span class="_code_kw">return</span> text.split(<span class="_code_str">"-"</span>);
     }
@@ -408,7 +367,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplerestjson-right" class="col-md-6">
+    <div id="examplerestjson-right" class="col-md-5">
         <div id="examplerestjson-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/abc</span>
@@ -432,29 +391,26 @@ Hello world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE beanjson -->
 
-<div class="sep-example"></div>
-
 <div id="examplebeanjson-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">4</span> Automatic Construction and Serialization of JavaBeans</div>
+		<div class="caption"><span class="badge badge-eg-num">6</span> Automatic Construction and Serialization of JavaBeans</div>
 	</div>
 </div>
 
 <div id="examplebeanjson-body" class="row">
 
-	<div id="examplebeanjson-left" class="col-md-6">
+	<div id="examplebeanjson-left" class="col-md-7">
 		<div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
-		<pre id="examplebeanjson-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplebeanjson-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {
 
-    @<span class="_code_cls">GET</span>
+    <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {
         <span class="_code_kw">return</span> book;
     }
@@ -462,7 +418,7 @@ Hello world!
 }
 </pre>
 		<div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
-		<pre id="examplebeanjson-code" class="eg_code">
+		<pre id="examplebeanjson-code" class="code-clean">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {
 
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Untitled"</span>;
@@ -480,7 +436,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplebeanjson-right" class="col-md-6">
+    <div id="examplebeanjson-right" class="col-md-5">
         <div id="examplebeanjson-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2012&amp;title=Abc</span>
@@ -504,30 +460,27 @@ Hello world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE restnamedparams -->
 
-<div class="sep-example"></div>
-
 <div id="examplerestnamedparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">5</span> Named URL Parameters</div>
+		<div class="caption"><span class="badge badge-eg-num">7</span> Named URL Parameters</div>
 	</div>
 </div>
 
 <div id="examplerestnamedparams-body" class="row">
 
-	<div id="examplerestnamedparams-left" class="col-md-6">
+	<div id="examplerestnamedparams-left" class="col-md-7">
 		<div id="examplerestnamedparams-codedesc" class="eg_title">NamedParams.java</div>
-		<pre id="examplerestnamedparams-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplerestnamedparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NamedParams</span> {
 
-    @<span class="_code_cls">GET</span>
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> sum(@<span class="_code_cls">Param</span>(<span class="_code_str">"x"</span>) <span class="_code_kw">int</span> x, @<span class="_code_cls">Param</span>(<span class="_code_str">"y"</span>) <span class="_code_kw">int</span> y) {
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> sum(<span class="_code_ann">@Param</span>(<span class="_code_str">"x"</span>) <span class="_code_kw">int</span> x, <span class="_code_ann">@Param</span>(<span class="_code_str">"y"</span>) <span class="_code_kw">int</span> y) {
         <span class="_code_kw">return</span> x + y;
     }
 
@@ -535,7 +488,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplerestnamedparams-right" class="col-md-6">
+    <div id="examplerestnamedparams-right" class="col-md-5">
         <div id="examplerestnamedparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?x=1&amp;y=2</span>
@@ -559,29 +512,26 @@ Hello world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE restlistparams -->
 
-<div class="sep-example"></div>
-
 <div id="examplerestlistparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">6</span> URL Parameters as List</div>
+		<div class="caption"><span class="badge badge-eg-num">8</span> URL Parameters as List</div>
 	</div>
 </div>
 
 <div id="examplerestlistparams-body" class="row">
 
-	<div id="examplerestlistparams-left" class="col-md-6">
+	<div id="examplerestlistparams-left" class="col-md-7">
 		<div id="examplerestlistparams-codedesc" class="eg_title">ParamsAsList.java</div>
-		<pre id="examplerestlistparams-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplerestlistparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsList</span> {
 
-    @<span class="_code_cls">POST</span>
+    <span class="_code_ann">@POST</span>
     <span class="_code_kw">public</span> <span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; params) {
         <span class="_code_kw">return</span> params;
     }
@@ -590,7 +540,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplerestlistparams-right" class="col-md-6">
+    <div id="examplerestlistparams-right" class="col-md-5">
         <div id="examplerestlistparams-results" class="results">
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/2015/Mart/20</span>
@@ -614,29 +564,26 @@ Hello world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE restmapparams -->
 
-<div class="sep-example"></div>
-
 <div id="examplerestmapparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> URL Parameters as Map</div>
+		<div class="caption"><span class="badge badge-eg-num">9</span> URL Parameters as Map</div>
 	</div>
 </div>
 
 <div id="examplerestmapparams-body" class="row">
 
-	<div id="examplerestmapparams-left" class="col-md-6">
+	<div id="examplerestmapparams-left" class="col-md-7">
 		<div id="examplerestmapparams-codedesc" class="eg_title">ParamsAsMap.java</div>
-		<pre id="examplerestmapparams-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplerestmapparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsMap</span> {
 
-    @<span class="_code_cls">GET</span>
+    <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
         <span class="_code_kw">return</span> params;
     }
@@ -645,7 +592,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplerestmapparams-right" class="col-md-6">
+    <div id="examplerestmapparams-right" class="col-md-5">
         <div id="examplerestmapparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?x=1&amp;y=23</span>
@@ -669,29 +616,26 @@ Hello world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE hello -->
 
-<div class="sep-example"></div>
-
 <div id="examplehello-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">8</span> Hello, web pages!</div>
+		<div class="caption"><span class="badge badge-eg-num">10</span> Hello, web pages!</div>
 	</div>
 </div>
 
 <div id="examplehello-body" class="row">
 
-	<div id="examplehello-left" class="col-md-6">
+	<div id="examplehello-left" class="col-md-7">
 		<div id="examplehello-codedesc" class="eg_title">Hello.java</div>
-		<pre id="examplehello-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplehello-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Hello</span> {
 
-    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
         <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
     }
@@ -700,7 +644,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplehello-right" class="col-md-6">
+    <div id="examplehello-right" class="col-md-5">
         <div id="examplehello-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -709,6 +653,29 @@ Hello world!
                 <div class="eg-result">
 <!-- EXAMPLE#hello HTML STARTS HERE -->
 <!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
 Hello, world!
 
 <!-- EXAMPLE#hello HTML END HERE -->
@@ -721,6 +688,29 @@ Hello, world!
                 <div class="eg-result">
 <!-- EXAMPLE#hello HTML STARTS HERE -->
 <!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
 Hello, world!
 
 <!-- EXAMPLE#hello HTML END HERE -->
@@ -728,38 +718,35 @@ Hello, world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE hi -->
 
-<div class="sep-example"></div>
-
 <div id="examplehi-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">9</span> Building HTML pages with Java</div>
+		<div class="caption"><span class="badge badge-eg-num">11</span> Building HTML pages with Java</div>
 	</div>
 </div>
 
 <div id="examplehi-body" class="row">
 
-	<div id="examplehi-left" class="col-md-6">
+	<div id="examplehi-left" class="col-md-7">
 		<div id="examplehi-codedesc" class="eg_title">YourName.java</div>
-		<pre id="examplehi-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplehi-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">YourName</span> {
 
-    @<span class="_code_cls">Page</span>(title = <span class="_code_str">"What is your name?"</span>)
+    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"What is your name?"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Tag</span> hi(<span class="_code_cls">String</span> name) {
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.h<span class="_code_num">3</span>(<span class="_code_str">"Hi, "</span>, <span class="_code_cls">GUI</span>.i(name), <span class="_code_str">"!"</span>);
+        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.h<span class="_code_num">4</span>(<span class="_code_str">"Hi, "</span>, <span class="_code_cls">GUI</span>.i(name), <span class="_code_str">"!"</span>);
     }
 
 }
 </pre>
 	</div>
 
-    <div id="examplehi-right" class="col-md-6">
+    <div id="examplehi-right" class="col-md-5">
         <div id="examplehi-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi/Rapidoid</span>
@@ -769,7 +756,7 @@ Hello, world!
 <!-- EXAMPLE#hi HTML STARTS HERE -->
 <!--state::null-->
 <nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+    <div class="">
 
         <div class="navbar-header">
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
@@ -781,13 +768,7 @@ Hello, world!
         <div id="collapsable" class="collapse navbar-collapse">
 
 
-            <ul class="nav navbar-nav navbar-right">
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
-    <ul role="menu" class="dropdown-menu">
-    </ul>
-</li>
 
-            </ul>
 
 
 
@@ -797,7 +778,7 @@ Hello, world!
 
     </div>
 </nav>
-<h3>Hi, <i>Rapidoid</i>!</h3>
+<h4>Hi, <i>Rapidoid</i>!</h4>
 
 <!-- EXAMPLE#hi HTML END HERE -->
                 </div>
@@ -810,7 +791,7 @@ Hello, world!
 <!-- EXAMPLE#hi HTML STARTS HERE -->
 <!--state::null-->
 <nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+    <div class="">
 
         <div class="navbar-header">
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
@@ -822,13 +803,7 @@ Hello, world!
         <div id="collapsable" class="collapse navbar-collapse">
 
 
-            <ul class="nav navbar-nav navbar-right">
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
-    <ul role="menu" class="dropdown-menu">
-    </ul>
-</li>
 
-            </ul>
 
 
 
@@ -838,36 +813,33 @@ Hello, world!
 
     </div>
 </nav>
-<h3>Hi, <i>there</i>!</h3>
+<h4>Hi, <i>there</i>!</h4>
 
 <!-- EXAMPLE#hi HTML END HERE -->
                 </div>
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE raw -->
 
-<div class="sep-example"></div>
-
 <div id="exampleraw-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">10</span> Raw HTML pages</div>
+		<div class="caption"><span class="badge badge-eg-num">12</span> Raw HTML pages</div>
 	</div>
 </div>
 
 <div id="exampleraw-body" class="row">
 
-	<div id="exampleraw-left" class="col-md-6">
+	<div id="exampleraw-left" class="col-md-7">
 		<div id="exampleraw-codedesc" class="eg_title">Simple.java</div>
-		<pre id="exampleraw-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="exampleraw-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Simple</span> {
 
-    @<span class="_code_cls">Page</span>(raw = true)
+    <span class="_code_ann">@Page</span>(raw = true)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> simple() {
         <span class="_code_kw">return</span> <span class="_code_str">"&lt;p&gt;&lt;b&gt;RAW&lt;/b&gt; HTML!&lt;p&gt;"</span>;
     }
@@ -876,7 +848,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleraw-right" class="col-md-6">
+    <div id="exampleraw-right" class="col-md-5">
         <div id="exampleraw-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/simple</span>
@@ -890,36 +862,33 @@ Hello, world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE showmovie -->
 
-<div class="sep-example"></div>
-
 <div id="exampleshowmovie-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">11</span> Display bean properties</div>
+		<div class="caption"><span class="badge badge-eg-num">13</span> Display bean properties</div>
 	</div>
 </div>
 
 <div id="exampleshowmovie-body" class="row">
 
-	<div id="exampleshowmovie-left" class="col-md-6">
+	<div id="exampleshowmovie-left" class="col-md-7">
 		<div id="exampleshowmovie-codedesc" class="eg_title">Movie.java</div>
-		<pre id="exampleshowmovie-code" class="eg_code">
+		<pre id="exampleshowmovie-code" class="code-clean">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
     <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
 }
 </pre>
 		<div id="exampleshowmovie-codedesc" class="eg_title">Movies.java</div>
-		<pre id="exampleshowmovie-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="exampleshowmovie-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
 
-    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
         <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
         movie.title = <span class="_code_str">"Chappie"</span>;
@@ -932,7 +901,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleshowmovie-right" class="col-md-6">
+    <div id="exampleshowmovie-right" class="col-md-5">
         <div id="exampleshowmovie-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -940,8 +909,9 @@ Hello, world!
 
                 <div class="eg-result">
 <!-- EXAMPLE#showmovie HTML STARTS HERE -->
+<!--state::null-->
 <nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+    <div class="">
 
         <div class="navbar-header">
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
@@ -953,13 +923,7 @@ Hello, world!
         <div id="collapsable" class="collapse navbar-collapse">
 
 
-            <ul class="nav navbar-nav navbar-right">
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
-    <ul role="menu" class="dropdown-menu">
-    </ul>
-</li>
 
-            </ul>
 
 
 
@@ -984,47 +948,45 @@ Hello, world!
     <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
   </div>
 </form>
+
 <!-- EXAMPLE#showmovie HTML END HERE -->
                 </div>
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE editmovie -->
 
-<div class="sep-example"></div>
-
 <div id="exampleeditmovie-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">12</span> Edit bean properties</div>
+		<div class="caption"><span class="badge badge-eg-num">14</span> Edit bean properties</div>
 	</div>
 </div>
 
 <div id="exampleeditmovie-body" class="row">
 
-	<div id="exampleeditmovie-left" class="col-md-6">
+	<div id="exampleeditmovie-left" class="col-md-7">
 		<div id="exampleeditmovie-codedesc" class="eg_title">Movie.java</div>
-		<pre id="exampleeditmovie-code" class="eg_code">
+		<pre id="exampleeditmovie-code" class="code-clean">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
     <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
 }
 </pre>
 		<div id="exampleeditmovie-codedesc" class="eg_title">Movies.java</div>
-		<pre id="exampleeditmovie-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="exampleeditmovie-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
 
-    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
         <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
         movie.title = <span class="_code_str">"Chappie"</span>;
         movie.year = <span class="_code_num">2015</span>;
 
-        <span class="_code_cls">ButtonWidget</span> save = <span class="_code_cls">GUI</span>.btn(<span class="_code_str">"Save"</span>).primary();
+        <span class="_code_cls">Btn</span> save = <span class="_code_cls">GUI</span>.btn(<span class="_code_str">"Save"</span>).primary();
         <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.edit(movie).buttons(save);
     }
 
@@ -1032,7 +994,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleeditmovie-right" class="col-md-6">
+    <div id="exampleeditmovie-right" class="col-md-5">
         <div id="exampleeditmovie-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -1040,8 +1002,9 @@ Hello, world!
 
                 <div class="eg-result">
 <!-- EXAMPLE#editmovie HTML STARTS HERE -->
+<!--state::null-->
 <nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+    <div class="">
 
         <div class="navbar-header">
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
@@ -1053,13 +1016,7 @@ Hello, world!
         <div id="collapsable" class="collapse navbar-collapse">
 
 
-            <ul class="nav navbar-nav navbar-right">
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
-    <ul role="menu" class="dropdown-menu">
-    </ul>
-</li>
 
-            </ul>
 
 
 
@@ -1084,34 +1041,32 @@ Hello, world!
     <button type="button" class="btn btn-primary" ng-click="_emit('Save', [])">Save</button>
   </div>
 </form>
+
 <!-- EXAMPLE#editmovie HTML END HERE -->
                 </div>
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE paramgrid -->
 
-<div class="sep-example"></div>
-
 <div id="exampleparamgrid-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">13</span> Create key-value data grid from a Map</div>
+		<div class="caption"><span class="badge badge-eg-num">15</span> Create key-value data grid from a Map</div>
 	</div>
 </div>
 
 <div id="exampleparamgrid-body" class="row">
 
-	<div id="exampleparamgrid-left" class="col-md-6">
+	<div id="exampleparamgrid-left" class="col-md-7">
 		<div id="exampleparamgrid-codedesc" class="eg_title">ParamGrid.java</div>
-		<pre id="exampleparamgrid-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="exampleparamgrid-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamGrid</span> {
 
-    @<span class="_code_cls">Page</span>(title = <span class="_code_str">"Grid of request parameters"</span>)
+    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"Grid of request parameters"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> table(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
         <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.grid(params);
     }
@@ -1120,7 +1075,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleparamgrid-right" class="col-md-6">
+    <div id="exampleparamgrid-right" class="col-md-5">
         <div id="exampleparamgrid-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/table?name=Highlander&amp;age=700&amp;weapon=sword</span>
@@ -1130,7 +1085,7 @@ Hello, world!
 <!-- EXAMPLE#paramgrid HTML STARTS HERE -->
 <!--state::null-->
 <nav role="navigation" class="navbar navbar-default">
-    <div class="container">
+    <div class="">
 
         <div class="navbar-header">
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
@@ -1142,13 +1097,7 @@ Hello, world!
         <div id="collapsable" class="collapse navbar-collapse">
 
 
-            <ul class="nav navbar-nav navbar-right">
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="fa fa-user"></span>&nbsp;Sign in<span class="caret"></span></a>
-    <ul role="menu" class="dropdown-menu">
-    </ul>
-</li>
 
-            </ul>
 
 
 
@@ -1182,423 +1131,29 @@ Hello, world!
 
         </div>
     </div>
-
-</div>
-
-
-<!-- EXAMPLE clickcounter -->
-
-<div class="sep-example"></div>
-
-<div id="exampleclickcounter-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">14</span> Counting the clicks</div>
-	</div>
-</div>
-
-<div id="exampleclickcounter-body" class="row">
-
-	<div id="exampleclickcounter-left" class="col-md-6">
-		<div id="exampleclickcounter-codedesc" class="eg_title">ClickCounter.java</div>
-		<pre id="exampleclickcounter-code" class="eg_code">
-@<span class="_code_cls">Web</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ClickCounter</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
-
-    <span class="_code_kw">int</span> n = <span class="_code_num">0</span>;
-
-    @<span class="_code_cls">Page</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> counter() {
-        <span class="_code_cls">ButtonWidget</span> inc = btn(<span class="_code_str">"+"</span>).onClick(<span class="_code_kw">new</span> <span class="_code_cls">Runnable</span>() {
-            @<span class="_code_cls">Override</span>
-            <span class="_code_kw">public</span> <span class="_code_kw">void</span> run() {
-                n++;
-            }
-        });
-
-        <span class="_code_cls">Tag</span> info = span(<span class="_code_str">"You clicked "</span>, n, <span class="_code_str">" times!"</span>);
-
-        <span class="_code_kw">return</span> row(info, inc);
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="exampleclickcounter-right" class="col-md-6">
-        <div id="exampleclickcounter-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/counter</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#clickcounter HTML STARTS HERE -->
-<!--state::null-->
-<div class="row">
-  <div class="col-md-12">
-    <span>You clicked 0 times!</span>
-    <button type="button" class="btn btn-default" ng-click="_emit('+', [])">+</button>
-  </div>
-</div>
-
-<!-- EXAMPLE#clickcounter HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/counter</span>
-            </div>
-            <div class="post-data">
-                <span class="label label-default eg-data">{&quot;_event&quot;:&quot;+&quot;,&quot;_args&quot;:[],&quot;_inputs&quot;:{}}</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#clickcounter HTML STARTS HERE -->
-<!--state::null-->
-<div class="row">
-  <div class="col-md-12">
-    <span>You clicked 1 times!</span>
-    <button type="button" class="btn btn-default" ng-click="_emit('+', [])">+</button>
-  </div>
-</div>
-
-<!-- EXAMPLE#clickcounter HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<!-- EXAMPLE beanform -->
-
-<div class="sep-example"></div>
-
-<div id="examplebeanform-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">15</span> Creating forms from JavaBeans</div>
-	</div>
-</div>
-
-<div id="examplebeanform-body" class="row">
-
-	<div id="examplebeanform-left" class="col-md-6">
-		<div id="examplebeanform-codedesc" class="eg_title">MovieForm.java</div>
-		<pre id="examplebeanform-code" class="eg_code">
-@<span class="_code_cls">Web</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">MovieForm</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
-
-    @<span class="_code_cls">Page</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movies() {
-        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-        movie.id = <span class="_code_num">12345</span>L;
-
-        <span class="_code_cls">FormWidget</span> f<span class="_code_num">1</span> = edit(movie);
-        f<span class="_code_num">1</span> = f<span class="_code_num">1</span>.buttons(btn(<span class="_code_str">"OK"</span>));
-
-        <span class="_code_cls">FormWidget</span> f<span class="_code_num">2</span> = show(movie);
-
-        <span class="_code_kw">return</span> columns(f<span class="_code_num">1</span>, f<span class="_code_num">2</span>);
-    }
-
-}
-</pre>
-		<div id="examplebeanform-codedesc" class="eg_title">Movie.java</div>
-		<pre id="examplebeanform-code" class="eg_code">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    <span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-    <div id="examplebeanform-right" class="col-md-6">
-        <div id="examplebeanform-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/movies</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#beanform HTML STARTS HERE -->
-<div class="row">
-  <div class="col-md-6">
-    <form class="" role="form">
-      <div class="form-group">
-        <label>Title: </label>
-        <input _h="title" type="text" class="form-control" value="" name="title">
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <label>Year: </label>
-        <input _h="year" type="text" class="form-control" value="0" name="year">
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <form class="" role="form">
-      <div class="form-group">
-        <label>ID: </label>
-        <span class="display-wrap">12345</span>
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <label>Title: </label>
-        <span class="display-wrap"></span>
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <label>Year: </label>
-        <span class="display-wrap">0</span>
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group"></div>
-    </form>
-  </div>
-</div>
-<!-- EXAMPLE#beanform HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/movies</span>
-            </div>
-            <div class="post-data">
-                <span class="label label-default eg-data">{&quot;_event&quot;:&quot;Save&quot;,&quot;_args&quot;:[],&quot;_inputs&quot;:{&quot;title&quot;:&quot;Chappie&quot;,&quot;year&quot;:2015}}</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#beanform HTML STARTS HERE -->
-<div class="row">
-  <div class="col-md-6">
-    <form class="" role="form">
-      <div class="form-group">
-        <label>Title: </label>
-        <input _h="title" type="text" class="form-control" value="Chappie" name="title">
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <label>Year: </label>
-        <input _h="year" type="text" class="form-control" value="2015" name="year">
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <form class="" role="form">
-      <div class="form-group">
-        <label>ID: </label>
-        <span class="display-wrap">12345</span>
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <label>Title: </label>
-        <span class="display-wrap">Chappie</span>
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group">
-        <label>Year: </label>
-        <span class="display-wrap">2015</span>
-        <span class="field-error"></span>
-      </div>
-      <div class="form-group"></div>
-    </form>
-  </div>
-</div>
-<!-- EXAMPLE#beanform HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<!-- EXAMPLE savetodb -->
-
-<div class="sep-example"></div>
-
-<div id="examplesavetodb-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">16</span> Save entity to DB</div>
-	</div>
-</div>
-
-<div id="examplesavetodb-body" class="row">
-
-	<div id="examplesavetodb-left" class="col-md-6">
-		<div id="examplesavetodb-codedesc" class="eg_title">SaveMovie.java</div>
-		<pre id="examplesavetodb-code" class="eg_code">
-@<span class="_code_cls">Web</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SaveMovie</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
-
-    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movieForm() {
-        <span class="_code_kw">final</span> <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-        <span class="_code_cls">FormWidget</span> f = edit(movie);
-
-        <span class="_code_cls">ButtonWidget</span> save = btn(<span class="_code_str">"Save"</span>).onClick(<span class="_code_kw">new</span> <span class="_code_cls">Runnable</span>() {
-            @<span class="_code_cls">Override</span>
-            <span class="_code_kw">public</span> <span class="_code_kw">void</span> run() {
-                <span class="_code_cls">DB</span>.insert(movie);
-            }
-        });
-
-        f = f.buttons(save);
-
-        <span class="_code_kw">return</span> f;
-    }
-
-}
-</pre>
-		<div id="examplesavetodb-codedesc" class="eg_title">Movie.java</div>
-		<pre id="examplesavetodb-code" class="eg_code">
-@<span class="_code_cls">Entity</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    @<span class="_code_cls">Id</span>
-    @<span class="_code_cls">GeneratedValue</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;
-
-    <span class="_code_cls">String</span> title;
-    <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-    <div id="examplesavetodb-right" class="col-md-6">
-        <div id="examplesavetodb-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#savetodb HTML STARTS HERE -->
-<form class="" role="form">
-  <div class="form-group">
-    <label>Title: </label>
-    <input _h="title" type="text" class="form-control" value="" name="title">
-    <span class="field-error"></span>
-  </div>
-  <div class="form-group">
-    <label>Year: </label>
-    <input _h="year" type="text" class="form-control" value="0" name="year">
-    <span class="field-error"></span>
-  </div>
-  <div class="form-group">
-    <button type="button" class="btn btn-default" ng-click="_emit('Save', [])">Save</button>
-  </div>
-</form>
-<!-- EXAMPLE#savetodb HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<!-- EXAMPLE customform -->
-
-<div class="sep-example"></div>
-
-<div id="examplecustomform-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">17</span> Customizing form fields</div>
-	</div>
-</div>
-
-<div id="examplecustomform-body" class="row">
-
-	<div id="examplecustomform-left" class="col-md-6">
-		<div id="examplecustomform-codedesc" class="eg_title">CustomForm.java</div>
-		<pre id="examplecustomform-code" class="eg_code">
-@<span class="_code_cls">Web</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">CustomForm</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
-
-    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> content() {
-        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-        <span class="_code_cls">FormWidget</span> f = create(movie, <span class="_code_str">"year"</span>);
-        <span class="_code_cls">ButtonWidget</span> changeYear = btn(<span class="_code_str">"Change year"</span>).command(<span class="_code_str">"NewYear"</span>).primary();
-        f = f.buttons(btn(<span class="_code_str">"Ab"</span>), changeYear, btn(<span class="_code_str">"!Efg"</span>).danger());
-        <span class="_code_kw">return</span> f;
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> onNewYear() {
-        // <span class="_code_cls">DB</span>.update(movie);
-    }
-}
-</pre>
-		<div id="examplecustomform-codedesc" class="eg_title">Movie.java</div>
-		<pre id="examplecustomform-code" class="eg_code">
-@<span class="_code_cls">Entity</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    @<span class="_code_cls">Id</span>
-    @<span class="_code_cls">GeneratedValue</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;
-
-    <span class="_code_cls">String</span> title;
-    <span class="_code_kw">int</span> year;
-}
-</pre>
-	</div>
-
-    <div id="examplecustomform-right" class="col-md-6">
-        <div id="examplecustomform-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#customform HTML STARTS HERE -->
-<form class="" role="form">
-  <div class="form-group">
-    <label>Year: </label>
-    <input _h="year" type="text" class="form-control" value="0" name="year">
-    <span class="field-error"></span>
-  </div>
-  <div class="form-group">
-    <button type="button" class="btn btn-default" ng-click="_emit('Ab', [])">Ab</button>
-    <button type="button" class="btn btn-primary" ng-click="_emit('NewYear', [])">Change year</button>
-    <button type="button" class="btn btn-danger" ng-click="_emit('!Efg', [])">!Efg</button>
-  </div>
-</form>
-<!-- EXAMPLE#customform HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-
 </div>
 
 
 <!-- EXAMPLE injection -->
 
-<div class="sep-example"></div>
-
 <div id="exampleinjection-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">18</span> Dependency injection of singletons</div>
+		<div class="caption"><span class="badge badge-eg-num">16</span> Dependency injection of singletons</div>
 	</div>
 </div>
 
 <div id="exampleinjection-body" class="row">
 
-	<div id="exampleinjection-left" class="col-md-6">
+	<div id="exampleinjection-left" class="col-md-7">
 		<div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
-		<pre id="exampleinjection-code" class="eg_code">
-@<span class="_code_cls">Web</span>(url = <span class="_code_str">"/bar"</span>)
+		<pre id="exampleinjection-code" class="code-clean">
+<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/bar"</span>)
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {
 
-    @<span class="_code_cls">Inject</span>
+    <span class="_code_ann">@Inject</span>
     <span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;
 
-    @<span class="_code_cls">GET</span>(url = <span class="_code_str">"/hi"</span>)
+    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
         <span class="_code_kw">return</span> foo.msg();
     }
@@ -1610,16 +1165,16 @@ Hello, world!
 }
 </pre>
 		<div id="exampleinjection-codedesc" class="eg_title">Foo.java</div>
-		<pre id="exampleinjection-code" class="eg_code">
-@<span class="_code_cls">Web</span>(url = <span class="_code_str">"/foo"</span>)
+		<pre id="exampleinjection-code" class="code-clean">
+<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/foo"</span>)
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {
 
-    @<span class="_code_cls">Inject</span>
+    <span class="_code_ann">@Inject</span>
     <span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;
 
     <span class="_code_kw">private</span> <span class="_code_kw">int</span> count;
 
-    @<span class="_code_cls">GET</span>(url = <span class="_code_str">"/hi"</span>)
+    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
         <span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();
     }
@@ -1632,7 +1187,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleinjection-right" class="col-md-6">
+    <div id="exampleinjection-right" class="col-md-5">
         <div id="exampleinjection-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
@@ -1640,7 +1195,7 @@ Hello, world!
 
                 <div class="eg-result">
 <!-- EXAMPLE#injection HTML STARTS HERE -->
-"1: Hello from Bar!"
+"489: Hello from Bar!"
 <!-- EXAMPLE#injection HTML END HERE -->
                 </div>
 
@@ -1660,35 +1215,32 @@ Hello, world!
 
                 <div class="eg-result">
 <!-- EXAMPLE#injection HTML STARTS HERE -->
-"2: Hello from Bar!"
+"490: Hello from Bar!"
 <!-- EXAMPLE#injection HTML END HERE -->
                 </div>
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE layout -->
 
-<div class="sep-example"></div>
-
 <div id="examplelayout-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">19</span> Bootstrap-based GUI layout</div>
+		<div class="caption"><span class="badge badge-eg-num">17</span> Bootstrap-based GUI layout</div>
 	</div>
 </div>
 
 <div id="examplelayout-body" class="row">
 
-	<div id="examplelayout-left" class="col-md-6">
+	<div id="examplelayout-left" class="col-md-7">
 		<div id="examplelayout-codedesc" class="eg_title">BootstrapLayout.java</div>
-		<pre id="examplelayout-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplelayout-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">BootstrapLayout</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
 
-    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> layout() {
         <span class="_code_cls">Tag</span> r<span class="_code_num">1</span> = row(col<span class="_code_num">4</span>(<span class="_code_str">"A"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"B"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"C"</span>));
         <span class="_code_cls">Tag</span> r<span class="_code_num">2</span> = row(col<span class="_code_num">1</span>(<span class="_code_str">"2/12"</span>), col<span class="_code_num">7</span>(<span class="_code_str">"7/12"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"3/12"</span>));
@@ -1700,7 +1252,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="examplelayout-right" class="col-md-6">
+    <div id="examplelayout-right" class="col-md-5">
         <div id="examplelayout-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -1709,6 +1261,29 @@ Hello, world!
                 <div class="eg-result">
 <!-- EXAMPLE#layout HTML STARTS HERE -->
 <!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
 
   <div class="row">
     <div class="col-md-4">A</div>
@@ -1731,29 +1306,26 @@ Hello, world!
 
         </div>
     </div>
-
 </div>
 
 
 <!-- EXAMPLE highlighting -->
 
-<div class="sep-example"></div>
-
 <div id="examplehighlighting-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">20</span> Highlighting Text by Regular Expression Match</div>
+		<div class="caption"><span class="badge badge-eg-num">18</span> Highlighting Text by Regular Expression Match</div>
 	</div>
 </div>
 
 <div id="examplehighlighting-body" class="row">
 
-	<div id="examplehighlighting-left" class="col-md-6">
+	<div id="examplehighlighting-left" class="col-md-7">
 		<div id="examplehighlighting-codedesc" class="eg_title">Highlighting.java</div>
-		<pre id="examplehighlighting-code" class="eg_code">
-@<span class="_code_cls">Web</span>
+		<pre id="examplehighlighting-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Highlighting</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
 
-    @<span class="_code_cls">Page</span>(url = <span class="_code_str">"/"</span>)
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {
         <span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\w+"</span>);
     }
@@ -1762,7 +1334,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="examplehighlighting-right" class="col-md-6">
+    <div id="examplehighlighting-right" class="col-md-5">
         <div id="examplehighlighting-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -1771,6 +1343,29 @@ Hello, world!
                 <div class="eg-result">
 <!-- EXAMPLE#highlighting HTML STARTS HERE -->
 <!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
 <span><span class="highlight">ab</span>-<span class="highlight">cd</span>-<span class="highlight">efg</span></span>
 
 <!-- EXAMPLE#highlighting HTML END HERE -->
@@ -1778,141 +1373,53 @@ Hello, world!
 
         </div>
     </div>
-
 </div>
 
 
-<!-- EXAMPLE calculator -->
-
-<div class="sep-example"></div>
-
-<div id="examplecalculator-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">21</span> Constructing GUI and handling events</div>
-	</div>
 </div>
 
-<div id="examplecalculator-body" class="row">
+<div class="col-md-2">
+<div class="modules-right">
+<h3 class="module-title">Rapidoid Modules:</h3>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="/">rapidoid-main</a></h4>
+ <div class="module-box">Aggregates the web modules and extras</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <div class="module-box">Elegant manipulation of collections and streams</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
+ <div class="module-box">High-performance HTTP Server</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
+ <div class="module-box">Full-stack Web Framework</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
+ <div class="module-box">Simple &amp; Sweet Utils</div>
+</div>
+</div>
+</div>
 
-	<div id="examplecalculator-left" class="col-md-6">
-		<div id="examplecalculator-codedesc" class="eg_title">Calculator.java</div>
-		<pre id="examplecalculator-code" class="eg_code">
-@<span class="_code_cls">Web</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Calculator</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+</div>
 
-    @<span class="_code_cls">Page</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> calc() {
-        <span class="_code_cls">Tag</span> btns = div();
-        <span class="_code_cls">Tag</span> row = div();
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>	
 
-        <span class="_code_kw">final</span> <span class="_code_cls">Val</span>&lt;<span class="_code_cls">String</span>&gt; pressed = <span class="_code_kw">new</span> <span class="_code_cls">Val</span>&lt;<span class="_code_cls">String</span>&gt;(<span class="_code_str">"?"</span>);
-
-        <span class="_code_kw">for</span> (<span class="_code_kw">int</span> i = <span class="_code_num">1</span>; i &lt;= <span class="_code_num">9</span>; i++) {
-            <span class="_code_kw">final</span> <span class="_code_cls">String</span> digit = <span class="_code_str">""</span> + i;
-
-            <span class="_code_cls">ButtonWidget</span> b = btn(digit).command(<span class="_code_str">"num"</span>, i);
-
-            b.onClick(<span class="_code_kw">new</span> <span class="_code_cls">Runnable</span>() {
-                @<span class="_code_cls">Override</span>
-                <span class="_code_kw">public</span> <span class="_code_kw">void</span> run() {
-                    pressed.set(digit);
-                }
-            });
-
-            row = row.append(b);
-            <span class="_code_kw">if</span> (i % <span class="_code_num">3</span> == <span class="_code_num">0</span>) {
-                btns = btns.append(row);
-                row = div();
-            }
-        }
-
-        <span class="_code_kw">return</span> row(btns, h<span class="_code_num">4</span>(<span class="_code_str">"You pressed: "</span>, pressed));
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
     }
-
-}
-</pre>
-	</div>
-
-    <div id="examplecalculator-right" class="col-md-6">
-        <div id="examplecalculator-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/calc</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#calculator HTML STARTS HERE -->
-<!--state::null-->
-<div class="row">
-  <div class="col-md-12">
-    <div>
-      <div>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [1])">1</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [2])">2</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [3])">3</button>
-      </div>
-      <div>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [4])">4</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [5])">5</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [6])">6</button>
-      </div>
-      <div>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [7])">7</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [8])">8</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [9])">9</button>
-      </div>
-    </div>
-    <h4>You pressed: ?</h4>
-  </div>
-</div>
-
-<!-- EXAMPLE#calculator HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/calc</span>
-            </div>
-            <div class="post-data">
-                <span class="label label-default eg-data">{&quot;_event&quot;:&quot;num&quot;,&quot;_args&quot;:[4]}</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#calculator HTML STARTS HERE -->
-<!--state::null-->
-<div class="row">
-  <div class="col-md-12">
-    <div>
-      <div>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [1])">1</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [2])">2</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [3])">3</button>
-      </div>
-      <div>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [4])">4</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [5])">5</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [6])">6</button>
-      </div>
-      <div>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [7])">7</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [8])">8</button>
-        <button type="button" class="btn btn-default" ng-click="_emit('num', [9])">9</button>
-      </div>
-    </div>
-    <h4>You pressed: 4</h4>
-  </div>
-</div>
-
-<!-- EXAMPLE#calculator HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-
-</div>
-	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>	
+}(document, 'script', 'twitter-wjs');
+</script>   
 
 </body>
 </html>
