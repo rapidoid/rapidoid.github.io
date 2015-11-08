@@ -152,9 +152,10 @@ pre {
 }
 
 .code-clean {
-	border: none;
+	border: none !important;
 	margin-bottom: 25px;
 	background: none;
+	box-shadow: none !important;
 }
 
 .low-level-desc {
@@ -200,9 +201,15 @@ pre {
 	width: 190px;
 }
 
+._code_linecomm {
+	color: #777;
+	font-style: italic;
+}
+
 ._code_comment {
 	font-size: 14px;
 	font-weight: bold;
+	line-height: 37px;
 }
 
 ._code_api {
@@ -255,4 +262,8 @@ pre {
 	border: #eee solid 1px !important;
 	border-radius: 0px;
 	background: none;
+}
+
+pre {
+	border: none !important;
 }

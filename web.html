@@ -117,7 +117,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-web&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.0&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.1&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -128,30 +128,1189 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 <div class="row">
   
 <div class="col-md-10">
+<!-- EXAMPLE hellorest -->
+
+<div id="examplehellorest-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">1</span> &quot;Hello world&quot; RESTful service</div>
+	</div>
+</div>
+
+<div id="examplehellorest-body" class="row">
+
+	<div id="examplehellorest-left" class="col-md-7">
+		<div id="examplehellorest-codedesc" class="eg_title">NoBullshit.java</div>
+		<pre id="examplehellorest-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NoBullshit</span> {
+
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplehellorest-right" class="col-md-5">
+        <div id="examplehellorest-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hello</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hellorest HTML STARTS HERE -->
+"Hello, world!"
+<!-- EXAMPLE#hellorest HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hello</span>
+            </div>
+
+
+                <div class="eg-error">
+<!-- EXAMPLE#hellorest ERROR STARTS HERE -->
+<span class="not-found">404 Not found!</span>
+<!-- EXAMPLE#hellorest ERROR END HERE -->
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE restparams -->
+
+<div id="examplerestparams-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">2</span> URL parts as Method Parameters</div>
+	</div>
+</div>
+
+<div id="examplerestparams-body" class="row">
+
+	<div id="examplerestparams-left" class="col-md-7">
+		<div id="examplerestparams-codedesc" class="eg_title">SubUrlParams.java</div>
+		<pre id="examplerestparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {
+
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {
+        <span class="_code_kw">return</span> <span class="_code_api">U</span>.frmt(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
+    }
+
+    <span class="_code_ann">@POST</span>
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> size(<span class="_code_cls">String</span> s) {
+        <span class="_code_kw">return</span> s.length();
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplerestparams-right" class="col-md-5">
+        <div id="examplerestparams-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/Joe/50</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restparams HTML STARTS HERE -->
+"Hey Joe (50)"
+<!-- EXAMPLE#restparams HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/You!/123</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restparams HTML STARTS HERE -->
+"Hey You! (123)"
+<!-- EXAMPLE#restparams HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/size/abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restparams HTML STARTS HERE -->
+3
+<!-- EXAMPLE#restparams HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE restjson -->
+
+<div id="examplerestjson-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">3</span> Automatic JSON Serialization of Data Structures</div>
+	</div>
+</div>
+
+<div id="examplerestjson-body" class="row">
+
+	<div id="examplerestjson-left" class="col-md-7">
+		<div id="examplerestjson-codedesc" class="eg_title">TextTools.java</div>
+		<pre id="examplerestjson-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">TextTools</span> {
+
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {
+        <span class="_code_cls">String</span> big = s.toUpperCase();
+        <span class="_code_kw">return</span> <span class="_code_api">U</span>.map(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
+    }
+
+    <span class="_code_ann">@POST</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span>[] parts(<span class="_code_cls">String</span> text) {
+        <span class="_code_kw">return</span> text.split(<span class="_code_str">"-"</span>);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplerestjson-right" class="col-md-5">
+        <div id="examplerestjson-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restjson HTML STARTS HERE -->
+{"normal":"abc","big":"ABC"}
+<!-- EXAMPLE#restjson HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/parts/just-some-words</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restjson HTML STARTS HERE -->
+["just","some","words"]
+<!-- EXAMPLE#restjson HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE beanjson -->
+
+<div id="examplebeanjson-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">4</span> Automatic Construction and Serialization of JavaBeans</div>
+	</div>
+</div>
+
+<div id="examplebeanjson-body" class="row">
+
+	<div id="examplebeanjson-left" class="col-md-7">
+		<div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
+		<pre id="examplebeanjson-code" class="code-clean">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Untitled"</span>;
+
+    <span class="_code_kw">private</span> <span class="_code_kw">int</span> year;
+
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> getYear() {
+        <span class="_code_kw">return</span> year;
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_kw">void</span> setYear(<span class="_code_kw">int</span> year) {
+        <span class="_code_kw">this</span>.year = year;
+    }
+}
+</pre>
+		<div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
+		<pre id="examplebeanjson-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {
+
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {
+        <span class="_code_kw">return</span> book;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplebeanjson-right" class="col-md-5">
+        <div id="examplebeanjson-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2012&amp;title=Abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#beanjson HTML STARTS HERE -->
+{"title":"Abc","year":2012}
+<!-- EXAMPLE#beanjson HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2015</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#beanjson HTML STARTS HERE -->
+{"title":"Untitled","year":2015}
+<!-- EXAMPLE#beanjson HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE restnamedparams -->
+
+<div id="examplerestnamedparams-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">5</span> Named URL Parameters</div>
+	</div>
+</div>
+
+<div id="examplerestnamedparams-body" class="row">
+
+	<div id="examplerestnamedparams-left" class="col-md-7">
+		<div id="examplerestnamedparams-codedesc" class="eg_title">NamedParams.java</div>
+		<pre id="examplerestnamedparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NamedParams</span> {
+
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> sum(<span class="_code_ann">@Param</span>(<span class="_code_str">"x"</span>) <span class="_code_kw">int</span> x, <span class="_code_ann">@Param</span>(<span class="_code_str">"y"</span>) <span class="_code_kw">int</span> y) {
+        <span class="_code_kw">return</span> x + y;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplerestnamedparams-right" class="col-md-5">
+        <div id="examplerestnamedparams-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?x=1&amp;y=2</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restnamedparams HTML STARTS HERE -->
+3
+<!-- EXAMPLE#restnamedparams HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?y=10&amp;x=5&amp;z=12345</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restnamedparams HTML STARTS HERE -->
+15
+<!-- EXAMPLE#restnamedparams HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE restlistparams -->
+
+<div id="examplerestlistparams-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">6</span> URL Parameters as List</div>
+	</div>
+</div>
+
+<div id="examplerestlistparams-body" class="row">
+
+	<div id="examplerestlistparams-left" class="col-md-7">
+		<div id="examplerestlistparams-codedesc" class="eg_title">ParamsAsList.java</div>
+		<pre id="examplerestlistparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsList</span> {
+
+    <span class="_code_ann">@POST</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; params) {
+        <span class="_code_kw">return</span> params;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplerestlistparams-right" class="col-md-5">
+        <div id="examplerestlistparams-results" class="results">
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/2015/Mart/20</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restlistparams HTML STARTS HERE -->
+["2015","Mart","20"]
+<!-- EXAMPLE#restlistparams HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/foo/bar/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restlistparams HTML STARTS HERE -->
+["foo","bar"]
+<!-- EXAMPLE#restlistparams HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE restmapparams -->
+
+<div id="examplerestmapparams-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">7</span> URL Parameters as Map</div>
+	</div>
+</div>
+
+<div id="examplerestmapparams-body" class="row">
+
+	<div id="examplerestmapparams-left" class="col-md-7">
+		<div id="examplerestmapparams-codedesc" class="eg_title">ParamsAsMap.java</div>
+		<pre id="examplerestmapparams-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsMap</span> {
+
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
+        <span class="_code_kw">return</span> params;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplerestmapparams-right" class="col-md-5">
+        <div id="examplerestmapparams-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?x=1&amp;y=23</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restmapparams HTML STARTS HERE -->
+{"x":"1","y":"23"}
+<!-- EXAMPLE#restmapparams HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?name=Abc&amp;year=2015</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#restmapparams HTML STARTS HERE -->
+{"name":"Abc","year":"2015"}
+<!-- EXAMPLE#restmapparams HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE hello -->
+
+<div id="examplehello-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">8</span> Hello, web pages!</div>
+	</div>
+</div>
+
+<div id="examplehello-body" class="row">
+
+	<div id="examplehello-left" class="col-md-7">
+		<div id="examplehello-codedesc" class="eg_title">Hello.java</div>
+		<pre id="examplehello-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Hello</span> {
+
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplehello-right" class="col-md-5">
+        <div id="examplehello-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hello HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+Hello, world!
+
+<!-- EXAMPLE#hello HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hello HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+Hello, world!
+
+<!-- EXAMPLE#hello HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE hi -->
+
+<div id="examplehi-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">9</span> Building HTML pages with Java</div>
+	</div>
+</div>
+
+<div id="examplehi-body" class="row">
+
+	<div id="examplehi-left" class="col-md-7">
+		<div id="examplehi-codedesc" class="eg_title">YourName.java</div>
+		<pre id="examplehi-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">YourName</span> {
+
+    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"What is your name?"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Tag</span> hi(<span class="_code_cls">String</span> name) {
+        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.h4(<span class="_code_str">"Hi, "</span>, <span class="_code_cls">GUI</span>.i(name), <span class="_code_str">"!"</span>);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplehi-right" class="col-md-5">
+        <div id="examplehi-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi/Rapidoid</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hi HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">What is your name?</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+<h4>Hi, <i>Rapidoid</i>!</h4>
+
+<!-- EXAMPLE#hi HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hi/there</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#hi HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">What is your name?</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+<h4>Hi, <i>there</i>!</h4>
+
+<!-- EXAMPLE#hi HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE raw -->
+
+<div id="exampleraw-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">10</span> Raw HTML pages</div>
+	</div>
+</div>
+
+<div id="exampleraw-body" class="row">
+
+	<div id="exampleraw-left" class="col-md-7">
+		<div id="exampleraw-codedesc" class="eg_title">Simple.java</div>
+		<pre id="exampleraw-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Simple</span> {
+
+    <span class="_code_ann">@Page</span>(raw = true)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> simple() {
+        <span class="_code_kw">return</span> <span class="_code_str">"&lt;p&gt;&lt;b&gt;RAW&lt;/b&gt; HTML!&lt;p&gt;"</span>;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="exampleraw-right" class="col-md-5">
+        <div id="exampleraw-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/simple</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#raw HTML STARTS HERE -->
+<p><b>RAW</b> HTML!<p>
+<!-- EXAMPLE#raw HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE showmovie -->
+
+<div id="exampleshowmovie-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">11</span> Display bean properties</div>
+	</div>
+</div>
+
+<div id="exampleshowmovie-body" class="row">
+
+	<div id="exampleshowmovie-left" class="col-md-7">
+		<div id="exampleshowmovie-codedesc" class="eg_title">Movie.java</div>
+		<pre id="exampleshowmovie-code" class="code-clean">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
+}
+</pre>
+		<div id="exampleshowmovie-codedesc" class="eg_title">Movies.java</div>
+		<pre id="exampleshowmovie-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
+
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
+        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+        movie.title = <span class="_code_str">"Chappie"</span>;
+        movie.year = <span class="_code_num">2015</span>;
+
+        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.show(movie).buttons(<span class="_code_cls">GUI</span>.btn(<span class="_code_str">"OK"</span>));
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="exampleshowmovie-right" class="col-md-5">
+        <div id="exampleshowmovie-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#showmovie HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Movie details</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+<form class="" role="form">
+  <div class="form-group">
+    <label>Title: </label>
+    <span class="display-wrap">Chappie</span>
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <label>Year: </label>
+    <span class="display-wrap">2015</span>
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
+  </div>
+</form>
+
+<!-- EXAMPLE#showmovie HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE editmovie -->
+
+<div id="exampleeditmovie-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">12</span> Edit bean properties</div>
+	</div>
+</div>
+
+<div id="exampleeditmovie-body" class="row">
+
+	<div id="exampleeditmovie-left" class="col-md-7">
+		<div id="exampleeditmovie-codedesc" class="eg_title">Movie.java</div>
+		<pre id="exampleeditmovie-code" class="code-clean">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
+    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
+}
+</pre>
+		<div id="exampleeditmovie-codedesc" class="eg_title">Movies.java</div>
+		<pre id="exampleeditmovie-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
+
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
+        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
+        movie.title = <span class="_code_str">"Chappie"</span>;
+        movie.year = <span class="_code_num">2015</span>;
+
+        <span class="_code_cls">Btn</span> save = <span class="_code_cls">GUI</span>.btn(<span class="_code_str">"Save"</span>).primary();
+        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.edit(movie).buttons(save);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="exampleeditmovie-right" class="col-md-5">
+        <div id="exampleeditmovie-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#editmovie HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Edit movie details</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+<form class="" role="form">
+  <div class="form-group">
+    <label>Title: </label>
+    <input _h="title" type="text" class="form-control" value="Chappie" name="title">
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <label>Year: </label>
+    <input _h="year" type="text" class="form-control" value="2015" name="year">
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-primary" ng-click="_emit('Save', [])">Save</button>
+  </div>
+</form>
+
+<!-- EXAMPLE#editmovie HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE paramgrid -->
+
+<div id="exampleparamgrid-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">13</span> Create key-value data grid from a Map</div>
+	</div>
+</div>
+
+<div id="exampleparamgrid-body" class="row">
+
+	<div id="exampleparamgrid-left" class="col-md-7">
+		<div id="exampleparamgrid-codedesc" class="eg_title">ParamGrid.java</div>
+		<pre id="exampleparamgrid-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamGrid</span> {
+
+    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"Grid of request parameters"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> table(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
+        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.grid(params);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="exampleparamgrid-right" class="col-md-5">
+        <div id="exampleparamgrid-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/table?name=Highlander&amp;age=700&amp;weapon=sword</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#paramgrid HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Grid of request parameters</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>Highlander</td>
+  </tr>
+  <tr>
+    <td>age</td>
+    <td>700</td>
+  </tr>
+  <tr>
+    <td>weapon</td>
+    <td>sword</td>
+  </tr>
+</table>
+
+<!-- EXAMPLE#paramgrid HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE injection -->
+
+<div id="exampleinjection-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">14</span> Dependency injection of singletons</div>
+	</div>
+</div>
+
+<div id="exampleinjection-body" class="row">
+
+	<div id="exampleinjection-left" class="col-md-7">
+		<div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
+		<pre id="exampleinjection-code" class="code-clean">
+<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/bar"</span>)
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {
+
+    <span class="_code_ann">@Inject</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;
+
+    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
+        <span class="_code_kw">return</span> foo.msg();
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Bar!"</span>;
+    }
+
+}
+</pre>
+		<div id="exampleinjection-codedesc" class="eg_title">Foo.java</div>
+		<pre id="exampleinjection-code" class="code-clean">
+<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/foo"</span>)
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {
+
+    <span class="_code_ann">@Inject</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;
+
+    <span class="_code_kw">private</span> <span class="_code_kw">int</span> count;
+
+    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
+        <span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();
+    }
+
+    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
+        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Foo!"</span>;
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="exampleinjection-right" class="col-md-5">
+        <div id="exampleinjection-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#injection HTML STARTS HERE -->
+"2149: Hello from Bar!"
+<!-- EXAMPLE#injection HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#injection HTML STARTS HERE -->
+"Hello from Foo!"
+<!-- EXAMPLE#injection HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#injection HTML STARTS HERE -->
+"2150: Hello from Bar!"
+<!-- EXAMPLE#injection HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE layout -->
+
+<div id="examplelayout-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">15</span> Bootstrap-based GUI layout</div>
+	</div>
+</div>
+
+<div id="examplelayout-body" class="row">
+
+	<div id="examplelayout-left" class="col-md-7">
+		<div id="examplelayout-codedesc" class="eg_title">BootstrapLayout.java</div>
+		<pre id="examplelayout-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">BootstrapLayout</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> layout() {
+        <span class="_code_cls">Tag</span> r1 = row(col4(<span class="_code_str">"A"</span>), col4(<span class="_code_str">"B"</span>), col4(<span class="_code_str">"C"</span>));
+        <span class="_code_cls">Tag</span> r2 = row(col1(<span class="_code_str">"2/12"</span>), col7(<span class="_code_str">"7/12"</span>), col4(<span class="_code_str">"3/12"</span>));
+        <span class="_code_cls">Tag</span> r3 = mid4(<span class="_code_str">"4/12 in the middle"</span>);
+        <span class="_code_kw">return</span> multi(r1, r2, r3);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplelayout-right" class="col-md-5">
+        <div id="examplelayout-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#layout HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+
+  <div class="row">
+    <div class="col-md-4">A</div>
+    <div class="col-md-4">B</div>
+    <div class="col-md-4">C</div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">2/12</div>
+    <div class="col-md-7">7/12</div>
+    <div class="col-md-4">3/12</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">4/12 in the middle</div>
+    <div class="col-md-4"></div>
+  </div>
+
+<!-- EXAMPLE#layout HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- EXAMPLE highlighting -->
+
+<div id="examplehighlighting-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">16</span> Highlighting Text by Regular Expression Match</div>
+	</div>
+</div>
+
+<div id="examplehighlighting-body" class="row">
+
+	<div id="examplehighlighting-left" class="col-md-7">
+		<div id="examplehighlighting-codedesc" class="eg_title">Highlighting.java</div>
+		<pre id="examplehighlighting-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Highlighting</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+
+    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
+    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {
+        <span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\w+"</span>);
+    }
+
+}
+</pre>
+	</div>
+
+    <div id="examplehighlighting-right" class="col-md-5">
+        <div id="examplehighlighting-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#highlighting HTML STARTS HERE -->
+<!--state::null-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <div id="collapsable" class="collapse navbar-collapse">
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</nav>
+<span><span class="highlight">ab</span>-<span class="highlight">cd</span>-<span class="highlight">efg</span></span>
+
+<!-- EXAMPLE#highlighting HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
 </div>
 
 <div class="col-md-2">
 <div class="modules-right">
 <h3 class="module-title">Rapidoid Modules:</h3>
 <div class="module-wrap">
- <h4 class="module-title"><a href="/">rapidoid-main</a></h4>
- <div class="module-box">Aggregates the web modules and extras</div>
-</div>
-<div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
- <div class="module-box">Elegant manipulation of collections and streams</div>
-</div>
-<div class="module-wrap">
  <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
- <div class="module-box">High-performance HTTP Server</div>
+ <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
  <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
  <div class="module-box">Full-stack Web Framework</div>
 </div>
 <div class="module-wrap">
+ <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
+</div>
+<div class="module-wrap">
  <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
  <div class="module-box">Simple &amp; Sweet Utils</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="index.html">rapidoid-main</a></h4>
+ <div class="module-box">Aggregates the web modules and extras</div>
 </div>
 </div>
 </div>

@@ -19,7 +19,7 @@
 <link href="rapidoid.min.css" type="text/css" rel="stylesheet" />
 <link href="theme-default.css" type="text/css" rel="stylesheet" />
 
-<title>Rapidoid Fluent - Elegant manipulation of collections and streams</title>
+<title>Rapidoid Fluent - Fluent API for Clean Manipulation of Collections</title>
 
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -100,10 +100,11 @@
   <div class="col-md-8">
 
 <div class="module-header">
-<span class="module-name badge badge-module">rapidoid-fluent</span> Elegant manipulation of collections and streams</div>  
+<span class="module-name badge badge-module">rapidoid-fluent</span> Fluent API for Clean Manipulation of Collections</div>  
 
 <div class="module-desc">
-Lightweight fluent DSL for elegant manipulation of collections and streams.
+<p><b>Makes your Java 8 code cleaner</b> by wrapping the verbose Java 8 stream chains into a lightweight fluent DSL for elegant manipulation of collections.</p>
+<h5><b>Production-ready, 29.1 KB total JAR size, ~ 85% test coverage, self-contained.</b></h5>
 </div>
 
 <br><br>
@@ -116,7 +117,7 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-fluent&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.0&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.1&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -127,19 +128,190 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 <div class="row">
   
 <div class="col-md-10">
-<!-- EXAMPLE fluent.find -->
+<!-- EXAMPLE fluent.teaser -->
 
-<div id="examplefluent.find-title" class="row">
+<div id="examplefluent.teaser-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">1</span> Searching through collections</div>
+		<div class="caption"><span class="badge badge-eg-num">1</span> Nice Fluent API with Java 8 streams behind the scenes</div>
 	</div>
 </div>
 
-<div id="examplefluent.find-body" class="row">
+<div id="examplefluent.teaser-body" class="row">
 
-	<div id="examplefluent.find-left" class="col-md-12">
+	<div id="examplefluent.teaser-left" class="col-md-12">
 
-		<pre id="examplefluent.find-code" class="code-clean">
+		<pre id="examplefluent.teaser-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Using Java 8? Now you can EASILY filter, map, group and search through collections:</span>
+
+<span class="_code_api">Find</span>.firstOf(items).where(s -&gt; s.length() &lt; <span class="_code_num">3</span>);
+
+<span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k &gt; <span class="_code_num">1</span>);
+
+<span class="_code_api">For</span>.each(books).withNonNull(<span class="_code_cls">Book</span>::title).run(<span class="_code_kw">this</span>::publish);
+
+<span class="_code_api">Do</span>.map(words).to(s -&gt; s.length());
+    
+<span class="_code_api">Do</span>.group(items).by(<span class="_code_cls">Item</span>::getCategory);
+
+<span class="_code_api">Do</span>.reduce(words).by((a, b) -&gt; a + <span class="_code_str">":"</span> + b).orElse(<span class="_code_str">""</span>);
+
+<span class="_code_api">Do</span>.map(nums).toList((k, v) -&gt; k * <span class="_code_num">2</span>);
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE fluent.show -->
+
+<div id="examplefluent.show-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">2</span> Why is Rapidoid Fluent so sweet?</div>
+	</div>
+</div>
+
+<div id="examplefluent.show-body" class="row">
+
+	<div id="examplefluent.show-left" class="col-md-12">
+
+		<pre id="examplefluent.show-code" class="code-clean">
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Find the even numbers from the map - with Rapidoid Fluent (and Java 8 streams behind the scenes):</span>
+
+<span class="pull-left left-code"><span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k % <span class="_code_num">2</span> == <span class="_code_num">0</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> That is equivalent to the following code:</span>
+
+<span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even = nums.entrySet().stream()
+        .filter(num -&gt; num.getKey() % <span class="_code_num">2</span> == <span class="_code_num">0</span>)
+        .collect(<span class="_code_cls">Collectors</span>.toMap(<span class="_code_cls">Entry</span>::getKey, <span class="_code_cls">Entry</span>::getValue));
+
+<span class="pull-left left-code">System.out.println(even);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Or, we can do the same thing in the old way:</span>
+
+<span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even2 = <span class="_code_kw">new</span> <span class="_code_cls">HashMap</span>&lt;&gt;();
+
+<span class="_code_kw">for</span> (<span class="_code_cls">Entry</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; num : nums.entrySet()) {
+    <span class="_code_kw">int</span> k = num.getKey();
+    <span class="_code_kw">if</span> (k % <span class="_code_num">2</span> == <span class="_code_num">0</span>) {
+        even2.put(k, num.getValue());
+    }
+}
+
+<span class="pull-left left-code">System.out.println(even2);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE fluent.morecoll -->
+
+<div id="examplefluent.morecoll-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">3</span> Map, reduce and group-by on collections</div>
+	</div>
+</div>
+
+<div id="examplefluent.morecoll-body" class="row">
+
+	<div id="examplefluent.morecoll-left" class="col-md-12">
+
+		<pre id="examplefluent.morecoll-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Map:</span>
+
+<span class="pull-left left-code">List&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">U</span>.list(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.map(items).to(s -&gt; s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[1,5,2]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Reduce:</span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.reduce(items).by((a, b) -&gt; a + <span class="_code_str">":"</span> + b).orElse(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"a:bbbbb:cc"</span><span class="object-class">String</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.reduce(items).by(<span class="_code_str">"@"</span>, (a, b) -&gt; a + <span class="_code_str">":"</span> + b);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"@:a:bbbbb:cc"</span><span class="object-class">String</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Group-by:</span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.group(items).by(s -&gt; s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":["a"],"2":["cc"],"5":["bbbbb"]}</span><span class="object-class">HashMap</span></span></span>
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE fluent.moremap -->
+
+<div id="examplefluent.moremap-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">4</span> Map and group-by on maps</div>
+	</div>
+</div>
+
+<div id="examplefluent.moremap-body" class="row">
+
+	<div id="examplefluent.moremap-left" class="col-md-12">
+
+		<pre id="examplefluent.moremap-code" class="code-clean">
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Map:</span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.map(nums).to((k, v) -&gt; k * <span class="_code_num">1000</span>, (k, v) -&gt; v.toUpperCase());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2000":"TWO","3000":"THREE","1000":"ONE"}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.map(nums).toList((k, v) -&gt; k * <span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[2,4,6]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.map(nums).toSet((k, v) -&gt; v.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[3,5]</span><span class="object-class">HashSet</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Group-by:</span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span>.group(nums).by((k, v) -&gt; k % <span class="_code_num">2</span> == <span class="_code_num">0</span> ? <span class="_code_str">"even"</span> : <span class="_code_str">"odd"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"even":{"2":"two"},"odd":{"1":"one","3":"three"}}</span><span class="object-class">HashMap</span></span></span>
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE fluent.forcoll -->
+
+<div id="examplefluent.forcoll-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">5</span> Iterating through lists or sets</div>
+	</div>
+</div>
+
+<div id="examplefluent.forcoll-body" class="row">
+
+	<div id="examplefluent.forcoll-left" class="col-md-12">
+
+		<pre id="examplefluent.forcoll-code" class="code-clean">
+<span class="pull-left left-code">List&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">U</span>.list(<span class="_code_str">"a"</span>, <span class="_code_str">"bbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; dest = <span class="_code_api">U</span>.list();
+
+<span class="_code_api">For</span>.each(items).where(s -&gt; s.length() &lt; <span class="_code_num">3</span>).run(dest::add);
+
+<span class="pull-left left-code">System.out.println(dest);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","cc"]</span><span class="object-class">ArrayList</span></span></span>
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE fluent.findcoll -->
+
+<div id="examplefluent.findcoll-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">6</span> Searching through lists or sets</div>
+	</div>
+</div>
+
+<div id="examplefluent.findcoll-body" class="row">
+
+	<div id="examplefluent.findcoll-left" class="col-md-12">
+
+		<pre id="examplefluent.findcoll-code" class="code-clean">
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Searching through lists or sets:</span>
 
 <span class="pull-left left-code">List&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">U</span>.list(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
@@ -155,7 +327,25 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 <span class="pull-left left-code"><span class="_code_api">Find</span>.in(items).where(s -&gt; s.length() &lt; <span class="_code_num">5</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
 
 <span class="pull-left left-code"><span class="_code_api">Find</span>.in(items.stream()).where(s -&gt; s.length() &gt; <span class="_code_num">10</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
+</pre>
+	</div>
 
+</div>
+
+
+<!-- EXAMPLE fluent.findmap -->
+
+<div id="examplefluent.findmap-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">7</span> Searching through maps</div>
+	</div>
+</div>
+
+<div id="examplefluent.findmap-body" class="row">
+
+	<div id="examplefluent.findmap-left" class="col-md-12">
+
+		<pre id="examplefluent.findmap-code" class="code-clean">
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Searching through maps:</span>
 
 <span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
@@ -183,24 +373,24 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 <div class="modules-right">
 <h3 class="module-title">Rapidoid Modules:</h3>
 <div class="module-wrap">
- <h4 class="module-title"><a href="/">rapidoid-main</a></h4>
- <div class="module-box">Aggregates the web modules and extras</div>
-</div>
-<div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
- <div class="module-box">Elegant manipulation of collections and streams</div>
-</div>
-<div class="module-wrap">
  <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
- <div class="module-box">High-performance HTTP Server</div>
+ <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
  <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
  <div class="module-box">Full-stack Web Framework</div>
 </div>
 <div class="module-wrap">
+ <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
+</div>
+<div class="module-wrap">
  <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
  <div class="module-box">Simple &amp; Sweet Utils</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="index.html">rapidoid-main</a></h4>
+ <div class="module-box">Aggregates the web modules and extras</div>
 </div>
 </div>
 </div>

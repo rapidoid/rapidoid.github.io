@@ -19,7 +19,7 @@
 <link href="rapidoid.min.css" type="text/css" rel="stylesheet" />
 <link href="theme-default.css" type="text/css" rel="stylesheet" />
 
-<title>Rapidoid - The No-bullshit Web Framework(s) for Java!</title>
+<title>Rapidoid Index - Aggregates the web modules and extras</title>
 
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -55,8 +55,8 @@
 				<span class="g-plusone" data-size="medium"></span>
 				
 				<a href="https://twitter.com/share" rel="nofollow"
-					class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org"
-					data-text="#Rapidoid - The No-bullshit #Web Framework(s) for #Java!" data-size="small">Tweet</a>
+					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
+					data-text="#Rapidoid - New and Cool #Java web app #framework!" data-size="small">Tweet</a>
 </div>
       </div>
     </div>
@@ -101,7 +101,7 @@
 
 
 <div class="module-desc">
-Rapidoid consists of several de-coupled modules/frameworks which can be used separately or together.
+Rapidoid consists of several de-coupled modules/frameworks which can be used separately or together: Http Fast, Web, Fluent, U and many more...
 </div>
 
 <br><br>
@@ -114,7 +114,7 @@ Rapidoid consists of several de-coupled modules/frameworks which can be used sep
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-main&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.0&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.1&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -129,7 +129,7 @@ Rapidoid consists of several de-coupled modules/frameworks which can be used sep
 
 <div id="examplelowsimple-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">1</span> Web page and RESTful service one-liners (http-fast module)</div>
+		<div class="caption"><span class="badge badge-eg-num">1</span> Web page and RESTful service one-liners (<a href="http-fast.html">rapidoid-http-fast module</a>)</div>
 	</div>
 </div>
 
@@ -183,34 +183,79 @@ Hello world!
 </div>
 
 
-<!-- EXAMPLE fluent.findmini -->
+<!-- EXAMPLE fluent.teaser -->
 
-<div id="examplefluent.findmini-title" class="row">
+<div id="examplefluent.teaser-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">2</span> Searching through collections (http-fluent module)</div>
+		<div class="caption"><span class="badge badge-eg-num">2</span> Sweet &amp; Fluent wrapper API for the Java 8 streams (<a href="fluent.html">rapidoid-fluent module</a>)</div>
 	</div>
 </div>
 
-<div id="examplefluent.findmini-body" class="row">
+<div id="examplefluent.teaser-body" class="row">
 
-	<div id="examplefluent.findmini-left" class="col-md-12">
+	<div id="examplefluent.teaser-left" class="col-md-12">
 
-		<pre id="examplefluent.findmini-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Searching through lists or sets:</span>
+		<pre id="examplefluent.teaser-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Using Java 8? Now you can EASILY filter, map, group and search through collections:</span>
 
-<span class="pull-left left-code">List&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">U</span>.list(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+<span class="_code_api">Find</span>.firstOf(items).where(s -&gt; s.length() &lt; <span class="_code_num">3</span>);
 
-<span class="pull-left left-code"><span class="_code_api">Find</span>.firstOf(items).where(s -&gt; s.length() &lt; <span class="_code_num">3</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"a"</span><span class="object-class">Optional&lt;String&gt;</span></span></span>
+<span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k &gt; <span class="_code_num">1</span>);
 
-<span class="pull-left left-code"><span class="_code_api">Find</span>.allOf(items).where(s -&gt; s.length() &gt; <span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+<span class="_code_api">For</span>.each(books).withNonNull(<span class="_code_cls">Book</span>::title).run(<span class="_code_kw">this</span>::publish);
 
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Searching through maps:</span>
+<span class="_code_api">Do</span>.map(words).to(s -&gt; s.length());
+    
+<span class="_code_api">Do</span>.group(items).by(<span class="_code_cls">Item</span>::getCategory);
 
+<span class="_code_api">Do</span>.reduce(words).by((a, b) -&gt; a + <span class="_code_str">":"</span> + b).orElse(<span class="_code_str">""</span>);
+
+<span class="_code_api">Do</span>.map(nums).toList((k, v) -&gt; k * <span class="_code_num">2</span>);
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE fluent.show -->
+
+<div id="examplefluent.show-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">3</span> Why is Rapidoid Fluent so sweet? (<a href="fluent.html">rapidoid-fluent module</a>)</div>
+	</div>
+</div>
+
+<div id="examplefluent.show-body" class="row">
+
+	<div id="examplefluent.show-left" class="col-md-12">
+
+		<pre id="examplefluent.show-code" class="code-clean">
 <span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
 
-<span class="pull-left left-code"><span class="_code_api">Find</span>.lastOf(nums).where((k, v) -&gt; v.length() &gt; <span class="_code_num">4</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"3":"three"}</span><span class="object-class">Optional&lt;Entry&gt;</span></span></span>
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Find the even numbers from the map - with Rapidoid Fluent (and Java 8 streams behind the scenes):</span>
 
-<span class="pull-left left-code"><span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k &gt; <span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two","3":"three"}</span><span class="object-class">HashMap</span></span></span>
+<span class="pull-left left-code"><span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k % <span class="_code_num">2</span> == <span class="_code_num">0</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> That is equivalent to the following code:</span>
+
+<span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even = nums.entrySet().stream()
+        .filter(num -&gt; num.getKey() % <span class="_code_num">2</span> == <span class="_code_num">0</span>)
+        .collect(<span class="_code_cls">Collectors</span>.toMap(<span class="_code_cls">Entry</span>::getKey, <span class="_code_cls">Entry</span>::getValue));
+
+<span class="pull-left left-code">System.out.println(even);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Or, we can do the same thing in the old way:</span>
+
+<span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even2 = <span class="_code_kw">new</span> <span class="_code_cls">HashMap</span>&lt;&gt;();
+
+<span class="_code_kw">for</span> (<span class="_code_cls">Entry</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; num : nums.entrySet()) {
+    <span class="_code_kw">int</span> k = num.getKey();
+    <span class="_code_kw">if</span> (k % <span class="_code_num">2</span> == <span class="_code_num">0</span>) {
+        even2.put(k, num.getValue());
+    }
+}
+
+<span class="pull-left left-code">System.out.println(even2);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
 </pre>
 	</div>
 
@@ -221,7 +266,7 @@ Hello world!
 
 <div id="examplehellorest-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">3</span> &quot;Hello world&quot; RESTful service from POJO</div>
+		<div class="caption"><span class="badge badge-eg-num">4</span> &quot;Hello world&quot; RESTful service from POJO (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -273,7 +318,7 @@ Hello world!
 
 <div id="examplerestparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">4</span> URL parts as Method Parameters</div>
+		<div class="caption"><span class="badge badge-eg-num">5</span> URL parts as Method Parameters (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -340,7 +385,7 @@ Hello world!
 
 <div id="examplerestjson-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">5</span> Automatic JSON Serialization of Data Structures</div>
+		<div class="caption"><span class="badge badge-eg-num">6</span> Automatic JSON Serialization of Data Structures (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -398,25 +443,13 @@ Hello world!
 
 <div id="examplebeanjson-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">6</span> Automatic Construction and Serialization of JavaBeans</div>
+		<div class="caption"><span class="badge badge-eg-num">7</span> Automatic Construction and Serialization of JavaBeans (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
 <div id="examplebeanjson-body" class="row">
 
 	<div id="examplebeanjson-left" class="col-md-7">
-		<div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
-		<pre id="examplebeanjson-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {
-
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {
-        <span class="_code_kw">return</span> book;
-    }
-
-}
-</pre>
 		<div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
 		<pre id="examplebeanjson-code" class="code-clean">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {
@@ -432,6 +465,18 @@ Hello world!
     <span class="_code_kw">public</span> <span class="_code_kw">void</span> setYear(<span class="_code_kw">int</span> year) {
         <span class="_code_kw">this</span>.year = year;
     }
+}
+</pre>
+		<div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
+		<pre id="examplebeanjson-code" class="code-clean">
+<span class="_code_ann">@Controller</span>
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {
+
+    <span class="_code_ann">@GET</span>
+    <span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {
+        <span class="_code_kw">return</span> book;
+    }
+
 }
 </pre>
 	</div>
@@ -467,7 +512,7 @@ Hello world!
 
 <div id="examplerestnamedparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> Named URL Parameters</div>
+		<div class="caption"><span class="badge badge-eg-num">8</span> Named URL Parameters (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -519,7 +564,7 @@ Hello world!
 
 <div id="examplerestlistparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">8</span> URL Parameters as List</div>
+		<div class="caption"><span class="badge badge-eg-num">9</span> URL Parameters as List (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -571,7 +616,7 @@ Hello world!
 
 <div id="examplerestmapparams-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">9</span> URL Parameters as Map</div>
+		<div class="caption"><span class="badge badge-eg-num">10</span> URL Parameters as Map (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -623,7 +668,7 @@ Hello world!
 
 <div id="examplehello-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">10</span> Hello, web pages!</div>
+		<div class="caption"><span class="badge badge-eg-num">11</span> Hello, web pages! (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -725,7 +770,7 @@ Hello, world!
 
 <div id="examplehi-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">11</span> Building HTML pages with Java</div>
+		<div class="caption"><span class="badge badge-eg-num">12</span> Building HTML pages with Java (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -739,7 +784,7 @@ Hello, world!
 
     <span class="_code_ann">@Page</span>(title = <span class="_code_str">"What is your name?"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Tag</span> hi(<span class="_code_cls">String</span> name) {
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.h<span class="_code_num">4</span>(<span class="_code_str">"Hi, "</span>, <span class="_code_cls">GUI</span>.i(name), <span class="_code_str">"!"</span>);
+        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.h4(<span class="_code_str">"Hi, "</span>, <span class="_code_cls">GUI</span>.i(name), <span class="_code_str">"!"</span>);
     }
 
 }
@@ -827,7 +872,7 @@ Hello, world!
 
 <div id="exampleraw-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">12</span> Raw HTML pages</div>
+		<div class="caption"><span class="badge badge-eg-num">13</span> Raw HTML pages (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -869,7 +914,7 @@ Hello, world!
 
 <div id="exampleshowmovie-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">13</span> Display bean properties</div>
+		<div class="caption"><span class="badge badge-eg-num">14</span> Display bean properties (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -961,7 +1006,7 @@ Hello, world!
 
 <div id="exampleeditmovie-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">14</span> Edit bean properties</div>
+		<div class="caption"><span class="badge badge-eg-num">15</span> Edit bean properties (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -1054,7 +1099,7 @@ Hello, world!
 
 <div id="exampleparamgrid-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">15</span> Create key-value data grid from a Map</div>
+		<div class="caption"><span class="badge badge-eg-num">16</span> Create key-value data grid from a Map (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -1138,7 +1183,7 @@ Hello, world!
 
 <div id="exampleinjection-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">16</span> Dependency injection of singletons</div>
+		<div class="caption"><span class="badge badge-eg-num">17</span> Dependency injection of singletons (<a href="web.html">rapidoid-web module</a>)</div>
 	</div>
 </div>
 
@@ -1195,7 +1240,7 @@ Hello, world!
 
                 <div class="eg-result">
 <!-- EXAMPLE#injection HTML STARTS HERE -->
-"489: Hello from Bar!"
+"2151: Hello from Bar!"
 <!-- EXAMPLE#injection HTML END HERE -->
                 </div>
 
@@ -1215,7 +1260,7 @@ Hello, world!
 
                 <div class="eg-result">
 <!-- EXAMPLE#injection HTML STARTS HERE -->
-"490: Hello from Bar!"
+"2152: Hello from Bar!"
 <!-- EXAMPLE#injection HTML END HERE -->
                 </div>
 
@@ -1224,155 +1269,140 @@ Hello, world!
 </div>
 
 
-<!-- EXAMPLE layout -->
+<!-- EXAMPLE u.coll -->
 
-<div id="examplelayout-title" class="row">
+<div id="exampleu.coll-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">17</span> Bootstrap-based GUI layout</div>
+		<div class="caption"><span class="badge badge-eg-num">18</span> Creating collections (<a href="u.html">rapidoid-u module</a>)</div>
 	</div>
 </div>
 
-<div id="examplelayout-body" class="row">
+<div id="exampleu.coll-body" class="row">
 
-	<div id="examplelayout-left" class="col-md-7">
-		<div id="examplelayout-codedesc" class="eg_title">BootstrapLayout.java</div>
-		<pre id="examplelayout-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">BootstrapLayout</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
+	<div id="exampleu.coll-left" class="col-md-12">
 
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> layout() {
-        <span class="_code_cls">Tag</span> r<span class="_code_num">1</span> = row(col<span class="_code_num">4</span>(<span class="_code_str">"A"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"B"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"C"</span>));
-        <span class="_code_cls">Tag</span> r<span class="_code_num">2</span> = row(col<span class="_code_num">1</span>(<span class="_code_str">"2/12"</span>), col<span class="_code_num">7</span>(<span class="_code_str">"7/12"</span>), col<span class="_code_num">4</span>(<span class="_code_str">"3/12"</span>));
-        <span class="_code_cls">Tag</span> r<span class="_code_num">3</span> = mid<span class="_code_num">4</span>(<span class="_code_str">"4/12 in the middle"</span>);
-        <span class="_code_kw">return</span> multi(r<span class="_code_num">1</span>, r<span class="_code_num">2</span>, r<span class="_code_num">3</span>);
-    }
+		<pre id="exampleu.coll-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a list:</span>
+
+<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span>.list(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a set:</span>
+
+<span class="pull-left left-code">Set&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span>.set(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a map:</span>
+
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE u.collutils -->
+
+<div id="exampleu.collutils-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">19</span> Collection utils (<a href="u.html">rapidoid-u module</a>)</div>
+	</div>
+</div>
+
+<div id="exampleu.collutils-body" class="row">
+
+	<div id="exampleu.collutils-left" class="col-md-12">
+
+		<pre id="exampleu.collutils-code" class="code-clean">
+<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; words = <span class="_code_api">U</span>.list(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">30</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,30]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> U.isEmpty utils:</span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE u.strutils -->
+
+<div id="exampleu.strutils-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">20</span> String utils (<a href="u.html">rapidoid-u module</a>)</div>
+	</div>
+</div>
+
+<div id="exampleu.strutils-body" class="row">
+
+	<div id="exampleu.strutils-left" class="col-md-12">
+
+		<pre id="exampleu.strutils-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Is it empty or null:</span>
+
+<span class="_code_cls">String</span> s = null;
+<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Trim left by prefix:</span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.triml(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc/"</span><span class="object-class">String</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Trim right by suffix:</span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.trimr(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"/abc"</span><span class="object-class">String</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Substring supporting negative positions:</span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">1</span>, <span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"b"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// same as "abcde".substring(1, 2)</span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">2</span>, -<span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"cd"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -1 means "1 from right to left"</span>
+
+<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">0</span>, -<span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -2 means "2 from right to left"</span>
+</pre>
+	</div>
+
+</div>
+
+
+<!-- EXAMPLE u.dynamic -->
+
+<div id="exampleu.dynamic-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">21</span> Dynamic implementation of interfaces (<a href="u.html">rapidoid-u module</a>)</div>
+	</div>
+</div>
+
+<div id="exampleu.dynamic-body" class="row">
+
+	<div id="exampleu.dynamic-left" class="col-md-12">
+
+		<pre id="exampleu.dynamic-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Dynamic implementation of interfaces:</span>
+
+<span class="_code_cls">Dog</span> dog = <span class="_code_api">U</span>.dynamic(<span class="_code_cls">Dog</span>.<span class="_code_kw">class</span>, (m, margs) -&gt; m.getName() + <span class="_code_str">":"</span> + margs[<span class="_code_num">0</span>]);
+
+<span class="pull-left left-code">dog.bite(<span class="_code_str">"me"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"bite:me"</span><span class="object-class">String</span></span></span>
+
+<span class="pull-left left-code">dog.eat(<span class="_code_str">"meat"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"eat:meat"</span><span class="object-class">String</span></span></span>
+</pre>
+		<div id="exampleu.dynamic-codedesc" class="eg_title">Dog.java</div>
+		<pre id="exampleu.dynamic-code" class="code-clean">
+<span class="_code_kw">public</span> <span class="_code_kw">interface</span> <span class="_code_cls">Dog</span> {
+
+    <span class="_code_cls">String</span> eat(<span class="_code_cls">String</span> food);
+
+    <span class="_code_cls">String</span> bite(<span class="_code_cls">String</span> target);
 
 }
 </pre>
 	</div>
 
-    <div id="examplelayout-right" class="col-md-5">
-        <div id="examplelayout-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#layout HTML STARTS HERE -->
-<!--state::null-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">App</a>
-        </div>
-
-        <div id="collapsable" class="collapse navbar-collapse">
-
-
-
-
-
-
-
-        </div>
-
-
-    </div>
-</nav>
-
-  <div class="row">
-    <div class="col-md-4">A</div>
-    <div class="col-md-4">B</div>
-    <div class="col-md-4">C</div>
-  </div>
-  <div class="row">
-    <div class="col-md-1">2/12</div>
-    <div class="col-md-7">7/12</div>
-    <div class="col-md-4">3/12</div>
-  </div>
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">4/12 in the middle</div>
-    <div class="col-md-4"></div>
-  </div>
-
-<!-- EXAMPLE#layout HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE highlighting -->
-
-<div id="examplehighlighting-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">18</span> Highlighting Text by Regular Expression Match</div>
-	</div>
-</div>
-
-<div id="examplehighlighting-body" class="row">
-
-	<div id="examplehighlighting-left" class="col-md-7">
-		<div id="examplehighlighting-codedesc" class="eg_title">Highlighting.java</div>
-		<pre id="examplehighlighting-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Highlighting</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
-
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {
-        <span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\w+"</span>);
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="examplehighlighting-right" class="col-md-5">
-        <div id="examplehighlighting-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#highlighting HTML STARTS HERE -->
-<!--state::null-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">App</a>
-        </div>
-
-        <div id="collapsable" class="collapse navbar-collapse">
-
-
-
-
-
-
-
-        </div>
-
-
-    </div>
-</nav>
-<span><span class="highlight">ab</span>-<span class="highlight">cd</span>-<span class="highlight">efg</span></span>
-
-<!-- EXAMPLE#highlighting HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
 </div>
 
 
@@ -1382,24 +1412,24 @@ Hello, world!
 <div class="modules-right">
 <h3 class="module-title">Rapidoid Modules:</h3>
 <div class="module-wrap">
- <h4 class="module-title"><a href="/">rapidoid-main</a></h4>
- <div class="module-box">Aggregates the web modules and extras</div>
-</div>
-<div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
- <div class="module-box">Elegant manipulation of collections and streams</div>
-</div>
-<div class="module-wrap">
  <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
- <div class="module-box">High-performance HTTP Server</div>
+ <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
  <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
  <div class="module-box">Full-stack Web Framework</div>
 </div>
 <div class="module-wrap">
+ <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
+</div>
+<div class="module-wrap">
  <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
  <div class="module-box">Simple &amp; Sweet Utils</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="index.html">rapidoid-main</a></h4>
+ <div class="module-box">Aggregates the web modules and extras</div>
 </div>
 </div>
 </div>
