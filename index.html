@@ -42,19 +42,19 @@
       <div id="collapsable" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
 	  <li class="active"><a href="/">Getting started</a></li>
-	  <li><a href="community.html">Community &amp; Support</a></li>
-	  <li><a href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+	  <li><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
+	  <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
         </ul>
 
 <div class="navbar-brand navbar-right">
-				<a data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
-				<a data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
 
 				<script type="IN/Share" data-url="http://rapidoid.org/" data-counter="right"></script>
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a href="https://twitter.com/share" rel="nofollow"
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
 					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
 					data-text="#Rapidoid - New and Cool #Java web app #framework!" data-size="small">Tweet</a>
 </div>
@@ -69,6 +69,7 @@
 				<h4 id="main_subtitle">
 					<span id="rapidoid-title">Rapidoid - The No-bullshit (Web) Frameworks for Java!</span>
 				</h4>
+                <p><b>Open source (Apache license). Simple. Secure. <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">Extremely fast!</a></b></p>
 			</div>
 
 			<div class="col-md-5 col-sm-12">
@@ -101,7 +102,14 @@
 
 
 <div class="module-desc">
-Rapidoid consists of several de-coupled modules/frameworks which can be used separately or together: Http Fast, Web, Fluent, U and many more...
+Rapidoid consists of several de-coupled modules/frameworks which can be used separately or together:
+<span class="frameworks">
+<a rel="nofollow" href="http-fast.html">http-fast</a>, 
+<a rel="nofollow" href="fluent.html">fluent</a>, 
+<a rel="nofollow" href="web.html">web</a>, 
+<a rel="nofollow" href="u.html">u</a>, 
+</span>
+and more...
 </div>
 
 <br><br>
@@ -109,11 +117,11 @@ Rapidoid consists of several de-coupled modules/frameworks which can be used sep
   </div>
   
   <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-web</b> as Maven dependency:</div>
+        <div class="eg_title">Add <b><a href="web.html">rapidoid-web</a></b> as Maven dependency:</div>
 <pre class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-web&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;<a href="web.html">rapidoid-web</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
     &lt;<span class="_code_tag">version</span>&gt;5.0.3&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
@@ -125,273 +133,143 @@ Rapidoid consists of several de-coupled modules/frameworks which can be used sep
 <div class="row">
   
 <div class="col-md-10">
-<!-- EXAMPLE lowsimple -->
+<!-- EXAMPLE httpsimple -->
 
-<div id="examplelowsimple-title" class="row">
+<div id="examplehttpsimple-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">1</span> Web page and RESTful service one-liners (<a href="http-fast.html">rapidoid-http-fast module</a>)</div>
+		<div class="caption"><span class="badge badge-eg-num">1</span> RESTful service one-liner (<a href="http-fast.html">rapidoid-http-fast</a> module)</div>
 	</div>
 </div>
 
-<div id="examplelowsimple-body" class="row">
+<div id="examplehttpsimple-body" class="row">
 
-	<div id="examplelowsimple-left" class="col-md-7">
+	<div id="examplehttpsimple-left" class="col-md-8">
 
-		<pre id="examplelowsimple-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Let's create a simple web page with 1 line of code:</span>
-<span class="_code_cls">On</span>.page(<span class="_code_str">"/"</span>).gui(<span class="_code_str">"Hello world!"</span>);
+		<pre id="examplehttpsimple-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span>
 
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Let's create a simple REST service with 1 line of code:</span>
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/size"</span>).json(<span class="_code_str">"msg"</span>, msg -&gt; msg.length());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"msg"</span>, msg -&gt; msg.length());
 </pre>
 	</div>
 
-    <div id="examplelowsimple-right" class="col-md-5">
-        <div id="examplelowsimple-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#lowsimple HTML STARTS HERE -->
-Hello world!
-<!-- EXAMPLE#lowsimple HTML END HERE -->
-                </div>
-
+    <div id="examplehttpsimple-right" class="col-md-4">
+        <div id="examplehttpsimple-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?msg=abc</span>
             </div>
 
                 <div class="eg-result">
-<!-- EXAMPLE#lowsimple HTML STARTS HERE -->
+<!-- EXAMPLE#httpsimple HTML STARTS HERE -->
 3
-<!-- EXAMPLE#lowsimple HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/other</span>
-            </div>
-
-
-                <div class="eg-error">
-<!-- EXAMPLE#lowsimple ERROR STARTS HERE -->
-<span class="not-found">404 Not found!</span>
-<!-- EXAMPLE#lowsimple ERROR END HERE -->
-                </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE fluent.teaser -->
-
-<div id="examplefluent.teaser-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">2</span> Sweet &amp; Fluent wrapper API for the Java 8 streams (<a href="fluent.html">rapidoid-fluent module</a>)</div>
-	</div>
-</div>
-
-<div id="examplefluent.teaser-body" class="row">
-
-	<div id="examplefluent.teaser-left" class="col-md-12">
-
-		<pre id="examplefluent.teaser-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Using Java 8? Now you can EASILY filter, map, group and search through collections:</span>
-
-<span class="_code_api">Find</span>.firstOf(items).where(s -&gt; s.length() &lt; <span class="_code_num">3</span>);
-
-<span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k &gt; <span class="_code_num">1</span>);
-
-<span class="_code_api">For</span>.each(books).withNonNull(<span class="_code_cls">Book</span>::title).run(<span class="_code_kw">this</span>::publish);
-
-<span class="_code_api">Do</span>.map(words).to(s -&gt; s.length());
-    
-<span class="_code_api">Do</span>.group(items).by(<span class="_code_cls">Item</span>::getCategory);
-
-<span class="_code_api">Do</span>.reduce(words).by((a, b) -&gt; a + <span class="_code_str">":"</span> + b).orElse(<span class="_code_str">""</span>);
-
-<span class="_code_api">Do</span>.map(nums).toList((k, v) -&gt; k * <span class="_code_num">2</span>);
-</pre>
-	</div>
-
-</div>
-
-
-<!-- EXAMPLE fluent.show -->
-
-<div id="examplefluent.show-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">3</span> Why is Rapidoid Fluent so sweet? (<a href="fluent.html">rapidoid-fluent module</a>)</div>
-	</div>
-</div>
-
-<div id="examplefluent.show-body" class="row">
-
-	<div id="examplefluent.show-left" class="col-md-12">
-
-		<pre id="examplefluent.show-code" class="code-clean">
-<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Find the even numbers from the map - with Rapidoid Fluent (and Java 8 streams behind the scenes):</span>
-
-<span class="pull-left left-code"><span class="_code_api">Find</span>.allOf(nums).where((k, v) -&gt; k % <span class="_code_num">2</span> == <span class="_code_num">0</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> That is equivalent to the following code:</span>
-
-<span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even = nums.entrySet().stream()
-        .filter(num -&gt; num.getKey() % <span class="_code_num">2</span> == <span class="_code_num">0</span>)
-        .collect(<span class="_code_cls">Collectors</span>.toMap(<span class="_code_cls">Entry</span>::getKey, <span class="_code_cls">Entry</span>::getValue));
-
-<span class="pull-left left-code">System.out.println(even);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Or, we can do the same thing in the old way:</span>
-
-<span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even2 = <span class="_code_kw">new</span> <span class="_code_cls">HashMap</span>&lt;&gt;();
-
-<span class="_code_kw">for</span> (<span class="_code_cls">Entry</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; num : nums.entrySet()) {
-    <span class="_code_kw">int</span> k = num.getKey();
-    <span class="_code_kw">if</span> (k % <span class="_code_num">2</span> == <span class="_code_num">0</span>) {
-        even2.put(k, num.getValue());
-    }
-}
-
-<span class="pull-left left-code">System.out.println(even2);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span>
-</pre>
-	</div>
-
-</div>
-
-
-<!-- EXAMPLE hellorest -->
-
-<div id="examplehellorest-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">4</span> &quot;Hello world&quot; RESTful service from POJO (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="examplehellorest-body" class="row">
-
-	<div id="examplehellorest-left" class="col-md-7">
-		<div id="examplehellorest-codedesc" class="eg_title">NoBullshit.java</div>
-		<pre id="examplehellorest-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NoBullshit</span> {
-
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="examplehellorest-right" class="col-md-5">
-        <div id="examplehellorest-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hello</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#hellorest HTML STARTS HERE -->
-"Hello, world!"
-<!-- EXAMPLE#hellorest HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hello</span>
-            </div>
-
-
-                <div class="eg-error">
-<!-- EXAMPLE#hellorest ERROR STARTS HERE -->
-<span class="not-found">404 Not found!</span>
-<!-- EXAMPLE#hellorest ERROR END HERE -->
-                </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE restparams -->
-
-<div id="examplerestparams-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">5</span> URL parts as Method Parameters (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="examplerestparams-body" class="row">
-
-	<div id="examplerestparams-left" class="col-md-7">
-		<div id="examplerestparams-codedesc" class="eg_title">SubUrlParams.java</div>
-		<pre id="examplerestparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {
-
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {
-        <span class="_code_kw">return</span> <span class="_code_api">U</span>.frmt(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
-    }
-
-    <span class="_code_ann">@POST</span>
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> size(<span class="_code_cls">String</span> s) {
-        <span class="_code_kw">return</span> s.length();
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="examplerestparams-right" class="col-md-5">
-        <div id="examplerestparams-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/Joe/50</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restparams HTML STARTS HERE -->
-"Hey Joe (50)"
-<!-- EXAMPLE#restparams HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/You!/123</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restparams HTML STARTS HERE -->
-"Hey You! (123)"
-<!-- EXAMPLE#restparams HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/size/abc</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restparams HTML STARTS HERE -->
-3
-<!-- EXAMPLE#restparams HTML END HERE -->
+<!-- EXAMPLE#httpsimple HTML END HERE -->
                 </div>
 
         </div>
     </div>
 </div>
 
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE httpsimplegui -->
+
+<div id="examplehttpsimplegui-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">2</span> Web page one-liner (<a href="http-fast.html">rapidoid-http-fast</a> module)</div>
+	</div>
+</div>
+
+<div id="examplehttpsimplegui-body" class="row">
+
+	<div id="examplehttpsimplegui-left" class="col-md-8">
+
+		<pre id="examplehttpsimplegui-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span>
+
+<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"Hello world!"</span>);
+</pre>
+	</div>
+
+    <div id="examplehttpsimplegui-right" class="col-md-4">
+        <div id="examplehttpsimplegui-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#httpsimplegui HTML STARTS HERE -->
+Hello world!
+<!-- EXAMPLE#httpsimplegui HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE fluent.mix -->
+
+<div id="examplefluent.mix-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">3</span> Sweet &amp; Fluent wrapper API for the Java 8 streams (<a href="fluent.html">rapidoid-fluent</a> module)</div>
+	</div>
+</div>
+
+<div id="examplefluent.mix-body" class="row">
+
+	<div id="examplefluent.mix-left" class="col-md-12">
+
+		<pre id="examplefluent.mix-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Manipulating lists or sets:</span>
+
+<span class="pull-left left-code">List&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">New</span><span class="_code_api">.list</span>(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Find</span><span class="_code_api">.allOf</span>(items)<span class="_code_api">.where</span>(s -&gt; s.length() &gt; <span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.map</span>(items)<span class="_code_api">.to</span>(s -&gt; s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[1,5,2]</span><span class="object-class">ArrayList</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.reduce</span>(items)<span class="_code_api">.by</span>((a, b) -&gt; a + <span class="_code_str">":"</span> + b)<span class="_code_api">.orElse</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"a:bbbbb:cc"</span><span class="object-class">String</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.group</span>(items)<span class="_code_api">.by</span>(s -&gt; s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":["a"],"2":["cc"],"5":["bbbbb"]}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Manipulating maps:</span>
+
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">New</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.map</span>(nums)<span class="_code_api">.to</span>((k, v) -&gt; k * <span class="_code_num">1000</span>, (k, v) -&gt; v.toUpperCase());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2000":"TWO","3000":"THREE","1000":"ONE"}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.group</span>(nums)<span class="_code_api">.by</span>((k, v) -&gt; k % <span class="_code_num">2</span> == <span class="_code_num">0</span> ? <span class="_code_str">"even"</span> : <span class="_code_str">"odd"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"even":{"2":"two"},"odd":{"1":"one","3":"three"}}</span><span class="object-class">HashMap</span></span></span>
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> interface Flow extends Stream { with extras }:</span>
+
+<span class="pull-left left-code"><span class="_code_api">Flow</span><span class="_code_api">.of</span>(<span class="_code_str">"Hi"</span>, <span class="_code_str">"there"</span>, <span class="_code_str">"X"</span>)<span class="_code_api">.map</span>(c -&gt; c + <span class="_code_str">"!"</span>)<span class="_code_api">.filter</span>(s -&gt; s.length() &lt;= <span class="_code_num">3</span>)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["Hi!","X!"]</span><span class="object-class">ArrayList</span></span></span>
+</pre>
+	</div>
+
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
 
 <!-- EXAMPLE restjson -->
 
 <div id="examplerestjson-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">6</span> Automatic JSON Serialization of Data Structures (<a href="web.html">rapidoid-web module</a>)</div>
+		<div class="caption"><span class="badge badge-eg-num">4</span> RESTful service from POJO (<a href="web.html">rapidoid-web</a> module)</div>
 	</div>
 </div>
 
 <div id="examplerestjson-body" class="row">
 
-	<div id="examplerestjson-left" class="col-md-7">
+	<div id="examplerestjson-left" class="col-md-8">
 		<div id="examplerestjson-codedesc" class="eg_title">TextTools.java</div>
 		<pre id="examplerestjson-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -400,7 +278,7 @@ Hello world!
     <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {
         <span class="_code_cls">String</span> big = s.toUpperCase();
-        <span class="_code_kw">return</span> <span class="_code_api">U</span>.map(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
+        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
     }
 
     <span class="_code_ann">@POST</span>
@@ -412,7 +290,7 @@ Hello world!
 </pre>
 	</div>
 
-    <div id="examplerestjson-right" class="col-md-5">
+    <div id="examplerestjson-right" class="col-md-4">
         <div id="examplerestjson-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/abc</span>
@@ -439,265 +317,123 @@ Hello world!
 </div>
 
 
-<!-- EXAMPLE beanjson -->
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
 
-<div id="examplebeanjson-title" class="row">
+<!-- EXAMPLE httpcfgfull -->
+
+<div id="examplehttpcfgfull-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> Automatic Construction and Serialization of JavaBeans (<a href="web.html">rapidoid-web module</a>)</div>
+		<div class="caption"><span class="badge badge-eg-num">5</span> Full application example (<a href="web.html">rapidoid-web</a> + <a href="fluent.html">rapidoid-fluent</a> modules)</div>
 	</div>
 </div>
 
-<div id="examplebeanjson-body" class="row">
+<div id="examplehttpcfgfull-body" class="row">
 
-	<div id="examplebeanjson-left" class="col-md-7">
-		<div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
-		<pre id="examplebeanjson-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {
+	<div id="examplehttpcfgfull-left" class="col-md-8">
+		<div id="examplehttpcfgfull-codedesc" class="eg_title">Main.java</div>
+		<pre id="examplehttpcfgfull-code" class="code-clean">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
 
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Untitled"</span>;
+  <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
 
-    <span class="_code_kw">private</span> <span class="_code_kw">int</span> year;
+    <span class="_code_api">Conf</span>.args(args);
 
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> getYear() {
-        <span class="_code_kw">return</span> year;
-    }
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> The application will manage this configuration:</span>
 
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> setYear(<span class="_code_kw">int</span> year) {
-        <span class="_code_kw">this</span>.year = year;
-    }
-}
-</pre>
-		<div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
-		<pre id="examplebeanjson-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {
+    <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cfg = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"title"</span>, <span class="_code_str">"App"</span>, <span class="_code_str">"user"</span>, <span class="_code_str">"u1"</span>);
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {
-        <span class="_code_kw">return</span> book;
-    }
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> RESTful service for configuration retrieval:</span>
 
-}
-</pre>
-	</div>
+    <span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/cfg"</span>)<span class="_code_api">.json</span>(cfg);
 
-    <div id="examplebeanjson-right" class="col-md-5">
-        <div id="examplebeanjson-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2012&amp;title=Abc</span>
-            </div>
+    <span class="_code_cls">PageMenu</span> menu = <span class="_code_cls">PageMenu</span>.from(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Home"</span>, <span class="_code_str">"/"</span>, <span class="_code_str">"Group"</span>, <span class="_code_str">"/group"</span>));
 
-                <div class="eg-result">
-<!-- EXAMPLE#beanjson HTML STARTS HERE -->
-{"title":"Abc","year":2012}
-<!-- EXAMPLE#beanjson HTML END HERE -->
-                </div>
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Wrap every result into a page:</span>
 
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2015</span>
-            </div>
+    <span class="_code_api">On</span><span class="_code_api">.defaultWrap</span>((data, next) -&gt; next.invoke(x -&gt; {
+        <span class="_code_kw">return</span> page(x).menu(menu).title(cfg<span class="_code_api">.get</span>(<span class="_code_str">"title"</span>));
+    }));
 
-                <div class="eg-result">
-<!-- EXAMPLE#beanjson HTML STARTS HERE -->
-{"title":"Untitled","year":2015}
-<!-- EXAMPLE#beanjson HTML END HERE -->
-                </div>
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Create buttons to filter by starting letter:</span>
 
-        </div>
-    </div>
-</div>
+    <span class="_code_cls">List</span>&lt;<span class="_code_cls">Btn</span>&gt; letters = <span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'z'</span>)<span class="_code_api">.map</span>(c -&gt; {
+        <span class="_code_kw">return</span> btn(c).link<span class="_code_api">To</span>(<span class="_code_str">"/find?p="</span> + c);
+    })<span class="_code_api">.toList</span>();
 
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Display the configuration entries at the home page:</span>
 
-<!-- EXAMPLE restnamedparams -->
+    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.gui</span>(req -&gt; {
+        <span class="_code_cls">KVGrid</span> grid = grid(cfg).keyView(k -&gt; a(k).href(<span class="_code_str">"/edit?k="</span> + k));
+        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(letters, grid);
+    });
 
-<div id="examplerestnamedparams-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">8</span> Named URL Parameters (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Group the configuration entries by the starting letter:</span>
 
-<div id="examplerestnamedparams-body" class="row">
+    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/group"</span>)<span class="_code_api">.gui</span>(req -&gt; {
+        <span class="_code_kw">return</span> <span class="_code_api">Do</span><span class="_code_api">.map</span>(<span class="_code_api">Do</span><span class="_code_api">.group</span>(cfg)<span class="_code_api">.by</span>((k, v) -&gt; k.charAt(<span class="_code_num">0</span>)))
+                 <span class="_code_api">.toList</span>((k, v) -&gt; <span class="_code_api">U</span><span class="_code_api">.list</span>(h3(k), grid(v)));
+    });
 
-	<div id="examplerestnamedparams-left" class="col-md-7">
-		<div id="examplerestnamedparams-codedesc" class="eg_title">NamedParams.java</div>
-		<pre id="examplerestnamedparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NamedParams</span> {
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Edit configuration entries:</span>
+    
+    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/edit"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"k"</span>, k -&gt; {
+        <span class="_code_cls">Btn</span> ok = btn(<span class="_code_str">"Update"</span>).onClick(() -&gt; <span class="_code_cls">Log</span>.info(<span class="_code_str">"Updated!"</span>));
+        <span class="_code_kw">return</span> edit(cfg, k).buttons(ok, btn(<span class="_code_str">"Back"</span>).link<span class="_code_api">To</span>(<span class="_code_str">"/"</span>));
+    });
+    
+    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Search configuration entries by prefix:</span>
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> sum(<span class="_code_ann">@Param</span>(<span class="_code_str">"x"</span>) <span class="_code_kw">int</span> x, <span class="_code_ann">@Param</span>(<span class="_code_str">"y"</span>) <span class="_code_kw">int</span> y) {
-        <span class="_code_kw">return</span> x + y;
-    }
-
+    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/find"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"p"</span>, p -&gt; {
+        <span class="_code_kw">return</span> grid(<span class="_code_api">Find</span><span class="_code_api">.allOf</span>(cfg)<span class="_code_api">.where</span>((k, v) -&gt; k.startsWith(p)));
+    });
+  }
 }
 </pre>
 	</div>
 
-    <div id="examplerestnamedparams-right" class="col-md-5">
-        <div id="examplerestnamedparams-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?x=1&amp;y=2</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restnamedparams HTML STARTS HERE -->
-3
-<!-- EXAMPLE#restnamedparams HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?y=10&amp;x=5&amp;z=12345</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restnamedparams HTML STARTS HERE -->
-15
-<!-- EXAMPLE#restnamedparams HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE restlistparams -->
-
-<div id="examplerestlistparams-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">9</span> URL Parameters as List (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="examplerestlistparams-body" class="row">
-
-	<div id="examplerestlistparams-left" class="col-md-7">
-		<div id="examplerestlistparams-codedesc" class="eg_title">ParamsAsList.java</div>
-		<pre id="examplerestlistparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsList</span> {
-
-    <span class="_code_ann">@POST</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; params) {
-        <span class="_code_kw">return</span> params;
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="examplerestlistparams-right" class="col-md-5">
-        <div id="examplerestlistparams-results" class="results">
-            <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/2015/Mart/20</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restlistparams HTML STARTS HERE -->
-["2015","Mart","20"]
-<!-- EXAMPLE#restlistparams HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/foo/bar/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restlistparams HTML STARTS HERE -->
-["foo","bar"]
-<!-- EXAMPLE#restlistparams HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE restmapparams -->
-
-<div id="examplerestmapparams-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">10</span> URL Parameters as Map (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="examplerestmapparams-body" class="row">
-
-	<div id="examplerestmapparams-left" class="col-md-7">
-		<div id="examplerestmapparams-codedesc" class="eg_title">ParamsAsMap.java</div>
-		<pre id="examplerestmapparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsMap</span> {
-
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
-        <span class="_code_kw">return</span> params;
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="examplerestmapparams-right" class="col-md-5">
-        <div id="examplerestmapparams-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?x=1&amp;y=23</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restmapparams HTML STARTS HERE -->
-{"x":"1","y":"23"}
-<!-- EXAMPLE#restmapparams HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?name=Abc&amp;year=2015</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#restmapparams HTML STARTS HERE -->
-{"name":"Abc","year":"2015"}
-<!-- EXAMPLE#restmapparams HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE hello -->
-
-<div id="examplehello-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">11</span> Hello, web pages! (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="examplehello-body" class="row">
-
-	<div id="examplehello-left" class="col-md-7">
-		<div id="examplehello-codedesc" class="eg_title">Hello.java</div>
-		<pre id="examplehello-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Hello</span> {
-
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="examplehello-right" class="col-md-5">
-        <div id="examplehello-results" class="results">
+    <div id="examplehttpcfgfull-right" class="col-md-4">
+        <div id="examplehttpcfgfull-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
             </div>
 
                 <div class="eg-result">
-<!-- EXAMPLE#hello HTML STARTS HERE -->
-<!--state::null-->
+<!-- EXAMPLE#httpcfgfull HTML STARTS HERE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>App</title>
+
+
+
+<link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
+<link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
+<link href="/rapidoid.min.css" rel="stylesheet">
+
+<link href="/app.css" rel="stylesheet">
+
+<link href="/img/favicon.png" rel="shortcut icon">
+<link href="bootstrap/css/theme-default.css" type="text/css" rel="stylesheet" />
+
+<!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
+
+<script>
+
+
+</script>
+
+</head>
+
+<body class="rapidoid" ng-controller="Main" ng-app="app">
+
+  <div ng-if="!ajaxBodyContent">
 <nav role="navigation" class="navbar navbar-default">
     <div class="">
 
@@ -710,9 +446,19 @@ Hello world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/group">Group</a>
+                </li>
+            </ul>
 
 
-
+<!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
 
 
@@ -721,18 +467,145 @@ Hello world!
 
     </div>
 </nav>
-Hello, world!
 
-<!-- EXAMPLE#hello HTML END HERE -->
+<div class="">
+
+  <a href="/find?p=a" class="btn btn-default">a</a>
+  <a href="/find?p=b" class="btn btn-default">b</a>
+  <a href="/find?p=c" class="btn btn-default">c</a>
+  <a href="/find?p=d" class="btn btn-default">d</a>
+  <a href="/find?p=e" class="btn btn-default">e</a>
+  <a href="/find?p=f" class="btn btn-default">f</a>
+  <a href="/find?p=g" class="btn btn-default">g</a>
+  <a href="/find?p=h" class="btn btn-default">h</a>
+  <a href="/find?p=i" class="btn btn-default">i</a>
+  <a href="/find?p=j" class="btn btn-default">j</a>
+  <a href="/find?p=k" class="btn btn-default">k</a>
+  <a href="/find?p=l" class="btn btn-default">l</a>
+  <a href="/find?p=m" class="btn btn-default">m</a>
+  <a href="/find?p=n" class="btn btn-default">n</a>
+  <a href="/find?p=o" class="btn btn-default">o</a>
+  <a href="/find?p=p" class="btn btn-default">p</a>
+  <a href="/find?p=q" class="btn btn-default">q</a>
+  <a href="/find?p=r" class="btn btn-default">r</a>
+  <a href="/find?p=s" class="btn btn-default">s</a>
+  <a href="/find?p=t" class="btn btn-default">t</a>
+  <a href="/find?p=u" class="btn btn-default">u</a>
+  <a href="/find?p=v" class="btn btn-default">v</a>
+  <a href="/find?p=w" class="btn btn-default">w</a>
+  <a href="/find?p=x" class="btn btn-default">x</a>
+  <a href="/find?p=y" class="btn btn-default">y</a>
+  <a href="/find?p=z" class="btn btn-default">z</a>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>
+        <a href="/edit?k=title">title</a>
+      </td>
+      <td>App</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/edit?k=user">user</a>
+      </td>
+      <td>u1</td>
+    </tr>
+  </table>
+</div>
+
+
+  </div>
+
+  <div compile="ajaxBodyContent" ng-if="ajaxBodyContent"></div>
+
+<div id="_modal_box" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 id="_modal_title" class="modal-title"></h4>
+      </div>
+      <div id="_modal_body" class="modal-body"></div>
+      <div id="_modal_footer" class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/jquery-2.1.4.min.js"></script>
+<script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
+<script src="/angular-1.4.3.min.js"></script>
+<script src="/rapidoid.min.js"></script>
+
+<script src="/app.js"></script>
+
+
+<!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
+
+</body>
+
+
+
+</html>
+
+
+<!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
 
             <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/</span>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/cfg</span>
             </div>
 
                 <div class="eg-result">
-<!-- EXAMPLE#hello HTML STARTS HERE -->
-<!--state::null-->
+<!-- EXAMPLE#httpcfgfull HTML STARTS HERE -->
+{"title":"App","user":"u1"}
+<!-- EXAMPLE#httpcfgfull HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/group</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#httpcfgfull HTML STARTS HERE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>App</title>
+
+
+
+<link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
+<link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
+<link href="/rapidoid.min.css" rel="stylesheet">
+
+<link href="/app.css" rel="stylesheet">
+
+<link href="/img/favicon.png" rel="shortcut icon">
+<link href="bootstrap/css/theme-default.css" type="text/css" rel="stylesheet" />
+
+<!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
+
+<script>
+
+
+</script>
+
+</head>
+
+<body class="rapidoid" ng-controller="Main" ng-app="app">
+
+  <div ng-if="!ajaxBodyContent">
 <nav role="navigation" class="navbar navbar-default">
     <div class="">
 
@@ -745,9 +618,19 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/group">Group</a>
+                </li>
+            </ul>
 
 
-
+<!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
 
 
@@ -756,50 +639,113 @@ Hello, world!
 
     </div>
 </nav>
-Hello, world!
 
-<!-- EXAMPLE#hello HTML END HERE -->
+<div class="">
+
+  <h3>t</h3>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>App</td>
+    </tr>
+  </table>
+  <h3>u</h3>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>u1</td>
+    </tr>
+  </table>
+</div>
+
+
+  </div>
+
+  <div compile="ajaxBodyContent" ng-if="ajaxBodyContent"></div>
+
+<div id="_modal_box" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 id="_modal_title" class="modal-title"></h4>
+      </div>
+      <div id="_modal_body" class="modal-body"></div>
+      <div id="_modal_footer" class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/jquery-2.1.4.min.js"></script>
+<script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
+<script src="/angular-1.4.3.min.js"></script>
+<script src="/rapidoid.min.js"></script>
+
+<script src="/app.js"></script>
+
+
+<!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
+
+</body>
+
+
+
+</html>
+
+
+<!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
 
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE hi -->
-
-<div id="examplehi-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">12</span> Building HTML pages with Java (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="examplehi-body" class="row">
-
-	<div id="examplehi-left" class="col-md-7">
-		<div id="examplehi-codedesc" class="eg_title">YourName.java</div>
-		<pre id="examplehi-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">YourName</span> {
-
-    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"What is your name?"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Tag</span> hi(<span class="_code_cls">String</span> name) {
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.h4(<span class="_code_str">"Hi, "</span>, <span class="_code_cls">GUI</span>.i(name), <span class="_code_str">"!"</span>);
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="examplehi-right" class="col-md-5">
-        <div id="examplehi-results" class="results">
             <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi/Rapidoid</span>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/edit?k=title</span>
             </div>
 
                 <div class="eg-result">
-<!-- EXAMPLE#hi HTML STARTS HERE -->
-<!--state::null-->
+<!-- EXAMPLE#httpcfgfull HTML STARTS HERE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>App</title>
+
+
+
+<link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
+<link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
+<link href="/rapidoid.min.css" rel="stylesheet">
+
+<link href="/app.css" rel="stylesheet">
+
+<link href="/img/favicon.png" rel="shortcut icon">
+<link href="bootstrap/css/theme-default.css" type="text/css" rel="stylesheet" />
+
+<!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
+
+<script>
+
+
+</script>
+
+</head>
+
+<body class="rapidoid" ng-controller="Main" ng-app="app">
+
+  <div ng-if="!ajaxBodyContent">
 <nav role="navigation" class="navbar navbar-default">
     <div class="">
 
@@ -807,14 +753,24 @@ Hello, world!
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">What is your name?</a>
+            <a class="navbar-brand" href="/">App</a>
         </div>
 
         <div id="collapsable" class="collapse navbar-collapse">
 
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/group">Group</a>
+                </li>
+            </ul>
 
 
-
+<!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
 
 
@@ -823,18 +779,102 @@ Hello, world!
 
     </div>
 </nav>
-<h4>Hi, <i>Rapidoid</i>!</h4>
 
-<!-- EXAMPLE#hi HTML END HERE -->
+<div class="">
+
+  <form class="" role="form">
+    <div class="form-group">
+      <label>Title: </label>
+      <input _h="title" type="text" class="form-control" value="App" name="title">
+      <span class="field-error"></span>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-default" ng-click="_emit('Update', [])">Update</button>
+      <a href="/" class="btn btn-default">Back</a>
+    </div>
+  </form>
+</div>
+
+
+  </div>
+
+  <div compile="ajaxBodyContent" ng-if="ajaxBodyContent"></div>
+
+<div id="_modal_box" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 id="_modal_title" class="modal-title"></h4>
+      </div>
+      <div id="_modal_body" class="modal-body"></div>
+      <div id="_modal_footer" class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/jquery-2.1.4.min.js"></script>
+<script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
+<script src="/angular-1.4.3.min.js"></script>
+<script src="/rapidoid.min.js"></script>
+
+<script src="/app.js"></script>
+
+
+<!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
+
+</body>
+
+
+
+</html>
+
+
+<!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
 
             <div>
-                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hi/there</span>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/find?p=t</span>
             </div>
 
                 <div class="eg-result">
-<!-- EXAMPLE#hi HTML STARTS HERE -->
-<!--state::null-->
+<!-- EXAMPLE#httpcfgfull HTML STARTS HERE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>App</title>
+
+
+
+<link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
+<link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
+<link href="/rapidoid.min.css" rel="stylesheet">
+
+<link href="/app.css" rel="stylesheet">
+
+<link href="/img/favicon.png" rel="shortcut icon">
+<link href="bootstrap/css/theme-default.css" type="text/css" rel="stylesheet" />
+
+<!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
+
+<script>
+
+
+</script>
+
+</head>
+
+<body class="rapidoid" ng-controller="Main" ng-app="app">
+
+  <div ng-if="!ajaxBodyContent">
 <nav role="navigation" class="navbar navbar-default">
     <div class="">
 
@@ -842,14 +882,24 @@ Hello, world!
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">What is your name?</a>
+            <a class="navbar-brand" href="/">App</a>
         </div>
 
         <div id="collapsable" class="collapse navbar-collapse">
 
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a href="/group">Group</a>
+                </li>
+            </ul>
 
 
-
+<!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
 
 
@@ -858,143 +908,60 @@ Hello, world!
 
     </div>
 </nav>
-<h4>Hi, <i>there</i>!</h4>
 
-<!-- EXAMPLE#hi HTML END HERE -->
-                </div>
+<div class="">
 
-        </div>
-    </div>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>App</td>
+    </tr>
+  </table>
 </div>
 
 
-<!-- EXAMPLE raw -->
-
-<div id="exampleraw-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">13</span> Raw HTML pages (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleraw-body" class="row">
-
-	<div id="exampleraw-left" class="col-md-7">
-		<div id="exampleraw-codedesc" class="eg_title">Simple.java</div>
-		<pre id="exampleraw-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Simple</span> {
-
-    <span class="_code_ann">@Page</span>(raw = true)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> simple() {
-        <span class="_code_kw">return</span> <span class="_code_str">"&lt;p&gt;&lt;b&gt;RAW&lt;/b&gt; HTML!&lt;p&gt;"</span>;
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="exampleraw-right" class="col-md-5">
-        <div id="exampleraw-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/simple</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#raw HTML STARTS HERE -->
-<p><b>RAW</b> HTML!<p>
-<!-- EXAMPLE#raw HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE showmovie -->
-
-<div id="exampleshowmovie-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">14</span> Display bean properties (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleshowmovie-body" class="row">
-
-	<div id="exampleshowmovie-left" class="col-md-7">
-		<div id="exampleshowmovie-codedesc" class="eg_title">Movie.java</div>
-		<pre id="exampleshowmovie-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
-}
-</pre>
-		<div id="exampleshowmovie-codedesc" class="eg_title">Movies.java</div>
-		<pre id="exampleshowmovie-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
-
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
-        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-        movie.title = <span class="_code_str">"Chappie"</span>;
-        movie.year = <span class="_code_num">2015</span>;
-
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.show(movie).buttons(<span class="_code_cls">GUI</span>.btn(<span class="_code_str">"OK"</span>));
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="exampleshowmovie-right" class="col-md-5">
-        <div id="exampleshowmovie-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#showmovie HTML STARTS HERE -->
-<!--state::null-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Movie details</a>
-        </div>
-
-        <div id="collapsable" class="collapse navbar-collapse">
-
-
-
-
-
-
-
-        </div>
-
-
-    </div>
-</nav>
-<form class="" role="form">
-  <div class="form-group">
-    <label>Title: </label>
-    <span class="display-wrap">Chappie</span>
-    <span class="field-error"></span>
   </div>
-  <div class="form-group">
-    <label>Year: </label>
-    <span class="display-wrap">2015</span>
-    <span class="field-error"></span>
+
+  <div compile="ajaxBodyContent" ng-if="ajaxBodyContent"></div>
+
+<div id="_modal_box" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 id="_modal_title" class="modal-title"></h4>
+      </div>
+      <div id="_modal_body" class="modal-body"></div>
+      <div id="_modal_footer" class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
-  </div>
-</form>
+</div>
 
-<!-- EXAMPLE#showmovie HTML END HERE -->
+
+<script src="/jquery-2.1.4.min.js"></script>
+<script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
+<script src="/angular-1.4.3.min.js"></script>
+<script src="/rapidoid.min.js"></script>
+
+<script src="/app.js"></script>
+
+
+<!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
+
+</body>
+
+
+
+</html>
+
+
+<!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
 
         </div>
@@ -1002,409 +969,9 @@ Hello, world!
 </div>
 
 
-<!-- EXAMPLE editmovie -->
-
-<div id="exampleeditmovie-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">15</span> Edit bean properties (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
 </div>
-
-<div id="exampleeditmovie-body" class="row">
-
-	<div id="exampleeditmovie-left" class="col-md-7">
-		<div id="exampleeditmovie-codedesc" class="eg_title">Movie.java</div>
-		<pre id="exampleeditmovie-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
-}
-</pre>
-		<div id="exampleeditmovie-codedesc" class="eg_title">Movies.java</div>
-		<pre id="exampleeditmovie-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
-
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
-        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-        movie.title = <span class="_code_str">"Chappie"</span>;
-        movie.year = <span class="_code_num">2015</span>;
-
-        <span class="_code_cls">Btn</span> save = <span class="_code_cls">GUI</span>.btn(<span class="_code_str">"Save"</span>).primary();
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.edit(movie).buttons(save);
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="exampleeditmovie-right" class="col-md-5">
-        <div id="exampleeditmovie-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#editmovie HTML STARTS HERE -->
-<!--state::null-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Edit movie details</a>
-        </div>
-
-        <div id="collapsable" class="collapse navbar-collapse">
-
-
-
-
-
-
-
-        </div>
-
-
-    </div>
-</nav>
-<form class="" role="form">
-  <div class="form-group">
-    <label>Title: </label>
-    <input _h="title" type="text" class="form-control" value="Chappie" name="title">
-    <span class="field-error"></span>
-  </div>
-  <div class="form-group">
-    <label>Year: </label>
-    <input _h="year" type="text" class="form-control" value="2015" name="year">
-    <span class="field-error"></span>
-  </div>
-  <div class="form-group">
-    <button type="button" class="btn btn-primary" ng-click="_emit('Save', [])">Save</button>
-  </div>
-</form>
-
-<!-- EXAMPLE#editmovie HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE paramgrid -->
-
-<div id="exampleparamgrid-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">16</span> Create key-value data grid from a Map (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleparamgrid-body" class="row">
-
-	<div id="exampleparamgrid-left" class="col-md-7">
-		<div id="exampleparamgrid-codedesc" class="eg_title">ParamGrid.java</div>
-		<pre id="exampleparamgrid-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamGrid</span> {
-
-    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"Grid of request parameters"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> table(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.grid(params);
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="exampleparamgrid-right" class="col-md-5">
-        <div id="exampleparamgrid-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/table?name=Highlander&amp;age=700&amp;weapon=sword</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#paramgrid HTML STARTS HERE -->
-<!--state::null-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Grid of request parameters</a>
-        </div>
-
-        <div id="collapsable" class="collapse navbar-collapse">
-
-
-
-
-
-
-
-        </div>
-
-
-    </div>
-</nav>
-<table class="table table-striped table-hover">
-  <tr>
-    <th>Key</th>
-    <th>Value</th>
-  </tr>
-  <tr>
-    <td>name</td>
-    <td>Highlander</td>
-  </tr>
-  <tr>
-    <td>age</td>
-    <td>700</td>
-  </tr>
-  <tr>
-    <td>weapon</td>
-    <td>sword</td>
-  </tr>
-</table>
-
-<!-- EXAMPLE#paramgrid HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE injection -->
-
-<div id="exampleinjection-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">17</span> Dependency injection of singletons (<a href="web.html">rapidoid-web module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleinjection-body" class="row">
-
-	<div id="exampleinjection-left" class="col-md-7">
-		<div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
-		<pre id="exampleinjection-code" class="code-clean">
-<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/bar"</span>)
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {
-
-    <span class="_code_ann">@Inject</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;
-
-    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> foo.msg();
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Bar!"</span>;
-    }
-
-}
-</pre>
-		<div id="exampleinjection-codedesc" class="eg_title">Foo.java</div>
-		<pre id="exampleinjection-code" class="code-clean">
-<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/foo"</span>)
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {
-
-    <span class="_code_ann">@Inject</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;
-
-    <span class="_code_kw">private</span> <span class="_code_kw">int</span> count;
-
-    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Foo!"</span>;
-    }
-
-}
-</pre>
-	</div>
-
-    <div id="exampleinjection-right" class="col-md-5">
-        <div id="exampleinjection-results" class="results">
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#injection HTML STARTS HERE -->
-"2151: Hello from Bar!"
-<!-- EXAMPLE#injection HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar/hi</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#injection HTML STARTS HERE -->
-"Hello from Foo!"
-<!-- EXAMPLE#injection HTML END HERE -->
-                </div>
-
-            <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
-            </div>
-
-                <div class="eg-result">
-<!-- EXAMPLE#injection HTML STARTS HERE -->
-"2152: Hello from Bar!"
-<!-- EXAMPLE#injection HTML END HERE -->
-                </div>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- EXAMPLE u.coll -->
-
-<div id="exampleu.coll-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">18</span> Creating collections (<a href="u.html">rapidoid-u module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleu.coll-body" class="row">
-
-	<div id="exampleu.coll-left" class="col-md-12">
-
-		<pre id="exampleu.coll-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a list:</span>
-
-<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span>.list(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a set:</span>
-
-<span class="pull-left left-code">Set&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span>.set(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a map:</span>
-
-<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
-</pre>
-	</div>
-
-</div>
-
-
-<!-- EXAMPLE u.collutils -->
-
-<div id="exampleu.collutils-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">19</span> Collection utils (<a href="u.html">rapidoid-u module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleu.collutils-body" class="row">
-
-	<div id="exampleu.collutils-left" class="col-md-12">
-
-		<pre id="exampleu.collutils-code" class="code-clean">
-<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; words = <span class="_code_api">U</span>.list(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">30</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,30]</span><span class="object-class">ArrayList</span></span></span>
-
-<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> U.isEmpty utils:</span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
-</pre>
-	</div>
-
-</div>
-
-
-<!-- EXAMPLE u.strutils -->
-
-<div id="exampleu.strutils-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">20</span> String utils (<a href="u.html">rapidoid-u module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleu.strutils-body" class="row">
-
-	<div id="exampleu.strutils-left" class="col-md-12">
-
-		<pre id="exampleu.strutils-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Is it empty or null:</span>
-
-<span class="_code_cls">String</span> s = null;
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Trim left by prefix:</span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.triml(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc/"</span><span class="object-class">String</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Trim right by suffix:</span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.trimr(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"/abc"</span><span class="object-class">String</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Substring supporting negative positions:</span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">1</span>, <span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"b"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// same as "abcde".substring(1, 2)</span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">2</span>, -<span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"cd"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -1 means "1 from right to left"</span>
-
-<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">0</span>, -<span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -2 means "2 from right to left"</span>
-</pre>
-	</div>
-
-</div>
-
-
-<!-- EXAMPLE u.dynamic -->
-
-<div id="exampleu.dynamic-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">21</span> Dynamic implementation of interfaces (<a href="u.html">rapidoid-u module</a>)</div>
-	</div>
-</div>
-
-<div id="exampleu.dynamic-body" class="row">
-
-	<div id="exampleu.dynamic-left" class="col-md-12">
-
-		<pre id="exampleu.dynamic-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Dynamic implementation of interfaces:</span>
-
-<span class="_code_cls">Dog</span> dog = <span class="_code_api">U</span>.dynamic(<span class="_code_cls">Dog</span>.<span class="_code_kw">class</span>, (m, margs) -&gt; m.getName() + <span class="_code_str">":"</span> + margs[<span class="_code_num">0</span>]);
-
-<span class="pull-left left-code">dog.bite(<span class="_code_str">"me"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"bite:me"</span><span class="object-class">String</span></span></span>
-
-<span class="pull-left left-code">dog.eat(<span class="_code_str">"meat"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"eat:meat"</span><span class="object-class">String</span></span></span>
-</pre>
-		<div id="exampleu.dynamic-codedesc" class="eg_title">Dog.java</div>
-		<pre id="exampleu.dynamic-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">interface</span> <span class="_code_cls">Dog</span> {
-
-    <span class="_code_cls">String</span> eat(<span class="_code_cls">String</span> food);
-
-    <span class="_code_cls">String</span> bite(<span class="_code_cls">String</span> target);
-
-}
-</pre>
-	</div>
-
-</div>
-
 
 </div>
 
@@ -1412,19 +979,19 @@ Hello, world!
 <div class="modules-right">
 <h3 class="module-title">Rapidoid Modules:</h3>
 <div class="module-wrap">
- <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
+ <h4 class="module-title"><a href="http-fast.html"><a href="http-fast.html">rapidoid-http-fast</a></a></h4>
  <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
  <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
+ <h4 class="module-title"><a href="web.html"><a href="web.html">rapidoid-web</a></a></h4>
  <div class="module-box">High-level POJO Web Framework</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
+ <h4 class="module-title"><a href="u.html"><a href="u.html">rapidoid-u</a></a></h4>
  <div class="module-box">Simple &amp; Sweet Utils</div>
 </div>
 </div>

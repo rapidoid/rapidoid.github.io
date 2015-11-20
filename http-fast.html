@@ -42,19 +42,19 @@
       <div id="collapsable" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
 	  <li class="active"><a href="/">Getting started</a></li>
-	  <li><a href="community.html">Community &amp; Support</a></li>
-	  <li><a href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+	  <li><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
+	  <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
         </ul>
 
 <div class="navbar-brand navbar-right">
-				<a data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
-				<a data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
 
 				<script type="IN/Share" data-url="http://rapidoid.org/" data-counter="right"></script>
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a href="https://twitter.com/share" rel="nofollow"
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
 					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
 					data-text="#Rapidoid - New and Cool #Java web app #framework!" data-size="small">Tweet</a>
 </div>
@@ -69,6 +69,7 @@
 				<h4 id="main_subtitle">
 					<span id="rapidoid-title">Rapidoid - The No-bullshit (Web) Frameworks for Java!</span>
 				</h4>
+                <p><b>Open source (Apache license). Simple. Secure. <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">Extremely fast!</a></b></p>
 			</div>
 
 			<div class="col-md-5 col-sm-12">
@@ -94,18 +95,19 @@
 			</div>
 		</div>
 
-<!-- MODULE rapidoid-http-fast -->
+<!-- MODULE <a href="http-fast.html">rapidoid-http-fast</a> -->
 
 <div class="row row-separated-nano">
   <div class="col-md-8">
 
 <div class="module-header">
-<span class="module-name badge badge-module">rapidoid-http-fast</span> Very Fast Web Server</div>  
+<span class="module-name badge badge-module">Rapidoid Http-fast</span> Very Fast Web Server</div>  
+<h5><b></b></h5>
 
 <div class="module-desc">
-The low-level HTTP API provides access to the <a href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">extremely fast</a> Rapidoid HTTP server implemented from scratch on top of Java NIO. 
+The low-level HTTP API provides access to the <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">extremely fast</a> Rapidoid HTTP server implemented from scratch on top of Java NIO. 
 
-<h4>This is <a href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">one of the fastest</a> web servers in the world! (based on the transparent Techempower benchmarks)</h4>
+<h4>This is <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">one of the fastest</a> web servers in the world! (based on the transparent Techempower benchmarks)</h4>
 </div>
 
 <br><br>
@@ -113,11 +115,11 @@ The low-level HTTP API provides access to the <a href="https://www.techempower.c
   </div>
   
   <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-http-fast</b> as Maven dependency:</div>
+        <div class="eg_title">Add <b><a href="http-fast.html">rapidoid-http-fast</a></b> as Maven dependency:</div>
 <pre class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-http-fast&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;<a href="http-fast.html">rapidoid-http-fast</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
     &lt;<span class="_code_tag">version</span>&gt;5.0.3&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
@@ -139,16 +141,16 @@ The low-level HTTP API provides access to the <a href="https://www.techempower.c
 
 <div id="examplehttpsimple-body" class="row">
 
-	<div id="examplehttpsimple-left" class="col-md-7">
+	<div id="examplehttpsimple-left" class="col-md-8">
 
 		<pre id="examplehttpsimple-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On [GET /size] return the length of the "msg" parameter:</span>
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span>
 
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/size"</span>).json(<span class="_code_str">"msg"</span>, msg -&gt; msg.length());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"msg"</span>, msg -&gt; msg.length());
 </pre>
 	</div>
 
-    <div id="examplehttpsimple-right" class="col-md-5">
+    <div id="examplehttpsimple-right" class="col-md-4">
         <div id="examplehttpsimple-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?msg=abc</span>
@@ -165,6 +167,10 @@ The low-level HTTP API provides access to the <a href="https://www.techempower.c
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE httpsimplegui -->
 
 <div id="examplehttpsimplegui-title" class="row">
@@ -175,16 +181,16 @@ The low-level HTTP API provides access to the <a href="https://www.techempower.c
 
 <div id="examplehttpsimplegui-body" class="row">
 
-	<div id="examplehttpsimplegui-left" class="col-md-7">
+	<div id="examplehttpsimplegui-left" class="col-md-8">
 
 		<pre id="examplehttpsimplegui-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On [GET /hi] or [POST /hi] return a "Hello World" web page:</span>
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span>
 
-<span class="_code_cls">On</span>.page(<span class="_code_str">"/hi"</span>).gui(<span class="_code_str">"Hello world!"</span>);
+<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"Hello world!"</span>);
 </pre>
 	</div>
 
-    <div id="examplehttpsimplegui-right" class="col-md-5">
+    <div id="examplehttpsimplegui-right" class="col-md-4">
         <div id="examplehttpsimplegui-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
@@ -201,6 +207,10 @@ Hello world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE httpreq1 -->
 
 <div id="examplehttpreq1-title" class="row">
@@ -211,22 +221,22 @@ Hello world!
 
 <div id="examplehttpreq1-body" class="row">
 
-	<div id="examplehttpreq1-left" class="col-md-7">
+	<div id="examplehttpreq1-left" class="col-md-8">
 
 		<pre id="examplehttpreq1-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> All request data can be retrieved from the (Req req) parameter:</span>
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Retrieving request info from the Req parameter:</span>
 
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/showVerb"</span>).json(req -&gt; req.verb());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showVerb"</span>)<span class="_code_api">.json</span>(req -&gt; req<span class="_code_api">.verb</span>());
 
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/showPath"</span>).json(req -&gt; req.path());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showPath"</span>)<span class="_code_api">.json</span>(req -&gt; req<span class="_code_api">.path</span>());
 
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/showUri"</span>).json(req -&gt; req.uri());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showUri"</span>)<span class="_code_api">.json</span>(req -&gt; req<span class="_code_api">.uri</span>());
 
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/showData"</span>).json(req -&gt; req.data());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showData"</span>)<span class="_code_api">.json</span>(req -&gt; req<span class="_code_api">.data</span>());
 </pre>
 	</div>
 
-    <div id="examplehttpreq1-right" class="col-md-5">
+    <div id="examplehttpreq1-right" class="col-md-4">
         <div id="examplehttpreq1-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showVerb</span>
@@ -254,7 +264,7 @@ Hello world!
 
                 <div class="eg-result">
 <!-- EXAMPLE#httpreq1 HTML STARTS HERE -->
-"/showUri
+"/showUri"
 <!-- EXAMPLE#httpreq1 HTML END HERE -->
                 </div>
 
@@ -273,6 +283,10 @@ Hello world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE httpwrap -->
 
 <div id="examplehttpwrap-title" class="row">
@@ -283,23 +297,23 @@ Hello world!
 
 <div id="examplehttpwrap-body" class="row">
 
-	<div id="examplehttpwrap-left" class="col-md-7">
+	<div id="examplehttpwrap-left" class="col-md-8">
 
 		<pre id="examplehttpwrap-code" class="code-clean">
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> A wrapper executes before the handler:</span>
 
-<span class="_code_cls">On</span>.defaultWrap((req, next) -&gt; {
+<span class="_code_api">On</span><span class="_code_api">.defaultWrap</span>((req, next) -&gt; {
     <span class="_code_kw">return</span> next.invoke(result -&gt; <span class="_code_str">"Hey: "</span> + result);
 });
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> and provides transformation for the result:</span>
 
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/size"</span>).json(<span class="_code_str">"s"</span>, s -&gt; s.length());
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/upper"</span>).json(<span class="_code_str">"s"</span>, s -&gt; s.toUpperCase());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"s"</span>, s -&gt; s.length());
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/upper"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"s"</span>, s -&gt; s.toUpperCase());
 </pre>
 	</div>
 
-    <div id="examplehttpwrap-right" class="col-md-5">
+    <div id="examplehttpwrap-right" class="col-md-4">
         <div id="examplehttpwrap-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?s=abcde</span>
@@ -325,21 +339,193 @@ Hello world!
     </div>
 </div>
 
-<div id="examplehttpwrap-title" class="row">
-    <div class="col-md-6">
-        <img class="img-responsive" src="img/handler0.svg"/>
-    </div>
-    <div class="col-md-6">
-        <img class="img-responsive" src="img/handler1.svg"/>
+<div id="examplehttpwrap-extra" class="row">
+<div class="col-md-6">
+    <img class="img-responsive" src="img/handler0.svg" />
+</div>
+<div class="col-md-6">
+    <img class="img-responsive" src="img/handler1.svg" />
+</div>
+
+</div>
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE httpnotfound -->
+
+<div id="examplehttpnotfound-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">5</span> Returning a &quot;Not Found&quot; result</div>
+	</div>
+</div>
+
+<div id="examplehttpnotfound-body" class="row">
+
+	<div id="examplehttpnotfound-left" class="col-md-8">
+
+		<pre id="examplehttpnotfound-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Returning a <span class="text-box">null</span> means <span class="text-box">NOT FOUND</span>:</span>
+
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(req -&gt; {
+    <span class="_code_kw">return</span> req<span class="_code_api">.params</span>().size() == <span class="_code_num">1</span> ? req<span class="_code_api">.params</span>() : <span class="_code_kw">null</span>;
+});
+</pre>
+	</div>
+
+    <div id="examplehttpnotfound-right" class="col-md-4">
+        <div id="examplehttpnotfound-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+
+                <div class="eg-error">
+<!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
+<span class="not-found">404 Not found!</span>
+<!-- EXAMPLE#httpnotfound ERROR END HERE -->
+                </div>
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/?a=1</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#httpnotfound HTML STARTS HERE -->
+{"a":"1"}
+<!-- EXAMPLE#httpnotfound HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/?a=1&amp;b=2</span>
+            </div>
+
+
+                <div class="eg-error">
+<!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
+<span class="not-found">404 Not found!</span>
+<!-- EXAMPLE#httpnotfound ERROR END HERE -->
+                </div>
+        </div>
     </div>
 </div>
 
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE httpgeneric -->
+
+<div id="examplehttpgeneric-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">6</span> Generic handlers match any request</div>
+	</div>
+</div>
+
+<div id="examplehttpgeneric-body" class="row">
+
+	<div id="examplehttpgeneric-left" class="col-md-8">
+
+		<pre id="examplehttpgeneric-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Generic handlers match any request (in the declaration order):</span>
+
+<span class="_code_api">On</span><span class="_code_api">.req</span>(req -&gt; req<span class="_code_api">.data</span>()<span class="_code_api">.isEmpty</span>() ? <span class="_code_str">"Simple: "</span> + req<span class="_code_api">.uri</span>() : <span class="_code_kw">null</span>);
+
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> The next handler is executed if the previous returns <span class="text-box">NOT FOUND</span>:</span>
+
+<span class="_code_api">On</span><span class="_code_api">.req</span>(req -&gt; <span class="_code_api">U</span><span class="_code_api">.list</span>(req<span class="_code_api">.verb</span>(), req<span class="_code_api">.uri</span>(), req<span class="_code_api">.data</span>()));
+</pre>
+	</div>
+
+    <div id="examplehttpgeneric-right" class="col-md-4">
+        <div id="examplehttpgeneric-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#httpgeneric HTML STARTS HERE -->
+Simple: /foo
+<!-- EXAMPLE#httpgeneric HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hey?name=Rapidoid</span>
+            </div>
+            <div class="post-data">
+                <span class="label label-default eg-data">{&quot;cool&quot;:true}</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#httpgeneric HTML STARTS HERE -->
+[POST, /hey?name=Rapidoid, {name=Rapidoid, cool=true}]
+<!-- EXAMPLE#httpgeneric HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE httpasync -->
+
+<div id="examplehttpasync-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">7</span> Asynchronous request processing</div>
+	</div>
+</div>
+
+<div id="examplehttpasync-body" class="row">
+
+	<div id="examplehttpasync-left" class="col-md-8">
+
+		<pre id="examplehttpasync-code" class="code-clean">
+<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Wait 1 second before returning a response:</span>
+
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(req -&gt; <span class="_code_api">Jobs</span><span class="_code_api">.schedule</span>(() -&gt; {
+
+    req<span class="_code_api">.response</span>()<span class="_code_api">.content</span>(<span class="_code_str">"OK"</span>)<span class="_code_api">.done</span>();
+
+}, <span class="_code_num">1</span>, <span class="_code_cls">TimeUnit</span>.<span class="_code_cls">SECONDS</span>));
+</pre>
+	</div>
+
+    <div id="examplehttpasync-right" class="col-md-4">
+        <div id="examplehttpasync-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#httpasync HTML STARTS HERE -->
+"OK"
+<!-- EXAMPLE#httpasync HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="examplehttpasync-extra" class="row">
+<div class="col-md-12">
+    <img class="img-responsive" src="img/server.svg" />
+</div>
+</div>
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
 
 <!-- EXAMPLE httpcustom -->
 
 <div id="examplehttpcustom-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">5</span> More control over the HTTP server setup</div>
+		<div class="caption"><span class="badge badge-eg-num">8</span> More control over the HTTP server setup</div>
 	</div>
 </div>
 
@@ -348,31 +534,28 @@ Hello world!
 	<div id="examplehttpcustom-left" class="col-md-12">
 
 		<pre id="examplehttpcustom-code" class="code-clean">
-<span class="_code_cls">On</span>.address(<span class="_code_str">"127.0.0.1"</span>).port(<span class="_code_num">9999</span>);
+<span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);
 
-<span class="_code_cls">On</span>.get(<span class="_code_str">"/x"</span>).json(<span class="_code_str">"x"</span>);
+<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"x"</span>);
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> After a while:</span>
 
-<span class="_code_cls">On</span>.getDefaultSetup().server().shutdown();
+<span class="_code_api">On</span><span class="_code_api">.getDefaultSetup</span>().server().shutdown();
 </pre>
 	</div>
 
 </div>
 
-<div id="examplehttpargs-title" class="row">
-    <div class="col-md-12">
-        <div class="caption"><span class="badge badge-eg-num">6</span> Illustration: Asynchronous request processing with Rapidoid</div>
-        <img src="img/server.svg" />
-    </div>
-</div>
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
 
 <!-- EXAMPLE httpargs -->
 
 <div id="examplehttpargs-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> Server Configuration</div>
+		<div class="caption"><span class="badge badge-eg-num">9</span> Server Configuration</div>
 	</div>
 </div>
 
@@ -385,65 +568,80 @@ Hello world!
 
     <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
         <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Initialize the configuration:</span>
-        <span class="_code_cls">Conf</span>.args(args);
+        <span class="_code_api">Conf</span>.args(args);
 
-        <span class="_code_cls">On</span>.get(<span class="_code_str">"/hi"</span>).json(req -&gt; req.data(<span class="_code_str">"name"</span>, <span class="_code_str">"unknown"</span>));
+        <span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.json</span>(req -&gt; req<span class="_code_api">.data</span>(<span class="_code_str">"name"</span>, <span class="_code_str">"unknown"</span>));
     }
 
 }
 </pre>
+	</div>
 
-<h3>Configuration options:</h3>
+</div>
 
- <table class="table table-striped table-hover">
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>mode=(dev|production)</td>
-      <td>configure <i>dev</i> or <i>production</i> mode (default: <i>production</i> unless debug mode detected)</td>
-    </tr>
-    <tr>
-      <td>secret=&lt;SECRET&gt;</td>
-      <td>configure app-specific secret token for encryption (default: null)</td>
-    </tr>
-    <tr>
-      <td>port=&lt;P&gt;</td>
-      <td>listen at port P (default: 8888)</td>
-    </tr>
-    <tr>
-      <td>address=&lt;ADDR&gt;</td>
-      <td>listen at address ADDR (default: 0.0.0.0)</td>
-    </tr>
-    <tr>
-      <td>threads=&lt;T&gt;</td>
-      <td>start T threads for the job executor service (default: 100)</td>
-    </tr>
-    <tr>
-      <td>cpus=&lt;C&gt;</td>
-      <td>optimize for C number of CPUs (default: the actual number of the CPUs)</td>
-    </tr>
-    <tr>
-      <td>workers=&lt;W&gt;</td>
-      <td>start W number of I/O workers (default: the configured number of CPUs - cpus options)</td>
-    </tr>
-    <tr>
-      <td>nodelay</td>
-      <td>set the TCP_NODELAY flag to disable Nagle's algorithm (default: false)</td>
-    </tr>
-    <tr>
-      <td>blockingAccept</td>
-      <td>accept connection in BLOCKING mode (default: false)</td>
-    </tr>
-    <tr>
-      <td>bufSizeKB=&lt;SIZE&gt;</td>
-      <td>TCP socket buffer size in KB (default: 16)</td>
-    </tr>
-  </table>
-  
-    </div>
+<div id="examplehttpargs-extra" class="row">
+<div class="col-md-12">
+    <h4>Usage:</h4>
+    <h5>java -cp &lt;yourapp&gt;.jar com.yourapp.Main [option1 option2 ...]</h5>
     
+    <h4>Example:</h4>
+    <h5>java -cp &lt;yourapp&gt;.jar com.yourapp.Main port=9090 address=127.0.0.1 cpus=2 workers=4 nodelay</h5>
+
+    <h3>Configuration options:</h3>
+
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>mode=(dev|production)</td>
+            <td>configure <i>dev</i> or <i>production</i> mode (default: <i>production</i> unless debug mode detected)
+            </td>
+        </tr>
+        <tr>
+            <td>secret=&lt;SECRET&gt;</td>
+            <td>configure app-specific secret token for encryption (default: null)</td>
+        </tr>
+        <tr>
+            <td>port=&lt;P&gt;</td>
+            <td>listen at port P (default: 8888)</td>
+        </tr>
+        <tr>
+            <td>address=&lt;ADDR&gt;</td>
+            <td>listen at address ADDR (default: 0.0.0.0)</td>
+        </tr>
+        <tr>
+            <td>threads=&lt;T&gt;</td>
+            <td>start T threads for the job executor service (default: 100)</td>
+        </tr>
+        <tr>
+            <td>cpus=&lt;C&gt;</td>
+            <td>optimize for C number of CPUs (default: the actual number of the CPUs)</td>
+        </tr>
+        <tr>
+            <td>workers=&lt;W&gt;</td>
+            <td>start W number of I/O workers (default: the configured number of CPUs - cpus options)</td>
+        </tr>
+        <tr>
+            <td>nodelay</td>
+            <td>set the TCP_NODELAY flag to disable Nagle's algorithm (default: false)</td>
+        </tr>
+        <tr>
+            <td>blockingAccept</td>
+            <td>accept connection in BLOCKING mode (default: false)</td>
+        </tr>
+        <tr>
+            <td>bufSizeKB=&lt;SIZE&gt;</td>
+            <td>TCP socket buffer size in KB (default: 16)</td>
+        </tr>
+    </table>
+</div>
+
+</div>
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
 </div>
 
 </div>
@@ -452,7 +650,7 @@ Hello world!
 <div class="modules-right">
 <h3 class="module-title">Rapidoid Modules:</h3>
 <div class="module-wrap">
- <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
+ <h4 class="module-title"><a href="http-fast.html"><a href="http-fast.html">rapidoid-http-fast</a></a></h4>
  <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">

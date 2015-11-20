@@ -42,19 +42,19 @@
       <div id="collapsable" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
 	  <li class="active"><a href="/">Getting started</a></li>
-	  <li><a href="community.html">Community &amp; Support</a></li>
-	  <li><a href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+	  <li><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
+	  <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
         </ul>
 
 <div class="navbar-brand navbar-right">
-				<a data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
-				<a data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
 
 				<script type="IN/Share" data-url="http://rapidoid.org/" data-counter="right"></script>
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a href="https://twitter.com/share" rel="nofollow"
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
 					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
 					data-text="#Rapidoid - New and Cool #Java web app #framework!" data-size="small">Tweet</a>
 </div>
@@ -69,6 +69,7 @@
 				<h4 id="main_subtitle">
 					<span id="rapidoid-title">Rapidoid - The No-bullshit (Web) Frameworks for Java!</span>
 				</h4>
+                <p><b>Open source (Apache license). Simple. Secure. <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">Extremely fast!</a></b></p>
 			</div>
 
 			<div class="col-md-5 col-sm-12">
@@ -94,13 +95,14 @@
 			</div>
 		</div>
 
-<!-- MODULE rapidoid-u -->
+<!-- MODULE <a href="u.html">rapidoid-u</a> -->
 
 <div class="row row-separated-nano">
   <div class="col-md-8">
 
 <div class="module-header">
-<span class="module-name badge badge-module">rapidoid-u</span> Simple &amp; Sweet Utils</div>  
+<span class="module-name badge badge-module">Rapidoid U</span> Simple &amp; Sweet Utils</div>  
+<h5><b>Self-contained. 22 KB JAR size.</b></h5>
 
 <div class="module-desc">
 The must-have utilities for every Java project! Simple and straight to the point! 
@@ -112,11 +114,11 @@ The must-have utilities for every Java project! Simple and straight to the point
   </div>
   
   <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-u</b> as Maven dependency:</div>
+        <div class="eg_title">Add <b><a href="u.html">rapidoid-u</a></b> as Maven dependency:</div>
 <pre class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-u&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;<a href="u.html">rapidoid-u</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
     &lt;<span class="_code_tag">version</span>&gt;5.0.3&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
@@ -143,20 +145,24 @@ The must-have utilities for every Java project! Simple and straight to the point
 		<pre id="exampleu.coll-code" class="code-clean">
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a list:</span>
 
-<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span>.list(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span>
+<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span>
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a set:</span>
 
-<span class="pull-left left-code">Set&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span>.set(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span>
+<span class="pull-left left-code">Set&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span>
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a map:</span>
 
-<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
 </pre>
 	</div>
 
 </div>
 
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
 
 <!-- EXAMPLE u.collutils -->
 
@@ -171,20 +177,24 @@ The must-have utilities for every Java project! Simple and straight to the point
 	<div id="exampleu.collutils-left" class="col-md-12">
 
 		<pre id="exampleu.collutils-code" class="code-clean">
-<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; words = <span class="_code_api">U</span>.list(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">30</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,30]</span><span class="object-class">ArrayList</span></span></span>
+<span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">30</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,30]</span><span class="object-class">ArrayList</span></span></span>
 
-<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span>.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
+<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span>
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> U.isEmpty utils:</span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
 </pre>
 	</div>
 
 </div>
 
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
 
 <!-- EXAMPLE u.strutils -->
 
@@ -201,33 +211,37 @@ The must-have utilities for every Java project! Simple and straight to the point
 		<pre id="exampleu.strutils-code" class="code-clean">
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Is it empty or null:</span>
 
-<span class="_code_cls">String</span> s = null;
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
+<span class="_code_cls">String</span> s = <span class="_code_kw">null</span>;
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.isEmpty(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span>
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Trim left by prefix:</span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.triml(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc/"</span><span class="object-class">String</span></span></span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.triml</span>(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc/"</span><span class="object-class">String</span></span></span>
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Trim right by suffix:</span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.trimr(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"/abc"</span><span class="object-class">String</span></span></span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.trimr</span>(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"/abc"</span><span class="object-class">String</span></span></span>
 
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Substring supporting negative positions:</span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">1</span>, <span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"b"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// same as "abcde".substring(1, 2)</span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.mid</span>(<span class="_code_str">"abcde"</span>, <span class="_code_num">1</span>, <span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"b"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// same as "abcde".substring(1, 2)</span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">2</span>, -<span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"cd"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -1 means "1 from right to left"</span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.mid</span>(<span class="_code_str">"abcde"</span>, <span class="_code_num">2</span>, -<span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"cd"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -1 means "1 from right to left"</span>
 
-<span class="pull-left left-code"><span class="_code_api">U</span>.mid(<span class="_code_str">"abcde"</span>, <span class="_code_num">0</span>, -<span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -2 means "2 from right to left"</span>
+<span class="pull-left left-code"><span class="_code_api">U</span><span class="_code_api">.mid</span>(<span class="_code_str">"abcde"</span>, <span class="_code_num">0</span>, -<span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc"</span><span class="object-class">String</span></span></span> <span class="_code_linecomm">// -2 means "2 from right to left"</span>
 </pre>
 	</div>
 
 </div>
 
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
 
 <!-- EXAMPLE u.dynamic -->
 
@@ -244,7 +258,7 @@ The must-have utilities for every Java project! Simple and straight to the point
 		<pre id="exampleu.dynamic-code" class="code-clean">
 <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Dynamic implementation of interfaces:</span>
 
-<span class="_code_cls">Dog</span> dog = <span class="_code_api">U</span>.dynamic(<span class="_code_cls">Dog</span>.<span class="_code_kw">class</span>, (m, margs) -&gt; m.getName() + <span class="_code_str">":"</span> + margs[<span class="_code_num">0</span>]);
+<span class="_code_cls">Dog</span> dog = <span class="_code_api">U</span><span class="_code_api">.dynamic</span>(<span class="_code_cls">Dog</span>.<span class="_code_kw">class</span>, (m, margs) -&gt; m.getName() + <span class="_code_str">":"</span> + margs[<span class="_code_num">0</span>]);
 
 <span class="pull-left left-code">dog.bite(<span class="_code_str">"me"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"bite:me"</span><span class="object-class">String</span></span></span>
 
@@ -265,25 +279,29 @@ The must-have utilities for every Java project! Simple and straight to the point
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 </div>
 
 <div class="col-md-2">
 <div class="modules-right">
 <h3 class="module-title">Rapidoid Modules:</h3>
 <div class="module-wrap">
- <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
+ <h4 class="module-title"><a href="http-fast.html"><a href="http-fast.html">rapidoid-http-fast</a></a></h4>
  <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
  <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
+ <h4 class="module-title"><a href="web.html"><a href="web.html">rapidoid-web</a></a></h4>
  <div class="module-box">High-level POJO Web Framework</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
+ <h4 class="module-title"><a href="u.html"><a href="u.html">rapidoid-u</a></a></h4>
  <div class="module-box">Simple &amp; Sweet Utils</div>
 </div>
 </div>

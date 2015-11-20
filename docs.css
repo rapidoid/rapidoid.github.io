@@ -213,7 +213,11 @@ pre {
 }
 
 ._code_api {
-	color: #467;
+	color: #338;
+	font-weight: bold;
+}
+
+._code_ann {
 	font-weight: bold;
 }
 
@@ -266,4 +270,15 @@ pre {
 
 pre {
 	border: none !important;
+}
+
+.text-box {
+	padding: 3px;
+	padding-bottom: 1px;
+	border: #aaa solid 1px !important;
+	border-radius: 5px;
+}
+
+.frameworks {
+	font-weight: bold;	
 }

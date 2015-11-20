@@ -42,19 +42,19 @@
       <div id="collapsable" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
 	  <li class="active"><a href="/">Getting started</a></li>
-	  <li><a href="community.html">Community &amp; Support</a></li>
-	  <li><a href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+	  <li><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
+	  <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
         </ul>
 
 <div class="navbar-brand navbar-right">
-				<a data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
-				<a data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
 
 				<script type="IN/Share" data-url="http://rapidoid.org/" data-counter="right"></script>
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a href="https://twitter.com/share" rel="nofollow"
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
 					class="twitter-share-button navbar-btn" data-url="http://rapidoid.org"
 					data-text="#Rapidoid - New and Cool #Java web app #framework!" data-size="small">Tweet</a>
 </div>
@@ -69,6 +69,7 @@
 				<h4 id="main_subtitle">
 					<span id="rapidoid-title">Rapidoid - The No-bullshit (Web) Frameworks for Java!</span>
 				</h4>
+                <p><b>Open source (Apache license). Simple. Secure. <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">Extremely fast!</a></b></p>
 			</div>
 
 			<div class="col-md-5 col-sm-12">
@@ -94,13 +95,14 @@
 			</div>
 		</div>
 
-<!-- MODULE rapidoid-web -->
+<!-- MODULE <a href="web.html">rapidoid-web</a> -->
 
 <div class="row row-separated-nano">
   <div class="col-md-8">
 
 <div class="module-header">
-<span class="module-name badge badge-module">rapidoid-web</span> High-level POJO Web Framework</div>  
+<span class="module-name badge badge-module">Rapidoid Web</span> High-level POJO Web Framework</div>  
+<h5><b></b></h5>
 
 <div class="module-desc">
 The high-level API is built on top of Rapidoid HTTP server, provides many advanced features for building modern POJO-based web applications.
@@ -112,11 +114,11 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
   </div>
   
   <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-web</b> as Maven dependency:</div>
+        <div class="eg_title">Add <b><a href="web.html">rapidoid-web</a></b> as Maven dependency:</div>
 <pre class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-web&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;<a href="web.html">rapidoid-web</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
     &lt;<span class="_code_tag">version</span>&gt;5.0.3&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
@@ -138,7 +140,17 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplehellorest-body" class="row">
 
-	<div id="examplehellorest-left" class="col-md-7">
+	<div id="examplehellorest-left" class="col-md-8">
+		<div id="examplehellorest-codedesc" class="eg_title">Main.java</div>
+		<pre id="examplehellorest-code" class="code-clean">
+<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {
+
+    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+        <span class="_code_api">Rapidoid</span><span class="_code_api">.run</span>(args);
+    }
+
+}
+</pre>
 		<div id="examplehellorest-codedesc" class="eg_title">NoBullshit.java</div>
 		<pre id="examplehellorest-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -153,7 +165,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplehellorest-right" class="col-md-5">
+    <div id="examplehellorest-right" class="col-md-4">
         <div id="examplehellorest-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hello</span>
@@ -180,6 +192,10 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE restparams -->
 
 <div id="examplerestparams-title" class="row">
@@ -190,7 +206,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplerestparams-body" class="row">
 
-	<div id="examplerestparams-left" class="col-md-7">
+	<div id="examplerestparams-left" class="col-md-8">
 		<div id="examplerestparams-codedesc" class="eg_title">SubUrlParams.java</div>
 		<pre id="examplerestparams-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -198,7 +214,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
     <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {
-        <span class="_code_kw">return</span> <span class="_code_api">U</span>.frmt(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
+        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.frmt</span>(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
     }
 
     <span class="_code_ann">@POST</span>
@@ -210,7 +226,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplerestparams-right" class="col-md-5">
+    <div id="examplerestparams-right" class="col-md-4">
         <div id="examplerestparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/Joe/50</span>
@@ -247,6 +263,10 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE restjson -->
 
 <div id="examplerestjson-title" class="row">
@@ -257,7 +277,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplerestjson-body" class="row">
 
-	<div id="examplerestjson-left" class="col-md-7">
+	<div id="examplerestjson-left" class="col-md-8">
 		<div id="examplerestjson-codedesc" class="eg_title">TextTools.java</div>
 		<pre id="examplerestjson-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -266,7 +286,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
     <span class="_code_ann">@GET</span>
     <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {
         <span class="_code_cls">String</span> big = s.toUpperCase();
-        <span class="_code_kw">return</span> <span class="_code_api">U</span>.map(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
+        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
     }
 
     <span class="_code_ann">@POST</span>
@@ -278,7 +298,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplerestjson-right" class="col-md-5">
+    <div id="examplerestjson-right" class="col-md-4">
         <div id="examplerestjson-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/abc</span>
@@ -305,6 +325,10 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE beanjson -->
 
 <div id="examplebeanjson-title" class="row">
@@ -315,7 +339,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplebeanjson-body" class="row">
 
-	<div id="examplebeanjson-left" class="col-md-7">
+	<div id="examplebeanjson-left" class="col-md-8">
 		<div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
 		<pre id="examplebeanjson-code" class="code-clean">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {
@@ -347,7 +371,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplebeanjson-right" class="col-md-5">
+    <div id="examplebeanjson-right" class="col-md-4">
         <div id="examplebeanjson-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2012&amp;title=Abc</span>
@@ -374,6 +398,10 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE restnamedparams -->
 
 <div id="examplerestnamedparams-title" class="row">
@@ -384,7 +412,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplerestnamedparams-body" class="row">
 
-	<div id="examplerestnamedparams-left" class="col-md-7">
+	<div id="examplerestnamedparams-left" class="col-md-8">
 		<div id="examplerestnamedparams-codedesc" class="eg_title">NamedParams.java</div>
 		<pre id="examplerestnamedparams-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -399,7 +427,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplerestnamedparams-right" class="col-md-5">
+    <div id="examplerestnamedparams-right" class="col-md-4">
         <div id="examplerestnamedparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?x=1&amp;y=2</span>
@@ -426,6 +454,10 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE restlistparams -->
 
 <div id="examplerestlistparams-title" class="row">
@@ -436,7 +468,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplerestlistparams-body" class="row">
 
-	<div id="examplerestlistparams-left" class="col-md-7">
+	<div id="examplerestlistparams-left" class="col-md-8">
 		<div id="examplerestlistparams-codedesc" class="eg_title">ParamsAsList.java</div>
 		<pre id="examplerestlistparams-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -451,7 +483,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplerestlistparams-right" class="col-md-5">
+    <div id="examplerestlistparams-right" class="col-md-4">
         <div id="examplerestlistparams-results" class="results">
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/echo/2015/Mart/20</span>
@@ -478,6 +510,10 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE restmapparams -->
 
 <div id="examplerestmapparams-title" class="row">
@@ -488,7 +524,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplerestmapparams-body" class="row">
 
-	<div id="examplerestmapparams-left" class="col-md-7">
+	<div id="examplerestmapparams-left" class="col-md-8">
 		<div id="examplerestmapparams-codedesc" class="eg_title">ParamsAsMap.java</div>
 		<pre id="examplerestmapparams-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -503,7 +539,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplerestmapparams-right" class="col-md-5">
+    <div id="examplerestmapparams-right" class="col-md-4">
         <div id="examplerestmapparams-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?x=1&amp;y=23</span>
@@ -530,6 +566,10 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE hello -->
 
 <div id="examplehello-title" class="row">
@@ -540,7 +580,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 <div id="examplehello-body" class="row">
 
-	<div id="examplehello-left" class="col-md-7">
+	<div id="examplehello-left" class="col-md-8">
 		<div id="examplehello-codedesc" class="eg_title">Hello.java</div>
 		<pre id="examplehello-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -555,7 +595,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 </pre>
 	</div>
 
-    <div id="examplehello-right" class="col-md-5">
+    <div id="examplehello-right" class="col-md-4">
         <div id="examplehello-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -632,6 +672,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE hi -->
 
 <div id="examplehi-title" class="row">
@@ -642,7 +686,7 @@ Hello, world!
 
 <div id="examplehi-body" class="row">
 
-	<div id="examplehi-left" class="col-md-7">
+	<div id="examplehi-left" class="col-md-8">
 		<div id="examplehi-codedesc" class="eg_title">YourName.java</div>
 		<pre id="examplehi-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -657,7 +701,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="examplehi-right" class="col-md-5">
+    <div id="examplehi-right" class="col-md-4">
         <div id="examplehi-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi/Rapidoid</span>
@@ -734,6 +778,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE raw -->
 
 <div id="exampleraw-title" class="row">
@@ -744,13 +792,13 @@ Hello, world!
 
 <div id="exampleraw-body" class="row">
 
-	<div id="exampleraw-left" class="col-md-7">
+	<div id="exampleraw-left" class="col-md-8">
 		<div id="exampleraw-codedesc" class="eg_title">Simple.java</div>
 		<pre id="exampleraw-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Simple</span> {
 
-    <span class="_code_ann">@Page</span>(raw = true)
+    <span class="_code_ann">@Page</span>(raw = <span class="_code_kw">true</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> simple() {
         <span class="_code_kw">return</span> <span class="_code_str">"&lt;p&gt;&lt;b&gt;RAW&lt;/b&gt; HTML!&lt;p&gt;"</span>;
     }
@@ -759,7 +807,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleraw-right" class="col-md-5">
+    <div id="exampleraw-right" class="col-md-4">
         <div id="exampleraw-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/simple</span>
@@ -776,6 +824,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE showmovie -->
 
 <div id="exampleshowmovie-title" class="row">
@@ -786,7 +838,7 @@ Hello, world!
 
 <div id="exampleshowmovie-body" class="row">
 
-	<div id="exampleshowmovie-left" class="col-md-7">
+	<div id="exampleshowmovie-left" class="col-md-8">
 		<div id="exampleshowmovie-codedesc" class="eg_title">Movie.java</div>
 		<pre id="exampleshowmovie-code" class="code-clean">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
@@ -812,7 +864,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleshowmovie-right" class="col-md-5">
+    <div id="exampleshowmovie-right" class="col-md-4">
         <div id="exampleshowmovie-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -868,6 +920,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE editmovie -->
 
 <div id="exampleeditmovie-title" class="row">
@@ -878,7 +934,7 @@ Hello, world!
 
 <div id="exampleeditmovie-body" class="row">
 
-	<div id="exampleeditmovie-left" class="col-md-7">
+	<div id="exampleeditmovie-left" class="col-md-8">
 		<div id="exampleeditmovie-codedesc" class="eg_title">Movie.java</div>
 		<pre id="exampleeditmovie-code" class="code-clean">
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
@@ -905,7 +961,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleeditmovie-right" class="col-md-5">
+    <div id="exampleeditmovie-right" class="col-md-4">
         <div id="exampleeditmovie-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -961,6 +1017,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE paramgrid -->
 
 <div id="exampleparamgrid-title" class="row">
@@ -971,13 +1031,13 @@ Hello, world!
 
 <div id="exampleparamgrid-body" class="row">
 
-	<div id="exampleparamgrid-left" class="col-md-7">
+	<div id="exampleparamgrid-left" class="col-md-8">
 		<div id="exampleparamgrid-codedesc" class="eg_title">ParamGrid.java</div>
 		<pre id="exampleparamgrid-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
 <span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamGrid</span> {
 
-    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"Grid of request parameters"</span>)
+    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"Request parameters"</span>)
     <span class="_code_kw">public</span> <span class="_code_cls">Object</span> table(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
         <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.grid(params);
     }
@@ -986,7 +1046,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleparamgrid-right" class="col-md-5">
+    <div id="exampleparamgrid-right" class="col-md-4">
         <div id="exampleparamgrid-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/table?name=Highlander&amp;age=700&amp;weapon=sword</span>
@@ -1002,7 +1062,7 @@ Hello, world!
             <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Grid of request parameters</a>
+            <a class="navbar-brand" href="/">Request parameters</a>
         </div>
 
         <div id="collapsable" class="collapse navbar-collapse">
@@ -1045,6 +1105,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE injection -->
 
 <div id="exampleinjection-title" class="row">
@@ -1055,7 +1119,7 @@ Hello, world!
 
 <div id="exampleinjection-body" class="row">
 
-	<div id="exampleinjection-left" class="col-md-7">
+	<div id="exampleinjection-left" class="col-md-8">
 		<div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
 		<pre id="exampleinjection-code" class="code-clean">
 <span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/bar"</span>)
@@ -1098,7 +1162,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="exampleinjection-right" class="col-md-5">
+    <div id="exampleinjection-right" class="col-md-4">
         <div id="exampleinjection-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
@@ -1135,6 +1199,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE layout -->
 
 <div id="examplelayout-title" class="row">
@@ -1145,7 +1213,7 @@ Hello, world!
 
 <div id="examplelayout-body" class="row">
 
-	<div id="examplelayout-left" class="col-md-7">
+	<div id="examplelayout-left" class="col-md-8">
 		<div id="examplelayout-codedesc" class="eg_title">BootstrapLayout.java</div>
 		<pre id="examplelayout-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -1163,7 +1231,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="examplelayout-right" class="col-md-5">
+    <div id="examplelayout-right" class="col-md-4">
         <div id="examplelayout-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -1220,6 +1288,10 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE highlighting -->
 
 <div id="examplehighlighting-title" class="row">
@@ -1230,7 +1302,7 @@ Hello, world!
 
 <div id="examplehighlighting-body" class="row">
 
-	<div id="examplehighlighting-left" class="col-md-7">
+	<div id="examplehighlighting-left" class="col-md-8">
 		<div id="examplehighlighting-codedesc" class="eg_title">Highlighting.java</div>
 		<pre id="examplehighlighting-code" class="code-clean">
 <span class="_code_ann">@Controller</span>
@@ -1245,7 +1317,7 @@ Hello, world!
 </pre>
 	</div>
 
-    <div id="examplehighlighting-right" class="col-md-5">
+    <div id="examplehighlighting-right" class="col-md-4">
         <div id="examplehighlighting-results" class="results">
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -1287,21 +1359,105 @@ Hello, world!
 </div>
 
 
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE webargs -->
+
+<div id="examplewebargs-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">17</span> Server Configuration</div>
+	</div>
+</div>
+
+<div id="examplewebargs-body" class="row">
+
+	<div id="examplewebargs-left" class="col-md-12">
+	</div>
+
+</div>
+
+<div id="examplewebargs-extra" class="row">
+<div class="col-md-12">
+    <h4>Usage:</h4>
+    <h5>java -cp &lt;yourapp&gt;.jar com.yourapp.Main [option1 option2 ...]</h5>
+    
+    <h4>Example:</h4>
+    <h5>java -cp &lt;yourapp&gt;.jar com.yourapp.Main port=9090 address=127.0.0.1 cpus=2 workers=4 nodelay</h5>
+
+    <h3>Configuration options:</h3>
+
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>mode=(dev|production)</td>
+            <td>configure <i>dev</i> or <i>production</i> mode (default: <i>production</i> unless debug mode detected)
+            </td>
+        </tr>
+        <tr>
+            <td>secret=&lt;SECRET&gt;</td>
+            <td>configure app-specific secret token for encryption (default: null)</td>
+        </tr>
+        <tr>
+            <td>port=&lt;P&gt;</td>
+            <td>listen at port P (default: 8888)</td>
+        </tr>
+        <tr>
+            <td>address=&lt;ADDR&gt;</td>
+            <td>listen at address ADDR (default: 0.0.0.0)</td>
+        </tr>
+        <tr>
+            <td>threads=&lt;T&gt;</td>
+            <td>start T threads for the job executor service (default: 100)</td>
+        </tr>
+        <tr>
+            <td>cpus=&lt;C&gt;</td>
+            <td>optimize for C number of CPUs (default: the actual number of the CPUs)</td>
+        </tr>
+        <tr>
+            <td>workers=&lt;W&gt;</td>
+            <td>start W number of I/O workers (default: the configured number of CPUs - cpus options)</td>
+        </tr>
+        <tr>
+            <td>nodelay</td>
+            <td>set the TCP_NODELAY flag to disable Nagle's algorithm (default: false)</td>
+        </tr>
+        <tr>
+            <td>blockingAccept</td>
+            <td>accept connection in BLOCKING mode (default: false)</td>
+        </tr>
+        <tr>
+            <td>bufSizeKB=&lt;SIZE&gt;</td>
+            <td>TCP socket buffer size in KB (default: 16)</td>
+        </tr>
+    </table>
+</div>
+
+</div>
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 </div>
 
 <div class="col-md-2">
 <div class="modules-right">
 <h3 class="module-title">Rapidoid Modules:</h3>
 <div class="module-wrap">
- <h4 class="module-title"><a href="http-fast.html">rapidoid-http-fast</a></h4>
+ <h4 class="module-title"><a href="http-fast.html"><a href="http-fast.html">rapidoid-http-fast</a></a></h4>
  <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html">rapidoid-fluent</a></h4>
+ <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
  <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="web.html">rapidoid-web</a></h4>
+ <h4 class="module-title"><a href="web.html"><a href="web.html">rapidoid-web</a></a></h4>
  <div class="module-box">High-level POJO Web Framework</div>
 </div>
 <div class="module-wrap">
