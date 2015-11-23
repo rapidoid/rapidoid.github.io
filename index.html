@@ -19,7 +19,7 @@
 <link href="rapidoid.min.css" type="text/css" rel="stylesheet" />
 <link href="theme-default.css" type="text/css" rel="stylesheet" />
 
-<title>Rapidoid - The No-bullshit (Web) Frameworks for Java!</title>
+<title>Rapidoid - The No-bullshit Web Framework for Java!</title>
 
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -54,9 +54,7 @@
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
-					class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org"
-					data-text="Released #Rapidoid v5.0 - The No-bullshit #Web Framework for #Java!" data-size="small">Tweet</a>
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0 - The No-bullshit #Web Framework for #Java!" data-size="small">Tweet</a>
 </div>
       </div>
     </div>
@@ -67,7 +65,7 @@
 		<div class="row">
 			<div class="col-md-7 col-sm-12">
 				<h4 id="main_subtitle">
-					<span id="rapidoid-title">Rapidoid - The No-bullshit (Web) Frameworks for Java!</span>
+					<span id="rapidoid-title">Rapidoid - The No-bullshit Web Framework for Java!</span>
 				</h4>
                 <p><b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). Simple. Secure. <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">Extremely fast!</a></b></p>
 			</div>
@@ -92,6 +90,7 @@
 </div>
 <!--End mc_embed_signup-->
 
+<div id="group-email" class="pull-right">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></div>
 			</div>
 		</div>
 
@@ -105,8 +104,9 @@
 Rapidoid consists of several de-coupled modules/frameworks which can be used separately or together:
 <span class="frameworks">
 <a rel="nofollow" href="http-fast.html">http-fast</a>, 
-<a rel="nofollow" href="fluent.html">fluent</a>, 
+<a rel="nofollow" href="gui.html">gui</a>, 
 <a rel="nofollow" href="web.html">web</a>, 
+<a rel="nofollow" href="fluent.html">fluent</a>, 
 <a rel="nofollow" href="u.html">u</a>, 
 </span>
 and more...
@@ -122,7 +122,7 @@ and more...
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;<a href="web.html">rapidoid-web</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.3&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.4&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -145,11 +145,16 @@ and more...
 
 	<div id="examplehttpsimple-left" class="col-md-8">
 
-		<pre id="examplehttpsimple-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span>
 
-<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"msg"</span>, msg -&gt; msg.length());
-</pre>
+<!-- START CODE -->
+<div id="examplehttpsimple-code" class="code-clean">
+<div class="comment-line clearfix"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"msg"</span>, msg <span class="_code_lambda">-&gt;</span> msg.length());</div>
+
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplehttpsimple-right" class="col-md-4">
@@ -185,11 +190,16 @@ and more...
 
 	<div id="examplehttpsimplegui-left" class="col-md-8">
 
-		<pre id="examplehttpsimplegui-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span>
 
-<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"Hello world!"</span>);
-</pre>
+<!-- START CODE -->
+<div id="examplehttpsimplegui-code" class="code-clean">
+<div class="comment-line clearfix"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"Hello world!"</span>);</div>
+
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplehttpsimplegui-right" class="col-md-4">
@@ -225,31 +235,36 @@ Hello world!
 
 	<div id="examplefluent.mix-left" class="col-md-12">
 
-		<pre id="examplefluent.mix-code" class="code-clean">
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Manipulating lists or sets:</span>
 
-<span class="pull-left left-code">List&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">New</span><span class="_code_api">.list</span>(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+<!-- START CODE -->
+<div id="examplefluent.mix-code" class="code-clean">
+<div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Manipulating lists or sets:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">New</span><span class="_code_api">.list</span>(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Find</span><span class="_code_api">.allOf</span>(items)<span class="_code_api">.where</span>(s <span class="_code_lambda">-&gt;</span> s.length() &gt; <span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.map</span>(items)<span class="_code_api">.to</span>(s <span class="_code_lambda">-&gt;</span> s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[1,5,2]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.reduce</span>(items)<span class="_code_api">.by</span>((a, b) <span class="_code_lambda">-&gt;</span> a + <span class="_code_str">":"</span> + b)<span class="_code_api">.orElse</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"a:bbbbb:cc"</span><span class="object-class">String</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.group</span>(items)<span class="_code_api">.by</span>(s <span class="_code_lambda">-&gt;</span> s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":["a"],"2":["cc"],"5":["bbbbb"]}</span><span class="object-class">HashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Manipulating maps:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">New</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.map</span>(nums)<span class="_code_api">.to</span>((k, v) <span class="_code_lambda">-&gt;</span> k * <span class="_code_num">1000</span>, (k, v) <span class="_code_lambda">-&gt;</span> v.toUpperCase());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2000":"TWO","3000":"THREE","1000":"ONE"}</span><span class="object-class">HashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.group</span>(nums)<span class="_code_api">.by</span>((k, v) <span class="_code_lambda">-&gt;</span> k % <span class="_code_num">2</span> == <span class="_code_num">0</span> ? <span class="_code_str">"even"</span> : <span class="_code_str">"odd"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"even":{"2":"two"},"odd":{"1":"one","3":"three"}}</span><span class="object-class">HashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> interface Flow extends Stream { with extras }:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Flow</span><span class="_code_api">.of</span>(<span class="_code_str">"Hi"</span>, <span class="_code_str">"there"</span>, <span class="_code_str">"X"</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> c + <span class="_code_str">"!"</span>)<span class="_code_api">.filter</span>(s <span class="_code_lambda">-&gt;</span> s.length() &lt;= <span class="_code_num">3</span>)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["Hi!","X!"]</span><span class="object-class">ArrayList</span></span></span></div>
 
-<span class="pull-left left-code"><span class="_code_api">Find</span><span class="_code_api">.allOf</span>(items)<span class="_code_api">.where</span>(s -&gt; s.length() &gt; <span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["bbbbb","cc"]</span><span class="object-class">ArrayList</span></span></span>
+</div>
+<!-- END CODE -->
 
-<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.map</span>(items)<span class="_code_api">.to</span>(s -&gt; s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[1,5,2]</span><span class="object-class">ArrayList</span></span></span>
-
-<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.reduce</span>(items)<span class="_code_api">.by</span>((a, b) -&gt; a + <span class="_code_str">":"</span> + b)<span class="_code_api">.orElse</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"a:bbbbb:cc"</span><span class="object-class">String</span></span></span>
-
-<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.group</span>(items)<span class="_code_api">.by</span>(s -&gt; s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":["a"],"2":["cc"],"5":["bbbbb"]}</span><span class="object-class">HashMap</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Manipulating maps:</span>
-
-<span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">New</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span>
-
-<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.map</span>(nums)<span class="_code_api">.to</span>((k, v) -&gt; k * <span class="_code_num">1000</span>, (k, v) -&gt; v.toUpperCase());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2000":"TWO","3000":"THREE","1000":"ONE"}</span><span class="object-class">HashMap</span></span></span>
-
-<span class="pull-left left-code"><span class="_code_api">Do</span><span class="_code_api">.group</span>(nums)<span class="_code_api">.by</span>((k, v) -&gt; k % <span class="_code_num">2</span> == <span class="_code_num">0</span> ? <span class="_code_str">"even"</span> : <span class="_code_str">"odd"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"even":{"2":"two"},"odd":{"1":"one","3":"three"}}</span><span class="object-class">HashMap</span></span></span>
-
-<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> interface Flow extends Stream { with extras }:</span>
-
-<span class="pull-left left-code"><span class="_code_api">Flow</span><span class="_code_api">.of</span>(<span class="_code_str">"Hi"</span>, <span class="_code_str">"there"</span>, <span class="_code_str">"X"</span>)<span class="_code_api">.map</span>(c -&gt; c + <span class="_code_str">"!"</span>)<span class="_code_api">.filter</span>(s -&gt; s.length() &lt;= <span class="_code_num">3</span>)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["Hi!","X!"]</span><span class="object-class">ArrayList</span></span></span>
-</pre>
 	</div>
 
 </div>
@@ -271,23 +286,28 @@ Hello world!
 
 	<div id="examplerestjson-left" class="col-md-8">
 		<div id="examplerestjson-codedesc" class="eg_title">TextTools.java</div>
-		<pre id="examplerestjson-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">TextTools</span> {
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {
-        <span class="_code_cls">String</span> big = s.toUpperCase();
-        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
-    }
+<!-- START CODE -->
+<div id="examplerestjson-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">TextTools</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> big = s.toUpperCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span>[] parts(<span class="_code_cls">String</span> text) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> text.split(<span class="_code_str">"-"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-    <span class="_code_ann">@POST</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span>[] parts(<span class="_code_cls">String</span> text) {
-        <span class="_code_kw">return</span> text.split(<span class="_code_str">"-"</span>);
-    }
+</div>
+<!-- END CODE -->
 
-}
-</pre>
 	</div>
 
     <div id="examplerestjson-right" class="col-md-4">
@@ -333,64 +353,69 @@ Hello world!
 
 	<div id="examplehttpcfgfull-left" class="col-md-8">
 		<div id="examplehttpcfgfull-codedesc" class="eg_title">Main.java</div>
-		<pre id="examplehttpcfgfull-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
 
-  <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
+<!-- START CODE -->
+<div id="examplehttpcfgfull-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> <span class="_code_kw">extends</span> <span class="_code_api">GUI</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Conf</span><span class="_code_api">.args</span>(args);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> The application will manage this configuration:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cfg = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"title"</span>, <span class="_code_str">"App"</span>, <span class="_code_str">"user"</span>, <span class="_code_str">"u1"</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> RESTful service for configuration retrieval:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/cfg"</span>)<span class="_code_api">.json</span>(cfg);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">PageMenu</span> menu = <span class="_code_cls">PageMenu</span>.from(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Home"</span>, <span class="_code_str">"/"</span>, <span class="_code_str">"Group"</span>, <span class="_code_str">"/group"</span>));</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Wrap every result into a page:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.defaultWrap</span>((data, next) <span class="_code_lambda">-&gt;</span> next.invoke(x <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> page(x).menu(menu).title(cfg<span class="_code_api">.get</span>(<span class="_code_str">"title"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}));</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Create buttons to filter by starting letter:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">List</span>&lt;<span class="_code_cls">Btn</span>&gt; letters = <span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'z'</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> btn(c).link<span class="_code_api">To</span>(<span class="_code_str">"/find?p="</span> + c);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;})<span class="_code_api">.toList</span>();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Display the configuration entries at the home page:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.gui</span>(req <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">KVGrid</span> grid = grid(cfg)<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> a(k).href(<span class="_code_str">"/edit?k="</span> + k));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(letters, grid);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Group the configuration entries by the starting letter:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/group"</span>)<span class="_code_api">.gui</span>(req <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">Do</span><span class="_code_api">.map</span>(<span class="_code_api">Do</span><span class="_code_api">.group</span>(cfg)<span class="_code_api">.by</span>((k, v) <span class="_code_lambda">-&gt;</span> k.charAt(<span class="_code_num">0</span>)))</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="_code_api">.toList</span>((k, v) <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(h3(k), grid(v)));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Edit configuration entries:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/edit"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"k"</span>, k <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Btn</span> ok = btn(<span class="_code_str">"Update"</span>).onClick(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">Log</span>.info(<span class="_code_str">"Updated!"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> edit(cfg, k)<span class="_code_api">.buttons</span>(ok, btn(<span class="_code_str">"Back"</span>).link<span class="_code_api">To</span>(<span class="_code_str">"/"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Search configuration entries by prefix:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/find"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"p"</span>, p <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> grid(<span class="_code_api">Find</span><span class="_code_api">.allOf</span>(cfg)<span class="_code_api">.where</span>((k, v) <span class="_code_lambda">-&gt;</span> k.startsWith(p)));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+<div class="example-line clearfix">&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">}</div>
 
-    <span class="_code_api">Conf</span>.args(args);
+</div>
+<!-- END CODE -->
 
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> The application will manage this configuration:</span>
-
-    <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cfg = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"title"</span>, <span class="_code_str">"App"</span>, <span class="_code_str">"user"</span>, <span class="_code_str">"u1"</span>);
-
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> RESTful service for configuration retrieval:</span>
-
-    <span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/cfg"</span>)<span class="_code_api">.json</span>(cfg);
-
-    <span class="_code_cls">PageMenu</span> menu = <span class="_code_cls">PageMenu</span>.from(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Home"</span>, <span class="_code_str">"/"</span>, <span class="_code_str">"Group"</span>, <span class="_code_str">"/group"</span>));
-
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Wrap every result into a page:</span>
-
-    <span class="_code_api">On</span><span class="_code_api">.defaultWrap</span>((data, next) -&gt; next.invoke(x -&gt; {
-        <span class="_code_kw">return</span> page(x).menu(menu).title(cfg<span class="_code_api">.get</span>(<span class="_code_str">"title"</span>));
-    }));
-
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Create buttons to filter by starting letter:</span>
-
-    <span class="_code_cls">List</span>&lt;<span class="_code_cls">Btn</span>&gt; letters = <span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'z'</span>)<span class="_code_api">.map</span>(c -&gt; {
-        <span class="_code_kw">return</span> btn(c).link<span class="_code_api">To</span>(<span class="_code_str">"/find?p="</span> + c);
-    })<span class="_code_api">.toList</span>();
-
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Display the configuration entries at the home page:</span>
-
-    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.gui</span>(req -&gt; {
-        <span class="_code_cls">KVGrid</span> grid = grid(cfg).keyView(k -&gt; a(k).href(<span class="_code_str">"/edit?k="</span> + k));
-        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(letters, grid);
-    });
-
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Group the configuration entries by the starting letter:</span>
-
-    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/group"</span>)<span class="_code_api">.gui</span>(req -&gt; {
-        <span class="_code_kw">return</span> <span class="_code_api">Do</span><span class="_code_api">.map</span>(<span class="_code_api">Do</span><span class="_code_api">.group</span>(cfg)<span class="_code_api">.by</span>((k, v) -&gt; k.charAt(<span class="_code_num">0</span>)))
-                 <span class="_code_api">.toList</span>((k, v) -&gt; <span class="_code_api">U</span><span class="_code_api">.list</span>(h3(k), grid(v)));
-    });
-
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Edit configuration entries:</span>
-    
-    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/edit"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"k"</span>, k -&gt; {
-        <span class="_code_cls">Btn</span> ok = btn(<span class="_code_str">"Update"</span>).onClick(() -&gt; <span class="_code_cls">Log</span>.info(<span class="_code_str">"Updated!"</span>));
-        <span class="_code_kw">return</span> edit(cfg, k).buttons(ok, btn(<span class="_code_str">"Back"</span>).link<span class="_code_api">To</span>(<span class="_code_str">"/"</span>));
-    });
-    
-    <span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Search configuration entries by prefix:</span>
-
-    <span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/find"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"p"</span>, p -&gt; {
-        <span class="_code_kw">return</span> grid(<span class="_code_api">Find</span><span class="_code_api">.allOf</span>(cfg)<span class="_code_api">.where</span>((k, v) -&gt; k.startsWith(p)));
-    });
-  }
-}
-</pre>
 	</div>
 
     <div id="examplehttpcfgfull-right" class="col-md-4">
@@ -411,8 +436,6 @@ Hello world!
 
 <title>App</title>
 
-
-
 <link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
 <link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
 <link href="/rapidoid.min.css" rel="stylesheet">
@@ -425,7 +448,6 @@ Hello world!
 <!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
 
 <script>
-
 
 </script>
 
@@ -457,13 +479,9 @@ Hello world!
                 </li>
             </ul>
 
-
 <!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
-
-
         </div>
-
 
     </div>
 </nav>
@@ -516,7 +534,6 @@ Hello world!
   </table>
 </div>
 
-
   </div>
 
   <div compile="ajaxBodyContent" ng-if="ajaxBodyContent"></div>
@@ -536,7 +553,6 @@ Hello world!
   </div>
 </div>
 
-
 <script src="/jquery-2.1.4.min.js"></script>
 <script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
 <script src="/angular-1.4.3.min.js"></script>
@@ -544,15 +560,11 @@ Hello world!
 
 <script src="/app.js"></script>
 
-
 <!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
 
 </body>
 
-
-
 </html>
-
 
 <!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
@@ -583,8 +595,6 @@ Hello world!
 
 <title>App</title>
 
-
-
 <link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
 <link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
 <link href="/rapidoid.min.css" rel="stylesheet">
@@ -597,7 +607,6 @@ Hello world!
 <!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
 
 <script>
-
 
 </script>
 
@@ -629,13 +638,9 @@ Hello world!
                 </li>
             </ul>
 
-
 <!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
-
-
         </div>
-
 
     </div>
 </nav>
@@ -666,7 +671,6 @@ Hello world!
   </table>
 </div>
 
-
   </div>
 
   <div compile="ajaxBodyContent" ng-if="ajaxBodyContent"></div>
@@ -686,7 +690,6 @@ Hello world!
   </div>
 </div>
 
-
 <script src="/jquery-2.1.4.min.js"></script>
 <script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
 <script src="/angular-1.4.3.min.js"></script>
@@ -694,15 +697,11 @@ Hello world!
 
 <script src="/app.js"></script>
 
-
 <!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
 
 </body>
 
-
-
 </html>
-
 
 <!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
@@ -723,8 +722,6 @@ Hello world!
 
 <title>App</title>
 
-
-
 <link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
 <link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
 <link href="/rapidoid.min.css" rel="stylesheet">
@@ -737,7 +734,6 @@ Hello world!
 <!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
 
 <script>
-
 
 </script>
 
@@ -769,13 +765,9 @@ Hello world!
                 </li>
             </ul>
 
-
 <!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
-
-
         </div>
-
 
     </div>
 </nav>
@@ -794,7 +786,6 @@ Hello world!
     </div>
   </form>
 </div>
-
 
   </div>
 
@@ -815,7 +806,6 @@ Hello world!
   </div>
 </div>
 
-
 <script src="/jquery-2.1.4.min.js"></script>
 <script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
 <script src="/angular-1.4.3.min.js"></script>
@@ -823,15 +813,11 @@ Hello world!
 
 <script src="/app.js"></script>
 
-
 <!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
 
 </body>
 
-
-
 </html>
-
 
 <!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
@@ -852,8 +838,6 @@ Hello world!
 
 <title>App</title>
 
-
-
 <link href="/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
 <link href="/font-awesome/css/font-awesome-4.4.0.min.css" rel="stylesheet">
 <link href="/rapidoid.min.css" rel="stylesheet">
@@ -866,7 +850,6 @@ Hello world!
 <!-- CREATE A RESOURCE FILE "partials/page-head.html" TO REPLACE THIS LINE -->
 
 <script>
-
 
 </script>
 
@@ -898,13 +881,9 @@ Hello world!
                 </li>
             </ul>
 
-
 <!-- CREATE A RESOURCE FILE "partials/navbar-custom.html" TO REPLACE THIS LINE -->
 
-
-
         </div>
-
 
     </div>
 </nav>
@@ -922,7 +901,6 @@ Hello world!
     </tr>
   </table>
 </div>
-
 
   </div>
 
@@ -943,7 +921,6 @@ Hello world!
   </div>
 </div>
 
-
 <script src="/jquery-2.1.4.min.js"></script>
 <script src="/bootstrap/js/bootstrap-3.3.5.min.js"></script>
 <script src="/angular-1.4.3.min.js"></script>
@@ -951,15 +928,11 @@ Hello world!
 
 <script src="/app.js"></script>
 
-
 <!-- CREATE A RESOURCE FILE "partials/page-tail.html" TO REPLACE THIS LINE -->
 
 </body>
 
-
-
 </html>
-
 
 <!-- EXAMPLE#httpcfgfull HTML END HERE -->
                 </div>
@@ -983,12 +956,16 @@ Hello world!
  <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
- <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
+ <h4 class="module-title"><a href="gui.html"><a href="gui.html">rapidoid-gui</a></a></h4>
+ <div class="module-box">Web GUI Components (Bootstrap-based)</div>
 </div>
 <div class="module-wrap">
  <h4 class="module-title"><a href="web.html"><a href="web.html">rapidoid-web</a></a></h4>
  <div class="module-box">High-level POJO Web Framework</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
+ <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
 </div>
 <div class="module-wrap">
  <h4 class="module-title"><a href="u.html"><a href="u.html">rapidoid-u</a></a></h4>
@@ -997,6 +974,12 @@ Hello world!
 </div>
 </div>
 
+</div>
+
+<div class="row">
+<div class="col-md-12">
+    <div class="page-footer">Copyright (C) 2014 - 2015 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors</div>
+</div>
 </div>
 
 </div> <!-- container -->

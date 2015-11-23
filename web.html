@@ -54,9 +54,7 @@
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
-					class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org"
-					data-text="Released #Rapidoid v5.0 - The No-bullshit #Web Framework for #Java!" data-size="small">Tweet</a>
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0 - The No-bullshit #Web Framework for #Java!" data-size="small">Tweet</a>
 </div>
       </div>
     </div>
@@ -67,7 +65,7 @@
 		<div class="row">
 			<div class="col-md-7 col-sm-12">
 				<h4 id="main_subtitle">
-					<span id="rapidoid-title">Rapidoid - The No-bullshit (Web) Frameworks for Java!</span>
+					<span id="rapidoid-title">Rapidoid - The No-bullshit Web Framework for Java!</span>
 				</h4>
                 <p><b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). Simple. Secure. <a rel="nofollow" href="https://www.techempower.com/benchmarks/previews/round11/#section=data-r11&hw=peak&test=plaintext">Extremely fast!</a></b></p>
 			</div>
@@ -92,6 +90,7 @@
 </div>
 <!--End mc_embed_signup-->
 
+<div id="group-email" class="pull-right">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></div>
 			</div>
 		</div>
 
@@ -119,7 +118,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;<a href="web.html">rapidoid-web</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.3&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.4&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -142,27 +141,37 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplehellorest-left" class="col-md-8">
 		<div id="examplehellorest-codedesc" class="eg_title">Main.java</div>
-		<pre id="examplehellorest-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {
 
-    <span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {
-        <span class="_code_api">Rapidoid</span><span class="_code_api">.run</span>(args);
-    }
+<!-- START CODE -->
+<div id="examplehellorest-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 		<div id="examplehellorest-codedesc" class="eg_title">NoBullshit.java</div>
-		<pre id="examplehellorest-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NoBullshit</span> {
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
-    }
+<!-- START CODE -->
+<div id="examplehellorest-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NoBullshit</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplehellorest-right" class="col-md-4">
@@ -208,22 +217,27 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplerestparams-left" class="col-md-8">
 		<div id="examplerestparams-codedesc" class="eg_title">SubUrlParams.java</div>
-		<pre id="examplerestparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {
-        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.frmt</span>(<span class="_code_str">"Hey %s (%s)"</span>, name, age);
-    }
+<!-- START CODE -->
+<div id="examplerestparams-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.frmt</span>(<span class="_code_str">"Hey %s (%s)"</span>, name, age);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> size(<span class="_code_cls">String</span> s) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> s.length();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-    <span class="_code_ann">@POST</span>
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> size(<span class="_code_cls">String</span> s) {
-        <span class="_code_kw">return</span> s.length();
-    }
+</div>
+<!-- END CODE -->
 
-}
-</pre>
 	</div>
 
     <div id="examplerestparams-right" class="col-md-4">
@@ -279,23 +293,28 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplerestjson-left" class="col-md-8">
 		<div id="examplerestjson-codedesc" class="eg_title">TextTools.java</div>
-		<pre id="examplerestjson-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">TextTools</span> {
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {
-        <span class="_code_cls">String</span> big = s.toUpperCase();
-        <span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);
-    }
+<!-- START CODE -->
+<div id="examplerestjson-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">TextTools</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> big = s.toUpperCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span>[] parts(<span class="_code_cls">String</span> text) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> text.split(<span class="_code_str">"-"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-    <span class="_code_ann">@POST</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span>[] parts(<span class="_code_cls">String</span> text) {
-        <span class="_code_kw">return</span> text.split(<span class="_code_str">"-"</span>);
-    }
+</div>
+<!-- END CODE -->
 
-}
-</pre>
 	</div>
 
     <div id="examplerestjson-right" class="col-md-4">
@@ -341,34 +360,44 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplebeanjson-left" class="col-md-8">
 		<div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
-		<pre id="examplebeanjson-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {
 
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Untitled"</span>;
+<!-- START CODE -->
+<div id="examplebeanjson-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Untitled"</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">int</span> year;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> getYear() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> year;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> setYear(<span class="_code_kw">int</span> year) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">this</span>.year = year;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">}</div>
 
-    <span class="_code_kw">private</span> <span class="_code_kw">int</span> year;
+</div>
+<!-- END CODE -->
 
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> getYear() {
-        <span class="_code_kw">return</span> year;
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_kw">void</span> setYear(<span class="_code_kw">int</span> year) {
-        <span class="_code_kw">this</span>.year = year;
-    }
-}
-</pre>
 		<div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
-		<pre id="examplebeanjson-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {
-        <span class="_code_kw">return</span> book;
-    }
+<!-- START CODE -->
+<div id="examplebeanjson-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> book;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplebeanjson-right" class="col-md-4">
@@ -414,17 +443,22 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplerestnamedparams-left" class="col-md-8">
 		<div id="examplerestnamedparams-codedesc" class="eg_title">NamedParams.java</div>
-		<pre id="examplerestnamedparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NamedParams</span> {
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> sum(<span class="_code_ann">@Param</span>(<span class="_code_str">"x"</span>) <span class="_code_kw">int</span> x, <span class="_code_ann">@Param</span>(<span class="_code_str">"y"</span>) <span class="_code_kw">int</span> y) {
-        <span class="_code_kw">return</span> x + y;
-    }
+<!-- START CODE -->
+<div id="examplerestnamedparams-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NamedParams</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> sum(<span class="_code_ann">@Param</span>(<span class="_code_str">"x"</span>) <span class="_code_kw">int</span> x, <span class="_code_ann">@Param</span>(<span class="_code_str">"y"</span>) <span class="_code_kw">int</span> y) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> x + y;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplerestnamedparams-right" class="col-md-4">
@@ -470,17 +504,22 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplerestlistparams-left" class="col-md-8">
 		<div id="examplerestlistparams-codedesc" class="eg_title">ParamsAsList.java</div>
-		<pre id="examplerestlistparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsList</span> {
 
-    <span class="_code_ann">@POST</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; params) {
-        <span class="_code_kw">return</span> params;
-    }
+<!-- START CODE -->
+<div id="examplerestlistparams-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsList</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; params) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> params;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplerestlistparams-right" class="col-md-4">
@@ -526,17 +565,22 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplerestmapparams-left" class="col-md-8">
 		<div id="examplerestmapparams-codedesc" class="eg_title">ParamsAsMap.java</div>
-		<pre id="examplerestmapparams-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsMap</span> {
 
-    <span class="_code_ann">@GET</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
-        <span class="_code_kw">return</span> params;
-    }
+<!-- START CODE -->
+<div id="examplerestmapparams-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamsAsMap</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; echo(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> params;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplerestmapparams-right" class="col-md-4">
@@ -582,17 +626,22 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
 	<div id="examplehello-left" class="col-md-8">
 		<div id="examplehello-codedesc" class="eg_title">Hello.java</div>
-		<pre id="examplehello-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Hello</span> {
 
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;
-    }
+<!-- START CODE -->
+<div id="examplehello-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Hello</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplehello-right" class="col-md-4">
@@ -616,14 +665,7 @@ The high-level API is built on top of Rapidoid HTTP server, provides many advanc
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -651,14 +693,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -688,17 +723,22 @@ Hello, world!
 
 	<div id="examplehi-left" class="col-md-8">
 		<div id="examplehi-codedesc" class="eg_title">YourName.java</div>
-		<pre id="examplehi-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">YourName</span> {
 
-    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"What is your name?"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Tag</span> hi(<span class="_code_cls">String</span> name) {
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.h4(<span class="_code_str">"Hi, "</span>, <span class="_code_cls">GUI</span>.i(name), <span class="_code_str">"!"</span>);
-    }
+<!-- START CODE -->
+<div id="examplehi-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">YourName</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(title = <span class="_code_str">"What is your name?"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Tag</span> hi(<span class="_code_cls">String</span> name) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">GUI</span>.h4(<span class="_code_str">"Hi, "</span>, <span class="_code_api">GUI</span>.i(name), <span class="_code_str">"!"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplehi-right" class="col-md-4">
@@ -722,14 +762,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -757,14 +790,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -794,17 +820,22 @@ Hello, world!
 
 	<div id="exampleraw-left" class="col-md-8">
 		<div id="exampleraw-codedesc" class="eg_title">Simple.java</div>
-		<pre id="exampleraw-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Simple</span> {
 
-    <span class="_code_ann">@Page</span>(raw = <span class="_code_kw">true</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> simple() {
-        <span class="_code_kw">return</span> <span class="_code_str">"&lt;p&gt;&lt;b&gt;RAW&lt;/b&gt; HTML!&lt;p&gt;"</span>;
-    }
+<!-- START CODE -->
+<div id="exampleraw-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Simple</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(raw = <span class="_code_kw">true</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> simple() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"&lt;p&gt;&lt;b&gt;RAW&lt;/b&gt; HTML!&lt;p&gt;"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="exampleraw-right" class="col-md-4">
@@ -840,28 +871,38 @@ Hello, world!
 
 	<div id="exampleshowmovie-left" class="col-md-8">
 		<div id="exampleshowmovie-codedesc" class="eg_title">Movie.java</div>
-		<pre id="exampleshowmovie-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
-}
-</pre>
+
+<!-- START CODE -->
+<div id="exampleshowmovie-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> year;</div>
+<div class="example-line clearfix">}</div>
+
+</div>
+<!-- END CODE -->
+
 		<div id="exampleshowmovie-codedesc" class="eg_title">Movies.java</div>
-		<pre id="exampleshowmovie-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
 
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
-        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-        movie.title = <span class="_code_str">"Chappie"</span>;
-        movie.year = <span class="_code_num">2015</span>;
+<!-- START CODE -->
+<div id="exampleshowmovie-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Movie details"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movie.title = <span class="_code_str">"Chappie"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movie.year = <span class="_code_num">2015</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">GUI</span><span class="_code_api">.show</span>(movie)<span class="_code_api">.buttons</span>(<span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.show(movie).buttons(<span class="_code_cls">GUI</span>.btn(<span class="_code_str">"OK"</span>));
-    }
+</div>
+<!-- END CODE -->
 
-}
-</pre>
 	</div>
 
     <div id="exampleshowmovie-right" class="col-md-4">
@@ -885,14 +926,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -936,29 +970,39 @@ Hello, world!
 
 	<div id="exampleeditmovie-left" class="col-md-8">
 		<div id="exampleeditmovie-codedesc" class="eg_title">Movie.java</div>
-		<pre id="exampleeditmovie-code" class="code-clean">
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> title;
-    <span class="_code_kw">public</span> <span class="_code_kw">int</span> year;
-}
-</pre>
+
+<!-- START CODE -->
+<div id="exampleeditmovie-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> year;</div>
+<div class="example-line clearfix">}</div>
+
+</div>
+<!-- END CODE -->
+
 		<div id="exampleeditmovie-codedesc" class="eg_title">Movies.java</div>
-		<pre id="exampleeditmovie-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {
 
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {
-        <span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();
-        movie.title = <span class="_code_str">"Chappie"</span>;
-        movie.year = <span class="_code_num">2015</span>;
+<!-- START CODE -->
+<div id="exampleeditmovie-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movies</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>, title = <span class="_code_str">"Edit movie details"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> movie() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Movie</span> movie = <span class="_code_kw">new</span> <span class="_code_cls">Movie</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movie.title = <span class="_code_str">"Chappie"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movie.year = <span class="_code_num">2015</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Btn</span> save = <span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"Save"</span>).primary();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie)<span class="_code_api">.buttons</span>(save);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-        <span class="_code_cls">Btn</span> save = <span class="_code_cls">GUI</span>.btn(<span class="_code_str">"Save"</span>).primary();
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.edit(movie).buttons(save);
-    }
+</div>
+<!-- END CODE -->
 
-}
-</pre>
 	</div>
 
     <div id="exampleeditmovie-right" class="col-md-4">
@@ -982,14 +1026,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -1033,23 +1070,28 @@ Hello, world!
 
 	<div id="exampleparamgrid-left" class="col-md-8">
 		<div id="exampleparamgrid-codedesc" class="eg_title">ParamGrid.java</div>
-		<pre id="exampleparamgrid-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamGrid</span> {
 
-    <span class="_code_ann">@Page</span>(title = <span class="_code_str">"Request parameters"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> table(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {
-        <span class="_code_kw">return</span> <span class="_code_cls">GUI</span>.grid(params);
-    }
+<!-- START CODE -->
+<div id="exampleparamgrid-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ParamGrid</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(title = <span class="_code_str">"Request parameters"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> table(<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">GUI</span><span class="_code_api">.grid</span>(params);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="exampleparamgrid-right" class="col-md-4">
         <div id="exampleparamgrid-results" class="results">
             <div>
-                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/table?name=Highlander&amp;age=700&amp;weapon=sword</span>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/table?name=Rambo&amp;age=50&amp;weapon=gun</span>
             </div>
 
                 <div class="eg-result">
@@ -1067,14 +1109,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -1085,15 +1120,15 @@ Hello, world!
   </tr>
   <tr>
     <td>name</td>
-    <td>Highlander</td>
+    <td>Rambo</td>
   </tr>
   <tr>
     <td>age</td>
-    <td>700</td>
+    <td>50</td>
   </tr>
   <tr>
     <td>weapon</td>
-    <td>sword</td>
+    <td>gun</td>
   </tr>
 </table>
 
@@ -1121,45 +1156,55 @@ Hello, world!
 
 	<div id="exampleinjection-left" class="col-md-8">
 		<div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
-		<pre id="exampleinjection-code" class="code-clean">
-<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/bar"</span>)
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {
 
-    <span class="_code_ann">@Inject</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;
+<!-- START CODE -->
+<div id="exampleinjection-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/bar"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Inject</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> foo.msg();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello from Bar!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> foo.msg();
-    }
+</div>
+<!-- END CODE -->
 
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Bar!"</span>;
-    }
-
-}
-</pre>
 		<div id="exampleinjection-codedesc" class="eg_title">Foo.java</div>
-		<pre id="exampleinjection-code" class="code-clean">
-<span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/foo"</span>)
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {
 
-    <span class="_code_ann">@Inject</span>
-    <span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;
+<!-- START CODE -->
+<div id="exampleinjection-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span>(url = <span class="_code_str">"/foo"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Inject</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">int</span> count;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello from Foo!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-    <span class="_code_kw">private</span> <span class="_code_kw">int</span> count;
+</div>
+<!-- END CODE -->
 
-    <span class="_code_ann">@GET</span>(uri = <span class="_code_str">"/hi"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {
-        <span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();
-    }
-
-    <span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {
-        <span class="_code_kw">return</span> <span class="_code_str">"Hello from Foo!"</span>;
-    }
-
-}
-</pre>
 	</div>
 
     <div id="exampleinjection-right" class="col-md-4">
@@ -1215,20 +1260,25 @@ Hello, world!
 
 	<div id="examplelayout-left" class="col-md-8">
 		<div id="examplelayout-codedesc" class="eg_title">BootstrapLayout.java</div>
-		<pre id="examplelayout-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">BootstrapLayout</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
 
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> layout() {
-        <span class="_code_cls">Tag</span> r1 = row(col4(<span class="_code_str">"A"</span>), col4(<span class="_code_str">"B"</span>), col4(<span class="_code_str">"C"</span>));
-        <span class="_code_cls">Tag</span> r2 = row(col1(<span class="_code_str">"2/12"</span>), col7(<span class="_code_str">"7/12"</span>), col4(<span class="_code_str">"3/12"</span>));
-        <span class="_code_cls">Tag</span> r3 = mid4(<span class="_code_str">"4/12 in the middle"</span>);
-        <span class="_code_kw">return</span> multi(r1, r2, r3);
-    }
+<!-- START CODE -->
+<div id="examplelayout-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">BootstrapLayout</span> <span class="_code_kw">extends</span> <span class="_code_api">GUI</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> layout() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Tag</span> r1 = row(col4(<span class="_code_str">"A"</span>), col4(<span class="_code_str">"B"</span>), col4(<span class="_code_str">"C"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Tag</span> r2 = row(col1(<span class="_code_str">"2/12"</span>), col7(<span class="_code_str">"7/12"</span>), col4(<span class="_code_str">"3/12"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Tag</span> r3 = mid4(<span class="_code_str">"4/12 in the middle"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> multi(r1, r2, r3);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplelayout-right" class="col-md-4">
@@ -1252,14 +1302,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -1304,17 +1347,22 @@ Hello, world!
 
 	<div id="examplehighlighting-left" class="col-md-8">
 		<div id="examplehighlighting-codedesc" class="eg_title">Highlighting.java</div>
-		<pre id="examplehighlighting-code" class="code-clean">
-<span class="_code_ann">@Controller</span>
-<span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Highlighting</span> <span class="_code_kw">extends</span> <span class="_code_cls">GUI</span> {
 
-    <span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)
-    <span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {
-        <span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\w+"</span>);
-    }
+<!-- START CODE -->
+<div id="examplehighlighting-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Highlighting</span> <span class="_code_kw">extends</span> <span class="_code_api">GUI</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(uri = <span class="_code_str">"/"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\w+"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 
-}
-</pre>
+</div>
+<!-- END CODE -->
+
 	</div>
 
     <div id="examplehighlighting-right" class="col-md-4">
@@ -1338,14 +1386,7 @@ Hello, world!
 
         <div id="collapsable" class="collapse navbar-collapse">
 
-
-
-
-
-
-
         </div>
-
 
     </div>
 </nav>
@@ -1453,20 +1494,30 @@ Hello, world!
  <div class="module-box">Very Fast Web Server</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
- <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
+ <h4 class="module-title"><a href="gui.html"><a href="gui.html">rapidoid-gui</a></a></h4>
+ <div class="module-box">Web GUI Components (Bootstrap-based)</div>
 </div>
 <div class="module-wrap">
  <h4 class="module-title"><a href="web.html"><a href="web.html">rapidoid-web</a></a></h4>
  <div class="module-box">High-level POJO Web Framework</div>
 </div>
 <div class="module-wrap">
- <h4 class="module-title"><a href="u.html">rapidoid-u</a></h4>
+ <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
+ <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
+</div>
+<div class="module-wrap">
+ <h4 class="module-title"><a href="u.html"><a href="u.html">rapidoid-u</a></a></h4>
  <div class="module-box">Simple &amp; Sweet Utils</div>
 </div>
 </div>
 </div>
 
+</div>
+
+<div class="row">
+<div class="col-md-12">
+    <div class="page-footer">Copyright (C) 2014 - 2015 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors</div>
+</div>
 </div>
 
 </div> <!-- container -->

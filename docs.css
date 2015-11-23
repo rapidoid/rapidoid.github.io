@@ -207,9 +207,18 @@ pre {
 }
 
 ._code_comment {
+	color: #777;
 	font-size: 14px;
 	font-weight: bold;
-	line-height: 37px;
+}
+
+._code_comment_icon {
+	color: #777;
+}
+
+._code_lambda {
+	color: #955;
+	font-weight: bold;
 }
 
 ._code_api {
@@ -219,10 +228,6 @@ pre {
 
 ._code_ann {
 	font-weight: bold;
-}
-
-._code_comment_icon {
-	color: #444;
 }
 
 .stats-field {
@@ -239,12 +244,12 @@ pre {
 
 .object-details {
 	font-size: 11px;
-	padding: 2px 3px;
+	line-height: 2.6;
+ 	padding: 2px 3px;
 	border: #aaa solid 1px;
 	font-weight: bold;
 	border-radius: 5px;
 	color: #777;
-	line-height: 26px;
 }
 
 .object-value {
@@ -280,5 +285,53 @@ pre {
 }
 
 .frameworks {
-	font-weight: bold;	
+	font-weight: bold;
+}
+
+.example-line {
+	font-size: 13px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	line-height: 1.5;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.comment-line {
+	font-size: 13px;
+	line-height: 2.8;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.empty-line {
+	font-size: 8px;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.eg_title {
+	margin-bottom: 5px;
+}
+
+.show-gui {
+	border: dashed 1px #ccc;
+	padding: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.page-footer {
+	text-align: center;
+	font-size: 12px;
+	word-wrap: break-word;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#group-email {
+	font-size: 14px;
+	word-wrap: break-word;
+	margin-top: 18px;
+	margin-bottom: 5px;
+	font-weight: bold;
 }
