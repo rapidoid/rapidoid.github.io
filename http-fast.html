@@ -119,7 +119,7 @@ The low-level HTTP API provides access to the <a rel="nofollow" href="https://ww
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;<a href="http-fast.html">rapidoid-http-fast</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.4&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.5&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -170,6 +170,17 @@ The low-level HTTP API provides access to the <a rel="nofollow" href="https://ww
     </div>
 </div>
 
+<div id="examplehttpsimple-extra" class="row">
+<div class="col-md-12">
+    <div class="docs">
+        <p>
+            Running this code will start the <b>Http-Fast</b> server embedded in your program.
+        </p>
+        <p>By default the server listens on port <b>8888</b> and address 0.0.0.0 (matching any IP address).</p>
+        <p>Navigating to <a href="http://localhost:8888/size?msg=abc">http://localhost:8888/size?msg=abc</a> will return <b>3</b>.</p>
+    </div>
+</div>
+</div>
 
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
@@ -220,11 +231,42 @@ Hello world!
   <div class="col-md-12"></div>
 </div>
 
+<!-- EXAMPLE httpcustom -->
+
+<div id="examplehttpcustom-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">3</span> More control over the HTTP server setup</div>
+	</div>
+</div>
+
+<div id="examplehttpcustom-body" class="row">
+
+	<div id="examplehttpcustom-left" class="col-md-12">
+
+
+<!-- START CODE -->
+<div id="examplehttpcustom-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"x"</span>); <span class="_code_linecomm">// continue with normal setup</span></div>
+
+</div>
+<!-- END CODE -->
+
+	</div>
+
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE httpreq1 -->
 
 <div id="examplehttpreq1-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">3</span> All the request data is in the (Req req) parameter</div>
+		<div class="caption"><span class="badge badge-eg-num">4</span> All the request data is in the (Req req) parameter</div>
 	</div>
 </div>
 
@@ -305,7 +347,7 @@ Hello world!
 
 <div id="examplehttpwrap-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">4</span> Request wrappers (interceptors)</div>
+		<div class="caption"><span class="badge badge-eg-num">5</span> Request wrappers (interceptors)</div>
 	</div>
 </div>
 
@@ -376,7 +418,7 @@ Hello world!
 
 <div id="examplehttpnotfound-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">5</span> Returning a &quot;Not Found&quot; result</div>
+		<div class="caption"><span class="badge badge-eg-num">6</span> Returning a &quot;Not Found&quot; result</div>
 	</div>
 </div>
 
@@ -443,7 +485,7 @@ Hello world!
 
 <div id="examplehttpgeneric-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">6</span> Generic handlers match any request</div>
+		<div class="caption"><span class="badge badge-eg-num">7</span> Generic handlers match any request</div>
 	</div>
 </div>
 
@@ -505,7 +547,7 @@ Simple: /foo
 
 <div id="examplehttpasync-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> Asynchronous request processing</div>
+		<div class="caption"><span class="badge badge-eg-num">8</span> Asynchronous request processing</div>
 	</div>
 </div>
 
@@ -550,41 +592,6 @@ Simple: /foo
     <img class="img-responsive" src="img/server.svg" />
 </div>
 </div>
-
-<div class="row row-separated-micro">
-  <div class="col-md-12"></div>
-</div>
-
-<!-- EXAMPLE httpcustom -->
-
-<div id="examplehttpcustom-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">8</span> More control over the HTTP server setup</div>
-	</div>
-</div>
-
-<div id="examplehttpcustom-body" class="row">
-
-	<div id="examplehttpcustom-left" class="col-md-12">
-
-
-<!-- START CODE -->
-<div id="examplehttpcustom-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"x"</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> After a while:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.getDefaultSetup</span>().server().shutdown();</div>
-
-</div>
-<!-- END CODE -->
-
-	</div>
-
-</div>
-
 
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>

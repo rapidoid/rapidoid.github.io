@@ -119,7 +119,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;<a href="gui.html">rapidoid-gui</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.4&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.5&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -259,7 +259,7 @@
 
 <div id="examplegui.mapedit-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">3</span> More documentation - coming soon...</div>
+		<div class="caption"><span class="badge badge-eg-num">3</span> Creating a form from a Map</div>
 	</div>
 </div>
 
@@ -270,6 +270,65 @@
 
 <!-- START CODE -->
 <div id="examplegui.mapedit-code" class="code-clean">
+<div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Creating a form to edit the <span class="text-box">movie</span> map:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
+  <div class="form-group">
+    <label>Title: </label>
+    <input _h="Title" type="text" class="form-control" value="Hackers" name="Title">
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <label><input _h="cool" type="checkbox" name="cool" checked>Cool: </label>
+    </div>
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group"></div>
+</form></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment"><i class="fa fa-mortar-board _code_comment_icon"></i> Adding form buttons:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">""</span>))<span class="_code_api">.buttons</span>(<span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
+  <div class="form-group">
+    <label>Title: </label>
+    <input _h="Title" type="text" class="form-control" value="" name="Title">
+    <span class="field-error"></span>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-default" ng-click="_emit('OK', [])">OK</button>
+  </div>
+</form></div></span></div>
+
+</div>
+<!-- END CODE -->
+
+	</div>
+
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE gui.soon -->
+
+<div id="examplegui.soon-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">4</span> More documentation - coming soon...</div>
+	</div>
+</div>
+
+<div id="examplegui.soon-body" class="row">
+
+	<div id="examplegui.soon-left" class="col-md-12">
+
+
+<!-- START CODE -->
+<div id="examplegui.soon-code" class="code-clean">
 <div class="empty-line clearfix">&nbsp;</div>
 
 </div>
