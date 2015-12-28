@@ -201,35 +201,6 @@ pre {
 	width: 190px;
 }
 
-._code_linecomm {
-	color: #777;
-	font-style: italic;
-}
-
-._code_comment {
-	color: #777;
-	font-size: 14px;
-	font-weight: bold;
-}
-
-._code_comment_icon {
-	color: #777;
-}
-
-._code_lambda {
-	color: #955;
-	font-weight: bold;
-}
-
-._code_api {
-	color: #338;
-	font-weight: bold;
-}
-
-._code_ann {
-	font-weight: bold;
-}
-
 .stats-field {
 	margin-right: 20px;
 }
