@@ -216,7 +216,7 @@ pre {
 .object-details {
 	font-size: 11px;
 	line-height: 2.6;
- 	padding: 2px 3px;
+	padding: 2px 3px;
 	border: #aaa solid 1px;
 	font-weight: bold;
 	border-radius: 5px;
@@ -249,8 +249,7 @@ pre {
 }
 
 .text-box {
-	padding: 3px;
-	padding-bottom: 1px;
+	padding: 0px 3px;
 	border: #aaa solid 1px !important;
 	border-radius: 5px;
 }
@@ -260,7 +259,7 @@ pre {
 }
 
 .example-line {
-	font-size: 13px;
+	font-size: 14px;
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	line-height: 1.5;
 	word-break: break-all;
@@ -269,9 +268,19 @@ pre {
 
 .comment-line {
 	font-size: 13px;
-	line-height: 2.8;
 	word-break: break-all;
 	word-wrap: break-word;
+}
+
+._code_comment {
+	font-size: 12px !important;
+}
+
+._code_comment .text-box {
+	padding: 1px;
+	padding-bottom: 1px;
+	border: #aaa solid 1px !important;
+	border-radius: 1px;
 }
 
 .empty-line {
@@ -309,7 +318,16 @@ pre {
 
 .docs {
 	font-size: 14px;
-	background-color: #f5f5f5;
-	border: 1px solid #ddd;
-	padding: 5px;
+	padding-bottom: 15px;
+}
+
+.api-docs td {
+	padding: 5px !important;
+	vertical-align: middle !important;
+}
+
+.api-docs pre {
+	padding: 0px !important;
+	margin: 0px !important;
+	vertical-align: middle !important;
 }
