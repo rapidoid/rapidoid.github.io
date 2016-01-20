@@ -54,7 +54,7 @@
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0.10 - Extremely Fast and Simple Java Web Framework!" data-size="small">Tweet</a>
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0.11-SNAPSHOT - Extremely Fast and Simple Java Web Framework!" data-size="small">Tweet</a>
 </div>
       </div>
     </div>
@@ -124,7 +124,7 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
     &lt;<span class="_code_tag">artifactId</span>&gt;<a href="fluent.html">rapidoid-fluent</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.10&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.0.11&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -207,7 +207,7 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.filter</span>(num <span class="_code_lambda">-&gt;</span> num.getKey() % <span class="_code_num">2</span> == <span class="_code_num">0</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.collect</span>(<span class="_code_cls">Collectors</span><span class="_code_api">.toMap</span>(<span class="_code_cls">Entry</span>::getKey, <span class="_code_cls">Entry</span>::getValue));</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_cls">System</span><span class="_code_api">.out</span>.println(even);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_cls">System</span>.out.println(even);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">Or, we can do the same thing in the old way:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -220,7 +220,7 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="example-line clearfix">}</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_cls">System</span><span class="_code_api">.out</span>.println(even2);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span></div>
+<div class="example-line clearfix"><span class="_code_cls">System</span>.out.println(even2);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span></div>
 
 </div>
 <!-- END CODE -->
@@ -342,7 +342,7 @@ Lightweight fluent DSL for elegant manipulation of collections and streams.
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">For</span><span class="_code_api">.each</span>(items)<span class="_code_api">.where</span>(s <span class="_code_lambda">-&gt;</span> s.length() &lt; <span class="_code_num">3</span>)<span class="_code_api">.run</span>(dest::add);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_cls">System</span><span class="_code_api">.out</span>.println(dest);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","cc"]</span><span class="object-class">ArrayList</span></span></span></div>
+<div class="example-line clearfix"><span class="_code_cls">System</span>.out.println(dest);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","cc"]</span><span class="object-class">ArrayList</span></span></span></div>
 
 </div>
 <!-- END CODE -->
