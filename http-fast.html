@@ -54,7 +54,7 @@
 				
 				<span class="g-plusone" data-size="medium"></span>
 				
-				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0.11-SNAPSHOT - Extremely Fast and Simple Java Web Framework!" data-size="small">Tweet</a>
+				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0.11 - Extremely Fast and Simple Java Web Framework!" data-size="small">Tweet</a>
 </div>
       </div>
     </div>
@@ -558,7 +558,7 @@ Getting X
 <div class="comment-line clearfix"><span class="_code_comment">Returning the request or response object means the response was constructed:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON_UTF_8</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.content</span>(<span class="_code_str">"hello"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
@@ -608,21 +608,19 @@ Getting X
         <td>
 <pre class="code-snippet"><span class="_code_cls">Resp</span> body(<span class="_code_cls">byte</span>[] body)</pre>
         </td>
-        <td>Sets the <b>raw body data as <code>byte[]</code></b> that is copied into the HTTP response body when it is
- rendered.</td>
+        <td>Sets the <b>HTTP response body</b> from a <b><code>byte[]</code></b> data that is written as a HTTP response body when rendered.</td>
       </tr>
       <tr>
         <td>
 <pre class="code-snippet"><span class="_code_cls">Resp</span> body(<span class="_code_cls">ByteBuffer</span> body)</pre>
         </td>
-        <td>Sets the <b>raw body data as <code>ByteBuffer</code></b> that is copied into the HTTP response body when it is
- rendered.</td>
+        <td>Sets the <b>HTTP response body</b> from a <b><code>ByteBuffer</code></b> data that is written as a HTTP response body when rendered.</td>
       </tr>
       <tr>
         <td>
 <pre class="code-snippet"><span class="_code_cls">Object</span> body()</pre>
         </td>
-        <td>Gets the <b>raw body data</b> that is copied into the HTTP response body when it is rendered.</td>
+        <td>Gets the <b>HTTP response body</b> data (of type byte[] or ByteBuffer) that is written as a HTTP response body when rendered.</td>
       </tr>
       <tr>
         <td>
@@ -684,11 +682,257 @@ Getting X
   <div class="col-md-12"></div>
 </div>
 
+<!-- EXAMPLE pojoController -->
+
+<div id="examplepojoController-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">7</span> High-level annotation-based POJO controllers</div>
+	</div>
+</div>
+
+<div id="examplepojoController-extra" class="row">
+<div class="col-md-12">
+  <div class="docs">Any object can be a POJO
+ controller.<br>
+ Just annotate the request handler methods with: <b>@GET</b>, <b>@POST</b>
+ , <b>@PUT</b>, <b>@DELETE</b> etc.</div>
+</div>
+</div>
+
+<div id="examplepojoController-body" class="row">
+
+	<div id="examplepojoController-left" class="col-md-8">
+
+
+<!-- START CODE -->
+<div id="examplepojoController-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(<span class="_code_kw">new</span> <span class="_code_cls">Object</span>() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> upper(<span class="_code_ann">@Param</span>(<span class="_code_str">"s"</span>) <span class="_code_cls">String</span> s) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> s.toUpperCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> lower(<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp, <span class="_code_ann">@Param</span>(<span class="_code_str">"x"</span>) <span class="_code_cls">String</span> s) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> s.toLowerCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">});</div>
+
+</div>
+<!-- END CODE -->
+
+	</div>
+
+    <div id="examplepojoController-right" class="col-md-4">
+        <div id="examplepojoController-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper?s=abc</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#pojoController HTML STARTS HERE -->
+"ABC"
+<!-- EXAMPLE#pojoController HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/lower?x=HEY</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#pojoController HTML STARTS HERE -->
+"hey"
+<!-- EXAMPLE#pojoController HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE render -->
+
+<div id="examplerender-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">8</span> Exception handlers</div>
+	</div>
+</div>
+
+
+<div id="examplerender-body" class="row">
+
+	<div id="examplerender-left" class="col-md-8">
+
+
+<!-- START CODE -->
+<div id="examplerender-code" class="code-clean">
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.error</span>(( req,&nbsp;&nbsp;resp,&nbsp;&nbsp;error) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Error: "</span> + error.getMessage());</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.html</span>( req <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">throw</span> <span class="_code_kw">new</span> <span class="_code_cls">RuntimeException</span>(<span class="_code_str">"problem!"</span>);</div>
+<div class="example-line clearfix">});</div>
+
+</div>
+<!-- END CODE -->
+
+	</div>
+
+    <div id="examplerender-right" class="col-md-4">
+        <div id="examplerender-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#render HTML STARTS HERE -->
+Error: problem!
+<!-- EXAMPLE#render HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE mvc -->
+
+<div id="examplemvc-title" class="row">
+	<div class="col-md-12">
+		<div class="caption"><span class="badge badge-eg-num">9</span> MVC architecture (with template engine of your choice)</div>
+	</div>
+</div>
+
+
+<div id="examplemvc-body" class="row">
+
+	<div id="examplemvc-left" class="col-md-8">
+
+
+<!-- START CODE -->
+<div id="examplemvc-code" class="code-clean">
+<div class="comment-line clearfix"><span class="_code_comment">This simple template should be replaced by some template engine:</span></div>
+<div class="example-line clearfix"><span class="_code_cls">String</span> template = <span class="_code_str">"(MODEL=%s, VIEW=%s)"</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.render</span>((<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> info = <span class="_code_cls">String</span>.format(template, resp<span class="_code_api">.model</span>(), resp<span class="_code_api">.view</span>());</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.content</span>(info);</div>
+<div class="example-line clearfix">});</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/a"</span>)<span class="_code_api">.html</span>(( req,&nbsp;&nbsp;resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp<span class="_code_api">.render</span>();</div>
+<div class="example-line clearfix">});</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/my/books"</span>)<span class="_code_api">.html</span>(( req,&nbsp;&nbsp;resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.model</span>()<span class="_code_api">.put</span>(<span class="_code_str">"x"</span>, <span class="_code_num">12345</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.render</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
+<div class="example-line clearfix">})</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">A custom view name can be assigned:</span></div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/xy"</span>)<span class="_code_api">.html</span>(( req,&nbsp;&nbsp;resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.view</span>(<span class="_code_str">"my-view"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp<span class="_code_api">.render</span>();</div>
+<div class="example-line clearfix">});</div>
+
+</div>
+<!-- END CODE -->
+
+	</div>
+
+    <div id="examplemvc-right" class="col-md-4">
+        <div id="examplemvc-results" class="results">
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/a</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#mvc HTML STARTS HERE -->
+(MODEL={}, VIEW=a)
+<!-- EXAMPLE#mvc HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/my/books</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#mvc HTML STARTS HERE -->
+(MODEL={x=12345}, VIEW=my/books)
+<!-- EXAMPLE#mvc HTML END HERE -->
+                </div>
+
+            <div>
+                <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/xy</span>
+            </div>
+
+                <div class="eg-result">
+<!-- EXAMPLE#mvc HTML STARTS HERE -->
+(MODEL={}, VIEW=my-view)
+<!-- EXAMPLE#mvc HTML END HERE -->
+                </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="examplemvc-extra" class="row">
+<div class="col-md-12">
+  <h4>
+    <b>MVC Helper API (in interface Resp):</b>
+  </h4>
+  <div class="api-docs">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td>
+<pre class="code-snippet"><span class="_code_cls">Resp</span> view(<span class="_code_cls">String</span> viewName)</pre>
+        </td>
+        <td>Sets a custom name of the <b>view</b> (V from MVC) of the HTTP response. <br>
+ The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
+ E.g. "/abc" -> "abc", "/" -> index, "/my/books" -> "my/books".</td>
+      </tr>
+      <tr>
+        <td>
+<pre class="code-snippet"><span class="_code_cls">String</span> view()</pre>
+        </td>
+        <td>Gets the (default or customized) name of the <b>view</b> (V from MVC) of the HTTP response. <br>
+ The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
+ E.g. "/abc" -> "abc", "/" -> index, "/my/books" -> "my/books".</td>
+      </tr>
+      <tr>
+        <td>
+<pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; model()</pre>
+        </td>
+        <td>Provides <b>read/write access</b> to the <b>model</b> (M from MVC) that will be rendered by the view renderer.</td>
+      </tr>
+      <tr>
+        <td>
+<pre class="code-snippet"><span class="_code_cls">Resp</span> render()</pre>
+        </td>
+        <td>Renders the response in a MVC fashion.<br>
+ A custom view renderer must be configured/implemented via the <code>On#render()</code> method.<br>
+ A typical renderer will use <code>Resp#view</code> to get the view name, and <code>Resp#model</code> to get the model.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE httpresptype -->
 
 <div id="examplehttpresptype-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> Manipulating the response content type</div>
+		<div class="caption"><span class="badge badge-eg-num">10</span> Manipulating the response content type</div>
 	</div>
 </div>
 
@@ -719,7 +963,7 @@ Getting X
 <div class="comment-line clearfix"><span class="_code_comment">The response type will be JSON, instead of HTML:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON_UTF_8</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.content</span>(<span class="_code_str">"abc"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
@@ -778,7 +1022,7 @@ Getting X
 
 <div id="examplehttprespcode-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">8</span> Manipulating the response code</div>
+		<div class="caption"><span class="badge badge-eg-num">11</span> Manipulating the response code</div>
 	</div>
 </div>
 
@@ -809,7 +1053,7 @@ Getting X
 
 <!-- START CODE -->
 <div id="examplehttprespcode-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.response</span>()<span class="_code_api">.content</span>(<span class="_code_str">""</span>).code(<span class="_code_num">404</span>));</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.response</span>()<span class="_code_api">.content</span>(<span class="_code_str">""</span>)<span class="_code_api">.code</span>(<span class="_code_num">404</span>));</div>
 
 </div>
 <!-- END CODE -->
@@ -864,7 +1108,7 @@ Getting X
 
 <div id="examplehttpsession-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">9</span> HTTP session</div>
+		<div class="caption"><span class="badge badge-eg-num">12</span> HTTP session</div>
 	</div>
 </div>
 
@@ -899,7 +1143,7 @@ Getting X
 
 <div id="examplehttpsessionmem-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">10</span> Server-side session (a.k.a. Session)</div>
+		<div class="caption"><span class="badge badge-eg-num">13</span> Server-side session (a.k.a. Session)</div>
 	</div>
 </div>
 
@@ -1021,7 +1265,7 @@ Getting X
 
 <div id="examplehttpcookiepack-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">11</span> Cookie-persisted session (a.k.a. Cookiepack)</div>
+		<div class="caption"><span class="badge badge-eg-num">14</span> Cookie-persisted session (a.k.a. Cookiepack)</div>
 	</div>
 </div>
 
@@ -1153,7 +1397,7 @@ Getting X
 
 <div id="examplehttpwrap-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">12</span> Request wrappers (interceptors)</div>
+		<div class="caption"><span class="badge badge-eg-num">15</span> Request wrappers (interceptors)</div>
 	</div>
 </div>
 
@@ -1225,7 +1469,7 @@ Getting X
 
 <div id="examplehttpnotfound-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">13</span> Returning a &quot;Not Found&quot; result</div>
+		<div class="caption"><span class="badge badge-eg-num">16</span> Returning a &quot;Not Found&quot; result</div>
 	</div>
 </div>
 
@@ -1293,7 +1537,7 @@ Getting X
 
 <div id="examplehttpgeneric-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">14</span> Generic handlers match any request</div>
+		<div class="caption"><span class="badge badge-eg-num">17</span> Generic handlers match any request</div>
 	</div>
 </div>
 
@@ -1356,7 +1600,7 @@ Simple: /foo
 
 <div id="examplehttpasync-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">15</span> Asynchronous request processing</div>
+		<div class="caption"><span class="badge badge-eg-num">18</span> Asynchronous request processing</div>
 	</div>
 </div>
 
@@ -1462,7 +1706,7 @@ Simple: /foo
 
 <div id="examplehttpargs-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">16</span> Server Configuration</div>
+		<div class="caption"><span class="badge badge-eg-num">19</span> Server Configuration</div>
 	</div>
 </div>
 
@@ -1561,7 +1805,7 @@ Simple: /foo
 
 <div id="examplehttpapi-title" class="row">
 	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">17</span> API documentation</div>
+		<div class="caption"><span class="badge badge-eg-num">20</span> API documentation</div>
 	</div>
 </div>
 
