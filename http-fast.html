@@ -1,85 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
-<meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="rapidoid.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="rapidoid.min.js"></script>
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
-<link href="docs.css" type="text/css" rel="stylesheet" />
-<link href="rapidoid.min.css" type="text/css" rel="stylesheet" />
-<link href="theme-default.css" type="text/css" rel="stylesheet" />
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-<title>Rapidoid Http-fast - Very Fast Web Server</title>
+    <title>Rapidoid Http-fast</title>
 
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
 
 </head>
 
+
 <body class="rapidoid">
 
-  <nav role="navigation" class="navbar navbar-default">
+<nav role="navigation" class="navbar navbar-default">
     <div class="container">
-      <div class="navbar-header">
-        <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Rapidoid</a>
-      </div>
-      <div id="collapsable" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-left">
-	  <li class="active"><a href="/">Getting started</a></li>
-	  <li><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
-	  <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
-        </ul>
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="/">Getting started</a></li>
+                <li><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+            </ul>
 
-<div class="navbar-brand navbar-right">
-				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count" data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star" href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
-				<a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count" data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch" href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
 
-				<script type="IN/Share" data-url="http://rapidoid.org/" data-counter="right"></script>
-				
-				<span class="g-plusone" data-size="medium"></span>
-				
-				<a rel="nofollow" href="https://twitter.com/share" rel="nofollow" class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0.11 - Extremely Fast and Simple Java Web Framework!" data-size="small">Tweet</a>
-</div>
-      </div>
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v&quot; + version() + &quot; - Extremely Fast, Simple and Powerful Java Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
     </div>
-  </nav>
+</nav>
+
 
 <div class="container">
 
-		<div class="row">
-			<div class="col-md-12">
-				<h4 id="main_subtitle">
-					<span id="rapidoid-title">Rapidoid - Extremely Fast, Simple and Powerful Web Framework for Java!</span>
-				</h4>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-8 col-sm-12">
-                <p>
-                    <b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">View benchmark...</a></b>
-                    <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
-                </p>
-			</div>
-			                
-			<div class="col-md-4 col-sm-12">
-                <!-- Begin MailChimp Signup Form -->
+<div class="row">
+    <div class="col-md-12">
+        <h2>Extremely Fast, Simple and Powerful Java Web Framework!</h2>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <p>
+            <b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). <a
+                    rel="nofollow"
+                    href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">View
+                benchmark...</a></b>
+            <span id="group-email">Community: <a
+                    href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
+        </p>
+    </div>
+
+    <div class="col-md-4 col-sm-12">
+        <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup" class="pull-right">
     <form action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
 
@@ -98,55 +111,89 @@
 </div>
 <!--End mc_embed_signup-->
 
-			</div>
-		</div>
-
-<!-- MODULE <a href="http-fast.html">rapidoid-http-fast</a> -->
-
-<div class="row row-separated-nano">
-  <div class="col-md-8">
-
-<div class="module-header">
-<span class="module-name badge badge-module">Rapidoid Http-fast</span> Very Fast Web Server</div>  
-<h5><b></b></h5>
-
-<div class="module-desc">
-The low-level HTTP API provides access to the <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">extremely fast</a> Rapidoid HTTP server implemented from scratch on top of Java NIO. 
-
-<h4>This is <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">one of the fastest</a> web servers in the world! (based on the transparent Techempower benchmarks)</h4>
+    </div>
 </div>
 
-<br><br>
+<div class="row row-separated-nano">
+    <div class="col-md-8">
 
-  </div>
-  
-  <div class="col-md-4">
-        <div class="eg_title">Add <b><a href="http-fast.html">rapidoid-http-fast</a></b> as Maven dependency:</div>
+        <div class="module-desc">
+            Rapidoid consists of several modules which can be used separately or together:
+            <ul>
+                <li>
+                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Very Fast Web Server</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (Bootstrap-based)</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="web.html">rapidoid-web</a> - <span class="module-about">High-level POJO Web Framework</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="fluent.html">rapidoid-fluent</a> - <span class="module-about">Fluent API for Elegant Stream Manipulation</span>
+                    <span class="pull-right module-about-right">JDK 8</span>
+                </li>
+                <li>
+                    <a href="u.html">rapidoid-u</a> - <span class="module-about">Simple &amp; Sweet Utils</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="eg_title">Add <b>rapidoid-http-fast</b> as Maven dependency:</div>
 <pre class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;<a href="http-fast.html">rapidoid-http-fast</a>&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-http-fast&lt;/<span class="_code_tag">artifactId</span>&gt;
     &lt;<span class="_code_tag">version</span>&gt;5.0.11&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
-  </div>
-  
+    </div>
+
 </div>
+
+<div class="row row-separated-nano">
+    <div class="col-md-12">
+        <div class="module-header">
+            Module <span class="module-name">rapidoid-http-fast</span> - Very Fast Web Server
+        </div>
+        <h5><b></b></h5>
+
+
+        <div class="module-explanation">
+            The low-level HTTP API provides access to the <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">extremely fast</a> Rapidoid HTTP server implemented from scratch on top of Java NIO. 
+
+<h4>This is <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">one of the fastest</a> web servers in the world! (based on the transparent Techempower benchmarks)</h4>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="row">
   
 <div class="col-md-10">
 <!-- EXAMPLE httpsimple -->
 
-<div id="examplehttpsimple-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">1</span> RESTful service one-liner</div>
-	</div>
+<div id="restful-service-one-liner" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">1</span>
+            
+            RESTful service one-liner
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpsimple-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
 	<div class="docs">
 		<p>
 			Running this <b>single line of code</b> will start a web server
@@ -168,19 +215,18 @@ The low-level HTTP API provides access to the <a rel="nofollow" href="https://ww
 
 <div id="examplehttpsimple-body" class="row">
 
-	<div id="examplehttpsimple-left" class="col-md-8">
+    <div id="examplehttpsimple-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpsimple-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpsimple-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"msg"</span>, msg <span class="_code_lambda">-&gt;</span> msg.length());</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpsimple-right" class="col-md-4">
         <div id="examplehttpsimple-results" class="results">
@@ -188,15 +234,16 @@ The low-level HTTP API provides access to the <a rel="nofollow" href="https://ww
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?msg=abc</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpsimple HTML STARTS HERE -->
-3
-<!-- EXAMPLE#httpsimple HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpsimple RESULT STARTS HERE -->
+                3
+                <!-- EXAMPLE#httpsimple RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -205,28 +252,32 @@ The low-level HTTP API provides access to the <a rel="nofollow" href="https://ww
 
 <!-- EXAMPLE httpsimplegui -->
 
-<div id="examplehttpsimplegui-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">2</span> Web page one-liner</div>
-	</div>
+<div id="web-page-one-liner" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">2</span>
+            
+            Web page one-liner
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplehttpsimplegui-body" class="row">
 
-	<div id="examplehttpsimplegui-left" class="col-md-8">
+    <div id="examplehttpsimplegui-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpsimplegui-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpsimplegui-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.gui</span>(<span class="_code_str">"Hello &lt;b&gt;world&lt;/b&gt;!"</span>);</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpsimplegui-right" class="col-md-4">
         <div id="examplehttpsimplegui-results" class="results">
@@ -234,15 +285,16 @@ The low-level HTTP API provides access to the <a rel="nofollow" href="https://ww
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpsimplegui HTML STARTS HERE -->
-Hello <b>world</b>!
-<!-- EXAMPLE#httpsimplegui HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpsimplegui RESULT STARTS HERE -->
+                Hello <b>world</b>!
+                <!-- EXAMPLE#httpsimplegui RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -251,30 +303,35 @@ Hello <b>world</b>!
 
 <!-- EXAMPLE httpcustom -->
 
-<div id="examplehttpcustom-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">3</span> More control over the HTTP server setup</div>
-	</div>
+<div id="more-control-over-the-http-server-setup" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">3</span>
+            
+            More control over the HTTP server setup
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplehttpcustom-body" class="row">
 
-	<div id="examplehttpcustom-left" class="col-md-12">
+    <div id="examplehttpcustom-left" class="col-md-12">
 
-
-<!-- START CODE -->
-<div id="examplehttpcustom-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
+        <!-- START CODE -->
+        <div id="examplehttpcustom-code" class="code-clean">
+            <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"x"</span>); <span class="_code_linecomm">// continue with normal setup</span></div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -283,14 +340,19 @@ Hello <b>world</b>!
 
 <!-- EXAMPLE httproute -->
 
-<div id="examplehttproute-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">4</span> HTTP handlers and routing</div>
-	</div>
+<div id="http-handlers-and-routing" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">4</span>
+            
+            HTTP handlers and routing
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttproute-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
 	<div class="docs">
 		<p>A web application can be defined as a collection of HTTP
 			request handlers. The HTTP requests are routed to the appropriate
@@ -309,12 +371,11 @@ Hello <b>world</b>!
 
 <div id="examplehttproute-body" class="row">
 
-	<div id="examplehttproute-left" class="col-md-8">
+    <div id="examplehttproute-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttproute-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">Request handlers should match both the verb and the path:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttproute-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">Request handlers should match both the verb and the path:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"Hi!"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -324,10 +385,10 @@ Hello <b>world</b>!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.delete</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> <span class="_code_str">"&lt;b&gt;Deleting X&lt;/b&gt;"</span>);</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttproute-right" class="col-md-4">
         <div id="examplehttproute-results" class="results">
@@ -335,45 +396,46 @@ Hello <b>world</b>!
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httproute HTML STARTS HERE -->
-Hi!
-<!-- EXAMPLE#httproute HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httproute RESULT STARTS HERE -->
+                Hi!
+                <!-- EXAMPLE#httproute RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/x</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httproute HTML STARTS HERE -->
-Getting X
-<!-- EXAMPLE#httproute HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httproute RESULT STARTS HERE -->
+                Getting X
+                <!-- EXAMPLE#httproute RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/x</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httproute HTML STARTS HERE -->
-"Posting X"
-<!-- EXAMPLE#httproute HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httproute RESULT STARTS HERE -->
+                "Posting X"
+                <!-- EXAMPLE#httproute RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-DELETE eg-verb">DELETE</span> <span class="badge eg-uri">/x</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httproute HTML STARTS HERE -->
-<b>Deleting X</b>
-<!-- EXAMPLE#httproute HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httproute RESULT STARTS HERE -->
+                <b>Deleting X</b>
+                <!-- EXAMPLE#httproute RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -382,21 +444,25 @@ Getting X
 
 <!-- EXAMPLE httpreq1 -->
 
-<div id="examplehttpreq1-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">5</span> All the request data is in the (Req req) parameter</div>
-	</div>
+<div id="all-the-request-data-is-in-the-req-req-parameter" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">5</span>
+            
+            All the request data is in the (Req req) parameter
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplehttpreq1-body" class="row">
 
-	<div id="examplehttpreq1-left" class="col-md-8">
+    <div id="examplehttpreq1-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpreq1-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">Retrieving request info from the Req parameter:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpreq1-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">Retrieving request info from the Req parameter:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showVerb"</span>)<span class="_code_api">.json</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.verb</span>());</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -406,10 +472,10 @@ Getting X
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showData"</span>)<span class="_code_api">.json</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.data</span>());</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpreq1-right" class="col-md-4">
         <div id="examplehttpreq1-results" class="results">
@@ -417,48 +483,48 @@ Getting X
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showVerb</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpreq1 HTML STARTS HERE -->
-"GET"
-<!-- EXAMPLE#httpreq1 HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
+                "GET"
+                <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showPath</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpreq1 HTML STARTS HERE -->
-"/showPath"
-<!-- EXAMPLE#httpreq1 HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
+                "/showPath"
+                <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showUri</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpreq1 HTML STARTS HERE -->
-"/showUri"
-<!-- EXAMPLE#httpreq1 HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
+                "/showUri"
+                <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showData?x=1&amp;y=abc</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpreq1 HTML STARTS HERE -->
-{"x":"1","y":"abc"}
-<!-- EXAMPLE#httpreq1 HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
+                {"x":"1","y":"abc"}
+                <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
 
-<div id="examplehttpreq1-extra" class="row">
-<div class="col-md-12">
+<div id="examplehttpreq1-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>Basic Request Info API (in interface Req):</b>
   </h4>
@@ -535,27 +601,32 @@ Getting X
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE httpresp -->
 
-<div id="examplehttpresp-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">6</span> Rendering a HTTP response</div>
-	</div>
+<div id="rendering-a-http-response" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">6</span>
+            
+            Rendering a HTTP response
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplehttpresp-body" class="row">
 
-	<div id="examplehttpresp-left" class="col-md-8">
+    <div id="examplehttpresp-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpresp-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">Returning the request or response object means the response was constructed:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpresp-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">Returning the request or response object means the response was constructed:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
@@ -564,10 +635,10 @@ Getting X
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpresp-right" class="col-md-4">
         <div id="examplehttpresp-results" class="results">
@@ -575,18 +646,18 @@ Getting X
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpresp HTML STARTS HERE -->
-"hello"
-<!-- EXAMPLE#httpresp HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpresp RESULT STARTS HERE -->
+                "hello"
+                <!-- EXAMPLE#httpresp RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
 
-<div id="examplehttpresp-extra" class="row">
-<div class="col-md-12">
+<div id="examplehttpresp-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>Basic Response Construction API (in interface Resp):</b>
   </h4>
@@ -678,20 +749,26 @@ Getting X
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE pojoController -->
 
-<div id="examplepojoController-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">7</span> High-level annotation-based POJO controllers</div>
-	</div>
+<div id="high-level-annotation-based-pojo-controllers" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">7</span>
+            
+            High-level annotation-based POJO controllers
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplepojoController-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
   <div class="docs">Any object can be a POJO
  controller.<br>
  Just annotate the request handler methods with: <b>@GET</b>, <b>@POST</b>
@@ -701,26 +778,29 @@ Getting X
 
 <div id="examplepojoController-body" class="row">
 
-	<div id="examplepojoController-left" class="col-md-8">
+    <div id="examplepojoController-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplepojoController-code" class="code-clean">
+        <!-- START CODE -->
+        <div id="examplepojoController-code" class="code-clean">
+            <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(<span class="_code_kw">new</span> <span class="_code_cls">Object</span>() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> upper(<span class="_code_ann">@Param</span>(<span class="_code_str">"s"</span>) <span class="_code_cls">String</span> s) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> s.toUpperCase();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> lower(<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp, <span class="_code_ann">@Param</span>(<span class="_code_str">"x"</span>) <span class="_code_cls">String</span> s) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> s.toLowerCase();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplepojoController-right" class="col-md-4">
         <div id="examplepojoController-results" class="results">
@@ -728,25 +808,26 @@ Getting X
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper?s=abc</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#pojoController HTML STARTS HERE -->
-"ABC"
-<!-- EXAMPLE#pojoController HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#pojoController RESULT STARTS HERE -->
+                "ABC"
+                <!-- EXAMPLE#pojoController RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/lower?x=HEY</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#pojoController HTML STARTS HERE -->
-"hey"
-<!-- EXAMPLE#pojoController HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#pojoController RESULT STARTS HERE -->
+                "hey"
+                <!-- EXAMPLE#pojoController RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -755,30 +836,35 @@ Getting X
 
 <!-- EXAMPLE render -->
 
-<div id="examplerender-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">8</span> Exception handlers</div>
-	</div>
+<div id="exception-handlers" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">8</span>
+            
+            Exception handlers
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplerender-body" class="row">
 
-	<div id="examplerender-left" class="col-md-8">
+    <div id="examplerender-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplerender-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.error</span>(( req,&nbsp;&nbsp;resp,&nbsp;&nbsp;error) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Error: "</span> + error.getMessage());</div>
+        <!-- START CODE -->
+        <div id="examplerender-code" class="code-clean">
+            <div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.error</span>((req, resp, error) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Error: "</span> + error.getMessage());</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.html</span>( req <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">throw</span> <span class="_code_kw">new</span> <span class="_code_cls">RuntimeException</span>(<span class="_code_str">"problem!"</span>);</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplerender-right" class="col-md-4">
         <div id="examplerender-results" class="results">
@@ -786,15 +872,16 @@ Getting X
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#render HTML STARTS HERE -->
-Error: problem!
-<!-- EXAMPLE#render HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#render RESULT STARTS HERE -->
+                Error: problem!
+                <!-- EXAMPLE#render RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -803,21 +890,27 @@ Error: problem!
 
 <!-- EXAMPLE mvc -->
 
-<div id="examplemvc-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">9</span> MVC architecture (with template engine of your choice)</div>
-	</div>
+<div id="mvc-architecture-with-template-engine-of-your-choice-" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">9</span>
+            
+            MVC architecture (with template engine of your choice)
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplemvc-body" class="row">
 
-	<div id="examplemvc-left" class="col-md-8">
+    <div id="examplemvc-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplemvc-code" class="code-clean">
+        <!-- START CODE -->
+        <div id="examplemvc-code" class="code-clean">
+            <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">This simple template should be replaced by some template engine:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">String</span> template = <span class="_code_str">"(MODEL=%s, VIEW=%s)"</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.render</span>((<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp) <span class="_code_lambda">-&gt;</span> {</div>
@@ -825,26 +918,27 @@ Error: problem!
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.content</span>(info);</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/a"</span>)<span class="_code_api">.html</span>(( req,&nbsp;&nbsp;resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/a"</span>)<span class="_code_api">.html</span>((req, resp) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp<span class="_code_api">.render</span>();</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/my/books"</span>)<span class="_code_api">.html</span>(( req,&nbsp;&nbsp;resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/my/books"</span>)<span class="_code_api">.html</span>((req, resp) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.model</span>()<span class="_code_api">.put</span>(<span class="_code_str">"x"</span>, <span class="_code_num">12345</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.render</span>();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
-<div class="example-line clearfix">})</div>
+<div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">A custom view name can be assigned:</span></div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/xy"</span>)<span class="_code_api">.html</span>(( req,&nbsp;&nbsp;resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/xy"</span>)<span class="_code_api">.html</span>((req, resp) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.view</span>(<span class="_code_str">"my-view"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp<span class="_code_api">.render</span>();</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplemvc-right" class="col-md-4">
         <div id="examplemvc-results" class="results">
@@ -852,38 +946,38 @@ Error: problem!
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/a</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#mvc HTML STARTS HERE -->
-(MODEL={}, VIEW=a)
-<!-- EXAMPLE#mvc HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#mvc RESULT STARTS HERE -->
+                (MODEL={}, VIEW=a)
+                <!-- EXAMPLE#mvc RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/my/books</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#mvc HTML STARTS HERE -->
-(MODEL={x=12345}, VIEW=my/books)
-<!-- EXAMPLE#mvc HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#mvc RESULT STARTS HERE -->
+                (MODEL={x=12345}, VIEW=my/books)
+                <!-- EXAMPLE#mvc RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/xy</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#mvc HTML STARTS HERE -->
-(MODEL={}, VIEW=my-view)
-<!-- EXAMPLE#mvc HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#mvc RESULT STARTS HERE -->
+                (MODEL={}, VIEW=my-view)
+                <!-- EXAMPLE#mvc RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
 
-<div id="examplemvc-extra" class="row">
-<div class="col-md-12">
+<div id="examplemvc-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>MVC Helper API (in interface Resp):</b>
   </h4>
@@ -924,20 +1018,26 @@ Error: problem!
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE httpresptype -->
 
-<div id="examplehttpresptype-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">10</span> Manipulating the response content type</div>
-	</div>
+<div id="manipulating-the-response-content-type" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">10</span>
+            
+            Manipulating the response content type
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpresptype-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
 	<div class="docs">
 		<p>
 			The content type of the the HTTP response is automatically set to <span
@@ -955,12 +1055,11 @@ Error: problem!
 
 <div id="examplehttpresptype-body" class="row">
 
-	<div id="examplehttpresptype-left" class="col-md-8">
+    <div id="examplehttpresptype-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpresptype-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">The response type will be JSON, instead of HTML:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpresptype-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">The response type will be JSON, instead of HTML:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
@@ -969,10 +1068,10 @@ Error: problem!
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpresptype-right" class="col-md-4">
         <div id="examplehttpresptype-results" class="results">
@@ -980,18 +1079,18 @@ Error: problem!
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpresptype HTML STARTS HERE -->
-"abc"
-<!-- EXAMPLE#httpresptype HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpresptype RESULT STARTS HERE -->
+                "abc"
+                <!-- EXAMPLE#httpresptype RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
 
-<div id="examplehttpresptype-extra" class="row">
-<div class="col-md-12">
+<div id="examplehttpresptype-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>Response Code API (in interface Resp):</b>
   </h4>
@@ -1014,20 +1113,26 @@ Error: problem!
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE httprespcode -->
 
-<div id="examplehttprespcode-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">11</span> Manipulating the response code</div>
-	</div>
+<div id="manipulating-the-response-code" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">11</span>
+            
+            Manipulating the response code
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttprespcode-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
 	<div class="docs">
 		<p>
 			The HTTP response code is automatically set to <span class="text-box">200</span>
@@ -1048,17 +1153,16 @@ Error: problem!
 
 <div id="examplehttprespcode-body" class="row">
 
-	<div id="examplehttprespcode-left" class="col-md-8">
+    <div id="examplehttprespcode-left" class="col-md-8">
 
+        <!-- START CODE -->
+        <div id="examplehttprespcode-code" class="code-clean">
+            <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.response</span>()<span class="_code_api">.content</span>(<span class="_code_str">""</span>)<span class="_code_api">.code</span>(<span class="_code_num">404</span>));</div>
 
-<!-- START CODE -->
-<div id="examplehttprespcode-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.response</span>()<span class="_code_api">.content</span>(<span class="_code_str">""</span>)<span class="_code_api">.code</span>(<span class="_code_num">404</span>));</div>
+        </div>
+        <!-- END CODE -->
 
-</div>
-<!-- END CODE -->
-
-	</div>
+    </div>
 
     <div id="examplehttprespcode-right" class="col-md-4">
         <div id="examplehttprespcode-results" class="results">
@@ -1067,17 +1171,17 @@ Error: problem!
             </div>
 
 
-                <div class="eg-error">
-<!-- EXAMPLE#httprespcode ERROR STARTS HERE -->
-<span class="not-found">404 Not found!</span>
-<!-- EXAMPLE#httprespcode ERROR END HERE -->
-                </div>
+            <div class="eg-error">
+                <!-- EXAMPLE#httprespcode ERROR STARTS HERE -->
+                <span class="not-found">404 Not found!</span>
+                <!-- EXAMPLE#httprespcode ERROR ENDS HERE -->
+            </div>
         </div>
     </div>
 </div>
 
-<div id="examplehttprespcode-extra" class="row">
-<div class="col-md-12">
+<div id="examplehttprespcode-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>Response Type API (in interface Resp):</b>
   </h4>
@@ -1100,20 +1204,26 @@ Error: problem!
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE httpsession -->
 
-<div id="examplehttpsession-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">12</span> HTTP session</div>
-	</div>
+<div id="http-session" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">12</span>
+            
+            HTTP session
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpsession-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
 	<div class="docs">
 		<p>A HTTP session is a temporary data storage that spans multiple
 			HTTP requests. Data stored in the session can be accessed later, when
@@ -1129,10 +1239,11 @@ Error: problem!
 
 <div id="examplehttpsession-body" class="row">
 
-	<div id="examplehttpsession-left" class="col-md-12">
-	</div>
+    <div id="examplehttpsession-left" class="col-md-12">
+    </div>
 
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -1141,14 +1252,19 @@ Error: problem!
 
 <!-- EXAMPLE httpsessionmem -->
 
-<div id="examplehttpsessionmem-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">13</span> Server-side session (a.k.a. Session)</div>
-	</div>
+<div id="server-side-session-a-k-a-session-" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">13</span>
+            
+            Server-side session (a.k.a. Session)
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpsessionmem-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
 	<div class="docs">
 		<p>The server-side session is a simple in-memory storage in the
 			web server. While this is not a problem when running only one web
@@ -1160,21 +1276,20 @@ Error: problem!
 
 <div id="examplehttpsessionmem-body" class="row">
 
-	<div id="examplehttpsessionmem-left" class="col-md-8">
+    <div id="examplehttpsessionmem-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpsessionmem-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> {</div>
+        <!-- START CODE -->
+        <div id="examplehttpsessionmem-code" class="code-clean">
+            <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> counter = req<span class="_code_api">.session</span>(<span class="_code_str">"n"</span>, <span class="_code_num">0</span>) + <span class="_code_num">1</span>;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;req<span class="_code_api">.session</span>()<span class="_code_api">.put</span>(<span class="_code_str">"n"</span>, counter);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> counter;</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpsessionmem-right" class="col-md-4">
         <div id="examplehttpsessionmem-results" class="results">
@@ -1182,38 +1297,38 @@ Error: problem!
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/first</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpsessionmem HTML STARTS HERE -->
-1
-<!-- EXAMPLE#httpsessionmem HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpsessionmem RESULT STARTS HERE -->
+                1
+                <!-- EXAMPLE#httpsessionmem RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/second</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpsessionmem HTML STARTS HERE -->
-2
-<!-- EXAMPLE#httpsessionmem HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpsessionmem RESULT STARTS HERE -->
+                2
+                <!-- EXAMPLE#httpsessionmem RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/third</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpsessionmem HTML STARTS HERE -->
-3
-<!-- EXAMPLE#httpsessionmem HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpsessionmem RESULT STARTS HERE -->
+                3
+                <!-- EXAMPLE#httpsessionmem RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
 
-<div id="examplehttpsessionmem-extra" class="row">
-<div class="col-md-12">
+<div id="examplehttpsessionmem-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>Server-side Session API (in interface Req):</b>
   </h4>
@@ -1257,20 +1372,26 @@ Error: problem!
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE httpcookiepack -->
 
-<div id="examplehttpcookiepack-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">14</span> Cookie-persisted session (a.k.a. Cookiepack)</div>
-	</div>
+<div id="cookie-persisted-session-a-k-a-cookiepack-" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">14</span>
+            
+            Cookie-persisted session (a.k.a. Cookiepack)
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpcookiepack-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
 	<div class="docs">
 		<p>The Cookiepack session is not stored by the server. Instead, it
 			is being serialized and sent to the web browser as a cookie. For the
@@ -1299,21 +1420,20 @@ Error: problem!
 
 <div id="examplehttpcookiepack-body" class="row">
 
-	<div id="examplehttpcookiepack-left" class="col-md-8">
+    <div id="examplehttpcookiepack-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpcookiepack-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> {</div>
+        <!-- START CODE -->
+        <div id="examplehttpcookiepack-code" class="code-clean">
+            <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> counter = req<span class="_code_api">.cookiepack</span>(<span class="_code_str">"n"</span>, <span class="_code_num">0</span>) + <span class="_code_num">1</span>;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;req<span class="_code_api">.cookiepack</span>()<span class="_code_api">.put</span>(<span class="_code_str">"n"</span>, counter);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> counter;</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpcookiepack-right" class="col-md-4">
         <div id="examplehttpcookiepack-results" class="results">
@@ -1321,38 +1441,38 @@ Error: problem!
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/a</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpcookiepack HTML STARTS HERE -->
-1
-<!-- EXAMPLE#httpcookiepack HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpcookiepack RESULT STARTS HERE -->
+                1
+                <!-- EXAMPLE#httpcookiepack RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/b</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpcookiepack HTML STARTS HERE -->
-2
-<!-- EXAMPLE#httpcookiepack HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpcookiepack RESULT STARTS HERE -->
+                2
+                <!-- EXAMPLE#httpcookiepack RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/c</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpcookiepack HTML STARTS HERE -->
-3
-<!-- EXAMPLE#httpcookiepack HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpcookiepack RESULT STARTS HERE -->
+                3
+                <!-- EXAMPLE#httpcookiepack RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
 
-<div id="examplehttpcookiepack-extra" class="row">
-<div class="col-md-12">
+<div id="examplehttpcookiepack-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>Cookiepack Session API (in interface Req):</b>
   </h4>
@@ -1389,20 +1509,26 @@ Error: problem!
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE httpwrap -->
 
-<div id="examplehttpwrap-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">15</span> Request wrappers (interceptors)</div>
-	</div>
+<div id="request-wrappers-interceptors-" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">15</span>
+            
+            Request wrappers (interceptors)
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpwrap-extra" class="row">
-<div class="col-md-6">
+    <div class="col-md-6">
     <img class="img-responsive" src="img/handler0.svg" />
 </div>
 <div class="col-md-6">
@@ -1413,12 +1539,11 @@ Error: problem!
 
 <div id="examplehttpwrap-body" class="row">
 
-	<div id="examplehttpwrap-left" class="col-md-8">
+    <div id="examplehttpwrap-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpwrap-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">A wrapper executes before the handler:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpwrap-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">A wrapper executes before the handler:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.defaultWrap</span>((req, next) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> next.invoke(result <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Hey: "</span> + result);</div>
@@ -1429,10 +1554,10 @@ Error: problem!
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"s"</span>, s <span class="_code_lambda">-&gt;</span> s.length());</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/upper"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"s"</span>, s <span class="_code_lambda">-&gt;</span> s.toUpperCase());</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpwrap-right" class="col-md-4">
         <div id="examplehttpwrap-results" class="results">
@@ -1440,25 +1565,26 @@ Error: problem!
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?s=abcde</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpwrap HTML STARTS HERE -->
-"Hey: 5"
-<!-- EXAMPLE#httpwrap HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpwrap RESULT STARTS HERE -->
+                "Hey: 5"
+                <!-- EXAMPLE#httpwrap RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper?s=abc</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpwrap HTML STARTS HERE -->
-"Hey: ABC"
-<!-- EXAMPLE#httpwrap HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpwrap RESULT STARTS HERE -->
+                "Hey: ABC"
+                <!-- EXAMPLE#httpwrap RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -1467,30 +1593,34 @@ Error: problem!
 
 <!-- EXAMPLE httpnotfound -->
 
-<div id="examplehttpnotfound-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">16</span> Returning a &quot;Not Found&quot; result</div>
-	</div>
+<div id="returning-a-not-found-result" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">16</span>
+            
+            Returning a &quot;Not Found&quot; result
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplehttpnotfound-body" class="row">
 
-	<div id="examplehttpnotfound-left" class="col-md-8">
+    <div id="examplehttpnotfound-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpnotfound-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">Returning a <span class="text-box">null</span> means <span class="text-box">NOT FOUND</span>:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpnotfound-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">Returning a <span class="text-box">null</span> means <span class="text-box">NOT FOUND</span>:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(req <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> req<span class="_code_api">.params</span>().size() == <span class="_code_num">1</span> ? req<span class="_code_api">.params</span>() : <span class="_code_kw">null</span>;</div>
 <div class="example-line clearfix">});</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpnotfound-right" class="col-md-4">
         <div id="examplehttpnotfound-results" class="results">
@@ -1499,34 +1629,35 @@ Error: problem!
             </div>
 
 
-                <div class="eg-error">
-<!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
-<span class="not-found">404 Not found!</span>
-<!-- EXAMPLE#httpnotfound ERROR END HERE -->
-                </div>
+            <div class="eg-error">
+                <!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
+                <span class="not-found">404 Not found!</span>
+                <!-- EXAMPLE#httpnotfound ERROR ENDS HERE -->
+            </div>
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/?a=1</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpnotfound HTML STARTS HERE -->
-{"a":"1"}
-<!-- EXAMPLE#httpnotfound HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpnotfound RESULT STARTS HERE -->
+                {"a":"1"}
+                <!-- EXAMPLE#httpnotfound RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/?a=1&amp;b=2</span>
             </div>
 
 
-                <div class="eg-error">
-<!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
-<span class="not-found">404 Not found!</span>
-<!-- EXAMPLE#httpnotfound ERROR END HERE -->
-                </div>
+            <div class="eg-error">
+                <!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
+                <span class="not-found">404 Not found!</span>
+                <!-- EXAMPLE#httpnotfound ERROR ENDS HERE -->
+            </div>
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -1535,21 +1666,25 @@ Error: problem!
 
 <!-- EXAMPLE httpgeneric -->
 
-<div id="examplehttpgeneric-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">17</span> Generic handlers match any request</div>
-	</div>
+<div id="generic-handlers-match-any-request" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">17</span>
+            
+            Generic handlers match any request
+            
+        </div>
+    </div>
 </div>
 
 
 <div id="examplehttpgeneric-body" class="row">
 
-	<div id="examplehttpgeneric-left" class="col-md-8">
+    <div id="examplehttpgeneric-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpgeneric-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">Generic handlers match any request (in the declaration order):</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpgeneric-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">Generic handlers match any request (in the declaration order):</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.data</span>()<span class="_code_api">.isEmpty</span>() ? <span class="_code_str">"Simple: "</span> + req<span class="_code_api">.uri</span>() : <span class="_code_kw">null</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -1557,10 +1692,10 @@ Error: problem!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(req<span class="_code_api">.verb</span>(), req<span class="_code_api">.uri</span>(), req<span class="_code_api">.data</span>()));</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpgeneric-right" class="col-md-4">
         <div id="examplehttpgeneric-results" class="results">
@@ -1568,11 +1703,11 @@ Error: problem!
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpgeneric HTML STARTS HERE -->
-Simple: /foo
-<!-- EXAMPLE#httpgeneric HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpgeneric RESULT STARTS HERE -->
+                Simple: /foo
+                <!-- EXAMPLE#httpgeneric RESULT ENDS HERE -->
+            </div>
 
             <div>
                 <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hey?name=Rapidoid</span>
@@ -1581,15 +1716,16 @@ Simple: /foo
                 <span class="label label-default eg-data">BODY: {&quot;cool&quot;:true}</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpgeneric HTML STARTS HERE -->
-[POST, /hey?name=Rapidoid, {name=Rapidoid, cool=true}]
-<!-- EXAMPLE#httpgeneric HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpgeneric RESULT STARTS HERE -->
+                [POST, /hey?name=Rapidoid, {name=Rapidoid, cool=true}]
+                <!-- EXAMPLE#httpgeneric RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -1598,26 +1734,30 @@ Simple: /foo
 
 <!-- EXAMPLE httpasync -->
 
-<div id="examplehttpasync-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">18</span> Asynchronous request processing</div>
-	</div>
+<div id="asynchronous-request-processing" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">18</span>
+            
+            Asynchronous request processing
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpasync-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
     <img class="img-responsive" src="img/server.svg" />
 </div>
 </div>
 
 <div id="examplehttpasync-body" class="row">
 
-	<div id="examplehttpasync-left" class="col-md-8">
+    <div id="examplehttpasync-left" class="col-md-8">
 
-
-<!-- START CODE -->
-<div id="examplehttpasync-code" class="code-clean">
-<div class="comment-line clearfix"><span class="_code_comment">Wait 1 second before returning a response:</span></div>
+        <!-- START CODE -->
+        <div id="examplehttpasync-code" class="code-clean">
+            <div class="comment-line clearfix"><span class="_code_comment">Wait 1 second before returning a response:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(req <span class="_code_lambda">-&gt;</span> <span class="_code_api">Jobs</span><span class="_code_api">.schedule</span>(() <span class="_code_lambda">-&gt;</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -1625,10 +1765,10 @@ Simple: /foo
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}, <span class="_code_num">1</span>, <span class="_code_cls">TimeUnit</span>.<span class="_code_cls">SECONDS</span>));</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
     <div id="examplehttpasync-right" class="col-md-4">
         <div id="examplehttpasync-results" class="results">
@@ -1636,18 +1776,18 @@ Simple: /foo
                 <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
             </div>
 
-                <div class="eg-result">
-<!-- EXAMPLE#httpasync HTML STARTS HERE -->
-"OK"
-<!-- EXAMPLE#httpasync HTML END HERE -->
-                </div>
+            <div class="eg-result">
+                <!-- EXAMPLE#httpasync RESULT STARTS HERE -->
+                "OK"
+                <!-- EXAMPLE#httpasync RESULT ENDS HERE -->
+            </div>
 
         </div>
     </div>
 </div>
 
-<div id="examplehttpasync-extra" class="row">
-<div class="col-md-12">
+<div id="examplehttpasync-extra2" class="row">
+    <div class="col-md-12">
   <h4>
     <b>Asynchronous Processing API (in interface Req):</b>
   </h4>
@@ -1698,20 +1838,26 @@ Simple: /foo
 </div>
 </div>
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE httpargs -->
 
-<div id="examplehttpargs-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">19</span> Server Configuration</div>
-	</div>
+<div id="server-configuration" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">19</span>
+            
+            Server Configuration
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpargs-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
     <h4>Usage:</h4>
     <h5>java -cp &lt;yourapp&gt;.jar com.yourapp.Main [option1 option2 ...]</h5>
     
@@ -1773,12 +1919,12 @@ Simple: /foo
 
 <div id="examplehttpargs-body" class="row">
 
-	<div id="examplehttpargs-left" class="col-md-12">
-		<div id="examplehttpargs-codedesc" class="eg_title">MyApp.java</div>
+    <div id="examplehttpargs-left" class="col-md-12">
+        <div id="examplehttpargs-codedesc" class="eg_title">MyApp.java</div>
 
-<!-- START CODE -->
-<div id="examplehttpargs-code" class="code-clean">
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">MyApp</span> {</div>
+        <!-- START CODE -->
+        <div id="examplehttpargs-code" class="code-clean">
+            <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">MyApp</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Initialize the configuration:</span></div>
@@ -1789,12 +1935,13 @@ Simple: /foo
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
 
-</div>
-<!-- END CODE -->
+        </div>
+        <!-- END CODE -->
 
-	</div>
+    </div>
 
 </div>
+
 
 
 <div class="row row-separated-micro">
@@ -1803,14 +1950,19 @@ Simple: /foo
 
 <!-- EXAMPLE httpapi -->
 
-<div id="examplehttpapi-title" class="row">
-	<div class="col-md-12">
-		<div class="caption"><span class="badge badge-eg-num">20</span> API documentation</div>
-	</div>
+<div id="api-documentation" class="row">
+    <div class="col-md-12">
+        <div class="caption">
+            <span class="badge badge-eg-num">20</span>
+            
+            API documentation
+            
+        </div>
+    </div>
 </div>
 
 <div id="examplehttpapi-extra" class="row">
-<div class="col-md-12">
+    <div class="col-md-12">
   <h4>
     <b>The HTTP Request and Response API (in interface Req):</b>
   </h4>
@@ -2411,55 +2563,101 @@ Simple: /foo
 
 <div id="examplehttpapi-body" class="row">
 
-	<div id="examplehttpapi-left" class="col-md-12">
-	</div>
+    <div id="examplehttpapi-left" class="col-md-12">
+    </div>
 
 </div>
+
 
 
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
+
 </div>
 
 <div class="col-md-2">
-<div class="modules-right">
-<h3 class="module-title">Rapidoid Modules:</h3>
-<div class="module-wrap">
- <h4 class="module-title"><a href="http-fast.html"><a href="http-fast.html">rapidoid-http-fast</a></a></h4>
- <div class="module-box">Very Fast Web Server</div>
+<div class="toc-right">
+    <h3 class="toc-title">Contents:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#restful-service-one-liner">RESTful service one-liner</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#web-page-one-liner">Web page one-liner</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#more-control-over-the-http-server-setup">More control over the HTTP server setup</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#http-handlers-and-routing">HTTP handlers and routing</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#all-the-request-data-is-in-the-req-req-parameter">All the request data is in the (Req req) parameter</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#rendering-a-http-response">Rendering a HTTP response</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#high-level-annotation-based-pojo-controllers">High-level annotation-based POJO controllers</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#exception-handlers">Exception handlers</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#mvc-architecture-with-template-engine-of-your-choice-">MVC architecture (with template engine of your choice)</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#manipulating-the-response-content-type">Manipulating the response content type</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#manipulating-the-response-code">Manipulating the response code</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#http-session">HTTP session</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#server-side-session-a-k-a-session-">Server-side session (a.k.a. Session)</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#cookie-persisted-session-a-k-a-cookiepack-">Cookie-persisted session (a.k.a. Cookiepack)</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#request-wrappers-interceptors-">Request wrappers (interceptors)</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#returning-a-not-found-result">Returning a &quot;Not Found&quot; result</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#generic-handlers-match-any-request">Generic handlers match any request</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#asynchronous-request-processing">Asynchronous request processing</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#server-configuration">Server Configuration</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#api-documentation">API documentation</a>
+    </div>
 </div>
-<div class="module-wrap">
- <h4 class="module-title"><a href="gui.html"><a href="gui.html">rapidoid-gui</a></a></h4>
- <div class="module-box">Web GUI Components (Bootstrap-based)</div>
-</div>
-<div class="module-wrap">
- <h4 class="module-title"><a href="web.html"><a href="web.html">rapidoid-web</a></a></h4>
- <div class="module-box">High-level POJO Web Framework</div>
-</div>
-<div class="module-wrap">
- <h4 class="module-title"><a href="fluent.html"><a href="fluent.html">rapidoid-fluent</a></a></h4>
- <div class="module-box">Fluent API for Clean Manipulation of Collections</div>
-</div>
-<div class="module-wrap">
- <h4 class="module-title"><a href="u.html"><a href="u.html">rapidoid-u</a></a></h4>
- <div class="module-box">Simple &amp; Sweet Utils</div>
-</div>
-</div>
+
 </div>
 
 </div>
 
 <div class="row">
-<div class="col-md-12">
-    <div class="page-footer">Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors</div>
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
 </div>
-</div>
+
 
 </div> <!-- container -->
 
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>	
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -2482,7 +2680,8 @@ Simple: /foo
         fjs.parentNode.insertBefore(js, fjs);
     }
 }(document, 'script', 'twitter-wjs');
-</script>   
+</script>
+
 
 </body>
 </html>

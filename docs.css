@@ -1,5 +1,5 @@
 #rapidoid-title {
-	font-size: 20px;
+    font-size: 20px;
 	font-weight: bold;
 }
 
@@ -37,12 +37,20 @@ div.caption {
 }
 
 .module-header {
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: bold;
 	color: #555;
+	margin-top: 30px;
 }
 
 .module-desc {
+	font-size: 16px;
+	color: #333;
+	border-left: 3px solid #AAA;
+	padding-left: 10px;
+}
+
+.module-explanation {
 	margin: 18px 0px;
 	font-size: 16px;
 	color: #333;
@@ -173,24 +181,18 @@ pre {
 	margin-right: 15px;
 }
 
-.modules-right {
-	padding: 0px 5px;
-	border: solid #ddd 1px;
-	border-radius: 15px;
-	text-align: center;
-}
-
 .module-title {
 	font-size: 16px;
 }
 
-.module-box {
-	font-size: 13px;
+.module-about {
+	font-size: 14px;
+	font-weight: bold;
 }
 
-.module-wrap {
-	border-top: #ccc dotted 1px;
-	padding: 7px 0px;
+.module-about-right {
+	font-size: 12px;
+	font-weight: bold;
 }
 
 #mc_embed_signup {
@@ -270,10 +272,11 @@ pre {
 	font-size: 13px;
 	word-break: break-all;
 	word-wrap: break-word;
+	padding-bottom: 10px;
 }
 
 ._code_comment {
-	font-size: 12px !important;
+	font-size: 13px !important;
 }
 
 ._code_comment .text-box {
@@ -330,4 +333,10 @@ pre {
 	padding: 0px !important;
 	margin: 0px !important;
 	vertical-align: middle !important;
+}
+
+.toc-wrap {
+    padding: 5px 0px;
+    font-size: 13px;
+    border-bottom: solid #DDD 1px;
 }
