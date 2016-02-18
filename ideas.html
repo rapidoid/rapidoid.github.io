@@ -1,194 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
-<meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="rapidoid.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="rapidoid.min.js"></script>
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/yeti/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
-<link href="rapidoid.css" type="text/css" rel="stylesheet" />
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-<title>Rapidoid - GSoC ideas</title>
+    <title>Rapidoid Community and Support</title>
 
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
 
 </head>
 
-<body>
 
-  <nav role="navigation" class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Rapidoid</a>
-      </div>
-      <div id="collapsable" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-left">
-	  <li><a href="/">Getting started</a></li>
-	  <li><a href="community.html">Community &amp; Support</a></li>
-	  <li><a href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
-        </ul>
-      </div>
+<body class="rapidoid">
+
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Getting started</a></li>
+                <li class="active"><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+            </ul>
+
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org"
+                   data-text="Released #Rapidoid v5.0.12 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
     </div>
-  </nav>
+</nav>
 
-<div class="container-fluid">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2>Ideas for Google Summer of Code 2015:</h2>
-				<h4><i>(Students are welcome to propose and discuss their own ideas on the mailing list, as well)</i></h4>
-			</div>
-		</div>
 
-		<div class="row row-separated">
-			<div class="col-md-12">
-				<h3 class="idea-title">Information for students</h3>
-				<p class="idea-text">
-These ideas were contributed by the lead developer of Rapidoid. They are not final nor complete. If you wish to submit a proposal based on these ideas, or completely new idea, it would be great to first contact the developer(s) on the mailing list <code>rapidoid@googlegroups.com</code> and discuss the details further.
-				</p>
-			</div>
-		</div>
- 		
-		<div class="row row-separated">
-			<div class="col-md-12">
-				<h3 class="idea-title">1. Integrate Google Maps in the framework (create wrapper widget)</h3>
-				<h4 class="idea-label">Brief explanation:</h4>
-				<p class="idea-text">Rapidoid GUI has various widgets already included (grid, form, paging etc.).</p>
-				<p class="idea-text">Design and implement Google Maps widget in the framework, encapsulating the Google Maps API usage details away from the framework users.</p>
-				<p class="idea-text">The idea is to enable software developers to add Google Maps to the web aplication using simple Java code:</p>
-				<p class="idea-text">e.g. <code>gmap(41.9840351, 21.4710672).markers(...).direction(...).menu(...)</code></p>
-				<h4 class="idea-label">Expected results:</h4>
-				<p class="idea-text">Fully functional, configurable and extensible Google Maps widget included in the framework.</p>
-				<p class="idea-text">Appropriate tests and documentation for the widget.</p>
-				<p class="idea-text">The widget must support the typical Google Maps features: map style, markers, directions etc.</p>
-				<p class="idea-text">It should be possible to provide data to the widget in both ways: pre-specified upon construction, or asynchronous loading through Ajax.</p>
-				<h4 class="idea-label">Knowledge prerequisite:</h4>
-				<p class="idea-text">Object-oriented programming with Java (mandatory)</p>
-				<p class="idea-text">HTML, CSS, JavaScript, Ajax (mandatory)</p>
-				<p class="idea-text">Google Maps API (optional)</p>
-				<h4 class="idea-label">Mentor:</h4>
-				<p class="idea-text">Nikolche Mihajlovski</p>
-				<h4 class="idea-label">Contact:</h4>
-				<p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
-			</div>
-		</div>
-		
-		<div class="row row-separated">
-			<div class="col-md-12">
-				<h3 class="idea-title">2. Integrate Google Calendar in the framework (create wrapper widget)</h3>
-				<h4 class="idea-label">Brief explanation:</h4>
-				<p class="idea-text">Rapidoid GUI has various widgets already included (grid, form, paging etc.).</p>
-				<p class="idea-text">Design and implement Google Calendar widget in the framework, encapsulating the Google Calendar API usage details away from the framework users.</p>
-				<p class="idea-text">The idea is to enable software developers to add Google Calendar to the web aplication using simple Java code:</p>
-				<p class="idea-text">e.g. <code>gcalendar(...).date(...).layout(...).menu(...)</code></p>
-				<h4 class="idea-label">Expected results:</h4>
-				<p class="idea-text">Fully functional, configurable and extensible Google Calendar widget included in the framework.</p>
-				<p class="idea-text">Appropriate tests and documentation for the widget.</p>
-				<p class="idea-text">The widget must support the typical Google Calendar features: map style, markers, directions etc.</p>
-				<p class="idea-text">It should be possible to provide data to the widget in both ways: pre-specified upon construction, or asynchronous loading through Ajax.</p>
-				<h4 class="idea-label">Knowledge prerequisite:</h4>
-				<p class="idea-text">Object-oriented programming with Java (mandatory)</p>
-				<p class="idea-text">HTML, CSS, JavaScript, Ajax (mandatory)</p>
-				<p class="idea-text">Google Calendar API (optional)</p>
-				<h4 class="idea-label">Mentor:</h4>
-				<p class="idea-text">Nikolche Mihajlovski</p>
-				<h4 class="idea-label">Contact:</h4>
-				<p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
-			</div>
-		</div>
-		
-		<div class="row row-separated">
-			<div class="col-md-12">
-				<h3 class="idea-title">3. Integrate AngularJS in the Rapidoid framework</h3>
-				<h4 class="idea-label">Brief explanation:</h4>
-				<p class="idea-text">Rapidoid GUI is currently based on Twitter Bootstrap and JQuery.</p>
-				<p class="idea-text">Include AngularJS in the framework, as well.</p>
-				<p class="idea-text">Add the AngularJS-specific tag attributes to the HTML DSL:</p>
-				<p class="idea-text">e.g. <code>li(checkbox().ng_model("todo.done")).ng_repeat("todo in todos")</code></p>
-				<p class="idea-text">Add support for easy inclusion of arbitrary AngularJS modules, assumming their resources/dependencies are provided by the developer.</p>
-				<p class="idea-text">Create and document at least one AngularJS-powered widget as a proof-of-concept (similar to grid, form etc).</p>
-				<h4 class="idea-label">Expected results:</h4>
-				<p class="idea-text">Fully functional inclusion and integration of the AngularJS framework in the Rapidoid framework.</p>
-				<p class="idea-text">Extended HTML DSL to reflect all AngularJS-specific tag attributes.</p>
-				<p class="idea-text">Appropriate documentation for the AngularJS-specific tag attributes in the HTML DSL.</p>
-				<p class="idea-text">Basic support for configuration AngularJS modules to be included.</p>
-				<h4 class="idea-label">Knowledge prerequisite:</h4>
-				<p class="idea-text">Object-oriented programming with Java (mandatory)</p>
-				<p class="idea-text">HTML, CSS, JavaScript, Ajax (mandatory)</p>
-				<p class="idea-text">AngularJS (optional, but good-to-have)</p>
-				<h4 class="idea-label">Mentor:</h4>
-				<p class="idea-text">Nikolche Mihajlovski</p>
-				<h4 class="idea-label">Contact:</h4>
-				<p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
-			</div>
-		</div>
+<div class="container">
 
-		<div class="row row-separated">
-			<div class="col-md-12">
-				<h3 class="idea-title">4. Other ideas</h3>
-				<h4 class="idea-label">Brief explanation:</h4>
-				<p class="idea-text">Rapidoid is a complex full-stack project, so here are some draft example ideas covering various layers:</p>
-				<p class="idea-text">- implement data store for the embedded in-mem database based on Redis or MongoDB or BigTable or DynamoDB etc.</p>
-				<p class="idea-text">- add UDP protocol support to the low-level network module,</p>
-				<p class="idea-text">- complete the high-performance WebSocket server using rapidoid-net network protocol sub-framework,</p>
-				<p class="idea-text">- implement high-performance WebSocket client using rapidoid-net network protocol sub-framework,</p>
-				<p class="idea-text">- integrate DataTables in the framework (create wrapper widgets, similar to the proposed idea about Google Maps),</p>
-				<p class="idea-text">- integrate a collection of smaller JQuery-based and Bootstrap-based GUI components in the Rapidoid framework (create wrapper widgets, similar to the proposed idea about Google Maps),</p>
-				<p class="idea-text">- implement the <a rel="nofollow" href="https://raftconsensus.github.io/">Raft Consensus Algorithm</a> using rapidoid-net network protocol sub-framework,</p>
-				<p class="idea-text">- integrate Rapidoid networking sub-framework with the <a rel="nofollow" href="https://github.com/kuujo/copycat">Copycat</a> framework.</p>
-				<h4 class="idea-label">Expected results:</h4>
-				<p class="idea-text">What is promised should be delivered.</p>
-				<h4 class="idea-label">Knowledge prerequisite:</h4>
-				<p class="idea-text">Object-oriented programming with Java (mandatory)</p>
-				<p class="idea-text">Any experience related to the proposed idea is a great plus.</p>
-				<h4 class="idea-label">Mentor:</h4>
-				<p class="idea-text">Nikolche Mihajlovski</p>
-				<h4 class="idea-label">Contact:</h4>
-				<p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
-			</div>
-		</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Rapidoid - Ideas for Google Summer of Code 2016:</h2>
+            <h4><i>(Students are welcome to propose and discuss their own ideas on the mailing list, as well)</i></h4>
+        </div>
+    </div>
 
-		<div class="row row-separated">
-			<div class="col-md-12">
-				<h3 class="idea-title">X. Your idea</h3>
-				<h4 class="idea-label">Brief explanation:</h4>
-				<p class="idea-text">Students are welcome to propose and discuss their own ideas.</p>
-				<h4 class="idea-label">Expected results:</h4>
-				<p class="idea-text">What is promised and agreed-upon - should be delivered.</p>
-				<h4 class="idea-label">Knowledge prerequisite:</h4>
-				<p class="idea-text">Object-oriented programming with Java (mandatory)</p>
-				<p class="idea-text">Any experience relevant to the proposed idea is a great plus.</p>
-				<h4 class="idea-label">Mentor:</h4>
-				<p class="idea-text">Nikolche Mihajlovski</p>
-				<h4 class="idea-label">Contact:</h4>
-				<p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
-			</div>
-		</div>
+    <div class="row row-separated-nano">
+        <div class="col-md-12">
+            <h3 class="idea-title">Information for students</h3>
+            <p class="idea-text">
+                These ideas were contributed by the lead developer of Rapidoid. They are not final nor complete. If you wish to submit a proposal based on these ideas, or completely new idea, it would be great to first contact the developer(s) on the mailing list <code>rapidoid@googlegroups.com</code> and discuss the details further.
+            </p>
+        </div>
+    </div>
 
-		<div class="row row-separated">
-			<div class="col-md-12">
-			</div>
-		</div>
-		
-	</div>
-</div>
+    <div class="row row-separated-nano">
+        <div class="col-md-12">
+            <h3 class="idea-title">1. Develop high-performance HTTP 2 server</h3>
+            <h4 class="idea-label">Brief explanation:</h4>
+            <p class="idea-text">Rapidoid consists of HTTP 1.1 server and high-level MVC web framework on top of it.</p>
+            <p class="idea-text">The HTTP 1.1 server in one of the fastest in the world. (<a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">View benchmark</a>)</p>
+            <p class="idea-text">A great step forward would be to implement the HTTP 2 protocol.</p>
+            <p class="idea-text">To achieve the highest performance, the implementation should be based on the Rapidoid Net module, similar to the existing HTTP 1.1 implementation.</p>
+            <h4 class="idea-label">Expected results:</h4>
+            <p class="idea-text">Fully functional and configurable HTTP 2 server.</p>
+            <p class="idea-text">Appropriate tests and basic documentation for the server.</p>
+            <h4 class="idea-label">Knowledge prerequisite:</h4>
+            <p class="idea-text">Object-oriented programming with Java (mandatory)</p>
+            <p class="idea-text">Network programming with Java (I/O selectors, buffers, etc.)</p>
+            <p class="idea-text">Understanding of the HTTP 2 protocol</p>
+            <h4 class="idea-label">Mentor:</h4>
+            <p class="idea-text">Nikolche Mihajlovski</p>
+            <h4 class="idea-label">Contact:</h4>
+            <p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
+        </div>
+    </div>
+
+    <div class="row row-separated-nano">
+        <div class="col-md-12">
+            <h3 class="idea-title">2. Develop high-performance WebSocket server</h3>
+            <h4 class="idea-label">Brief explanation:</h4>
+            <p class="idea-text">Rapidoid consists of HTTP 1.1 server and high-level MVC web framework on top of it.</p>
+            <p class="idea-text">The HTTP 1.1 server in one of the fastest in the world. (<a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">View benchmark</a>)</p>
+            <p class="idea-text">A great step forward would be to implement the WebSocket protocol.</p>
+            <p class="idea-text">To achieve the highest performance, the implementation should be based on the Rapidoid Net module, similar to the existing HTTP 1.1 implementation.</p>
+            <h4 class="idea-label">Expected results:</h4>
+            <p class="idea-text">Fully functional and configurable WebSocket server.</p>
+            <p class="idea-text">Appropriate tests and basic documentation for the server.</p>
+            <h4 class="idea-label">Knowledge prerequisite:</h4>
+            <p class="idea-text">Object-oriented programming with Java (mandatory)</p>
+            <p class="idea-text">Network programming with Java (I/O selectors, buffers, etc.)</p>
+            <p class="idea-text">Understanding of the WebSocket protocol</p>
+            <h4 class="idea-label">Mentor:</h4>
+            <p class="idea-text">Nikolche Mihajlovski</p>
+            <h4 class="idea-label">Contact:</h4>
+            <p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
+        </div>
+    </div>
+
+    <div class="row row-separated-nano">
+        <div class="col-md-12">
+            <h3 class="idea-title">3. Integrate Google Maps in the web framework (create wrapper widget)</h3>
+            <h4 class="idea-label">Brief explanation:</h4>
+            <p class="idea-text">Rapidoid consists of HTTP 1.1 server and high-level MVC web framework on top of it.</p>
+            <p class="idea-text">The Rapidoid GUI module has various widgets already included (grid, form, paging etc.).</p>
+            <p class="idea-text">Design and implement Google Maps widget in the framework, encapsulating the Google Maps API usage details away from the framework users.</p>
+            <p class="idea-text">The idea is to enable software developers to add Google Maps to the web aplication using simple Java code:</p>
+            <p class="idea-text">e.g. <code>gmap(41.9840351, 21.4710672).markers(...).direction(...).menu(...)</code></p>
+            <h4 class="idea-label">Expected results:</h4>
+            <p class="idea-text">Fully functional, configurable and extensible Google Maps widget included in the framework.</p>
+            <p class="idea-text">Appropriate tests and documentation for the widget.</p>
+            <p class="idea-text">The widget must support the typical Google Maps features: map style, markers, directions etc.</p>
+            <p class="idea-text">It should be possible to provide data to the widget in both ways: pre-specified upon construction, or asynchronous loading through Ajax.</p>
+            <h4 class="idea-label">Knowledge prerequisite:</h4>
+            <p class="idea-text">Object-oriented programming with Java (mandatory)</p>
+            <p class="idea-text">HTML, CSS, JavaScript, Ajax (mandatory)</p>
+            <p class="idea-text">Google Maps API (optional)</p>
+            <h4 class="idea-label">Mentor:</h4>
+            <p class="idea-text">Nikolche Mihajlovski</p>
+            <h4 class="idea-label">Contact:</h4>
+            <p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
+        </div>
+    </div>
+
+    <div class="row row-separated-nano">
+        <div class="col-md-12">
+            <h3 class="idea-title">X. Your idea</h3>
+            <h4 class="idea-label">Brief explanation:</h4>
+            <p class="idea-text">Students are welcome to propose and discuss their own ideas.</p>
+            <h4 class="idea-label">Expected results:</h4>
+            <p class="idea-text">What is promised and agreed-upon - should be delivered.</p>
+            <h4 class="idea-label">Knowledge prerequisite:</h4>
+            <p class="idea-text">Object-oriented programming with Java (mandatory)</p>
+            <p class="idea-text">Any experience relevant to the proposed idea is a great plus.</p>
+            <h4 class="idea-label">Mentor:</h4>
+            <p class="idea-text">Nikolche Mihajlovski</p>
+            <h4 class="idea-label">Contact:</h4>
+            <p class="idea-text">Rapidoid mailing list <code>rapidoid@googlegroups.com</code></p>
+        </div>
+    </div>
+
+    <div class="row row-separated-nano">
+        <div class="col-md-12">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-footer">
+                Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and
+                contributors
+            </div>
+        </div>
+    </div>
+
+</div> <!-- container -->
+
+<script type="text/javascript">
+  document.getElementById('forum_embed').src =
+     'https://groups.google.com/forum/embed/?place=forum/rapidoid'
+     + '&showsearch=true&showpopout=true&showtabs=false'
+     + '&parenturl=' + encodeURIComponent(window.location.href);
+</script>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
 
 </body>
 </html>
