@@ -20,7 +20,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid Community</title>
+    <title>Rapidoid Gui - More documentation - coming soon...</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -68,7 +68,7 @@
                     </ul>
                 </li>
 
-                <li class="active"><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="community.html">Community</a></li>
                 <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
             </ul>
 
@@ -95,63 +95,124 @@
 
 <div class="container">
 
-<div class="row">
-    <div class="col-md-12">
-        <h2>Extremely Fast, Simple and Powerful Java Web Framework!</h2>
-    </div>
-</div>
-
-
-
-<div class="row">
-    <div class="col-md-8 col-sm-12">
-        <p>
-            <b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). <a
-                    rel="nofollow"
-                    href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View
-                benchmark...</a></b>
-            <span id="group-email">Community: <a
-                    href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
-        </p>
-    </div>
-
-    <div class="col-md-4 col-sm-12">
-    </div>
-</div>
-
-
-<div class="row row-separated-nano">
-    <div class="col-md-12">
-
-
-
-        <div class="module-explanation">
-            <h4>The main communication channel is the Rapidoid Google Group (<b>rapidoid@googlegroups.com</b>):</h4>
-<iframe id="forum_embed" src="javascript:void(0)" scrolling="no" frameborder="0" width="900"
-        height="700"></iframe>
-
+    <div class="row">
+        <div class="col-md-10">
+            <h2>More documentation - coming soon...</h2>
+        </div>
+        <div class="col-md-2">
+            
         </div>
     </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Starting from scratch - project setup with Maven</h4>
+
+        <div class="docs">
+            First, we need to create a new Java 8 project and configure it properly using Maven:
+        </div>
+
+<pre class="maven-code">
+<span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependencies&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-gui<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.1.0<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span>
+&nbsp;
+<span class="_code_tag">&lt;/project&gt;</span>
+</pre>
+
+    </div>
+</div>
+
+
+            <div id="more-documentation-coming-soon" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            Now, the cool stuff!
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplegui.soon-body" class="row">
+
+    <div id="examplegui.soon-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div id="examplegui.soon-code" class="code-clean">
+            
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
 </div>
 
 
 
-<div class="row">
-  
-<div class="col-md-10">
 
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Building the Project</h4>
+
+        <div class="docs">Building the project with Maven is easy:</div>
+
+        <pre class="maven-code"><span class="_code_api">mvn package</span></pre>
+    </div>
 </div>
 
-<div class="col-md-2">
-<div class="toc-right">
-    <h3 class="toc-title">Contents:</h3>
+        </div>
+
+        <div class="col-md-2">
+            <div class="toc-right">
+    <h3 class="toc-title">Topics:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="creating-a-two-column-grid-from-a-map.html">Creating a Two-column Grid from a Map</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="constructing-buttons.html">Constructing buttons</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="creating-a-form-from-a-map.html">Creating a form from a Map</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="more-documentation-coming-soon.html">More documentation - coming soon...</a>
+    </div>
 </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<div class="row">
+    <div class="row">
     <div class="col-md-12">
         <div class="page-footer">
             Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors

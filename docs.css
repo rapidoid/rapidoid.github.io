@@ -22,18 +22,15 @@ body {
 	background-color: #FFF !important;
 }
 
-div.caption {
+h4.caption {
 	margin-bottom: 10px;
 	margin-top: 5px;
 	padding: 7px;
-	border-top: 0px;
-	border-bottom: 1px solid;
-	border-left: 0px;
-	border-right: 0px;
-	border-color: #CCC;
+	border: 2px solid #E9E9E9;
 	font-size: 20px;
 	font-weight: bold;
 	color: #555;
+	background: #EEE;
 }
 
 .module-header {
@@ -64,7 +61,7 @@ div.caption {
 	font-size: 14px;
 	font-weight: bold;
 	vertical-align: middle;
-	background-color: #967;
+	background-color: #444;
 	color: #FFF;
 }
 
@@ -260,19 +257,27 @@ pre {
 	font-weight: bold;
 }
 
+.empty-line {
+	font-size: 8px;
+	word-wrap: break-word;
+}
+
 .example-line {
-	font-size: 14px;
+	font-size: 13px;
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	line-height: 1.5;
-	word-break: break-all;
 	word-wrap: break-word;
+	padding: 1px 5px;
+}
+
+.empty-line, .example-line  {
+	background: #F3F3F3;
 }
 
 .comment-line {
 	font-size: 13px;
-	word-break: break-all;
 	word-wrap: break-word;
-	padding-bottom: 10px;
+	padding: 10px 0px;
 }
 
 ._code_comment {
@@ -286,14 +291,12 @@ pre {
 	border-radius: 1px;
 }
 
-.empty-line {
-	font-size: 8px;
-	word-break: break-all;
-	word-wrap: break-word;
+._code_tmpl {
+	color: #A3A;
+	font-weight: bold;
 }
 
 .eg_title {
-	margin-bottom: 5px;
 }
 
 .show-gui {
@@ -339,4 +342,13 @@ pre {
     padding: 5px 0px;
     font-size: 13px;
     border-bottom: solid #DDD 1px;
+}
+
+.mini-example-title {
+    color: #333 !important;
+}
+
+.routes {
+    color: #555 !important;
+    font-weight: bold;
 }

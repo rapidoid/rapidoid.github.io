@@ -20,7 +20,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid U</title>
+    <title>Rapidoid Essentials</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -43,9 +43,33 @@
         </div>
         <div id="collapsable" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="/">Getting started</a></li>
-                <li><a rel="nofollow" href="community.html">Community &amp; Support</a></li>
-                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source on GitHub</a></li>
+                <li><a href="/">Getting started</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="/">Getting started</a></li>
+                        <li><a href="documentation.html">Full documentation</a></li>
+                        <li><a href="admincenter.html">The Admin Center</a></li>
+                        <!--
+                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
+                        -->
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="gui.html">gui</a></li>
+                        <li><a href="web.html">web</a></li>
+                        <li><a href="fluent.html">fluent</a></li>
+                        <li><a href="essentials.html">essentials</a></li>
+                    </ul>
+                </li>
+
+                <li><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
             </ul>
 
             <div class="navbar-brand navbar-right">
@@ -61,7 +85,7 @@
                 <span class="g-plusone" data-size="medium"></span>
 
                 <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
-                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.0.12 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.0 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
                    data-size="small">Tweet</a>
             </div>
         </div>
@@ -84,7 +108,7 @@
         <p>
             <b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). <a
                     rel="nofollow"
-                    href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">View
+                    href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View
                 benchmark...</a></b>
             <span id="group-email">Community: <a
                     href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
@@ -137,7 +161,7 @@
                     <span class="pull-right module-about-right">JDK 8</span>
                 </li>
                 <li>
-                    <a href="u.html">rapidoid-u</a> - <span class="module-about">Simple &amp; Sweet Utils</span>
+                    <a href="essentials.html">rapidoid-essentials</a> - <span class="module-about">Simple &amp; Sweet Utils</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
             </ul>
@@ -145,12 +169,12 @@
     </div>
 
     <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-u</b> as Maven dependency:</div>
+        <div class="eg_title">Add <b>rapidoid-essentials</b> as Maven dependency:</div>
 <pre class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;
     &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-u&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.0.12&lt;/<span class="_code_tag">version</span>&gt;
+    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-essentials&lt;/<span class="_code_tag">artifactId</span>&gt;
+    &lt;<span class="_code_tag">version</span>&gt;5.1.0&lt;/<span class="_code_tag">version</span>&gt;
 &lt;/<span class="_code_tag">dependency</span>&gt;
 </pre>
 
@@ -161,9 +185,10 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
         <div class="module-header">
-            Module <span class="module-name">rapidoid-u</span> - Simple &amp; Sweet Utils
+            Module <span class="module-name">rapidoid-essentials</span> - Simple &amp; Sweet Utils
         </div>
-        <h5><b>Self-contained. 21 KB JAR size.</b></h5>
+        <h5><b>Self-contained. </b></h5>
+
 
 
         <div class="module-explanation">
@@ -182,12 +207,12 @@
 
 <div id="creating-collections" class="row">
     <div class="col-md-12">
-        <div class="caption">
+        <h4 class="caption">
             <span class="badge badge-eg-num">1</span>
+            <a href="creating-collections.html" class="mini-example-title">Creating collections</a>
             
-            Creating collections
             
-        </div>
+        </h4>
     </div>
 </div>
 
@@ -203,11 +228,9 @@
 <div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">Creating a set:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">Set</span>&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">Creating a map:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span></div>
 
         </div>
@@ -219,6 +242,8 @@
 
 
 
+
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
@@ -227,12 +252,12 @@
 
 <div id="collection-utils" class="row">
     <div class="col-md-12">
-        <div class="caption">
+        <h4 class="caption">
             <span class="badge badge-eg-num">2</span>
+            <a href="collection-utils.html" class="mini-example-title">Collection utils</a>
             
-            Collection utils
             
-        </div>
+        </h4>
     </div>
 </div>
 
@@ -248,7 +273,6 @@
 <div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">U.isEmpty utils:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span></div>
@@ -262,6 +286,8 @@
 
 
 
+
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
@@ -270,12 +296,12 @@
 
 <div id="string-utils" class="row">
     <div class="col-md-12">
-        <div class="caption">
+        <h4 class="caption">
             <span class="badge badge-eg-num">3</span>
+            <a href="string-utils.html" class="mini-example-title">String utils</a>
             
-            String utils
             
-        </div>
+        </h4>
     </div>
 </div>
 
@@ -293,25 +319,7 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Trim left by prefix:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.triml</span>(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc/"</span><span class="object-class">String</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Trim right by suffix:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.trimr</span>(<span class="_code_str">"/abc/"</span>, <span class="_code_str">"/"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"/abc"</span><span class="object-class">String</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">U.mid looks like String.substring:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.mid</span>(<span class="_code_str">"abcde"</span>, <span class="_code_num">1</span>, <span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"b"</span><span class="object-class">String</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">But U.mid supports negative indexing (-N means N from right to left):</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.mid</span>(<span class="_code_str">"abcde"</span>, <span class="_code_num">2</span>, -<span class="_code_num">1</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"cd"</span><span class="object-class">String</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.mid</span>(<span class="_code_str">"abcde"</span>, <span class="_code_num">0</span>, -<span class="_code_num">2</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"abc"</span><span class="object-class">String</span></span></span></div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span></div>
 
         </div>
         <!-- END CODE -->
@@ -321,60 +329,6 @@
 </div>
 
 
-
-<div class="row row-separated-micro">
-  <div class="col-md-12"></div>
-</div>
-
-<!-- EXAMPLE u.dynamic -->
-
-<div id="dynamic-implementation-of-interfaces" class="row">
-    <div class="col-md-12">
-        <div class="caption">
-            <span class="badge badge-eg-num">4</span>
-            
-            Dynamic implementation of interfaces
-            
-        </div>
-    </div>
-</div>
-
-
-<div id="exampleu.dynamic-body" class="row">
-
-    <div id="exampleu.dynamic-left" class="col-md-12">
-
-        <!-- START CODE -->
-        <div id="exampleu.dynamic-code" class="code-clean">
-            <div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">Dynamic implementation of interfaces:</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_cls">Dog</span> dog = <span class="_code_api">U</span><span class="_code_api">.dynamic</span>(<span class="_code_cls">Dog</span>.<span class="_code_kw">class</span>, (m, margs) <span class="_code_lambda">-&gt;</span> m<span class="_code_api">.getName</span>() + <span class="_code_str">":"</span> + margs[<span class="_code_num">0</span>]);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">dog.bite(<span class="_code_str">"me"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"bite:me"</span><span class="object-class">String</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">dog.eat(<span class="_code_str">"meat"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"eat:meat"</span><span class="object-class">String</span></span></span></div>
-
-        </div>
-        <!-- END CODE -->
-
-        <div id="exampleu.dynamic-codedesc" class="eg_title">Dog.java</div>
-
-        <!-- START CODE -->
-        <div id="exampleu.dynamic-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">interface</span> <span class="_code_cls">Dog</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> eat(<span class="_code_cls">String</span> food);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> bite(<span class="_code_cls">String</span> target);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-
-        </div>
-        <!-- END CODE -->
-
-    </div>
-
-</div>
 
 
 
@@ -396,9 +350,6 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#string-utils">String utils</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="#dynamic-implementation-of-interfaces">Dynamic implementation of interfaces</a>
     </div>
 </div>
 

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid Fluent - interface Flow extends Stream { with extra methods for convenience }</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Getting started</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="/">Getting started</a></li>
+                        <li><a href="documentation.html">Full documentation</a></li>
+                        <li><a href="admincenter.html">The Admin Center</a></li>
+                        <!--
+                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
+                        -->
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="gui.html">gui</a></li>
+                        <li><a href="web.html">web</a></li>
+                        <li><a href="fluent.html">fluent</a></li>
+                        <li><a href="essentials.html">essentials</a></li>
+                    </ul>
+                </li>
+
+                <li><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
+            </ul>
+
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.0 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>interface Flow extends Stream { with extra methods for convenience }</h2>
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Starting from scratch - project setup with Maven</h4>
+
+        <div class="docs">
+            First, we need to create a new Java 8 project and configure it properly using Maven:
+        </div>
+
+<pre class="maven-code">
+<span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependencies&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-fluent<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.1.0<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span>
+&nbsp;
+<span class="_code_tag">&lt;/project&gt;</span>
+</pre>
+
+    </div>
+</div>
+
+
+            <div id="interface-flow-extends-stream-with-extra-methods-for-convenience" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            Now, the cool stuff!
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplefluent.flow-body" class="row">
+
+    <div id="examplefluent.flow-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div id="examplefluent.flow-code" class="code-clean">
+            <div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">Flow == Java 8 Stream++:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">Set</span>&lt;<span class="_code_cls">Character</span>&gt; chars = <span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'e'</span>)<span class="_code_api">.toSet</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","b","c","d","e"]</span><span class="object-class">HashSet</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Long</span>&gt; nums = <span class="_code_api">Flow</span><span class="_code_api">.count</span>(<span class="_code_num">1</span>, <span class="_code_num">7</span>)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[1,2,3,4,5,6,7]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Long</span>&gt; range = <span class="_code_api">Flow</span><span class="_code_api">.range</span>(<span class="_code_num">1</span>, <span class="_code_num">7</span>)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[1,2,3,4,5,6]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'e'</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> c + <span class="_code_str">"!"</span>)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a!","b!","c!","d!","e!"]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'d'</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> c + <span class="_code_str">"!"</span>)<span class="_code_api">.map</span>(<span class="_code_cls">String</span>::toUpperCase)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["A!","B!","C!","D!"]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'c'</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> c + <span class="_code_str">"!"</span>)<span class="_code_api">.filter</span>(s <span class="_code_lambda">-&gt;</span> !s.startsWith(<span class="_code_str">"b"</span>))<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a!","c!"]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">Flow</span><span class="_code_api">.of</span>(<span class="_code_str">"Hi"</span>, <span class="_code_str">"there"</span>, <span class="_code_str">"X"</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> c + <span class="_code_str">"!"</span>)<span class="_code_api">.filter</span>(s <span class="_code_lambda">-&gt;</span> s.length() &lt;= <span class="_code_num">3</span>)<span class="_code_api">.toList</span>();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["Hi!","X!"]</span><span class="object-class">ArrayList</span></span></span></div>
+
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Building the Project</h4>
+
+        <div class="docs">Building the project with Maven is easy:</div>
+
+        <pre class="maven-code"><span class="_code_api">mvn package</span></pre>
+    </div>
+</div>
+
+        </div>
+
+        <div class="col-md-2">
+            <div class="toc-right">
+    <h3 class="toc-title">Topics:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="nice-fluent-api-with-java-8-streams-behind-the-scenes.html">Nice Fluent API with Java 8 streams behind the scenes</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="why-is-rapidoid-fluent-so-sweet.html">Why is Rapidoid Fluent so sweet?</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="map-reduce-and-group-by-on-collections.html">Map, reduce and group-by on collections</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="map-and-group-by-on-maps.html">Map and group-by on maps</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="iterating-through-lists-or-sets.html">Iterating through lists or sets</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="searching-through-lists-or-sets.html">Searching through lists or sets</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="searching-through-maps.html">Searching through maps</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="interface-flow-extends-stream-with-extra-methods-for-convenience.html">interface Flow extends Stream { with extra methods for convenience }</a>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- container -->
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
+</body>
+</html>

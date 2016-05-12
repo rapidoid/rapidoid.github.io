@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid Admincenter - JMX memory info</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Getting started</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="/">Getting started</a></li>
+                        <li><a href="documentation.html">Full documentation</a></li>
+                        <li><a href="admincenter.html">The Admin Center</a></li>
+                        <!--
+                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
+                        -->
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="gui.html">gui</a></li>
+                        <li><a href="web.html">web</a></li>
+                        <li><a href="fluent.html">fluent</a></li>
+                        <li><a href="essentials.html">essentials</a></li>
+                    </ul>
+                </li>
+
+                <li><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
+            </ul>
+
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.0 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>JMX memory info</h2>
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Starting from scratch - project setup with Maven</h4>
+
+        <div class="docs">
+            First, we need to create a new Java 8 project and configure it properly using Maven:
+        </div>
+
+<pre class="maven-code">
+<span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span>
+&nbsp;
+<span class="_code_tag">&lt;/project&gt;</span>
+</pre>
+
+    </div>
+</div>
+
+
+            <div id="jmx-memory-info" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            Now, the cool stuff!
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplejmx_mempool-body" class="row">
+
+    <div id="examplejmx_mempool-left" class="col-md-8">
+
+        <!-- START CODE -->
+        <div id="examplejmx_mempool-code" class="code-clean">
+            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
+
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplejmx_mempool-right" class="col-md-4">
+        <div id="examplejmx_mempool-results" class="results">
+        </div>
+    </div>
+</div>
+
+<div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/jmx/mempool</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#jmx_mempool RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Memory pool:</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Memory manager names</th>
+              <th>Usage</th>
+              <th>Peak usage</th>
+              <th>Collection usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Code Cache</td>
+              <td>Non-heap memory</td>
+              <td>
+                <div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;CodeCacheManager</div>
+                </div>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">7471104</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">7380608</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">2555904</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">251658240</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">7471104</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">7391424</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">2555904</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">251658240</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Metaspace</td>
+              <td>Non-heap memory</td>
+              <td>
+                <div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;Metaspace Manager</div>
+                </div>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">20840448</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">20127120</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">0</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">-1</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">20840448</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">20127120</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">0</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">-1</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Compressed Class Space</td>
+              <td>Non-heap memory</td>
+              <td>
+                <div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;Metaspace Manager</div>
+                </div>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">2490368</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">2266560</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">0</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">1073741824</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">2490368</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">2266560</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">0</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">1073741824</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>PS Eden Space</td>
+              <td>Heap memory</td>
+              <td>
+                <div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;PS MarkSweep</div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;PS Scavenge</div>
+                </div>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">130023424</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">15096336</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">32505856</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">648019968</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">130023424</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">65011712</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">32505856</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">675282944</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">130023424</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">0</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">32505856</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">648019968</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>PS Survivor Space</td>
+              <td>Heap memory</td>
+              <td>
+                <div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;PS MarkSweep</div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;PS Scavenge</div>
+                </div>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">17825792</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">7943216</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">5242880</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">17825792</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">17825792</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">7943216</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">5242880</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">17825792</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">17825792</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">7943216</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">5242880</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">17825792</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>PS Old Gen</td>
+              <td>Heap memory</td>
+              <td>
+                <div>
+                  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;PS MarkSweep</div>
+                </div>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">87031808</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">22848096</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">87031808</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">1371537408</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">87031808</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">22848096</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">87031808</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">1371537408</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+              <td>
+                <form class="" role="form">
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">0</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">0</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">87031808</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">1371537408</div>
+                  </div>
+                  <div class="form-group"></div>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#jmx_mempool RESULT ENDS HERE -->
+</div>
+
+
+
+
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Building the Project</h4>
+
+        <div class="docs">Building the project with Maven is easy:</div>
+
+        <pre class="maven-code"><span class="_code_api">mvn package</span></pre>
+    </div>
+</div>
+
+        </div>
+
+        <div class="col-md-2">
+            <div class="toc-right">
+    <h3 class="toc-title">Topics:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-overview.html">Application overview</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="http-routes.html">HTTP routes</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-beans.html">Application beans</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="configuration-overview.html">Configuration overview</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-deployment.html">Application deployment</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="terminate-restart-application.html">Terminate/restart application</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="jmx-memory-info.html">JMX memory info</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="jmx-thread-info.html">JMX thread info</a>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- container -->
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
+</body>
+</html>

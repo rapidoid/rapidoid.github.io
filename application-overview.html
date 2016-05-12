@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid Admincenter - Application overview</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Getting started</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="/">Getting started</a></li>
+                        <li><a href="documentation.html">Full documentation</a></li>
+                        <li><a href="admincenter.html">The Admin Center</a></li>
+                        <!--
+                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
+                        -->
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="gui.html">gui</a></li>
+                        <li><a href="web.html">web</a></li>
+                        <li><a href="fluent.html">fluent</a></li>
+                        <li><a href="essentials.html">essentials</a></li>
+                    </ul>
+                </li>
+
+                <li><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
+            </ul>
+
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.0 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Application overview</h2>
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Starting from scratch - project setup with Maven</h4>
+
+        <div class="docs">
+            First, we need to create a new Java 8 project and configure it properly using Maven:
+        </div>
+
+<pre class="maven-code">
+<span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span>
+&nbsp;
+<span class="_code_tag">&lt;/project&gt;</span>
+</pre>
+
+    </div>
+</div>
+
+
+            <div id="application-overview" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            Now, the cool stuff!
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplegoodies-body" class="row">
+
+    <div id="examplegoodies-left" class="col-md-8">
+
+        <!-- START CODE -->
+        <div id="examplegoodies-code" class="code-clean">
+            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
+
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplegoodies-right" class="col-md-4">
+        <div id="examplegoodies-results" class="results">
+        </div>
+    </div>
+</div>
+
+<div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#goodies RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+
+    <h3>
+      <center>Application info:</center>
+    </h3>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Application JAR</td>
+        <td>
+          <span class="nothing"><i class="fa fa-ban"></i> N/A</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Application path (root packages)</td>
+        <td>
+          <div>
+            <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;org.rapidoid.http.handler</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Active profiles</td>
+        <td>
+          <div>
+            <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;dev</div>
+            <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;default</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Command line arguments</td>
+        <td>
+          <span class="value-line">
+            <span class="nothing"><i class="fa fa-ban"></i> N/A</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <h3>
+      <center>System metrics:</center>
+    </h3>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div><div id="dygraph-1" class="rapidoid-dygraph-small"></div>
+<script>
+function updateGraph1() {
+ function D(x) { return new Date(x); }
+ if (Dygraph !== undefined) {
+  var dygraph1 = new Dygraph(document.getElementById("dygraph-1"), [
+[D(1463094046533),0.15800092138080032],
+  ], {
+    title: 'System CPU',
+    labels: [ "Date", "System CPU" ],
+    zoomCallback : function(minDate, maxDate, yRange) {
+        var uri = '/_/graphs/cpu/system?from=' + minDate + '&to=' + maxDate;
+        $R.get(uri, function(resp) {
+          var data = [];
+          for (var k in resp) {
+            data.push([new Date(new Date(parseInt(k))), resp[k]]);
+          }
+          dygraph1.updateOptions( { 'file': data } );
+        });
+    }
+  });
+
+ } else {
+   setTimeout(updateGraph1, 50);
+ }
+}
+setTimeout(updateGraph1, 50);
+
+</script>
+</div>
+        </div>
+        <div class="col-md-4">
+          <div><div id="dygraph-2" class="rapidoid-dygraph-small"></div>
+<script>
+function updateGraph2() {
+ function D(x) { return new Date(x); }
+ if (Dygraph !== undefined) {
+  var dygraph2 = new Dygraph(document.getElementById("dygraph-2"), [
+[D(1463094046533),1.7807176488941206E-5],
+  ], {
+    title: 'Process CPU',
+    labels: [ "Date", "Process CPU" ],
+    zoomCallback : function(minDate, maxDate, yRange) {
+        var uri = '/_/graphs/cpu/process?from=' + minDate + '&to=' + maxDate;
+        $R.get(uri, function(resp) {
+          var data = [];
+          for (var k in resp) {
+            data.push([new Date(new Date(parseInt(k))), resp[k]]);
+          }
+          dygraph2.updateOptions( { 'file': data } );
+        });
+    }
+  });
+
+ } else {
+   setTimeout(updateGraph2, 50);
+ }
+}
+setTimeout(updateGraph2, 50);
+
+</script>
+</div>
+        </div>
+        <div class="col-md-4">
+          <div><div id="dygraph-3" class="rapidoid-dygraph-small"></div>
+<script>
+function updateGraph3() {
+ function D(x) { return new Date(x); }
+ if (Dygraph !== undefined) {
+  var dygraph3 = new Dygraph(document.getElementById("dygraph-3"), [
+[D(1463094046533),44.363426208496094],
+  ], {
+    title: 'Used JVM memory (MB)',
+    labels: [ "Date", "Used JVM memory (MB)" ],
+    zoomCallback : function(minDate, maxDate, yRange) {
+        var uri = '/_/graphs/mem/used?from=' + minDate + '&to=' + maxDate;
+        $R.get(uri, function(resp) {
+          var data = [];
+          for (var k in resp) {
+            data.push([new Date(new Date(parseInt(k))), resp[k]]);
+          }
+          dygraph3.updateOptions( { 'file': data } );
+        });
+    }
+  });
+
+ } else {
+   setTimeout(updateGraph3, 50);
+ }
+}
+setTimeout(updateGraph3, 50);
+
+</script>
+</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div><div id="dygraph-4" class="rapidoid-dygraph-small"></div>
+<script>
+function updateGraph4() {
+ function D(x) { return new Date(x); }
+ if (Dygraph !== undefined) {
+  var dygraph4 = new Dygraph(document.getElementById("dygraph-4"), [
+[D(1463094046533),150.0],
+  ], {
+    title: 'Total JVM memory (MB)',
+    labels: [ "Date", "Total JVM memory (MB)" ],
+    zoomCallback : function(minDate, maxDate, yRange) {
+        var uri = '/_/graphs/mem/total?from=' + minDate + '&to=' + maxDate;
+        $R.get(uri, function(resp) {
+          var data = [];
+          for (var k in resp) {
+            data.push([new Date(new Date(parseInt(k))), resp[k]]);
+          }
+          dygraph4.updateOptions( { 'file': data } );
+        });
+    }
+  });
+
+ } else {
+   setTimeout(updateGraph4, 50);
+ }
+}
+setTimeout(updateGraph4, 50);
+
+</script>
+</div>
+        </div>
+        <div class="col-md-4">
+          <div><div id="dygraph-5" class="rapidoid-dygraph-small"></div>
+<script>
+function updateGraph5() {
+ function D(x) { return new Date(x); }
+ if (Dygraph !== undefined) {
+  var dygraph5 = new Dygraph(document.getElementById("dygraph-5"), [
+[D(1463094046534),13.0],
+  ], {
+    title: 'Number of JVM threads',
+    labels: [ "Date", "Number of JVM threads" ],
+    zoomCallback : function(minDate, maxDate, yRange) {
+        var uri = '/_/graphs/threads?from=' + minDate + '&to=' + maxDate;
+        $R.get(uri, function(resp) {
+          var data = [];
+          for (var k in resp) {
+            data.push([new Date(new Date(parseInt(k))), resp[k]]);
+          }
+          dygraph5.updateOptions( { 'file': data } );
+        });
+    }
+  });
+
+ } else {
+   setTimeout(updateGraph5, 50);
+ }
+}
+setTimeout(updateGraph5, 50);
+
+</script>
+</div>
+        </div>
+        <div class="col-md-4">
+          <div><div id="dygraph-6" class="rapidoid-dygraph-small"></div>
+<script>
+function updateGraph6() {
+ function D(x) { return new Date(x); }
+ if (Dygraph !== undefined) {
+  var dygraph6 = new Dygraph(document.getElementById("dygraph-6"), [
+[D(1463094046534),85.0],
+  ], {
+    title: 'Open files and connections',
+    labels: [ "Date", "Open files and connections" ],
+    zoomCallback : function(minDate, maxDate, yRange) {
+        var uri = '/_/graphs/descriptors?from=' + minDate + '&to=' + maxDate;
+        $R.get(uri, function(resp) {
+          var data = [];
+          for (var k in resp) {
+            data.push([new Date(new Date(parseInt(k))), resp[k]]);
+          }
+          dygraph6.updateOptions( { 'file': data } );
+        });
+    }
+  });
+
+ } else {
+   setTimeout(updateGraph6, 50);
+ }
+}
+setTimeout(updateGraph6, 50);
+
+</script>
+</div>
+        </div>
+      </div>
+    <h3>
+      <center>Application routes:</center>
+    </h3>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Verb</th>
+        <th>Path</th>
+        <th>Segment</th>
+        <th>Content type</th>
+        <th>MVC</th>
+        <th>View name</th>
+        <th>Roles</th>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/beans</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/beans</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+        </td>
+        <td>/_/classpath</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/classpath</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/config</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/config</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+        </td>
+        <td>/_/deploy</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/deploy</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/entities</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/entities</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+        </td>
+        <td>/_/graphs/{id:.*}</td>
+        <td>main</td>
+        <td>json</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jar</td>
+        <td>main</td>
+        <td>json</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/classes</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/classes</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/compilation</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/compilation</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/gc</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/gc</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/memory</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/memory</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/mempool</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/mempool</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/os</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/os</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/runtime</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/runtime</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/jmx/threads</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/jmx/threads</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/metrics</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/metrics</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/routes</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/routes</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_/terminate</td>
+        <td>main</td>
+        <td>html</td>
+        <td>
+          <i class="fa fa-check"></i>
+        </td>
+        <td>_/terminate</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-primary">POST</span>
+        </td>
+        <td>/_login</td>
+        <td>main</td>
+        <td>json</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+        </td>
+        <td>/_logout</td>
+        <td>main</td>
+        <td>json</td>
+        <td></td>
+        <td></td>
+        <td>logged_in</td>
+      </tr>
+    </table>
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#goodies RESULT ENDS HERE -->
+</div>
+
+
+
+
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Building the Project</h4>
+
+        <div class="docs">Building the project with Maven is easy:</div>
+
+        <pre class="maven-code"><span class="_code_api">mvn package</span></pre>
+    </div>
+</div>
+
+        </div>
+
+        <div class="col-md-2">
+            <div class="toc-right">
+    <h3 class="toc-title">Topics:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-overview.html">Application overview</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="http-routes.html">HTTP routes</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-beans.html">Application beans</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="configuration-overview.html">Configuration overview</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-deployment.html">Application deployment</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="terminate-restart-application.html">Terminate/restart application</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="jmx-memory-info.html">JMX memory info</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="jmx-thread-info.html">JMX thread info</a>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- container -->
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
+</body>
+</html>
