@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid Pojo</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Getting started</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="/">Getting started</a></li>
+                        <li><a href="documentation.html">Full documentation</a></li>
+                        <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
+                        <li><a href="gui.html">gui</a></li>
+                        <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
+                        <li><a href="fluent.html">fluent</a></li>
+                        <li><a href="essentials.html">essentials</a></li>
+                    </ul>
+                </li>
+
+                <li><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
+            </ul>
+
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.1 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Extremely Fast, Simple and Powerful Java Web Framework!</h2>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <p>
+            <b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). <a
+                    rel="nofollow"
+                    href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View
+                benchmark...</a></b>
+            <span id="group-email">Community: <a
+                    href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
+        </p>
+    </div>
+
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+
+
+<div class="row row-separated-nano">
+    <div class="col-md-12">
+
+        <div class="module-header">POJO controllers</div>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+  
+<div class="col-md-10">
+<!-- EXAMPLE restjson -->
+
+<div id="automatic-json-serialization-of-data-structures" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">1</span>
+            <a href="automatic-json-serialization-of-data-structures.html" class="mini-example-title">Automatic JSON Serialization of Data Structures</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerestjson-body" class="row">
+
+    <div id="examplerestjson-left" class="col-md-8">
+        <div id="examplerestjson-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerestjson-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplerestjson-codedesc" class="eg_title">TextTools.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerestjson-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">TextTools</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/upper/{s}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; upper(<span class="_code_cls">String</span> s) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> big = s.toUpperCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"normal"</span>, s, <span class="_code_str">"big"</span>, big);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span>[] parts(<span class="_code_cls">String</span> text) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> text.split(<span class="_code_str">"-"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplerestjson-right" class="col-md-4">
+        <div id="examplerestjson-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/upper/abc</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#restjson RESULT STARTS HERE -->
+    {"normal":"abc","big":"ABC"}
+    <!-- EXAMPLE#restjson RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/parts</span>
+    <span class="label label-default eg-data">{&quot;text&quot;:&quot;just-some-words&quot;}</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#restjson RESULT STARTS HERE -->
+    ["just","some","words"]
+    <!-- EXAMPLE#restjson RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplerestjson-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/parts</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/upper/{s}</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE beanjson -->
+
+<div id="automatic-construction-and-serialization-of-javabeans" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">2</span>
+            <a href="automatic-construction-and-serialization-of-javabeans.html" class="mini-example-title">Automatic Construction and Serialization of JavaBeans</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplebeanjson-body" class="row">
+
+    <div id="examplebeanjson-left" class="col-md-8">
+        <div id="examplebeanjson-codedesc" class="eg_title">Book.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplebeanjson-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title = <span class="_code_str">"Untitled"</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">int</span> year;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> getYear() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> year;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> setYear(<span class="_code_kw">int</span> year) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">this</span>.year = year;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplebeanjson-codedesc" class="eg_title">EasyBeans.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplebeanjson-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EasyBeans</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Book</span> echo(<span class="_code_cls">Book</span> book) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> book;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplebeanjson-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplebeanjson-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplebeanjson-right" class="col-md-4">
+        <div id="examplebeanjson-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2012&amp;title=Abc</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#beanjson RESULT STARTS HERE -->
+    {"title":"Abc","year":2012}
+    <!-- EXAMPLE#beanjson RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/echo?year=2015</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#beanjson RESULT STARTS HERE -->
+    {"title":"Untitled","year":2015}
+    <!-- EXAMPLE#beanjson RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplebeanjson-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/echo</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE injection -->
+
+<div id="dependency-injection-of-singletons" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">3</span>
+            <a href="dependency-injection-of-singletons.html" class="mini-example-title">Dependency injection of singletons</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleinjection-body" class="row">
+
+    <div id="exampleinjection-left" class="col-md-8">
+        <div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleinjection-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.inject.<span class="_code_cls">Inject</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span>(<span class="_code_str">"/bar"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Inject</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hi"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> foo.msg();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello from Bar!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleinjection-codedesc" class="eg_title">Foo.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleinjection-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.inject.<span class="_code_cls">Inject</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span>(<span class="_code_str">"/foo"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Inject</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">int</span> count;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hi"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello from Foo!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleinjection-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleinjection-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="exampleinjection-right" class="col-md-4">
+        <div id="exampleinjection-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#injection RESULT STARTS HERE -->
+    "1: Hello from Bar!"
+    <!-- EXAMPLE#injection RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar/hi</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#injection RESULT STARTS HERE -->
+    "Hello from Foo!"
+    <!-- EXAMPLE#injection RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#injection RESULT STARTS HERE -->
+    "2: Hello from Bar!"
+    <!-- EXAMPLE#injection RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="exampleinjection-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/bar/hi</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/foo/hi</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE restparams -->
+
+<div id="url-pattern-matching" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">4</span>
+            <a href="url-pattern-matching.html" class="mini-example-title">URL pattern matching</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerestparams-body" class="row">
+
+    <div id="examplerestparams-left" class="col-md-8">
+        <div id="examplerestparams-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerestparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplerestparams-codedesc" class="eg_title">SubUrlParams.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerestparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\d+}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.frmt</span>(<span class="_code_str">"Hey %s (%s)"</span>, name, age);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@POST</span>(<span class="_code_str">"/size/{s}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> size(<span class="_code_cls">String</span> s) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> s.length();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplerestparams-right" class="col-md-4">
+        <div id="examplerestparams-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/Joe/50</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#restparams RESULT STARTS HERE -->
+    "Hey Joe (50)"
+    <!-- EXAMPLE#restparams RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hey/You!/123</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#restparams RESULT STARTS HERE -->
+    "Hey You! (123)"
+    <!-- EXAMPLE#restparams RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/size/abc</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#restparams RESULT STARTS HERE -->
+    3
+    <!-- EXAMPLE#restparams RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplerestparams-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/hey/{name}/{age:\d+}</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/size/{s}</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE restnamedparams -->
+
+<div id="named-url-parameters" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">5</span>
+            <a href="named-url-parameters.html" class="mini-example-title">Named URL Parameters</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerestnamedparams-body" class="row">
+
+    <div id="examplerestnamedparams-left" class="col-md-8">
+        <div id="examplerestnamedparams-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerestnamedparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplerestnamedparams-codedesc" class="eg_title">NamedParams.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerestnamedparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">NamedParams</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> sum(<span class="_code_kw">int</span> x, <span class="_code_ann">@Param</span>(<span class="_code_str">"y"</span>) <span class="_code_kw">int</span> z) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> x + z;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplerestnamedparams-right" class="col-md-4">
+        <div id="examplerestnamedparams-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?x=1&amp;y=2</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#restnamedparams RESULT STARTS HERE -->
+    3
+    <!-- EXAMPLE#restnamedparams RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/sum?y=10&amp;x=5&amp;z=12345</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#restnamedparams RESULT STARTS HERE -->
+    15
+    <!-- EXAMPLE#restnamedparams RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplerestnamedparams-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/sum</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE hello -->
+
+<div id="hello-web-pages" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">6</span>
+            <a href="hello-web-pages.html" class="mini-example-title">Hello, web pages!</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplehello-body" class="row">
+
+    <div id="examplehello-left" class="col-md-8">
+        <div id="examplehello-codedesc" class="eg_title">Hello.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehello-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Hello</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(<span class="_code_str">"/"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello, world!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplehello-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehello-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplehello-right" class="col-md-4">
+        <div id="examplehello-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#hello RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+</div>
+
+    </div>
+</nav>
+
+Hello, world!
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#hello RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#hello RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+</div>
+
+    </div>
+</nav>
+
+<div class="">
+
+Hello, world!
+</div>
+
+<script>Rapidoid.init();</script>
+<!-- CREATE A RESOURCE FILE "templates/_extra.html" TO REPLACE THIS LINE -->
+
+<!--/EMBEDDED-->
+    <!-- EXAMPLE#hello RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplehello-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>index</td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE hi -->
+
+<div id="building-html-pages-with-java" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">7</span>
+            <a href="building-html-pages-with-java.html" class="mini-example-title">Building HTML pages with Java</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplehi-body" class="row">
+
+    <div id="examplehi-left" class="col-md-8">
+        <div id="examplehi-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehi-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplehi-codedesc" class="eg_title">YourName.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehi-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">YourName</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(<span class="_code_str">"/hi/{name}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Screen</span> hi(<span class="_code_cls">String</span> name) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Tag</span> msg = <span class="_code_api">GUI</span><span class="_code_api">.h4</span>(<span class="_code_str">"Hi, "</span>, <span class="_code_api">GUI</span><span class="_code_api">.i</span>(name), <span class="_code_str">"!"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">GUI</span><span class="_code_api">.page</span>(msg).brand(<span class="_code_str">"What is your name?"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplehi-right" class="col-md-4">
+        <div id="examplehi-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi/Rapidoid</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#hi RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">What is your name?</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+</div>
+
+    </div>
+</nav>
+
+  <h4>Hi, <i>Rapidoid</i>!</h4>
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#hi RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/hi/there</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#hi RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">What is your name?</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+</div>
+
+    </div>
+</nav>
+
+<div class="">
+
+  <h4>Hi, <i>there</i>!</h4>
+</div>
+
+<script>Rapidoid.init();</script>
+<!-- CREATE A RESOURCE FILE "templates/_extra.html" TO REPLACE THIS LINE -->
+
+<!--/EMBEDDED-->
+    <!-- EXAMPLE#hi RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplehi-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/hi/{name}</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>hi/name</td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+
+</div>
+
+<div class="col-md-2">
+<div class="toc-right">
+    <h3 class="toc-title">Contents:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#automatic-json-serialization-of-data-structures">Automatic JSON Serialization of Data Structures</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#automatic-construction-and-serialization-of-javabeans">Automatic Construction and Serialization of JavaBeans</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#dependency-injection-of-singletons">Dependency injection of singletons</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#url-pattern-matching">URL pattern matching</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#named-url-parameters">Named URL Parameters</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#hello-web-pages">Hello, web pages!</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#building-html-pages-with-java">Building HTML pages with Java</a>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
+</body>
+</html>

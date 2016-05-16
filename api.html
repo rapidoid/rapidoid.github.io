@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid Api</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Getting started</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="/">Getting started</a></li>
+                        <li><a href="documentation.html">Full documentation</a></li>
+                        <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
+                        <li><a href="gui.html">gui</a></li>
+                        <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
+                        <li><a href="fluent.html">fluent</a></li>
+                        <li><a href="essentials.html">essentials</a></li>
+                    </ul>
+                </li>
+
+                <li><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
+            </ul>
+
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.1 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Extremely Fast, Simple and Powerful Java Web Framework!</h2>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <p>
+            <b><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license). <a
+                    rel="nofollow"
+                    href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View
+                benchmark...</a></b>
+            <span id="group-email">Community: <a
+                    href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
+        </p>
+    </div>
+
+    <div class="col-md-4 col-sm-12">
+    </div>
+</div>
+
+
+<div class="row row-separated-nano">
+    <div class="col-md-12">
+
+        <div class="module-header">API Documentation</div>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+  
+<div class="col-md-10">
+<!-- EXAMPLE httpapi -->
+
+<div id="api-documentation" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">1</span>
+            <a href="api-documentation.html" class="mini-example-title">API documentation</a>
+            
+        </h4>
+    </div>
+</div>
+
+<div id="examplehttpapi-extra" class="row">
+    <div class="col-md-12">
+  <h4>
+    <b>The HTTP Request and Response API (in interface Req):</b>
+  </h4>
+  <div class="api-docs">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td><h5>
+  <b>HTTP REQUEST DATA</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> verb()</pre></td>
+        <td>Gets the <b>verb</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> uri()</pre></td>
+        <td>Gets the <b>uri</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> path()</pre></td>
+        <td>Gets the <b>path</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> query()</pre></td>
+        <td>Gets the <b>query</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">byte</span>[] body()</pre></td>
+        <td>Gets the <b>raw body data</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> host()</pre></td>
+        <td>Gets the value of the <b>Host header</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> segment()</pre></td>
+        <td>Gets the name of the <b>application segment</b> handling the request. <br>
+ The default segment name is <code>main</code> for the <code>On</code> API, and <code>admin</code> for the <code>Admin</code> API.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> contextPath()</pre></td>
+        <td>Gets the <b>context path</b> of the application segment handling the request. <br>
+ The default context path is <code>/</code> for the <code>On</code> API, and <code>/_</code> for the <code>Admin</code> API.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> clientIpAddress()</pre></td>
+        <td>Gets the <b>IP address</b> of the HTTP client sending the request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">long</span> connectionId()</pre></td>
+        <td>Gets the <b>HTTP connection ID</b>, which is unique per HTTP server instance.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">long</span> requestId()</pre></td>
+        <td>Gets the <b>HTTP request ID</b>, which is unique per HTTP server instance.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>URL PARAMETERS:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params()</pre></td>
+        <td>Gets the <b>URL parameters</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> param(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>mandatory URL parameter</b> from the HTTP request, or throws a runtime
+ exception if it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> param(<span class="_code_cls">String</span> name, <span class="_code_cls">String</span> defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>optional URL parameter</b> from the HTTP request, or the specified default
+ value, if not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T param(<span class="_code_cls">Class</span>&lt;T&gt; beanType)</pre></td>
+        <td>Returns a new instance of the specified bean type, with properties initialized from the <b>URL parameters</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>POSTED PARAMETERS IN THE REQUEST BODY:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; posted()</pre></td>
+        <td>Gets the <b>posted parameters</b> of the HTTP request body.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T posted(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>posted parameter</b> from the HTTP request body, or throws a runtime
+ exception if it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T posted(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>posted parameter</b> from the HTTP request body, or the specified default
+ value, if it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T posted(<span class="_code_cls">Class</span>&lt;T&gt; beanType)</pre></td>
+        <td>Returns a new instance of the specified bean type, with properties initialized from the <b>posted parameters</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>UPLOADED FILES IN THE REQUEST BODY:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">List</span>&lt;<span class="_code_cls">Upload</span>&gt;&gt; files()</pre></td>
+        <td>Gets the <b>uploaded files</b> from the HTTP request body.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Upload</span>&gt; files(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the <b>uploaded files</b> with the specified form parameter name (not filename) from the HTTP request body,
+ or throws a runtime exception if not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Upload</span> file(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns exactly one <b>posted file</b> with the specified form parameter name (not filename) from the HTTP request body,
+ or throws a runtime exception if not found.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>REQUEST DATA PARAMETERS (URL PARAMETERS + POSTED PARAMETERS + UPLOADED FILES):</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; data()</pre></td>
+        <td>Gets the <b>data parameters (URL parameters + posted parameters + uploaded files)</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T data(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>data parameter</b> from the HTTP request, or throws a runtime exception if
+ it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T data(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>data parameter</b> from the HTTP request, or the specified default value,
+ if it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T data(<span class="_code_cls">Class</span>&lt;T&gt; beanType)</pre></td>
+        <td>Returns a new instance of the specified bean type, with properties initialized from the <b>data parameters</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>EXTRA ATTRIBUTES ATTACHED TO THE REQUEST:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; attrs()</pre></td>
+        <td>Gets the <b>extra attributes</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T attr(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of an <b>extra attribute</b> from the HTTP request, or throws a runtime exception if it is not
+ found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T attr(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>extra attribute</b> from the HTTP request, or the specified default value,
+ if it is not found.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>SERVER-SIDE SESSION:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> sessionId()</pre></td>
+        <td>Returns the ID of the session (the value of the <b>"JSESSIONID" cookie</b>). If a session doesn't exist, a new
+ session is created.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> hasSession()</pre></td>
+        <td>Does the HTTP request have a server-side session attached?</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; session()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T session(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request, or throws a
+ runtime exception if it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T session(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request, or the specified
+ default value, if it is not found.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>COOKIE-PERSISTED SESSION:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> hasCookiepack()</pre></td>
+        <td>Does the HTTP request have a cookie-persisted session attached?</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; cookiepack()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>cookie-persisted session attributes</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T cookiepack(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>cookie-persisted session attribute</b> from the HTTP request, or throws a
+ runtime exception if it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T cookiepack(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>cookie-persisted session attribute</b> from the HTTP request, or the
+ specified default value, if it is not found.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>REQUEST HEADERS:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; headers()</pre></td>
+        <td>Gets the <b>headers</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> header(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>header</b> from the HTTP request, or throws a runtime exception if it is
+ not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> header(<span class="_code_cls">String</span> name, <span class="_code_cls">String</span> defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>header</b> from the HTTP request, or the specified default value, if it is
+ not found.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>REQUEST COOKIES:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cookies()</pre></td>
+        <td>Gets the <b>cookies</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> cookie(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>cookie</b> from the HTTP request, or throws a runtime exception if it is
+ not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> cookie(<span class="_code_cls">String</span> name, <span class="_code_cls">String</span> defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>cookie</b> from the HTTP request, or the specified default value, if it is
+ not found.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>RESPONSE:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> response()</pre></td>
+        <td>Gets the reference to the <b>response object</b>.</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>ASYNCHRONOUS REQUEST HANDLING:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Req</span> async()</pre></td>
+        <td>Informs the HTTP server that the request will be handled asynchronously (typically on another thread). When the
+ response is complete, <b>the <code>Req#done()</code> or <code>Resp#done()</code> method must be called</b>, to
+ inform the server.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> isAsync()</pre></td>
+        <td>Is/was the request being handled in asynchronous mode?</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Req</span> done()</pre></td>
+        <td>Informs the HTTP server that the asynchronous handling has finished and the response is complete.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> isDone()</pre></td>
+        <td>Has the request handling and response construction finished?</td>
+      </tr>
+      <tr>
+        <td><h5>
+  <b>WEB APPLICATION SETUP:</b>
+</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">HttpRoutes</span> routes()</pre></td>
+        <td>Provides access to the <b>HTTP routes</b> of the web application setup.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Customization</span> custom()</pre></td>
+        <td>Provides access to the <b>customization</b> of the web application setup.</td>
+      </tr>
+    </table>
+  </div>
+  <h4>
+    <b>The HTTP Request and Response API (in interface Resp):</b>
+  </h4>
+  <div class="api-docs">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> result(<span class="_code_cls">Object</span> content)</pre></td>
+        <td>Sets the <b>content</b> to be serialized into a body when the HTTP response is rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Object</span> result()</pre></td>
+        <td>Gets the <b>content</b> to be serialized into a body when the HTTP response is rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> body(<span class="_code_cls">byte</span>[] body)</pre></td>
+        <td>Sets the <b>HTTP response body</b> from a <b><code>byte[]</code></b> data that is written as a HTTP response body when rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> body(<span class="_code_cls">ByteBuffer</span> body)</pre></td>
+        <td>Sets the <b>HTTP response body</b> from a <b><code>ByteBuffer</code></b> data that is written as a HTTP response body when rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Object</span> body()</pre></td>
+        <td>Gets the <b>HTTP response body</b> data (of type byte[] or ByteBuffer) that is written as a HTTP response body when rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> raw(<span class="_code_cls">byte</span>[] raw)</pre></td>
+        <td>Sets the <b>raw HTTP response (headers and body)</b> from a <b><code>byte[]</code></b> data that is written as a HTTP response when rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> raw(<span class="_code_cls">ByteBuffer</span> raw)</pre></td>
+        <td>Sets the <b>raw HTTP response (headers and body)</b> from a <b><code>ByteBuffer</code></b> data that is written as a HTTP response when rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Object</span> raw()</pre></td>
+        <td>Gets the <b>raw HTTP response (headers and body)</b> data (of type byte[] or ByteBuffer) that is written as a HTTP response when rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> code(<span class="_code_cls">int</span> code)</pre></td>
+        <td>Sets the <b>status code</b> <i>(e.g. 200, 404, 500)</i> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">int</span> code()</pre></td>
+        <td>Gets the <b>status code</b> <i>(e.g. 200, 404, 500)</i> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> contentType(<span class="_code_cls">MediaType</span> contentType)</pre></td>
+        <td>Sets the <b><code>Content-Type</code> header</b> to be rendered in the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">MediaType</span> contentType()</pre></td>
+        <td>Gets the <b><code>Content-Type</code> header</b> to be rendered in the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> redirect(<span class="_code_cls">String</span> redirectURI)</pre></td>
+        <td>Sets the <b>redirect URI</b> of the HTTP response. <br>
+ Setting this will cause a <b>HTTP 30x redirect</b> response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> redirect()</pre></td>
+        <td>Gets the <b>redirect URI</b> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> filename(<span class="_code_cls">String</span> filename)</pre></td>
+        <td>Sets the <b>filename</b> when serving a file in the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> filename()</pre></td>
+        <td>Gets the <b>filename</b> when serving a file in the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> view(<span class="_code_cls">String</span> viewName)</pre></td>
+        <td>Sets a custom name of the <b>view</b> (V from MVC) of the HTTP response. <br>
+ This also sets <b>mvc</b> to <code>true</code>. <br>
+ The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
+ E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> view()</pre></td>
+        <td>Gets the (default or customized) name of the <b>view</b> (V from MVC) of the HTTP response. <br>
+ The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
+ E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> file(<span class="_code_cls">File</span> file)</pre></td>
+        <td>Sets the <b>file</b> to be served when the HTTP response is rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">File</span> file()</pre></td>
+        <td>Gets the <b>file</b> to be served when the HTTP response is rendered.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; headers()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>headers</b> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> header(<span class="_code_cls">String</span> name, <span class="_code_cls">String</span> value)</pre></td>
+        <td>Sets a <b>header</b> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cookies()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>cookies</b> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> cookie(<span class="_code_cls">String</span> name, <span class="_code_cls">String</span> value, <span class="_code_cls">String</span>... extras)</pre></td>
+        <td>Sets a <b>cookie</b> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; session()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> session(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
+        <td>Sets a <b>session attribute</b> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; cookiepack()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>cookie-persisted session attributes</b> of the HTTP request.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> cookiepack(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
+        <td>Sets a <b>cookiepack attribute</b> of the HTTP response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; model()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>model</b> (M from MVC) that will be rendered by the view renderer.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> model(<span class="_code_cls">String</span> name, <span class="_code_cls">Object</span> value)</pre></td>
+        <td>Sets an attribute of the <b>model</b> (M from MVC) that will be rendered by the view renderer.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> done()</pre></td>
+        <td>Informs the HTTP server that the asynchronous handling has finished and the response is complete.<br>
+ <i>Alias</i> to <code>request().done()</code>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> plain(<span class="_code_cls">Object</span> content)</pre></td>
+        <td>Sets the <b><code>Content-Type: text/plain; charset=utf-8</code> header and the content</b> of the HTTP response. <br>
+ <i>Alias</i> to <code>contentType(MediaType.PLAIN_TEXT_UTF_8).body(content)</code>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> html(<span class="_code_cls">Object</span> content)</pre></td>
+        <td>Sets the <b><code>Content-Type: text/html; charset=utf-8</code> header and the content</b> of the HTTP response. <br>
+ <i>Alias</i> to <code>contentType(MediaType.HTML_UTF_8).body(content)</code>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> json(<span class="_code_cls">Object</span> content)</pre></td>
+        <td>Sets the <b><code>Content-Type: application/json; charset=utf-8</code> header and the content</b> of the HTTP
+ response. <br>
+ <i>Alias</i> to <code>contentType(MediaType.JSON_UTF_8).body(content)</code>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> binary(<span class="_code_cls">Object</span> content)</pre></td>
+        <td>Sets the <b><code>Content-Type: application/octet-stream</code> header and the content</b> of the HTTP response. <br>
+ <i>Alias</i> to <code>contentType(MediaType.BINARY).body(content)</code>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> mvc()</pre></td>
+        <td>Checks whether the response model and view will be rendered in a MVC fashion.<br>
+ A typical renderer would use <code>Resp#view</code> to get the view name, and <code>Resp#model</code> to get the model.
+ A custom view renderer can be configured/implemented via the <code>On.custom().viewRenderer(...)</code> method.<br></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> mvc(<span class="_code_cls">boolean</span> mvc)</pre></td>
+        <td>Sets whether the response model and view will be rendered in a MVC fashion.<br>
+ A typical renderer would use <code>Resp#view</code> to get the view name, and <code>Resp#model</code> to get the model.
+ A custom view renderer can be configured/implemented via the <code>On.custom().viewRenderer(...)</code> method.<br></td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">OutputStream</span> out()</pre></td>
+        <td>First renders the response headers, then returns an <i>OutputStream</i> representing
+ the <b>response body</b>. The response body will be constructed by writing to the <i>OutputStream</i>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Req</span> request()</pre></td>
+        <td>Gets the reference to the <b>request object</b>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> login(<span class="_code_cls">String</span> username, <span class="_code_cls">String</span> password)</pre></td>
+        <td>Initiates a user login process with the specified <b>username</b> and <b>password</b>.<br>
+ After a successful login, the username will be persisted in the cookie-pack.<br>
+ Returns information whether the login was successful</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">void</span> logout()</pre></td>
+        <td>Initiates a user logout process, clearing the login information (username) from the cookie-pack.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Screen</span> screen()</pre></td>
+        <td>Provides access to the screen model for custom (MVC) page rendering.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<div id="examplehttpapi-body" class="row">
+
+    <div id="examplehttpapi-left" class="col-md-12">
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+
+</div>
+
+<div class="col-md-2">
+<div class="toc-right">
+    <h3 class="toc-title">Contents:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#api-documentation">API documentation</a>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
+</body>
+</html>

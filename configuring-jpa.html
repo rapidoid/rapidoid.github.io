@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid Configuration - Configuring JPA</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+<nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+        <div id="collapsable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Getting started</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="/">Getting started</a></li>
+                        <li><a href="documentation.html">Full documentation</a></li>
+                        <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
+                        <li><a href="gui.html">gui</a></li>
+                        <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
+                        <li><a href="fluent.html">fluent</a></li>
+                        <li><a href="essentials.html">essentials</a></li>
+                    </ul>
+                </li>
+
+                <li><a rel="nofollow" href="community.html">Community</a></li>
+                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
+            </ul>
+
+            <div class="navbar-brand navbar-right">
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#stargazers_count"
+                   data-count-href="/rapidoid/rapidoid/stargazers" data-icon="octicon-star"
+                   href="https://github.com/rapidoid/rapidoid" class="github-button">Star</a>
+                <a rel="nofollow" data-count-api="/repos/rapidoid/rapidoid#forks_count"
+                   data-count-href="/rapidoid/rapidoid/network" data-icon="octicon-git-branch"
+                   href="https://github.com/rapidoid/rapidoid/fork" class="github-button">Fork</a>
+
+                <script type="IN/Share" data-url="http://www.rapidoid.org/" data-counter="right"></script>
+
+                <span class="g-plusone" data-size="medium"></span>
+
+                <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.1 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   data-size="small">Tweet</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Configuring JPA</h2>
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+            
+
+            
+
+<div id="examplegettingstarted2-body" class="row">
+
+    <div id="examplegettingstarted2-left" class="col-md-12">
+        <div id="examplegettingstarted2-codedesc" class="eg_title">Book.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">Entity</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">GeneratedValue</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">Id</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.validation.constraints.<span class="_code_cls">NotNull</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Entity</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Id</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GeneratedValue</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@NotNull</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> year;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplegettingstarted2-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Valid</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.jpa.<span class="_code_cls">JPA</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args).jpa(); <span class="_code_linecomm">// bootstrap JPA</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span><span class="_code_api">.of</span>(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.post</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.save(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplegettingstarted2-codedesc" class="eg_title">profile-dev.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix">hibernate:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;format_sql: <span class="_code_kw">false</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;show_sql: <span class="_code_kw">true</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">c3p0:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;debug: <span class="_code_kw">true</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">hibernate:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;hbm2ddl:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;auto: update</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplegettingstarted2-codedesc" class="eg_title">profile-mysql.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix">jdbc:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;driver: com.mysql.jdbc.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;url: jdbc:mysql://localhost:<span class="_code_num">3306</span>/rapidoid</div>
+<div class="example-line clearfix">&nbsp;&nbsp;username: root</div>
+<div class="example-line clearfix">&nbsp;&nbsp;password: root</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">hibernate:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;dialect: org.hibernate.dialect.<span class="_code_cls">MySQL5Dialect</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;connection:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: com.mysql.jdbc.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;username: root</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;password: root</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;url: jdbc:mysql://localhost:<span class="_code_num">3306</span>/rapidoid</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplegettingstarted2-codedesc" class="eg_title">profile-default.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix">jdbc:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;driver: org<span class="_code_api">.h2</span>.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;url: jdbc:h2:mem:testdb;<span class="_code_cls">DB_CLOSE_DELAY</span>=-<span class="_code_num">1</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;username: sa</div>
+<div class="example-line clearfix">&nbsp;&nbsp;password: <span class="_code_str">''</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">hibernate:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;dialect: org.hibernate.dialect.<span class="_code_cls">H2Dialect</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;connection:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: org<span class="_code_api">.h2</span>.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;username: sa</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;password: <span class="_code_str">''</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;url: jdbc:h2:mem:testdb;<span class="_code_cls">DB_CLOSE_DELAY</span>=-<span class="_code_num">1</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplegettingstarted2-codedesc" class="eg_title">config.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix">on:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;port: <span class="_code_num">8888</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;address: <span class="_code_num">0</span>.<span class="_code_num">0</span>.<span class="_code_num">0</span>.<span class="_code_num">0</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">admin:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;port: same</div>
+<div class="example-line clearfix">&nbsp;&nbsp;address: <span class="_code_num">0</span>.<span class="_code_num">0</span>.<span class="_code_num">0</span>.<span class="_code_num">0</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">app:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;domain: <span class="_code_str">''</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;brand: <span class="_code_cls">App</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;search: <span class="_code_kw">false</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;navbar: <span class="_code_kw">true</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;fluid: <span class="_code_kw">false</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;cdn: auto # in <span class="_code_cls">DEV</span> mode is <span class="_code_kw">false</span>, in <span class="_code_cls">PRODUCTION</span> is <span class="_code_kw">true</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;contextPath: /</div>
+<div class="example-line clearfix">&nbsp;&nbsp;home: /</div>
+<div class="example-line clearfix">&nbsp;&nbsp;menu: {}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">users:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;root:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;roles:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- administrator</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- owner</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;password: root # <span class="_code_cls">PLEASE</span> change <span class="_code_kw">this</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
+
+<div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/books</span>
+    <span class="label label-default eg-data">{&quot;title&quot;:&quot;Java Book&quot;,&quot;year&quot;:2016}</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#gettingstarted2 RESULT STARTS HERE -->
+    {"id":1,"title":"Java Book","year":2016}
+    <!-- EXAMPLE#gettingstarted2 RESULT ENDS HERE -->
+</div>
+
+
+<div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/books</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#gettingstarted2 RESULT STARTS HERE -->
+    [{"id":1,"title":"Java Book","year":2016}]
+    <!-- EXAMPLE#gettingstarted2 RESULT ENDS HERE -->
+</div>
+
+
+<div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/books</span>
+    <span class="label label-default eg-data">{&quot;year&quot;:2004}</span>
+</div>
+
+
+<div class="eg-error">
+    <!-- EXAMPLE#gettingstarted2 ERROR STARTS HERE -->
+    <span class="error-result">{&quot;error&quot;:&quot;Validation failed: Book.title (may not be null)&quot;,&quot;code&quot;:422,&quot;status&quot;:&quot;Unprocesssable Entity&quot;}</span>
+    <!-- EXAMPLE#gettingstarted2 ERROR ENDS HERE -->
+</div>
+
+<div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/books</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#gettingstarted2 RESULT STARTS HERE -->
+    [{"id":1,"title":"Java Book","year":2016}]
+    <!-- EXAMPLE#gettingstarted2 RESULT ENDS HERE -->
+</div>
+
+
+
+<div id="examplegettingstarted2-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/books</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/books</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="caption">Project setup with Maven</h4>
+
+        <div class="docs">
+            To run the example, you need to create a new Java 8 project and configure it properly using Maven:
+        </div>
+
+        <div class="copy-snippet">
+            <div class="maven-code"><div class="example-line clearfix"><span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependencies&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-quick<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.1.1<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_tag">&lt;/project&gt;</span></div>
+</div>
+        </div>
+
+        <br>
+        <div class="docs">Building the project with Maven is easy:</div>
+
+        <pre class="maven-code"><span class="_code_api">mvn package</span></pre>
+    </div>
+</div>
+
+        </div>
+
+        <div class="col-md-2">
+            <div class="toc-right">
+    <h3 class="toc-title">Topics:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="configuring-jpa.html">Configuring JPA</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="more-control-over-the-http-server-setup.html">More control over the HTTP server setup</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="server-configuration.html">Server Configuration</a>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
+</body>
+</html>
