@@ -11,6 +11,8 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
     <script src="rapidoid.min.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -51,9 +53,14 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
-                        <!--
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
-                        -->
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
 
@@ -61,8 +68,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
                         <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
                         <li><a href="gui.html">gui</a></li>
                         <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
                     </ul>
@@ -123,12 +132,10 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
 
+        <div class="module-header">Introducing the Admin Center</div>
 
-
-        <div class="module-explanation">
-            <h1>Admin Center</h1>
-<p>Starting from v5.1, Rapidoid includes Admin Center. It is accessible only by users with an "<b>administrator</b>" role.</p>
-        </div>
+        <div class="module-explanation"><h1>Admin Center</h1>
+<p>Starting from v5.1, Rapidoid includes Admin Center. It is accessible only by users with an "<b>administrator</b>" role.</p></div>
     </div>
 </div>
 
@@ -145,7 +152,6 @@
             <span class="badge badge-eg-num">1</span>
             <a href="application-overview.html" class="mini-example-title">Application overview</a>
             
-            
         </h4>
     </div>
 </div>
@@ -153,25 +159,24 @@
 
 <div id="examplegoodies-body" class="row">
 
-    <div id="examplegoodies-left" class="col-md-8">
+    <div id="examplegoodies-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="examplegoodies-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="examplegoodies-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="examplegoodies-right" class="col-md-4">
-        <div id="examplegoodies-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_</span>
+    
 </div>
 
 <div class="eg-result">
@@ -230,7 +235,7 @@ function updateGraph1() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph1 = new Dygraph(document.getElementById("dygraph-1"), [
-[D(1463094046533),0.15800092138080032],
+[D(1463432234574),0.18813603983746632],
   ], {
     title: 'System CPU',
     labels: [ "Date", "System CPU" ],
@@ -262,7 +267,8 @@ function updateGraph2() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph2 = new Dygraph(document.getElementById("dygraph-2"), [
-[D(1463094046533),1.7807176488941206E-5],
+[D(1463432234574),1.3895599225304333E-5],
+[D(1463432235576),0.37],
   ], {
     title: 'Process CPU',
     labels: [ "Date", "Process CPU" ],
@@ -294,7 +300,8 @@ function updateGraph3() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph3 = new Dygraph(document.getElementById("dygraph-3"), [
-[D(1463094046533),44.363426208496094],
+[D(1463432234574),35.46595001220703],
+[D(1463432235576),42.429725646972656],
   ], {
     title: 'Used JVM memory (MB)',
     labels: [ "Date", "Used JVM memory (MB)" ],
@@ -328,7 +335,8 @@ function updateGraph4() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph4 = new Dygraph(document.getElementById("dygraph-4"), [
-[D(1463094046533),150.0],
+[D(1463432234574),150.0],
+[D(1463432235576),225.0],
   ], {
     title: 'Total JVM memory (MB)',
     labels: [ "Date", "Total JVM memory (MB)" ],
@@ -360,7 +368,8 @@ function updateGraph5() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph5 = new Dygraph(document.getElementById("dygraph-5"), [
-[D(1463094046534),13.0],
+[D(1463432234575),14.0],
+[D(1463432235577),21.0],
   ], {
     title: 'Number of JVM threads',
     labels: [ "Date", "Number of JVM threads" ],
@@ -392,7 +401,8 @@ function updateGraph6() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph6 = new Dygraph(document.getElementById("dygraph-6"), [
-[D(1463094046534),85.0],
+[D(1463432234575),85.0],
+[D(1463432235577),111.0],
   ], {
     title: 'Open files and connections',
     labels: [ "Date", "Open files and connections" ],
@@ -734,7 +744,6 @@ setTimeout(updateGraph6, 50);
             <span class="badge badge-eg-num">2</span>
             <a href="http-routes.html" class="mini-example-title">HTTP routes</a>
             
-            
         </h4>
     </div>
 </div>
@@ -742,25 +751,24 @@ setTimeout(updateGraph6, 50);
 
 <div id="exampleroutes-body" class="row">
 
-    <div id="exampleroutes-left" class="col-md-8">
+    <div id="exampleroutes-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="exampleroutes-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="exampleroutes-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="exampleroutes-right" class="col-md-4">
-        <div id="exampleroutes-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/routes</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1120,7 +1128,6 @@ setTimeout(updateGraph6, 50);
             <span class="badge badge-eg-num">3</span>
             <a href="application-beans.html" class="mini-example-title">Application beans</a>
             
-            
         </h4>
     </div>
 </div>
@@ -1128,25 +1135,24 @@ setTimeout(updateGraph6, 50);
 
 <div id="examplebeans-body" class="row">
 
-    <div id="examplebeans-left" class="col-md-8">
+    <div id="examplebeans-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="examplebeans-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="examplebeans-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="examplebeans-right" class="col-md-4">
-        <div id="examplebeans-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/beans</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1217,7 +1223,6 @@ setTimeout(updateGraph6, 50);
             <span class="badge badge-eg-num">4</span>
             <a href="configuration-overview.html" class="mini-example-title">Configuration overview</a>
             
-            
         </h4>
     </div>
 </div>
@@ -1225,25 +1230,24 @@ setTimeout(updateGraph6, 50);
 
 <div id="exampleconfig-body" class="row">
 
-    <div id="exampleconfig-left" class="col-md-8">
+    <div id="exampleconfig-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="exampleconfig-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="exampleconfig-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="exampleconfig-right" class="col-md-4">
-        <div id="exampleconfig-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/config</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1302,7 +1306,6 @@ setTimeout(updateGraph6, 50);
             <span class="badge badge-eg-num">5</span>
             <a href="application-deployment.html" class="mini-example-title">Application deployment</a>
             
-            
         </h4>
     </div>
 </div>
@@ -1310,26 +1313,25 @@ setTimeout(updateGraph6, 50);
 
 <div id="exampledeploy-body" class="row">
 
-    <div id="exampledeploy-left" class="col-md-8">
+    <div id="exampledeploy-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="exampledeploy-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">ClasspathUtil</span>.appJar(<span class="_code_str">"/opt/app.jar"</span>);</div>
-<div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="exampledeploy-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">ClasspathUtil</span>.appJar(<span class="_code_str">"/opt/app.jar"</span>);</div>
+<div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="exampledeploy-right" class="col-md-4">
-        <div id="exampledeploy-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/deploy</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1374,7 +1376,6 @@ setTimeout(updateGraph6, 50);
             <span class="badge badge-eg-num">6</span>
             <a href="terminate-restart-application.html" class="mini-example-title">Terminate/restart application</a>
             
-            
         </h4>
     </div>
 </div>
@@ -1382,25 +1383,24 @@ setTimeout(updateGraph6, 50);
 
 <div id="exampleterminate-body" class="row">
 
-    <div id="exampleterminate-left" class="col-md-8">
+    <div id="exampleterminate-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="exampleterminate-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="exampleterminate-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="exampleterminate-right" class="col-md-4">
-        <div id="exampleterminate-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/terminate</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1432,7 +1432,6 @@ setTimeout(updateGraph6, 50);
             <span class="badge badge-eg-num">7</span>
             <a href="jmx-memory-info.html" class="mini-example-title">JMX memory info</a>
             
-            
         </h4>
     </div>
 </div>
@@ -1440,25 +1439,24 @@ setTimeout(updateGraph6, 50);
 
 <div id="examplejmx_mempool-body" class="row">
 
-    <div id="examplejmx_mempool-left" class="col-md-8">
+    <div id="examplejmx_mempool-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="examplejmx_mempool-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="examplejmx_mempool-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="examplejmx_mempool-right" class="col-md-4">
-        <div id="examplejmx_mempool-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/jmx/mempool</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1494,11 +1492,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">7471104</div>
+                    <div class="display-wrap">7143424</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">7380608</div>
+                    <div class="display-wrap">6618112</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1515,11 +1513,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">7471104</div>
+                    <div class="display-wrap">7143424</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">7391424</div>
+                    <div class="display-wrap">7086784</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1546,11 +1544,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">20840448</div>
+                    <div class="display-wrap">23248896</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">20127120</div>
+                    <div class="display-wrap">22696496</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1567,11 +1565,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">20840448</div>
+                    <div class="display-wrap">23248896</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">20127120</div>
+                    <div class="display-wrap">22696496</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1598,11 +1596,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">2490368</div>
+                    <div class="display-wrap">2621440</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">2266560</div>
+                    <div class="display-wrap">2505928</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1619,11 +1617,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">2490368</div>
+                    <div class="display-wrap">2621440</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">2266560</div>
+                    <div class="display-wrap">2505928</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1655,7 +1653,7 @@ setTimeout(updateGraph6, 50);
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">15096336</div>
+                    <div class="display-wrap">62780952</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1663,7 +1661,7 @@ setTimeout(updateGraph6, 50);
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">648019968</div>
+                    <div class="display-wrap">645398528</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1705,7 +1703,7 @@ setTimeout(updateGraph6, 50);
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">648019968</div>
+                    <div class="display-wrap">645398528</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1724,11 +1722,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">17825792</div>
+                    <div class="display-wrap">19922944</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">7943216</div>
+                    <div class="display-wrap">0</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1736,7 +1734,7 @@ setTimeout(updateGraph6, 50);
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">17825792</div>
+                    <div class="display-wrap">19922944</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1745,11 +1743,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">17825792</div>
+                    <div class="display-wrap">19922944</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">7943216</div>
+                    <div class="display-wrap">10383192</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1757,7 +1755,7 @@ setTimeout(updateGraph6, 50);
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">17825792</div>
+                    <div class="display-wrap">19922944</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1766,11 +1764,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">17825792</div>
+                    <div class="display-wrap">19922944</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">7943216</div>
+                    <div class="display-wrap">0</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1778,7 +1776,7 @@ setTimeout(updateGraph6, 50);
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">17825792</div>
+                    <div class="display-wrap">19922944</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1796,11 +1794,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">87031808</div>
+                    <div class="display-wrap">85983232</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">22848096</div>
+                    <div class="display-wrap">29160456</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1821,7 +1819,7 @@ setTimeout(updateGraph6, 50);
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">22848096</div>
+                    <div class="display-wrap">29160456</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1838,11 +1836,11 @@ setTimeout(updateGraph6, 50);
                 <form class="" role="form">
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">0</div>
+                    <div class="display-wrap">85983232</div>
                   </div>
                   <div class="form-group">
                     <label>Used: </label>
-                    <div class="display-wrap">0</div>
+                    <div class="display-wrap">29160456</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
@@ -1885,7 +1883,6 @@ setTimeout(updateGraph6, 50);
             <span class="badge badge-eg-num">8</span>
             <a href="jmx-thread-info.html" class="mini-example-title">JMX thread info</a>
             
-            
         </h4>
     </div>
 </div>
@@ -1893,25 +1890,24 @@ setTimeout(updateGraph6, 50);
 
 <div id="examplejmx_threads-body" class="row">
 
-    <div id="examplejmx_threads-left" class="col-md-8">
+    <div id="examplejmx_threads-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="examplejmx_threads-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="examplejmx_threads-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="examplejmx_threads-right" class="col-md-4">
-        <div id="examplejmx_threads-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/jmx/threads</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1948,15 +1944,15 @@ setTimeout(updateGraph6, 50);
       </div>
       <div class="form-group">
         <label>Peak thread count: </label>
-        <div class="display-wrap">28</div>
+        <div class="display-wrap">29</div>
       </div>
       <div class="form-group">
         <label>Daemon thread count: </label>
-        <div class="display-wrap">5</div>
+        <div class="display-wrap">6</div>
       </div>
       <div class="form-group">
         <label>Total started thread count: </label>
-        <div class="display-wrap">28</div>
+        <div class="display-wrap">29</div>
       </div>
       <div class="form-group">
         <label>Thread cpu time supported: </label>
@@ -1964,7 +1960,7 @@ setTimeout(updateGraph6, 50);
       </div>
       <div class="form-group">
         <label>Current thread cpu time: </label>
-        <div class="display-wrap">7709314</div>
+        <div class="display-wrap">7192611</div>
       </div>
       <div class="form-group">
         <label>Current thread user time: </label>
@@ -1984,7 +1980,7 @@ setTimeout(updateGraph6, 50);
       </div>
       <div class="form-group">
         <label>Thread count: </label>
-        <div class="display-wrap">28</div>
+        <div class="display-wrap">29</div>
       </div>
       <div class="form-group">
         <label>Thread allocated memory supported: </label>
@@ -2058,6 +2054,13 @@ setTimeout(updateGraph6, 50);
 
 
 </div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 

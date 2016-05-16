@@ -11,6 +11,8 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
     <script src="rapidoid.min.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -51,9 +53,14 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
-                        <!--
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
-                        -->
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
 
@@ -61,8 +68,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
                         <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
                         <li><a href="gui.html">gui</a></li>
                         <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
                     </ul>
@@ -107,71 +116,21 @@
     <div class="row">
 
         <div class="col-md-10">
-            <div class="row">
-    <div class="col-md-12">
-        <h4 class="caption">Starting from scratch - project setup with Maven</h4>
+            
 
-        <div class="docs">
-            First, we need to create a new Java 8 project and configure it properly using Maven:
-        </div>
-
-<pre class="maven-code">
-<span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependencies&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-web<span class="_code_tag">&lt;/artifactId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.1.1<span class="_code_tag">&lt;/version&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span>
-&nbsp;
-<span class="_code_tag">&lt;/project&gt;</span>
-</pre>
-
-    </div>
-</div>
-
-
-            <div id="returning-a-not-found-result" class="row">
-    <div class="col-md-12">
-        <h4 class="caption">
-            Now, the cool stuff!
-        </h4>
-    </div>
-</div>
-
+            
 
 <div id="examplehttpnotfound-body" class="row">
 
     <div id="examplehttpnotfound-left" class="col-md-8">
 
         <!-- START CODE -->
-        <div id="examplehttpnotfound-code" class="code-clean">
-            <div class="comment-line clearfix"><span class="_code_comment">Returning a <span class="text-box">null</span> means <span class="text-box">NOT FOUND</span>:</span></div>
+        <div class="copy-snippet">
+            <div><div id="examplehttpnotfound-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Returning a <span class="text-box">null</span> means <span class="text-box">NOT FOUND</span>:</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> req<span class="_code_api">.params</span>().size() == <span class="_code_num">1</span> ? req<span class="_code_api">.params</span>() : <span class="_code_kw">null</span>;</div>
 <div class="example-line clearfix">});</div>
-
+</div></div>
         </div>
         <!-- END CODE -->
 
@@ -181,17 +140,19 @@
         <div id="examplehttpnotfound-results" class="results">
             <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+    
 </div>
 
 
 <div class="eg-error">
     <!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
-    <span class="not-found">404 Not found!</span>
+    <span class="error-result">404 Not found!</span>
     <!-- EXAMPLE#httpnotfound ERROR ENDS HERE -->
 </div>
 
             <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/?a=1</span>
+    
 </div>
 
 <div class="eg-result">
@@ -203,12 +164,13 @@
 
             <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/?a=1&amp;b=2</span>
+    
 </div>
 
 
 <div class="eg-error">
     <!-- EXAMPLE#httpnotfound ERROR STARTS HERE -->
-    <span class="not-found">404 Not found!</span>
+    <span class="error-result">404 Not found!</span>
     <!-- EXAMPLE#httpnotfound ERROR ENDS HERE -->
 </div>
 
@@ -217,9 +179,10 @@
 </div>
 
 
+
 <div id="examplehttpnotfound-routes" class="row">
     <div class="col-md-12">
-        <h5 class="routes">HTTP server routes information:</h5>
+        <h4 class="caption">HTTP server routes information</h4>
         <table class="table table-striped table-hover">
   <tr>
     <th>Verb</th>
@@ -249,8 +212,47 @@
 
             <div class="row">
     <div class="col-md-12">
-        <h4 class="caption">Building the Project</h4>
+        <h4 class="caption">Project setup with Maven</h4>
 
+        <div class="docs">
+            To run the example, you need to create a new Java 8 project and configure it properly using Maven:
+        </div>
+
+        <div class="copy-snippet">
+            <div class="maven-code"><div class="example-line clearfix"><span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependencies&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-quick<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.1.1<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_tag">&lt;/project&gt;</span></div>
+</div>
+        </div>
+
+        <br>
         <div class="docs">Building the project with Maven is easy:</div>
 
         <pre class="maven-code"><span class="_code_api">mvn package</span></pre>
@@ -288,6 +290,12 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="mvc-architecture-with-rapidoid-s-built-in-template-entine.html">MVC architecture with Rapidoid&#39;s built-in template entine</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="serving-static-files-from-the-default-locations.html">Serving static files from the default locations</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="role-based-security.html">Role-based security</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="http-session.html">HTTP session</a>
@@ -353,6 +361,9 @@
         <a class="toc-link" href="bootstrap-based-gui-layout.html">Bootstrap-based GUI layout</a>
     </div>
     <div class="toc-wrap">
+        <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>
+    </div>
+    <div class="toc-wrap">
         <a class="toc-link" href="server-configuration.html">Server Configuration</a>
     </div>
     <div class="toc-wrap">
@@ -380,6 +391,13 @@
 
 
 </div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 

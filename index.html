@@ -11,6 +11,8 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
     <script src="rapidoid.min.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -51,9 +53,14 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
-                        <!--
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
-                        -->
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
 
@@ -61,8 +68,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
                         <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
                         <li><a href="gui.html">gui</a></li>
                         <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
                     </ul>
@@ -145,15 +154,23 @@
             Rapidoid consists of several modules which can be used separately or together:
             <ul>
                 <li>
-                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Very Fast Web Server</span>
+                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Very Fast HTTP Server (Low-level)</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
-                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (Bootstrap-based)</span>
+                    <a href="http-server.html">rapidoid-http-server</a> - <span class="module-about">High-level Web Framework</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
-                    <a href="web.html">rapidoid-web</a> - <span class="module-about">High-level POJO Web Framework</span>
+                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (based on Bootstrap + Angular)</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="web.html">rapidoid-web</a> - <span class="module-about">rapidoid-http-server + rapidoid-gui + goodies</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="quick.html">rapidoid-quick</a> - <span class="module-about">rapidoid-web + Hibernate + Logback + MySQL Connector...</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
@@ -169,14 +186,16 @@
     </div>
 
     <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-web</b> as Maven dependency:</div>
-<pre class="maven-code">
-&lt;<span class="_code_tag">dependency</span>&gt;
-    &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-web&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.1.1&lt;/<span class="_code_tag">version</span>&gt;
-&lt;/<span class="_code_tag">dependency</span>&gt;
-</pre>
+        <div class="eg_title">Add <b>rapidoid-quick</b> as Maven dependency:</div>
+<div class="copy-snippet">
+<div class="maven-code">
+&lt;<span class="_code_tag">dependency</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-quick</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.1.1</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
+&lt;/<span class="_code_tag">dependency</span>&gt;<br>
+</div>
+</div>
 
     </div>
 
@@ -185,15 +204,9 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
 
-        <div class="module-header">
-            Showcasing web development with the <span class="module-name">rapidoid-web</span> module
-        </div>
-        <h5>The <b>rapidoid-web</b> module includes the <b>rapidoid-http-fast</b>, <b>rapidoid-gui</b> and other modules.</b></h5>
+        <div class="module-header">Getting started with Rapidoid</div>
 
-
-        <div class="module-explanation">
-            <p>For normal web development use the rapidoid-web module.</p>
-        </div>
+        <div class="module-explanation"><p>For a quick start please use the rapidoid-quick module, which includes rapidoid-web, Hibernate, Logback, Hibernate Validator and MySQL Connector.</p></div>
     </div>
 </div>
 
@@ -209,7 +222,6 @@
         <h4 class="caption">
             <span class="badge badge-eg-num">1</span>
             <a href="restful-service-one-liner.html" class="mini-example-title">RESTful service one-liner</a>
-            
             
         </h4>
     </div>
@@ -241,10 +253,10 @@
     <div id="examplehttpsimple-left" class="col-md-8">
 
         <!-- START CODE -->
-        <div id="examplehttpsimple-code" class="code-clean">
-            <div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span></div>
+        <div class="copy-snippet">
+            <div><div id="examplehttpsimple-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>((<span class="_code_cls">String</span> msg) <span class="_code_lambda">-&gt;</span> msg.length());</div>
-
+</div></div>
         </div>
         <!-- END CODE -->
 
@@ -254,6 +266,7 @@
         <div id="examplehttpsimple-results" class="results">
             <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/size?msg=abc</span>
+    
 </div>
 
 <div class="eg-result">
@@ -268,9 +281,10 @@
 </div>
 
 
+
 <div id="examplehttpsimple-routes" class="row">
     <div class="col-md-12">
-        <h5 class="routes">HTTP server routes information:</h5>
+        <h4 class="caption">HTTP server routes information</h4>
         <table class="table table-striped table-hover">
   <tr>
     <th>Verb</th>
@@ -310,7 +324,6 @@
             <span class="badge badge-eg-num">2</span>
             <a href="instant-web-application.html" class="mini-example-title">Instant web application</a>
             
-            
         </h4>
     </div>
 </div>
@@ -318,21 +331,21 @@
 
 <div id="examplehttpsimplegui-body" class="row">
 
-    <div id="examplehttpsimplegui-left" class="col-md-8">
+    <div id="examplehttpsimplegui-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="examplehttpsimplegui-code" class="code-clean">
-            <div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span></div>
+        <div class="copy-snippet">
+            <div><div id="examplehttpsimplegui-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.mvc</span>(<span class="_code_str">"Hello &lt;b&gt;world&lt;/b&gt;!"</span>);</div>
-
+</div></div>
         </div>
         <!-- END CODE -->
 
         <div id="examplehttpsimplegui-codedesc" class="eg_title">config.yml</div>
 
         <!-- START CODE -->
-        <div id="examplehttpsimplegui-code" class="code-clean">
-            <div class="example-line clearfix">app:</div>
+        <div class="copy-snippet">
+            <div><div id="examplehttpsimplegui-code" class="code-clean"><div class="example-line clearfix">app:</div>
 <div class="example-line clearfix">&nbsp;&nbsp;brand: <span class="_code_str">'Cool app!'</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;title: <span class="_code_str">'the head title'</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;search: <span class="_code_kw">true</span></div>
@@ -342,20 +355,19 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">About</span>:</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">About</span> <span class="_code_cls">Us</span>: /about</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">About</span> <span class="_code_cls">You</span>: /</div>
-
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="examplehttpsimplegui-right" class="col-md-4">
-        <div id="examplehttpsimplegui-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
+    
 </div>
 
 <div class="eg-result">
@@ -422,7 +434,7 @@ Hello <b>world</b>!
 
 <div id="examplehttpsimplegui-routes" class="row">
     <div class="col-md-12">
-        <h5 class="routes">HTTP server routes information:</h5>
+        <h4 class="caption">HTTP server routes information</h4>
         <table class="table table-striped table-hover">
   <tr>
     <th>Verb</th>
@@ -465,7 +477,6 @@ Hello <b>world</b>!
             <span class="badge badge-eg-num">3</span>
             <a href="more-control-over-the-http-server-setup.html" class="mini-example-title">More control over the HTTP server setup</a>
             
-            
         </h4>
     </div>
 </div>
@@ -476,11 +487,11 @@ Hello <b>world</b>!
     <div id="examplehttpcustom-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="examplehttpcustom-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
+        <div class="copy-snippet">
+            <div><div id="examplehttpcustom-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"x"</span>); <span class="_code_linecomm">// continue with normal setup</span></div>
-
+</div></div>
         </div>
         <!-- END CODE -->
 
@@ -491,386 +502,6 @@ Hello <b>world</b>!
 
 
 
-
-<div class="row row-separated-micro">
-  <div class="col-md-12"></div>
-</div>
-
-<!-- EXAMPLE httproute -->
-
-<div id="http-handlers-and-routing" class="row">
-    <div class="col-md-12">
-        <h4 class="caption">
-            <span class="badge badge-eg-num">4</span>
-            <a href="http-handlers-and-routing.html" class="mini-example-title">HTTP handlers and routing</a>
-            
-            
-        </h4>
-    </div>
-</div>
-
-<div id="examplehttproute-extra" class="row">
-    <div class="col-md-12">
-	<div class="docs">
-		<p>A web application can be defined as a collection of HTTP
-			request handlers. The HTTP requests are routed to the appropriate
-			lambda, based on the combination of:</p>
-		<ul>
-			<li>the <b>request verb</b> (GET, POST, PUT, DELETE, PATCH,
-				OPTIONS, HEAD, TRACE)
-			</li>
-			<li>and the <b>request path</b> (<i>e.g. /books/123, /users,
-					/</i>)
-			</li>
-		</ul>
-	</div>
-</div>
-</div>
-
-<div id="examplehttproute-body" class="row">
-
-    <div id="examplehttproute-left" class="col-md-8">
-
-        <!-- START CODE -->
-        <div id="examplehttproute-code" class="code-clean">
-            <div class="comment-line clearfix"><span class="_code_comment">Request handlers should match both the verb and the path:</span></div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"Hi!"</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.html</span>(<span class="_code_str">"Getting X"</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.post</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Posting X"</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.delete</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.html</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"&lt;b&gt;Deleting X&lt;/b&gt;"</span>);</div>
-
-        </div>
-        <!-- END CODE -->
-
-    </div>
-
-    <div id="examplehttproute-right" class="col-md-4">
-        <div id="examplehttproute-results" class="results">
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httproute RESULT STARTS HERE -->
-    Hi!
-    <!-- EXAMPLE#httproute RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/x</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httproute RESULT STARTS HERE -->
-    Getting X
-    <!-- EXAMPLE#httproute RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/x</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httproute RESULT STARTS HERE -->
-    "Posting X"
-    <!-- EXAMPLE#httproute RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-DELETE eg-verb">DELETE</span> <span class="badge eg-uri">/x</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httproute RESULT STARTS HERE -->
-    <b>Deleting X</b>
-    <!-- EXAMPLE#httproute RESULT ENDS HERE -->
-</div>
-
-
-        </div>
-    </div>
-</div>
-
-
-<div id="examplehttproute-routes" class="row">
-    <div class="col-md-12">
-        <h5 class="routes">HTTP server routes information:</h5>
-        <table class="table table-striped table-hover">
-  <tr>
-    <th>Verb</th>
-    <th>Path</th>
-    <th>Segment</th>
-    <th>Content type</th>
-    <th>MVC</th>
-    <th>View name</th>
-    <th>Roles</th>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/</td>
-    <td>main</td>
-    <td>json</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/x</td>
-    <td>main</td>
-    <td>html</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-primary">POST</span>
-    </td>
-    <td>/x</td>
-    <td>main</td>
-    <td>json</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-danger">DELETE</span>
-    </td>
-    <td>/x</td>
-    <td>main</td>
-    <td>html</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-    </div>
-</div>
-
-
-
-<div class="row row-separated-micro">
-  <div class="col-md-12"></div>
-</div>
-
-<!-- EXAMPLE httpreq1 -->
-
-<div id="all-the-request-data-is-in-the-req-req-parameter" class="row">
-    <div class="col-md-12">
-        <h4 class="caption">
-            <span class="badge badge-eg-num">5</span>
-            <a href="all-the-request-data-is-in-the-req-req-parameter.html" class="mini-example-title">All the request data is in the (Req req) parameter</a>
-            
-            
-        </h4>
-    </div>
-</div>
-
-
-<div id="examplehttpreq1-body" class="row">
-
-    <div id="examplehttpreq1-left" class="col-md-8">
-
-        <!-- START CODE -->
-        <div id="examplehttpreq1-code" class="code-clean">
-            <div class="comment-line clearfix"><span class="_code_comment">Retrieving request info from the Req parameter:</span></div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showVerb"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.verb</span>());</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showPath"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.path</span>());</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showUri"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.uri</span>());</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showData"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.data</span>());</div>
-
-        </div>
-        <!-- END CODE -->
-
-    </div>
-
-    <div id="examplehttpreq1-right" class="col-md-4">
-        <div id="examplehttpreq1-results" class="results">
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showVerb</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
-    "GET"
-    <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showPath</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
-    "/showPath"
-    <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showUri</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
-    "/showUri"
-    <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/showData?x=1&amp;y=abc</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpreq1 RESULT STARTS HERE -->
-    {"x":"1","y":"abc"}
-    <!-- EXAMPLE#httpreq1 RESULT ENDS HERE -->
-</div>
-
-
-        </div>
-    </div>
-</div>
-
-
-<div id="examplehttpreq1-routes" class="row">
-    <div class="col-md-12">
-        <h5 class="routes">HTTP server routes information:</h5>
-        <table class="table table-striped table-hover">
-  <tr>
-    <th>Verb</th>
-    <th>Path</th>
-    <th>Segment</th>
-    <th>Content type</th>
-    <th>MVC</th>
-    <th>View name</th>
-    <th>Roles</th>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/showData</td>
-    <td>main</td>
-    <td>json</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/showPath</td>
-    <td>main</td>
-    <td>json</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/showUri</td>
-    <td>main</td>
-    <td>json</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/showVerb</td>
-    <td>main</td>
-    <td>json</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-    </div>
-</div>
-
-<div id="examplehttpreq1-extra2" class="row">
-    <div class="col-md-12">
-  <h4>
-    <b>Basic Request Info API (in interface Req):</b>
-  </h4>
-  <div class="api-docs">
-    <table class="table table-striped table-hover">
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">String</span> verb()</pre></td>
-        <td>Gets the <b>verb</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">String</span> uri()</pre></td>
-        <td>Gets the <b>uri</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">String</span> path()</pre></td>
-        <td>Gets the <b>path</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">String</span> query()</pre></td>
-        <td>Gets the <b>query</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">byte</span>[] body()</pre></td>
-        <td>Gets the <b>raw body data</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">String</span> contextPath()</pre></td>
-        <td>Gets the <b>context path</b> of the application segment handling the request. <br>
- The default context path is <code>/</code> for the <code>On</code> API, and <code>/_</code> for the <code>Admin</code> API.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; params()</pre></td>
-        <td>Gets the <b>URL parameters</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; posted()</pre></td>
-        <td>Gets the <b>posted parameters</b> of the HTTP request body.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">List</span>&lt;<span class="_code_cls">Upload</span>&gt;&gt; files()</pre></td>
-        <td>Gets the <b>uploaded files</b> from the HTTP request body.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; data()</pre></td>
-        <td>Gets the <b>data parameters (URL parameters + posted parameters + uploaded files)</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; headers()</pre></td>
-        <td>Gets the <b>headers</b> of the HTTP request.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cookies()</pre></td>
-        <td>Gets the <b>cookies</b> of the HTTP request.</td>
-      </tr>
-    </table>
-  </div>
-</div>
-</div>
 
 
 <div class="row row-separated-micro">
@@ -879,12 +510,11 @@ Hello <b>world</b>!
 
 <!-- EXAMPLE mvc -->
 
-<div id="mvc-architecture-with-rapidoid-s-built-in-template-entine" class="row">
+<div id="mvc-architecture-with-rapidoid-s-built-in-template-engine" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">6</span>
-            <a href="mvc-architecture-with-rapidoid-s-built-in-template-entine.html" class="mini-example-title">MVC architecture with Rapidoid&#39;s built-in template entine</a>
-            
+            <span class="badge badge-eg-num">4</span>
+            <a href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html" class="mini-example-title">MVC architecture with Rapidoid&#39;s built-in template engine</a>
             
         </h4>
     </div>
@@ -896,8 +526,8 @@ Hello <b>world</b>!
     <div id="examplemvc-left" class="col-md-8">
 
         <!-- START CODE -->
-        <div id="examplemvc-code" class="code-clean">
-            <div class="comment-line clearfix"><span class="_code_comment">The handler for <span class="text-box">/msg</span> returns the model, the default view name is <span class="text-box">msg</span>, so the corresponding template is <span class="text-box">templates/msg.html</span>:</span></div>
+        <div class="copy-snippet">
+            <div><div id="examplemvc-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">The handler for <span class="text-box">/msg</span> returns the model, the default view name is <span class="text-box">msg</span>, so the corresponding template is <span class="text-box">templates/msg.html</span>:</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/msg"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">12</span>, <span class="_code_str">"oki"</span>, <span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</div>
 <div class="example-line clearfix">});</div>
@@ -906,20 +536,20 @@ Hello <b>world</b>!
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/abc"</span>)<span class="_code_api">.view</span>(<span class="_code_str">"msg"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">100</span>, <span class="_code_str">"oki"</span>, <span class="_code_str">""</span>);</div>
 <div class="example-line clearfix">});</div>
-
+</div></div>
         </div>
         <!-- END CODE -->
 
-        <div id="examplemvc-codedesc" class="eg_title">msg.html</div>
+        <div id="examplemvc-codedesc" class="eg_title">templates/msg.html</div>
 
         <!-- START CODE -->
-        <div id="examplemvc-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_tag">&lt;p&gt;</span></div>
+        <div class="copy-snippet">
+            <div><div id="examplemvc-code" class="code-clean"><div class="example-line clearfix"><span class="_code_tag">&lt;p&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;You have <span class="_code_tag">&lt;span </span>class=<span class="_code_str">"badge"</span>><span class="_code_tmpl">${count}</span><span class="_code_tag">&lt;/span&gt;</span> new messages.</div>
 <div class="example-line clearfix"><span class="_code_tag">&lt;/p&gt;</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_tmpl">@{oki}</span></div>
-
+</div></div>
         </div>
         <!-- END CODE -->
 
@@ -929,6 +559,7 @@ Hello <b>world</b>!
         <div id="examplemvc-results" class="results">
             <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/msg</span>
+    
 </div>
 
 <div class="eg-result">
@@ -966,6 +597,7 @@ Hello <b>world</b>!
 
             <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/abc</span>
+    
 </div>
 
 <div class="eg-result">
@@ -1005,9 +637,10 @@ Hello <b>world</b>!
 </div>
 
 
+
 <div id="examplemvc-routes" class="row">
     <div class="col-md-12">
-        <h5 class="routes">HTTP server routes information:</h5>
+        <h4 class="caption">HTTP server routes information</h4>
         <table class="table table-striped table-hover">
   <tr>
     <th>Verb</th>
@@ -1087,6 +720,172 @@ Hello <b>world</b>!
   <div class="col-md-12"></div>
 </div>
 
+<!-- EXAMPLE gettingstarted -->
+
+<div id="restful-services-with-lambda-handlers-jpa-jackson-and-bean-validation" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">5</span>
+            <a href="restful-services-with-lambda-handlers-jpa-jackson-and-bean-validation.html" class="mini-example-title">RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplegettingstarted-body" class="row">
+
+    <div id="examplegettingstarted-left" class="col-md-12">
+        <div id="examplegettingstarted-codedesc" class="eg_title">Book.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">Entity</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">GeneratedValue</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">Id</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> javax.validation.constraints.<span class="_code_cls">NotNull</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Entity</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Book</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Id</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GeneratedValue</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Long</span> id;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@NotNull</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> year;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplegettingstarted-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Valid</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.jpa</span>.<span class="_code_api">JPA</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(args)<span class="_code_api">.jpa</span>(); <span class="_code_linecomm">// bootstrap JPA</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">JPA</span><span class="_code_api">.of</span>(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.post</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_api">JPA</span><span class="_code_api">.save</span>(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
+
+<div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/books</span>
+    <span class="label label-default eg-data">{&quot;title&quot;:&quot;Java Book&quot;,&quot;year&quot;:2016}</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#gettingstarted RESULT STARTS HERE -->
+    {"id":1,"title":"Java Book","year":2016}
+    <!-- EXAMPLE#gettingstarted RESULT ENDS HERE -->
+</div>
+
+
+<div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/books</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#gettingstarted RESULT STARTS HERE -->
+    [{"id":1,"title":"Java Book","year":2016}]
+    <!-- EXAMPLE#gettingstarted RESULT ENDS HERE -->
+</div>
+
+
+<div>
+    <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/books</span>
+    <span class="label label-default eg-data">{&quot;year&quot;:2004}</span>
+</div>
+
+
+<div class="eg-error">
+    <!-- EXAMPLE#gettingstarted ERROR STARTS HERE -->
+    <span class="error-result">{&quot;error&quot;:&quot;Validation failed: Book.title (may not be null)&quot;,&quot;code&quot;:422,&quot;status&quot;:&quot;Unprocesssable Entity&quot;}</span>
+    <!-- EXAMPLE#gettingstarted ERROR ENDS HERE -->
+</div>
+
+<div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/books</span>
+    
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#gettingstarted RESULT STARTS HERE -->
+    [{"id":1,"title":"Java Book","year":2016}]
+    <!-- EXAMPLE#gettingstarted RESULT ENDS HERE -->
+</div>
+
+
+
+<div id="examplegettingstarted-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/books</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/books</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 
 </div>
 
@@ -1103,13 +902,10 @@ Hello <b>world</b>!
         <a class="toc-link" href="#more-control-over-the-http-server-setup">More control over the HTTP server setup</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="#http-handlers-and-routing">HTTP handlers and routing</a>
+        <a class="toc-link" href="#mvc-architecture-with-rapidoid-s-built-in-template-engine">MVC architecture with Rapidoid&#39;s built-in template engine</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="#all-the-request-data-is-in-the-req-req-parameter">All the request data is in the (Req req) parameter</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="#mvc-architecture-with-rapidoid-s-built-in-template-entine">MVC architecture with Rapidoid&#39;s built-in template entine</a>
+        <a class="toc-link" href="#restful-services-with-lambda-handlers-jpa-jackson-and-bean-validation">RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</a>
     </div>
 </div>
 
@@ -1127,6 +923,13 @@ Hello <b>world</b>!
 
 
 </div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 

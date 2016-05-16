@@ -11,6 +11,8 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
     <script src="rapidoid.min.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -51,9 +53,14 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
-                        <!--
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
-                        -->
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
 
@@ -61,8 +68,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
                         <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
                         <li><a href="gui.html">gui</a></li>
                         <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
                     </ul>
@@ -107,73 +116,30 @@
     <div class="row">
 
         <div class="col-md-10">
-            <div class="row">
-    <div class="col-md-12">
-        <h4 class="caption">Starting from scratch - project setup with Maven</h4>
+            
 
-        <div class="docs">
-            First, we need to create a new Java 8 project and configure it properly using Maven:
-        </div>
-
-<pre class="maven-code">
-<span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span>
-&nbsp;
-<span class="_code_tag">&lt;/project&gt;</span>
-</pre>
-
-    </div>
-</div>
-
-
-            <div id="application-overview" class="row">
-    <div class="col-md-12">
-        <h4 class="caption">
-            Now, the cool stuff!
-        </h4>
-    </div>
-</div>
-
+            
 
 <div id="examplegoodies-body" class="row">
 
-    <div id="examplegoodies-left" class="col-md-8">
+    <div id="examplegoodies-left" class="col-md-12">
 
         <!-- START CODE -->
-        <div id="examplegoodies-code" class="code-clean">
-            <div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
-
+        <div class="copy-snippet">
+            <div><div id="examplegoodies-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+</div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="examplegoodies-right" class="col-md-4">
-        <div id="examplegoodies-results" class="results">
-        </div>
-    </div>
 </div>
+
+<h4 class="caption">Let's send some HTTP requests and check the results:</h4>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_</span>
+    
 </div>
 
 <div class="eg-result">
@@ -232,7 +198,7 @@ function updateGraph1() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph1 = new Dygraph(document.getElementById("dygraph-1"), [
-[D(1463095217740),0.1573016009242631],
+[D(1463432234574),0.18813603983746632],
   ], {
     title: 'System CPU',
     labels: [ "Date", "System CPU" ],
@@ -264,7 +230,8 @@ function updateGraph2() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph2 = new Dygraph(document.getElementById("dygraph-2"), [
-[D(1463095217740),1.724713679181238E-5],
+[D(1463432234574),1.3895599225304333E-5],
+[D(1463432235576),0.37],
   ], {
     title: 'Process CPU',
     labels: [ "Date", "Process CPU" ],
@@ -296,7 +263,8 @@ function updateGraph3() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph3 = new Dygraph(document.getElementById("dygraph-3"), [
-[D(1463095217740),45.672508239746094],
+[D(1463432234574),35.46595001220703],
+[D(1463432235576),42.429725646972656],
   ], {
     title: 'Used JVM memory (MB)',
     labels: [ "Date", "Used JVM memory (MB)" ],
@@ -330,7 +298,8 @@ function updateGraph4() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph4 = new Dygraph(document.getElementById("dygraph-4"), [
-[D(1463095217740),150.0],
+[D(1463432234574),150.0],
+[D(1463432235576),225.0],
   ], {
     title: 'Total JVM memory (MB)',
     labels: [ "Date", "Total JVM memory (MB)" ],
@@ -362,7 +331,8 @@ function updateGraph5() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph5 = new Dygraph(document.getElementById("dygraph-5"), [
-[D(1463095217741),13.0],
+[D(1463432234575),14.0],
+[D(1463432235577),21.0],
   ], {
     title: 'Number of JVM threads',
     labels: [ "Date", "Number of JVM threads" ],
@@ -394,7 +364,8 @@ function updateGraph6() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph6 = new Dygraph(document.getElementById("dygraph-6"), [
-[D(1463095217740),85.0],
+[D(1463432234575),85.0],
+[D(1463432235577),111.0],
   ], {
     title: 'Open files and connections',
     labels: [ "Date", "Open files and connections" ],
@@ -726,8 +697,39 @@ setTimeout(updateGraph6, 50);
 
             <div class="row">
     <div class="col-md-12">
-        <h4 class="caption">Building the Project</h4>
+        <h4 class="caption">Project setup with Maven</h4>
 
+        <div class="docs">
+            To run the example, you need to create a new Java 8 project and configure it properly using Maven:
+        </div>
+
+        <div class="copy-snippet">
+            <div class="maven-code"><div class="example-line clearfix"><span class="_code_tag">&lt;project </span>xmlns=<span class="_code_str">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="_code_str">"http://www.w3.org/2001/XMLSchema-instance"</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xsi:schemaLocation=<span class="_code_str">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;modelVersion&gt;</span>4.0.0<span class="_code_tag">&lt;/modelVersion&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>com.example<span class="_code_tag">&lt;/groupId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>my-example<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;build&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugins&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;plugin&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>3.3<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;configuration&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;source&gt;</span>1.8<span class="_code_tag">&lt;/source&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;target&gt;</span>1.8<span class="_code_tag">&lt;/target&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/configuration&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugin&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/plugins&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/build&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_tag">&lt;/project&gt;</span></div>
+</div>
+        </div>
+
+        <br>
         <div class="docs">Building the project with Maven is easy:</div>
 
         <pre class="maven-code"><span class="_code_api">mvn package</span></pre>
@@ -779,6 +781,13 @@ setTimeout(updateGraph6, 50);
 
 
 </div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 

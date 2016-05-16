@@ -11,6 +11,8 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
     <script src="rapidoid.min.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -51,9 +53,14 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
-                        <!--
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
-                        -->
+                        <li><a href="pojo.html">High-level POJO controllers</a></li>
+                        <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="session.html">Session management</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
 
@@ -61,8 +68,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
                         <li><a href="http-fast.html">http-fast</a></li>
+                        <li><a href="http-server.html">http-server</a></li>
                         <li><a href="gui.html">gui</a></li>
                         <li><a href="web.html">web</a></li>
+                        <li><a href="quick.html">quick</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
                     </ul>
@@ -145,15 +154,23 @@
             Rapidoid consists of several modules which can be used separately or together:
             <ul>
                 <li>
-                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Very Fast Web Server</span>
+                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Very Fast HTTP Server (Low-level)</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
-                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (Bootstrap-based)</span>
+                    <a href="http-server.html">rapidoid-http-server</a> - <span class="module-about">High-level Web Framework</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
-                    <a href="web.html">rapidoid-web</a> - <span class="module-about">High-level POJO Web Framework</span>
+                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (based on Bootstrap + Angular)</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="web.html">rapidoid-web</a> - <span class="module-about">rapidoid-http-server + rapidoid-gui + goodies</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="quick.html">rapidoid-quick</a> - <span class="module-about">rapidoid-web + Hibernate + Logback + MySQL Connector...</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
@@ -170,13 +187,15 @@
 
     <div class="col-md-4">
         <div class="eg_title">Add <b>rapidoid-http-fast</b> as Maven dependency:</div>
-<pre class="maven-code">
-&lt;<span class="_code_tag">dependency</span>&gt;
-    &lt;<span class="_code_tag">groupId</span>&gt;org.rapidoid&lt;/<span class="_code_tag">groupId</span>&gt;
-    &lt;<span class="_code_tag">artifactId</span>&gt;rapidoid-http-fast&lt;/<span class="_code_tag">artifactId</span>&gt;
-    &lt;<span class="_code_tag">version</span>&gt;5.1.1&lt;/<span class="_code_tag">version</span>&gt;
-&lt;/<span class="_code_tag">dependency</span>&gt;
-</pre>
+<div class="copy-snippet">
+<div class="maven-code">
+&lt;<span class="_code_tag">dependency</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-http-fast</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.1.1</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
+&lt;/<span class="_code_tag">dependency</span>&gt;<br>
+</div>
+</div>
 
     </div>
 
@@ -185,17 +204,14 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
         <div class="module-header">
-            Module <span class="module-name">rapidoid-http-fast</span> - Very Fast Web Server
+            Module <span class="module-name">rapidoid-http-fast</span>: Very Fast HTTP Server (Low-level)
         </div>
         <h5><b></b></h5>
 
 
+        <div class="module-explanation">The low-level HTTP API provides access to the <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">extremely fast</a> Rapidoid HTTP server implemented from scratch on top of Java NIO. 
 
-        <div class="module-explanation">
-            The low-level HTTP API provides access to the <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r11&hw=peak&test=plaintext">extremely fast</a> Rapidoid HTTP server implemented from scratch on top of Java NIO. 
-
-<h4>This is <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">one of the fastest</a> web servers in the world! (based on the transparent Techempower benchmarks)</h4>
-        </div>
+<h4>This is <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">one of the fastest</a> web servers in the world! (based on the transparent Techempower benchmarks)</h4></div>
     </div>
 </div>
 
@@ -211,7 +227,6 @@
         <h4 class="caption">
             <span class="badge badge-eg-num">1</span>
             <a href="api-documentation.html" class="mini-example-title">API documentation</a>
-            
             
         </h4>
     </div>
@@ -739,6 +754,7 @@
 
 
 
+
 <div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
@@ -768,6 +784,13 @@
 
 
 </div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
