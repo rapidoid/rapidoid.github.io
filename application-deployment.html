@@ -94,7 +94,7 @@
                 <span class="g-plusone" data-size="medium"></span>
 
                 <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
-                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.1 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.2 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
                    data-size="small">Tweet</a>
             </div>
         </div>
@@ -150,19 +150,21 @@
   <h2>Upload an application JAR to re-deploy:</h2>
 <form action="/_/jar" class="dropzone" id="jar-upload"></form>
   <h2>HTTP API for Deployment:</h2>
-  <h4>
+  <h6>
     <span class="label label-primary">POST</span>
     <b> http://your-app-domain/_/jar?_token=&lt;token&gt;</b>
-  </h4>
-  <h4>
+  </h6>
+  <h6>
     <b>POST DATA: file=&lt;your-jar&gt;</b>
-  </h4>
+  </h6>
   <h2>Building and deploying with Maven:</h2>
   <h6>
     <div class="copy-snippet">
       <b>mvn clean package &amp;&amp; cp target/*.jar target/_app_.jar &amp;&amp; curl -F 'file=@target/_app_.jar' 'http://App/_/jar?_token='</b>
     </div>
   </h6>
+  <br>
+  <button type="button" class="btn btn-danger" data-confirm="Do you really want to SHUTDOWN / RESTART the application?" ng-click="_emit($event, 'Shutdown / Restart', [])">Shutdown / Restart</button>
 <!--/EMBEDDED-->
 
     <!-- EXAMPLE#deploy RESULT ENDS HERE -->
