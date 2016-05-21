@@ -3669,12 +3669,212 @@ Hello, world!
   <div class="col-md-12"></div>
 </div>
 
+<!-- EXAMPLE gui.mapgrid -->
+
+<div id="creating-a-two-column-grid-from-a-map" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">28</span>
+            <a href="creating-a-two-column-grid-from-a-map.html" class="mini-example-title">Creating a Two-column Grid from a Map</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplegui.mapgrid-body" class="row">
+
+    <div id="examplegui.mapgrid-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegui.mapgrid-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">Creating a grid (table) from the <span class="text-box">nums</span> map:</span></div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>one</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>five</td>
+  </tr>
+</table></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">Custom table headers:</span></div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)<span class="_code_api">.headers</span>(<span class="_code_str">"Number"</span>, <span class="_code_str">"As Text"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
+  <tr>
+    <th>Number</th>
+    <th>As Text</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>one</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>five</td>
+  </tr>
+</table></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">Custom views for the keys and values:</span></div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.b</span>(k))</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.valueView</span>(v <span class="_code_lambda">-&gt;</span> v + <span class="_code_str">"!"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>
+      <b>1</b>
+    </td>
+    <td>one!</td>
+  </tr>
+  <tr>
+    <td>
+      <b>5</b>
+    </td>
+    <td>five!</td>
+  </tr>
+</table></div></span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE gui.buttons -->
+
+<div id="constructing-buttons" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">29</span>
+            <a href="constructing-buttons.html" class="mini-example-title">Constructing buttons</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplegui.buttons-body" class="row">
+
+    <div id="examplegui.buttons-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegui.buttons-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-default" ng-click="_emit($event, 'OK', [])">OK</button></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"Hey"</span>).primary();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-primary" ng-click="_emit($event, 'Hey', [])">Hey</button></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_api">GUI</span><span class="_code_api">.b</span>(<span class="_code_str">"Delete"</span>)).danger();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-danger">
+  <b>Delete</b>
+</button></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_api">GUI</span><span class="_code_api">.fa</span>(<span class="_code_str">"cog"</span>), <span class="_code_str">" Something else"</span>).warning();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-warning" ng-click="_emit($event, ' Something else', [])"><i class="fa fa-cog"></i> Something else</button></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"Cancel"</span>).go(<span class="_code_str">"gui.html"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><a href="gui.html" class="btn btn-default">Cancel</a></div></span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE gui.mapedit -->
+
+<div id="creating-a-form-from-a-map" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">30</span>
+            <a href="creating-a-form-from-a-map.html" class="mini-example-title">Creating a form from a Map</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplegui.mapedit-body" class="row">
+
+    <div id="examplegui.mapedit-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">Creating a form to edit the <span class="text-box">movie</span> map:</span></div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
+  <div class="form-group">
+    <label>Title: </label>
+    <input type="text" class="form-control" name="Title" value="Hackers" placeholder="">
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <label><input type="checkbox" class="pretty" name="cool" value="true" data-label="">Cool: </label>
+    </div>
+  </div>
+  <div class="form-group"></div>
+</form></div></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">Adding form buttons:</span></div>
+<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">""</span>))<span class="_code_api">.buttons</span>(<span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
+  <div class="form-group">
+    <label>Title: </label>
+    <input type="text" class="form-control" name="Title" value="" placeholder="">
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-default" ng-click="_emit($event, 'OK', [])">OK</button>
+  </div>
+</form></div></span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE showmovie -->
 
 <div id="display-bean-properties" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">28</span>
+            <span class="badge badge-eg-num">31</span>
             <a href="display-bean-properties.html" class="mini-example-title">Display bean properties</a>
             
         </h4>
@@ -3834,7 +4034,7 @@ Hello, world!
 <div id="edit-bean-properties" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">29</span>
+            <span class="badge badge-eg-num">32</span>
             <a href="edit-bean-properties.html" class="mini-example-title">Edit bean properties</a>
             
         </h4>
@@ -3995,7 +4195,7 @@ Hello, world!
 <div id="create-key-value-data-grid-from-a-map" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">30</span>
+            <span class="badge badge-eg-num">33</span>
             <a href="create-key-value-data-grid-from-a-map.html" class="mini-example-title">Create key-value data grid from a Map</a>
             
         </h4>
@@ -4143,7 +4343,7 @@ Hello, world!
 <div id="dependency-injection-of-singletons" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">31</span>
+            <span class="badge badge-eg-num">34</span>
             <a href="dependency-injection-of-singletons.html" class="mini-example-title">Dependency injection of singletons</a>
             
         </h4>
@@ -4327,7 +4527,7 @@ Hello, world!
 <div id="bootstrap-based-gui-layout" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">32</span>
+            <span class="badge badge-eg-num">35</span>
             <a href="bootstrap-based-gui-layout.html" class="mini-example-title">Bootstrap-based GUI layout</a>
             
         </h4>
@@ -4470,12 +4670,145 @@ Hello, world!
   <div class="col-md-12"></div>
 </div>
 
+<!-- EXAMPLE u.coll -->
+
+<div id="creating-collections" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">36</span>
+            <a href="creating-collections.html" class="mini-example-title">Creating collections</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleu.coll-body" class="row">
+
+    <div id="exampleu.coll-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleu.coll-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">Creating a list:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">Creating a set:</span></div>
+<div class="example-line clearfix"><span class="_code_cls">Set</span>&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">Creating a map:</span></div>
+<div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE u.collutils -->
+
+<div id="collection-utils" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">37</span>
+            <a href="collection-utils.html" class="mini-example-title">Collection utils</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleu.collutils-body" class="row">
+
+    <div id="exampleu.collutils-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleu.collutils-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">30</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,30]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">U.isEmpty utils:</span></div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE u.strutils -->
+
+<div id="string-utils" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">38</span>
+            <a href="string-utils.html" class="mini-example-title">String utils</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleu.strutils-body" class="row">
+
+    <div id="exampleu.strutils-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleu.strutils-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">Is it empty or null:</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">String</span> s = <span class="_code_kw">null</span>;</div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE gettingstarted2 -->
 
 <div id="configuring-rapidoid" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">33</span>
+            <span class="badge badge-eg-num">39</span>
             <a href="configuring-rapidoid.html" class="mini-example-title">Configuring Rapidoid</a>
             
         </h4>
@@ -4734,7 +5067,7 @@ Hello, world!
 <div id="server-configuration" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">34</span>
+            <span class="badge badge-eg-num">40</span>
             <a href="server-configuration.html" class="mini-example-title">Server Configuration</a>
             
         </h4>
@@ -4839,7 +5172,7 @@ Hello, world!
 <div id="full-application-example-rapidoid-web-rapidoid-fluent-modules" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">35</span>
+            <span class="badge badge-eg-num">41</span>
             <a href="full-application-example-rapidoid-web-rapidoid-fluent-modules.html" class="mini-example-title">Full application example (rapidoid-web + rapidoid-fluent modules)</a>
             
         </h4>
@@ -5295,7 +5628,7 @@ Hello, world!
 <div id="stopping-the-server" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">36</span>
+            <span class="badge badge-eg-num">42</span>
             <a href="stopping-the-server.html" class="mini-example-title">Stopping the server</a>
             
         </h4>
@@ -5332,7 +5665,7 @@ Hello, world!
 <div id="api-documentation" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">37</span>
+            <span class="badge badge-eg-num">43</span>
             <a href="api-documentation.html" class="mini-example-title">API documentation</a>
             
         </h4>
@@ -5954,6 +6287,15 @@ Hello, world!
         <a class="toc-link" href="#raw-html-pages">Raw HTML pages</a>
     </div>
     <div class="toc-wrap">
+        <a class="toc-link" href="#creating-a-two-column-grid-from-a-map">Creating a Two-column Grid from a Map</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#constructing-buttons">Constructing buttons</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#creating-a-form-from-a-map">Creating a form from a Map</a>
+    </div>
+    <div class="toc-wrap">
         <a class="toc-link" href="#display-bean-properties">Display bean properties</a>
     </div>
     <div class="toc-wrap">
@@ -5967,6 +6309,15 @@ Hello, world!
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#bootstrap-based-gui-layout">Bootstrap-based GUI layout</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#creating-collections">Creating collections</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#collection-utils">Collection utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#string-utils">String utils</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#configuring-rapidoid">Configuring Rapidoid</a>
