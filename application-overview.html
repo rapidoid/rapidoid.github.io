@@ -72,6 +72,7 @@
                         <li><a href="gui.html">gui</a></li>
                         <li><a href="web.html">web</a></li>
                         <li><a href="quick.html">quick</a></li>
+                        <li><a href="render.html">render</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
                     </ul>
@@ -162,11 +163,7 @@
       </tr>
       <tr>
         <td>Application path (root packages)</td>
-        <td>
-          <div>
-            <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;org.rapidoid.http.handler</div>
-          </div>
-        </td>
+        <td>org.rapidoid.http.handler</td>
       </tr>
       <tr>
         <td>Active profiles</td>
@@ -180,7 +177,7 @@
       <tr>
         <td>Command line arguments</td>
         <td>
-          <span class="value-line">
+          <span>
             <span class="nothing"><i class="fa fa-ban"></i> N/A</span>
           </span>
         </td>
@@ -198,7 +195,7 @@ function updateGraph1() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph1 = new Dygraph(document.getElementById("dygraph-1"), [
-[D(1463823140487),0.20871215592430636],
+[D(1463987290278),0.2127650816286027],
   ], {
     title: 'System CPU',
     labels: [ "Date", "System CPU" ],
@@ -230,7 +227,7 @@ function updateGraph2() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph2 = new Dygraph(document.getElementById("dygraph-2"), [
-[D(1463823140487),2.6062694555248356E-4],
+[D(1463987290278),0.0015914085987518652],
   ], {
     title: 'Process CPU',
     labels: [ "Date", "Process CPU" ],
@@ -262,7 +259,7 @@ function updateGraph3() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph3 = new Dygraph(document.getElementById("dygraph-3"), [
-[D(1463823140487),329.59920501708984],
+[D(1463987290278),366.2302017211914],
   ], {
     title: 'Used JVM memory (MB)',
     labels: [ "Date", "Used JVM memory (MB)" ],
@@ -296,7 +293,7 @@ function updateGraph4() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph4 = new Dygraph(document.getElementById("dygraph-4"), [
-[D(1463823140487),717.5],
+[D(1463987290277),659.5],
   ], {
     title: 'Total JVM memory (MB)',
     labels: [ "Date", "Total JVM memory (MB)" ],
@@ -328,7 +325,7 @@ function updateGraph5() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph5 = new Dygraph(document.getElementById("dygraph-5"), [
-[D(1463823140488),57.0],
+[D(1463987290279),57.0],
   ], {
     title: 'Number of JVM threads',
     labels: [ "Date", "Number of JVM threads" ],
@@ -360,7 +357,7 @@ function updateGraph6() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph6 = new Dygraph(document.getElementById("dygraph-6"), [
-[D(1463823140488),105.0],
+[D(1463987290279),106.0],
   ], {
     title: 'Open files and connections',
     labels: [ "Date", "Open files and connections" ],
