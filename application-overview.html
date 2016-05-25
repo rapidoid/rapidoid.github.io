@@ -95,7 +95,7 @@
                 <span class="g-plusone" data-size="medium"></span>
 
                 <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
-                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.2 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.3 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
                    data-size="small">Tweet</a>
             </div>
         </div>
@@ -195,7 +195,7 @@ function updateGraph1() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph1 = new Dygraph(document.getElementById("dygraph-1"), [
-[D(1463987290278),0.2127650816286027],
+[D(1464189569258),0.12029072661721602],
   ], {
     title: 'System CPU',
     labels: [ "Date", "System CPU" ],
@@ -227,7 +227,7 @@ function updateGraph2() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph2 = new Dygraph(document.getElementById("dygraph-2"), [
-[D(1463987290278),0.0015914085987518652],
+[D(1464189569258),3.359725986765939E-5],
   ], {
     title: 'Process CPU',
     labels: [ "Date", "Process CPU" ],
@@ -259,7 +259,7 @@ function updateGraph3() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph3 = new Dygraph(document.getElementById("dygraph-3"), [
-[D(1463987290278),366.2302017211914],
+[D(1464189569258),302.7690200805664],
   ], {
     title: 'Used JVM memory (MB)',
     labels: [ "Date", "Used JVM memory (MB)" ],
@@ -293,7 +293,7 @@ function updateGraph4() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph4 = new Dygraph(document.getElementById("dygraph-4"), [
-[D(1463987290277),659.5],
+[D(1464189569257),729.5],
   ], {
     title: 'Total JVM memory (MB)',
     labels: [ "Date", "Total JVM memory (MB)" ],
@@ -325,7 +325,7 @@ function updateGraph5() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph5 = new Dygraph(document.getElementById("dygraph-5"), [
-[D(1463987290279),57.0],
+[D(1464189569259),57.0],
   ], {
     title: 'Number of JVM threads',
     labels: [ "Date", "Number of JVM threads" ],
@@ -357,7 +357,7 @@ function updateGraph6() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph6 = new Dygraph(document.getElementById("dygraph-6"), [
-[D(1463987290279),106.0],
+[D(1464189569258),104.0],
   ], {
     title: 'Open files and connections',
     labels: [ "Date", "Open files and connections" ],
@@ -676,6 +676,17 @@ setTimeout(updateGraph6, 50);
         <td></td>
         <td></td>
         <td>logged_in</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+        </td>
+        <td>/_ping</td>
+        <td>main</td>
+        <td>plain</td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </table>
 <!--/EMBEDDED-->

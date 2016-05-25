@@ -95,7 +95,7 @@
                 <span class="g-plusone" data-size="medium"></span>
 
                 <a rel="nofollow" href="https://twitter.com/share" rel="nofollow"
-                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.2 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
+                   class="twitter-share-button navbar-btn" data-url="http://www.rapidoid.org" data-text="Released #Rapidoid v5.1.3 - Extremely Fast, Simple and Powerful #Java #Web Framework!"
                    data-size="small">Tweet</a>
             </div>
         </div>
@@ -230,7 +230,7 @@ function updateGraph1() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph1 = new Dygraph(document.getElementById("dygraph-1"), [
-[D(1463987290278),0.2127650816286027],
+[D(1464189569258),0.12029072661721602],
   ], {
     title: 'System CPU',
     labels: [ "Date", "System CPU" ],
@@ -262,7 +262,7 @@ function updateGraph2() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph2 = new Dygraph(document.getElementById("dygraph-2"), [
-[D(1463987290278),0.0015914085987518652],
+[D(1464189569258),3.359725986765939E-5],
   ], {
     title: 'Process CPU',
     labels: [ "Date", "Process CPU" ],
@@ -294,7 +294,7 @@ function updateGraph3() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph3 = new Dygraph(document.getElementById("dygraph-3"), [
-[D(1463987290278),366.2302017211914],
+[D(1464189569258),302.7690200805664],
   ], {
     title: 'Used JVM memory (MB)',
     labels: [ "Date", "Used JVM memory (MB)" ],
@@ -328,7 +328,7 @@ function updateGraph4() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph4 = new Dygraph(document.getElementById("dygraph-4"), [
-[D(1463987290277),659.5],
+[D(1464189569257),729.5],
   ], {
     title: 'Total JVM memory (MB)',
     labels: [ "Date", "Total JVM memory (MB)" ],
@@ -360,7 +360,7 @@ function updateGraph5() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph5 = new Dygraph(document.getElementById("dygraph-5"), [
-[D(1463987290279),57.0],
+[D(1464189569259),57.0],
   ], {
     title: 'Number of JVM threads',
     labels: [ "Date", "Number of JVM threads" ],
@@ -392,7 +392,7 @@ function updateGraph6() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph6 = new Dygraph(document.getElementById("dygraph-6"), [
-[D(1463987290279),106.0],
+[D(1464189569258),104.0],
   ], {
     title: 'Open files and connections',
     labels: [ "Date", "Open files and connections" ],
@@ -711,6 +711,17 @@ setTimeout(updateGraph6, 50);
         <td></td>
         <td></td>
         <td>logged_in</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="label label-success">GET</span>
+        </td>
+        <td>/_ping</td>
+        <td>main</td>
+        <td>plain</td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </table>
 <!--/EMBEDDED-->
@@ -1080,6 +1091,18 @@ setTimeout(updateGraph6, 50);
           <td></td>
           <td>logged_in</td>
           <td>json((Req, Resp) -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+          </td>
+          <td>/_ping</td>
+          <td>main</td>
+          <td>plain</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>plain(() -&gt; (static response of 2 bytes))</td>
         </tr>
       </table>
     </div>
@@ -1476,20 +1499,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">11691136</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">11796480</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">2555904</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">251658240</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">11779136</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">11862016</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1497,20 +1520,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">11691136</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">11796480</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">2555904</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">251658240</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">11779136</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">11862016</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1524,20 +1547,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">39653608</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">40542208</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">0</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">-1</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">39816976</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">40632320</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1545,20 +1568,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">39653608</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">40542208</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">0</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">-1</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">39816976</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">40632320</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1572,20 +1595,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">4738496</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">4898816</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">0</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">1073741824</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">4772344</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">4980736</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1593,20 +1616,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">4738496</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">4898816</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">0</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">1073741824</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">4772344</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">4980736</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1625,26 +1648,34 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">350997240</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">653262848</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">32505856</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">665845760</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">430931888</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">573571072</div>
+                    <div class="display-wrap">656408576</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
               </td>
               <td>
                 <form class="" role="form">
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">517996544</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">653262848</div>
+                  </div>
                   <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">32505856</div>
@@ -1653,34 +1684,26 @@ setTimeout(updateGraph6, 50);
                     <label>Max: </label>
                     <div class="display-wrap">675282944</div>
                   </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">444596224</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">573571072</div>
-                  </div>
                   <div class="form-group"></div>
                 </form>
               </td>
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Init: </label>
-                    <div class="display-wrap">32505856</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Max: </label>
-                    <div class="display-wrap">665845760</div>
-                  </div>
-                  <div class="form-group">
                     <label>Used: </label>
                     <div class="display-wrap">0</div>
                   </div>
                   <div class="form-group">
                     <label>Committed: </label>
-                    <div class="display-wrap">573571072</div>
+                    <div class="display-wrap">653262848</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Init: </label>
+                    <div class="display-wrap">32505856</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Max: </label>
+                    <div class="display-wrap">656408576</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1698,26 +1721,34 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">4501152</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">14155776</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">5242880</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">5242880</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">4776584</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">5242880</div>
+                    <div class="display-wrap">14155776</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
               </td>
               <td>
                 <form class="" role="form">
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">9157344</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">18874368</div>
+                  </div>
                   <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">5242880</div>
@@ -1726,34 +1757,26 @@ setTimeout(updateGraph6, 50);
                     <label>Max: </label>
                     <div class="display-wrap">18874368</div>
                   </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">9466720</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">18874368</div>
-                  </div>
                   <div class="form-group"></div>
                 </form>
               </td>
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">4501152</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">14155776</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">5242880</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
-                    <div class="display-wrap">5242880</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">4776584</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">5242880</div>
+                    <div class="display-wrap">14155776</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1766,20 +1789,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">33855784</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">97517568</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">87031808</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">1371537408</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">34793400</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">112721920</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1787,20 +1810,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">33855784</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">97517568</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">87031808</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">1371537408</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">34793400</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">112721920</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1808,20 +1831,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">33847592</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Committed: </label>
+                    <div class="display-wrap">97517568</div>
+                  </div>
+                  <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">87031808</div>
                   </div>
                   <div class="form-group">
                     <label>Max: </label>
                     <div class="display-wrap">1371537408</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">34785208</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">112721920</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -1933,7 +1956,7 @@ setTimeout(updateGraph6, 50);
       </div>
       <div class="form-group">
         <label>Current thread cpu time: </label>
-        <div class="display-wrap">6317272</div>
+        <div class="display-wrap">6095145</div>
       </div>
       <div class="form-group">
         <label>Current thread user time: </label>
