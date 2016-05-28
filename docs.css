@@ -1,3 +1,7 @@
+code {
+    color: #449;
+}
+
 #rapidoid-title {
     font-size: 20px;
 	font-weight: bold;
@@ -262,7 +266,7 @@ pre {
 	word-wrap: break-word;
 }
 
-.example-line {
+.example-line, .comment-line {
 	font-size: 13px;
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	line-height: 1.5;
@@ -271,14 +275,8 @@ pre {
 	height: 22px !important;
 }
 
-.empty-line, .example-line  {
+.empty-line, .example-line, .comment-line  {
 	background: #F7F7F7;
-}
-
-.comment-line {
-	font-size: 13px;
-	word-wrap: break-word;
-	padding: 10px 0px;
 }
 
 ._code_comment {
@@ -474,3 +472,4 @@ pre {
 }
 
 /************ END OF THE LOGIN CSS ************/
+

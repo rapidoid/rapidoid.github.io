@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -134,45 +135,45 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.args</span>(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">The application will manage this configuration:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// The application will manage this configuration:</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cfg = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"title"</span>, <span class="_code_str">"App"</span>, <span class="_code_str">"user"</span>, <span class="_code_str">"u1"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">RESTful service for configuration retrieval:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// RESTful service for configuration retrieval</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/cfg"</span>)<span class="_code_api">.json</span>(() <span class="_code_lambda">-&gt;</span> cfg);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; menu = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Home"</span>, <span class="_code_str">"/"</span>, <span class="_code_str">"Group"</span>, <span class="_code_str">"/group"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Wrap every result into a renderPage:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Wrap every result into a renderPage</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.defaults</span>()<span class="_code_api">.wrap</span>((data, next) <span class="_code_lambda">-&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next.invokeAndTransformResult(x <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> page(x)<span class="_code_api">.menu</span>(menu).brand(cfg<span class="_code_api">.get</span>(<span class="_code_str">"title"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Create buttons to filter by starting letter:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Create buttons to filter by starting letter</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">List</span>&lt;<span class="_code_cls">Btn</span>&gt; letters = <span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'z'</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> btn(c).go(<span class="_code_str">"/find?p="</span> + c);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<span class="_code_api">.toList</span>();</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Display the configuration entries at the home renderPage:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Display the configuration entries at the home renderPage</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">KVGrid</span> grid = grid(cfg)<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> a(k).href(<span class="_code_str">"/edit?k="</span> + k));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(letters, grid);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Group the configuration entries by the starting letter:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Group the configuration entries by the starting letter</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/group"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">Do</span><span class="_code_api">.map</span>(<span class="_code_api">Do</span><span class="_code_api">.group</span>(cfg)<span class="_code_api">.by</span>((k, v) <span class="_code_lambda">-&gt;</span> k.charAt(<span class="_code_num">0</span>)))</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.toList</span>((k, v) <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(h3(k), grid(v)));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Edit configuration entries:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Edit configuration entries</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/edit"</span>)<span class="_code_api">.mvc</span>((<span class="_code_cls">String</span> k) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Btn</span> ok = btn(<span class="_code_str">"Update"</span>).onClick(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">Log</span>.info(<span class="_code_str">"Updated!"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> edit(cfg, k)<span class="_code_api">.buttons</span>(ok, btn(<span class="_code_str">"Back"</span>).go(<span class="_code_str">"/"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Search configuration entries by prefix:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Search configuration entries by prefix</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/find"</span>)<span class="_code_api">.mvc</span>((<span class="_code_cls">String</span> p) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> grid(<span class="_code_api">Find</span><span class="_code_api">.allOf</span>(cfg)<span class="_code_api">.where</span>((k, v) <span class="_code_lambda">-&gt;</span> k.startsWith(p)));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
@@ -722,6 +723,9 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="string-utils.html">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-profiles.html">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>

@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -148,6 +149,11 @@
           <td>(random)</td>
         </tr>
         <tr>
+          <td>profiles=&lt;P1,P2...&gt;</td>
+          <td>comma-separated list of application profiles (e.g. mysql,prod)</td>
+          <td>the 'default' profile</td>
+        </tr>
+        <tr>
           <td>on.port=&lt;P&gt;</td>
           <td>the default (App) server will listen at port P</td>
           <td>8888</td>
@@ -189,7 +195,7 @@
             <div><div id="examplehttpargs-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">MyApp</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Initialize the configuration:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Initialize the configuration</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.args</span>(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.data</span>(<span class="_code_str">"name"</span>, <span class="_code_str">"unknown"</span>));</div>
@@ -376,6 +382,9 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="string-utils.html">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-profiles.html">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>

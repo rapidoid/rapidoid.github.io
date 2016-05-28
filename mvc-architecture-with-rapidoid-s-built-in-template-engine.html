@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -127,12 +128,16 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemvc-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">The handler for <span class="text-box">/msg</span> returns the model, the default view name is <span class="text-box">msg</span>, so the corresponding template is <span class="text-box">templates/msg.html</span>:</span></div>
+            <div><div id="examplemvc-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// The handler for <span class="text-box">/msg</span> returns the model</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// The default view name is <span class="text-box">msg</span></span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// So the corresponding template is <span class="text-box">templates/msg.html</span></span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/msg"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">12</span>, <span class="_code_str">"oki"</span>, <span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">A custom view name can be assigned. In this case the default view name is <span class="text-box">abc</span>, but a custom view name <span class="text-box">msg</span> was specified:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// A custom view name can be assigned.</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// In this case the default view name is <span class="text-box">abc</span>,</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// but a custom view name <span class="text-box">msg</span> was specified</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/abc"</span>)<span class="_code_api">.view</span>(<span class="_code_str">"msg"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">100</span>, <span class="_code_str">"oki"</span>, <span class="_code_str">""</span>);</div>
 <div class="example-line clearfix">});</div>
@@ -481,6 +486,9 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="string-utils.html">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-profiles.html">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>

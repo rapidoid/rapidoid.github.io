@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid Injection</title>
+    <title>Rapidoid Profiles</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -133,8 +133,17 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
 
-        <div class="module-header">Dependency injection</div>
+        <div class="module-header">Profiles</div>
 
+        <div class="module-explanation"><p>Application profiles can be configured through command line args or ENV properties.</p>
+
+<p>The profiles are useful to conditionally activate application beans or configuration.</p>
+
+<p>If no profiles are specified, the <code>default</code> profile will be automatically assigned.</p>
+
+<p>Having <code>prod</code> or <code>production</code> profile automatically marks the application environment as <code>production</code>.</p>
+
+<p>Rapidoid has built-in default configuration for the profiles <code>default</code>, <code>dev</code> and <code>mysql</code>.</p></div>
     </div>
 </div>
 
@@ -143,92 +152,63 @@
 <div class="row">
 
 <div class="col-md-10">
-<!-- EXAMPLE injection -->
+<!-- EXAMPLE profiles -->
 
-<div id="dependency-injection-of-singletons" class="row">
+<div id="application-profiles" class="row">
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">1</span>
-            <a href="dependency-injection-of-singletons.html" class="mini-example-title">Dependency injection of singletons</a>
+            <a href="application-profiles.html" class="mini-example-title">Application Profiles</a>
             
         </h4>
     </div>
 </div>
 
 
-<div id="exampleinjection-body" class="row">
+<div id="exampleprofiles-body" class="row">
 
-    <div id="exampleinjection-left" class="col-md-8">
-        <div id="exampleinjection-codedesc" class="eg_title">Bar.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="exampleinjection-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> javax.inject.<span class="_code_cls">Inject</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_ann">@Controller</span>(<span class="_code_str">"/bar"</span>)</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Bar</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Inject</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Foo</span> foo;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hi"</span>)</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> foo.msg();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello from Bar!"</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-        <div id="exampleinjection-codedesc" class="eg_title">Foo.java</div>
+    <div id="exampleprofiles-left" class="col-md-8">
+        <div id="exampleprofiles-codedesc" class="eg_title">Main.java</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleinjection-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.commons.<span class="_code_cls">Env</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.config</span>.<span class="_code_api">Conf</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.gui.<span class="_code_api">GUI</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> javax.inject.<span class="_code_cls">Inject</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_ann">@Controller</span>(<span class="_code_str">"/foo"</span>)</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Foo</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Inject</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Bar</span> bar;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">int</span> count;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hi"</span>)</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hello() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> ++count + <span class="_code_str">": "</span> + bar.msg();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> msg() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"Hello from Foo!"</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-        <div id="exampleinjection-codedesc" class="eg_title">Main.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="exampleinjection-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.web.<span class="_code_cls">Rapidoid</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> java.util.<span class="_code_cls">Map</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Rapidoid</span><span class="_code_api">.run</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(<span class="_code_str">"profiles=mysql,prod"</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/profiles"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.display</span>(<span class="_code_cls">Env</span><span class="_code_api">.profiles</span>()));</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; myConfig = <span class="_code_api">Conf</span><span class="_code_api">.section</span>(<span class="_code_str">"my"</span>)<span class="_code_api">.toMap</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/my"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.grid</span>(myConfig));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">OtherCtrl.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"default"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">OtherCtrl</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, OTHER controller!"</span>;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -236,40 +216,110 @@
         </div>
         <!-- END CODE -->
 
+        <div id="exampleprofiles-codedesc" class="eg_title">ProdCtrl.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"prod"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ProdCtrl</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, PROD controller!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">profile-prod.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix">my:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;msg: <span class="_code_str">'hello from PROD!'</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">config.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix">app:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;navbar: <span class="_code_kw">false</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">my:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;msg: <span class="_code_str">'hello!'</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;desc: <span class="_code_str">'simple example'</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
     </div>
 
-    <div id="exampleinjection-right" class="col-md-4">
-        <div id="exampleinjection-results" class="results">
+    <div id="exampleprofiles-right" class="col-md-4">
+        <div id="exampleprofiles-results" class="results">
             <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/profiles</span>
 </div>
 
 <div class="eg-result">
-    <!-- EXAMPLE#injection RESULT STARTS HERE -->
-    "1: Hello from Bar!"
-    <!-- EXAMPLE#injection RESULT ENDS HERE -->
+    <!-- EXAMPLE#profiles RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+
+<div>
+  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;mysql</div>
+  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;prod</div>
 </div>
+<!--/EMBEDDED-->
 
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar/hi</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#injection RESULT STARTS HERE -->
-    "Hello from Foo!"
-    <!-- EXAMPLE#injection RESULT ENDS HERE -->
+    <!-- EXAMPLE#profiles RESULT ENDS HERE -->
 </div>
 
 
             <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo/hi</span>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/my</span>
 </div>
 
 <div class="eg-result">
-    <!-- EXAMPLE#injection RESULT STARTS HERE -->
-    "2: Hello from Bar!"
-    <!-- EXAMPLE#injection RESULT ENDS HERE -->
+    <!-- EXAMPLE#profiles RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>msg</td>
+    <td>hello from PROD!</td>
+  </tr>
+  <tr>
+    <td>desc</td>
+    <td>simple example</td>
+  </tr>
+</table>
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#profiles RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#profiles RESULT STARTS HERE -->
+    "hi, PROD controller!"
+    <!-- EXAMPLE#profiles RESULT ENDS HERE -->
 </div>
 
 
@@ -279,7 +329,7 @@
 
 
 
-<div id="exampleinjection-routes" class="row">
+<div id="exampleprofiles-routes" class="row">
     <div class="col-md-12">
         <h4 class="caption">HTTP server routes information</h4>
         <table class="table table-striped table-hover">
@@ -296,7 +346,7 @@
     <td>
       <span class="label label-success">GET</span>
     </td>
-    <td>/bar/hi</td>
+    <td>/hi</td>
     <td>main</td>
     <td>json</td>
     <td></td>
@@ -307,11 +357,26 @@
     <td>
       <span class="label label-success">GET</span>
     </td>
-    <td>/foo/hi</td>
+    <td>/my</td>
     <td>main</td>
-    <td>json</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>my</td>
     <td></td>
-    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/profiles</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>profiles</td>
     <td></td>
   </tr>
 </table>
@@ -331,7 +396,7 @@
 <div class="toc-right">
     <h3 class="toc-title">Contents:</h3>
     <div class="toc-wrap">
-        <a class="toc-link" href="#dependency-injection-of-singletons">Dependency injection of singletons</a>
+        <a class="toc-link" href="#application-profiles">Application Profiles</a>
     </div>
 </div>
 

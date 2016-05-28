@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -142,10 +143,10 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/manage"</span>)<span class="_code_api">.roles</span>(<span class="_code_str">"manager"</span>)<span class="_code_api">.html</span>((req, resp) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"this is private!"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Dummy login: successful if the username is the same as the password:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Dummy login: successful if the username is the same as the password</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.loginProvider</span>((username, password) <span class="_code_lambda">-&gt;</span> username.equals(password));</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Gives the 'manager' role to every logged-in user:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Gives the 'manager' role to every logged-in user</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.rolesProvider</span>(username <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"manager"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -561,6 +562,9 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="string-utils.html">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-profiles.html">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>

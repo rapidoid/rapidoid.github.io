@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -129,17 +130,17 @@
         <div class="copy-snippet">
             <div><div id="examplefluent.show-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">New</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">2</span>, <span class="_code_str">"two"</span>, <span class="_code_num">3</span>, <span class="_code_str">"three"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","2":"two","3":"three"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Find the even numbers from the map - with Rapidoid Fluent (and Java 8 streams behind the scenes):</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Find the even numbers from the map - with Rapidoid Fluent (and Java 8 streams behind the scenes):</span></div>
 <div class="example-line clearfix"><span class="_code_api">Find</span><span class="_code_api">.allOf</span>(nums)<span class="_code_api">.where</span>((k, v) <span class="_code_lambda">-&gt;</span> k % <span class="_code_num">2</span> == <span class="_code_num">0</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">That is equivalent to the following code:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// That is equivalent to the following code:</span></div>
 <div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even = nums.entrySet()<span class="_code_api">.stream</span>()</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.filter</span>(num <span class="_code_lambda">-&gt;</span> num.getKey() % <span class="_code_num">2</span> == <span class="_code_num">0</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.collect</span>(<span class="_code_cls">Collectors</span><span class="_code_api">.toMap</span>(<span class="_code_cls">Entry</span>::getKey, <span class="_code_cls">Entry</span>::getValue));</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">System</span><span class="_code_api">.out</span>.println(even);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"2":"two"}</span><span class="object-class">HashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Or, we can do the same thing in the old way:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Or, we can do the same thing in the old way</span></div>
 <div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; even2 = <span class="_code_kw">new</span> <span class="_code_cls">HashMap</span>&lt;&gt;();</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">for</span> (<span class="_code_cls">Entry</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; num : nums.entrySet()) {</div>

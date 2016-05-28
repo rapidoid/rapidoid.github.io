@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -2301,6 +2302,11 @@ Hello, world!
           <td>secret=&lt;SECRET&gt;</td>
           <td>configure app-specific secret for encryption</td>
           <td>(random)</td>
+        </tr>
+        <tr>
+          <td>profiles=&lt;P1,P2...&gt;</td>
+          <td>comma-separated list of application profiles (e.g. mysql,prod)</td>
+          <td>the 'default' profile</td>
         </tr>
         <tr>
           <td>on.port=&lt;P&gt;</td>

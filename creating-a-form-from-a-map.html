@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -129,7 +130,7 @@
         <div class="copy-snippet">
             <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Creating a form to edit the <span class="text-box">movie</span> map:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Creating a form to edit the <span class="text-box">movie</span> map</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>
@@ -143,7 +144,7 @@
   <div class="form-group"></div>
 </form></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Adding form buttons:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Adding form buttons</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">""</span>))<span class="_code_api">.buttons</span>(<span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>
@@ -333,6 +334,9 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="string-utils.html">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-profiles.html">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>

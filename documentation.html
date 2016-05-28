@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -257,7 +258,7 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpsimple-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /size</span> return the length of the "msg" parameter:</span></div>
+            <div><div id="examplehttpsimple-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// On <span class="text-box">GET /size</span> return the length of the "msg" parameter</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>((<span class="_code_cls">String</span> msg) <span class="_code_lambda">-&gt;</span> msg.length());</div>
 </div></div>
         </div>
@@ -337,7 +338,7 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpsimplegui-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page:</span></div>
+            <div><div id="examplehttpsimplegui-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.mvc</span>(<span class="_code_str">"Hello &lt;b&gt;world&lt;/b&gt;!"</span>);</div>
 </div></div>
         </div>
@@ -545,7 +546,7 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttproute-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Request handlers should match both the verb and the path:</span></div>
+            <div><div id="examplehttproute-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Request handlers should match both the verb and the path:</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"Hi!"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.html</span>(<span class="_code_str">"Getting X"</span>);</div>
@@ -697,7 +698,7 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpreq1-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Retrieving request info from the Req parameter:</span></div>
+            <div><div id="examplehttpreq1-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Retrieving request info from the Req parameter</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showVerb"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.verb</span>());</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showPath"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.path</span>());</div>
@@ -909,7 +910,7 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpresp-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Returning the request or response object means the response was constructed:</span></div>
+            <div><div id="examplehttpresp-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Returning the request or response object means the response was constructed</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON_UTF_8</span>);</div>
@@ -1193,12 +1194,16 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemvc-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">The handler for <span class="text-box">/msg</span> returns the model, the default view name is <span class="text-box">msg</span>, so the corresponding template is <span class="text-box">templates/msg.html</span>:</span></div>
+            <div><div id="examplemvc-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// The handler for <span class="text-box">/msg</span> returns the model</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// The default view name is <span class="text-box">msg</span></span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// So the corresponding template is <span class="text-box">templates/msg.html</span></span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/msg"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">12</span>, <span class="_code_str">"oki"</span>, <span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">A custom view name can be assigned. In this case the default view name is <span class="text-box">abc</span>, but a custom view name <span class="text-box">msg</span> was specified:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// A custom view name can be assigned.</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// In this case the default view name is <span class="text-box">abc</span>,</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// but a custom view name <span class="text-box">msg</span> was specified</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/abc"</span>)<span class="_code_api">.view</span>(<span class="_code_str">"msg"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">100</span>, <span class="_code_str">"oki"</span>, <span class="_code_str">""</span>);</div>
 <div class="example-line clearfix">});</div>
@@ -1566,10 +1571,10 @@ Hello <b>world</b>!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/manage"</span>)<span class="_code_api">.roles</span>(<span class="_code_str">"manager"</span>)<span class="_code_api">.html</span>((req, resp) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"this is private!"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Dummy login: successful if the username is the same as the password:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Dummy login: successful if the username is the same as the password</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.loginProvider</span>((username, password) <span class="_code_lambda">-&gt;</span> username.equals(password));</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Gives the 'manager' role to every logged-in user:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Gives the 'manager' role to every logged-in user</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.rolesProvider</span>(username <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"manager"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -2186,7 +2191,7 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpresptype-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">The response type will be JSON, instead of HTML:</span></div>
+            <div><div id="examplehttpresptype-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// The response type will be JSON, instead of HTML</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON_UTF_8</span>);</div>
@@ -2416,12 +2421,12 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpwrap-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">A wrapper executes before the handler:</span></div>
+            <div><div id="examplehttpwrap-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// A wrapper executes before the handler</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.defaults</span>()<span class="_code_api">.wrap</span>((req, next) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> next.invokeAndTransformResult(result <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Hey: "</span> + result);</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">and provides transformation for the result:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// and provides transformation for the result</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>((<span class="_code_cls">String</span> s) <span class="_code_lambda">-&gt;</span> s.length());</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/upper"</span>)<span class="_code_api">.json</span>((<span class="_code_cls">String</span> s) <span class="_code_lambda">-&gt;</span> s.toUpperCase());</div>
 </div></div>
@@ -2524,7 +2529,7 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpnotfound-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Returning a <span class="text-box">null</span> means <span class="text-box">NOT FOUND</span>:</span></div>
+            <div><div id="examplehttpnotfound-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Returning a <span class="text-box">null</span> means <span class="text-box">NOT FOUND</span></span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> req<span class="_code_api">.params</span>().size() == <span class="_code_num">1</span> ? req<span class="_code_api">.params</span>() : <span class="_code_kw">null</span>;</div>
 <div class="example-line clearfix">});</div>
@@ -2628,10 +2633,10 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpgeneric-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Generic handlers match any request (in the declaration order):</span></div>
+            <div><div id="examplehttpgeneric-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Generic handlers match any request (in the declaration order)</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.data</span>()<span class="_code_api">.isEmpty</span>() ? <span class="_code_str">"Simple: "</span> + req<span class="_code_api">.uri</span>() : <span class="_code_kw">null</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">The next handler is executed if the previous returns <span class="text-box">NOT FOUND</span>:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// The next handler is executed if the previous returns <span class="text-box">NOT FOUND</span></span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(req<span class="_code_api">.verb</span>(), req<span class="_code_api">.uri</span>(), req<span class="_code_api">.data</span>()));</div>
 </div></div>
         </div>
@@ -2701,7 +2706,7 @@ Hello <b>world</b>!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpasync-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Wait 1 second before returning a response:</span></div>
+            <div><div id="examplehttpasync-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Wait 1 second before returning a response</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> <span class="_code_api">Jobs</span><span class="_code_api">.schedule</span>(() <span class="_code_lambda">-&gt;</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;req<span class="_code_api">.response</span>()<span class="_code_api">.result</span>(<span class="_code_str">"OK"</span>)<span class="_code_api">.done</span>();</div>
@@ -3828,7 +3833,7 @@ Hello, world!
         <div class="copy-snippet">
             <div><div id="examplegui.mapgrid-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Creating a grid (table) from the <span class="text-box">nums</span> map:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Creating a grid (table) from the <span class="text-box">nums</span> map</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
   <tr>
     <th>Key</th>
@@ -3844,7 +3849,7 @@ Hello, world!
   </tr>
 </table></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Custom table headers:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Custom table headers</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)<span class="_code_api">.headers</span>(<span class="_code_str">"Number"</span>, <span class="_code_str">"As Text"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
   <tr>
     <th>Number</th>
@@ -3860,7 +3865,7 @@ Hello, world!
   </tr>
 </table></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Custom views for the keys and values:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Custom views for the keys and values</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.b</span>(k))</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.valueView</span>(v <span class="_code_lambda">-&gt;</span> v + <span class="_code_str">"!"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
@@ -3966,7 +3971,7 @@ Hello, world!
         <div class="copy-snippet">
             <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Creating a form to edit the <span class="text-box">movie</span> map:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Creating a form to edit the <span class="text-box">movie</span> map</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>
@@ -3980,7 +3985,7 @@ Hello, world!
   <div class="form-group"></div>
 </form></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Adding form buttons:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Adding form buttons</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">""</span>))<span class="_code_api">.buttons</span>(<span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>
@@ -4820,14 +4825,14 @@ Hello, world!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleu.coll-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">Creating a list:</span></div>
+            <div><div id="exampleu.coll-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">// Creating a list:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Creating a set:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Creating a set:</span></div>
 <div class="example-line clearfix"><span class="_code_cls">Set</span>&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Creating a map:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Creating a map:</span></div>
 <div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span></div>
 </div></div>
         </div>
@@ -4869,7 +4874,7 @@ Hello, world!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">U.isEmpty utils:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// U.isEmpty utils:</span></div>
 <div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span></div>
@@ -4909,7 +4914,7 @@ Hello, world!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleu.strutils-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">Is it empty or null:</span></div>
+            <div><div id="exampleu.strutils-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">// Is it empty or null:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">String</span> s = <span class="_code_kw">null</span>;</div>
 <div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
@@ -4934,12 +4939,249 @@ Hello, world!
   <div class="col-md-12"></div>
 </div>
 
+<!-- EXAMPLE profiles -->
+
+<div id="application-profiles" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">39</span>
+            <a href="application-profiles.html" class="mini-example-title">Application Profiles</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleprofiles-body" class="row">
+
+    <div id="exampleprofiles-left" class="col-md-8">
+        <div id="exampleprofiles-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.commons.<span class="_code_cls">Env</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.config</span>.<span class="_code_api">Conf</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.gui.<span class="_code_api">GUI</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> java.util.<span class="_code_cls">Map</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(<span class="_code_str">"profiles=mysql,prod"</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/profiles"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.display</span>(<span class="_code_cls">Env</span><span class="_code_api">.profiles</span>()));</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; myConfig = <span class="_code_api">Conf</span><span class="_code_api">.section</span>(<span class="_code_str">"my"</span>)<span class="_code_api">.toMap</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/my"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.grid</span>(myConfig));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">OtherCtrl.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"default"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">OtherCtrl</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, OTHER controller!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">ProdCtrl.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"prod"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ProdCtrl</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, PROD controller!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">profile-prod.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix">my:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;msg: <span class="_code_str">'hello from PROD!'</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">config.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix">app:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;navbar: <span class="_code_kw">false</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">my:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;msg: <span class="_code_str">'hello!'</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;desc: <span class="_code_str">'simple example'</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="exampleprofiles-right" class="col-md-4">
+        <div id="exampleprofiles-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/profiles</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#profiles RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+
+<div>
+  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;mysql</div>
+  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;prod</div>
+</div>
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#profiles RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/my</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#profiles RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>msg</td>
+    <td>hello from PROD!</td>
+  </tr>
+  <tr>
+    <td>desc</td>
+    <td>simple example</td>
+  </tr>
+</table>
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#profiles RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#profiles RESULT STARTS HERE -->
+    "hi, PROD controller!"
+    <!-- EXAMPLE#profiles RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="exampleprofiles-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/hi</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/my</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>my</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/profiles</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>profiles</td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE gettingstarted2 -->
 
 <div id="configuring-rapidoid" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">39</span>
+            <span class="badge badge-eg-num">40</span>
             <a href="configuring-rapidoid.html" class="mini-example-title">Configuring Rapidoid</a>
             
         </h4>
@@ -5196,7 +5438,7 @@ Hello, world!
 <div id="server-configuration" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">40</span>
+            <span class="badge badge-eg-num">41</span>
             <a href="server-configuration.html" class="mini-example-title">Server Configuration</a>
             
         </h4>
@@ -5229,6 +5471,11 @@ Hello, world!
           <td>secret=&lt;SECRET&gt;</td>
           <td>configure app-specific secret for encryption</td>
           <td>(random)</td>
+        </tr>
+        <tr>
+          <td>profiles=&lt;P1,P2...&gt;</td>
+          <td>comma-separated list of application profiles (e.g. mysql,prod)</td>
+          <td>the 'default' profile</td>
         </tr>
         <tr>
           <td>on.port=&lt;P&gt;</td>
@@ -5272,7 +5519,7 @@ Hello, world!
             <div><div id="examplehttpargs-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">MyApp</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Initialize the configuration:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Initialize the configuration</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.args</span>(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.data</span>(<span class="_code_str">"name"</span>, <span class="_code_str">"unknown"</span>));</div>
@@ -5301,7 +5548,7 @@ Hello, world!
 <div id="full-application-example-rapidoid-web-rapidoid-fluent-modules" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">41</span>
+            <span class="badge badge-eg-num">42</span>
             <a href="full-application-example-rapidoid-web-rapidoid-fluent-modules.html" class="mini-example-title">Full application example (rapidoid-web + rapidoid-fluent modules)</a>
             
         </h4>
@@ -5322,45 +5569,45 @@ Hello, world!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.args</span>(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">The application will manage this configuration:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// The application will manage this configuration:</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cfg = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"title"</span>, <span class="_code_str">"App"</span>, <span class="_code_str">"user"</span>, <span class="_code_str">"u1"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">RESTful service for configuration retrieval:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// RESTful service for configuration retrieval</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/cfg"</span>)<span class="_code_api">.json</span>(() <span class="_code_lambda">-&gt;</span> cfg);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; menu = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Home"</span>, <span class="_code_str">"/"</span>, <span class="_code_str">"Group"</span>, <span class="_code_str">"/group"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Wrap every result into a renderPage:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Wrap every result into a renderPage</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.defaults</span>()<span class="_code_api">.wrap</span>((data, next) <span class="_code_lambda">-&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next.invokeAndTransformResult(x <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> page(x)<span class="_code_api">.menu</span>(menu).brand(cfg<span class="_code_api">.get</span>(<span class="_code_str">"title"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Create buttons to filter by starting letter:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Create buttons to filter by starting letter</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">List</span>&lt;<span class="_code_cls">Btn</span>&gt; letters = <span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'z'</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> btn(c).go(<span class="_code_str">"/find?p="</span> + c);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<span class="_code_api">.toList</span>();</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Display the configuration entries at the home renderPage:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Display the configuration entries at the home renderPage</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">KVGrid</span> grid = grid(cfg)<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> a(k).href(<span class="_code_str">"/edit?k="</span> + k));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(letters, grid);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Group the configuration entries by the starting letter:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Group the configuration entries by the starting letter</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/group"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">Do</span><span class="_code_api">.map</span>(<span class="_code_api">Do</span><span class="_code_api">.group</span>(cfg)<span class="_code_api">.by</span>((k, v) <span class="_code_lambda">-&gt;</span> k.charAt(<span class="_code_num">0</span>)))</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.toList</span>((k, v) <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(h3(k), grid(v)));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Edit configuration entries:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Edit configuration entries</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/edit"</span>)<span class="_code_api">.mvc</span>((<span class="_code_cls">String</span> k) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Btn</span> ok = btn(<span class="_code_str">"Update"</span>).onClick(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">Log</span>.info(<span class="_code_str">"Updated!"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> edit(cfg, k)<span class="_code_api">.buttons</span>(ok, btn(<span class="_code_str">"Back"</span>).go(<span class="_code_str">"/"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">Search configuration entries by prefix:</span></div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Search configuration entries by prefix</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/find"</span>)<span class="_code_api">.mvc</span>((<span class="_code_cls">String</span> p) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> grid(<span class="_code_api">Find</span><span class="_code_api">.allOf</span>(cfg)<span class="_code_api">.where</span>((k, v) <span class="_code_lambda">-&gt;</span> k.startsWith(p)));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
@@ -5752,7 +5999,7 @@ Hello, world!
 <div id="stopping-the-server" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">42</span>
+            <span class="badge badge-eg-num">43</span>
             <a href="stopping-the-server.html" class="mini-example-title">Stopping the server</a>
             
         </h4>
@@ -5789,7 +6036,7 @@ Hello, world!
 <div id="api-documentation" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">43</span>
+            <span class="badge badge-eg-num">44</span>
             <a href="api-documentation.html" class="mini-example-title">API documentation</a>
             
         </h4>
@@ -6442,6 +6689,9 @@ Hello, world!
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#string-utils">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#application-profiles">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#configuring-rapidoid">Configuring Rapidoid</a>

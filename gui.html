@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -245,7 +246,7 @@
         <div class="copy-snippet">
             <div><div id="examplegui.mapgrid-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Creating a grid (table) from the <span class="text-box">nums</span> map:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Creating a grid (table) from the <span class="text-box">nums</span> map</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
   <tr>
     <th>Key</th>
@@ -261,7 +262,7 @@
   </tr>
 </table></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Custom table headers:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Custom table headers</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)<span class="_code_api">.headers</span>(<span class="_code_str">"Number"</span>, <span class="_code_str">"As Text"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
   <tr>
     <th>Number</th>
@@ -277,7 +278,7 @@
   </tr>
 </table></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Custom views for the keys and values:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Custom views for the keys and values</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.b</span>(k))</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.valueView</span>(v <span class="_code_lambda">-&gt;</span> v + <span class="_code_str">"!"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
@@ -383,7 +384,7 @@
         <div class="copy-snippet">
             <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Creating a form to edit the <span class="text-box">movie</span> map:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Creating a form to edit the <span class="text-box">movie</span> map</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>
@@ -397,7 +398,7 @@
   <div class="form-group"></div>
 </form></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">Adding form buttons:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// Adding form buttons</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">""</span>))<span class="_code_api">.buttons</span>(<span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>

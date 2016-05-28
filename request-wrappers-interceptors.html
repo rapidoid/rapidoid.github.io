@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -136,12 +137,12 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpwrap-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">A wrapper executes before the handler:</span></div>
+            <div><div id="examplehttpwrap-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// A wrapper executes before the handler</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.defaults</span>()<span class="_code_api">.wrap</span>((req, next) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> next.invokeAndTransformResult(result <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Hey: "</span> + result);</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">and provides transformation for the result:</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// and provides transformation for the result</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/size"</span>)<span class="_code_api">.json</span>((<span class="_code_cls">String</span> s) <span class="_code_lambda">-&gt;</span> s.length());</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/upper"</span>)<span class="_code_api">.json</span>((<span class="_code_cls">String</span> s) <span class="_code_lambda">-&gt;</span> s.toUpperCase());</div>
 </div></div>
@@ -388,6 +389,9 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="string-utils.html">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-profiles.html">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>

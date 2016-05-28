@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -144,7 +145,7 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttproute-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">Request handlers should match both the verb and the path:</span></div>
+            <div><div id="examplehttproute-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Request handlers should match both the verb and the path:</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"Hi!"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.html</span>(<span class="_code_str">"Getting X"</span>);</div>
@@ -440,6 +441,9 @@
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="string-utils.html">String utils</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="application-profiles.html">Application Profiles</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="configuring-rapidoid.html">Configuring Rapidoid</a>

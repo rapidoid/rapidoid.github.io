@@ -56,6 +56,7 @@
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
+                        <li><a href="profiles.html">Profiles</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
@@ -229,12 +230,229 @@
 <div class="row">
 
 <div class="col-md-10">
+<!-- EXAMPLE mvc -->
+
+<div id="mvc-architecture-with-rapidoid-s-built-in-template-engine" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">1</span>
+            <a href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html" class="mini-example-title">MVC architecture with Rapidoid&#39;s built-in template engine</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplemvc-body" class="row">
+
+    <div id="examplemvc-left" class="col-md-8">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplemvc-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// The handler for <span class="text-box">/msg</span> returns the model</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// The default view name is <span class="text-box">msg</span></span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// So the corresponding template is <span class="text-box">templates/msg.html</span></span></div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/msg"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">12</span>, <span class="_code_str">"oki"</span>, <span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</div>
+<div class="example-line clearfix">});</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">// A custom view name can be assigned.</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// In this case the default view name is <span class="text-box">abc</span>,</span></div>
+<div class="comment-line clearfix"><span class="_code_comment">// but a custom view name <span class="text-box">msg</span> was specified</span></div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/abc"</span>)<span class="_code_api">.view</span>(<span class="_code_str">"msg"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">100</span>, <span class="_code_str">"oki"</span>, <span class="_code_str">""</span>);</div>
+<div class="example-line clearfix">});</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplemvc-codedesc" class="eg_title">templates/msg.html</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplemvc-code" class="code-clean"><div class="example-line clearfix"><span class="_code_tag">&lt;p&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;You have <span class="_code_tag">&lt;span </span>class=<span class="_code_str">"badge"</span>><span class="_code_tmpl">${count}</span><span class="_code_tag">&lt;/span&gt;</span> new messages.</div>
+<div class="example-line clearfix"><span class="_code_tag">&lt;/p&gt;</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_tmpl">@{oki}</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplemvc-right" class="col-md-4">
+        <div id="examplemvc-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/msg</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#mvc RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+</div>
+
+    </div>
+</nav>
+
+<p>
+    You have <span class="badge">12</span> new messages.
+</p>
+
+<button type="button" class="btn btn-default" ng-click="_emit($event, 'OK', [])">OK</button>
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#mvc RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/abc</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#mvc RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+</div>
+
+    </div>
+</nav>
+
+<p>
+    You have <span class="badge">100</span> new messages.
+</p>
+
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#mvc RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplemvc-routes" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">HTTP server routes information</h4>
+        <table class="table table-striped table-hover">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Segment</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/abc</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>msg</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/msg</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>msg</td>
+    <td></td>
+  </tr>
+</table>
+    </div>
+</div>
+
+<div id="examplemvc-extra2" class="row">
+    <div class="col-md-12">
+  <h4>
+    <b>MVC Helper API (in interface Resp):</b>
+  </h4>
+  <div class="api-docs">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> view(<span class="_code_cls">String</span> viewName)</pre></td>
+        <td>Sets a custom name of the <b>view</b> (V from MVC) of the HTTP response. <br>
+ This also sets <b>mvc</b> to <code>true</code>. <br>
+ The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
+ E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> view()</pre></td>
+        <td>Gets the (default or customized) name of the <b>view</b> (V from MVC) of the HTTP response. <br>
+ The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
+ E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; model()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>model</b> (M from MVC) that will be rendered by the view renderer.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> model(<span class="_code_cls">String</span> name, <span class="_code_cls">Object</span> value)</pre></td>
+        <td>Sets an attribute of the <b>model</b> (M from MVC) that will be rendered by the view renderer.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 
 </div>
 
 <div class="col-md-2">
 <div class="toc-right">
     <h3 class="toc-title">Contents:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#mvc-architecture-with-rapidoid-s-built-in-template-engine">MVC architecture with Rapidoid&#39;s built-in template engine</a>
+    </div>
 </div>
 
 </div>
