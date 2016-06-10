@@ -197,7 +197,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-quick</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.1.6</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.1.7</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
 &lt;/<span class="_code_tag">dependency</span>&gt;<br>
 </div>
 </div>
@@ -1703,7 +1703,7 @@ Hello <b>world</b>!
 
 <div class="eg-result">
     <!-- EXAMPLE#security RESULT STARTS HERE -->
-    false
+    {"success":false,"token":""}
     <!-- EXAMPLE#security RESULT ENDS HERE -->
 </div>
 
@@ -1715,7 +1715,7 @@ Hello <b>world</b>!
 
 <div class="eg-result">
     <!-- EXAMPLE#security RESULT STARTS HERE -->
-    true
+    {"success":true,"token":"wtJuU6GUXMCIhx"}
     <!-- EXAMPLE#security RESULT ENDS HERE -->
 </div>
 
@@ -5286,18 +5286,18 @@ Hello, world!
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix">jdbc:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;driver: org<span class="_code_api">.h2</span>.<span class="_code_cls">Driver</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;url: jdbc:h2:mem:testdb;<span class="_code_cls">DB_CLOSE_DELAY</span>=-<span class="_code_num">1</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;driver: org.hsqldb.jdbc.<span class="_code_cls">JDBCDriver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;url: jdbc:hsqldb:mem:<span class="_code_kw">public</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;username: sa</div>
 <div class="example-line clearfix">&nbsp;&nbsp;password: <span class="_code_str">''</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">hibernate:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;dialect: org.hibernate.dialect.<span class="_code_cls">H2Dialect</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;dialect: org.hibernate.dialect.<span class="_code_cls">HSQLDialect</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;connection:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: org<span class="_code_api">.h2</span>.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: org.hsqldb.jdbc.<span class="_code_cls">JDBCDriver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;url: jdbc:hsqldb:mem:<span class="_code_kw">public</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;username: sa</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;password: <span class="_code_str">''</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;url: jdbc:h2:mem:testdb;<span class="_code_cls">DB_CLOSE_DELAY</span>=-<span class="_code_num">1</span></div>
 </div></div>
         </div>
         <!-- END CODE -->

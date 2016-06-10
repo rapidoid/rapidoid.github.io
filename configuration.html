@@ -201,6 +201,21 @@
 </nav>
 
   <h4>
+    <span class="label bg-metal">&lt;root&gt;</span>
+  </h4>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>token</td>
+      <td>
+        <i class="fa fa-question-circle"></i>
+      </td>
+    </tr>
+  </table>
+  <h4>
     <span class="label label-success">on</span>
   </h4>
   <table class="table table-striped table-hover">
@@ -541,7 +556,7 @@
     </tr>
     <tr>
       <td>dialect</td>
-      <td>org.hibernate.dialect.H2Dialect</td>
+      <td>org.hibernate.dialect.HSQLDialect</td>
     </tr>
     <tr>
       <td>connection</td>
@@ -553,7 +568,11 @@
           </tr>
           <tr>
             <td>driver_class</td>
-            <td>org.h2.Driver</td>
+            <td>org.hsqldb.jdbc.JDBCDriver</td>
+          </tr>
+          <tr>
+            <td>url</td>
+            <td>jdbc:hsqldb:mem:public</td>
           </tr>
           <tr>
             <td>username</td>
@@ -564,10 +583,6 @@
             <td>
               <i class="fa fa-question-circle"></i>
             </td>
-          </tr>
-          <tr>
-            <td>url</td>
-            <td>jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1</td>
           </tr>
         </table>
       </td>
@@ -710,11 +725,11 @@
     </tr>
     <tr>
       <td>driver</td>
-      <td>org.h2.Driver</td>
+      <td>org.hsqldb.jdbc.JDBCDriver</td>
     </tr>
     <tr>
       <td>url</td>
-      <td>jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1</td>
+      <td>jdbc:hsqldb:mem:public</td>
     </tr>
     <tr>
       <td>username</td>
@@ -1117,18 +1132,18 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix">jdbc:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;driver: org<span class="_code_api">.h2</span>.<span class="_code_cls">Driver</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;url: jdbc:h2:mem:testdb;<span class="_code_cls">DB_CLOSE_DELAY</span>=-<span class="_code_num">1</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;driver: org.hsqldb.jdbc.<span class="_code_cls">JDBCDriver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;url: jdbc:hsqldb:mem:<span class="_code_kw">public</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;username: sa</div>
 <div class="example-line clearfix">&nbsp;&nbsp;password: <span class="_code_str">''</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">hibernate:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;dialect: org.hibernate.dialect.<span class="_code_cls">H2Dialect</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;dialect: org.hibernate.dialect.<span class="_code_cls">HSQLDialect</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;connection:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: org<span class="_code_api">.h2</span>.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: org.hsqldb.jdbc.<span class="_code_cls">JDBCDriver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;url: jdbc:hsqldb:mem:<span class="_code_kw">public</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;username: sa</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;password: <span class="_code_str">''</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;url: jdbc:h2:mem:testdb;<span class="_code_cls">DB_CLOSE_DELAY</span>=-<span class="_code_num">1</span></div>
 </div></div>
         </div>
         <!-- END CODE -->
