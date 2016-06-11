@@ -135,15 +135,16 @@
 
         <div class="module-header">Profiles</div>
 
-        <div class="module-explanation"><p>Application profiles can be configured through command line args or ENV properties.</p>
 
-<p>The profiles are useful to conditionally activate application beans or configuration.</p>
-
-<p>If no profiles are specified, the <code>default</code> profile will be automatically assigned.</p>
-
-<p>Having <code>prod</code> or <code>production</code> profile automatically marks the application environment as <code>production</code>.</p>
-
-<p>Rapidoid has built-in default configuration for the profiles <code>default</code>, <code>dev</code> and <code>mysql</code>.</p></div>
+        <div class="module-notes">
+            <ul>
+                <li>Application profiles can be configured through command line args or ENV properties.</li>
+                <li>The profiles are useful to conditionally activate application beans or configuration.</li>
+                <li>If no profiles are specified, the <code>default</code> profile will be automatically assigned.</li>
+                <li>Having <code>prod</code> or <code>production</code> profile automatically marks the application environment as <code>production</code>.</li>
+                <li>Rapidoid has built-in default configuration for the profiles <code>default</code>, <code>dev</code> and <code>mysql</code>.</li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -331,7 +332,7 @@
 
 <div id="exampleprofiles-routes" class="row">
     <div class="col-md-12">
-        <h4 class="caption">HTTP server routes information</h4>
+        <h4 class="section-caption">HTTP server routes information</h4>
         <table class="table table-striped table-hover">
   <tr>
     <th>Verb</th>

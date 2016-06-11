@@ -215,13 +215,15 @@
         <h5><b></b></h5>
 
 
-        <div class="module-explanation"><p>Starting from v5.1, Rapidoid includes new templating engine. Basically, it is very similar to Mustache, with the following differences:</p>
 
-<p>1. Using <b>$</b><b>{</b>x<b>}</b> instead of <b>{{</b>x<b>}}</b>. This avoids collision of the <b>{{</b>x<b>}}</b> tags with the front-end libraries (e.g. Angular).</p>
-
-<p>2. Supporting additional <b>{{</b>?x<b>}}</b>...<b>{{</b>/x<b>}}</b> tag for <code>if</code>. The traditional <b>{{</b><b>#</b>x<b>}}</b>...<b>{{</b><b>/</b>x<b>}}</b> remains unchanged, having both <code>foreach</code> and <code>if</code> semantics.</p>
-
-<p>3. Providing text alternative if the value if not available e.g. <b>$</b><b>{</b>x|something else<b>}</b></p></div>
+        <div class="module-notes">
+            <ul>
+                <li>{Starting from v5.1, Rapidoid includes new templating engine. Basically, it is very similar to Mustache, with the following differences=}</li>
+                <li>1. Using <b>$</b><b>{</b>x<b>}</b> instead of <b>{{</b>x<b>}}</b>. This avoids collision of the <b>{{</b>x<b>}}</b> tags with the front-end libraries (e.g. Angular).</li>
+                <li>2. Supporting additional <b>{{</b>?x<b>}}</b>...<b>{{</b>/x<b>}}</b> tag for <code>if</code>. The traditional <b>{{</b><b>#</b>x<b>}}</b>...<b>{{</b><b>/</b>x<b>}}</b> remains unchanged, having both <code>foreach</code> and <code>if</code> semantics.</li>
+                <li>3. Providing text alternative if the value if not available e.g. <b>$</b><b>{</b>x|something else<b>}</b></li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -364,7 +366,7 @@
 
 <div id="examplemvc-routes" class="row">
     <div class="col-md-12">
-        <h4 class="caption">HTTP server routes information</h4>
+        <h4 class="section-caption">HTTP server routes information</h4>
         <table class="table table-striped table-hover">
   <tr>
     <th>Verb</th>

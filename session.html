@@ -135,6 +135,14 @@
 
         <div class="module-header">Session management</div>
 
+
+        <div class="module-notes">
+            <ul>
+                <li>A HTTP session is a temporary data storage that spans multiple HTTP requests.</li>
+                <li>Data is stored in the session to be accessed later, when handling another HTTP request from the same user (and browsing session).</li>
+                <li><b>There are 2 different implementations of the session</b>, server-side and cookie-persisted.</li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -143,55 +151,12 @@
 <div class="row">
 
 <div class="col-md-10">
-<!-- EXAMPLE httpsession -->
-
-<div id="http-session" class="row">
-    <div class="col-md-12">
-        <h4 class="caption">
-            <span class="badge badge-eg-num">1</span>
-            <a href="http-session.html" class="mini-example-title">HTTP session</a>
-            
-        </h4>
-    </div>
-</div>
-
-<div id="examplehttpsession-extra" class="row">
-    <div class="col-md-12">
-	<div class="docs">
-		<p>A HTTP session is a temporary data storage that spans multiple
-			HTTP requests. Data stored in the session can be accessed later, when
-			handling another HTTP request from the same user (and browsing
-			session).</p>
-		<p>
-			<b>There are 2 different implementations of the session:
-				server-side and cookie-persisted.</b>
-		</p>
-	</div>
-</div>
-</div>
-
-<div id="examplehttpsession-body" class="row">
-
-    <div id="examplehttpsession-left" class="col-md-12">
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="row row-separated-micro">
-  <div class="col-md-12"></div>
-</div>
-
 <!-- EXAMPLE httpsessionmem -->
 
 <div id="server-side-session-a-k-a-session" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">2</span>
+            <span class="badge badge-eg-num">1</span>
             <a href="server-side-session-a-k-a-session.html" class="mini-example-title">Server-side session (a.k.a. Session)</a>
             
         </h4>
@@ -328,7 +293,7 @@
 <div id="cookie-persisted-session-a-k-a-cookiepack" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">3</span>
+            <span class="badge badge-eg-num">2</span>
             <a href="cookie-persisted-session-a-k-a-cookiepack.html" class="mini-example-title">Cookie-persisted session (a.k.a. Cookiepack)</a>
             
         </h4>
@@ -478,9 +443,6 @@
 <div class="col-md-2">
 <div class="toc-right">
     <h3 class="toc-title">Contents:</h3>
-    <div class="toc-wrap">
-        <a class="toc-link" href="#http-session">HTTP session</a>
-    </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#server-side-session-a-k-a-session">Server-side session (a.k.a. Session)</a>
     </div>

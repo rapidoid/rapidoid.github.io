@@ -33,14 +33,25 @@ h4.caption {
 	border: 2px solid #E9E9E9;
 	font-size: 20px;
 	font-weight: bold;
+	color: #FFF;
+	background: #555;
+}
+
+.section-caption {
+	margin-bottom: 10px;
+	margin-top: 5px;
+	padding: 3px;
+	border: 2px solid #E9E9E9;
+	font-size: 20px;
+	font-weight: bold;
 	color: #555;
-	background: #EEE;
+	background: #CCC;
 }
 
 .module-header {
 	font-size: 34px;
 	color: #333;
-	margin-top: 30px;
+	margin-top: 10px;
 }
 
 .module-desc {
@@ -51,21 +62,31 @@ h4.caption {
 }
 
 .module-explanation {
-	margin: 18px 0px;
+	margin: 10px 0px;
 	font-size: 16px;
 	color: #333;
 	border-left: 3px solid #AAA;
 	padding-left: 10px;
-	padding-bottom: 7px;
-	padding-top: 7px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.module-notes {
+	margin: 10px 0px;
+	font-size: 16px;
+	color: #333;
+	border-left: 3px solid #AAA;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
 }
 
 .badge-eg-num {
 	font-size: 14px;
 	font-weight: bold;
 	vertical-align: middle;
-	background-color: #444;
-	color: #FFF;
+	background-color: #CCC;
+	color: #000;
 }
 
 .badge-docker {
@@ -347,7 +368,7 @@ pre {
 }
 
 .mini-example-title {
-    color: #333 !important;
+    color: #FFF !important;
 }
 
 .routes {
