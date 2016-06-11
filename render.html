@@ -218,10 +218,11 @@
 
         <div class="module-notes">
             <ul>
-                <li>{Starting from v5.1, Rapidoid includes new templating engine. Basically, it is very similar to Mustache, with the following differences=}</li>
+                <li>Starting from v5.1, Rapidoid includes new templating engine.</li>
+                <li>Basically, it is very similar to Mustache, with the following differences.</li>
                 <li>1. Using <b>$</b><b>{</b>x<b>}</b> instead of <b>{{</b>x<b>}}</b>. This avoids collision of the <b>{{</b>x<b>}}</b> tags with the front-end libraries (e.g. Angular).</li>
-                <li>2. Supporting additional <b>{{</b>?x<b>}}</b>...<b>{{</b>/x<b>}}</b> tag for <code>if</code>. The traditional <b>{{</b><b>#</b>x<b>}}</b>...<b>{{</b><b>/</b>x<b>}}</b> remains unchanged, having both <code>foreach</code> and <code>if</code> semantics.</li>
-                <li>3. Providing text alternative if the value if not available e.g. <b>$</b><b>{</b>x|something else<b>}</b></li>
+                <li>2. Supporting additional <b>{{</b>?x<b>}}</b>...<b>{{</b>/x<b>}}</b> tag for <code class="note-code">if</code>. The traditional <b>{{</b><b>#</b>x<b>}}</b>...<b>{{</b><b>/</b>x<b>}}</b> remains unchanged, having both <code class="note-code">foreach</code> and <code class="note-code">if</code> semantics.</li>
+                <li>3. Providing text alternative if the value if not available e.g. <b>$</b><b>{</b>x|something else<b>}</b>.</li>
             </ul>
         </div>
     </div>
