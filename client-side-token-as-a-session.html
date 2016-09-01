@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid - More control over the HTTP server setup</title>
+    <title>Rapidoid - Client-side Token as a session</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -109,7 +109,7 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2>More control over the HTTP server setup</h2>
+            <h2>Client-side Token as a session</h2>
         </div>
         <div class="col-md-2">
             
@@ -123,19 +123,9 @@
 
             
 
-<div id="examplehttpcustom-body" class="row">
+<div id="examplehttptoken-body" class="row">
 
-    <div id="examplehttpcustom-left" class="col-md-12">
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="examplehttpcustom-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"x"</span>); <span class="_code_linecomm">// continue with normal setup</span></div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
+    <div id="examplehttptoken-left" class="col-md-12">
     </div>
 
 </div>
@@ -143,6 +133,50 @@
 
 
 
+<div id="examplehttptoken-extra2" class="row">
+    <div class="col-md-12">
+  <h4>
+    <b>Token Session API (in interface Req):</b>
+  </h4>
+  <div class="api-docs">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> hasToken()</pre></td>
+        <td>Does the HTTP request have a token attached?</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; token()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>token attributes</b> of the HTTP request/response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T token(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>token attribute</b> from the HTTP request/response, or throws a
+ runtime exception if it is not found.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet">T token(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>token attribute</b> from the HTTP request/response, or the
+ specified default value, if it is not found.</td>
+      </tr>
+    </table>
+  </div>
+  <h4>
+    <b>Token Session API (in interface Resp):</b>
+  </h4>
+  <div class="api-docs">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; token()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>token attributes</b> of the HTTP request/response.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> token(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
+        <td>Sets a <b>token attribute</b> of the HTTP response.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
 
 
             <div class="row">

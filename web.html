@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
@@ -155,7 +156,7 @@
             Rapidoid consists of several modules which can be used separately or together:
             <ul>
                 <li>
-                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Very Fast HTTP Server (Low-level)</span>
+                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Low-level HTTP Framework</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
@@ -175,7 +176,7 @@
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
-                    <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&#39;s template engine</span>
+                    <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&apos;s template engine</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
@@ -197,7 +198,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-web</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.1.9</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.2.0</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
 &lt;/<span class="_code_tag">dependency</span>&gt;<br>
 </div>
 </div>
@@ -313,12 +314,13 @@
 
 <div id="examplehellorest-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -336,6 +338,7 @@
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -385,7 +388,7 @@
             <div><div id="examplerestparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\d+}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\\d+}"</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.frmt</span>(<span class="_code_str">"Hey %s (%s)"</span>, name, age);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
@@ -445,12 +448,13 @@
 
 <div id="examplerestparams-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -479,6 +483,7 @@
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -579,12 +584,13 @@
 
 <div id="examplerestjson-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -613,6 +619,7 @@
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -728,12 +735,13 @@
 
 <div id="examplebeanjson-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -751,6 +759,7 @@
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -844,12 +853,13 @@
 
 <div id="examplerestnamedparams-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -867,6 +877,7 @@
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1010,12 +1021,13 @@ Hello, world!
 
 <div id="examplehello-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1036,6 +1048,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1180,12 +1193,13 @@ Hello, world!
 
 <div id="examplehi-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1206,6 +1220,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1310,12 +1325,13 @@ Hello, world!
 
 <div id="exampleraw-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1336,6 +1352,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1469,12 +1486,13 @@ Hello, world!
 
 <div id="exampleshowmovie-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1495,6 +1513,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1629,12 +1648,13 @@ Hello, world!
 
 <div id="exampleeditmovie-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1655,6 +1675,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1776,12 +1797,13 @@ Hello, world!
 
 <div id="exampleparamgrid-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1802,6 +1824,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1949,12 +1972,13 @@ Hello, world!
 
 <div id="exampleinjection-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1983,6 +2007,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -2104,12 +2129,13 @@ Hello, world!
 
 <div id="examplelayout-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2130,6 +2156,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -2164,7 +2191,7 @@ Hello, world!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(<span class="_code_str">"/"</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\w+"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\\w+"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -2234,12 +2261,13 @@ Hello, world!
 
 <div id="examplehighlighting-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2260,6 +2288,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -2294,13 +2323,23 @@ Hello, world!
       </thead>
       <tbody>
         <tr>
+          <td>config</td>
+          <td>configuration filename prefix</td>
+          <td>config</td>
+        </tr>
+        <tr>
           <td>dev</td>
-          <td>configure DEV mode</td>
+          <td>run in DEV mode</td>
           <td>auto-detected</td>
         </tr>
         <tr>
           <td>production</td>
-          <td>configure PRODUCTION mode</td>
+          <td>run in PRODUCTION mode</td>
+          <td>auto-detected</td>
+        </tr>
+        <tr>
+          <td>test</td>
+          <td>run in TEST mode</td>
           <td>auto-detected</td>
         </tr>
         <tr>
@@ -2315,12 +2354,12 @@ Hello, world!
         </tr>
         <tr>
           <td>on.port=&lt;P&gt;</td>
-          <td>the default (App) server will listen at port P</td>
+          <td>the default App server will listen at port P</td>
           <td>8888</td>
         </tr>
         <tr>
           <td>on.address=&lt;ADDR&gt;</td>
-          <td>the default (App) server will listen at address ADDR</td>
+          <td>the default App server will listen at address ADDR</td>
           <td>0.0.0.0</td>
         </tr>
         <tr>
@@ -2340,7 +2379,6 @@ Hello, world!
         </tr>
       </tbody>
     </table>
-    <div></div>
   </div>
 </div>
 </div>
@@ -2437,7 +2475,6 @@ $(function () {
 </script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

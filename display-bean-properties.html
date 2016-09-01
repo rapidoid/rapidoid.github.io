@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
@@ -233,12 +234,13 @@
 
 <div id="exampleshowmovie-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -259,6 +261,7 @@
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -285,7 +288,7 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-quick<span class="_code_tag">&lt;/artifactId&gt;</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.1.9<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.2.0<span class="_code_tag">&lt;/version&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -343,7 +346,7 @@
         <a class="toc-link" href="exception-handlers.html">Exception handlers</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html">MVC architecture with Rapidoid&#39;s built-in template engine</a>
+        <a class="toc-link" href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html">MVC architecture with Rapidoid&apos;s built-in template engine</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="serving-static-files-from-the-default-locations.html">Serving static files from the default locations</a>
@@ -355,7 +358,7 @@
         <a class="toc-link" href="server-side-session-a-k-a-session.html">Server-side session (a.k.a. Session)</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="cookie-persisted-session-a-k-a-cookiepack.html">Cookie-persisted session (a.k.a. Cookiepack)</a>
+        <a class="toc-link" href="client-side-token-as-a-session.html">Client-side Token as a session</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="manipulating-the-response-content-type.html">Manipulating the response content type</a>
@@ -439,10 +442,13 @@
         <a class="toc-link" href="server-configuration.html">Server Configuration</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="full-application-example-rapidoid-web-rapidoid-fluent-modules.html">Full application example (rapidoid-web + rapidoid-fluent modules)</a>
+        <a class="toc-link" href="stopping-the-server.html">Stopping the server</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="stopping-the-server.html">Stopping the server</a>
+        <a class="toc-link" href="implementing-echo-protocol.html">Implementing Echo protocol</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="building-the-fastest-http-server.html">Building the fastest HTTP server</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="api-documentation.html">API documentation</a>
@@ -472,7 +478,6 @@ $(function () {
 </script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

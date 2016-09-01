@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
@@ -155,7 +156,7 @@
             Rapidoid consists of several modules which can be used separately or together:
             <ul>
                 <li>
-                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Very Fast HTTP Server (Low-level)</span>
+                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Low-level HTTP Framework</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
@@ -175,7 +176,7 @@
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
-                    <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&#39;s template engine</span>
+                    <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&apos;s template engine</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
                 <li>
@@ -197,7 +198,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-quick</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.1.9</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.2.0</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
 &lt;/<span class="_code_tag">dependency</span>&gt;<br>
 </div>
 </div>
@@ -288,12 +289,13 @@
 
 <div id="examplehttpsimple-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -311,6 +313,7 @@
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -367,7 +370,7 @@
 
 </div>
 
-<h4 class="section-caption">Let's send some HTTP requests and check the results:</h4>
+<p class="send-requests-caption">Let's send some HTTP requests and check the results:</p>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
@@ -437,12 +440,13 @@ Hello <b>world</b>!
 
 <div id="examplehttpsimplegui-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -463,6 +467,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -615,12 +620,13 @@ Hello <b>world</b>!
 
 <div id="examplehttproute-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -671,6 +677,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -767,12 +774,13 @@ Hello <b>world</b>!
 
 <div id="examplehttpreq1-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -823,6 +831,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -855,7 +864,7 @@ Hello <b>world</b>!
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">String</span> contextPath()</pre></td>
-        <td>Gets the <b>context path</b> of the application segment handling the request. <br>
+        <td>Gets the <b>context path</b> of the application zone handling the request. <br>
  The default context path is <code>/</code> for the <code>On</code> API, and <code>/_</code> for the <code>Admin</code> API.</td>
       </tr>
       <tr>
@@ -914,7 +923,7 @@ Hello <b>world</b>!
             <div><div id="examplehttpresp-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Returning the request or response object means the response was constructed</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON_UTF_8</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.result</span>(<span class="_code_str">"hello"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
 <div class="example-line clearfix">});</div>
@@ -945,12 +954,13 @@ Hello <b>world</b>!
 
 <div id="examplehttpresp-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -968,6 +978,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1023,7 +1034,7 @@ Hello <b>world</b>!
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> json(<span class="_code_cls">Object</span> content)</pre></td>
         <td>Sets the <b><code>Content-Type: application/json; charset=utf-8</code> header and the content</b> of the HTTP
  response. <br>
- <i>Alias</i> to <code>contentType(MediaType.JSON_UTF_8).body(content)</code>.</td>
+ <i>Alias</i> to <code>contentType(MediaType.JSON).body(content)</code>.</td>
       </tr>
     </table>
   </div>
@@ -1182,7 +1193,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">9</span>
-            <a href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html" class="mini-example-title">MVC architecture with Rapidoid&#39;s built-in template engine</a>
+            <a href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html" class="mini-example-title">MVC architecture with Rapidoid&apos;s built-in template engine</a>
             
         </h4>
     </div>
@@ -1310,12 +1321,13 @@ Hello <b>world</b>!
 
 <div id="examplemvc-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1349,6 +1361,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1371,6 +1384,10 @@ Hello <b>world</b>!
         <td>Gets the (default or customized) name of the <b>view</b> (V from MVC) of the HTTP response. <br>
  The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
  E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> noView()</pre></td>
+        <td>Disables the view rendering for the target MVC route. The page decorator remains enabled.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; model()</pre></td>
@@ -1506,12 +1523,13 @@ Hello <b>world</b>!
 
 <div id="examplestaticfiles-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1529,6 +1547,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1573,10 +1592,10 @@ Hello <b>world</b>!
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/manage"</span>)<span class="_code_api">.roles</span>(<span class="_code_str">"manager"</span>)<span class="_code_api">.html</span>((req, resp) <span class="_code_lambda">-&gt;</span> <span class="_code_str">"this is private!"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Dummy login: successful if the username is the same as the password</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.loginProvider</span>((username, password) <span class="_code_lambda">-&gt;</span> username.equals(password));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.loginProvider</span>((req, username, password) <span class="_code_lambda">-&gt;</span> username.equals(password));</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Gives the 'manager' role to every logged-in user</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.rolesProvider</span>(username <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"manager"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.rolesProvider</span>((req, username) <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"manager"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -1614,7 +1633,7 @@ Hello <b>world</b>!
 
 </div>
 
-<h4 class="section-caption">Let's send some HTTP requests and check the results:</h4>
+<p class="send-requests-caption">Let's send some HTTP requests and check the results:</p>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
@@ -1746,12 +1765,13 @@ Hello <b>world</b>!
 
 <div id="examplesecurity-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -1819,6 +1839,7 @@ Hello <b>world</b>!
     <td>manager</td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -1928,16 +1949,16 @@ Hello <b>world</b>!
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; session()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request.</td>
+        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet">T session(<span class="_code_cls">String</span> name)</pre></td>
-        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request, or throws a
+        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request/response, or throws a
  runtime exception if it is not found.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet">T session(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
-        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request, or the specified
+        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request/response, or the specified
  default value, if it is not found.</td>
       </tr>
     </table>
@@ -1949,7 +1970,7 @@ Hello <b>world</b>!
     <table class="table table-striped table-hover">
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; session()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request.</td>
+        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> session(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
@@ -1965,144 +1986,68 @@ Hello <b>world</b>!
   <div class="col-md-12"></div>
 </div>
 
-<!-- EXAMPLE httpcookiepack -->
+<!-- EXAMPLE httptoken -->
 
-<div id="cookie-persisted-session-a-k-a-cookiepack" class="row">
+<div id="client-side-token-as-a-session" class="row">
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">13</span>
-            <a href="cookie-persisted-session-a-k-a-cookiepack.html" class="mini-example-title">Cookie-persisted session (a.k.a. Cookiepack)</a>
+            <a href="client-side-token-as-a-session.html" class="mini-example-title">Client-side Token as a session</a>
             
         </h4>
     </div>
 </div>
 
-<div id="examplehttpcookiepack-extra" class="row">
-    <div class="col-md-12">
-	<div class="docs">
-		<p>The Cookiepack session is not stored by the server. Instead, it
-			is being serialized and sent to the web browser as a cookie. For the
-			web browser this is just a normal cookie, so it sends the cookie to
-			the server attached to the subsequent HTTP requests.</p>
 
-		<p>
-			This approach allows to have stateless web servers, improving the
-			scalability of the web application. The main drawback is that the
-			Cookiepack size is very limited. Each browser has different limit for
-			the size of the cookies, but the safest limit is <span
-				class="text-box">4 KB</span>.
-		</p>
+<div id="examplehttptoken-body" class="row">
 
-		<p>The session cookie is encrypted with the application secret
-			key. Thus, the user can’t read or modify the Cookiepack data in a
-			malicious way.</p>
-
-		<p>Since the Cookiepack session is stored in the HTTP client
-			(typically the web browser), it doesn't have a timeout. But, it will
-			expire when the browser is closed.</p>
-
-	</div>
-</div>
-</div>
-
-<div id="examplehttpcookiepack-body" class="row">
-
-    <div id="examplehttpcookiepack-left" class="col-md-8">
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="examplehttpcookiepack-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> counter = req<span class="_code_api">.cookiepack</span>(<span class="_code_str">"n"</span>, <span class="_code_num">0</span>) + <span class="_code_num">1</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;req<span class="_code_api">.cookiepack</span>()<span class="_code_api">.put</span>(<span class="_code_str">"n"</span>, counter);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> counter;</div>
-<div class="example-line clearfix">});</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
+    <div id="examplehttptoken-left" class="col-md-12">
     </div>
 
-    <div id="examplehttpcookiepack-right" class="col-md-4">
-        <div id="examplehttpcookiepack-results" class="results">
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/a</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcookiepack RESULT STARTS HERE -->
-    1
-    <!-- EXAMPLE#httpcookiepack RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/b</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcookiepack RESULT STARTS HERE -->
-    2
-    <!-- EXAMPLE#httpcookiepack RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/c</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcookiepack RESULT STARTS HERE -->
-    3
-    <!-- EXAMPLE#httpcookiepack RESULT ENDS HERE -->
-</div>
-
-
-        </div>
-    </div>
 </div>
 
 
 
 
-<div id="examplehttpcookiepack-extra2" class="row">
+<div id="examplehttptoken-extra2" class="row">
     <div class="col-md-12">
   <h4>
-    <b>Cookiepack Session API (in interface Req):</b>
+    <b>Token Session API (in interface Req):</b>
   </h4>
   <div class="api-docs">
     <table class="table table-striped table-hover">
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> hasCookiepack()</pre></td>
-        <td>Does the HTTP request have a cookie-persisted session attached?</td>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> hasToken()</pre></td>
+        <td>Does the HTTP request have a token attached?</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; cookiepack()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>cookie-persisted session attributes</b> of the HTTP request.</td>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; token()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>token attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet">T cookiepack(<span class="_code_cls">String</span> name)</pre></td>
-        <td>Returns the value of the specified <b>cookie-persisted session attribute</b> from the HTTP request, or throws a
+        <td><pre class="code-snippet">T token(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>token attribute</b> from the HTTP request/response, or throws a
  runtime exception if it is not found.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet">T cookiepack(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
-        <td>Returns the value of the specified <b>cookie-persisted session attribute</b> from the HTTP request, or the
+        <td><pre class="code-snippet">T token(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>token attribute</b> from the HTTP request/response, or the
  specified default value, if it is not found.</td>
       </tr>
     </table>
   </div>
   <h4>
-    <b>Cookiepack Session API (in interface Resp):</b>
+    <b>Token Session API (in interface Resp):</b>
   </h4>
   <div class="api-docs">
     <table class="table table-striped table-hover">
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; cookiepack()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>cookie-persisted session attributes</b> of the HTTP request.</td>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; token()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>token attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> cookiepack(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
-        <td>Sets a <b>cookiepack attribute</b> of the HTTP response.</td>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> token(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
+        <td>Sets a <b>token attribute</b> of the HTTP response.</td>
       </tr>
     </table>
   </div>
@@ -2152,7 +2097,7 @@ Hello <b>world</b>!
             <div><div id="examplehttpresptype-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// The response type will be JSON, instead of HTML</span></div>
 <div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.html</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">Resp</span> resp = req<span class="_code_api">.response</span>();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON_UTF_8</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.contentType</span>(<span class="_code_cls">MediaType</span>.<span class="_code_cls">JSON</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;resp<span class="_code_api">.result</span>(<span class="_code_str">"abc"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp;</div>
 <div class="example-line clearfix">});</div>
@@ -2183,12 +2128,13 @@ Hello <b>world</b>!
 
 <div id="examplehttpresptype-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2206,11 +2152,24 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
 <div id="examplehttpresptype-extra2" class="row">
     <div class="col-md-12">
+  <h4>
+    <b>Response Code API (in interface Req):</b>
+  </h4>
+  <div class="api-docs">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">MediaType</span> contentType()</pre></td>
+        <td>Gets the <b><code>Content-Type</code> header</b> of the HTTP response if it has been assigned,
+ or the default value as configured in the HTTP route.</td>
+      </tr>
+    </table>
+  </div>
   <h4>
     <b>Response Code API (in interface Resp):</b>
   </h4>
@@ -2300,12 +2259,13 @@ Hello <b>world</b>!
 
 <div id="examplehttprespcode-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2323,6 +2283,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -2380,7 +2341,7 @@ Hello <b>world</b>!
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplehttpwrap-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// A wrapper executes before the handler</span></div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.defaults</span>()<span class="_code_api">.wrap</span>((req, next) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.defaults</span>()<span class="_code_api">.wrappers</span>((req, next) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> next.invokeAndTransformResult(result <span class="_code_lambda">-&gt;</span> <span class="_code_str">"Hey: "</span> + result);</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -2425,12 +2386,13 @@ Hello <b>world</b>!
 
 <div id="examplehttpwrap-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2459,6 +2421,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -2540,12 +2503,13 @@ Hello <b>world</b>!
 
 <div id="examplehttpnotfound-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2563,6 +2527,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -2697,12 +2662,13 @@ Hello <b>world</b>!
 
 <div id="examplehttpasync-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2720,6 +2686,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -2810,7 +2777,7 @@ Hello <b>world</b>!
             <div><div id="examplerestparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\d+}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\\d+}"</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.frmt</span>(<span class="_code_str">"Hey %s (%s)"</span>, name, age);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
@@ -2870,12 +2837,13 @@ Hello <b>world</b>!
 
 <div id="examplerestparams-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -2904,6 +2872,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -3004,12 +2973,13 @@ Hello <b>world</b>!
 
 <div id="examplerestjson-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -3038,6 +3008,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -3153,12 +3124,13 @@ Hello <b>world</b>!
 
 <div id="examplebeanjson-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -3176,6 +3148,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -3269,12 +3242,13 @@ Hello <b>world</b>!
 
 <div id="examplerestnamedparams-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -3292,6 +3266,7 @@ Hello <b>world</b>!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -3435,12 +3410,13 @@ Hello, world!
 
 <div id="examplehello-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -3461,6 +3437,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -3605,12 +3582,13 @@ Hello, world!
 
 <div id="examplehi-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -3631,6 +3609,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -3735,12 +3714,13 @@ Hello, world!
 
 <div id="exampleraw-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -3761,6 +3741,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -3789,7 +3770,7 @@ Hello, world!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplegui.mapgrid-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+            <div><div id="examplegui.mapgrid-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Creating a grid (table) from the <span class="text-box">nums</span> map</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
@@ -3927,7 +3908,7 @@ Hello, world!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+            <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Creating a form to edit the <span class="text-box">movie</span> map</span></div>
 <div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
@@ -4094,12 +4075,13 @@ Hello, world!
 
 <div id="exampleshowmovie-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -4120,6 +4102,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -4254,12 +4237,13 @@ Hello, world!
 
 <div id="exampleeditmovie-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -4280,6 +4264,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -4401,12 +4386,13 @@ Hello, world!
 
 <div id="exampleparamgrid-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -4427,6 +4413,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -4574,12 +4561,13 @@ Hello, world!
 
 <div id="exampleinjection-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -4608,6 +4596,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -4729,12 +4718,13 @@ Hello, world!
 
 <div id="examplelayout-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -4755,6 +4745,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -4785,13 +4776,13 @@ Hello, world!
         <div class="copy-snippet">
             <div><div id="exampleu.coll-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">// Creating a list:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">Integer</span>&gt; numbers = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">70</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,70]</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Creating a set:</span></div>
-<div class="example-line clearfix"><span class="_code_cls">Set</span>&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span><span class="object-class">LinkedHashSet</span></span></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_cls">Set</span>&lt;<span class="_code_cls">String</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.set</span>(<span class="_code_str">"abc"</span>, <span class="_code_str">"xy"</span>, <span class="_code_str">"rapidoid"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["abc","xy","rapidoid"]</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Creating a map:</span></div>
-<div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span></div>
+<div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span></span></span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -4828,14 +4819,14 @@ Hello, world!
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleu.collutils-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">30</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,30]</span><span class="object-class">ArrayList</span></span></span><span class="pull-left left-code"></div>
+            <div><div id="exampleu.collutils-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">List&lt;<span class="_code_cls">Integer</span>&gt; words = <span class="_code_api">U</span><span class="_code_api">.list</span>(<span class="_code_num">10</span>, <span class="_code_num">20</span>, <span class="_code_num">30</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[10,20,30]</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span><span class="object-class">LinkedHashMap</span></span></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// U.isEmpty utils:</span></div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(words);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span></div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span></span></span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -4875,11 +4866,11 @@ Hello, world!
             <div><div id="exampleu.strutils-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">// Is it empty or null:</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_cls">String</span> s = <span class="_code_kw">null</span>;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(s);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span><span class="object-class">Boolean</span></span></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">true</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span><span class="object-class">Boolean</span></span></span></div>
+<div class="example-line clearfix"><span class="_code_api">U</span><span class="_code_api">.isEmpty</span>(<span class="_code_str">"hey"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">false</span></span></span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -4913,6 +4904,28 @@ Hello, world!
 <div id="exampleprofiles-body" class="row">
 
     <div id="exampleprofiles-left" class="col-md-8">
+        <div id="exampleprofiles-codedesc" class="eg_title">FooCtrl.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"foo"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">FooCtrl</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, FOO controller!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
         <div id="exampleprofiles-codedesc" class="eg_title">Main.java</div>
 
         <!-- START CODE -->
@@ -4927,7 +4940,7 @@ Hello, world!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(<span class="_code_str">"profiles=mysql,prod"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(<span class="_code_str">"profiles=mysql,foo"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/profiles"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.display</span>(<span class="_code_cls">Env</span><span class="_code_api">.profiles</span>()));</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -4961,34 +4974,12 @@ Hello, world!
         </div>
         <!-- END CODE -->
 
-        <div id="exampleprofiles-codedesc" class="eg_title">ProdCtrl.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
-<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"prod"</span>)</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">ProdCtrl</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, PROD controller!"</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-        <div id="exampleprofiles-codedesc" class="eg_title">profile-prod.yml</div>
+        <div id="exampleprofiles-codedesc" class="eg_title">config-foo.yml</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix">my:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;msg: <span class="_code_str">'hello from PROD!'</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;msg: <span class="_code_str">'hello from Foo!'</span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -5021,7 +5012,8 @@ Hello, world!
 
 <div>
   <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;mysql</div>
-  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;prod</div>
+  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;foo</div>
+  <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;dev</div>
 </div>
 <!--/EMBEDDED-->
 
@@ -5044,7 +5036,7 @@ Hello, world!
   </tr>
   <tr>
     <td>msg</td>
-    <td>hello from PROD!</td>
+    <td>hello from Foo!</td>
   </tr>
   <tr>
     <td>desc</td>
@@ -5063,7 +5055,7 @@ Hello, world!
 
 <div class="eg-result">
     <!-- EXAMPLE#profiles RESULT STARTS HERE -->
-    "hi, PROD controller!"
+    "hi, FOO controller!"
     <!-- EXAMPLE#profiles RESULT ENDS HERE -->
 </div>
 
@@ -5076,12 +5068,13 @@ Hello, world!
 
 <div id="exampleprofiles-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -5125,6 +5118,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -5200,7 +5194,7 @@ Hello, world!
         </div>
         <!-- END CODE -->
 
-        <div id="examplegettingstarted2-codedesc" class="eg_title">profile-dev.yml</div>
+        <div id="examplegettingstarted2-codedesc" class="eg_title">config-dev.yml</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
@@ -5218,7 +5212,7 @@ Hello, world!
         </div>
         <!-- END CODE -->
 
-        <div id="examplegettingstarted2-codedesc" class="eg_title">profile-mysql.yml</div>
+        <div id="examplegettingstarted2-codedesc" class="eg_title">config-mysql.yml</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
@@ -5239,7 +5233,7 @@ Hello, world!
         </div>
         <!-- END CODE -->
 
-        <div id="examplegettingstarted2-codedesc" class="eg_title">profile-default.yml</div>
+        <div id="examplegettingstarted2-codedesc" class="eg_title">config-default.yml</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
@@ -5297,7 +5291,7 @@ Hello, world!
 
 </div>
 
-<h4 class="section-caption">Let's send some HTTP requests and check the results:</h4>
+<p class="send-requests-caption">Let's send some HTTP requests and check the results:</p>
 
 <div>
     <span class="badge eg-POST eg-verb">POST</span> <span class="badge eg-uri">/books</span>
@@ -5348,12 +5342,13 @@ Hello, world!
 
 <div id="examplegettingstarted2-routes" class="row">
     <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
   <tr>
     <th>Verb</th>
     <th>Path</th>
-    <th>Segment</th>
+    <th>Zone</th>
     <th>Content type</th>
     <th>MVC</th>
     <th>View name</th>
@@ -5382,6 +5377,7 @@ Hello, world!
     <td></td>
   </tr>
 </table>
+        </div>
     </div>
 </div>
 
@@ -5416,13 +5412,23 @@ Hello, world!
       </thead>
       <tbody>
         <tr>
+          <td>config</td>
+          <td>configuration filename prefix</td>
+          <td>config</td>
+        </tr>
+        <tr>
           <td>dev</td>
-          <td>configure DEV mode</td>
+          <td>run in DEV mode</td>
           <td>auto-detected</td>
         </tr>
         <tr>
           <td>production</td>
-          <td>configure PRODUCTION mode</td>
+          <td>run in PRODUCTION mode</td>
+          <td>auto-detected</td>
+        </tr>
+        <tr>
+          <td>test</td>
+          <td>run in TEST mode</td>
           <td>auto-detected</td>
         </tr>
         <tr>
@@ -5437,12 +5443,12 @@ Hello, world!
         </tr>
         <tr>
           <td>on.port=&lt;P&gt;</td>
-          <td>the default (App) server will listen at port P</td>
+          <td>the default App server will listen at port P</td>
           <td>8888</td>
         </tr>
         <tr>
           <td>on.address=&lt;ADDR&gt;</td>
-          <td>the default (App) server will listen at address ADDR</td>
+          <td>the default App server will listen at address ADDR</td>
           <td>0.0.0.0</td>
         </tr>
         <tr>
@@ -5462,7 +5468,6 @@ Hello, world!
         </tr>
       </tbody>
     </table>
-    <div></div>
   </div>
 </div>
 </div>
@@ -5501,463 +5506,12 @@ Hello, world!
   <div class="col-md-12"></div>
 </div>
 
-<!-- EXAMPLE httpcfgfull -->
-
-<div id="full-application-example-rapidoid-web-rapidoid-fluent-modules" class="row">
-    <div class="col-md-12">
-        <h4 class="caption">
-            <span class="badge badge-eg-num">41</span>
-            <a href="full-application-example-rapidoid-web-rapidoid-fluent-modules.html" class="mini-example-title">Full application example (rapidoid-web + rapidoid-fluent modules)</a>
-            
-        </h4>
-    </div>
-</div>
-
-
-<div id="examplehttpcfgfull-body" class="row">
-
-    <div id="examplehttpcfgfull-left" class="col-md-8">
-        <div id="examplehttpcfgfull-codedesc" class="eg_title">Main.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="examplehttpcfgfull-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> <span class="_code_kw">extends</span> <span class="_code_api">GUI</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.args</span>(args);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// The application will manage this configuration:</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; cfg = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"title"</span>, <span class="_code_str">"App"</span>, <span class="_code_str">"user"</span>, <span class="_code_str">"u1"</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// RESTful service for configuration retrieval</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/cfg"</span>)<span class="_code_api">.json</span>(() <span class="_code_lambda">-&gt;</span> cfg);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">String</span>&gt; menu = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Home"</span>, <span class="_code_str">"/"</span>, <span class="_code_str">"Group"</span>, <span class="_code_str">"/group"</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Wrap every result into a renderPage</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.defaults</span>()<span class="_code_api">.wrap</span>((data, next) <span class="_code_lambda">-&gt;</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next.invokeAndTransformResult(x <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> page(x)<span class="_code_api">.menu</span>(menu).brand(cfg<span class="_code_api">.get</span>(<span class="_code_str">"title"</span>));</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Create buttons to filter by starting letter</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">List</span>&lt;<span class="_code_cls">Btn</span>&gt; letters = <span class="_code_api">Flow</span><span class="_code_api">.chars</span>(<span class="_code_str">'a'</span>, <span class="_code_str">'z'</span>)<span class="_code_api">.map</span>(c <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> btn(c).go(<span class="_code_str">"/find?p="</span> + c);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<span class="_code_api">.toList</span>();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Display the configuration entries at the home renderPage</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">KVGrid</span> grid = grid(cfg)<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> a(k).href(<span class="_code_str">"/edit?k="</span> + k));</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(letters, grid);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Group the configuration entries by the starting letter</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/group"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">Do</span><span class="_code_api">.map</span>(<span class="_code_api">Do</span><span class="_code_api">.group</span>(cfg)<span class="_code_api">.by</span>((k, v) <span class="_code_lambda">-&gt;</span> k.charAt(<span class="_code_num">0</span>)))</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.toList</span>((k, v) <span class="_code_lambda">-&gt;</span> <span class="_code_api">U</span><span class="_code_api">.list</span>(h3(k), grid(v)));</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Edit configuration entries</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/edit"</span>)<span class="_code_api">.mvc</span>((<span class="_code_cls">String</span> k) <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Btn</span> ok = btn(<span class="_code_str">"Update"</span>).onClick(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">Log</span>.info(<span class="_code_str">"Updated!"</span>));</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> edit(cfg, k)<span class="_code_api">.buttons</span>(ok, btn(<span class="_code_str">"Back"</span>).go(<span class="_code_str">"/"</span>));</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Search configuration entries by prefix</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/find"</span>)<span class="_code_api">.mvc</span>((<span class="_code_cls">String</span> p) <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> grid(<span class="_code_api">Find</span><span class="_code_api">.allOf</span>(cfg)<span class="_code_api">.where</span>((k, v) <span class="_code_lambda">-&gt;</span> k.startsWith(p)));</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-    </div>
-
-    <div id="examplehttpcfgfull-right" class="col-md-4">
-        <div id="examplehttpcfgfull-results" class="results">
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcfgfull RESULT STARTS HERE -->
-    <!--EMBEDDED-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">App</a>
-        </div>
-
-<div id="collapsable" class="collapse navbar-collapse">
-
-    <ul class="nav navbar-nav navbar-left">
-<li class=" active">
-    <a href="/" >Home</a>
-</li>
-
-    </ul>
-    <ul class="nav navbar-nav navbar-left">
-<li class="">
-    <a href="/group" >Group</a>
-</li>
-
-    </ul>
-
-    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
-
-</div>
-
-    </div>
-</nav>
-
-  <a href="/find?p=a" class="btn btn-default">a</a>
-  <a href="/find?p=b" class="btn btn-default">b</a>
-  <a href="/find?p=c" class="btn btn-default">c</a>
-  <a href="/find?p=d" class="btn btn-default">d</a>
-  <a href="/find?p=e" class="btn btn-default">e</a>
-  <a href="/find?p=f" class="btn btn-default">f</a>
-  <a href="/find?p=g" class="btn btn-default">g</a>
-  <a href="/find?p=h" class="btn btn-default">h</a>
-  <a href="/find?p=i" class="btn btn-default">i</a>
-  <a href="/find?p=j" class="btn btn-default">j</a>
-  <a href="/find?p=k" class="btn btn-default">k</a>
-  <a href="/find?p=l" class="btn btn-default">l</a>
-  <a href="/find?p=m" class="btn btn-default">m</a>
-  <a href="/find?p=n" class="btn btn-default">n</a>
-  <a href="/find?p=o" class="btn btn-default">o</a>
-  <a href="/find?p=p" class="btn btn-default">p</a>
-  <a href="/find?p=q" class="btn btn-default">q</a>
-  <a href="/find?p=r" class="btn btn-default">r</a>
-  <a href="/find?p=s" class="btn btn-default">s</a>
-  <a href="/find?p=t" class="btn btn-default">t</a>
-  <a href="/find?p=u" class="btn btn-default">u</a>
-  <a href="/find?p=v" class="btn btn-default">v</a>
-  <a href="/find?p=w" class="btn btn-default">w</a>
-  <a href="/find?p=x" class="btn btn-default">x</a>
-  <a href="/find?p=y" class="btn btn-default">y</a>
-  <a href="/find?p=z" class="btn btn-default">z</a>
-  <table class="table table-striped table-hover">
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>
-        <a href="/edit?k=title">title</a>
-      </td>
-      <td>App</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="/edit?k=user">user</a>
-      </td>
-      <td>u1</td>
-    </tr>
-  </table>
-<!--/EMBEDDED-->
-
-    <!-- EXAMPLE#httpcfgfull RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/cfg</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcfgfull RESULT STARTS HERE -->
-    {"title":"App","user":"u1"}
-    <!-- EXAMPLE#httpcfgfull RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/group</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcfgfull RESULT STARTS HERE -->
-    <!--EMBEDDED-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">App</a>
-        </div>
-
-<div id="collapsable" class="collapse navbar-collapse">
-
-    <ul class="nav navbar-nav navbar-left">
-<li class="">
-    <a href="/" >Home</a>
-</li>
-
-    </ul>
-    <ul class="nav navbar-nav navbar-left">
-<li class=" active">
-    <a href="/group" >Group</a>
-</li>
-
-    </ul>
-
-    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
-
-</div>
-
-    </div>
-</nav>
-
-  <h3>t</h3>
-  <table class="table table-striped table-hover">
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>title</td>
-      <td>App</td>
-    </tr>
-  </table>
-  <h3>u</h3>
-  <table class="table table-striped table-hover">
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>user</td>
-      <td>u1</td>
-    </tr>
-  </table>
-<!--/EMBEDDED-->
-
-    <!-- EXAMPLE#httpcfgfull RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/edit?k=title</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcfgfull RESULT STARTS HERE -->
-    <!--EMBEDDED-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">App</a>
-        </div>
-
-<div id="collapsable" class="collapse navbar-collapse">
-
-    <ul class="nav navbar-nav navbar-left">
-<li class="">
-    <a href="/" >Home</a>
-</li>
-
-    </ul>
-    <ul class="nav navbar-nav navbar-left">
-<li class="">
-    <a href="/group" >Group</a>
-</li>
-
-    </ul>
-
-    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
-
-</div>
-
-    </div>
-</nav>
-
-  <form class="" role="form">
-    <div class="form-group">
-      <label>Title: </label>
-      <input type="text" class="form-control" name="title" value="App" placeholder="">
-    </div>
-    <div class="form-group">
-      <button type="button" class="btn btn-default" ng-click="_emit($event, 'Update', [])">Update</button>
-      <a href="/" class="btn btn-default">Back</a>
-    </div>
-  </form>
-<!--/EMBEDDED-->
-
-    <!-- EXAMPLE#httpcfgfull RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/find?p=t</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#httpcfgfull RESULT STARTS HERE -->
-    <!--EMBEDDED-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">App</a>
-        </div>
-
-<div id="collapsable" class="collapse navbar-collapse">
-
-    <ul class="nav navbar-nav navbar-left">
-<li class="">
-    <a href="/" >Home</a>
-</li>
-
-    </ul>
-    <ul class="nav navbar-nav navbar-left">
-<li class="">
-    <a href="/group" >Group</a>
-</li>
-
-    </ul>
-
-    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
-
-</div>
-
-    </div>
-</nav>
-
-  <table class="table table-striped table-hover">
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>title</td>
-      <td>App</td>
-    </tr>
-  </table>
-<!--/EMBEDDED-->
-
-    <!-- EXAMPLE#httpcfgfull RESULT ENDS HERE -->
-</div>
-
-
-        </div>
-    </div>
-</div>
-
-
-
-<div id="examplehttpcfgfull-routes" class="row">
-    <div class="col-md-12">
-        <h4 class="section-caption">HTTP server routes information</h4>
-        <table class="table table-striped table-hover">
-  <tr>
-    <th>Verb</th>
-    <th>Path</th>
-    <th>Segment</th>
-    <th>Content type</th>
-    <th>MVC</th>
-    <th>View name</th>
-    <th>Roles</th>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-      <span class="label label-primary">POST</span>
-    </td>
-    <td>/</td>
-    <td>main</td>
-    <td>html</td>
-    <td>
-      <i class="fa fa-check"></i>
-    </td>
-    <td>index</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/cfg</td>
-    <td>main</td>
-    <td>json</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-      <span class="label label-primary">POST</span>
-    </td>
-    <td>/edit</td>
-    <td>main</td>
-    <td>html</td>
-    <td>
-      <i class="fa fa-check"></i>
-    </td>
-    <td>edit</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-      <span class="label label-primary">POST</span>
-    </td>
-    <td>/find</td>
-    <td>main</td>
-    <td>html</td>
-    <td>
-      <i class="fa fa-check"></i>
-    </td>
-    <td>find</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-      <span class="label label-primary">POST</span>
-    </td>
-    <td>/group</td>
-    <td>main</td>
-    <td>html</td>
-    <td>
-      <i class="fa fa-check"></i>
-    </td>
-    <td>group</td>
-    <td></td>
-  </tr>
-</table>
-    </div>
-</div>
-
-
-
-<div class="row row-separated-micro">
-  <div class="col-md-12"></div>
-</div>
-
 <!-- EXAMPLE httpstop -->
 
 <div id="stopping-the-server" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">42</span>
+            <span class="badge badge-eg-num">41</span>
             <a href="stopping-the-server.html" class="mini-example-title">Stopping the server</a>
             
         </h4>
@@ -5989,12 +5543,316 @@ Hello, world!
   <div class="col-md-12"></div>
 </div>
 
+<!-- EXAMPLE echoprotocol -->
+
+<div id="implementing-echo-protocol" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">42</span>
+            <a href="implementing-echo-protocol.html" class="mini-example-title">Implementing Echo protocol</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleechoprotocol-body" class="row">
+
+    <div id="exampleechoprotocol-left" class="col-md-12">
+        <div id="exampleechoprotocol-codedesc" class="eg_title">Echo.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">TCP</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Echo</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) <span class="_code_kw">throws</span> <span class="_code_cls">Exception</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">TCP</span><span class="_code_api">.server</span>().protocol(<span class="_code_kw">new</span> <span class="_code_cls">EchoProtocol</span>())<span class="_code_api">.port</span>(<span class="_code_num">5555</span>).build().start();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleechoprotocol-codedesc" class="eg_title">EchoProtocol.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">Protocol</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EchoProtocol</span> <span class="_code_kw">implements</span> <span class="_code_cls">Protocol</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Override</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> process(<span class="_code_cls">Channel</span> ctx) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> line = ctx.readln().toUpperCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(line).write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.closeIf(line.equals(<span class="_code_str">"BYE"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE httpfastest -->
+
+<div id="building-the-fastest-http-server" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">43</span>
+            <a href="building-the-fastest-http-server.html" class="mini-example-title">Building the fastest HTTP server</a>
+            
+        </h4>
+    </div>
+</div>
+
+<div id="examplehttpfastest-extra" class="row">
+    <div class="col-md-12">
+    <div class="docs">
+
+        <p>The following HTTP server features 2 web handlers:</p>
+
+        <ul>
+            <li><code>/plaintext</code> - which implements the TechEmpower's <a
+                    href="https://www.techempower.com/benchmarks/#section=code">Plaintext test</a></li>
+            <li><code>/json</code> - which implements the TechEmpower's <a
+                    href="https://www.techempower.com/benchmarks/#section=code">JSON serialization test</a></li>
+        </ul>
+
+    </div>
+</div>
+</div>
+
+<div id="examplehttpfastest-body" class="row">
+
+    <div id="examplehttpfastest-left" class="col-md-12">
+        <div id="examplehttpfastest-codedesc" class="eg_title">CustomAndFast.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">TCP</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">CustomAndFast</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) <span class="_code_kw">throws</span> <span class="_code_cls">Exception</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">TCP</span><span class="_code_api">.server</span>().protocol(<span class="_code_kw">new</span> <span class="_code_cls">SimpleHttpProtocol</span>())<span class="_code_api">.port</span>(<span class="_code_num">7070</span>).build().start();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplehttpfastest-codedesc" class="eg_title">Message.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Message</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">final</span> <span class="_code_cls">String</span> message;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Message</span>(<span class="_code_cls">String</span> message) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">this</span>.message = message;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> getMessage() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> message;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplehttpfastest-codedesc" class="eg_title">SimpleHttpProtocol.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> com.fasterxml<span class="_code_api">.jackson</span>.databind.<span class="_code_cls">ObjectMapper</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> com.fasterxml<span class="_code_api">.jackson</span>.module.afterburner.<span class="_code_cls">AfterburnerModule</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.buffer.<span class="_code_cls">Buf</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.bytes.<span class="_code_cls">BytesUtil</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.commons.<span class="_code_cls">Dates</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.data</span>.<span class="_code_cls">BufRange</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.data</span>.<span class="_code_cls">BufRanges</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.http</span>.impl.<span class="_code_cls">HttpParser</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">Protocol</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.impl.<span class="_code_cls">RapidoidHelper</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.wrap</span>.<span class="_code_cls">BoolWrap</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SimpleHttpProtocol</span> <span class="_code_kw">implements</span> <span class="_code_cls">Protocol</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">HTTP_200_OK</span> = <span class="_code_str">"HTTP/1.1 200 OK\r\n"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">HTTP_404_NOT_FOUND</span> = (</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"HTTP/1.1 404 Not Found\r\n"</span> +</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"Content-Length: 10"</span> +</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"\r\n"</span> +</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"\r\nNot found!"</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;).getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">SERVER_X</span> = <span class="_code_str">"Server: X\r\n"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_LENGTH_HDR</span> = <span class="_code_str">"Content-Length: "</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_TYPE_PLAIN</span> = <span class="_code_str">"Content-Type: text/plain; charset=UTF-8\r\n"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_TYPE_JSON</span> = <span class="_code_str">"Content-Type: application/json; charset=UTF-8\r\n"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_LENGTH</span> = <span class="_code_str">"Content-Length:           "</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">RESPONSE</span> = <span class="_code_str">"Hello, World!"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">DATE_HDR</span> = <span class="_code_str">"Date: "</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">RESPONSE_LENGTH</span> = <span class="_code_cls">String</span><span class="_code_api">.valueOf</span>(<span class="_code_cls">RESPONSE</span>.length).getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">URI_PLAIN</span> = <span class="_code_str">"/plaintext"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">URI_JSON</span> = <span class="_code_str">"/json"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_cls">HttpParser</span> <span class="_code_cls">HTTP_PARSER</span> = <span class="_code_kw">new</span> <span class="_code_cls">HttpParser</span>();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_cls">ObjectMapper</span> <span class="_code_cls">MAPPER</span> = mapper();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_cls">ObjectMapper</span> mapper() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">ObjectMapper</span> mapper = <span class="_code_kw">new</span> <span class="_code_cls">ObjectMapper</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mapper.registerModule(<span class="_code_kw">new</span> <span class="_code_cls">AfterburnerModule</span>());</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> mapper;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Override</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> process(<span class="_code_cls">Channel</span> ctx) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (ctx.isInitial()) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Buf</span> buf = ctx<span class="_code_api">.input</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">RapidoidHelper</span> helper = ctx.helper();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span>[] ranges = helper.ranges1.ranges;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRanges</span> headers = helper.ranges2;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BoolWrap</span> isGet = helper.booleans[<span class="_code_num">0</span>];</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BoolWrap</span> isKeepAlive = helper.booleans[<span class="_code_num">1</span>];</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> verb = ranges[ranges.length - <span class="_code_num">1</span>];</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> uri = ranges[ranges.length - <span class="_code_num">2</span>];</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> path = ranges[ranges.length - <span class="_code_num">3</span>];</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> query = ranges[ranges.length - <span class="_code_num">4</span>];</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> protocol = ranges[ranges.length - <span class="_code_num">5</span>];</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> body = ranges[ranges.length - <span class="_code_num">6</span>];</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">HTTP_PARSER</span>.parse(buf, isGet, isKeepAlive, body, verb, uri, path,</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query, protocol, headers, helper);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response(ctx, buf, path, isGet.value, isKeepAlive.value);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">void</span> response(<span class="_code_cls">Channel</span> ctx, <span class="_code_cls">Buf</span> buf, <span class="_code_cls">BufRange</span> path, <span class="_code_kw">boolean</span> isGet, <span class="_code_kw">boolean</span> isKeepAlive) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">boolean</span> processed = <span class="_code_kw">false</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (isGet) {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">HTTP_200_OK</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">SERVER_X</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">DATE_HDR</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">Dates</span>.getDateTimeBytes());</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (<span class="_code_cls">BytesUtil</span>.matches(buf.bytes(), path, <span class="_code_cls">URI_PLAIN</span>, <span class="_code_kw">true</span>) || path.length == <span class="_code_num">1</span>) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handlePlaintext(ctx);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processed = <span class="_code_kw">true</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="_code_kw">else</span> <span class="_code_kw">if</span> (<span class="_code_cls">BytesUtil</span>.matches(buf.bytes(), path, <span class="_code_cls">URI_JSON</span>, <span class="_code_kw">true</span>)) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handleJson(ctx);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processed = <span class="_code_kw">true</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.closeIf(!isKeepAlive);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (!processed) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">HTTP_404_NOT_FOUND</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.close();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">void</span> handlePlaintext(<span class="_code_cls">Channel</span> ctx) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_LENGTH_HDR</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">RESPONSE_LENGTH</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_TYPE_PLAIN</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">RESPONSE</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">void</span> handleJson(<span class="_code_cls">Channel</span> ctx) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Buf</span> output = ctx<span class="_code_api">.output</span>();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_TYPE_JSON</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_LENGTH</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> posConLen = output.size() - <span class="_code_num">10</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> posBefore = output.size();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Message</span> msg = <span class="_code_kw">new</span> <span class="_code_cls">Message</span>(<span class="_code_str">"Hello, World!"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">try</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">MAPPER</span>.writeValue(output.asOutputStream(), msg);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="_code_kw">catch</span> (<span class="_code_cls">Exception</span> e) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">throw</span> <span class="_code_kw">new</span> <span class="_code_cls">RuntimeException</span>(e);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> posAfter = output.size();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output.putNumAsText(posConLen, posAfter - posBefore, <span class="_code_kw">false</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 <!-- EXAMPLE httpapi -->
 
 <div id="api-documentation" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">43</span>
+            <span class="badge badge-eg-num">44</span>
             <a href="api-documentation.html" class="mini-example-title">API documentation</a>
             
         </h4>
@@ -6039,13 +5897,13 @@ Hello, world!
         <td>Gets the value of the <b>Host header</b> of the HTTP request.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">String</span> segment()</pre></td>
-        <td>Gets the name of the <b>application segment</b> handling the request. <br>
- The default segment name is <code>main</code> for the <code>On</code> API, and <code>admin</code> for the <code>Admin</code> API.</td>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> zone()</pre></td>
+        <td>Gets the name of the <b>application zone</b> handling the request. <br>
+ The default zone name is <code>main</code> for the <code>On</code> API, and <code>admin</code> for the <code>Admin</code> API.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">String</span> contextPath()</pre></td>
-        <td>Gets the <b>context path</b> of the application segment handling the request. <br>
+        <td>Gets the <b>context path</b> of the application zone handling the request. <br>
  The default context path is <code>/</code> for the <code>On</code> API, and <code>/_</code> for the <code>Admin</code> API.</td>
       </tr>
       <tr>
@@ -6189,40 +6047,40 @@ Hello, world!
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; session()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request.</td>
+        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet">T session(<span class="_code_cls">String</span> name)</pre></td>
-        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request, or throws a
+        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request/response, or throws a
  runtime exception if it is not found.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet">T session(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
-        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request, or the specified
+        <td>Returns the value of the specified <b>server-side session attribute</b> from the HTTP request/response, or the specified
  default value, if it is not found.</td>
       </tr>
       <tr>
         <td><h5>
-  <b>COOKIE-PERSISTED SESSION:</b>
+  <b>TOKEN DATA:</b>
 </h5></td>
         <td></td>
       </tr>
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> hasCookiepack()</pre></td>
-        <td>Does the HTTP request have a cookie-persisted session attached?</td>
+        <td><pre class="code-snippet"><span class="_code_cls">boolean</span> hasToken()</pre></td>
+        <td>Does the HTTP request have a token attached?</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; cookiepack()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>cookie-persisted session attributes</b> of the HTTP request.</td>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; token()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>token attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet">T cookiepack(<span class="_code_cls">String</span> name)</pre></td>
-        <td>Returns the value of the specified <b>cookie-persisted session attribute</b> from the HTTP request, or throws a
+        <td><pre class="code-snippet">T token(<span class="_code_cls">String</span> name)</pre></td>
+        <td>Returns the value of the specified <b>token attribute</b> from the HTTP request/response, or throws a
  runtime exception if it is not found.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet">T cookiepack(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
-        <td>Returns the value of the specified <b>cookie-persisted session attribute</b> from the HTTP request, or the
+        <td><pre class="code-snippet">T token(<span class="_code_cls">String</span> name, T defaultValue)</pre></td>
+        <td>Returns the value of the specified <b>token attribute</b> from the HTTP request/response, or the
  specified default value, if it is not found.</td>
       </tr>
       <tr>
@@ -6310,8 +6168,27 @@ Hello, world!
         <td>Provides access to the <b>HTTP routes</b> of the web application setup.</td>
       </tr>
       <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Route</span> route()</pre></td>
+        <td>Provides access to the <b>matching HTTP route (if any)</b> of the web application setup.<br>
+ In case a generic handler handles the request, or no matching route was found, <code>null</code> is returned.</td>
+      </tr>
+      <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Customization</span> custom()</pre></td>
         <td>Provides access to the <b>customization</b> of the web application setup.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">void</span> revert()</pre></td>
+        <td>Reverts the previous processing of the request, usually with intention to process the same request again.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">OutputStream</span> out()</pre></td>
+        <td>First renders the response headers, then returns an <i>OutputStream</i> representing
+ the <b>response body</b>. The response body will be constructed by writing to the <i>OutputStream</i>.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">MediaType</span> contentType()</pre></td>
+        <td>Gets the <b><code>Content-Type</code> header</b> of the HTTP response if it has been assigned,
+ or the default value as configured in the HTTP route.</td>
       </tr>
     </table>
   </div>
@@ -6399,6 +6276,10 @@ Hello, world!
  E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
       </tr>
       <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> noView()</pre></td>
+        <td>Disables the view rendering for the target MVC route. The page decorator remains enabled.</td>
+      </tr>
+      <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> file(<span class="_code_cls">File</span> file)</pre></td>
         <td>Sets the <b>file</b> to be served when the HTTP response is rendered.</td>
       </tr>
@@ -6424,19 +6305,19 @@ Hello, world!
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; session()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request.</td>
+        <td>Provides <b>read/write access</b> to the <b>server-side session attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> session(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
         <td>Sets a <b>session attribute</b> of the HTTP response.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; cookiepack()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>cookie-persisted session attributes</b> of the HTTP request.</td>
+        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Serializable</span>&gt; token()</pre></td>
+        <td>Provides <b>read/write access</b> to the <b>token attributes</b> of the HTTP request/response.</td>
       </tr>
       <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> cookiepack(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
-        <td>Sets a <b>cookiepack attribute</b> of the HTTP response.</td>
+        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> token(<span class="_code_cls">String</span> name, <span class="_code_cls">Serializable</span> value)</pre></td>
+        <td>Sets a <b>token attribute</b> of the HTTP response.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; model()</pre></td>
@@ -6465,7 +6346,7 @@ Hello, world!
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> json(<span class="_code_cls">Object</span> content)</pre></td>
         <td>Sets the <b><code>Content-Type: application/json; charset=utf-8</code> header and the content</b> of the HTTP
  response. <br>
- <i>Alias</i> to <code>contentType(MediaType.JSON_UTF_8).body(content)</code>.</td>
+ <i>Alias</i> to <code>contentType(MediaType.JSON).body(content)</code>.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> binary(<span class="_code_cls">Object</span> content)</pre></td>
@@ -6476,13 +6357,13 @@ Hello, world!
         <td><pre class="code-snippet"><span class="_code_cls">boolean</span> mvc()</pre></td>
         <td>Checks whether the response model and view will be rendered in a MVC fashion.<br>
  A typical renderer would use <code>Resp#view</code> to get the view name, and <code>Resp#model</code> to get the model.
- A custom view renderer can be configured/implemented via the <code>On.custom().viewRenderer(...)</code> method.<br></td>
+ A custom view renderer can be configured/implemented via the <code>On.custom().viewResolver(...)</code> method.<br></td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> mvc(<span class="_code_cls">boolean</span> mvc)</pre></td>
         <td>Sets whether the response model and view will be rendered in a MVC fashion.<br>
  A typical renderer would use <code>Resp#view</code> to get the view name, and <code>Resp#model</code> to get the model.
- A custom view renderer can be configured/implemented via the <code>On.custom().viewRenderer(...)</code> method.<br></td>
+ A custom view renderer can be configured/implemented via the <code>On.custom().viewResolver(...)</code> method.<br></td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">OutputStream</span> out()</pre></td>
@@ -6496,12 +6377,12 @@ Hello, world!
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">boolean</span> login(<span class="_code_cls">String</span> username, <span class="_code_cls">String</span> password)</pre></td>
         <td>Initiates a user login process with the specified <b>username</b> and <b>password</b>.<br>
- After a successful login, the username will be persisted in the cookie-pack.<br>
+ After a successful login, the username will be persisted in the token.<br>
  Returns information whether the login was successful</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">void</span> logout()</pre></td>
-        <td>Initiates a user logout process, clearing the login information (username) from the cookie-pack.</td>
+        <td>Initiates a user logout process, clearing the login information (username) from the token.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Screen</span> screen()</pre></td>
@@ -6559,7 +6440,7 @@ Hello, world!
         <a class="toc-link" href="#exception-handlers">Exception handlers</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="#mvc-architecture-with-rapidoid-s-built-in-template-engine">MVC architecture with Rapidoid&#39;s built-in template engine</a>
+        <a class="toc-link" href="#mvc-architecture-with-rapidoid-s-built-in-template-engine">MVC architecture with Rapidoid&apos;s built-in template engine</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#serving-static-files-from-the-default-locations">Serving static files from the default locations</a>
@@ -6571,7 +6452,7 @@ Hello, world!
         <a class="toc-link" href="#server-side-session-a-k-a-session">Server-side session (a.k.a. Session)</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="#cookie-persisted-session-a-k-a-cookiepack">Cookie-persisted session (a.k.a. Cookiepack)</a>
+        <a class="toc-link" href="#client-side-token-as-a-session">Client-side Token as a session</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#manipulating-the-response-content-type">Manipulating the response content type</a>
@@ -6655,10 +6536,13 @@ Hello, world!
         <a class="toc-link" href="#server-configuration">Server Configuration</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="#full-application-example-rapidoid-web-rapidoid-fluent-modules">Full application example (rapidoid-web + rapidoid-fluent modules)</a>
+        <a class="toc-link" href="#stopping-the-server">Stopping the server</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="#stopping-the-server">Stopping the server</a>
+        <a class="toc-link" href="#implementing-echo-protocol">Implementing Echo protocol</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#building-the-fastest-http-server">Building the fastest HTTP server</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#api-documentation">API documentation</a>
@@ -6688,7 +6572,6 @@ $(function () {
 </script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -38,14 +38,44 @@ h4.caption {
 }
 
 .section-caption {
-	margin-bottom: 10px;
-	margin-top: 5px;
+	margin-bottom: 3px;
+	margin-top: 10px;
+	font-size: 16px;
+	color: #555;
 	padding: 3px;
-	border: 2px solid #E9E9E9;
-	font-size: 20px;
+	border: 1px solid #E9E9E9;
+	background: #F5F5F5;
+}
+
+.send-requests-caption {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 16px;
 	font-weight: bold;
 	color: #555;
-	background: #CCC;
+	text-align: center;
+}
+
+.routes-info-caption {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #555;
+	margin-left: 5px;
+	text-align: center;
+}
+
+.routes-info-caption2 {
+	margin-bottom: 3px;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-size: 14px;
+	color: #555;
+}
+
+.routes-info {
+	font-size: 13px;
 }
 
 .module-header {

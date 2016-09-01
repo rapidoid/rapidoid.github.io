@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
@@ -137,7 +138,7 @@
 
 </div>
 
-<h4 class="section-caption">Let's send some HTTP requests and check the results:</h4>
+<p class="send-requests-caption">Let's send some HTTP requests and check the results:</p>
 
 <div>
     <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_</span>
@@ -146,6 +147,24 @@
 <div class="eg-result">
     <!-- EXAMPLE#goodies RESULT STARTS HERE -->
     <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rapidoid</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+</div>
+
+    </div>
+</nav>
 
     <h3>
       <center>Application info:</center>
@@ -169,8 +188,8 @@
         <td>Active profiles</td>
         <td>
           <div>
-            <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;dev</div>
             <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;default</div>
+            <div class="value-line"><i class="fa fa-circle-o"></i>&nbsp;dev</div>
           </div>
         </td>
       </tr>
@@ -195,12 +214,12 @@ function updateGraph1() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph1 = new Dygraph(document.getElementById("dygraph-1"), [
-[D(1464449098624),123.45],
+[D(1464449098624),[123.45, 200, 150, 300]],
   ], {
     title: 'System CPU',
     labels: [ "Date", "System CPU" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = '/_/graphs/cpu/system?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + '/_/graphs/cpu/system?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -227,12 +246,12 @@ function updateGraph2() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph2 = new Dygraph(document.getElementById("dygraph-2"), [
-[D(1464449098624),123.45],
+[D(1464449098624),[123.45, 200, 150, 300]],
   ], {
     title: 'Process CPU',
     labels: [ "Date", "Process CPU" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = '/_/graphs/cpu/process?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + '/_/graphs/cpu/process?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -259,12 +278,12 @@ function updateGraph3() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph3 = new Dygraph(document.getElementById("dygraph-3"), [
-[D(1464449098624),123.45],
+[D(1464449098624),[123.45, 200, 150, 300]],
   ], {
     title: 'Used JVM memory (MB)',
     labels: [ "Date", "Used JVM memory (MB)" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = '/_/graphs/mem/used?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + '/_/graphs/mem/used?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -293,12 +312,12 @@ function updateGraph4() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph4 = new Dygraph(document.getElementById("dygraph-4"), [
-[D(1464449098624),123.45],
+[D(1464449098624),[123.45, 200, 150, 300]],
   ], {
     title: 'Total JVM memory (MB)',
     labels: [ "Date", "Total JVM memory (MB)" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = '/_/graphs/mem/total?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + '/_/graphs/mem/total?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -325,12 +344,12 @@ function updateGraph5() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph5 = new Dygraph(document.getElementById("dygraph-5"), [
-[D(1464449098624),123.45],
+[D(1464449098624),[123.45, 200, 150, 300]],
   ], {
     title: 'Number of JVM threads',
     labels: [ "Date", "Number of JVM threads" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = '/_/graphs/threads?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + '/_/graphs/threads?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -357,12 +376,12 @@ function updateGraph6() {
  function D(x) { return new Date(x); }
  if (Dygraph !== undefined) {
   var dygraph6 = new Dygraph(document.getElementById("dygraph-6"), [
-[D(1464449098624),123.45],
+[D(1464449098624),[123.45, 200, 150, 300]],
   ], {
     title: 'Open files and connections',
     labels: [ "Date", "Open files and connections" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = '/_/graphs/descriptors?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + '/_/graphs/descriptors?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -390,7 +409,7 @@ setTimeout(updateGraph6, 50);
       <tr>
         <th>Verb</th>
         <th>Path</th>
-        <th>Segment</th>
+        <th>Zone</th>
         <th>Content type</th>
         <th>MVC</th>
         <th>View name</th>
@@ -794,7 +813,6 @@ $(function () {
 </script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

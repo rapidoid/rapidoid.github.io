@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid - HTTP session</title>
+    <title>Rapidoid - Implementing Echo protocol</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
@@ -108,7 +109,7 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2>HTTP session</h2>
+            <h2>Implementing Echo protocol</h2>
         </div>
         <div class="col-md-2">
             
@@ -121,24 +122,48 @@
             
 
             
-<div id="examplehttpsession-extra" class="row">
-    <div class="col-md-12">
-	<div class="docs">
-		<p>A HTTP session is a temporary data storage that spans multiple
-			HTTP requests. Data stored in the session can be accessed later, when
-			handling another HTTP request from the same user (and browsing
-			session).</p>
-		<p>
-			<b>There are 2 different implementations of the session:
-				server-side and cookie-persisted.</b>
-		</p>
-	</div>
-</div>
-</div>
 
-<div id="examplehttpsession-body" class="row">
+<div id="exampleechoprotocol-body" class="row">
 
-    <div id="examplehttpsession-left" class="col-md-12">
+    <div id="exampleechoprotocol-left" class="col-md-12">
+        <div id="exampleechoprotocol-codedesc" class="eg_title">Echo.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">TCP</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Echo</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) <span class="_code_kw">throws</span> <span class="_code_cls">Exception</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">TCP</span><span class="_code_api">.server</span>().protocol(<span class="_code_kw">new</span> <span class="_code_cls">EchoProtocol</span>())<span class="_code_api">.port</span>(<span class="_code_num">5555</span>).build().start();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleechoprotocol-codedesc" class="eg_title">EchoProtocol.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">Protocol</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EchoProtocol</span> <span class="_code_kw">implements</span> <span class="_code_cls">Protocol</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Override</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> process(<span class="_code_cls">Channel</span> ctx) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> line = ctx.readln().toUpperCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(line).write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.closeIf(line.equals(<span class="_code_str">"BYE"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
     </div>
 
 </div>
@@ -169,7 +194,7 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-quick<span class="_code_tag">&lt;/artifactId&gt;</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.1.7<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.2.0<span class="_code_tag">&lt;/version&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -227,7 +252,7 @@
         <a class="toc-link" href="exception-handlers.html">Exception handlers</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html">MVC architecture with Rapidoid&#39;s built-in template engine</a>
+        <a class="toc-link" href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html">MVC architecture with Rapidoid&apos;s built-in template engine</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="serving-static-files-from-the-default-locations.html">Serving static files from the default locations</a>
@@ -236,13 +261,10 @@
         <a class="toc-link" href="role-based-security.html">Role-based security</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="http-session.html">HTTP session</a>
-    </div>
-    <div class="toc-wrap">
         <a class="toc-link" href="server-side-session-a-k-a-session.html">Server-side session (a.k.a. Session)</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="cookie-persisted-session-a-k-a-cookiepack.html">Cookie-persisted session (a.k.a. Cookiepack)</a>
+        <a class="toc-link" href="client-side-token-as-a-session.html">Client-side Token as a session</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="manipulating-the-response-content-type.html">Manipulating the response content type</a>
@@ -326,10 +348,13 @@
         <a class="toc-link" href="server-configuration.html">Server Configuration</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="full-application-example-rapidoid-web-rapidoid-fluent-modules.html">Full application example (rapidoid-web + rapidoid-fluent modules)</a>
+        <a class="toc-link" href="stopping-the-server.html">Stopping the server</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="stopping-the-server.html">Stopping the server</a>
+        <a class="toc-link" href="implementing-echo-protocol.html">Implementing Echo protocol</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="building-the-fastest-http-server.html">Building the fastest HTTP server</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="api-documentation.html">API documentation</a>
@@ -359,7 +384,6 @@ $(function () {
 </script>
 
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
