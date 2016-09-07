@@ -58,10 +58,14 @@
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
                         <li><a href="profiles.html">Profiles</a></li>
+                        <li><a href="routing.html">Request routing</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
                         <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="reverse_proxy_and_load_balancer.html">Reverse proxy / load balancer</a></li>
+                        <li><a href="http-fast.html">Low-level HTTP</a></li>
+                        <li><a href="net.html">Implementing custom protocols</a></li>
                         <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
@@ -77,6 +81,7 @@
                         <li><a href="render.html">render</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
+                        <li><a href="net.html">net</a></li>
                     </ul>
                 </li>
 
@@ -120,7 +125,7 @@
         <p>
             <b>
                 <a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license).
-                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View benchmark...</a>
+                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">View benchmark...</a>
             </b>
             <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
         </p>
@@ -137,6 +142,16 @@
         <div class="module-header">Configuring Rapidoid</div>
 
 
+        <div class="module-notes">
+            <ul>
+                <li>Rapidoid has built-in <a href="the-default-configuration.html">default configuration</a> which provides sensible defaults for many components of the framework.</li>
+                <li>Custom configuration can be specified through <span class="text-box">config.yml</span> or <span class="text-box">config.yaml</span> configuration files.</li>
+                <li>Profile-specified custom configuration can be specified through <span class="text-box">config-&lt;profile-name-here&gt;.yml</span> or <span class="text-box">config-&lt;profile-name-here&gt;.yaml</span> configuration files.</li>
+                <li>The configuration files will tipically be classpath resources, but they can reside in a custom-configured external folder, as well.</li>
+                <li>Rapidoid can also be configured through command line args or system/environment properties.</li>
+                <li>The custom configuration overrides the built-in default configuration.</li>
+            </ul>
+        </div>
     </div>
 </div>
 

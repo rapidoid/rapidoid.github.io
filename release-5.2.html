@@ -58,10 +58,14 @@
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
                         <li><a href="profiles.html">Profiles</a></li>
+                        <li><a href="routing.html">Request routing</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
                         <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="reverse_proxy_and_load_balancer.html">Reverse proxy / load balancer</a></li>
+                        <li><a href="http-fast.html">Low-level HTTP</a></li>
+                        <li><a href="net.html">Implementing custom protocols</a></li>
                         <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
@@ -77,6 +81,7 @@
                         <li><a href="render.html">render</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
+                        <li><a href="net.html">net</a></li>
                     </ul>
                 </li>
 
@@ -120,7 +125,7 @@
         <p>
             <b>
                 <a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license).
-                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View benchmark...</a>
+                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">View benchmark...</a>
             </b>
             <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
         </p>
@@ -138,15 +143,15 @@
 
         <div class="module-explanation"><h4>What's new in Rapidoid v5.2:</h4>
 <ul>
-    <li><b>OAuth</b> bootstrap: <code>App.bootstrap(args).oauth()</code> with pre-defined configuration structure</li>
-    <li><b>customizable session management</b>: <code>My.sessionManager(...)</code> - in-memory by default</li>
-    <li><b>customizable JSON parser</b> for the HTTP request body: <code>My.jsonRequestBodyParser(...)</code> - using Jackson by default</li>
-    <li><b>customizable JPA management</b>: <code>My.entityManagerFactoryProvider(...) and My.entityManagerProvider(...)</code></li>
-    <li>customizable security strategy when serving serving static files: <code>My.staticFilesSecurity(...)</code></li>
-    <li>customizable templates path: <code>My.templatesPath(...)</code></li>
-    <li>customizable templates loader (e.g. load them from DB): <code>My.templateLoader(...)</code></li>
-    <li><b>customizable error handlers by type</b>: <code>On.error(...).handler(...)</code></li>
-    <li>customizable wrappers of the HTTP handlers (request/response interceptors): <code>My.wrappers(...)</code></li>
+    <li><b>OAuth</b> bootstrap: <code class="note-code">App.bootstrap(args).oauth()</code> with pre-defined configuration structure</li>
+    <li><b>customizable session management</b>: <code class="note-code">My.sessionManager(...)</code> - in-memory by default</li>
+    <li><b>customizable JSON parser</b> for the HTTP request body: <code class="note-code">My.jsonRequestBodyParser(...)</code> - using Jackson by default</li>
+    <li><b>customizable JPA management</b>: <code class="note-code">My.entityManagerFactoryProvider(...) and My.entityManagerProvider(...)</code></li>
+    <li>customizable security strategy when serving serving static files: <code class="note-code">My.staticFilesSecurity(...)</code></li>
+    <li>customizable templates path: <code class="note-code">My.templatesPath(...)</code></li>
+    <li>customizable templates loader (e.g. load them from DB): <code class="note-code">My.templateLoader(...)</code></li>
+    <li><b>customizable error handlers by type</b>: <code class="note-code">On.error(...).handler(...)</code></li>
+    <li>customizable wrappers of the HTTP handlers (request/response interceptors): <code class="note-code">My.wrappers(...)</code></li>
     <li><b>redesigned token API</b> (previously known as the cookie-pack session)</li>
     <li>smart serialization of the session and token - only when changed</li>
     <li><b>basic reverse proxy</b> (easily configurable from command-line or Docker)</li>
@@ -162,15 +167,16 @@
 
 <h4><b>Breaking changes</b>:</h4>
 <ul>
-    <li>Renamed "cookiepack" to "token" in the HTTP Req and Resp API</li>
-    <li>the "application.yml" configuration files are not loaded by default, only "config.yml"</li>
-    <li>renamed profile-*.yml configuration files to config-*.yml</li>
-    <li>renamed application "segment" to "zone" in the HTTP API</li>
+    <li>Renamed <span class="text-box">cookiepack</span> to <span class="text-box">token</span> in the HTTP Req and Resp API</li>
+    <li>the <span class="text-box">application.yml</span> configuration files are not loaded by default, only <span class="text-box">config.yml</span></li>
+    <li>renamed <span class="text-box">profile-*.yml</span> configuration files to <span class="text-box">config-*.yml</span></li>
+    <li>renamed application <span class="text-box">segment</span> to <span class="text-box">zone</span> in the HTTP API</li>
     <li>redesigned ViewRenderer and renamed to ViewResolver</li>
     <li>added Req parameter in the LoginProvider API</li>
     <li>added Req parameter in the RolesProvider API</li>
-    <li>renamed Templates.fromFile to Templates.load, Templates.fromString to Templates.compile</li>
-    <li>renamed PageRenderer to PageDecorator</li>
+    <li>renamed <code class="note-code">Templates.fromFile</code> to <code class="note-code">Templates.load</code>, <code class="note-code">Templates.fromString</code> to <code class="note-code">Templates.compile</code></li>
+    <li>renamed <code class="note-code">PageRenderer</code> to <code class="note-code">PageDecorator</code></li>
+    <li>using <code class="note-code">My.jackson()</code> instead of <code class="note-code">JSON.MAPPER</code></li>
 </ul></div>
 
     </div>

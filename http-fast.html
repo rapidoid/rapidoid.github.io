@@ -58,10 +58,14 @@
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
                         <li><a href="profiles.html">Profiles</a></li>
+                        <li><a href="routing.html">Request routing</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
                         <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="reverse_proxy_and_load_balancer.html">Reverse proxy / load balancer</a></li>
+                        <li><a href="http-fast.html">Low-level HTTP</a></li>
+                        <li><a href="net.html">Implementing custom protocols</a></li>
                         <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
@@ -77,6 +81,7 @@
                         <li><a href="render.html">render</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
+                        <li><a href="net.html">net</a></li>
                     </ul>
                 </li>
 
@@ -120,7 +125,7 @@
         <p>
             <b>
                 <a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license).
-                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View benchmark...</a>
+                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">View benchmark...</a>
             </b>
             <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
         </p>
@@ -143,8 +148,7 @@
         <div class="module-explanation"><h3>Built on top of Java NIO from scratch</h3>
 
 <p>The low-level HTTP API provides access to the
-    <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">extremely
-        fast</a>
+    <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">extremely fast</a>
     Rapidoid HTTP server components.</p>
 
 <p>
@@ -170,12 +174,12 @@
 <h3>Rapidoid as a Network Protocol Framework</h3>
 
 <p>You can use Rapidoid as a Network Protocol Framework, to implement your <b>custom TCP-based protocols</b>.</p>
-<p>For a quick and easy start, please take a look at the Echo example.</p>
+<p>For a quick and easy start, please take a look at the <a href="implementing-echo-protocol.html">Echo protocol example</a>.</p>
 
 <h3>Going low-level for ultimate performance</h3>
 
 <p>When you want to implement <b>any protocol in the fastest way posible</b>, then you need to do it on a <b>lower level of abstraction</b>.</p>
-<p>Let's see how we can implement <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">one
+<p>Let's see how we can implement <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">one
     of the fastest</a> web servers in the world! (based on transparent TechEmpower benchmarks)</p></div>
 
     </div>
@@ -186,79 +190,12 @@
 <div class="row">
 
 <div class="col-md-10">
-<!-- EXAMPLE echoprotocol -->
-
-<div id="implementing-echo-protocol" class="row">
-    <div class="col-md-12">
-        <h4 class="caption">
-            <span class="badge badge-eg-num">1</span>
-            <a href="implementing-echo-protocol.html" class="mini-example-title">Implementing Echo protocol</a>
-            
-        </h4>
-    </div>
-</div>
-
-
-<div id="exampleechoprotocol-body" class="row">
-
-    <div id="exampleechoprotocol-left" class="col-md-12">
-        <div id="exampleechoprotocol-codedesc" class="eg_title">Echo.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">TCP</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Echo</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) <span class="_code_kw">throws</span> <span class="_code_cls">Exception</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">TCP</span><span class="_code_api">.server</span>().protocol(<span class="_code_kw">new</span> <span class="_code_cls">EchoProtocol</span>())<span class="_code_api">.port</span>(<span class="_code_num">5555</span>).build().start();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-        <div id="exampleechoprotocol-codedesc" class="eg_title">EchoProtocol.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">Protocol</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EchoProtocol</span> <span class="_code_kw">implements</span> <span class="_code_cls">Protocol</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Override</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> process(<span class="_code_cls">Channel</span> ctx) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> line = ctx.readln().toUpperCase();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(line).write(<span class="_code_cls">CR_LF</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.closeIf(line.equals(<span class="_code_str">"BYE"</span>));</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="row row-separated-micro">
-  <div class="col-md-12"></div>
-</div>
-
 <!-- EXAMPLE httpfastest -->
 
 <div id="building-the-fastest-http-server" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">2</span>
+            <span class="badge badge-eg-num">1</span>
             <a href="building-the-fastest-http-server.html" class="mini-example-title">Building the fastest HTTP server</a>
             
         </h4>
@@ -496,9 +433,6 @@
 <div class="col-md-2">
 <div class="toc-right">
     <h3 class="toc-title">Contents:</h3>
-    <div class="toc-wrap">
-        <a class="toc-link" href="#implementing-echo-protocol">Implementing Echo protocol</a>
-    </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#building-the-fastest-http-server">Building the fastest HTTP server</a>
     </div>

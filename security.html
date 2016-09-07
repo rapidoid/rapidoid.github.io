@@ -58,10 +58,14 @@
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
                         <li><a href="profiles.html">Profiles</a></li>
+                        <li><a href="routing.html">Request routing</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
                         <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="reverse_proxy_and_load_balancer.html">Reverse proxy / load balancer</a></li>
+                        <li><a href="http-fast.html">Low-level HTTP</a></li>
+                        <li><a href="net.html">Implementing custom protocols</a></li>
                         <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
@@ -77,6 +81,7 @@
                         <li><a href="render.html">render</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
+                        <li><a href="net.html">net</a></li>
                     </ul>
                 </li>
 
@@ -120,7 +125,7 @@
         <p>
             <b>
                 <a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license).
-                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View benchmark...</a>
+                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">View benchmark...</a>
             </b>
             <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
         </p>
@@ -140,6 +145,26 @@
         <div class="module-notes">
             <ul>
                 <li>Role-based security checks for the web handlers are supported out-of-the-box.</li>
+                <li>Accessing a protected page without the required roles/privileges will automatically display a nice login page.</li>
+                <li>Accessing a protected RESTful service without the required roles/privileges will return error in JSON format.</li>
+                <li>Required roles can be configured per route (e.g. <code class="note-code">On.get("/review").roles("moderator").json(...)</code>).</li>
+                <li>Required roles for POJO handlers can configured with annotations (e.g. <code class="note-code">@Roles({"moderator", "administrator"})</code>).</li>
+                <li>Rapidoid includes annotations for the common roles (<code class="note-code">@Administrator</code>, <code class="note-code">@Moderator</code>, <code class="note-code">@Manager</code>, <code class="note-code">@LoggedIn</code>).</li>
+                <li>The <code class="note-code">@Administrator</code> annotation is equivalent to <code class="note-code">@Roles("administrator")</code> or <code class="note-code">@Roles(Role.ADMINISTRATOR)</code>.</li>
+                <li>The <code class="note-code">@Manager</code> annotation is equivalent to <code class="note-code">@Roles("manager")</code> or <code class="note-code">@Roles(Role.MANAGER)</code>.</li>
+                <li>The <code class="note-code">@Moderator</code> annotation is equivalent to <code class="note-code">@Roles("moderator")</code> or <code class="note-code">@Roles(Role.MODERATOR)</code>.</li>
+                <li>The <code class="note-code">@LoggedIn</code> annotation is equivalent to <code class="note-code">@Roles("logged_in")</code> or <code class="note-code">@Roles(Role.LOGGED_IN)</code>.</li>
+                <li><code class="note-code">App.bootstrap(args).auth()</code> will bootstrap the built-in authentication handlers (<span class="text-box">POST /_login</span> and <span class="text-box">GET /_logout</span>).</li>
+                <li>A <span class="text-box">POST /_login</span> request containing <span class="text-box">username</span> and <span class="text-box">password</span> will execute the (custom-configured or default) login handler.</li>
+                <li>If the login handler returns <code class="note-code">true</code>, the user was authenticated and the <b>authentication data</b> (<span class="text-box">username</span> and <span class="text-box">login expiration time</span>) are saved in the <b>token</b>.</li>
+                <li>The token is returned by the <span class="text-box">POST /_login</span> handler, but it is also persisted in the <span class="text-box">_token</span> cookie.</li>
+                <li>With every request the authentication data is being sent through the token, so the server can identify the user.</li>
+                <li>When the browser is closed, the <span class="text-box">_token</span> cookie expires, so the <span class="text-box">auth data</span> is lost.</li>
+                <li>The <span class="text-box">token</span> can be sent with a HTTP request as a <span class="text-box">_token</span> cookie, or a <span class="text-box">_token</span> parameter (in the URI or the body).</li>
+                <li>After a configurable time (config <span class="text-box">token.ttl</span> in milliseconds), the authentication of the logged-in user expires.</li>
+                <li>A <span class="text-box">GET /_logout</span> request will execute the built-in logout handler which clears the authentication data from the token.</li>
+                <li>The built-in <span class="text-box">GET /_logout</span> handler might be changed to <span class="text-box">POST /_logout</span> in future.</li>
+                <li>For the <code class="note-code">Admin.*</code> API (which is a mirror of the <code class="note-code">On.*</code> API, but for the Admin setup) the <span class="text-box">administrator</span> role is configured by default.</li>
             </ul>
         </div>
     </div>
@@ -328,7 +353,7 @@
 
 <div class="eg-result">
     <!-- EXAMPLE#security RESULT STARTS HERE -->
-    {"success":true,"token":"PRIVATE_USER_TOKEN"}
+    {"success":true,"token":"&lt;PRIVATE_USER_TOKEN&gt;"}
     <!-- EXAMPLE#security RESULT ENDS HERE -->
 </div>
 

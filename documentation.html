@@ -58,10 +58,14 @@
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
                         <li><a href="injection.html">Dependency injection</a></li>
                         <li><a href="profiles.html">Profiles</a></li>
+                        <li><a href="routing.html">Request routing</a></li>
                         <li><a href="session.html">Session management</a></li>
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
                         <li><a href="static.html">Serving static files</a></li>
+                        <li><a href="reverse_proxy_and_load_balancer.html">Reverse proxy / load balancer</a></li>
+                        <li><a href="http-fast.html">Low-level HTTP</a></li>
+                        <li><a href="net.html">Implementing custom protocols</a></li>
                         <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
@@ -77,6 +81,7 @@
                         <li><a href="render.html">render</a></li>
                         <li><a href="fluent.html">fluent</a></li>
                         <li><a href="essentials.html">essentials</a></li>
+                        <li><a href="net.html">net</a></li>
                     </ul>
                 </li>
 
@@ -120,7 +125,7 @@
         <p>
             <b>
                 <a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license).
-                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext">View benchmark...</a>
+                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">View benchmark...</a>
             </b>
             <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
         </p>
@@ -185,6 +190,10 @@
                 </li>
                 <li>
                     <a href="essentials.html">rapidoid-essentials</a> - <span class="module-about">Simple &amp; Sweet Utils</span>
+                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                </li>
+                <li>
+                    <a href="net.html">rapidoid-net</a> - <span class="module-about">Network protocol framework</span>
                     <span class="pull-right module-about-right">JDK 6 - 8</span>
                 </li>
             </ul>
@@ -1735,7 +1744,7 @@ Hello <b>world</b>!
 
 <div class="eg-result">
     <!-- EXAMPLE#security RESULT STARTS HERE -->
-    {"success":true,"token":"PRIVATE_USER_TOKEN"}
+    {"success":true,"token":"&lt;PRIVATE_USER_TOKEN&gt;"}
     <!-- EXAMPLE#security RESULT ENDS HERE -->
 </div>
 

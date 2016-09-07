@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid Render</title>
+    <title>Rapidoid Net</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -201,12 +201,12 @@
     </div>
 
     <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-render</b> as Maven dependency:</div>
+        <div class="eg_title">Add <b>rapidoid-net</b> as Maven dependency:</div>
 <div class="copy-snippet">
 <div class="maven-code">
 &lt;<span class="_code_tag">dependency</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-render</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-net</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.2.2</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
 &lt;/<span class="_code_tag">dependency</span>&gt;<br>
 </div>
@@ -219,22 +219,43 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
         <div class="module-header">
-            Module <span class="module-name">rapidoid-render</span>
+            Module <span class="module-name">rapidoid-net</span>
         </div>
-        <h3>Rapidoid&apos;s template engine</h3>
+        <h3>Network protocol framework</h3>
         <h5><b></b></h5>
 
 
+        <div class="module-explanation"><h3>Built on top of Java NIO from scratch</h3>
 
-        <div class="module-notes">
-            <ul>
-                <li>Starting from v5.1, Rapidoid includes new templating engine.</li>
-                <li>Basically, it is very similar to Mustache, with the following differences.</li>
-                <li>1. Using <b>$</b><b>{</b>x<b>}</b> instead of <b>{{</b>x<b>}}</b>. This avoids collision of the <b>{{</b>x<b>}}</b> tags with the front-end libraries (e.g. Angular).</li>
-                <li>2. Supporting additional <b>{{</b>?x<b>}}</b>...<b>{{</b>/x<b>}}</b> tag for <code class="note-code">if</code>. The traditional <b>{{</b><b>#</b>x<b>}}</b>...<b>{{</b><b>/</b>x<b>}}</b> remains unchanged, having both <code class="note-code">foreach</code> and <code class="note-code">if</code> semantics.</li>
-                <li>3. Providing text alternative if the value if not available e.g. <b>$</b><b>{</b>x|something else<b>}</b>.</li>
-            </ul>
-        </div>
+<p>The low-level HTTP API provides access to the
+    <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">extremely fast</a>
+    Rapidoid HTTP server components.</p>
+
+<p>
+    Rapidoid is implemented on top of Java NIO, without native libraries, nor external dependencies.
+</p>
+<p>
+    It is great to see how Java performance can match C++ and outperform all the other languages in network programming.
+</p>
+
+<h3>Designed for performance from day 1</h3>
+
+<p> Rapidoid was designed for high performance since its inception, and several parts of it played a critical role:</p>
+
+<ul>
+    <li>asynchronous I/O processing,</li>
+    <li>minimizing the garbage collection pressure,</li>
+    <li>fast object pools,</li>
+    <li>reusable off-heap buffers,</li>
+    <li>very fast and efficient HTTP parser,</li>
+    <li>and many other optimizations.</li>
+</ul>
+
+<h3>Rapidoid as a Network Protocol Framework</h3>
+
+<p>You can use Rapidoid as a Network Protocol Framework, to implement your <b>custom TCP-based protocols</b>.</p>
+<p>For a quick and easy start, please take a look at the <a href="implementing-echo-protocol.html">Echo protocol example</a>.</p></div>
+
     </div>
 </div>
 
@@ -243,220 +264,67 @@
 <div class="row">
 
 <div class="col-md-10">
-<!-- EXAMPLE mvc -->
+<!-- EXAMPLE echoprotocol -->
 
-<div id="mvc-architecture-with-rapidoid-s-built-in-template-engine" class="row">
+<div id="implementing-echo-protocol" class="row">
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">1</span>
-            <a href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html" class="mini-example-title">MVC architecture with Rapidoid&apos;s built-in template engine</a>
+            <a href="implementing-echo-protocol.html" class="mini-example-title">Implementing Echo protocol</a>
             
         </h4>
     </div>
 </div>
 
 
-<div id="examplemvc-body" class="row">
+<div id="exampleechoprotocol-body" class="row">
 
-    <div id="examplemvc-left" class="col-md-8">
+    <div id="exampleechoprotocol-left" class="col-md-12">
+        <div id="exampleechoprotocol-codedesc" class="eg_title">Echo.java</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemvc-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// The handler for <span class="text-box">/msg</span> returns the model</span></div>
-<div class="comment-line clearfix"><span class="_code_comment">// The default view name is <span class="text-box">msg</span></span></div>
-<div class="comment-line clearfix"><span class="_code_comment">// So the corresponding template is <span class="text-box">templates/msg.html</span></span></div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.page</span>(<span class="_code_str">"/msg"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">12</span>, <span class="_code_str">"oki"</span>, <span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</div>
-<div class="example-line clearfix">});</div>
+            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">TCP</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">// A custom view name can be assigned.</span></div>
-<div class="comment-line clearfix"><span class="_code_comment">// In this case the default view name is <span class="text-box">abc</span>,</span></div>
-<div class="comment-line clearfix"><span class="_code_comment">// but a custom view name <span class="text-box">msg</span> was specified</span></div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/abc"</span>)<span class="_code_api">.view</span>(<span class="_code_str">"msg"</span>)<span class="_code_api">.mvc</span>((<span class="_code_api">Req</span> req, <span class="_code_api">Resp</span> resp) <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"count"</span>, <span class="_code_num">100</span>, <span class="_code_str">"oki"</span>, <span class="_code_str">""</span>);</div>
-<div class="example-line clearfix">});</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Echo</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) <span class="_code_kw">throws</span> <span class="_code_cls">Exception</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">TCP</span><span class="_code_api">.server</span>().protocol(<span class="_code_kw">new</span> <span class="_code_cls">EchoProtocol</span>())<span class="_code_api">.port</span>(<span class="_code_num">5555</span>).build().start();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 </div></div>
         </div>
         <!-- END CODE -->
 
-        <div id="examplemvc-codedesc" class="eg_title">templates/msg.html</div>
+        <div id="exampleechoprotocol-codedesc" class="eg_title">EchoProtocol.java</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemvc-code" class="code-clean"><div class="example-line clearfix"><span class="_code_tag">&lt;p&gt;</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;You have <span class="_code_tag">&lt;span </span>class=<span class="_code_str">"badge"</span>><span class="_code_tmpl">${count}</span><span class="_code_tag">&lt;/span&gt;</span> new messages.</div>
-<div class="example-line clearfix"><span class="_code_tag">&lt;/p&gt;</span></div>
+            <div><div id="exampleechoprotocol-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">Protocol</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_tmpl">@{oki}</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">EchoProtocol</span> <span class="_code_kw">implements</span> <span class="_code_cls">Protocol</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Override</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> process(<span class="_code_cls">Channel</span> ctx) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> line = ctx.readln().toUpperCase();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(line).write(<span class="_code_cls">CR_LF</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.closeIf(line.equals(<span class="_code_str">"BYE"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
 </div></div>
         </div>
         <!-- END CODE -->
 
     </div>
 
-    <div id="examplemvc-right" class="col-md-4">
-        <div id="examplemvc-results" class="results">
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/msg</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#mvc RESULT STARTS HERE -->
-    <!--EMBEDDED-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Rapidoid</a>
-        </div>
-
-<div id="collapsable" class="collapse navbar-collapse">
-
-    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
-
-</div>
-
-    </div>
-</nav>
-
-<p>
-    You have <span class="badge">12</span> new messages.
-</p>
-
-<button type="button" class="btn btn-default" ng-click="_emit($event, 'OK', [])">OK</button>
-<!--/EMBEDDED-->
-
-    <!-- EXAMPLE#mvc RESULT ENDS HERE -->
-</div>
-
-
-            <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/abc</span>
-</div>
-
-<div class="eg-result">
-    <!-- EXAMPLE#mvc RESULT STARTS HERE -->
-    <!--EMBEDDED-->
-<nav role="navigation" class="navbar navbar-default">
-    <div class="">
-
-        <div class="navbar-header">
-            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Rapidoid</a>
-        </div>
-
-<div id="collapsable" class="collapse navbar-collapse">
-
-    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
-
-</div>
-
-    </div>
-</nav>
-
-<p>
-    You have <span class="badge">100</span> new messages.
-</p>
-
-<!--/EMBEDDED-->
-
-    <!-- EXAMPLE#mvc RESULT ENDS HERE -->
-</div>
-
-
-        </div>
-    </div>
 </div>
 
 
 
-<div id="examplemvc-routes" class="row">
-    <div class="col-md-12">
-        <p class="routes-info-caption">HTTP server routes information:</p>
-        <div class="routes-info">
-        <table class="table table-condensed">
-  <tr>
-    <th>Verb</th>
-    <th>Path</th>
-    <th>Zone</th>
-    <th>Content type</th>
-    <th>MVC</th>
-    <th>View name</th>
-    <th>Roles</th>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-    </td>
-    <td>/abc</td>
-    <td>main</td>
-    <td>html</td>
-    <td>
-      <i class="fa fa-check"></i>
-    </td>
-    <td>msg</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      <span class="label label-success">GET</span>
-      <span class="label label-primary">POST</span>
-    </td>
-    <td>/msg</td>
-    <td>main</td>
-    <td>html</td>
-    <td>
-      <i class="fa fa-check"></i>
-    </td>
-    <td>msg</td>
-    <td></td>
-  </tr>
-</table>
-        </div>
-    </div>
-</div>
 
-<div id="examplemvc-extra2" class="row">
-    <div class="col-md-12">
-  <h4>
-    <b>MVC Helper API (in interface Resp):</b>
-  </h4>
-  <div class="api-docs">
-    <table class="table table-striped table-hover">
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> view(<span class="_code_cls">String</span> viewName)</pre></td>
-        <td>Sets a custom name of the <b>view</b> (V from MVC) of the HTTP response. <br>
- This also sets <b>mvc</b> to <code>true</code>. <br>
- The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
- E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">String</span> view()</pre></td>
-        <td>Gets the (default or customized) name of the <b>view</b> (V from MVC) of the HTTP response. <br>
- The default view name equals <b>the request path without the "/" prefix</b>, except for the "/" path, where the view name is "index". <br>
- E.g. "/abc" -> "abc", "/" -> "index", "/my/books" -> "my/books".</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> noView()</pre></td>
-        <td>Disables the view rendering for the target MVC route. The page decorator remains enabled.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; model()</pre></td>
-        <td>Provides <b>read/write access</b> to the <b>model</b> (M from MVC) that will be rendered by the view renderer.</td>
-      </tr>
-      <tr>
-        <td><pre class="code-snippet"><span class="_code_cls">Resp</span> model(<span class="_code_cls">String</span> name, <span class="_code_cls">Object</span> value)</pre></td>
-        <td>Sets an attribute of the <b>model</b> (M from MVC) that will be rendered by the view renderer.</td>
-      </tr>
-    </table>
-  </div>
-</div>
-</div>
 
 
 <div class="row row-separated-micro">
@@ -470,7 +338,7 @@
 <div class="toc-right">
     <h3 class="toc-title">Contents:</h3>
     <div class="toc-wrap">
-        <a class="toc-link" href="#mvc-architecture-with-rapidoid-s-built-in-template-engine">MVC architecture with Rapidoid&apos;s built-in template engine</a>
+        <a class="toc-link" href="#implementing-echo-protocol">Implementing Echo protocol</a>
     </div>
 </div>
 
