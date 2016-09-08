@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid - Map, reduce and group-by on collections</title>
+    <title>Rapidoid - Reverse proxy and load balancer with Docker</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -114,7 +114,7 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2>Map, reduce and group-by on collections</h2>
+            <h2>Reverse proxy and load balancer with Docker</h2>
         </div>
         <div class="col-md-2">
             
@@ -128,25 +128,22 @@
 
             
 
-<div id="examplefluent.morecoll-body" class="row">
+<div id="examplerevproxydck-body" class="row">
 
-    <div id="examplefluent.morecoll-left" class="col-md-12">
+    <div id="examplerevproxydck-left" class="col-md-12">
+        <div id="examplerevproxydck-codedesc" class="eg_title">script.sh</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplefluent.morecoll-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_comment">// Map</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_cls">List</span>&lt;<span class="_code_cls">String</span>&gt; items = <span class="_code_api">New</span><span class="_code_api">.list</span>(<span class="_code_str">"a"</span>, <span class="_code_str">"bbbbb"</span>, <span class="_code_str">"cc"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">["a","bbbbb","cc"]</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.map</span>(items)<span class="_code_api">.to</span>(s <span class="_code_lambda">-&gt;</span> s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">[1,5,2]</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">// Reduce</span></div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.reduce</span>(items)<span class="_code_api">.by</span>((a, b) <span class="_code_lambda">-&gt;</span> a + <span class="_code_str">":"</span> + b)<span class="_code_api">.orElse</span>(<span class="_code_str">""</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"a:bbbbb:cc"</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.reduce</span>(items)<span class="_code_api">.by</span>(<span class="_code_str">"@"</span>, (a, b) <span class="_code_lambda">-&gt;</span> a + <span class="_code_str">":"</span> + b);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">"@:a:bbbbb:cc"</span></span></span><span class="pull-left left-code"></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix"><span class="_code_comment">// Group-by</span></div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.group</span>(items)<span class="_code_api">.by</span>(s <span class="_code_lambda">-&gt;</span> s.length());</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":["a"],"2":["cc"],"5":["bbbbb"]}</span></span></span></div>
+            <div><div id="examplerevproxydck-code" class="code-clean"><div class="example-line clearfix">docker run -d \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--net=host \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--name web \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;rapidoid/rapidoid \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"/subapp-&gt;http://localhost:8000/"</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;users.admin<span class="_code_api">.password</span>=adminpass \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;on<span class="_code_api">.port</span>=<span class="_code_num">80</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;app.cdn=<span class="_code_kw">false</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;secret=<span class="_code_kw">private</span>-secret</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -180,7 +177,7 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependencies&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-fluent<span class="_code_tag">&lt;/artifactId&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-quick<span class="_code_tag">&lt;/artifactId&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.2.2<span class="_code_tag">&lt;/version&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span></div>
@@ -215,28 +212,10 @@
             <div class="toc-right">
     <h3 class="toc-title">Topics:</h3>
     <div class="toc-wrap">
-        <a class="toc-link" href="nice-fluent-api-with-java-8-streams-behind-the-scenes.html">Nice Fluent API with Java 8 streams behind the scenes</a>
+        <a class="toc-link" href="reverse-proxy-and-load-balancer-with-docker.html">Reverse proxy and load balancer with Docker</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="why-is-rapidoid-fluent-so-sweet.html">Why is Rapidoid Fluent so sweet?</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="map-reduce-and-group-by-on-collections.html">Map, reduce and group-by on collections</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="map-and-group-by-on-maps.html">Map and group-by on maps</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="iterating-through-lists-or-sets.html">Iterating through lists or sets</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="searching-through-lists-or-sets.html">Searching through lists or sets</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="searching-through-maps.html">Searching through maps</a>
-    </div>
-    <div class="toc-wrap">
-        <a class="toc-link" href="interface-flow-extends-stream-with-extra-methods-for-convenience.html">interface Flow extends Stream { with extra methods for convenience }</a>
+        <a class="toc-link" href="programmatic-setup-of-reverse-proxy-and-load-balancer.html">Programmatic setup of reverse proxy and load balancer</a>
     </div>
 </div>
 

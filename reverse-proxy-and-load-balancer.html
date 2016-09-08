@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid Reverse_proxy_and_load_balancer</title>
+    <title>Rapidoid Reverse-proxy-and-load-balancer</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -63,7 +63,7 @@
                         <li><a href="security.html">Security</a></li>
                         <li><a href="configuration.html">Configuration</a></li>
                         <li><a href="static.html">Serving static files</a></li>
-                        <li><a href="reverse_proxy_and_load_balancer.html">Reverse proxy / load balancer</a></li>
+                        <li><a href="reverse-proxy-and-load-balancer.html">Reverse proxy / load balancer</a></li>
                         <li><a href="http-fast.html">Low-level HTTP</a></li>
                         <li><a href="net.html">Implementing custom protocols</a></li>
                         <li><a href="api.html">API</a></li>
@@ -144,7 +144,11 @@
 
         <div class="module-notes">
             <ul>
-                <li>TODO.</li>
+                <li>Starting from v5.2, Rapidoid can be also used as a HTTP reverse proxy and load balancer.</li>
+                <li>A basic round-robin load balancer is included and configured as a default one.</li>
+                <li>The reverse proxy can be configured programatically (optionally with custom load balancers).</li>
+                <li>The reverse proxy can also be configured from the command-line args.</li>
+                <li>The command-line syntax is <span class="text-box">/path->upstream1,upstream2...</span> e.g. <code class="note-code">/foo->https://upstream1:8080,http://upstream2:8080</code>.</li>
             </ul>
         </div>
     </div>
@@ -155,12 +159,114 @@
 <div class="row">
 
 <div class="col-md-10">
+<!-- EXAMPLE revproxydck -->
+
+<div id="rapidoid-as-reverse-proxy-and-load-balancer-with-docker" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">1</span>
+            <a href="rapidoid-as-reverse-proxy-and-load-balancer-with-docker.html" class="mini-example-title">Rapidoid as reverse proxy and load balancer with Docker</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerevproxydck-body" class="row">
+
+    <div id="examplerevproxydck-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerevproxydck-code" class="code-clean"><div class="example-line clearfix">docker run -d \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--net=host \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--name revproxy \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;rapidoid/rapidoid:latest \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/foo-&gt;https://upstream1:8080,http://upstream2:8080'</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/bar-&gt;http://upstream3:9090'</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/-&gt;https://upstream4:8080'</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;on<span class="_code_api">.port</span>=<span class="_code_num">80</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;app.cdn=<span class="_code_kw">false</span> \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;secret=my-secret \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;users.admin<span class="_code_api">.password</span>=my-passwd</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE revproxy -->
+
+<div id="programmatic-setup-of-reverse-proxy-and-load-balancer" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">2</span>
+            <a href="programmatic-setup-of-reverse-proxy-and-load-balancer.html" class="mini-example-title">Programmatic setup of reverse proxy and load balancer</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerevproxy-body" class="row">
+
+    <div id="examplerevproxy-left" class="col-md-12">
+        <div id="examplerevproxy-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerevproxy-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">Reverse</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(args);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy()<span class="_code_api">.map</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.to</span>(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
 
 </div>
 
 <div class="col-md-2">
 <div class="toc-right">
     <h3 class="toc-title">Contents:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#rapidoid-as-reverse-proxy-and-load-balancer-with-docker">Rapidoid as reverse proxy and load balancer with Docker</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#programmatic-setup-of-reverse-proxy-and-load-balancer">Programmatic setup of reverse proxy and load balancer</a>
+    </div>
 </div>
 
 </div>
