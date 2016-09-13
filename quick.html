@@ -207,7 +207,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-quick</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.2.2</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.2.3</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
 &lt;/<span class="_code_tag">dependency</span>&gt;<br>
 </div>
 </div>
@@ -281,18 +281,18 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplegettingstarted-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Valid</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.jpa</span>.<span class="_code_api">JPA</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.jpa.<span class="_code_cls">JPA</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(args)<span class="_code_api">.jpa</span>(); <span class="_code_linecomm">// bootstrap JPA</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args).jpa(); <span class="_code_linecomm">// bootstrap JPA</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">JPA</span><span class="_code_api">.of</span>(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/books"</span>).json(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.of(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.post</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_api">JPA</span><span class="_code_api">.save</span>(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.post(<span class="_code_str">"/books"</span>).json((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.save(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>

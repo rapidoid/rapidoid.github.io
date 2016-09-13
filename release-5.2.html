@@ -207,21 +207,21 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemytemplatesloader-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">My</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+            <div><div id="examplemytemplatesloader-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">My</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Dummy template loader - constructs templates on-the-fly</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.templateLoader</span>(filename <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">My</span>.templateLoader(filename <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> tmpl = <span class="_code_str">"In "</span> + filename + <span class="_code_str">": x = &lt;b&gt;${x}&lt;/b&gt;"</span>;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> tmpl.getBytes();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_linecomm">// The URL parameters will be the MVC model</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/showx"</span>)<span class="_code_api">.mvc</span>((req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.params</span>());</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/showx"</span>).mvc((req) <span class="_code_lambda">-&gt;</span> req.params());</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -330,7 +330,7 @@ In showx.html: x = <b>123</b>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemyemf-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">My</span>;</div>
+            <div><div id="examplemyemf-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">My</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">EntityManagerFactory</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -342,8 +342,8 @@ In showx.html: x = <b>123</b>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">EntityManagerFactory</span> emf1 = <span class="_code_kw">null</span>; <span class="_code_linecomm">// FIXME</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">EntityManagerFactory</span> emf2 = <span class="_code_kw">null</span>; <span class="_code_linecomm">// FIXME</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.entityManagerFactoryProvider</span>(req <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> req<span class="_code_api">.path</span>().startsWith(<span class="_code_str">"/db1/"</span>) ? emf1 : emf2;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">My</span>.entityManagerFactoryProvider(req <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> req.path().startsWith(<span class="_code_str">"/db1/"</span>) ? emf1 : emf2;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
@@ -386,8 +386,8 @@ In showx.html: x = <b>123</b>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemyem-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.jpa</span>.<span class="_code_api">JPA</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">My</span>;</div>
+            <div><div id="examplemyem-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.jpa.<span class="_code_cls">JPA</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">My</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">EntityManager</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -396,8 +396,8 @@ In showx.html: x = <b>123</b>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Use the built-in entity manager, and decorate it</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">My</span><span class="_code_api">.entityManagerProvider</span>(req <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">EntityManager</span> em = <span class="_code_api">JPA</span><span class="_code_api">.em</span>();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">My</span>.entityManagerProvider(req <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">EntityManager</span> em = <span class="_code_cls">JPA</span>.em();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em = <span class="_code_kw">new</span> <span class="_code_cls">SomeEntityManagerDecorator</span>(em);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> em;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>

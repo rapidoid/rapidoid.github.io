@@ -202,21 +202,21 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.commons.<span class="_code_cls">Env</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.config</span>.<span class="_code_api">Conf</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.gui.<span class="_code_api">GUI</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.config.<span class="_code_cls">Conf</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.gui.<span class="_code_cls">GUI</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> java.util.<span class="_code_cls">Map</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(<span class="_code_str">"profiles=mysql,foo"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(<span class="_code_str">"profiles=mysql,foo"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/profiles"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.display</span>(<span class="_code_cls">Env</span><span class="_code_api">.profiles</span>()));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/profiles"</span>).mvc(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">GUI</span>.display(<span class="_code_cls">Env</span>.profiles()));</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; myConfig = <span class="_code_api">Conf</span><span class="_code_api">.section</span>(<span class="_code_str">"my"</span>)<span class="_code_api">.toMap</span>();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/my"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.grid</span>(myConfig));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; myConfig = <span class="_code_cls">Conf</span>.section(<span class="_code_str">"my"</span>).toMap();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/my"</span>).mvc(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">GUI</span>.grid(myConfig));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="example-line clearfix">}</div>
 </div></div>

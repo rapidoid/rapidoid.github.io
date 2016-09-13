@@ -170,7 +170,7 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplegoodies-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+            <div><div id="examplegoodies-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -741,9 +741,9 @@ setTimeout(updateGraph6, 50);
         <td>
           <span class="label label-success">GET</span>
         </td>
-        <td>/_ping</td>
+        <td>/_status</td>
         <td>main</td>
-        <td>plain</td>
+        <td>json</td>
         <td></td>
         <td></td>
         <td></td>
@@ -782,7 +782,7 @@ setTimeout(updateGraph6, 50);
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleroutes-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+            <div><div id="exampleroutes-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -1138,13 +1138,13 @@ setTimeout(updateGraph6, 50);
           <td>
             <span class="label label-success">GET</span>
           </td>
-          <td>/_ping</td>
+          <td>/_status</td>
           <td>main</td>
-          <td>plain</td>
+          <td>json</td>
           <td></td>
           <td></td>
           <td></td>
-          <td>plain(() -&gt; (predefined response))</td>
+          <td>json(() -&gt; ...)</td>
         </tr>
       </table>
     </div>
@@ -1196,7 +1196,7 @@ setTimeout(updateGraph6, 50);
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplebeans-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+            <div><div id="examplebeans-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -1303,7 +1303,7 @@ setTimeout(updateGraph6, 50);
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleconfig-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+            <div><div id="exampleconfig-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -1584,12 +1584,6 @@ setTimeout(updateGraph6, 50);
             <tr>
               <td>roles</td>
               <td>administrator</td>
-            </tr>
-            <tr>
-              <td>password</td>
-              <td>
-                <i class="fa fa-question-circle"></i>
-              </td>
             </tr>
           </table>
         </td>
@@ -2002,7 +1996,7 @@ setTimeout(updateGraph6, 50);
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="exampledeploy-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">ClasspathUtil</span>.appJar(<span class="_code_str">"/opt/app.jar"</span>);</div>
-<div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+<div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -2090,7 +2084,7 @@ setTimeout(updateGraph6, 50);
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleterminate-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+            <div><div id="exampleterminate-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -2163,7 +2157,7 @@ setTimeout(updateGraph6, 50);
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplejmx_mempool-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+            <div><div id="examplejmx_mempool-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -2224,11 +2218,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2236,7 +2226,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2245,11 +2239,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2257,7 +2247,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2272,20 +2266,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">12345</div>
+                    <label>Max: </label>
+                    <div class="display-wrap">-1</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
-                    <div class="display-wrap">-1</div>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -2293,20 +2287,20 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
-                    <div class="display-wrap">12345</div>
+                    <label>Max: </label>
+                    <div class="display-wrap">-1</div>
                   </div>
                   <div class="form-group">
                     <label>Init: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
-                    <div class="display-wrap">-1</div>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
+                    <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
                 </form>
@@ -2320,11 +2314,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2332,7 +2322,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2341,11 +2335,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2353,7 +2343,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2373,11 +2367,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2385,7 +2375,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2394,11 +2388,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2406,7 +2396,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2415,11 +2409,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2427,7 +2417,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2446,11 +2440,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2458,7 +2448,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2467,11 +2461,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2479,7 +2469,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2488,11 +2482,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2500,7 +2490,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2514,11 +2508,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2526,7 +2516,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2535,11 +2529,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2547,7 +2537,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2556,11 +2550,7 @@ setTimeout(updateGraph6, 50);
               <td>
                 <form class="" role="form">
                   <div class="form-group">
-                    <label>Committed: </label>
-                    <div class="display-wrap">12345</div>
-                  </div>
-                  <div class="form-group">
-                    <label>Used: </label>
+                    <label>Max: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
@@ -2568,7 +2558,11 @@ setTimeout(updateGraph6, 50);
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group">
-                    <label>Max: </label>
+                    <label>Committed: </label>
+                    <div class="display-wrap">12345</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Used: </label>
                     <div class="display-wrap">12345</div>
                   </div>
                   <div class="form-group"></div>
@@ -2615,7 +2609,7 @@ setTimeout(updateGraph6, 50);
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplejmx_threads-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">App</span><span class="_code_api">.bootstrap</span>()<span class="_code_api">.adminCenter</span>();</div>
+            <div><div id="examplejmx_threads-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">App</span>.bootstrap().adminCenter();</div>
 </div></div>
         </div>
         <!-- END CODE -->

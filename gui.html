@@ -207,7 +207,7 @@
 &lt;<span class="_code_tag">dependency</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-gui</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.2.2</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.2.3</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
 &lt;/<span class="_code_tag">dependency</span>&gt;<br>
 </div>
 </div>
@@ -259,10 +259,10 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplegui.mapgrid-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span></span></span><span class="pull-left left-code"></div>
+            <div><div id="examplegui.mapgrid-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">Integer</span>, <span class="_code_cls">String</span>&gt; nums = U.map(<span class="_code_num">1</span>, <span class="_code_str">"one"</span>, <span class="_code_num">5</span>, <span class="_code_str">"five"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"1":"one","5":"five"}</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Creating a grid (table) from the <span class="text-box">nums</span> map</span></div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.grid(nums);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
   <tr>
     <th>Key</th>
     <th>Value</th>
@@ -278,7 +278,7 @@
 </table></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Custom table headers</span></div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)<span class="_code_api">.headers</span>(<span class="_code_str">"Number"</span>, <span class="_code_str">"As Text"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.grid(nums).headers(<span class="_code_str">"Number"</span>, <span class="_code_str">"As Text"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
   <tr>
     <th>Number</th>
     <th>As Text</th>
@@ -294,9 +294,9 @@
 </table></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Custom views for the keys and values</span></div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.grid</span>(nums)</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.keyView</span>(k <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.b</span>(k))</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">.valueView</span>(v <span class="_code_lambda">-&gt;</span> v + <span class="_code_str">"!"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.grid(nums)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.keyView(k <span class="_code_lambda">-&gt;</span> <span class="_code_cls">GUI</span>.b(k))</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.valueView(v <span class="_code_lambda">-&gt;</span> v + <span class="_code_str">"!"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">KVGrid</span></span><div class="show-gui"><table class="table table-striped table-hover">
   <tr>
     <th>Key</th>
     <th>Value</th>
@@ -350,17 +350,17 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplegui.buttons-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-default" ng-click="_emit($event, 'OK', [])">OK</button></div></span><span class="pull-left left-code"></div>
+            <div><div id="examplegui.buttons-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">GUI.btn(<span class="_code_str">"OK"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-default" ng-click="_emit($event, 'OK', [])">OK</button></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"Hey"</span>).primary();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-primary" ng-click="_emit($event, 'Hey', [])">Hey</button></div></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.btn(<span class="_code_str">"Hey"</span>).primary();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-primary" ng-click="_emit($event, 'Hey', [])">Hey</button></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_api">GUI</span><span class="_code_api">.b</span>(<span class="_code_str">"Delete"</span>)).danger();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-danger">
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.btn(<span class="_code_cls">GUI</span>.b(<span class="_code_str">"Delete"</span>)).danger();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-danger">
   <b>Delete</b>
 </button></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_api">GUI</span><span class="_code_api">.fa</span>(<span class="_code_str">"cog"</span>), <span class="_code_str">" Something else"</span>).warning();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-warning" ng-click="_emit($event, ' Something else', [])"><i class="fa fa-cog"></i> Something else</button></div></span><span class="pull-left left-code"></div>
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.btn(<span class="_code_cls">GUI</span>.fa(<span class="_code_str">"cog"</span>), <span class="_code_str">" Something else"</span>).warning();</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><button type="button" class="btn btn-warning" ng-click="_emit($event, ' Something else', [])"><i class="fa fa-cog"></i> Something else</button></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"Cancel"</span>).go(<span class="_code_str">"gui.html"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><a href="gui.html" class="btn btn-default">Cancel</a></div></span></div>
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.btn(<span class="_code_str">"Cancel"</span>).go(<span class="_code_str">"gui.html"</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Btn</span></span><div class="show-gui"><a href="gui.html" class="btn btn-default">Cancel</a></div></span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -397,10 +397,10 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = <span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span></span></span><span class="pull-left left-code"></div>
+            <div><div id="examplegui.mapedit-code" class="code-clean"><div class="example-line clearfix"><span class="pull-left left-code">Map&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; movie = U.map(<span class="_code_str">"Title"</span>, <span class="_code_str">"Hackers"</span>, <span class="_code_str">"cool"</span>, <span class="_code_kw">true</span>);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">{"Title":"Hackers","cool":true}</span></span></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Creating a form to edit the <span class="text-box">movie</span> map</span></div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.edit(movie);</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>
     <input type="text" class="form-control" name="Title" value="Hackers" placeholder="">
@@ -414,7 +414,7 @@
 </form></div></span><span class="pull-left left-code"></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="comment-line clearfix"><span class="_code_comment">// Adding form buttons</span></div>
-<div class="example-line clearfix"><span class="_code_api">GUI</span><span class="_code_api">.edit</span>(<span class="_code_api">U</span><span class="_code_api">.map</span>(<span class="_code_str">"Title"</span>, <span class="_code_str">""</span>))<span class="_code_api">.buttons</span>(<span class="_code_api">GUI</span><span class="_code_api">.btn</span>(<span class="_code_str">"OK"</span>));</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
+<div class="example-line clearfix"><span class="_code_cls">GUI</span>.edit(U.map(<span class="_code_str">"Title"</span>, <span class="_code_str">""</span>)).buttons(<span class="_code_cls">GUI</span>.btn(<span class="_code_str">"OK"</span>));</span><span class="pull-right show-code"><span class="object-details"><span class="object-value">&lt;GUI widget that generates HTML on .toString() call&gt;</span><span class="object-class">Form</span></span><div class="show-gui"><form class="" role="form">
   <div class="form-group">
     <label>Title: </label>
     <input type="text" class="form-control" name="Title" value="" placeholder="">

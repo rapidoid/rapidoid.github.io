@@ -161,11 +161,11 @@
 <div class="col-md-10">
 <!-- EXAMPLE revproxydck -->
 
-<div id="rapidoid-as-reverse-proxy-and-load-balancer-with-docker" class="row">
+<div id="rapidoid-as-reverse-proxy-with-docker" class="row">
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">1</span>
-            <a href="rapidoid-as-reverse-proxy-and-load-balancer-with-docker.html" class="mini-example-title">Rapidoid as reverse proxy and load balancer with Docker</a>
+            <a href="rapidoid-as-reverse-proxy-with-docker.html" class="mini-example-title">Rapidoid as reverse proxy with Docker</a>
             
         </h4>
     </div>
@@ -178,17 +178,51 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplerevproxydck-code" class="code-clean"><div class="example-line clearfix">docker run -d \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--net=host \</div>
+            <div><div id="examplerevproxydck-code" class="code-clean"><div class="example-line clearfix">docker run -d --net=host rapidoid/rapidoid <span class="_code_str">'/ -&gt; http://localhost:8080'</span> on.port=<span class="_code_num">80</span></div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE revproxycomplex -->
+
+<div id="rapidoid-as-reverse-proxy-and-load-balancer-with-docker" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">2</span>
+            <a href="rapidoid-as-reverse-proxy-and-load-balancer-with-docker.html" class="mini-example-title">Rapidoid as reverse proxy and load balancer with Docker</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerevproxycomplex-body" class="row">
+
+    <div id="examplerevproxycomplex-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerevproxycomplex-code" class="code-clean"><div class="example-line clearfix">docker run -d \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--name revproxy \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;rapidoid/rapidoid:latest \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--net=host \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;rapidoid/rapidoid \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/foo-&gt;https://upstream1:8080,http://upstream2:8080'</span> \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/bar-&gt;http://upstream3:9090'</span> \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/-&gt;https://upstream4:8080'</span> \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;on<span class="_code_api">.port</span>=<span class="_code_num">80</span> \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;app.cdn=<span class="_code_kw">false</span> \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;secret=my-secret \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;users.admin<span class="_code_api">.password</span>=my-passwd</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;on.port=<span class="_code_num">80</span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -211,7 +245,7 @@
 <div id="programmatic-setup-of-reverse-proxy-and-load-balancer" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">2</span>
+            <span class="badge badge-eg-num">3</span>
             <a href="programmatic-setup-of-reverse-proxy-and-load-balancer.html" class="mini-example-title">Programmatic setup of reverse proxy and load balancer</a>
             
         </h4>
@@ -227,14 +261,263 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplerevproxy-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">Reverse</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy()<span class="_code_api">.map</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.to</span>(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE revproxyself -->
+
+<div id="reverse-proxy-matching-by-uri-prefix" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">4</span>
+            <a href="reverse-proxy-matching-by-uri-prefix.html" class="mini-example-title">Reverse proxy matching by URI prefix</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerevproxyself-body" class="row">
+
+    <div id="examplerevproxyself-left" class="col-md-8">
+        <div id="examplerevproxyself-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerevproxyself-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">Reverse</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> fooUpstream = <span class="_code_str">"http://localhost:8888/foo"</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/bar"</span>).to(fooUpstream);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(fooUpstream);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/foo"</span>).html(<span class="_code_str">"FOO"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/foo/hi"</span>).html(<span class="_code_str">"FOO HI"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/foo/hello"</span>).html(<span class="_code_str">"FOO HELLO"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/bar/hi"</span>).html(<span class="_code_str">"BAR HI"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="examplerevproxyself-right" class="col-md-4">
+        <div id="examplerevproxyself-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#revproxyself RESULT STARTS HERE -->
+    FOO
+    <!-- EXAMPLE#revproxyself RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar/hello</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#revproxyself RESULT STARTS HERE -->
+    FOO HELLO
+    <!-- EXAMPLE#revproxyself RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/bar/hi</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#revproxyself RESULT STARTS HERE -->
+    BAR HI
+    <!-- EXAMPLE#revproxyself RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#revproxyself RESULT STARTS HERE -->
+    FOO
+    <!-- EXAMPLE#revproxyself RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hello</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#revproxyself RESULT STARTS HERE -->
+    FOO HELLO
+    <!-- EXAMPLE#revproxyself RESULT ENDS HERE -->
+</div>
+
+
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#revproxyself RESULT STARTS HERE -->
+    FOO HI
+    <!-- EXAMPLE#revproxyself RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="examplerevproxyself-routes" class="row">
+    <div class="col-md-12">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Zone</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/bar/hi</td>
+    <td>main</td>
+    <td>html</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/foo</td>
+    <td>main</td>
+    <td>html</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/foo/hello</td>
+    <td>main</td>
+    <td>html</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/foo/hi</td>
+    <td>main</td>
+    <td>html</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE revproxylb -->
+
+<div id="custom-load-balancer" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">5</span>
+            <a href="custom-load-balancer.html" class="mini-example-title">Custom load balancer</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplerevproxylb-body" class="row">
+
+    <div id="examplerevproxylb-left" class="col-md-12">
+        <div id="examplerevproxylb-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplerevproxylb-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">Req</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">LoadBalancer</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">ProxyUpstream</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">Reverse</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> java.util.<span class="_code_cls">List</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">LoadBalancer</span> lb = (<span class="_code_cls">Req</span> req, <span class="_code_cls">List</span>&lt;<span class="_code_cls">ProxyUpstream</span>&gt; candidates) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> index = <span class="_code_num">0</span>; <span class="_code_linecomm">// FIXME implement load balancing strategy</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> candidates.get(index);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>).loadBalancer(lb);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -262,10 +545,19 @@
 <div class="toc-right">
     <h3 class="toc-title">Contents:</h3>
     <div class="toc-wrap">
+        <a class="toc-link" href="#rapidoid-as-reverse-proxy-with-docker">Rapidoid as reverse proxy with Docker</a>
+    </div>
+    <div class="toc-wrap">
         <a class="toc-link" href="#rapidoid-as-reverse-proxy-and-load-balancer-with-docker">Rapidoid as reverse proxy and load balancer with Docker</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="#programmatic-setup-of-reverse-proxy-and-load-balancer">Programmatic setup of reverse proxy and load balancer</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#reverse-proxy-matching-by-uri-prefix">Reverse proxy matching by URI prefix</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#custom-load-balancer">Custom load balancer</a>
     </div>
 </div>
 

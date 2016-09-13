@@ -180,7 +180,7 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="exampledefaultcfg-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Let's take a look at the default configuration in Rapidoid</span></div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/"</span>)<span class="_code_api">.mvc</span>(<span class="_code_cls">Goodies</span><span class="_code_api">.config</span>());</div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/"</span>).mvc(<span class="_code_cls">Goodies</span>.config());</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -927,21 +927,21 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.commons.<span class="_code_cls">Env</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.config</span>.<span class="_code_api">Conf</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.gui.<span class="_code_api">GUI</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.config.<span class="_code_cls">Conf</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.gui.<span class="_code_cls">GUI</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> java.util.<span class="_code_cls">Map</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(<span class="_code_str">"profiles=mysql,foo"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(<span class="_code_str">"profiles=mysql,foo"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/profiles"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.display</span>(<span class="_code_cls">Env</span><span class="_code_api">.profiles</span>()));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/profiles"</span>).mvc(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">GUI</span>.display(<span class="_code_cls">Env</span>.profiles()));</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; myConfig = <span class="_code_api">Conf</span><span class="_code_api">.section</span>(<span class="_code_str">"my"</span>)<span class="_code_api">.toMap</span>();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/my"</span>)<span class="_code_api">.mvc</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">GUI</span><span class="_code_api">.grid</span>(myConfig));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; myConfig = <span class="_code_cls">Conf</span>.section(<span class="_code_str">"my"</span>).toMap();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/my"</span>).mvc(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">GUI</span>.grid(myConfig));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="example-line clearfix">}</div>
 </div></div>
@@ -1171,18 +1171,18 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Valid</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.jpa</span>.<span class="_code_api">JPA</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">App</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid<span class="_code_api">.setup</span>.<span class="_code_api">On</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.jpa.<span class="_code_cls">JPA</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.bootstrap</span>(args)<span class="_code_api">.jpa</span>(); <span class="_code_linecomm">// bootstrap JPA</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args).jpa(); <span class="_code_linecomm">// bootstrap JPA</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>(() <span class="_code_lambda">-&gt;</span> <span class="_code_api">JPA</span><span class="_code_api">.of</span>(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/books"</span>).json(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.of(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.post</span>(<span class="_code_str">"/books"</span>)<span class="_code_api">.json</span>((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_api">JPA</span><span class="_code_api">.save</span>(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.post(<span class="_code_str">"/books"</span>).json((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.save(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -1213,7 +1213,7 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplegettingstarted2-code" class="code-clean"><div class="example-line clearfix">jdbc:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;driver: com<span class="_code_api">.mysql</span>.jdbc.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;driver: com.mysql.jdbc.<span class="_code_cls">Driver</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;url: jdbc:mysql://localhost:<span class="_code_num">3306</span>/rapidoid</div>
 <div class="example-line clearfix">&nbsp;&nbsp;username: root</div>
 <div class="example-line clearfix">&nbsp;&nbsp;password: root</div>
@@ -1221,7 +1221,7 @@
 <div class="example-line clearfix">hibernate:</div>
 <div class="example-line clearfix">&nbsp;&nbsp;dialect: org.hibernate.dialect.<span class="_code_cls">MySQL5Dialect</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;connection:</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: com<span class="_code_api">.mysql</span>.jdbc.<span class="_code_cls">Driver</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;driver_<span class="_code_kw">class</span>: com.mysql.jdbc.<span class="_code_cls">Driver</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;username: root</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;password: root</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;url: jdbc:mysql://localhost:<span class="_code_num">3306</span>/rapidoid</div>
@@ -1264,7 +1264,7 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">app:</div>
 <div class="example-line clearfix">&nbsp;&nbsp;domain: <span class="_code_str">''</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;brand: <span class="_code_api">App</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;brand: <span class="_code_cls">App</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;search: <span class="_code_kw">false</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;navbar: <span class="_code_kw">true</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;fluid: <span class="_code_kw">false</span></div>
@@ -1402,9 +1402,9 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpcustom-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.address</span>(<span class="_code_str">"127.0.0.1"</span>)<span class="_code_api">.port</span>(<span class="_code_num">9999</span>);</div>
+            <div><div id="examplehttpcustom-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">On</span>.address(<span class="_code_str">"127.0.0.1"</span>).port(<span class="_code_num">9999</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/x"</span>)<span class="_code_api">.json</span>(<span class="_code_str">"x"</span>); <span class="_code_linecomm">// continue with normal setup</span></div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/x"</span>).json(<span class="_code_str">"x"</span>); <span class="_code_linecomm">// continue with normal setup</span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -1469,7 +1469,7 @@
         <tr>
           <td>secret=&lt;SECRET&gt;</td>
           <td>configure app-specific secret for encryption</td>
-          <td>(random)</td>
+          <td>random</td>
         </tr>
         <tr>
           <td>profiles=&lt;P1,P2...&gt;</td>
@@ -1494,12 +1494,22 @@
         <tr>
           <td>admin.address=&lt;ADDR&gt;</td>
           <td>the Admin server will listen at address ADDR</td>
-          <td>0.0.0.0</td>
+          <td>on.address</td>
         </tr>
         <tr>
           <td>cpus=&lt;C&gt;</td>
           <td>optimize for C number of CPUs</td>
           <td>the actual number of the CPUs</td>
+        </tr>
+        <tr>
+          <td>app.services=&lt;S1,S2...&gt;</td>
+          <td>comma-separated list of services to bootstrap on the App server</td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>admin.services=&lt;S1,S2...&gt;</td>
+          <td>comma-separated list of services to bootstrap on the Admin server</td>
+          <td>none</td>
         </tr>
       </tbody>
     </table>
@@ -1518,9 +1528,9 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Initialize the configuration</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">App</span><span class="_code_api">.args</span>(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.args(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.json</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> req<span class="_code_api">.data</span>(<span class="_code_str">"name"</span>, <span class="_code_str">"unknown"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/hi"</span>).json((<span class="_code_cls">Req</span> req) <span class="_code_lambda">-&gt;</span> req.data(<span class="_code_str">"name"</span>, <span class="_code_str">"unknown"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>

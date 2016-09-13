@@ -134,11 +134,11 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplerender-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">My</span><span class="_code_api">.errorHandler</span>((req, resp, error) <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp<span class="_code_api">.code</span>(<span class="_code_num">200</span>)<span class="_code_api">.result</span>(<span class="_code_str">"Error: "</span> + error.getMessage());</div>
+            <div><div id="examplerender-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">My</span>.errorHandler((req, resp, error) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> resp.code(<span class="_code_num">200</span>).result(<span class="_code_str">"Error: "</span> + error.getMessage());</div>
 <div class="example-line clearfix">});</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.get</span>(<span class="_code_str">"/hi"</span>)<span class="_code_api">.html</span>((<span class="_code_api">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/hi"</span>).html((<span class="_code_cls">Req</span> req) <span class="_code_lambda">-&gt;</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">throw</span> <span class="_code_kw">new</span> <span class="_code_cls">RuntimeException</span>(<span class="_code_str">"problem!"</span>);</div>
 <div class="example-line clearfix">});</div>
 </div></div>

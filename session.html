@@ -186,9 +186,9 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpsessionmem-code" class="code-clean"><div class="example-line clearfix"><span class="_code_api">On</span><span class="_code_api">.req</span>(req <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> counter = req<span class="_code_api">.session</span>(<span class="_code_str">"n"</span>, <span class="_code_num">0</span>) + <span class="_code_num">1</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;req<span class="_code_api">.session</span>()<span class="_code_api">.put</span>(<span class="_code_str">"n"</span>, counter);</div>
+            <div><div id="examplehttpsessionmem-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">On</span>.req(req <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> counter = req.session(<span class="_code_str">"n"</span>, <span class="_code_num">0</span>) + <span class="_code_num">1</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;req.session().put(<span class="_code_str">"n"</span>, counter);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> counter;</div>
 <div class="example-line clearfix">});</div>
 </div></div>

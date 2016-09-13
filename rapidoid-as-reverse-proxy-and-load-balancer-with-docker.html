@@ -128,23 +128,20 @@
 
             
 
-<div id="examplerevproxydck-body" class="row">
+<div id="examplerevproxycomplex-body" class="row">
 
-    <div id="examplerevproxydck-left" class="col-md-12">
+    <div id="examplerevproxycomplex-left" class="col-md-12">
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplerevproxydck-code" class="code-clean"><div class="example-line clearfix">docker run -d \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--net=host \</div>
+            <div><div id="examplerevproxycomplex-code" class="code-clean"><div class="example-line clearfix">docker run -d \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--name revproxy \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;rapidoid/rapidoid:latest \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;--net=host \</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;rapidoid/rapidoid \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/foo-&gt;https://upstream1:8080,http://upstream2:8080'</span> \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/bar-&gt;http://upstream3:9090'</span> \</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">'/-&gt;https://upstream4:8080'</span> \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;on<span class="_code_api">.port</span>=<span class="_code_num">80</span> \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;app.cdn=<span class="_code_kw">false</span> \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;secret=my-secret \</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;users.admin<span class="_code_api">.password</span>=my-passwd</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;on.port=<span class="_code_num">80</span></div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -165,10 +162,19 @@
             <div class="toc-right">
     <h3 class="toc-title">Topics:</h3>
     <div class="toc-wrap">
+        <a class="toc-link" href="rapidoid-as-reverse-proxy-with-docker.html">Rapidoid as reverse proxy with Docker</a>
+    </div>
+    <div class="toc-wrap">
         <a class="toc-link" href="rapidoid-as-reverse-proxy-and-load-balancer-with-docker.html">Rapidoid as reverse proxy and load balancer with Docker</a>
     </div>
     <div class="toc-wrap">
         <a class="toc-link" href="programmatic-setup-of-reverse-proxy-and-load-balancer.html">Programmatic setup of reverse proxy and load balancer</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="reverse-proxy-matching-by-uri-prefix.html">Reverse proxy matching by URI prefix</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="custom-load-balancer.html">Custom load balancer</a>
     </div>
 </div>
 

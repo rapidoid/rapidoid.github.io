@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid - Custom EntityManager provider</title>
+    <title>Rapidoid - Custom load balancer</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -114,7 +114,7 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2>Custom EntityManager provider</h2>
+            <h2>Custom load balancer</h2>
         </div>
         <div class="col-md-2">
             
@@ -128,29 +128,32 @@
 
             
 
-<div id="examplemyem-body" class="row">
+<div id="examplerevproxylb-body" class="row">
 
-    <div id="examplemyem-left" class="col-md-12">
-        <div id="examplemyem-codedesc" class="eg_title">Main.java</div>
+    <div id="examplerevproxylb-left" class="col-md-12">
+        <div id="examplerevproxylb-codedesc" class="eg_title">Main.java</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplemyem-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.jpa.<span class="_code_cls">JPA</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">My</span>;</div>
+            <div><div id="examplerevproxylb-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">Req</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">LoadBalancer</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">ProxyUpstream</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">Reverse</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> javax.persistence.<span class="_code_cls">EntityManager</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> java.util.<span class="_code_cls">List</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Use the built-in entity manager, and decorate it</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">My</span>.entityManagerProvider(req <span class="_code_lambda">-&gt;</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">EntityManager</span> em = <span class="_code_cls">JPA</span>.em();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em = <span class="_code_kw">new</span> <span class="_code_cls">SomeEntityManagerDecorator</span>(em);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> em;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">LoadBalancer</span> lb = (<span class="_code_cls">Req</span> req, <span class="_code_cls">List</span>&lt;<span class="_code_cls">ProxyUpstream</span>&gt; candidates) <span class="_code_lambda">-&gt;</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> index = <span class="_code_num">0</span>; <span class="_code_linecomm">// FIXME implement load balancing strategy</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> candidates.get(index);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</div>
 <div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>).loadBalancer(lb);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -222,13 +225,19 @@
             <div class="toc-right">
     <h3 class="toc-title">Topics:</h3>
     <div class="toc-wrap">
-        <a class="toc-link" href="custom-template-loader.html">Custom template loader</a>
+        <a class="toc-link" href="rapidoid-as-reverse-proxy-with-docker.html">Rapidoid as reverse proxy with Docker</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="custom-entitymanagerfactory-provider.html">Custom EntityManagerFactory provider</a>
+        <a class="toc-link" href="rapidoid-as-reverse-proxy-and-load-balancer-with-docker.html">Rapidoid as reverse proxy and load balancer with Docker</a>
     </div>
     <div class="toc-wrap">
-        <a class="toc-link" href="custom-entitymanager-provider.html">Custom EntityManager provider</a>
+        <a class="toc-link" href="programmatic-setup-of-reverse-proxy-and-load-balancer.html">Programmatic setup of reverse proxy and load balancer</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="reverse-proxy-matching-by-uri-prefix.html">Reverse proxy matching by URI prefix</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="custom-load-balancer.html">Custom load balancer</a>
     </div>
 </div>
 

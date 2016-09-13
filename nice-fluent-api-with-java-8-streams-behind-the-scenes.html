@@ -135,19 +135,19 @@
         <!-- START CODE -->
         <div class="copy-snippet">
             <div><div id="examplefluent.teaser-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// Using Java 8? Now you can EASILY filter, map, group and search through collections:</span></div>
-<div class="example-line clearfix"><span class="_code_api">Find</span><span class="_code_api">.firstOf</span>(items)<span class="_code_api">.where</span>(s <span class="_code_lambda">-&gt;</span> s.length() &lt; <span class="_code_num">3</span>);</div>
+<div class="example-line clearfix"><span class="_code_cls">Find</span>.firstOf(items).where(s <span class="_code_lambda">-&gt;</span> s.length() &lt; <span class="_code_num">3</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">Find</span><span class="_code_api">.allOf</span>(nums)<span class="_code_api">.where</span>((k, v) <span class="_code_lambda">-&gt;</span> k &gt; <span class="_code_num">1</span>);</div>
+<div class="example-line clearfix"><span class="_code_cls">Find</span>.allOf(nums).where((k, v) <span class="_code_lambda">-&gt;</span> k &gt; <span class="_code_num">1</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">For</span><span class="_code_api">.each</span>(books)<span class="_code_api">.withNonNull</span>(<span class="_code_cls">Book</span>::title)<span class="_code_api">.run</span>(<span class="_code_kw">this</span>::publish);</div>
+<div class="example-line clearfix"><span class="_code_cls">For</span>.each(books).withNonNull(<span class="_code_cls">Book</span>::title).run(<span class="_code_kw">this</span>::publish);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.map</span>(words)<span class="_code_api">.to</span>(s <span class="_code_lambda">-&gt;</span> s.length());</div>
+<div class="example-line clearfix"><span class="_code_cls">Do</span>.map(words).to(s <span class="_code_lambda">-&gt;</span> s.length());</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.group</span>(items)<span class="_code_api">.by</span>(<span class="_code_cls">Item</span>::getCategory);</div>
+<div class="example-line clearfix"><span class="_code_cls">Do</span>.group(items).by(<span class="_code_cls">Item</span>::getCategory);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.reduce</span>(words)<span class="_code_api">.by</span>((a, b) <span class="_code_lambda">-&gt;</span> a + <span class="_code_str">":"</span> + b)<span class="_code_api">.orElse</span>(<span class="_code_str">""</span>);</div>
+<div class="example-line clearfix"><span class="_code_cls">Do</span>.reduce(words).by((a, b) <span class="_code_lambda">-&gt;</span> a + <span class="_code_str">":"</span> + b).orElse(<span class="_code_str">""</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_api">Do</span><span class="_code_api">.map</span>(nums)<span class="_code_api">.toList</span>((k, v) <span class="_code_lambda">-&gt;</span> k * <span class="_code_num">2</span>);</div>
+<div class="example-line clearfix"><span class="_code_cls">Do</span>.map(nums).toList((k, v) <span class="_code_lambda">-&gt;</span> k * <span class="_code_num">2</span>);</div>
 </div></div>
         </div>
         <!-- END CODE -->
@@ -182,7 +182,7 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;groupId&gt;</span>org.rapidoid<span class="_code_tag">&lt;/groupId&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;artifactId&gt;</span>rapidoid-fluent<span class="_code_tag">&lt;/artifactId&gt;</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.2.2<span class="_code_tag">&lt;/version&gt;</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;version&gt;</span>5.2.3<span class="_code_tag">&lt;/version&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependency&gt;</span></div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_tag">&lt;/dependencies&gt;</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
