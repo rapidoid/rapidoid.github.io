@@ -767,6 +767,30 @@ Hello <b>world</b>!
 <div id="examplegettingstarted-body" class="row">
 
     <div id="examplegettingstarted-left" class="col-md-12">
+        <div id="examplegettingstarted-codedesc" class="eg_title">Main.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplegettingstarted-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Valid</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.jpa.<span class="_code_cls">JPA</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args).jpa(); <span class="_code_linecomm">// bootstrap JPA</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/books"</span>).json(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.of(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.post(<span class="_code_str">"/books"</span>).json((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.save(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
         <div id="examplegettingstarted-codedesc" class="eg_title">Book.java</div>
 
         <!-- START CODE -->
@@ -787,30 +811,6 @@ Hello <b>world</b>!
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">int</span> year;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-        <div id="examplegettingstarted-codedesc" class="eg_title">Main.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="examplegettingstarted-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Valid</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.jpa.<span class="_code_cls">JPA</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args).jpa(); <span class="_code_linecomm">// bootstrap JPA</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/books"</span>).json(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.of(<span class="_code_cls">Book</span>.<span class="_code_kw">class</span>).all()); <span class="_code_linecomm">// get all books</span></div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.post(<span class="_code_str">"/books"</span>).json((<span class="_code_ann">@Valid</span> <span class="_code_cls">Book</span> b) <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.save(b)); <span class="_code_linecomm">// insert new book if valid</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
 </div></div>

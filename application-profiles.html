@@ -131,28 +131,6 @@
 <div id="exampleprofiles-body" class="row">
 
     <div id="exampleprofiles-left" class="col-md-8">
-        <div id="exampleprofiles-codedesc" class="eg_title">FooCtrl.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
-<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"foo"</span>)</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">FooCtrl</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, FOO controller!"</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
         <div id="exampleprofiles-codedesc" class="eg_title">Main.java</div>
 
         <!-- START CODE -->
@@ -174,6 +152,28 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Map</span>&lt;<span class="_code_cls">String</span>, <span class="_code_cls">Object</span>&gt; myConfig = <span class="_code_cls">Conf</span>.section(<span class="_code_str">"my"</span>).toMap();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/my"</span>).mvc(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">GUI</span>.grid(myConfig));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="exampleprofiles-codedesc" class="eg_title">FooCtrl.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Controller</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">GET</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.annotation.<span class="_code_cls">Profiles</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
+<div class="example-line clearfix"><span class="_code_ann">@Profiles</span>(<span class="_code_str">"foo"</span>)</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">FooCtrl</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hi() {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_str">"hi, FOO controller!"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
 </div></div>
         </div>

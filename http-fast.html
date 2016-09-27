@@ -222,16 +222,53 @@
 <div id="examplehttpfastest-body" class="row">
 
     <div id="examplehttpfastest-left" class="col-md-12">
-        <div id="examplehttpfastest-codedesc" class="eg_title">CustomAndFast.java</div>
+        <div id="examplehttpfastest-codedesc" class="eg_title">Main.java</div>
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">TCP</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">CustomAndFast</span> {</div>
+            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) <span class="_code_kw">throws</span> <span class="_code_cls">Exception</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">TCP</span>.server().protocol(<span class="_code_kw">new</span> <span class="_code_cls">SimpleHttpProtocol</span>()).port(<span class="_code_num">7070</span>).build().start();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">new</span> <span class="_code_cls">CustomHttpServer</span>().listen(<span class="_code_num">8080</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">}</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplehttpfastest-codedesc" class="eg_title">CustomHttpServer.java</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.buffer.<span class="_code_cls">Buf</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">AbstractHttpServer</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">HttpStatus</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">MediaType</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.impl.<span class="_code_cls">RapidoidHelper</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">CustomHttpServer</span> <span class="_code_kw">extends</span> <span class="_code_cls">AbstractHttpServer</span> {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">URI_PLAINTEXT</span> = <span class="_code_str">"/plaintext"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">URI_JSON</span> = <span class="_code_str">"/json"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">HELLO_WORLD</span> = <span class="_code_str">"Hello, World!"</span>.getBytes();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Override</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">protected</span> <span class="_code_cls">HttpStatus</span> handle(<span class="_code_cls">Channel</span> ctx, <span class="_code_cls">Buf</span> buf, <span class="_code_cls">RapidoidHelper</span> req) {</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (req.isGet.value) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (matches(buf, req.path, <span class="_code_cls">URI_PLAINTEXT</span>)) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> ok(ctx, req.isKeepAlive.value, <span class="_code_cls">HELLO_WORLD</span>, <span class="_code_cls">MediaType</span>.<span class="_code_cls">TEXT_PLAIN</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="_code_kw">else</span> <span class="_code_kw">if</span> (matches(buf, req.path, <span class="_code_cls">URI_JSON</span>)) {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> serializeToJson(ctx, req.isKeepAlive.value, <span class="_code_kw">new</span> <span class="_code_cls">Message</span>(<span class="_code_str">"Hello, World!"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> <span class="_code_cls">HttpStatus</span>.<span class="_code_cls">NOT_FOUND</span>;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -253,160 +290,6 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> getMessage() {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> message;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">}</div>
-</div></div>
-        </div>
-        <!-- END CODE -->
-
-        <div id="examplehttpfastest-codedesc" class="eg_title">SimpleHttpProtocol.java</div>
-
-        <!-- START CODE -->
-        <div class="copy-snippet">
-            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> com.fasterxml.jackson.databind.<span class="_code_cls">ObjectMapper</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> com.fasterxml.jackson.module.afterburner.<span class="_code_cls">AfterburnerModule</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.buffer.<span class="_code_cls">Buf</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.bytes.<span class="_code_cls">BytesUtil</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.commons.<span class="_code_cls">Dates</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.data.<span class="_code_cls">BufRange</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.data.<span class="_code_cls">BufRanges</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.impl.<span class="_code_cls">HttpParser</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">Protocol</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.impl.<span class="_code_cls">RapidoidHelper</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.wrap.<span class="_code_cls">BoolWrap</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SimpleHttpProtocol</span> <span class="_code_kw">implements</span> <span class="_code_cls">Protocol</span> {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">HTTP_200_OK</span> = <span class="_code_str">"HTTP/1.1 200 OK\r\n"</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">HTTP_404_NOT_FOUND</span> = (</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"HTTP/1.1 404 Not Found\r\n"</span> +</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"Content-Length: 10"</span> +</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"\r\n"</span> +</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"\r\nNot found!"</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;).getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">SERVER_X</span> = <span class="_code_str">"Server: X\r\n"</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_LENGTH_HDR</span> = <span class="_code_str">"Content-Length: "</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_TYPE_PLAIN</span> = <span class="_code_str">"Content-Type: text/plain; charset=UTF-8\r\n"</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_TYPE_JSON</span> = <span class="_code_str">"Content-Type: application/json; charset=UTF-8\r\n"</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">CONTENT_LENGTH</span> = <span class="_code_str">"Content-Length:           "</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">RESPONSE</span> = <span class="_code_str">"Hello, World!"</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">DATE_HDR</span> = <span class="_code_str">"Date: "</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">RESPONSE_LENGTH</span> = <span class="_code_cls">String</span>.valueOf(<span class="_code_cls">RESPONSE</span>.length).getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">URI_PLAIN</span> = <span class="_code_str">"/plaintext"</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_kw">byte</span>[] <span class="_code_cls">URI_JSON</span> = <span class="_code_str">"/json"</span>.getBytes();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_cls">HttpParser</span> <span class="_code_cls">HTTP_PARSER</span> = <span class="_code_kw">new</span> <span class="_code_cls">HttpParser</span>();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">final</span> <span class="_code_cls">ObjectMapper</span> <span class="_code_cls">MAPPER</span> = mapper();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">static</span> <span class="_code_cls">ObjectMapper</span> mapper() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">ObjectMapper</span> mapper = <span class="_code_kw">new</span> <span class="_code_cls">ObjectMapper</span>();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mapper.registerModule(<span class="_code_kw">new</span> <span class="_code_cls">AfterburnerModule</span>());</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> mapper;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Override</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">void</span> process(<span class="_code_cls">Channel</span> ctx) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (ctx.isInitial()) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Buf</span> buf = ctx.input();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">RapidoidHelper</span> helper = ctx.helper();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span>[] ranges = helper.ranges1.ranges;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRanges</span> headers = helper.ranges2;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BoolWrap</span> isGet = helper.booleans[<span class="_code_num">0</span>];</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BoolWrap</span> isKeepAlive = helper.booleans[<span class="_code_num">1</span>];</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> verb = ranges[ranges.length - <span class="_code_num">1</span>];</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> uri = ranges[ranges.length - <span class="_code_num">2</span>];</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> path = ranges[ranges.length - <span class="_code_num">3</span>];</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> query = ranges[ranges.length - <span class="_code_num">4</span>];</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> protocol = ranges[ranges.length - <span class="_code_num">5</span>];</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">BufRange</span> body = ranges[ranges.length - <span class="_code_num">6</span>];</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">HTTP_PARSER</span>.parse(buf, isGet, isKeepAlive, body, verb, uri, path,</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query, protocol, headers, helper);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response(ctx, buf, path, isGet.value, isKeepAlive.value);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">void</span> response(<span class="_code_cls">Channel</span> ctx, <span class="_code_cls">Buf</span> buf, <span class="_code_cls">BufRange</span> path, <span class="_code_kw">boolean</span> isGet, <span class="_code_kw">boolean</span> isKeepAlive) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">boolean</span> processed = <span class="_code_kw">false</span>;</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (isGet) {</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">HTTP_200_OK</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">SERVER_X</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">DATE_HDR</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">Dates</span>.getDateTimeBytes());</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (<span class="_code_cls">BytesUtil</span>.matches(buf.bytes(), path, <span class="_code_cls">URI_PLAIN</span>, <span class="_code_kw">true</span>) || path.length == <span class="_code_num">1</span>) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handlePlaintext(ctx);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processed = <span class="_code_kw">true</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="_code_kw">else</span> <span class="_code_kw">if</span> (<span class="_code_cls">BytesUtil</span>.matches(buf.bytes(), path, <span class="_code_cls">URI_JSON</span>, <span class="_code_kw">true</span>)) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handleJson(ctx);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processed = <span class="_code_kw">true</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.closeIf(!isKeepAlive);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">if</span> (!processed) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">HTTP_404_NOT_FOUND</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.close();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">void</span> handlePlaintext(<span class="_code_cls">Channel</span> ctx) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_LENGTH_HDR</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">RESPONSE_LENGTH</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_TYPE_PLAIN</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">RESPONSE</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">private</span> <span class="_code_kw">void</span> handleJson(<span class="_code_cls">Channel</span> ctx) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Buf</span> output = ctx.output();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_TYPE_JSON</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CONTENT_LENGTH</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> posConLen = output.size() - <span class="_code_num">10</span>;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.write(<span class="_code_cls">CR_LF</span>);</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> posBefore = output.size();</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Message</span> msg = <span class="_code_kw">new</span> <span class="_code_cls">Message</span>(<span class="_code_str">"Hello, World!"</span>);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">try</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">MAPPER</span>.writeValue(output.asOutputStream(), msg);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="_code_kw">catch</span> (<span class="_code_cls">Exception</span> e) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">throw</span> <span class="_code_kw">new</span> <span class="_code_cls">RuntimeException</span>(e);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-<div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">int</span> posAfter = output.size();</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output.putNumAsText(posConLen, posAfter - posBefore, <span class="_code_kw">false</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
