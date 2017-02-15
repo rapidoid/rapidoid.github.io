@@ -524,3 +524,8 @@ pre {
 
 /************ END OF THE LOGIN CSS ************/
 
+
+#docker-title {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
