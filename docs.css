@@ -524,6 +524,24 @@ pre {
 
 /************ END OF THE LOGIN CSS ************/
 
+.puzzle-icon {
+    background: url('img/puzzle.png');
+    background-repeat: no-repeat;
+    padding: 18px 22px !important;
+    font-size: 20px !important;
+}
+
+.puzzle-icon-fat {
+    background: url('img/puzzle.png');
+    background-repeat: no-repeat;
+    padding: 18px 20px !important;
+    font-size: 20px !important;
+}
+
+.puzzle-title {
+    font-size: 20px !important;
+    line-height: 1.6;
+}
 
 #docker-title {
     padding-top: 20px;
