@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -151,6 +152,7 @@
 
 <div class="col-md-10">
 <!-- EXAMPLE restjson -->
+
 
 <div id="automatic-json-serialization-of-data-structures" class="row">
     <div class="col-md-12">
@@ -287,6 +289,7 @@
 </div>
 
 <!-- EXAMPLE beanjson -->
+
 
 <div id="automatic-construction-and-serialization-of-javabeans" class="row">
     <div class="col-md-12">
@@ -427,6 +430,7 @@
 </div>
 
 <!-- EXAMPLE injection -->
+
 
 <div id="dependency-injection-of-singletons" class="row">
     <div class="col-md-12">
@@ -611,6 +615,7 @@
 
 <!-- EXAMPLE restparams -->
 
+
 <div id="url-pattern-matching" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -649,7 +654,7 @@
             <div><div id="examplerestparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\\d+}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\\\\d+}"</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> U.frmt(<span class="_code_str">"Hey %s (%s)"</span>, name, age);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
@@ -755,6 +760,7 @@
 </div>
 
 <!-- EXAMPLE restnamedparams -->
+
 
 <div id="named-url-parameters" class="row">
     <div class="col-md-12">
@@ -873,6 +879,7 @@
 </div>
 
 <!-- EXAMPLE hello -->
+
 
 <div id="hello-web-pages" class="row">
     <div class="col-md-12">
@@ -1044,6 +1051,7 @@ Hello, world!
 </div>
 
 <!-- EXAMPLE hi -->
+
 
 <div id="building-html-pages-with-java" class="row">
     <div class="col-md-12">

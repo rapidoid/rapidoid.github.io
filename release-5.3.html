@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid Http-server</title>
+    <title>Rapidoid Release-5.3</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -133,104 +133,73 @@
     </div>
 
     <div class="col-md-4 col-sm-12">
-        <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup" class="pull-right">
-    <form action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-
-        <div class="mc-field-group">
-            <input type="email" value="" name="EMAIL" class="required email form-control input-sm" id="mce-EMAIL" placeholder="Your e-mail address"> <input type="submit" value="Subscribe to newsletter" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary btn-sm">
-        </div>
-        <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display: none"></div>
-            <div class="response" id="mce-success-response" style="display: none"></div>
-        </div>
-        <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_c2c27aa25fdef31d9513d6124_08cd6ec699" value="">
-        </div>
-        <div class="clear"></div>
-    </form>
-</div>
-<!--End mc_embed_signup-->
-
     </div>
 </div>
 
-<div class="row row-separated-nano">
-    <div class="col-md-8">
-
-        <div class="module-desc">
-            Rapidoid consists of several modules which can be used separately or together:
-            <ul>
-                <li>
-                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Low-level HTTP Framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="http-server.html">rapidoid-http-server</a> - <span class="module-about">High-level Web Framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (based on Bootstrap + Angular)</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="web.html">rapidoid-web</a> - <span class="module-about">rapidoid-http-server + rapidoid-gui + goodies</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="quick.html">rapidoid-quick</a> - <span class="module-about">rapidoid-web + Hibernate + Logback + MySQL Connector...</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&apos;s template engine</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="fluent.html">rapidoid-fluent</a> - <span class="module-about">Fluent API for Elegant Stream Manipulation</span>
-                    <span class="pull-right module-about-right">JDK 8</span>
-                </li>
-                <li>
-                    <a href="essentials.html">rapidoid-essentials</a> - <span class="module-about">Simple &amp; Sweet Utils</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="net.html">rapidoid-net</a> - <span class="module-about">Network protocol framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-http-server</b> as Maven dependency:</div>
-<div class="copy-snippet">
-<div class="maven-code">
-&lt;<span class="_code_tag">dependency</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-http-server</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.3.0</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
-&lt;/<span class="_code_tag">dependency</span>&gt;<br>
-</div>
-</div>
-
-        <div id="docker-title"><a href="https://hub.docker.com/_/rapidoid/" target="_blank" rel="nofollow">
-    <b>Official Docker repository for Rapidoid</b></a>:
-</div>
-<div class="copy-snippet"><code>docker run rapidoid --help</code></div>
-
-    </div>
-
-</div>
 
 <div class="row row-separated-nano">
     <div class="col-md-12">
-        <div class="module-header">
-            Module <span class="module-name">rapidoid-http-server</span>
-        </div>
-        <h3>High-level Web Framework</h3>
-        <h5><b></b></h5>
 
+        <div class="module-header">What&apos;s new in v5.3?</div>
 
+        <div class="module-explanation"><h3>The v5.3 release introduces a new way to use Rapidoid - as application container!</h3>
+<h4>What's new in Rapidoid v5.3:</h4>
+<ul>
+    <li><a href="https://hub.docker.com/_/rapidoid/" target="_blank" rel="nofollow"><b>Official Docker repository for Rapidoid</b></a>:
+        <br><code class="note-code">docker run rapidoid --help</code>
+    </li>
+    <li><b>Maven plug-in for simple &amp; easy packaging of uber-JAR</b>
+        <br><code class="note-code">mvn org.rapidoid:app:build</code> - it works on any Maven project, without configuring anything
+    </li>
+    <li><b>Maven plug-in for simple &amp; easy application deployment</b> on multiple servers
+        <br><code class="note-code">mvn org.rapidoid:app:deploy</code> - it works on any Maven project, requires <a href="https://github.com/rapidoid/rapidoid/blob/master/examples/hello-world/deploy.yml"><span class="text-box">deploy.yml</span></a></li>
+    <li>fine-grained <b>activation of built-in services</b> through command-line parameters
+        <br><code class="note-code">docker run -p 8888:8888 rapidoid app.services=welcome admin.services=center</code>
+    </li>
+    <li>new API for <b>super-easy recursive file search</b> by name patterns and type
+        <br><code class="note-code">IO.find("pom.xml").files().in(location).recursive().getLocations()</code>
+    </li>
+    <li>new API for <b>easy execution and management of (system or application) processes</b>
+        <br><code class="note-code">Proc.run("java", "-cp", jar, "com.example.Main").waitFor().out()</code>
+    </li>
+    <li><b>high-performance in-memory cache</b> with fluent API and basic statistics
+        <br><code class="note-code">Cache&lt;String, Integer&gt; lengths = Caching.of((String key) -> key.length()).ttl(1000).build();</code>
+    </li>
+    <li>fine-grained scope control in the authentication tokens</li>
+    <li>stronger security: <b>AES</b> and <b>HMAC</b> cryptography utils were re-written from scratch
+        <br><code class="note-code">byte[] enc = Crypto.encrypt(msg.getBytes());</code>
+    </li>
+    <li>new <b>built-in <span class="text-box">status</span> service</b>, serving application and system status information</li>
+    <li>new <b>built-in <span class="text-box">processes</span> service</b> for management of child processes</li>
+    <li>new <b>built-in <span class="text-box">discovery</span> service</b> for simple peer discovery (transient)</li>
+    <li>new <b>built-in <span class="text-box">echo</span> service</b> for debugging received requests</li>
+    <li><b>improved deployment process</b> with 2-phase application JAR staging + deployment</li>
+    <li>many new <b>end-to-end tests for Rapidoid's Docker container integration</b></li>
+    <li>improved logger, enriched API, also configured as default commons-logging implementation
+        <br><code class="note-code">Log.info("Super-simple and cool!");</code>
+    </li>
+    <li>improved generic request pipeline processing (low-level Net API)</li>
+    <li>convenient way to define and display custom metrics</li>
+    <li><b>built-in <span class="text-box">mysql</span> and <span class="text-box">postgres</span> profiles for JDBC and Hibernate configuration</b></li>
+    <li>hot reloading upon external configuration changes</li>
+    <li><b>super-simple SQL-powered RESTful services and GUI pages</b></li>
+    <li>Simplified job scheduling:
+        <br><code class="note-code">Jobs.after(3).seconds().run(() -> {})</code></li>
+    <li><b>constructor-based dependency injection</b></li>
+    <li><b>optional integration with Guice</b></li>
+    <li><b>salted password hash generator (for the users configuration)</b>
+        <br><code class="note-code">docker run -it --rm rapidoid password</code>
+    </li>
+    <li>several bug fixes</li>
+    <li>many small improvements</li>
+</ul>
+
+<h4><b>Breaking changes</b>:</h4>
+<ul>
+    <li>changes in the low-level async Net API - added <span class="text-box">void resume(long connId, long handle, AsyncLogic asyncLogic)</span></li>
+    <li>renamed URIs for the built-in services from <span class="text-box">/_/*</span> to <span class="text-box">/_*</span></li>
+    <li>removed the factory utils from the Goodies (please use normal instantiation instead)</li>
+</ul></div>
 
     </div>
 </div>

@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -128,6 +129,7 @@
 
             
 
+
 <div id="exampleprofiles-body" class="row">
 
     <div id="exampleprofiles-left" class="col-md-8">
@@ -135,8 +137,8 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.commons.<span class="_code_cls">Env</span>;</div>
-<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.config.<span class="_code_cls">Conf</span>;</div>
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.config.<span class="_code_cls">Conf</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.env.<span class="_code_cls">Env</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.gui.<span class="_code_cls">GUI</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
@@ -145,7 +147,7 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(<span class="_code_str">"profiles=mysql,foo"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args, <span class="_code_str">"profiles=mysql,foo"</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/profiles"</span>).mvc(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">GUI</span>.display(<span class="_code_cls">Env</span>.profiles()));</div>
 <div class="empty-line clearfix">&nbsp;</div>
@@ -215,7 +217,7 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix">app:</div>
+            <div><div id="exampleprofiles-code" class="code-clean"><div class="example-line clearfix">gui:</div>
 <div class="example-line clearfix">&nbsp;&nbsp;navbar: <span class="_code_kw">false</span></div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">my:</div>

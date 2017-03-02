@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -128,6 +129,7 @@
 
             
 
+
 <div id="examplerevproxylb-body" class="row">
 
     <div id="examplerevproxylb-left" class="col-md-12">
@@ -153,7 +155,10 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> candidates.get(index);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>).loadBalancer(lb);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy(<span class="_code_str">"/"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.loadBalancer(lb)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>

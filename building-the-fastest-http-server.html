@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -127,6 +128,7 @@
             
 
             
+
 <div id="examplehttpfastest-extra" class="row">
     <div class="col-md-12">
     <div class="docs">
@@ -151,10 +153,15 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
+            <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.<span class="_code_cls">Server</span>;</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) <span class="_code_kw">throws</span> <span class="_code_cls">Exception</span> {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">new</span> <span class="_code_cls">CustomHttpServer</span>().listen(<span class="_code_num">8080</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Server</span> server = <span class="_code_kw">new</span> <span class="_code_cls">CustomHttpServer</span>().listen(<span class="_code_num">5050</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Not doing any work now, so shutdown</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server.shutdown();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -169,6 +176,7 @@
             <div><div id="examplehttpfastest-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.buffer.<span class="_code_cls">Buf</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">AbstractHttpServer</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">HttpStatus</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">HttpUtils</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">MediaType</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.abstracts.<span class="_code_cls">Channel</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.net.impl.<span class="_code_cls">RapidoidHelper</span>;</div>
@@ -189,7 +197,7 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> ok(ctx, req.isKeepAlive.value, <span class="_code_cls">HELLO_WORLD</span>, <span class="_code_cls">MediaType</span>.<span class="_code_cls">TEXT_PLAIN</span>);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="_code_kw">else</span> <span class="_code_kw">if</span> (matches(buf, req.path, <span class="_code_cls">URI_JSON</span>)) {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> serializeToJson(ctx, req.isKeepAlive.value, <span class="_code_kw">new</span> <span class="_code_cls">Message</span>(<span class="_code_str">"Hello, World!"</span>));</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> serializeToJson(<span class="_code_cls">HttpUtils</span>.noReq(), ctx, req.isKeepAlive.value, <span class="_code_kw">new</span> <span class="_code_cls">Message</span>(<span class="_code_str">"Hello, World!"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>

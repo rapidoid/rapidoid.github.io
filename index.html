@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -213,9 +214,10 @@
 </div>
 
         <div id="docker-title"><a href="https://hub.docker.com/_/rapidoid/" target="_blank" rel="nofollow">
-            <b>Official Docker repository for Rapidoid</b></a>:
-        </div>
-        <div class="copy-snippet"><code>docker pull rapidoid</code></div>
+    <b>Official Docker repository for Rapidoid</b></a>:
+</div>
+<div class="copy-snippet"><code>docker run rapidoid --help</code></div>
+
     </div>
 
 </div>
@@ -239,8 +241,9 @@
 
 <div class="row">
 
-<div class="col-md-12">
+<div class="col-md-10">
 <!-- EXAMPLE httpsimple -->
+
 
 <div id="restful-service-one-liner" class="row">
     <div class="col-md-12">
@@ -305,16 +308,205 @@
 </div>
 
 
-<div class="row row-separated-mini">
+
+<div id="examplehttpsimple-routes" class="row">
+    <div class="col-md-12">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Zone</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+    </td>
+    <td>/size</td>
+    <td>main</td>
+    <td>json</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE httpsimplegui -->
+
+
+<div id="instant-web-application" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">2</span>
+            <a href="instant-web-application.html" class="mini-example-title">Instant web application</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="examplehttpsimplegui-body" class="row">
+
+    <div id="examplehttpsimplegui-left" class="col-md-12">
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehttpsimplegui-code" class="code-clean"><div class="comment-line clearfix"><span class="_code_comment">// On <span class="text-box">GET /hi</span> or <span class="text-box">POST /hi</span> return a "Hello World" web page</span></div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.page(<span class="_code_str">"/hi"</span>).mvc(<span class="_code_str">"Hello &lt;b&gt;world&lt;/b&gt;!"</span>);</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+        <div id="examplehttpsimplegui-codedesc" class="eg_title">config.yml</div>
+
+        <!-- START CODE -->
+        <div class="copy-snippet">
+            <div><div id="examplehttpsimplegui-code" class="code-clean"><div class="example-line clearfix">gui:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;brand: <span class="_code_str">'Cool app!'</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;title: <span class="_code_str">'the head title'</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;search: <span class="_code_kw">true</span></div>
+<div class="example-line clearfix">&nbsp;&nbsp;menu:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Home</span>: /</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Portfolio</span>: /portfolio</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">About</span>:</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">About</span> <span class="_code_cls">Us</span>: /about</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">About</span> <span class="_code_cls">You</span>: /</div>
+</div></div>
+        </div>
+        <!-- END CODE -->
+
+    </div>
+
+</div>
+
+<p class="send-requests-caption">Let's send some HTTP requests and check the results:</p>
+
+<div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/hi</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#httpsimplegui RESULT STARTS HERE -->
+    <!--EMBEDDED-->
+<nav role="navigation" class="navbar navbar-default">
+    <div class="">
+
+        <div class="navbar-header">
+            <button data-target="#collapsable" class="navbar-toggle collapsed" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Cool app!</a>
+        </div>
+
+<div id="collapsable" class="collapse navbar-collapse">
+
+    <ul class="nav navbar-nav navbar-left">
+<li class="">
+    <a href="/" >Home</a>
+</li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-left">
+<li class="">
+    <a href="/portfolio" >Portfolio</a>
+</li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-left">
+<li class="dropdown">
+    <a href="#"  class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
+    <ul role="menu" class="dropdown-menu">
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/">About You</a></li>
+    </ul>
+</li>
+
+    </ul>
+
+    <!-- CREATE A RESOURCE FILE "templates/_navbar.html" TO REPLACE THIS LINE -->
+
+    <form action="/search" class="navbar-form navbar-right" method="GET">
+    <div class="form-group">
+        <input id="navbar-q" _h="_find" placeholder="Search" name="find" class="form-control" type="text">
+    </div>
+    <button class="btn btn-default" type="submit">
+        <span class="fa fa-search"></span>
+    </button>
+</form>
+
+</div>
+
+    </div>
+</nav>
+
+Hello <b>world</b>!
+<!--/EMBEDDED-->
+
+    <!-- EXAMPLE#httpsimplegui RESULT ENDS HERE -->
+</div>
+
+
+
+<div id="examplehttpsimplegui-routes" class="row">
+    <div class="col-md-12">
+        <p class="routes-info-caption">HTTP server routes information:</p>
+        <div class="routes-info">
+        <table class="table table-condensed">
+  <tr>
+    <th>Verb</th>
+    <th>Path</th>
+    <th>Zone</th>
+    <th>Content type</th>
+    <th>MVC</th>
+    <th>View name</th>
+    <th>Roles</th>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-success">GET</span>
+      <span class="label label-primary">POST</span>
+    </td>
+    <td>/hi</td>
+    <td>main</td>
+    <td>html</td>
+    <td>
+      <i class="fa fa-check"></i>
+    </td>
+    <td>hi</td>
+    <td></td>
+  </tr>
+</table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row row-separated-micro">
   <div class="col-md-12"></div>
 </div>
 
 <!-- EXAMPLE gettingstarted -->
 
+
 <div id="restful-services-with-lambda-handlers-jpa-jackson-and-bean-validation" class="row">
     <div class="col-md-12">
         <h4 class="caption">
-            <span class="badge badge-eg-num">2</span>
+            <span class="badge badge-eg-num">3</span>
             <a href="restful-services-with-lambda-handlers-jpa-jackson-and-bean-validation.html" class="mini-example-title">RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</a>
             
         </h4>
@@ -475,6 +667,22 @@
   <div class="col-md-12"></div>
 </div>
 
+
+</div>
+
+<div class="col-md-2">
+<div class="toc-right">
+    <h3 class="toc-title">Contents:</h3>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#restful-service-one-liner">RESTful service one-liner</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#instant-web-application">Instant web application</a>
+    </div>
+    <div class="toc-wrap">
+        <a class="toc-link" href="#restful-services-with-lambda-handlers-jpa-jackson-and-bean-validation">RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</a>
+    </div>
+</div>
 
 </div>
 

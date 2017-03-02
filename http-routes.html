@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -128,6 +129,7 @@
 
             
 
+
 <div id="exampleroutes-body" class="row">
 
     <div id="exampleroutes-left" class="col-md-12">
@@ -146,7 +148,7 @@
 <p class="send-requests-caption">Let's send some HTTP requests and check the results:</p>
 
 <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/routes</span>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_routes</span>
 </div>
 
 <div class="eg-result">
@@ -204,13 +206,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/beans</td>
+          <td>/_beans</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/beans</td>
+          <td>_beans</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -218,28 +220,13 @@
           <td>
             <span class="label label-success">GET</span>
           </td>
-          <td>/_/classpath</td>
+          <td>/_classpath</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/classpath</td>
-          <td></td>
-          <td>mvc(() -&gt; ...)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="label label-success">GET</span>
-            <span class="label label-primary">POST</span>
-          </td>
-          <td>/_/config</td>
-          <td>main</td>
-          <td>html</td>
-          <td>
-            <i class="fa fa-check"></i>
-          </td>
-          <td>_/config</td>
+          <td>_classpath</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -248,48 +235,21 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/deploy</td>
+          <td>/_config</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/deploy</td>
+          <td>_config</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
         <tr>
           <td>
-            <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/entities</td>
-          <td>main</td>
-          <td>html</td>
-          <td>
-            <i class="fa fa-check"></i>
-          </td>
-          <td>_/entities</td>
-          <td></td>
-          <td>mvc(() -&gt; ...)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="label label-success">GET</span>
-          </td>
-          <td>/_/graphs/{id:.*}</td>
-          <td>main</td>
-          <td>json</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>json((Req req, Double from, Double to, String id) -&gt; ...)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="label label-primary">POST</span>
-          </td>
-          <td>/_/jar</td>
+          <td>/_deploy</td>
           <td>main</td>
           <td>json</td>
           <td></td>
@@ -302,13 +262,55 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/classes</td>
+          <td>/_deployment</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/classes</td>
+          <td>_deployment</td>
+          <td></td>
+          <td>mvc((Req) -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_entities</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_entities</td>
+          <td></td>
+          <td>mvc(() -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+          </td>
+          <td>/_graphs/{id:.*}</td>
+          <td>main</td>
+          <td>json</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>json((Req req, Double from, Double to, String id) -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_jmx/classes</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_jmx/classes</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -317,13 +319,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/compilation</td>
+          <td>/_jmx/compilation</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/compilation</td>
+          <td>_jmx/compilation</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -332,13 +334,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/gc</td>
+          <td>/_jmx/gc</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/gc</td>
+          <td>_jmx/gc</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -347,13 +349,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/memory</td>
+          <td>/_jmx/memory</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/memory</td>
+          <td>_jmx/memory</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -362,13 +364,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/mempool</td>
+          <td>/_jmx/mempool</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/mempool</td>
+          <td>_jmx/mempool</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -377,13 +379,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/os</td>
+          <td>/_jmx/os</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/os</td>
+          <td>_jmx/os</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -392,13 +394,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/runtime</td>
+          <td>/_jmx/runtime</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/runtime</td>
+          <td>_jmx/runtime</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -407,58 +409,13 @@
             <span class="label label-success">GET</span>
             <span class="label label-primary">POST</span>
           </td>
-          <td>/_/jmx/threads</td>
+          <td>/_jmx/threads</td>
           <td>main</td>
           <td>html</td>
           <td>
             <i class="fa fa-check"></i>
           </td>
-          <td>_/jmx/threads</td>
-          <td></td>
-          <td>mvc(() -&gt; ...)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="label label-success">GET</span>
-            <span class="label label-primary">POST</span>
-          </td>
-          <td>/_/metrics</td>
-          <td>main</td>
-          <td>html</td>
-          <td>
-            <i class="fa fa-check"></i>
-          </td>
-          <td>_/metrics</td>
-          <td></td>
-          <td>mvc(() -&gt; ...)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="label label-success">GET</span>
-            <span class="label label-primary">POST</span>
-          </td>
-          <td>/_/routes</td>
-          <td>main</td>
-          <td>html</td>
-          <td>
-            <i class="fa fa-check"></i>
-          </td>
-          <td>_/routes</td>
-          <td></td>
-          <td>mvc(() -&gt; ...)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="label label-success">GET</span>
-            <span class="label label-primary">POST</span>
-          </td>
-          <td>/_/terminate</td>
-          <td>main</td>
-          <td>html</td>
-          <td>
-            <i class="fa fa-check"></i>
-          </td>
-          <td>_/terminate</td>
+          <td>_jmx/threads</td>
           <td></td>
           <td>mvc(() -&gt; ...)</td>
         </tr>
@@ -489,6 +446,108 @@
         <tr>
           <td>
             <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_manageables</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_manageables</td>
+          <td></td>
+          <td>mvc(() -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_manageables/{type}/{id}</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_manageables/type/id</td>
+          <td></td>
+          <td>mvc((Req, Resp) -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_metrics</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_metrics</td>
+          <td></td>
+          <td>mvc((Req, Resp) -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_processes</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_processes</td>
+          <td></td>
+          <td>mvc(() -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_processes/{id}</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_processes/id</td>
+          <td></td>
+          <td>mvc((Req, Resp) -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_routes</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_routes</td>
+          <td></td>
+          <td>mvc(() -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_stage</td>
+          <td>main</td>
+          <td>json</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>json((Req) -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
           </td>
           <td>/_status</td>
           <td>main</td>
@@ -497,6 +556,21 @@
           <td></td>
           <td></td>
           <td>json(() -&gt; ...)</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="label label-success">GET</span>
+            <span class="label label-primary">POST</span>
+          </td>
+          <td>/_terminate</td>
+          <td>main</td>
+          <td>html</td>
+          <td>
+            <i class="fa fa-check"></i>
+          </td>
+          <td>_terminate</td>
+          <td></td>
+          <td>mvc(() -&gt; ...)</td>
         </tr>
       </table>
     </div>

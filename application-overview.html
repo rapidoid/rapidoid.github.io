@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -128,6 +129,7 @@
 
             
 
+
 <div id="examplegoodies-body" class="row">
 
     <div id="examplegoodies-left" class="col-md-12">
@@ -172,7 +174,7 @@
 </nav>
 
     <h3>
-      <center>Application info:</center>
+      <center>Basic overview:</center>
     </h3>
     <table class="table table-striped table-hover">
       <tr>
@@ -186,7 +188,12 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2">Application path (root packages)</td>
+        <td>Application path (root packages)</td>
+        <td>
+          <span>
+            <span class="nothing"><i class="fa fa-ban"></i> N/A</span>
+          </span>
+        </td>
       </tr>
       <tr>
         <td>Active profiles</td>
@@ -223,7 +230,7 @@ function updateGraph1() {
     title: 'System CPU',
     labels: [ "Date", "System CPU" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = window.Rapidoid.contextPath + '/_/graphs/cpu/system?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + window.Rapidoid.graphsUri + '/cpu/system?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -255,7 +262,7 @@ function updateGraph2() {
     title: 'Process CPU',
     labels: [ "Date", "Process CPU" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = window.Rapidoid.contextPath + '/_/graphs/cpu/process?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + window.Rapidoid.graphsUri + '/cpu/process?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -287,7 +294,7 @@ function updateGraph3() {
     title: 'Used JVM memory (MB)',
     labels: [ "Date", "Used JVM memory (MB)" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = window.Rapidoid.contextPath + '/_/graphs/mem/used?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + window.Rapidoid.graphsUri + '/mem/used?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -321,7 +328,7 @@ function updateGraph4() {
     title: 'Total JVM memory (MB)',
     labels: [ "Date", "Total JVM memory (MB)" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = window.Rapidoid.contextPath + '/_/graphs/mem/total?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + window.Rapidoid.graphsUri + '/mem/total?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -353,7 +360,7 @@ function updateGraph5() {
     title: 'Number of JVM threads',
     labels: [ "Date", "Number of JVM threads" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = window.Rapidoid.contextPath + '/_/graphs/threads?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + window.Rapidoid.graphsUri + '/threads?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -385,7 +392,7 @@ function updateGraph6() {
     title: 'Open files and connections',
     labels: [ "Date", "Open files and connections" ],
     zoomCallback : function(minDate, maxDate, yRange) {
-        var uri = window.Rapidoid.contextPath + '/_/graphs/descriptors?from=' + minDate + '&to=' + maxDate;
+        var uri = window.Rapidoid.contextPath + window.Rapidoid.graphsUri + '/descriptors?from=' + minDate + '&to=' + maxDate;
         $R.get(uri, function(resp) {
           var data = [];
           for (var k in resp) {
@@ -406,312 +413,6 @@ setTimeout(updateGraph6, 50);
 </div>
         </div>
       </div>
-    <h3>
-      <center>Application routes:</center>
-    </h3>
-    <table class="table table-striped table-hover">
-      <tr>
-        <th>Verb</th>
-        <th>Path</th>
-        <th>Zone</th>
-        <th>Content type</th>
-        <th>MVC</th>
-        <th>View name</th>
-        <th>Roles</th>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/beans</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/beans</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-        </td>
-        <td>/_/classpath</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/classpath</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/config</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/config</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/deploy</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/deploy</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/entities</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/entities</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-        </td>
-        <td>/_/graphs/{id:.*}</td>
-        <td>main</td>
-        <td>json</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jar</td>
-        <td>main</td>
-        <td>json</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/classes</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/classes</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/compilation</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/compilation</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/gc</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/gc</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/memory</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/memory</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/mempool</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/mempool</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/os</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/os</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/runtime</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/runtime</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/jmx/threads</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/jmx/threads</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/metrics</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/metrics</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/routes</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/routes</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_/terminate</td>
-        <td>main</td>
-        <td>html</td>
-        <td>
-          <i class="fa fa-check"></i>
-        </td>
-        <td>_/terminate</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-primary">POST</span>
-        </td>
-        <td>/_login</td>
-        <td>main</td>
-        <td>json</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-        </td>
-        <td>/_logout</td>
-        <td>main</td>
-        <td>json</td>
-        <td></td>
-        <td></td>
-        <td>logged_in</td>
-      </tr>
-      <tr>
-        <td>
-          <span class="label label-success">GET</span>
-        </td>
-        <td>/_status</td>
-        <td>main</td>
-        <td>json</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
 <!--/EMBEDDED-->
 
     <!-- EXAMPLE#goodies RESULT ENDS HERE -->

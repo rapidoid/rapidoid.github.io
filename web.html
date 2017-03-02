@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -212,6 +213,11 @@
 </div>
 </div>
 
+        <div id="docker-title"><a href="https://hub.docker.com/_/rapidoid/" target="_blank" rel="nofollow">
+    <b>Official Docker repository for Rapidoid</b></a>:
+</div>
+<div class="copy-snippet"><code>docker run rapidoid --help</code></div>
+
     </div>
 
 </div>
@@ -240,6 +246,7 @@
 
 <div class="col-md-10">
 <!-- EXAMPLE hellorest -->
+
 
 <div id="hello-restful-services" class="row">
     <div class="col-md-12">
@@ -359,6 +366,7 @@
 
 <!-- EXAMPLE restparams -->
 
+
 <div id="url-parts-as-method-parameters" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -397,7 +405,7 @@
             <div><div id="examplerestparams-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Controller</span></div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">SubUrlParams</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\\d+}"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@GET</span>(<span class="_code_str">"/hey/{name}/{age:\\\\d+}"</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> hey(<span class="_code_cls">String</span> name, <span class="_code_kw">int</span> age) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> U.frmt(<span class="_code_str">"Hey %s (%s)"</span>, name, age);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
@@ -503,6 +511,7 @@
 </div>
 
 <!-- EXAMPLE restjson -->
+
 
 <div id="automatic-json-serialization-of-data-structures" class="row">
     <div class="col-md-12">
@@ -639,6 +648,7 @@
 </div>
 
 <!-- EXAMPLE beanjson -->
+
 
 <div id="automatic-construction-and-serialization-of-javabeans" class="row">
     <div class="col-md-12">
@@ -780,6 +790,7 @@
 
 <!-- EXAMPLE restnamedparams -->
 
+
 <div id="named-url-parameters" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -897,6 +908,7 @@
 </div>
 
 <!-- EXAMPLE hello -->
+
 
 <div id="hello-web-pages" class="row">
     <div class="col-md-12">
@@ -1068,6 +1080,7 @@ Hello, world!
 </div>
 
 <!-- EXAMPLE hi -->
+
 
 <div id="building-html-pages-with-java" class="row">
     <div class="col-md-12">
@@ -1241,6 +1254,7 @@ Hello, world!
 
 <!-- EXAMPLE raw -->
 
+
 <div id="raw-html-pages" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -1372,6 +1386,7 @@ Hello, world!
 </div>
 
 <!-- EXAMPLE showmovie -->
+
 
 <div id="display-bean-properties" class="row">
     <div class="col-md-12">
@@ -1533,6 +1548,7 @@ Hello, world!
 </div>
 
 <!-- EXAMPLE editmovie -->
+
 
 <div id="edit-bean-properties" class="row">
     <div class="col-md-12">
@@ -1696,6 +1712,7 @@ Hello, world!
 
 <!-- EXAMPLE paramgrid -->
 
+
 <div id="create-key-value-data-grid-from-a-map" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -1844,6 +1861,7 @@ Hello, world!
 </div>
 
 <!-- EXAMPLE injection -->
+
 
 <div id="dependency-injection-of-singletons" class="row">
     <div class="col-md-12">
@@ -2028,6 +2046,7 @@ Hello, world!
 
 <!-- EXAMPLE layout -->
 
+
 <div id="bootstrap-based-gui-layout" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -2177,6 +2196,7 @@ Hello, world!
 
 <!-- EXAMPLE highlighting -->
 
+
 <div id="highlighting-text-by-regular-expression-match" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -2217,7 +2237,7 @@ Hello, world!
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_ann">@Page</span>(<span class="_code_str">"/"</span>)</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">Object</span> letters() {</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\\w+"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> highlight(<span class="_code_str">"ab-cd-efg"</span>, <span class="_code_str">"\\\\w+"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -2309,6 +2329,7 @@ Hello, world!
 
 <!-- EXAMPLE webargs -->
 
+
 <div id="server-configuration" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -2353,7 +2374,7 @@ Hello, world!
         </tr>
         <tr>
           <td>secret=&lt;SECRET&gt;</td>
-          <td>configure app-specific secret for encryption</td>
+          <td>configure secret key for cryptography</td>
           <td>random</td>
         </tr>
         <tr>

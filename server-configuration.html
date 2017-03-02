@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -127,6 +128,7 @@
             
 
             
+
 <div id="examplehttpargs-extra" class="row">
     <div class="row">
   <div class="col-md-12">
@@ -161,7 +163,7 @@
         </tr>
         <tr>
           <td>secret=&lt;SECRET&gt;</td>
-          <td>configure app-specific secret for encryption</td>
+          <td>configure secret key for cryptography</td>
           <td>random</td>
         </tr>
         <tr>
@@ -216,7 +218,7 @@
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
 <div class="comment-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_comment">// Initialize the configuration</span></div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.args(args);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.run(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/hi"</span>).json((<span class="_code_cls">Req</span> req) <span class="_code_lambda">-&gt;</span> req.data(<span class="_code_str">"name"</span>, <span class="_code_str">"unknown"</span>));</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>

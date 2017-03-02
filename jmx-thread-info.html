@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -128,6 +129,7 @@
 
             
 
+
 <div id="examplejmx_threads-body" class="row">
 
     <div id="examplejmx_threads-left" class="col-md-12">
@@ -146,7 +148,7 @@
 <p class="send-requests-caption">Let's send some HTTP requests and check the results:</p>
 
 <div>
-    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_/jmx/threads</span>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/_jmx/threads</span>
 </div>
 
 <div class="eg-result">
@@ -181,7 +183,9 @@
       </div>
       <div class="form-group">
         <label>Current thread cpu time supported: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Current thread user time: </label>
@@ -205,7 +209,9 @@
       </div>
       <div class="form-group">
         <label>Object monitor usage supported: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Peak thread count: </label>
@@ -213,23 +219,33 @@
       </div>
       <div class="form-group">
         <label>Synchronizer usage supported: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Thread allocated memory enabled: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Thread allocated memory supported: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Thread contention monitoring enabled: </label>
-        <div class="display-wrap">false</div>
+        <div class="display-wrap">
+          <i class="fa fa-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Thread contention monitoring supported: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Thread count: </label>
@@ -237,11 +253,15 @@
       </div>
       <div class="form-group">
         <label>Thread cpu time enabled: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Thread cpu time supported: </label>
-        <div class="display-wrap">true</div>
+        <div class="display-wrap">
+          <i class="fa fa-check-square-o"></i>
+        </div>
       </div>
       <div class="form-group">
         <label>Total started thread count: </label>

@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -152,6 +153,7 @@
 <div class="col-md-10">
 <!-- EXAMPLE httpapi -->
 
+
 <div id="api-documentation" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -211,7 +213,14 @@
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">String</span> clientIpAddress()</pre></td>
-        <td>Gets the <b>IP address</b> of the HTTP client sending the request.</td>
+        <td>Gets the <b>IP address</b> of the HTTP client directly sending the request.<br>
+ This can be the address of a real user, or a HTTP proxy (if the user uses such), or a reverse proxy (if the application/server uses such).</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">String</span> realIpAddress()</pre></td>
+        <td>A best-effort attempt to infer the real <b>IP address</b> of the end user/client/client proxy.<br>
+ If a reverse proxy is detected with high confidence (or configured), its headers will be used to get the real IP address of the user.<br>
+ Otherwise, the value of <code>Req#clientIpAddress()</code> is returned.</td>
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">long</span> connectionId()</pre></td>
@@ -493,6 +502,11 @@
         <td>Gets the <b><code>Content-Type</code> header</b> of the HTTP response if it has been assigned,
  or the default value as configured in the HTTP route.</td>
       </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">long</span> handle()</pre></td>
+        <td>Returns the request handle, which is used when resuming the request handling in asynchronous way.<br>
+ See <code>Resp#resume</code>.</td>
+      </tr>
     </table>
   </div>
   <h4>
@@ -647,8 +661,7 @@
       </tr>
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Resp</span> json(<span class="_code_cls">Object</span> content)</pre></td>
-        <td>Sets the <b><code>Content-Type: application/json</code> header and the content</b> of the HTTP
- response. <br>
+        <td>Sets the <b><code>Content-Type: application/json</code> header and the content</b> of the HTTP response. <br>
  <i>Alias</i> to <code>contentType(MediaType.JSON).body(content)</code>.</td>
       </tr>
       <tr>
@@ -690,6 +703,10 @@
       <tr>
         <td><pre class="code-snippet"><span class="_code_cls">Screen</span> screen()</pre></td>
         <td>Provides access to the screen model for custom (MVC) page rendering.</td>
+      </tr>
+      <tr>
+        <td><pre class="code-snippet"><span class="_code_cls">void</span> resume(<span class="_code_cls">AsyncLogic</span> asyncLogic)</pre></td>
+        <td>Resumes the asynchronous request handling.</td>
       </tr>
     </table>
   </div>

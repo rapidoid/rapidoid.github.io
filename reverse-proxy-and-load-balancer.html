@@ -53,6 +53,7 @@
                         <li><a href="/">Getting started</a></li>
                         <li><a href="documentation.html">Full documentation</a></li>
                         <li><a href="admincenter.html">The Admin Center</a></li>
+                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
                         <li><a href="pojo.html">High-level POJO controllers</a></li>
@@ -161,6 +162,7 @@
 <div class="col-md-10">
 <!-- EXAMPLE revproxydck -->
 
+
 <div id="rapidoid-as-reverse-proxy-with-docker" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -197,6 +199,7 @@
 </div>
 
 <!-- EXAMPLE revproxycomplex -->
+
 
 <div id="rapidoid-as-reverse-proxy-and-load-balancer-with-docker" class="row">
     <div class="col-md-12">
@@ -242,6 +245,7 @@
 
 <!-- EXAMPLE revproxy -->
 
+
 <div id="programmatic-setup-of-reverse-proxy-and-load-balancer" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -260,15 +264,23 @@
 
         <!-- START CODE -->
         <div class="copy-snippet">
-            <div><div id="examplerevproxy-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">Reverse</span>;</div>
+            <div><div id="examplerevproxy-code" class="code-clean"><div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.http.<span class="_code_cls">Req</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.reverseproxy.<span class="_code_cls">Reverse</span>;</div>
 <div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">App</span>;</div>
+<div class="example-line clearfix"><span class="_code_kw">import</span> org.rapidoid.setup.<span class="_code_cls">On</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Main</span> {</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/a*"</span>).json(<span class="_code_cls">Req</span>::uri);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy(<span class="_code_str">"/g"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.roles(<span class="_code_str">"administrator"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.cacheTTL(<span class="_code_num">1000</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
@@ -290,6 +302,7 @@
 </div>
 
 <!-- EXAMPLE revproxyself -->
+
 
 <div id="reverse-proxy-matching-by-uri-prefix" class="row">
     <div class="col-md-12">
@@ -318,10 +331,10 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_kw">static</span> <span class="_code_kw">void</span> main(<span class="_code_cls">String</span>[] args) {</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">App</span>.bootstrap(args);</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> fooUpstream = <span class="_code_str">"http://localhost:8888/foo"</span>;</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">String</span> fooUpstream = <span class="_code_str">"http://localhost:8080/foo"</span>;</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/bar"</span>).to(fooUpstream);</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(fooUpstream);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy(<span class="_code_str">"/bar"</span>).to(fooUpstream).add();</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy(<span class="_code_str">"/"</span>).to(fooUpstream).add();</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/foo"</span>).html(<span class="_code_str">"FOO"</span>);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">On</span>.get(<span class="_code_str">"/foo/hi"</span>).html(<span class="_code_str">"FOO HI"</span>);</div>
@@ -426,6 +439,28 @@
   </tr>
   <tr>
     <td>
+      <span class="label label-default">ANY</span>
+    </td>
+    <td>/*</td>
+    <td>main</td>
+    <td>html</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="label label-default">ANY</span>
+    </td>
+    <td>/bar/*</td>
+    <td>main</td>
+    <td>html</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
       <span class="label label-success">GET</span>
     </td>
     <td>/bar/hi</td>
@@ -481,6 +516,7 @@
 
 <!-- EXAMPLE revproxylb -->
 
+
 <div id="custom-load-balancer" class="row">
     <div class="col-md-12">
         <h4 class="caption">
@@ -517,7 +553,10 @@
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">return</span> candidates.get(index);</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</div>
 <div class="empty-line clearfix">&nbsp;</div>
-<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy().map(<span class="_code_str">"/"</span>).to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>).loadBalancer(lb);</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_cls">Reverse</span>.proxy(<span class="_code_str">"/"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.to(<span class="_code_str">"http://upstream1:8080"</span>, <span class="_code_str">"http://upstream2:8080"</span>)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.loadBalancer(lb)</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add();</div>
 <div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
 <div class="empty-line clearfix">&nbsp;</div>
 <div class="example-line clearfix">}</div>
