@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid - Rapidoid Coolness: RESTful Memory Info Service</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Rapidoid Coolness: RESTful Memory Info Service</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+
+            
+
+
+<div id="exampleeg1-body" class="row">
+
+    <div id="exampleeg1-left" class="col-md-8">
+
+        <!-- START CODE -->
+        
+            <div><div id="exampleeg1-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">Runtime</span> rt = <span class="_code_cls">Runtime</span>.getRuntime();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/memory"</span>).json(() <span class="_code_lambda">-&gt;</span> U.map(</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"free"</span>, rt.freeMemory(),</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"total"</span>, rt.totalMemory(),</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"max"</span>, rt.maxMemory()</div>
+<div class="example-line clearfix">));</div>
+</div></div>
+        
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="exampleeg1-right" class="col-md-4">
+        <div id="exampleeg1-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/memory</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#eg1 RESULT STARTS HERE -->
+    {"free":609009480,"total":803733504,"max":1828716544}
+    <!-- EXAMPLE#eg1 RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div> <!-- container -->
+
+
+</body>
+</html>

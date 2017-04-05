@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid Twitter</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+
+<div class="container">
+
+
+
+<div class="row">
+
+
+<div class="col-md-12">
+    <!-- EXAMPLE eg1 -->
+
+
+<div id="rapidoid-coolness-restful-memory-info-service" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">1</span>
+            <a href="rapidoid-coolness-restful-memory-info-service.html" class="mini-example-title">Rapidoid Coolness: RESTful Memory Info Service</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleeg1-body" class="row">
+
+    <div id="exampleeg1-left" class="col-md-8">
+
+        <!-- START CODE -->
+        
+            <div><div id="exampleeg1-code" class="code-clean"><div class="example-line clearfix"><span class="_code_cls">Runtime</span> rt = <span class="_code_cls">Runtime</span>.getRuntime();</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/memory"</span>).json(() <span class="_code_lambda">-&gt;</span> U.map(</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"free"</span>, rt.freeMemory(),</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"total"</span>, rt.totalMemory(),</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_str">"max"</span>, rt.maxMemory()</div>
+<div class="example-line clearfix">));</div>
+</div></div>
+        
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="exampleeg1-right" class="col-md-4">
+        <div id="exampleeg1-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/memory</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#eg1 RESULT STARTS HERE -->
+    {"free":609009480,"total":803733504,"max":1828716544}
+    <!-- EXAMPLE#eg1 RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+<!-- EXAMPLE eg2 -->
+
+
+<div id="super-simple-restful-jpa-persistence-with-rapidoid" class="row">
+    <div class="col-md-12">
+        <h4 class="caption">
+            <span class="badge badge-eg-num">2</span>
+            <a href="super-simple-restful-jpa-persistence-with-rapidoid.html" class="mini-example-title">Super-simple RESTful JPA persistence with Rapidoid</a>
+            
+        </h4>
+    </div>
+</div>
+
+
+<div id="exampleeg2-body" class="row">
+
+    <div id="exampleeg2-left" class="col-md-8">
+
+        <!-- START CODE -->
+        
+            <div><div id="exampleeg2-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Entity</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title;</div>
+<div class="example-line clearfix">}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">// In the Main class:</span></div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/foo"</span>).html(req <span class="_code_lambda">-&gt;</span> <span class="_code_str">"bar"</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/movies"</span>).html(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.of(<span class="_code_cls">Movie</span>.<span class="_code_kw">class</span>).all());</div>
+</div></div>
+        
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="exampleeg2-right" class="col-md-4">
+        <div id="exampleeg2-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#eg2 RESULT STARTS HERE -->
+    bar
+    <!-- EXAMPLE#eg2 RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="row row-separated-micro">
+  <div class="col-md-12"></div>
+</div>
+
+
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-footer">
+            Copyright (C) 2014 - 2016 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- container -->
+
+<script>
+$(function () {
+  Rapidoid.init();
+});
+
+</script>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71483708-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async defer>
+!function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http'
+            : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src="rapidoid.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="docs.css" type="text/css" rel="stylesheet"/>
+    <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
+    <link href="theme-default.css" type="text/css" rel="stylesheet"/>
+
+    <title>Rapidoid - Super-simple RESTful JPA persistence with Rapidoid</title>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+</head>
+
+
+<body class="rapidoid">
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Super-simple RESTful JPA persistence with Rapidoid</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-10">
+
+            
+
+
+<div id="exampleeg2-body" class="row">
+
+    <div id="exampleeg2-left" class="col-md-8">
+
+        <!-- START CODE -->
+        
+            <div><div id="exampleeg2-code" class="code-clean"><div class="example-line clearfix"><span class="_code_ann">@Entity</span></div>
+<div class="example-line clearfix"><span class="_code_kw">public</span> <span class="_code_kw">class</span> <span class="_code_cls">Movie</span> {</div>
+<div class="example-line clearfix">&nbsp;&nbsp;&nbsp;&nbsp;<span class="_code_kw">public</span> <span class="_code_cls">String</span> title;</div>
+<div class="example-line clearfix">}</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="comment-line clearfix"><span class="_code_comment">// In the Main class:</span></div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/foo"</span>).html(req <span class="_code_lambda">-&gt;</span> <span class="_code_str">"bar"</span>);</div>
+<div class="empty-line clearfix">&nbsp;</div>
+<div class="example-line clearfix"><span class="_code_cls">On</span>.get(<span class="_code_str">"/movies"</span>).html(() <span class="_code_lambda">-&gt;</span> <span class="_code_cls">JPA</span>.of(<span class="_code_cls">Movie</span>.<span class="_code_kw">class</span>).all());</div>
+</div></div>
+        
+        <!-- END CODE -->
+
+    </div>
+
+    <div id="exampleeg2-right" class="col-md-4">
+        <div id="exampleeg2-results" class="results">
+            <div>
+    <span class="badge eg-GET eg-verb">GET</span> <span class="badge eg-uri">/foo</span>
+</div>
+
+<div class="eg-result">
+    <!-- EXAMPLE#eg2 RESULT STARTS HERE -->
+    bar
+    <!-- EXAMPLE#eg2 RESULT ENDS HERE -->
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div> <!-- container -->
+
+
+</body>
+</html>
