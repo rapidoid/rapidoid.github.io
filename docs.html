@@ -5,7 +5,6 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<meta name="author" content="Rapidoid">
 <title>Rapidoid Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -511,13 +510,10 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Rapidoid Documentation</h1>
-<div class="details">
-<span id="author" class="author">Rapidoid</span><br>
-<span id="email" class="email"><a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span><br>
-</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_rapidoid_documentation">Rapidoid Documentation</a>
 <ul class="sectlevel1">
 <li><a href="#_what_is_rapidoid">1. What is Rapidoid?</a></li>
 <li><a href="#_rapidoid_as_web_platform_docker">2. Rapidoid as Web Platform (Docker)</a></li>
@@ -601,11 +597,22 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
+<style>
+
+code, kbd, pre, samp {
+    font-size: 12px !important;
+}
+
+</style>
+<h1 id="_rapidoid_documentation" class="sect0">Rapidoid Documentation</h1>
+<div class="paragraph">
+<p>Rapidoid &lt;<a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a>&gt;</p>
+</div>
 <div class="paragraph">
 <p>This is a draft version of the new documentation for <a href="http://www.rapidoid.org">Rapidoid</a>.</p>
 </div>
@@ -624,8 +631,6 @@ table.CodeRay td.code>pre{padding:0}
 <p>information about the HTTP routes and sample requests/responses should be included for each example.</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 <div class="sect1">
 <h2 id="_what_is_rapidoid">1. What is Rapidoid?</h2>
@@ -2271,15 +2276,30 @@ malicious way.</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">org.rapidoid.docs.httpcustom</span>;
 
+<span class="keyword">import</span> <span class="include">org.rapidoid.config.Conf</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.setup.App</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.setup.AppBootstrap</span>;
 <span class="keyword">import</span> <span class="include">org.rapidoid.setup.On</span>;
 
 <span class="directive">public</span> <span class="type">class</span> <span class="class">Main</span> {
 
         <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-                On.address(<span class="string"><span class="delimiter">&quot;</span><span class="content">127.0.0.1</span><span class="delimiter">&quot;</span></span>);
-                On.port(<span class="integer">9999</span>);
 
-                On.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">/x</span><span class="delimiter">&quot;</span></span>).json(<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>); <span class="comment">// continue with normal setup</span>
+                <span class="comment">// first thing to do - initializing Rapidoid, without bootstrapping anything at the moment</span>
+                AppBootstrap bootstrap = App.run(args); <span class="comment">// instead of App.bootstrap(args), which might start the server</span>
+
+                <span class="comment">// customizing the server address and port - before the server is bootstrapped</span>
+                On.address(<span class="string"><span class="delimiter">&quot;</span><span class="content">127.0.0.1</span><span class="delimiter">&quot;</span></span>).port(<span class="integer">9997</span>);
+
+                <span class="comment">// fine-tuning the HTTP server</span>
+                Conf.HTTP.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">maxPipeline</span><span class="delimiter">&quot;</span></span>, <span class="integer">32</span>);
+                Conf.NET.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">bufSizeKB</span><span class="delimiter">&quot;</span></span>, <span class="integer">16</span>);
+
+                <span class="comment">// now bootstrap some components, e.g. classpath scanning (beans), JMX, Admin Center</span>
+                bootstrap.beans().jmx().adminCenter();
+
+                <span class="comment">// continue with normal setup</span>
+                On.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">/x</span><span class="delimiter">&quot;</span></span>).json(<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>);
         }
 
 }</code></pre>
@@ -3654,7 +3674,7 @@ malicious way.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-03-30 02:50:50 CEST
+Last updated 2017-04-05 13:17:34 CEST
 </div>
 </div>
 </body>
