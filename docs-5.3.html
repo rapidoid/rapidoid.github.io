@@ -1254,6 +1254,7 @@ The <code>administrator</code> role is configured by default for all routes of t
     <span class="key">Overview</span>: <span class="string"><span class="content">/_</span></span>
     <span class="key">Routes</span>: <span class="string"><span class="content">/_routes</span></span>
     <span class="key">Configuration</span>: <span class="string"><span class="content">/_config</span></span>
+    <span class="key">Deployment</span>: <span class="string"><span class="content">/_deployment</span></span>
     <span class="key">Processes</span>: <span class="string"><span class="content">/_processes</span></span>
     <span class="key">Metrics</span>: <span class="string"><span class="content">/_metrics</span></span>
     <span class="key">Manageables</span>: <span class="string"><span class="content">/_manageables</span></span>
@@ -1289,10 +1290,22 @@ The <code>administrator</code> role is configured by default for all routes of t
   <span class="key">password</span>: <span class="string"><span class="content">UNKNOWN</span></span>
   <span class="key">url</span>: <span class="string"><span class="content">UNKNOWN</span></span>
   <span class="key">options</span>: <span class="string"><span class="content">''</span></span>
-  <span class="key">poolProvider</span>: <span class="string"><span class="content">hikari</span></span>
 
 <span class="key">hibernate</span>:
   <span class="key">dialect</span>: <span class="string"><span class="content">UNKNOWN</span></span>
+  <span class="key">connection</span>:
+    <span class="key">driver_class</span>: <span class="string"><span class="content">${jdbc.driver}</span></span>
+    <span class="key">username</span>: <span class="string"><span class="content">${jdbc.username}</span></span>
+    <span class="key">password</span>: <span class="string"><span class="content">${jdbc.password}</span></span>
+    <span class="key">url</span>: <span class="string"><span class="content">${jdbc.url}</span></span>
+  <span class="key">c3p0</span>:
+    <span class="key">debug</span>: <span class="string"><span class="content">${c3p0.debug}</span></span>
+    <span class="key">initialPoolSize</span>: <span class="string"><span class="content">${c3p0.initialPoolSize}</span></span>
+    <span class="key">minPoolSize</span>: <span class="string"><span class="content">${c3p0.minPoolSize}</span></span>
+    <span class="key">maxPoolSize</span>: <span class="string"><span class="content">${c3p0.maxPoolSize}</span></span>
+    <span class="key">acquireIncrement</span>: <span class="string"><span class="content">${c3p0.acquireIncrement}</span></span>
+    <span class="key">maxStatementsPerConnection</span>: <span class="string"><span class="content">${c3p0.maxStatementsPerConnection}</span></span>
+    <span class="key">idleConnectionTestPeriod</span>: <span class="string"><span class="content">${c3p0.idleConnectionTestPeriod}</span></span>
 
 <span class="key">c3p0</span>:
   <span class="key">debug</span>: <span class="string"><span class="content">false</span></span>
@@ -1364,16 +1377,7 @@ The <code>administrator</code> role is configured by default for all routes of t
 
 <span class="key">log</span>:
   <span class="key">level</span>: <span class="string"><span class="content">info</span></span>
-  <span class="key">fancy</span>: <span class="string"><span class="content">false</span></span> <span class="comment"># auto</span>
-
-<span class="key">tls</span>:
-  <span class="key">selfSigned</span>: <span class="string"><span class="content">true</span></span>
-  <span class="key">enabled</span>: <span class="string"><span class="content">false</span></span>
-  <span class="key">keystore</span>: <span class="string"><span class="content">''</span></span>
-  <span class="key">keystorePassword</span>: <span class="string"><span class="content">''</span></span>
-  <span class="key">keyManagerPassword</span>: <span class="string"><span class="content">''</span></span>
-  <span class="key">truststore</span>: <span class="string"><span class="content">''</span></span>
-  <span class="key">truststorePassword</span>: <span class="string"><span class="content">''</span></span></code></pre>
+  <span class="key">fancy</span>: <span class="string"><span class="content">false</span></span> <span class="comment"># auto</span></code></pre>
 </div>
 </div>
 </div>
@@ -2662,7 +2666,12 @@ ResourceLoader templateLoader;</code></pre>
   <span class="key">password</span>: <span class="string"><span class="content">''</span></span>
 
 <span class="key">hibernate</span>:
-  <span class="key">dialect</span>: <span class="string"><span class="content">org.hibernate.dialect.HSQLDialect</span></span></code></pre>
+  <span class="key">dialect</span>: <span class="string"><span class="content">org.hibernate.dialect.HSQLDialect</span></span>
+  <span class="key">connection</span>:
+    <span class="key">driver_class</span>: <span class="string"><span class="content">org.hsqldb.jdbc.JDBCDriver</span></span>
+    <span class="key">url</span>: <span class="string"><span class="content">jdbc:hsqldb:mem:public</span></span>
+    <span class="key">username</span>: <span class="string"><span class="content">sa</span></span>
+    <span class="key">password</span>: <span class="string"><span class="content">''</span></span></code></pre>
 </div>
 </div>
 <div id="app-listing" class="listingblock">
@@ -2671,11 +2680,13 @@ ResourceLoader templateLoader;</code></pre>
 <pre class="CodeRay highlight"><code data-lang="yml"><span class="key">hibernate</span>:
   <span class="key">format_sql</span>: <span class="string"><span class="content">false</span></span>
   <span class="key">show_sql</span>: <span class="string"><span class="content">true</span></span>
-  <span class="key">hbm2ddl</span>:
-    <span class="key">auto</span>: <span class="string"><span class="content">update</span></span>
 
 <span class="key">c3p0</span>:
-  <span class="key">debug</span>: <span class="string"><span class="content">true</span></span></code></pre>
+  <span class="key">debug</span>: <span class="string"><span class="content">true</span></span>
+
+<span class="key">hibernate</span>:
+  <span class="key">hbm2ddl</span>:
+    <span class="key">auto</span>: <span class="string"><span class="content">update</span></span></code></pre>
 </div>
 </div>
 <div id="app-listing" class="listingblock">
@@ -2688,7 +2699,12 @@ ResourceLoader templateLoader;</code></pre>
   <span class="key">password</span>: <span class="string"><span class="content">root</span></span>
 
 <span class="key">hibernate</span>:
-  <span class="key">dialect</span>: <span class="string"><span class="content">org.hibernate.dialect.MySQL5Dialect</span></span></code></pre>
+  <span class="key">dialect</span>: <span class="string"><span class="content">org.hibernate.dialect.MySQL5Dialect</span></span>
+  <span class="key">connection</span>:
+    <span class="key">driver_class</span>: <span class="string"><span class="content">com.mysql.jdbc.Driver</span></span>
+    <span class="key">username</span>: <span class="string"><span class="content">root</span></span>
+    <span class="key">password</span>: <span class="string"><span class="content">root</span></span>
+    <span class="key">url</span>: <span class="string"><span class="content">jdbc:mysql://localhost:3306/rapidoid</span></span></code></pre>
 </div>
 </div>
 <div id="app-listing" class="listingblock">
@@ -4169,7 +4185,7 @@ ResourceLoader templateLoader;</code></pre>
         <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
                 App.bootstrap(args);
 
-                <span class="predefined-type">String</span> fooUpstream = <span class="string"><span class="delimiter">&quot;</span><span class="content">localhost:8080/foo</span><span class="delimiter">&quot;</span></span>;
+                <span class="predefined-type">String</span> fooUpstream = <span class="string"><span class="delimiter">&quot;</span><span class="content">http://localhost:8080/foo</span><span class="delimiter">&quot;</span></span>;
 
                 Reverse.proxy(<span class="string"><span class="delimiter">&quot;</span><span class="content">/bar</span><span class="delimiter">&quot;</span></span>).to(fooUpstream).add();
                 Reverse.proxy(<span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>).to(fooUpstream).add();
@@ -4341,7 +4357,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-03 12:22:06 CEST
+Last updated 2017-06-01 18:22:56 CEST
 </div>
 </div>
 </body>
