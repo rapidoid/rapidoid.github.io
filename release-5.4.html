@@ -22,7 +22,7 @@
     <link href="rapidoid.min.css" type="text/css" rel="stylesheet"/>
     <link href="theme-default.css" type="text/css" rel="stylesheet"/>
 
-    <title>Rapidoid Release-5.3</title>
+    <title>Rapidoid Release-5.4</title>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -147,66 +147,31 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
 
-        <div class="module-header">What&apos;s new in v5.3?</div>
+        <div class="module-header">What&apos;s new in v5.4?</div>
 
-        <div class="module-explanation"><h3>The v5.3 release introduces a new way to use Rapidoid - as application container!</h3>
-<h4>What's new in Rapidoid v5.3:</h4>
+        <div class="module-explanation">
+            <h3>The v5.4 release brings several improvements to Rapidoid's networking components and HTTP server.</h3>
+            <br>
+<h4><b>What's new in Rapidoid v5.4:</b></h4>
 <ul>
-    <li><a href="https://hub.docker.com/_/rapidoid/" target="_blank" rel="nofollow"><b>Official Docker repository for Rapidoid</b></a>:
-        <br><code class="note-code">docker run rapidoid --help</code>
-    </li>
-    <li><b>Maven plug-in for simple &amp; easy packaging of uber-JAR</b>
-        <br><code class="note-code">mvn org.rapidoid:app:build</code> - it works on any Maven project, without configuring anything
-    </li>
-    <li><b>Maven plug-in for simple &amp; easy application deployment</b> on multiple servers
-        <br><code class="note-code">mvn org.rapidoid:app:deploy</code> - it works on any Maven project, requires <a href="https://github.com/rapidoid/rapidoid/blob/master/examples/hello-world/deploy.yml"><span class="text-box">deploy.yml</span></a></li>
-    <li>fine-grained <b>activation of built-in services</b> through command-line parameters
-        <br><code class="note-code">docker run -p 8888:8888 rapidoid app.services=welcome admin.services=center</code>
-    </li>
-    <li>new API for <b>super-easy recursive file search</b> by name patterns and type
-        <br><code class="note-code">IO.find("pom.xml").files().in(location).recursive().getLocations()</code>
-    </li>
-    <li>new API for <b>easy execution and management of (system or application) processes</b>
-        <br><code class="note-code">Proc.run("java", "-cp", jar, "com.example.Main").waitFor().out()</code>
-    </li>
-    <li><b>high-performance in-memory cache</b> with fluent API and basic statistics
-        <br><code class="note-code">Cache&lt;String, Integer&gt; lengths = Caching.of((String key) -> key.length()).ttl(1000).build();</code>
-    </li>
-    <li>fine-grained scope control in the authentication tokens</li>
-    <li>stronger security: <b>AES</b> and <b>HMAC</b> cryptography utils were re-written from scratch
-        <br><code class="note-code">byte[] enc = Crypto.encrypt(msg.getBytes());</code>
-    </li>
-    <li>new <b>built-in <span class="text-box">status</span> service</b>, serving application and system status information</li>
-    <li>new <b>built-in <span class="text-box">processes</span> service</b> for management of child processes</li>
-    <li>new <b>built-in <span class="text-box">discovery</span> service</b> for simple peer discovery (transient)</li>
-    <li>new <b>built-in <span class="text-box">echo</span> service</b> for debugging received requests</li>
-    <li><b>improved deployment process</b> with 2-phase application JAR staging + deployment</li>
-    <li>many new <b>end-to-end tests for Rapidoid's Docker container integration</b></li>
-    <li>improved logger, enriched API, also configured as default commons-logging implementation
-        <br><code class="note-code">Log.info("Super-simple and cool!");</code>
-    </li>
-    <li>improved generic request pipeline processing (low-level Net API)</li>
-    <li>convenient way to define and display custom metrics</li>
-    <li><b>built-in <span class="text-box">mysql</span> and <span class="text-box">postgres</span> profiles for JDBC and Hibernate configuration</b></li>
-    <li>hot reloading upon external configuration changes</li>
-    <li><b>super-simple SQL-powered RESTful services and GUI pages</b></li>
-    <li>Simplified job scheduling:
-        <br><code class="note-code">Jobs.after(3).seconds().run(() -> {})</code></li>
-    <li><b>constructor-based dependency injection</b></li>
-    <li><b>optional integration with Guice</b></li>
-    <li><b>salted password hash generator (for the users configuration)</b>
-        <br><code class="note-code">docker run -it --rm rapidoid password</code>
-    </li>
+    <li><b>HTTPS support (TLS, in general)</b> - this was the most frequently requested feature</li>
+    <li><b>HTTP streaming</b> support</li>
+    <li>high performance database connection pools - powered by <b>Hikari</b></li>
+    <li>implemented <b>JDBC paging</b></li>
+    <li>atomic application start-up</li>
+    <li>extended capabilities of the JDBC client API (async. processing, result mappers etc.)</li>
+    <li>unified data source configuration for Hibernate and JDBC (only JDBC for both)</li>
+    <li>simplified bootstrap of Hibernate</li>
     <li>several bug fixes</li>
     <li>many small improvements</li>
 </ul>
 
 <h4><b>Breaking changes</b>:</h4>
 <ul>
-    <li>changes in the low-level async Net API - added <span class="text-box">void resume(long connId, long handle, AsyncLogic asyncLogic)</span></li>
-    <li>renamed URIs for the built-in services from <span class="text-box">/_/*</span> to <span class="text-box">/_*</span></li>
-    <li>removed the factory utils from the Goodies (please use normal instantiation instead)</li>
-</ul></div>
+    <li>the built-in C3P0 library has been replaced by Hikari in <span class="text-box">rapidoid-quick</span> module</li>
+    <li>the <span class="text-box">hibernate</span> data source configuration section has been replaced by <span class="text-box">jdbc</span></li>
+</ul>
+        </div>
 
     </div>
 </div>

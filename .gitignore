@@ -36,3 +36,5 @@ target
 *.iml
 
 diff.txt
+
+.idea
