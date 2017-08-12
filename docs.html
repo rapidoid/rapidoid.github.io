@@ -1538,11 +1538,13 @@ The custom configuration overrides the built-in default configuration.</p>
 <span class="keyword">import</span> <span class="include">org.rapidoid.docs.multisetup.barsetup.BarSetupCtrl</span>;
 <span class="keyword">import</span> <span class="include">org.rapidoid.docs.multisetup.foosetup.FooSetupCtrl</span>;
 <span class="keyword">import</span> <span class="include">org.rapidoid.http.HTTP</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.setup.App</span>;
 <span class="keyword">import</span> <span class="include">org.rapidoid.setup.Setup</span>;
 
 <span class="directive">public</span> <span class="type">class</span> <span class="class">Main</span> {
 
         <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+                App.run(args);
 
                 Setup setup1 = Setup.create(<span class="string"><span class="delimiter">&quot;</span><span class="content">foo</span><span class="delimiter">&quot;</span></span>).port(<span class="integer">2222</span>);
                 Setup setup2 = Setup.create(<span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>).port(<span class="integer">3333</span>);
