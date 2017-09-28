@@ -579,6 +579,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_bootstrapping_the_authentication_services">12.1. Bootstrapping the authentication services</a></li>
 <li><a href="#_authentication_flow">12.2. Authentication flow</a></li>
 <li><a href="#_the_admin_api">12.3. The Admin API</a></li>
+<li><a href="#_custom_authentication_tokens">12.4. Custom authentication tokens</a></li>
 </ul>
 </li>
 <li><a href="#_configuration">13. Configuration</a>
@@ -634,81 +635,76 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_sending_chunked_http_response">22.1. Sending chunked HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_custom_authentication_setup">23. Custom authentication setup</a>
+<li><a href="#_customization">23. Customization</a>
 <ul class="sectlevel2">
-<li><a href="#_custom_authentication_tokens">23.1. Custom authentication tokens</a></li>
+<li><a href="#_customizable_components">23.1. Customizable components</a></li>
 </ul>
 </li>
-<li><a href="#_customization">24. Customization</a>
+<li><a href="#_logging">24. Logging</a>
 <ul class="sectlevel2">
-<li><a href="#_customizable_components">24.1. Customizable components</a></li>
+<li><a href="#_configuring_2">24.1. Configuring</a></li>
 </ul>
 </li>
-<li><a href="#_logging">25. Logging</a>
+<li><a href="#_basic_command_line_arguments">25. Basic command-line arguments</a></li>
+<li><a href="#_rapidoid_modules">26. Rapidoid Modules</a>
 <ul class="sectlevel2">
-<li><a href="#_configuring_2">25.1. Configuring</a></li>
+<li><a href="#_rapidoid_gui_module">26.1. Rapidoid GUI module</a></li>
+<li><a href="#_rapidoid_fluent_module">26.2. Rapidoid Fluent module</a></li>
+<li><a href="#_rapidoid_essentials_module">26.3. Rapidoid Essentials module</a></li>
+<li><a href="#_rapidoid_web_module">26.4. Rapidoid Web module</a></li>
 </ul>
 </li>
-<li><a href="#_basic_command_line_arguments">26. Basic command-line arguments</a></li>
-<li><a href="#_rapidoid_modules">27. Rapidoid Modules</a>
+<li><a href="#_the_http_api">27. The HTTP API</a></li>
+<li><a href="#_examples">28. Examples</a>
 <ul class="sectlevel2">
-<li><a href="#_rapidoid_gui_module">27.1. Rapidoid GUI module</a></li>
-<li><a href="#_rapidoid_fluent_module">27.2. Rapidoid Fluent module</a></li>
-<li><a href="#_rapidoid_essentials_module">27.3. Rapidoid Essentials module</a></li>
-<li><a href="#_rapidoid_web_module">27.4. Rapidoid Web module</a></li>
-</ul>
-</li>
-<li><a href="#_the_http_api">28. The HTTP API</a></li>
-<li><a href="#_examples">29. Examples</a>
-<ul class="sectlevel2">
-<li><a href="#_automatic_construction_and_serialization_of_javabeans">29.1. Automatic Construction and Serialization of JavaBeans</a></li>
-<li><a href="#_the_default_configuration">29.2. The default configuration</a></li>
-<li><a href="#_edit_bean_properties">29.3. Edit bean properties</a></li>
-<li><a href="#_exception_handlers">29.4. Exception handlers</a></li>
-<li><a href="#_restful_services_with_lambda_handlers_jpa_jackson_and_bean_validation">29.5. RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</a></li>
-<li><a href="#_configuring_rapidoid">29.6. Configuring Rapidoid</a></li>
-<li><a href="#_hello_web_pages">29.7. Hello, web pages!</a></li>
-<li><a href="#_hello_restful_services">29.8. Hello RESTful services!</a></li>
-<li><a href="#_building_html_pages_with_java">29.9. Building HTML pages with Java</a></li>
-<li><a href="#_highlighting_text_by_regular_expression_match">29.10. Highlighting Text by Regular Expression Match</a></li>
-<li><a href="#_server_configuration">29.11. Server Configuration</a></li>
-<li><a href="#_asynchronous_request_processing">29.12. Asynchronous request processing</a></li>
-<li><a href="#_more_control_over_the_http_server_setup">29.13. More control over the HTTP server setup</a></li>
-<li><a href="#_generic_handlers_match_any_request">29.14. Generic handlers match any request</a></li>
-<li><a href="#_returning_a_not_found_result">29.15. Returning a "Not Found" result</a></li>
-<li><a href="#_http_redirect">29.16. HTTP redirect</a></li>
-<li><a href="#_all_the_request_data_is_in_the_req_req_parameter">29.17. All the request data is in the (Req req) parameter</a></li>
-<li><a href="#_rendering_a_http_response">29.18. Rendering a HTTP response</a></li>
-<li><a href="#_manipulating_the_response_code">29.19. Manipulating the response code</a></li>
-<li><a href="#_manipulating_the_response_content_type">29.20. Manipulating the response content type</a></li>
-<li><a href="#_http_handlers_and_routing">29.21. HTTP handlers and routing</a></li>
-<li><a href="#_server_side_session_a_k_a_session">29.22. Server-side session (a.k.a. Session)</a></li>
-<li><a href="#_restful_service_one_liner">29.23. RESTful service one-liner</a></li>
-<li><a href="#_instant_web_application">29.24. Instant web application</a></li>
-<li><a href="#_stopping_the_server">29.25. Stopping the server</a></li>
-<li><a href="#_client_side_token_as_a_session">29.26. Client-side Token as a session</a></li>
-<li><a href="#_request_wrappers_interceptors">29.27. Request wrappers (interceptors)</a></li>
-<li><a href="#_dependency_injection_of_singletons">29.28. Dependency injection of singletons</a></li>
-<li><a href="#_restful_services_with_jpa_crud">29.29. RESTful services with JPA CRUD</a></li>
-<li><a href="#_jpa_scaffolding">29.30. JPA Scaffolding</a></li>
-<li><a href="#_bootstrap_based_gui_layout">29.31. Bootstrap-based GUI layout</a></li>
-<li><a href="#_mvc_architecture_with_rapidoid_s_built_in_template_engine">29.32. MVC architecture with Rapidoid&#8217;s built-in template engine</a></li>
-<li><a href="#_custom_entitymanager_provider">29.33. Custom EntityManager provider</a></li>
-<li><a href="#_custom_entitymanagerfactory_provider">29.34. Custom EntityManagerFactory provider</a></li>
-<li><a href="#_custom_template_loader">29.35. Custom template loader</a></li>
-<li><a href="#_create_key_value_data_grid_from_a_map">29.36. Create key-value data grid from a Map</a></li>
-<li><a href="#_high_level_annotation_based_pojo_controllers">29.37. High-level annotation-based POJO controllers</a></li>
-<li><a href="#_application_profiles">29.38. Application Profiles</a></li>
-<li><a href="#_raw_html_pages">29.39. Raw HTML pages</a></li>
-<li><a href="#_automatic_json_serialization_of_data_structures">29.40. Automatic JSON Serialization of Data Structures</a></li>
-<li><a href="#_named_url_parameters">29.41. Named URL Parameters</a></li>
-<li><a href="#_url_pattern_matching">29.42. URL pattern matching</a></li>
-<li><a href="#_programmatic_setup_of_reverse_proxy_and_load_balancer">29.43. Programmatic setup of reverse proxy and load balancer</a></li>
-<li><a href="#_custom_load_balancer">29.44. Custom load balancer</a></li>
-<li><a href="#_reverse_proxy_matching_by_uri_prefix">29.45. Reverse proxy matching by URI prefix</a></li>
-<li><a href="#_role_based_security">29.46. Role-based security</a></li>
-<li><a href="#_display_bean_properties">29.47. Display bean properties</a></li>
-<li><a href="#_serving_static_files_from_the_default_locations">29.48. Serving static files from the default locations</a></li>
+<li><a href="#_automatic_construction_and_serialization_of_javabeans">28.1. Automatic Construction and Serialization of JavaBeans</a></li>
+<li><a href="#_the_default_configuration">28.2. The default configuration</a></li>
+<li><a href="#_edit_bean_properties">28.3. Edit bean properties</a></li>
+<li><a href="#_exception_handlers">28.4. Exception handlers</a></li>
+<li><a href="#_restful_services_with_lambda_handlers_jpa_jackson_and_bean_validation">28.5. RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</a></li>
+<li><a href="#_configuring_rapidoid">28.6. Configuring Rapidoid</a></li>
+<li><a href="#_hello_web_pages">28.7. Hello, web pages!</a></li>
+<li><a href="#_hello_restful_services">28.8. Hello RESTful services!</a></li>
+<li><a href="#_building_html_pages_with_java">28.9. Building HTML pages with Java</a></li>
+<li><a href="#_highlighting_text_by_regular_expression_match">28.10. Highlighting Text by Regular Expression Match</a></li>
+<li><a href="#_server_configuration">28.11. Server Configuration</a></li>
+<li><a href="#_asynchronous_request_processing">28.12. Asynchronous request processing</a></li>
+<li><a href="#_more_control_over_the_http_server_setup">28.13. More control over the HTTP server setup</a></li>
+<li><a href="#_generic_handlers_match_any_request">28.14. Generic handlers match any request</a></li>
+<li><a href="#_returning_a_not_found_result">28.15. Returning a "Not Found" result</a></li>
+<li><a href="#_http_redirect">28.16. HTTP redirect</a></li>
+<li><a href="#_all_the_request_data_is_in_the_req_req_parameter">28.17. All the request data is in the (Req req) parameter</a></li>
+<li><a href="#_rendering_a_http_response">28.18. Rendering a HTTP response</a></li>
+<li><a href="#_manipulating_the_response_code">28.19. Manipulating the response code</a></li>
+<li><a href="#_manipulating_the_response_content_type">28.20. Manipulating the response content type</a></li>
+<li><a href="#_http_handlers_and_routing">28.21. HTTP handlers and routing</a></li>
+<li><a href="#_server_side_session_a_k_a_session">28.22. Server-side session (a.k.a. Session)</a></li>
+<li><a href="#_restful_service_one_liner">28.23. RESTful service one-liner</a></li>
+<li><a href="#_instant_web_application">28.24. Instant web application</a></li>
+<li><a href="#_stopping_the_server">28.25. Stopping the server</a></li>
+<li><a href="#_client_side_token_as_a_session">28.26. Client-side Token as a session</a></li>
+<li><a href="#_request_wrappers_interceptors">28.27. Request wrappers (interceptors)</a></li>
+<li><a href="#_dependency_injection_of_singletons">28.28. Dependency injection of singletons</a></li>
+<li><a href="#_restful_services_with_jpa_crud">28.29. RESTful services with JPA CRUD</a></li>
+<li><a href="#_jpa_scaffolding">28.30. JPA Scaffolding</a></li>
+<li><a href="#_bootstrap_based_gui_layout">28.31. Bootstrap-based GUI layout</a></li>
+<li><a href="#_mvc_architecture_with_rapidoid_s_built_in_template_engine">28.32. MVC architecture with Rapidoid&#8217;s built-in template engine</a></li>
+<li><a href="#_custom_entitymanager_provider">28.33. Custom EntityManager provider</a></li>
+<li><a href="#_custom_entitymanagerfactory_provider">28.34. Custom EntityManagerFactory provider</a></li>
+<li><a href="#_custom_template_loader">28.35. Custom template loader</a></li>
+<li><a href="#_create_key_value_data_grid_from_a_map">28.36. Create key-value data grid from a Map</a></li>
+<li><a href="#_high_level_annotation_based_pojo_controllers">28.37. High-level annotation-based POJO controllers</a></li>
+<li><a href="#_application_profiles">28.38. Application Profiles</a></li>
+<li><a href="#_raw_html_pages">28.39. Raw HTML pages</a></li>
+<li><a href="#_automatic_json_serialization_of_data_structures">28.40. Automatic JSON Serialization of Data Structures</a></li>
+<li><a href="#_named_url_parameters">28.41. Named URL Parameters</a></li>
+<li><a href="#_url_pattern_matching">28.42. URL pattern matching</a></li>
+<li><a href="#_programmatic_setup_of_reverse_proxy_and_load_balancer">28.43. Programmatic setup of reverse proxy and load balancer</a></li>
+<li><a href="#_custom_load_balancer">28.44. Custom load balancer</a></li>
+<li><a href="#_reverse_proxy_matching_by_uri_prefix">28.45. Reverse proxy matching by URI prefix</a></li>
+<li><a href="#_role_based_security">28.46. Role-based security</a></li>
+<li><a href="#_display_bean_properties">28.47. Display bean properties</a></li>
+<li><a href="#_serving_static_files_from_the_default_locations">28.48. Serving static files from the default locations</a></li>
 </ul>
 </li>
 </ul>
@@ -1329,6 +1325,40 @@ The built-in <code>GET /_logout</code> handler will be changed to <code>POST /_l
 The <code>administrator</code> role is configured by default for all routes of this API.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_custom_authentication_tokens">12.4. Custom authentication tokens</h3>
+<div id="app-listing" class="listingblock">
+<div class="title">Main.java</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">org.rapidoid.docs.httpcustomauth</span>;
+
+<span class="keyword">import</span> <span class="include">org.rapidoid.http.Self</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.setup.App</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.setup.My</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.setup.On</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.u.U</span>;
+<span class="keyword">import</span> <span class="include">org.rapidoid.util.Tokens</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">Main</span> {
+
+        <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+                App.bootstrap(args);
+
+                My.rolesProvider((req, username) -&gt; username.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">bob</span><span class="delimiter">&quot;</span></span>) ? U.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">manager</span><span class="delimiter">&quot;</span></span>) : U.set());
+
+                On.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">/hey</span><span class="delimiter">&quot;</span></span>).roles(<span class="string"><span class="delimiter">&quot;</span><span class="content">manager</span><span class="delimiter">&quot;</span></span>).json(() -&gt; U.map(<span class="string"><span class="delimiter">&quot;</span><span class="content">msg</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">ok</span><span class="delimiter">&quot;</span></span>));
+
+                <span class="comment">// generate a token</span>
+                <span class="predefined-type">String</span> token = Tokens.serialize(U.map(<span class="string"><span class="delimiter">&quot;</span><span class="content">_user</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">bob</span><span class="delimiter">&quot;</span></span>));
+
+                <span class="comment">// demo request, prints {&quot;msg&quot;:&quot;ok&quot;}</span>
+                Self.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">/hey?_token=</span><span class="delimiter">&quot;</span></span> + token).print();
+        }
+
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1927,53 +1957,14 @@ The server will listen on the same port, but instead of <code>HTTP</code> it wil
 </div>
 </div>
 <div class="sect1">
-<h2 id="_custom_authentication_setup">23. Custom authentication setup</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_custom_authentication_tokens">23.1. Custom authentication tokens</h3>
-<div id="app-listing" class="listingblock">
-<div class="title">Main.java</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">org.rapidoid.docs.httpcustomauth</span>;
-
-<span class="keyword">import</span> <span class="include">org.rapidoid.http.Self</span>;
-<span class="keyword">import</span> <span class="include">org.rapidoid.setup.App</span>;
-<span class="keyword">import</span> <span class="include">org.rapidoid.setup.My</span>;
-<span class="keyword">import</span> <span class="include">org.rapidoid.setup.On</span>;
-<span class="keyword">import</span> <span class="include">org.rapidoid.u.U</span>;
-<span class="keyword">import</span> <span class="include">org.rapidoid.util.Tokens</span>;
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">Main</span> {
-
-        <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
-                App.bootstrap(args);
-
-                My.rolesProvider((req, username) -&gt; username.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">bob</span><span class="delimiter">&quot;</span></span>) ? U.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">manager</span><span class="delimiter">&quot;</span></span>) : U.set());
-
-                On.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">/hey</span><span class="delimiter">&quot;</span></span>).roles(<span class="string"><span class="delimiter">&quot;</span><span class="content">manager</span><span class="delimiter">&quot;</span></span>).json(() -&gt; U.map(<span class="string"><span class="delimiter">&quot;</span><span class="content">msg</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">ok</span><span class="delimiter">&quot;</span></span>));
-
-                <span class="comment">// generate a token</span>
-                <span class="predefined-type">String</span> token = Tokens.serialize(U.map(<span class="string"><span class="delimiter">&quot;</span><span class="content">_user</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">bob</span><span class="delimiter">&quot;</span></span>));
-
-                <span class="comment">// demo request, prints {&quot;msg&quot;:&quot;ok&quot;}</span>
-                Self.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">/hey?_token=</span><span class="delimiter">&quot;</span></span> + token).print();
-        }
-
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_customization">24. Customization</h2>
+<h2 id="_customization">23. Customization</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Many components of Rapidoid can be customized / replaced.
 Please see the <code>My</code> and <code>Customization</code> classes.</p>
 </div>
 <div class="sect2">
-<h3 id="_customizable_components">24.1. Customizable components</h3>
+<h3 id="_customizable_components">23.1. Customizable components</h3>
 <div class="paragraph">
 <p>Here is a list of the customization fields in the <code>Customization</code> class:</p>
 </div>
@@ -2040,13 +2031,13 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_logging">25. Logging</h2>
+<h2 id="_logging">24. Logging</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Please see the <code>Log</code> class.</p>
 </div>
 <div class="sect2">
-<h3 id="_configuring_2">25.1. Configuring</h3>
+<h3 id="_configuring_2">24.1. Configuring</h3>
 <div class="paragraph">
 <p>Please see the <code>log</code> configuration section.</p>
 </div>
@@ -2054,7 +2045,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_basic_command_line_arguments">26. Basic command-line arguments</h2>
+<h2 id="_basic_command_line_arguments">25. Basic command-line arguments</h2>
 <div class="sectionbody">
 <div class="row">
   <div class="col-md-12">
@@ -2134,10 +2125,10 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rapidoid_modules">27. Rapidoid Modules</h2>
+<h2 id="_rapidoid_modules">26. Rapidoid Modules</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_rapidoid_gui_module">27.1. Rapidoid GUI module</h3>
+<h3 id="_rapidoid_gui_module">26.1. Rapidoid GUI module</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2150,7 +2141,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rapidoid_fluent_module">27.2. Rapidoid Fluent module</h3>
+<h3 id="_rapidoid_fluent_module">26.2. Rapidoid Fluent module</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2160,7 +2151,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rapidoid_essentials_module">27.3. Rapidoid Essentials module</h3>
+<h3 id="_rapidoid_essentials_module">26.3. Rapidoid Essentials module</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2173,7 +2164,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rapidoid_web_module">27.4. Rapidoid Web module</h3>
+<h3 id="_rapidoid_web_module">26.4. Rapidoid Web module</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2185,7 +2176,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_http_api">28. The HTTP API</h2>
+<h2 id="_the_http_api">27. The HTTP API</h2>
 <div class="sectionbody">
 <div class="col-md-12">
   <h4>
@@ -2736,10 +2727,10 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_examples">29. Examples</h2>
+<h2 id="_examples">28. Examples</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_automatic_construction_and_serialization_of_javabeans">29.1. Automatic Construction and Serialization of JavaBeans</h3>
+<h3 id="_automatic_construction_and_serialization_of_javabeans">28.1. Automatic Construction and Serialization of JavaBeans</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Book.java</div>
 <div class="content">
@@ -2798,7 +2789,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_default_configuration">29.2. The default configuration</h3>
+<h3 id="_the_default_configuration">28.2. The default configuration</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -2819,7 +2810,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_edit_bean_properties">29.3. Edit bean properties</h3>
+<h3 id="_edit_bean_properties">28.3. Edit bean properties</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -2878,7 +2869,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exception_handlers">29.4. Exception handlers</h3>
+<h3 id="_exception_handlers">28.4. Exception handlers</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -2908,7 +2899,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restful_services_with_lambda_handlers_jpa_jackson_and_bean_validation">29.5. RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</h3>
+<h3 id="_restful_services_with_lambda_handlers_jpa_jackson_and_bean_validation">28.5. RESTful services with Lambda handlers, JPA, Jackson and Bean Validation</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Book.java</div>
 <div class="content">
@@ -2959,7 +2950,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_configuring_rapidoid">29.6. Configuring Rapidoid</h3>
+<h3 id="_configuring_rapidoid">28.6. Configuring Rapidoid</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Book.java</div>
 <div class="content">
@@ -3081,7 +3072,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_hello_web_pages">29.7. Hello, web pages!</h3>
+<h3 id="_hello_web_pages">28.7. Hello, web pages!</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Hello.java</div>
 <div class="content">
@@ -3119,7 +3110,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_hello_restful_services">29.8. Hello RESTful services!</h3>
+<h3 id="_hello_restful_services">28.8. Hello RESTful services!</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3157,7 +3148,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_building_html_pages_with_java">29.9. Building HTML pages with Java</h3>
+<h3 id="_building_html_pages_with_java">28.9. Building HTML pages with Java</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3199,7 +3190,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_highlighting_text_by_regular_expression_match">29.10. Highlighting Text by Regular Expression Match</h3>
+<h3 id="_highlighting_text_by_regular_expression_match">28.10. Highlighting Text by Regular Expression Match</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Highlighting.java</div>
 <div class="content">
@@ -3238,7 +3229,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_server_configuration">29.11. Server Configuration</h3>
+<h3 id="_server_configuration">28.11. Server Configuration</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3262,7 +3253,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_asynchronous_request_processing">29.12. Asynchronous request processing</h3>
+<h3 id="_asynchronous_request_processing">28.12. Asynchronous request processing</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3291,7 +3282,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_more_control_over_the_http_server_setup">29.13. More control over the HTTP server setup</h3>
+<h3 id="_more_control_over_the_http_server_setup">28.13. More control over the HTTP server setup</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3330,7 +3321,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_generic_handlers_match_any_request">29.14. Generic handlers match any request</h3>
+<h3 id="_generic_handlers_match_any_request">28.14. Generic handlers match any request</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3356,7 +3347,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_returning_a_not_found_result">29.15. Returning a "Not Found" result</h3>
+<h3 id="_returning_a_not_found_result">28.15. Returning a "Not Found" result</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3380,7 +3371,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_http_redirect">29.16. HTTP redirect</h3>
+<h3 id="_http_redirect">28.16. HTTP redirect</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3401,7 +3392,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_all_the_request_data_is_in_the_req_req_parameter">29.17. All the request data is in the (Req req) parameter</h3>
+<h3 id="_all_the_request_data_is_in_the_req_req_parameter">28.17. All the request data is in the (Req req) parameter</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3429,7 +3420,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rendering_a_http_response">29.18. Rendering a HTTP response</h3>
+<h3 id="_rendering_a_http_response">28.18. Rendering a HTTP response</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3459,7 +3450,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_manipulating_the_response_code">29.19. Manipulating the response code</h3>
+<h3 id="_manipulating_the_response_code">28.19. Manipulating the response code</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3479,7 +3470,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_manipulating_the_response_content_type">29.20. Manipulating the response content type</h3>
+<h3 id="_manipulating_the_response_content_type">28.20. Manipulating the response content type</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3508,7 +3499,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_http_handlers_and_routing">29.21. HTTP handlers and routing</h3>
+<h3 id="_http_handlers_and_routing">28.21. HTTP handlers and routing</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3536,7 +3527,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_server_side_session_a_k_a_session">29.22. Server-side session (a.k.a. Session)</h3>
+<h3 id="_server_side_session_a_k_a_session">28.22. Server-side session (a.k.a. Session)</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3559,7 +3550,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restful_service_one_liner">29.23. RESTful service one-liner</h3>
+<h3 id="_restful_service_one_liner">28.23. RESTful service one-liner</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3580,7 +3571,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_instant_web_application">29.24. Instant web application</h3>
+<h3 id="_instant_web_application">28.24. Instant web application</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3616,7 +3607,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_stopping_the_server">29.25. Stopping the server</h3>
+<h3 id="_stopping_the_server">28.25. Stopping the server</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3635,7 +3626,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_client_side_token_as_a_session">29.26. Client-side Token as a session</h3>
+<h3 id="_client_side_token_as_a_session">28.26. Client-side Token as a session</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3658,7 +3649,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_request_wrappers_interceptors">29.27. Request wrappers (interceptors)</h3>
+<h3 id="_request_wrappers_interceptors">28.27. Request wrappers (interceptors)</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3686,7 +3677,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dependency_injection_of_singletons">29.28. Dependency injection of singletons</h3>
+<h3 id="_dependency_injection_of_singletons">28.28. Dependency injection of singletons</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Bar.java</div>
 <div class="content">
@@ -3763,7 +3754,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restful_services_with_jpa_crud">29.29. RESTful services with JPA CRUD</h3>
+<h3 id="_restful_services_with_jpa_crud">28.29. RESTful services with JPA CRUD</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Book.java</div>
 <div class="content">
@@ -3817,7 +3808,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jpa_scaffolding">29.30. JPA Scaffolding</h3>
+<h3 id="_jpa_scaffolding">28.30. JPA Scaffolding</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Book.java</div>
 <div class="content">
@@ -3881,7 +3872,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bootstrap_based_gui_layout">29.31. Bootstrap-based GUI layout</h3>
+<h3 id="_bootstrap_based_gui_layout">28.31. Bootstrap-based GUI layout</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">BootstrapLayout.java</div>
 <div class="content">
@@ -3924,7 +3915,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mvc_architecture_with_rapidoid_s_built_in_template_engine">29.32. MVC architecture with Rapidoid&#8217;s built-in template engine</h3>
+<h3 id="_mvc_architecture_with_rapidoid_s_built_in_template_engine">28.32. MVC architecture with Rapidoid&#8217;s built-in template engine</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -3972,7 +3963,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_entitymanager_provider">29.33. Custom EntityManager provider</h3>
+<h3 id="_custom_entitymanager_provider">28.33. Custom EntityManager provider</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4002,7 +3993,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_entitymanagerfactory_provider">29.34. Custom EntityManagerFactory provider</h3>
+<h3 id="_custom_entitymanagerfactory_provider">28.34. Custom EntityManagerFactory provider</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4032,7 +4023,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_template_loader">29.35. Custom template loader</h3>
+<h3 id="_custom_template_loader">28.35. Custom template loader</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4062,7 +4053,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_key_value_data_grid_from_a_map">29.36. Create key-value data grid from a Map</h3>
+<h3 id="_create_key_value_data_grid_from_a_map">28.36. Create key-value data grid from a Map</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4102,7 +4093,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_high_level_annotation_based_pojo_controllers">29.37. High-level annotation-based POJO controllers</h3>
+<h3 id="_high_level_annotation_based_pojo_controllers">28.37. High-level annotation-based POJO controllers</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4145,7 +4136,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_application_profiles">29.38. Application Profiles</h3>
+<h3 id="_application_profiles">28.38. Application Profiles</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">FooCtrl.java</div>
 <div class="content">
@@ -4235,7 +4226,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_raw_html_pages">29.39. Raw HTML pages</h3>
+<h3 id="_raw_html_pages">28.39. Raw HTML pages</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4273,7 +4264,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_automatic_json_serialization_of_data_structures">29.40. Automatic JSON Serialization of Data Structures</h3>
+<h3 id="_automatic_json_serialization_of_data_structures">28.40. Automatic JSON Serialization of Data Structures</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4321,7 +4312,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_named_url_parameters">29.41. Named URL Parameters</h3>
+<h3 id="_named_url_parameters">28.41. Named URL Parameters</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4360,7 +4351,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_url_pattern_matching">29.42. URL pattern matching</h3>
+<h3 id="_url_pattern_matching">28.42. URL pattern matching</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4405,7 +4396,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_programmatic_setup_of_reverse_proxy_and_load_balancer">29.43. Programmatic setup of reverse proxy and load balancer</h3>
+<h3 id="_programmatic_setup_of_reverse_proxy_and_load_balancer">28.43. Programmatic setup of reverse proxy and load balancer</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4435,7 +4426,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_load_balancer">29.44. Custom load balancer</h3>
+<h3 id="_custom_load_balancer">28.44. Custom load balancer</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4470,7 +4461,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reverse_proxy_matching_by_uri_prefix">29.45. Reverse proxy matching by URI prefix</h3>
+<h3 id="_reverse_proxy_matching_by_uri_prefix">28.45. Reverse proxy matching by URI prefix</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4501,7 +4492,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_role_based_security">29.46. Role-based security</h3>
+<h3 id="_role_based_security">28.46. Role-based security</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4560,7 +4551,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_display_bean_properties">29.47. Display bean properties</h3>
+<h3 id="_display_bean_properties">28.47. Display bean properties</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
@@ -4616,7 +4607,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_serving_static_files_from_the_default_locations">29.48. Serving static files from the default locations</h3>
+<h3 id="_serving_static_files_from_the_default_locations">28.48. Serving static files from the default locations</h3>
 <div id="app-listing" class="listingblock">
 <div class="title">Main.java</div>
 <div class="content">
