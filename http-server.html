@@ -45,29 +45,15 @@
         </div>
         <div id="collapsable" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/">Getting started</a></li>
+                <li><a href="/">Home</a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs<span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
-                        <li><a href="/">Getting started</a></li>
-                        <li class="active"><a href="docs.html">View the new docs! (WiP)</a></li><li><a href="documentation.html">Full documentation</a></li>
-                        <li><a href="admincenter.html">The Admin Center</a></li>
-                        <li><a href="release-5.3.html">What's new in v5.3</a></li>
-                        <li><a href="release-5.2.html">What's new in v5.2</a></li>
-                        <li><a href="release-5.1.html">What's new in v5.1</a></li>
-                        <li><a href="pojo.html">High-level POJO controllers</a></li>
-                        <li><a href="injection.html">Dependency injection</a></li>
-                        <li><a href="profiles.html">Profiles</a></li>
-                        <li><a href="routing.html">Request routing</a></li>
-                        <li><a href="session.html">Session management</a></li>
-                        <li><a href="security.html">Security</a></li>
-                        <li><a href="configuration.html">Configuration</a></li>
-                        <li><a href="static.html">Serving static files</a></li>
-                        <li><a href="reverse-proxy-and-load-balancer.html">Reverse proxy / load balancer</a></li>
-                        <li><a href="http-fast.html">Low-level HTTP</a></li>
-                        <li><a href="net.html">Implementing custom protocols</a></li>
-                        <li><a href="api.html">API</a></li>
+
+                        <li class="active"><a href="docs.html">New documentation (WiP)</a></li>
+<li><a href="documentation.html">Old documentation</a></li>
+
                     </ul>
                 </li>
 
@@ -80,14 +66,13 @@
                         <li><a href="web.html">web</a></li>
                         <li><a href="quick.html">quick</a></li>
                         <li><a href="render.html">render</a></li>
-                        <li><a href="fluent.html">fluent</a></li>
-                        <li><a href="essentials.html">essentials</a></li>
+
+
                         <li><a href="net.html">net</a></li>
                     </ul>
                 </li>
 
                 <li><a rel="nofollow" href="community.html">Community</a></li>
-                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
             </ul>
 
             <div class="navbar-brand navbar-right">
@@ -113,115 +98,6 @@
 
 <div class="container">
 
-<div class="row">
-    <div class="col-md-12">
-        <h2>Rapidoid - Extremely Fast, Simple and Powerful Java Web Framework!</h2>
-    </div>
-</div>
-
-
-
-<div class="row">
-    <div class="col-md-8 col-sm-12">
-        <p>
-            <b>
-                <a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license).
-                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">View benchmark...</a>
-            </b>
-            <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
-        </p>
-    </div>
-
-    <div class="col-md-4 col-sm-12">
-        <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup" class="pull-right">
-    <form action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-
-        <div class="mc-field-group">
-            <input type="email" value="" name="EMAIL" class="required email form-control input-sm" id="mce-EMAIL" placeholder="Your e-mail address"> <input type="submit" value="Subscribe to newsletter" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary btn-sm">
-        </div>
-        <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display: none"></div>
-            <div class="response" id="mce-success-response" style="display: none"></div>
-        </div>
-        <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_c2c27aa25fdef31d9513d6124_08cd6ec699" value="">
-        </div>
-        <div class="clear"></div>
-    </form>
-</div>
-<!--End mc_embed_signup-->
-
-    </div>
-</div>
-
-<div class="row row-separated-nano">
-    <div class="col-md-8">
-
-        <div class="module-desc">
-            Rapidoid consists of several modules which can be used separately or together:
-            <ul>
-                <li>
-                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Low-level HTTP Framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="http-server.html">rapidoid-http-server</a> - <span class="module-about">High-level Web Framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (based on Bootstrap + Angular)</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="web.html">rapidoid-web</a> - <span class="module-about">rapidoid-http-server + rapidoid-gui + goodies</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="quick.html">rapidoid-quick</a> - <span class="module-about">rapidoid-web + Hibernate + Logback + MySQL Connector...</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&apos;s template engine</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="fluent.html">rapidoid-fluent</a> - <span class="module-about">Fluent API for Elegant Stream Manipulation</span>
-                    <span class="pull-right module-about-right">JDK 8</span>
-                </li>
-                <li>
-                    <a href="essentials.html">rapidoid-essentials</a> - <span class="module-about">Simple &amp; Sweet Utils</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="net.html">rapidoid-net</a> - <span class="module-about">Network protocol framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-http-server</b> as Maven dependency:</div>
-<div class="copy-snippet">
-<div class="maven-code">
-&lt;<span class="_code_tag">dependency</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-http-server</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.5.4</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
-&lt;/<span class="_code_tag">dependency</span>&gt;<br>
-</div>
-</div>
-
-        <div id="docker-title"><a href="https://hub.docker.com/_/rapidoid/" target="_blank" rel="nofollow">
-    <b>Official Docker repository for Rapidoid</b></a>:
-</div>
-<div class="copy-snippet"><code>docker run rapidoid --help</code></div>
-
-    </div>
-
-</div>
-
 <div class="row row-separated-nano">
     <div class="col-md-12">
         <div class="module-header">
@@ -229,9 +105,6 @@
         </div>
         <h3>High-level Web Framework</h3>
         <h5><b></b></h5>
-
-
-
     </div>
 </div>
 
@@ -252,7 +125,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="page-footer">
-            Copyright (C) 2014 - 2017 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+            Copyright (C) 2014 - 2018 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
         </div>
     </div>
 </div>

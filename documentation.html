@@ -45,29 +45,26 @@
         </div>
         <div id="collapsable" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/">Getting started</a></li>
+                <li><a href="/">Home</a></li>
 
                 <li class="active" class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs<span class="caret"></span></a>
                     <ul role="menu" class="dropdown-menu">
-                        <li><a href="/">Getting started</a></li>
-                        <li class="active"><a href="docs.html">View the new docs! (WiP)</a></li><li><a href="documentation.html">Full documentation</a></li>
-                        <li><a href="admincenter.html">The Admin Center</a></li>
+
+                        <li class="active"><a href="docs.html">New documentation (WiP)</a></li>
+<li><a href="documentation.html">Old documentation</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Releases<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="release-5.5.html">What's new in v5.5</a></li>
+                        <li><a href="release-5.4.html">What's new in v5.4</a></li>
                         <li><a href="release-5.3.html">What's new in v5.3</a></li>
                         <li><a href="release-5.2.html">What's new in v5.2</a></li>
                         <li><a href="release-5.1.html">What's new in v5.1</a></li>
-                        <li><a href="pojo.html">High-level POJO controllers</a></li>
-                        <li><a href="injection.html">Dependency injection</a></li>
-                        <li><a href="profiles.html">Profiles</a></li>
-                        <li><a href="routing.html">Request routing</a></li>
-                        <li><a href="session.html">Session management</a></li>
-                        <li><a href="security.html">Security</a></li>
-                        <li><a href="configuration.html">Configuration</a></li>
-                        <li><a href="static.html">Serving static files</a></li>
-                        <li><a href="reverse-proxy-and-load-balancer.html">Reverse proxy / load balancer</a></li>
-                        <li><a href="http-fast.html">Low-level HTTP</a></li>
-                        <li><a href="net.html">Implementing custom protocols</a></li>
-                        <li><a href="api.html">API</a></li>
                     </ul>
                 </li>
 
@@ -80,14 +77,13 @@
                         <li><a href="web.html">web</a></li>
                         <li><a href="quick.html">quick</a></li>
                         <li><a href="render.html">render</a></li>
-                        <li><a href="fluent.html">fluent</a></li>
-                        <li><a href="essentials.html">essentials</a></li>
+
+
                         <li><a href="net.html">net</a></li>
                     </ul>
                 </li>
 
                 <li><a rel="nofollow" href="community.html">Community</a></li>
-                <li><a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Source</a></li>
             </ul>
 
             <div class="navbar-brand navbar-right">
@@ -113,48 +109,6 @@
 
 <div class="container">
 
-<div class="row">
-    <div class="col-md-12">
-        <h2>Rapidoid - Extremely Fast, Simple and Powerful Java Web Framework!</h2>
-    </div>
-</div>
-
-
-
-<div class="row">
-    <div class="col-md-8 col-sm-12">
-        <p>
-            <b>
-                <a rel="nofollow" href="https://github.com/rapidoid/rapidoid">Open source</a> (Apache license).
-                <a rel="nofollow" href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">View benchmark...</a>
-            </b>
-            <span id="group-email">Community: <a href="mailto:rapidoid@googlegroups.com">rapidoid@googlegroups.com</a></span>
-        </p>
-    </div>
-
-    <div class="col-md-4 col-sm-12">
-        <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup" class="pull-right">
-    <form action="http://rapidobest.us3.list-manage.com/subscribe/post?u=c2c27aa25fdef31d9513d6124&amp;id=08cd6ec699" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-
-        <div class="mc-field-group">
-            <input type="email" value="" name="EMAIL" class="required email form-control input-sm" id="mce-EMAIL" placeholder="Your e-mail address"> <input type="submit" value="Subscribe to newsletter" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary btn-sm">
-        </div>
-        <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display: none"></div>
-            <div class="response" id="mce-success-response" style="display: none"></div>
-        </div>
-        <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_c2c27aa25fdef31d9513d6124_08cd6ec699" value="">
-        </div>
-        <div class="clear"></div>
-    </form>
-</div>
-<!--End mc_embed_signup-->
-
-    </div>
-</div>
-
 <div class="row row-separated-nano">
     <div class="col-md-8">
 
@@ -163,39 +117,31 @@
             <ul>
                 <li>
                     <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Low-level HTTP Framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                    <span class="pull-right module-about-right"></span>
                 </li>
                 <li>
                     <a href="http-server.html">rapidoid-http-server</a> - <span class="module-about">High-level Web Framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                    <span class="pull-right module-about-right"></span>
                 </li>
                 <li>
                     <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (based on Bootstrap + Angular)</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                    <span class="pull-right module-about-right"></span>
                 </li>
                 <li>
                     <a href="web.html">rapidoid-web</a> - <span class="module-about">rapidoid-http-server + rapidoid-gui + goodies</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                    <span class="pull-right module-about-right"></span>
                 </li>
                 <li>
                     <a href="quick.html">rapidoid-quick</a> - <span class="module-about">rapidoid-web + Hibernate + Logback + MySQL Connector...</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                    <span class="pull-right module-about-right"></span>
                 </li>
                 <li>
                     <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&apos;s template engine</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
-                </li>
-                <li>
-                    <a href="fluent.html">rapidoid-fluent</a> - <span class="module-about">Fluent API for Elegant Stream Manipulation</span>
-                    <span class="pull-right module-about-right">JDK 8</span>
-                </li>
-                <li>
-                    <a href="essentials.html">rapidoid-essentials</a> - <span class="module-about">Simple &amp; Sweet Utils</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                    <span class="pull-right module-about-right"></span>
                 </li>
                 <li>
                     <a href="net.html">rapidoid-net</a> - <span class="module-about">Network protocol framework</span>
-                    <span class="pull-right module-about-right">JDK 6 - 8</span>
+                    <span class="pull-right module-about-right"></span>
                 </li>
             </ul>
         </div>
@@ -225,7 +171,7 @@
 <div class="row row-separated-nano">
     <div class="col-md-12">
 
-        <div class="module-header">Full documentation with all examples</div>
+        <div class="module-header">Old documentation with all examples</div>
 
 
     </div>
@@ -243,7 +189,7 @@
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">1</span>
-            <a href="restful-service-one-liner.html" class="mini-example-title">RESTful service one-liner</a>
+            <span class="mini-example-title">RESTful service one-liner</span>
             
         </h4>
     </div>
@@ -346,7 +292,7 @@
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">2</span>
-            <a href="instant-web-application.html" class="mini-example-title">Instant web application</a>
+            <span class="mini-example-title">Instant web application</span>
             
         </h4>
     </div>
@@ -501,7 +447,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">3</span>
-            <a href="more-control-over-the-http-server-setup.html" class="mini-example-title">More control over the HTTP server setup</a>
+            <span class="mini-example-title">More control over the HTTP server setup</span>
             
         </h4>
     </div>
@@ -541,7 +487,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">4</span>
-            <a href="http-handlers-and-routing.html" class="mini-example-title">HTTP handlers and routing</a>
+            <span class="mini-example-title">HTTP handlers and routing</span>
             
         </h4>
     </div>
@@ -713,7 +659,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">5</span>
-            <a href="all-the-request-data-is-in-the-req-req-parameter.html" class="mini-example-title">All the request data is in the (Req req) parameter</a>
+            <span class="mini-example-title">All the request data is in the (Req req) parameter</span>
             
         </h4>
     </div>
@@ -928,7 +874,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">6</span>
-            <a href="rendering-a-http-response.html" class="mini-example-title">Rendering a HTTP response</a>
+            <span class="mini-example-title">Rendering a HTTP response</span>
             
         </h4>
     </div>
@@ -1074,7 +1020,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">7</span>
-            <a href="high-level-annotation-based-pojo-controllers.html" class="mini-example-title">High-level annotation-based POJO controllers</a>
+            <span class="mini-example-title">High-level annotation-based POJO controllers</span>
             
         </h4>
     </div>
@@ -1158,7 +1104,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">8</span>
-            <a href="exception-handlers.html" class="mini-example-title">Exception handlers</a>
+            <span class="mini-example-title">Exception handlers</span>
             
         </h4>
     </div>
@@ -1217,7 +1163,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">9</span>
-            <a href="mvc-architecture-with-rapidoid-s-built-in-template-engine.html" class="mini-example-title">MVC architecture with Rapidoid&apos;s built-in template engine</a>
+            <span class="mini-example-title">MVC architecture with Rapidoid&apos;s built-in template engine</span>
             
         </h4>
     </div>
@@ -1438,7 +1384,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">10</span>
-            <a href="serving-static-files-from-the-default-locations.html" class="mini-example-title">Serving static files from the default locations</a>
+            <span class="mini-example-title">Serving static files from the default locations</span>
             
         </h4>
     </div>
@@ -1589,7 +1535,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">11</span>
-            <a href="role-based-security.html" class="mini-example-title">Role-based security</a>
+            <span class="mini-example-title">Role-based security</span>
             
         </h4>
     </div>
@@ -1882,7 +1828,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">12</span>
-            <a href="server-side-session-a-k-a-session.html" class="mini-example-title">Server-side session (a.k.a. Session)</a>
+            <span class="mini-example-title">Server-side session (a.k.a. Session)</span>
             
         </h4>
     </div>
@@ -2020,7 +1966,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">13</span>
-            <a href="client-side-token-as-a-session.html" class="mini-example-title">Client-side Token as a session</a>
+            <span class="mini-example-title">Client-side Token as a session</span>
             
         </h4>
     </div>
@@ -2094,7 +2040,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">14</span>
-            <a href="manipulating-the-response-content-type.html" class="mini-example-title">Manipulating the response content type</a>
+            <span class="mini-example-title">Manipulating the response content type</span>
             
         </h4>
     </div>
@@ -2229,7 +2175,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">15</span>
-            <a href="manipulating-the-response-code.html" class="mini-example-title">Manipulating the response code</a>
+            <span class="mini-example-title">Manipulating the response code</span>
             
         </h4>
     </div>
@@ -2349,7 +2295,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">16</span>
-            <a href="request-wrappers-interceptors.html" class="mini-example-title">Request wrappers (interceptors)</a>
+            <span class="mini-example-title">Request wrappers (interceptors)</span>
             
         </h4>
     </div>
@@ -2469,7 +2415,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">17</span>
-            <a href="returning-a-not-found-result.html" class="mini-example-title">Returning a &quot;Not Found&quot; result</a>
+            <span class="mini-example-title">Returning a &quot;Not Found&quot; result</span>
             
         </h4>
     </div>
@@ -2576,7 +2522,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">18</span>
-            <a href="generic-handlers-match-any-request.html" class="mini-example-title">Generic handlers match any request</a>
+            <span class="mini-example-title">Generic handlers match any request</span>
             
         </h4>
     </div>
@@ -2645,7 +2591,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">19</span>
-            <a href="asynchronous-request-processing.html" class="mini-example-title">Asynchronous request processing</a>
+            <span class="mini-example-title">Asynchronous request processing</span>
             
         </h4>
     </div>
@@ -2778,7 +2724,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">20</span>
-            <a href="url-pattern-matching.html" class="mini-example-title">URL pattern matching</a>
+            <span class="mini-example-title">URL pattern matching</span>
             
         </h4>
     </div>
@@ -2924,7 +2870,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">21</span>
-            <a href="automatic-json-serialization-of-data-structures.html" class="mini-example-title">Automatic JSON Serialization of Data Structures</a>
+            <span class="mini-example-title">Automatic JSON Serialization of Data Structures</span>
             
         </h4>
     </div>
@@ -3061,7 +3007,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">22</span>
-            <a href="automatic-construction-and-serialization-of-javabeans.html" class="mini-example-title">Automatic Construction and Serialization of JavaBeans</a>
+            <span class="mini-example-title">Automatic Construction and Serialization of JavaBeans</span>
             
         </h4>
     </div>
@@ -3202,7 +3148,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">23</span>
-            <a href="named-url-parameters.html" class="mini-example-title">Named URL Parameters</a>
+            <span class="mini-example-title">Named URL Parameters</span>
             
         </h4>
     </div>
@@ -3321,7 +3267,7 @@ Hello <b>world</b>!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">24</span>
-            <a href="hello-web-pages.html" class="mini-example-title">Hello, web pages!</a>
+            <span class="mini-example-title">Hello, web pages!</span>
             
         </h4>
     </div>
@@ -3493,7 +3439,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">25</span>
-            <a href="building-html-pages-with-java.html" class="mini-example-title">Building HTML pages with Java</a>
+            <span class="mini-example-title">Building HTML pages with Java</span>
             
         </h4>
     </div>
@@ -3666,7 +3612,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">26</span>
-            <a href="raw-html-pages.html" class="mini-example-title">Raw HTML pages</a>
+            <span class="mini-example-title">Raw HTML pages</span>
             
         </h4>
     </div>
@@ -3799,7 +3745,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">27</span>
-            <a href="creating-a-two-column-grid-from-a-map.html" class="mini-example-title">Creating a Two-column Grid from a Map</a>
+            <span class="mini-example-title">Creating a Two-column Grid from a Map</span>
             
         </h4>
     </div>
@@ -3891,7 +3837,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">28</span>
-            <a href="constructing-buttons.html" class="mini-example-title">Constructing buttons</a>
+            <span class="mini-example-title">Constructing buttons</span>
             
         </h4>
     </div>
@@ -3939,7 +3885,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">29</span>
-            <a href="creating-a-form-from-a-map.html" class="mini-example-title">Creating a form from a Map</a>
+            <span class="mini-example-title">Creating a form from a Map</span>
             
         </h4>
     </div>
@@ -4002,7 +3948,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">30</span>
-            <a href="display-bean-properties.html" class="mini-example-title">Display bean properties</a>
+            <span class="mini-example-title">Display bean properties</span>
             
         </h4>
     </div>
@@ -4164,7 +4110,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">31</span>
-            <a href="edit-bean-properties.html" class="mini-example-title">Edit bean properties</a>
+            <span class="mini-example-title">Edit bean properties</span>
             
         </h4>
     </div>
@@ -4327,7 +4273,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">32</span>
-            <a href="create-key-value-data-grid-from-a-map.html" class="mini-example-title">Create key-value data grid from a Map</a>
+            <span class="mini-example-title">Create key-value data grid from a Map</span>
             
         </h4>
     </div>
@@ -4477,7 +4423,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">33</span>
-            <a href="dependency-injection-of-singletons.html" class="mini-example-title">Dependency injection of singletons</a>
+            <span class="mini-example-title">Dependency injection of singletons</span>
             
         </h4>
     </div>
@@ -4661,7 +4607,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">34</span>
-            <a href="bootstrap-based-gui-layout.html" class="mini-example-title">Bootstrap-based GUI layout</a>
+            <span class="mini-example-title">Bootstrap-based GUI layout</span>
             
         </h4>
     </div>
@@ -4811,7 +4757,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">35</span>
-            <a href="creating-collections.html" class="mini-example-title">Creating collections</a>
+            <span class="mini-example-title">Creating collections</span>
             
         </h4>
     </div>
@@ -4857,7 +4803,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">36</span>
-            <a href="collection-utils.html" class="mini-example-title">Collection utils</a>
+            <span class="mini-example-title">Collection utils</span>
             
         </h4>
     </div>
@@ -4902,7 +4848,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">37</span>
-            <a href="string-utils.html" class="mini-example-title">String utils</a>
+            <span class="mini-example-title">String utils</span>
             
         </h4>
     </div>
@@ -4947,7 +4893,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">38</span>
-            <a href="application-profiles.html" class="mini-example-title">Application Profiles</a>
+            <span class="mini-example-title">Application Profiles</span>
             
         </h4>
     </div>
@@ -5188,7 +5134,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">39</span>
-            <a href="configuring-rapidoid.html" class="mini-example-title">Configuring Rapidoid</a>
+            <span class="mini-example-title">Configuring Rapidoid</span>
             
         </h4>
     </div>
@@ -5450,7 +5396,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">40</span>
-            <a href="server-configuration.html" class="mini-example-title">Server Configuration</a>
+            <span class="mini-example-title">Server Configuration</span>
             
         </h4>
     </div>
@@ -5575,7 +5521,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">41</span>
-            <a href="stopping-the-server.html" class="mini-example-title">Stopping the server</a>
+            <span class="mini-example-title">Stopping the server</span>
             
         </h4>
     </div>
@@ -5613,7 +5559,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">42</span>
-            <a href="implementing-echo-protocol.html" class="mini-example-title">Implementing Echo protocol</a>
+            <span class="mini-example-title">Implementing Echo protocol</span>
             
         </h4>
     </div>
@@ -5681,7 +5627,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">43</span>
-            <a href="building-the-fastest-http-server.html" class="mini-example-title">Building the fastest HTTP server</a>
+            <span class="mini-example-title">Building the fastest HTTP server</span>
             
         </h4>
     </div>
@@ -5808,7 +5754,7 @@ Hello, world!
     <div class="col-md-12">
         <h4 class="caption">
             <span class="badge badge-eg-num">44</span>
-            <a href="api-documentation.html" class="mini-example-title">API documentation</a>
+            <span class="mini-example-title">API documentation</span>
             
         </h4>
     </div>
@@ -6526,7 +6472,7 @@ Hello, world!
 <div class="row">
     <div class="col-md-12">
         <div class="page-footer">
-            Copyright (C) 2014 - 2017 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
+            Copyright (C) 2014 - 2018 <a rel="nofollow" href="http://www.nikolche.com">Nikolche Mihajlovski</a> and contributors
         </div>
     </div>
 </div>
