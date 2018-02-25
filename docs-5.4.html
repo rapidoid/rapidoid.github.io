@@ -1393,6 +1393,33 @@ The <code>administrator</code> role is configured by default for all routes of t
 
 <span class="key">main-zone</span>: <span class="string"><span class="content">{}</span></span>
 
+<span class="key">admin-zone</span>:
+  <span class="key">home</span>: <span class="string"><span class="content">/_</span></span>
+  <span class="key">brand</span>: <span class="string"><span class="content">'&lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt; Admin Center'</span></span>
+  <span class="key">search</span>: <span class="string"><span class="content">false</span></span>
+  <span class="key">fluid</span>: <span class="string"><span class="content">true</span></span>
+  <span class="key">menu</span>:
+    <span class="key">Overview</span>: <span class="string"><span class="content">/_</span></span>
+    <span class="key">Routes</span>: <span class="string"><span class="content">/_routes</span></span>
+    <span class="key">Configuration</span>: <span class="string"><span class="content">/_config</span></span>
+    <span class="key">Processes</span>: <span class="string"><span class="content">/_processes</span></span>
+    <span class="key">Metrics</span>: <span class="string"><span class="content">/_metrics</span></span>
+    <span class="key">Manageables</span>: <span class="string"><span class="content">/_manageables</span></span>
+    <span class="key">Application</span>:
+      <span class="key">Beans</span>: <span class="string"><span class="content">/_beans</span></span>
+      <span class="key">Entities</span>: <span class="string"><span class="content">/_entities</span></span>
+    <span class="key">System</span>:
+      <span class="key">Terminate / Restart</span>: <span class="string"><span class="content">/_terminate</span></span>
+      <span class="key">Classpath</span>: <span class="string"><span class="content">/_classpath</span></span>
+      <span class="key">Memory pool</span>: <span class="string"><span class="content">/_jmx/mempool</span></span>
+      <span class="key">JVM Threads</span>: <span class="string"><span class="content">/_jmx/threads</span></span>
+      <span class="key">Operating system</span>: <span class="string"><span class="content">/_jmx/os</span></span>
+      <span class="key">Garbage collection</span>: <span class="string"><span class="content">/_jmx/gc</span></span>
+      <span class="key">Memory</span>: <span class="string"><span class="content">/_jmx/memory</span></span>
+      <span class="key">Runtime</span>: <span class="string"><span class="content">/_jmx/runtime</span></span>
+      <span class="key">Classes</span>: <span class="string"><span class="content">/_jmx/classes</span></span>
+      <span class="key">Compilation</span>: <span class="string"><span class="content">/_jmx/compilation</span></span>
+
 <span class="key">users</span>:
   <span class="key">admin</span>:
     <span class="key">roles</span>: <span class="string"><span class="content">administrator</span></span>
@@ -1450,10 +1477,9 @@ The <code>administrator</code> role is configured by default for all routes of t
 <span class="key">net</span>:
   <span class="key">address</span>: <span class="string"><span class="content">0.0.0.0</span></span>
   <span class="key">port</span>: <span class="string"><span class="content">8080</span></span>
-<span class="comment"># workers: ${system.cpus}</span>
+<span class="comment">#  workers: ${system.cpus}</span>
   <span class="key">bufSizeKB</span>: <span class="string"><span class="content">256</span></span>
   <span class="key">noDelay</span>: <span class="string"><span class="content">false</span></span>
-  <span class="key">maxPipeline</span>: <span class="string"><span class="content">0</span></span>
   <span class="key">syncBufs</span>: <span class="string"><span class="content">true</span></span>
   <span class="key">blockingAccept</span>: <span class="string"><span class="content">false</span></span>
 
@@ -1487,7 +1513,7 @@ The <code>administrator</code> role is configured by default for all routes of t
 
 <span class="key">log</span>:
   <span class="key">level</span>: <span class="string"><span class="content">info</span></span>
-<span class="comment"># fancy: auto</span>
+  <span class="key">fancy</span>: <span class="string"><span class="content">false</span></span> <span class="comment"># auto</span>
 
 <span class="key">tls</span>:
   <span class="key">selfSigned</span>: <span class="string"><span class="content">true</span></span>
@@ -1742,34 +1768,7 @@ You can use it by activating the desired application profile.</p>
   <span class="key">password</span>: <span class="string"><span class="content">''</span></span>
 
 <span class="key">hibernate</span>:
-  <span class="key">dialect</span>: <span class="string"><span class="content">org.hibernate.dialect.HSQLDialect</span></span>
-
-<span class="key">center-zone</span>:
-  <span class="key">home</span>: <span class="string"><span class="content">/_</span></span>
-  <span class="key">brand</span>: <span class="string"><span class="content">'&lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt; Admin Center'</span></span>
-  <span class="key">search</span>: <span class="string"><span class="content">false</span></span>
-  <span class="key">fluid</span>: <span class="string"><span class="content">true</span></span>
-  <span class="key">menu</span>:
-    <span class="key">Overview</span>: <span class="string"><span class="content">/_</span></span>
-    <span class="key">Routes</span>: <span class="string"><span class="content">/_routes</span></span>
-    <span class="key">Configuration</span>: <span class="string"><span class="content">/_config</span></span>
-    <span class="key">Processes</span>: <span class="string"><span class="content">/_processes</span></span>
-    <span class="key">Metrics</span>: <span class="string"><span class="content">/_metrics</span></span>
-    <span class="key">Manageables</span>: <span class="string"><span class="content">/_manageables</span></span>
-    <span class="key">Application</span>:
-      <span class="key">Beans</span>: <span class="string"><span class="content">/_beans</span></span>
-      <span class="key">Entities</span>: <span class="string"><span class="content">/_entities</span></span>
-    <span class="key">System</span>:
-      <span class="key">Terminate / Restart</span>: <span class="string"><span class="content">/_terminate</span></span>
-      <span class="key">Classpath</span>: <span class="string"><span class="content">/_classpath</span></span>
-      <span class="key">Memory pool</span>: <span class="string"><span class="content">/_jmx/mempool</span></span>
-      <span class="key">JVM Threads</span>: <span class="string"><span class="content">/_jmx/threads</span></span>
-      <span class="key">Operating system</span>: <span class="string"><span class="content">/_jmx/os</span></span>
-      <span class="key">Garbage collection</span>: <span class="string"><span class="content">/_jmx/gc</span></span>
-      <span class="key">Memory</span>: <span class="string"><span class="content">/_jmx/memory</span></span>
-      <span class="key">Runtime</span>: <span class="string"><span class="content">/_jmx/runtime</span></span>
-      <span class="key">Classes</span>: <span class="string"><span class="content">/_jmx/classes</span></span>
-      <span class="key">Compilation</span>: <span class="string"><span class="content">/_jmx/compilation</span></span></code></pre>
+  <span class="key">dialect</span>: <span class="string"><span class="content">org.hibernate.dialect.HSQLDialect</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -3436,7 +3435,7 @@ ResourceLoader templateLoader;</code></pre>
 
         <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
 
-                <span class="comment">/* Returning the request or response object means the response was constructed */</span>
+            <span class="comment">/* Returning the request or response object means the response was constructed */</span>
 
                 On.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>).html((Req req) -&gt; {
                         Resp resp = req.response();
@@ -3848,7 +3847,6 @@ ResourceLoader templateLoader;</code></pre>
 
 <span class="directive">public</span> <span class="type">class</span> <span class="class">Main</span> <span class="directive">extends</span> GUI {
 
-        <span class="annotation">@SuppressWarnings</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">unchecked</span><span class="delimiter">&quot;</span></span>)
         <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
 
                 On.page(<span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>).mvc(<span class="string"><span class="delimiter">&quot;</span><span class="content">Welcome!</span><span class="delimiter">&quot;</span></span>);
@@ -4650,7 +4648,7 @@ ResourceLoader templateLoader;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-12-01 17:13:50 CET
+Last updated 2017-08-17 15:38:42 CEST
 </div>
 </div>
 </body>
