@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>Release notes for Rapidoid</title>
+<title>Release 5.4</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -510,43 +510,13 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Release notes for Rapidoid</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_release_6_0_not_released_yet">Release 6.0 (NOT RELEASED YET)</a>
+<li><a href="#_release_5_4">Release 5.4</a>
 <ul class="sectlevel2">
 <li><a href="#_new_features_and_improvements">New features and improvements</a></li>
 <li><a href="#_breaking_changes">Breaking changes</a></li>
-</ul>
-</li>
-<li><a href="#_release_5_5">Release 5.5</a>
-<ul class="sectlevel2">
-<li><a href="#_new_features_and_improvements_2">New features and improvements</a></li>
-<li><a href="#_breaking_changes_2">Breaking changes</a></li>
-</ul>
-</li>
-<li><a href="#_release_5_4">Release 5.4</a>
-<ul class="sectlevel2">
-<li><a href="#_new_features_and_improvements_3">New features and improvements</a></li>
-<li><a href="#_breaking_changes_3">Breaking changes</a></li>
-</ul>
-</li>
-<li><a href="#_release_5_3">Release 5.3</a>
-<ul class="sectlevel2">
-<li><a href="#_new_features_and_improvements_4">New features and improvements</a></li>
-<li><a href="#_breaking_changes_4">Breaking changes</a></li>
-</ul>
-</li>
-<li><a href="#_release_5_2">Release 5.2</a>
-<ul class="sectlevel2">
-<li><a href="#_new_features_and_improvements_5">New features and improvements</a></li>
-<li><a href="#_breaking_changes_5">Breaking changes</a></li>
-</ul>
-</li>
-<li><a href="#_release_5_1">Release 5.1</a>
-<ul class="sectlevel2">
-<li><a href="#_new_features_and_improvements_6">New features and improvements</a></li>
 </ul>
 </li>
 </ul>
@@ -554,105 +524,10 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_release_6_0_not_released_yet">Release 6.0 (NOT RELEASED YET)</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_new_features_and_improvements">New features and improvements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>basic <code>OpenAPI</code> support</strong> - see <code>OpenAPI#bootstrap</code> (thanks, <a href="https://github.com/danielbraga">Daniel Braga</a> for <a href="https://github.com/rapidoid/rapidoid/pull/158/files">contributing</a>!)</p>
-</li>
-<li>
-<p>included <code>Swagger UI</code> in the <code>rapidoid-openapi</code> module (visit <code>/api</code>)</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_breaking_changes">Breaking changes</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>merged the <code>rapidoid-essentials</code> module into <code>rapidoid-commons</code></p>
-</li>
-<li>
-<p>renamed the <code>rapidoid-http-server</code> module to <code>rapidoid-rest</code></p>
-</li>
-<li>
-<p>removed the support for service activation from CLI arguments</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_release_5_5">Release 5.5</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_new_features_and_improvements_2">New features and improvements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>built-in support for <strong>XML requests and responses</strong> (many thanks to <a href="https://github.com/cyterdan">Dan Cytermann</a> for the nice <a href="https://github.com/rapidoid/rapidoid/pull/149/files">contribution</a>!)</p>
-</li>
-<li>
-<p>the dockerized web platform has been extracted out in a separate project: <a href="https://github.com/rapidoid/rapidoid-web-platform">Rapidoid Web Platform</a></p>
-</li>
-<li>
-<p>end of life for the <code>rapidoid-fluent</code> module (last released version: <code>5.4.6</code>), its successor is <a href="https://essentials4j.org/">essentials4j</a></p>
-</li>
-<li>
-<p>support for <strong>high-performance TCP clients</strong> (<code>TCP.client()</code>)</p>
-</li>
-<li>
-<p>simple <strong>high-performance HTTP client</strong> (experimental)</p>
-</li>
-<li>
-<p>extended networking capabilities (<code>rapidoid-net</code> module)</p>
-</li>
-<li>
-<p>some bug fixes</p>
-</li>
-<li>
-<p>many small improvements</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_breaking_changes_2">Breaking changes</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>the <code>rapidoid-html</code> module has been merged into the <code>rapidoid-gui</code> module</p>
-</li>
-<li>
-<p>the <code>rapidoid-fluent</code> module has been removed</p>
-</li>
-<li>
-<p>renamed <code>jackson</code> to <code>objectMapper</code> in the customization API</p>
-</li>
-<li>
-<p>renamed <code>JsonResponseRenderer</code> to <code>HttpResponseRenderer</code> in the customization API</p>
-</li>
-<li>
-<p>renamed <code>JsonRequestBodyParser</code> to <code>HttpRequestBodyParser</code> in the customization API</p>
-</li>
-<li>
-<p>the process management components have been moved out from the <code>rapidoid-commons</code> module, into the Rapidoid Web Platform</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_release_5_4">Release 5.4</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_new_features_and_improvements_3">New features and improvements</h3>
+<h3 id="_new_features_and_improvements">New features and improvements</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -689,7 +564,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="_breaking_changes_3">Breaking changes</h3>
+<h3 id="_breaking_changes">Breaking changes</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -703,279 +578,10 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_release_5_3">Release 5.3</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_new_features_and_improvements_4">New features and improvements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://hub.docker.com/_/rapidoid/">Official Docker repository</a> for Rapidoid: <code>docker run rapidoid --help</code></p>
-</li>
-<li>
-<p>Maven plug-in for simple &amp; easy packaging of uber-JAR: <code>mvn org.rapidoid:app:build</code> - it works on any Maven project, without configuring anything</p>
-</li>
-<li>
-<p>Maven plug-in for simple &amp; easy application deployment on multiple servers: <code>mvn org.rapidoid:app:deploy</code> - it works on any Maven project, requires deploy.yml</p>
-</li>
-<li>
-<p>fine-grained activation of built-in services through command-line parameters: <code>docker run -p 8888:8888 rapidoid</code></p>
-</li>
-<li>
-<p>new API for super-easy recursive file search by name patterns and type: <code>IO.find("pom.xml").files().in(location).recursive().getLocations()</code></p>
-</li>
-<li>
-<p>high-performance in-memory cache with fluent API and basic statistics: <code>Cache&lt;String, Integer&gt; lengths = Caching.ofString key) &#8594; key.length(.ttl(1000).build()</code></p>
-</li>
-<li>
-<p>fine-grained scope control in the authentication tokens</p>
-</li>
-<li>
-<p>stronger security - AES and HMAC cryptography utils were re-written from scratch: <code>byte[] enc = Crypto.encrypt(msg.getBytes())</code></p>
-</li>
-<li>
-<p>new built-in status service, serving application and system status information</p>
-</li>
-<li>
-<p>new built-in processes service for management of child processes</p>
-</li>
-<li>
-<p>new built-in discovery service for simple peer discovery (transient)</p>
-</li>
-<li>
-<p>new built-in echo service for debugging received requests</p>
-</li>
-<li>
-<p>improved deployment process with 2-phase application JAR staging + deployment</p>
-</li>
-<li>
-<p>many new end-to-end tests for Rapidoid&#8217;s Docker container integration</p>
-</li>
-<li>
-<p>improved logger, enriched API, also configured as default commons-logging implementation: <code>Log.info("Super-simple and cool!");</code></p>
-</li>
-<li>
-<p>improved generic request pipeline processing (low-level Net API)</p>
-</li>
-<li>
-<p>convenient way to define and display custom metrics</p>
-</li>
-<li>
-<p>built-in mysql and postgres profiles for <code>JDBC</code> and <code>Hibernate</code> configuration</p>
-</li>
-<li>
-<p>hot reloading upon external configuration changes</p>
-</li>
-<li>
-<p>super-simple SQL-powered RESTful services and GUI pages</p>
-</li>
-<li>
-<p>Simplified job scheduling: <code>Jobs.after(3).seconds().run(() &#8594; {})</code></p>
-</li>
-<li>
-<p>constructor-based dependency injection</p>
-</li>
-<li>
-<p>optional integration with <code>Guice</code></p>
-</li>
-<li>
-<p>salted password hash generator (for the users configuration): <code>docker run -it --rm rapidoid password</code></p>
-</li>
-<li>
-<p>several bug fixes</p>
-</li>
-<li>
-<p>many small improvements</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_breaking_changes_4">Breaking changes</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>changes in the low-level async Net API - added <code>void resume(long connId, long handle, AsyncLogic asyncLogic)</code></p>
-</li>
-<li>
-<p>renamed URIs for the built-in services from <code>/<em>/<strong></code> to <code>/</em></strong></code></p>
-</li>
-<li>
-<p>removed the factory utils from the Goodies (please use normal instantiation instead)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_release_5_2">Release 5.2</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_new_features_and_improvements_5">New features and improvements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>OAuth bootstrap: <code>App.bootstrap(args).oauth()</code> with pre-defined configuration structure</p>
-</li>
-<li>
-<p>customizable session management: <code>My.sessionManager(&#8230;&#8203;)</code> - in-memory by default</p>
-</li>
-<li>
-<p>customizable JSON parser for the HTTP request body: <code>My.jsonRequestBodyParser(&#8230;&#8203;)</code> - using Jackson by default</p>
-</li>
-<li>
-<p>customizable JPA management: <code>My.entityManagerFactoryProvider(&#8230;&#8203;)</code> and <code>My.entityManagerProvider(&#8230;&#8203;)</code></p>
-</li>
-<li>
-<p>customizable security strategy when serving serving static files: <code>My.staticFilesSecurity(&#8230;&#8203;)</code></p>
-</li>
-<li>
-<p>customizable templates path: <code>My.templatesPath(&#8230;&#8203;)</code></p>
-</li>
-<li>
-<p>customizable templates loader (e.g. load them from DB): <code>My.templateLoader(&#8230;&#8203;)</code></p>
-</li>
-<li>
-<p>customizable error handlers by type: <code>On.error(&#8230;&#8203;).handler(&#8230;&#8203;)</code></p>
-</li>
-<li>
-<p>customizable wrappers of the HTTP handlers (request/response interceptors): <code>My.wrappers(&#8230;&#8203;)</code></p>
-</li>
-<li>
-<p>redesigned token API (previously known as the cookie-pack session)</p>
-</li>
-<li>
-<p>smart serialization of the session and token - only when changed</p>
-</li>
-<li>
-<p>basic reverse proxy (easily configurable from command-line or Docker)</p>
-</li>
-<li>
-<p>round-robin load balancer (enabled by default in the reverse proxy)</p>
-</li>
-<li>
-<p>customizable context path for web applications</p>
-</li>
-<li>
-<p>great performance improvements in the built-in template engine</p>
-</li>
-<li>
-<p>few GUI enhancements</p>
-</li>
-<li>
-<p>several bug fixes</p>
-</li>
-<li>
-<p>many small improvements</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_breaking_changes_5">Breaking changes</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Renamed cookiepack to token in the HTTP Req and Resp API</p>
-</li>
-<li>
-<p>the application.yml configuration files are not loaded by default, only config.yml</p>
-</li>
-<li>
-<p>renamed <code>profile-<strong>.yml</code> configuration files to <code>config-</strong>.yml</code></p>
-</li>
-<li>
-<p>renamed application segment to zone in the HTTP API</p>
-</li>
-<li>
-<p>redesigned <code>ViewRenderer</code> and renamed to <code>ViewResolver</code></p>
-</li>
-<li>
-<p>added <code>Req</code> parameter in the <code>LoginProvider</code> API</p>
-</li>
-<li>
-<p>added <code>Req</code> parameter in the <code>RolesProvider</code> API</p>
-</li>
-<li>
-<p>renamed <code>Templates.fromFile</code> to <code>Templates.load</code>, <code>Templates.fromString</code> to <code>Templates.compile</code></p>
-</li>
-<li>
-<p>renamed <code>PageRenderer</code> to <code>PageDecorator</code></p>
-</li>
-<li>
-<p>using <code>My.jackson()</code> instead of <code>JSON.MAPPER</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_release_5_1">Release 5.1</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_new_features_and_improvements_6">New features and improvements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>automatic hot reload when the source code changes,</p>
-</li>
-<li>
-<p>lambdas as handlers - with named and type-safe parameters,</p>
-</li>
-<li>
-<p>URI path patterns (simple and regex-based),</p>
-</li>
-<li>
-<p>Admin Center for convenient management of the deployed app,</p>
-</li>
-<li>
-<p>JVM and OS metrics in the Admin Center,</p>
-</li>
-<li>
-<p>info about the web app routes in the Admin Center,</p>
-</li>
-<li>
-<p>role-based web security with out-of-the-box login / logout,</p>
-</li>
-<li>
-<p>configuration info in the Admin Center,</p>
-</li>
-<li>
-<p>configuration profiles,</p>
-</li>
-<li>
-<p>improved dependency injection (with profile support),</p>
-</li>
-<li>
-<p>easy JPA bootstrap with TX management and nice utils like <code>JPA.insert(new Foo())</code>,</p>
-</li>
-<li>
-<p>redesigned and enhanced <code>JDBC</code> utils,</p>
-</li>
-<li>
-<p>scaffolding of JPA entities (RESTful services and management GUI),</p>
-</li>
-<li>
-<p>new templating language and engine - similar to Mustache, but more practical,</p>
-</li>
-<li>
-<p>highly customizable setup (serialization, security, error handling, template engine&#8230;&#8203;),</p>
-</li>
-<li>
-<p>many GUI enhancements&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-02-26 11:09:06 CET
+Last updated 2018-02-26 11:02:44 CET
 </div>
 </div>
 </body>
