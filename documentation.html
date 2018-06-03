@@ -57,21 +57,6 @@
                     </ul>
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules<span class="caret"></span></a>
-                    <ul role="menu" class="dropdown-menu">
-                        <li><a href="http-fast.html">http-fast</a></li>
-                        <li><a href="http-server.html">http-server</a></li>
-                        <li><a href="gui.html">gui</a></li>
-                        <li><a href="web.html">web</a></li>
-                        <li><a href="quick.html">quick</a></li>
-                        <li><a href="render.html">render</a></li>
-
-
-                        <li><a href="net.html">net</a></li>
-                    </ul>
-                </li>
-
                 <li><a rel="nofollow" href="community.html">Community</a></li>
             </ul>
 
@@ -93,75 +78,11 @@
 
 <div class="container">
 
-<div class="row row-separated-nano">
-    <div class="col-md-8">
-
-        <div class="module-desc">
-            Rapidoid consists of several modules which can be used separately or together:
-            <ul>
-                <li>
-                    <a href="http-fast.html">rapidoid-http-fast</a> - <span class="module-about">Low-level HTTP Framework</span>
-                    <span class="pull-right module-about-right"></span>
-                </li>
-                <li>
-                    <a href="http-server.html">rapidoid-http-server</a> - <span class="module-about">High-level Web Framework</span>
-                    <span class="pull-right module-about-right"></span>
-                </li>
-                <li>
-                    <a href="gui.html">rapidoid-gui</a> - <span class="module-about">Web GUI Components (based on Bootstrap + Angular)</span>
-                    <span class="pull-right module-about-right"></span>
-                </li>
-                <li>
-                    <a href="web.html">rapidoid-web</a> - <span class="module-about">rapidoid-http-server + rapidoid-gui + goodies</span>
-                    <span class="pull-right module-about-right"></span>
-                </li>
-                <li>
-                    <a href="quick.html">rapidoid-quick</a> - <span class="module-about">rapidoid-web + Hibernate + Logback + MySQL Connector...</span>
-                    <span class="pull-right module-about-right"></span>
-                </li>
-                <li>
-                    <a href="render.html">rapidoid-render</a> - <span class="module-about">Rapidoid&apos;s template engine</span>
-                    <span class="pull-right module-about-right"></span>
-                </li>
-                <li>
-                    <a href="net.html">rapidoid-net</a> - <span class="module-about">Network protocol framework</span>
-                    <span class="pull-right module-about-right"></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="eg_title">Add <b>rapidoid-quick</b> as Maven dependency:</div>
-<div class="copy-snippet">
-<div class="maven-code">
-&lt;<span class="_code_tag">dependency</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">groupId</span>&gt;<b>org.rapidoid</b>&lt;/<span class="_code_tag">groupId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">artifactId</span>&gt;<b>rapidoid-quick</b>&lt;/<span class="_code_tag">artifactId</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="_code_tag">version</span>&gt;<b>5.5.5</b>&lt;/<span class="_code_tag">version</span>&gt;<br>
-&lt;/<span class="_code_tag">dependency</span>&gt;<br>
-</div>
-</div>
-
-        <div id="docker-title"><a href="https://hub.docker.com/_/rapidoid/" target="_blank" rel="nofollow">
-    <b>Official Docker repository for Rapidoid</b></a>:
-</div>
-<div class="copy-snippet"><code>docker run rapidoid --help</code></div>
-
-    </div>
-
-</div>
-
-<div class="row row-separated-nano">
+<div class="row">
     <div class="col-md-12">
-
-        <div class="module-header">Old documentation with all examples</div>
-
-
+        <h2 id="main-title">Rapidoid - Old Documentation / Examples</h2>
     </div>
 </div>
-
-
 
 <div class="row">
 
@@ -1148,8 +1069,21 @@ Hello <b>world</b>!
         <h4 class="caption">
             <span class="badge badge-eg-num">9</span>
             <span class="mini-example-title">MVC architecture with Rapidoid&apos;s built-in template engine</span>
-            
         </h4>
+
+        <h3>Rapidoid&apos;s template engine</h3>
+        <h5><b></b></h5>
+
+        <div class="module-notes">
+            <ul>
+                <li>Starting from v5.1, Rapidoid includes new templating engine.</li>
+                <li>Basically, it is very similar to Mustache, with the following differences.</li>
+                <li>1. Using <b>$</b><b>{</b>x<b>}</b> instead of <b>{{</b>x<b>}}</b>. This avoids collision of the <b>{{</b>x<b>}}</b> tags with the front-end libraries (e.g. Angular).</li>
+                <li>2. Supporting additional <b>{{</b>?x<b>}}</b>...<b>{{</b>/x<b>}}</b> tag for <code class="note-code">if</code>. The traditional <b>{{</b><b>#</b>x<b>}}</b>...<b>{{</b><b>/</b>x<b>}}</b> remains unchanged, having both <code class="note-code">foreach</code> and <code class="note-code">if</code> semantics.</li>
+                <li>3. Providing text alternative if the value if not available e.g. <b>$</b><b>{</b>x|something else<b>}</b>.</li>
+            </ul>
+        </div>
+
     </div>
 </div>
 
@@ -5544,8 +5478,14 @@ Hello, world!
         <h4 class="caption">
             <span class="badge badge-eg-num">42</span>
             <span class="mini-example-title">Implementing Echo protocol</span>
-            
         </h4>
+
+        <h3>Rapidoid as a Network Protocol Framework</h3>
+
+        <p>You can use Rapidoid as a Network Protocol Framework, to implement your <b>custom TCP-based protocols</b>.</p>
+        <p>For a quick and easy start, please take a look at the following Echo protocol example:</p>
+        <p></p>
+
     </div>
 </div>
 
@@ -5612,8 +5552,52 @@ Hello, world!
         <h4 class="caption">
             <span class="badge badge-eg-num">43</span>
             <span class="mini-example-title">Building the fastest HTTP server</span>
-            
         </h4>
+
+        <h3>Module rapidoid-http-server: HTTP Server &amp; Low-level Web Framework</h3>
+        <h5><b></b></h5>
+
+
+        <div class="module-explanation">
+
+            <h3>Built on top of Java NIO from scratch</h3>
+
+            <p>The low-level HTTP API provides access to the
+                <a rel="nofollow"
+                   href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">extremely
+                    fast</a>
+                Rapidoid HTTP server components.</p>
+
+            <p>
+                Rapidoid is implemented on top of Java NIO, without native libraries, nor external dependencies.
+            </p>
+            <p>
+                It is great to see how Java performance can match C++ and outperform all the other languages in network
+                programming.
+            </p>
+
+            <h3>Designed for performance from day 1</h3>
+
+            <p> Rapidoid was designed for high performance since its inception, and several parts of it played a
+                critical role:</p>
+
+            <ul>
+                <li>asynchronous I/O processing,</li>
+                <li>minimizing the garbage collection pressure,</li>
+                <li>fast object pools,</li>
+                <li>reusable off-heap buffers,</li>
+                <li>very fast and efficient HTTP parser,</li>
+                <li>and many other optimizations.</li>
+            </ul>
+
+            <h3>Going low-level for ultimate performance</h3>
+
+            <p>If we want to implement <b>any protocol in the fastest way posible</b>, then we need to do it on a <b>lower
+                level of abstraction</b>.</p>
+            <p>Let's see how we can implement <a rel="nofollow"
+                                                 href="https://www.techempower.com/benchmarks/#section=data-r12&hw=peak&test=plaintext&a=2">one
+                of the fastest</a> web servers in the world! (based on transparent TechEmpower benchmarks)</p></div>
+
     </div>
 </div>
 
